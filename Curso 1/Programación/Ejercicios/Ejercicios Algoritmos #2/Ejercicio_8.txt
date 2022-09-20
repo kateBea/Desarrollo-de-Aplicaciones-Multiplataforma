@@ -1,0 +1,48 @@
+AlgoritmoEjercicio8
+
+INICIO
+    # Fecha:			19 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide un total de kilómetros recorridos,
+                        el precio de gasolina (por litro), el dinero de gasolina 
+                        gastado en el viaje y el tiempo que se ha tardado 
+                        (en horas y minutos) y calcula: el consumo en gasolina
+                        (en litros y euros) por cada 100 kM, consumo de gasolina
+                        (en litros y euros) por cada 1 kM y la velocidad media
+                        (en kM/h y m/s)
+
+    # Parte declarativa:
+        total_km_rec: decimal
+        precio_gasolina: decimal
+        despesa_gasolina: decimal
+        tiempo_tardado_h: entero sin signo 
+        tiempo_tardado_m: entero sin signo
+        tiempo_total_seg: entero sin signo
+        total_consumo_en_litros: decimal
+        velocidad_media: decimal
+
+    # Cuerpo del algoritmo
+        mostraPorPantalla("Entre el total en kilómetros recorridos (kM): ")
+        leer total_km_rec
+        mostraPorPantalla("Entre el precio de gasolina (€/L): ")
+        leer precio_gasolina
+        mostraPorPantalla("Entre el dinero de gasolina gastado en el viaje (€): ")
+        leer despesa_gasolina
+        mostraPorPantalla("Entre el tiempo tardado de viaje (horas y luego minutos): ")
+        leer tiempo_tardado_h
+        leer tiempo_tardado_m
+        tiempo_total_seg = (tiempo_tardado_h * 3600) + (tiempo_tardado_m * 60)
+
+        total_consumo_en_litros = despesa_gasolina * (1 / precio_gasolina)
+
+        mostraPorPantalla("Consumo por 100 kM (litros): ", 100 * total_consumo_en_litros / total_km_rec)
+        mostraPorPantalla("Consumo por 100 kM (euros): ", 100 * total_consumo_en_litros / total_km_rec * precio_gasolina)
+
+        mostraPorPantalla("Consumo por 1 kM (litros): ", 1 * total_consumo_en_litros / total_km_rec)
+        mostraPorPantalla("Consumo por 1 kM (euros): ", 1 * total_consumo_en_litros / total_km_rec * precio_gasolina)
+
+        velocidad_media = (total_km_rec * 1000) / 7500
+        mostraPorPantalla("Velocidad media (m/s): ", velocidad_media)
+        velocidad_media = velocidad_media * (1 / 1000) * (3600 / 1)
+        mostraPorPantalla("Velocidad media (kM/h): ", velocidad_media)
+FIN

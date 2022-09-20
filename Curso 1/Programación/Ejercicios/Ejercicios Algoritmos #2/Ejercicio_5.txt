@@ -1,4 +1,4 @@
-AlgoritmoEjercicio4
+AlgoritmoEjercicio5
 
 INICIO
     # Fecha:			16 Septiembre 2022
