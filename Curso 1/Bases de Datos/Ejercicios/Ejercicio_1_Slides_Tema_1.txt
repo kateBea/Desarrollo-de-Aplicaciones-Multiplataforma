@@ -19,16 +19,17 @@ Larris a seguir trabajando en el desarollo de bases de datos relaciones.
 
 3. ¿Qué leyes definió (un total de 13 leyes)? ¿para qué?
 
-Definió un total de 13 reglas:
+Definió un total de 12 reglas:
 
 	1.- Regla fundamental
 	2.- Regla de la información
-	3.-
-	4.-
-	5.-
-	6.-
-	7.-
-	8.-
-	9.-
-	10.-
-	12.-
+	3.- Regla del tratamiento sistemático de valores nulos
+	4.- Catálogo dinámico en línea basado en el modelo relacional
+	5.- Regla del sublenguaje de datos completo
+	6.- Regla de actualización de vistas
+	7.- Inserción, actualización y borrado de alto nivel
+	8.- Independencia física de los datos
+	9.- Independencia lógica de los datos
+	10.- Independencia de la integridad
+	11.- Independencia de la distribución
+	12.- La regla de la no subversión
