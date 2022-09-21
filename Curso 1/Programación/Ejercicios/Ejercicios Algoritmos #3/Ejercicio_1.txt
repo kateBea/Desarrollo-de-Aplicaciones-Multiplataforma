@@ -3,12 +3,20 @@ AlgoritmoEjercicio1
 INICIO
     # Fecha:			21 Septiembre 2022
     # Autor:			Hugo Pelayo
-    # Descripción:      Este programa 
+    # Descripción:      Este programa le pide al usuario dos longitudes
+                        que representan los catetos de un triangulo y muestra
+                        por pantalla la longitud de la hipotenusa del triángulo
+                        rectángulo correspondiente.
 
     # Parte declarativa:
-        
+        cateto1: decimal
+        cateto2: decimal
 
     # Cuerpo del algoritmo
-        
+        mostrarPorPantalla("Entre la longitud del primer cateto: ")
+        leer cateto1
+        mostrarPorPantalla("Entre la longitud del segundo cateto: ")
+        leer cateto2
 
+        mostrarPorPantalla("La longitud de la hipotenusa es: ", sqrt((cateto1 ^ 2) * (cateto2 ^ 2)))
 FIN
