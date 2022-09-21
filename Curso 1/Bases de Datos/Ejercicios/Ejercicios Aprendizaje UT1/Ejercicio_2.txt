@@ -1,0 +1,12 @@
+Ejercicio 2
+
+1. Investiga sobre MySQL:
+
+
+2. Investiga sobre SQLite
+
+
+3. Investiga sobre PostgresSQL:
+
+
+4. Investiga sobre Oracle:
