@@ -3,12 +3,16 @@ AlgoritmoEjercicio4
 INICIO
     # Fecha:			21 Septiembre 2022
     # Autor:			Hugo Pelayo
-    # Descripción:      Este programa 
+    # Descripción:      Este programa pide al usuario un número entero
+                        y muestra por pantalla la última cifra de este 
 
     # Parte declarativa:
-        
+        numero: entero
 
     # Cuerpo del algoritmo
-        
+        muestraPorPantalla("Introduzca un número entero: ")
+        leer numero
+
+        muestraPorPantalla("El último dígito es: ", numero % 10)
 
 FIN
