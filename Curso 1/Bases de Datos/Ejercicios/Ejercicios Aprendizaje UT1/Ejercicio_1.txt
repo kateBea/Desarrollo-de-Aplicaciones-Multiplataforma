@@ -2,7 +2,9 @@ Ejercicio 1:
 
 Bases de datos jerárquicas:
 
-    Es un modelo de bases de datos en que estos se organizan en forma de árbol invertido, en donde un nodo de información llamado padre puede tener varios hijos, uno o ninguno. Como ejemplo tenemos:
+    Es un modelo de bases de datos en que estos se organizan en forma de árbol invertido, 
+    en donde un nodo de información llamado padre puede tener vario hijos, 
+    uno o ninguno. Como ejemplo tenemos:
 
     - Adabas.
     - IMS.
