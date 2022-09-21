@@ -9,10 +9,11 @@ INICIO
 
     # Parte declarativa:
         medida: decimal
+        cmPorPulgadas: 2.54
 
     # Cuerpo del algoritmo
         mostrarPorPantalla("Introduzca una mdedida, por favor: ")
         leer medida
 
-        mostrarPorPantalla("La medida en pulgadas del valor introducido es: ", medida / 2.54)
+        mostrarPorPantalla("La medida en pulgadas del valor introducido es: ", medida / cmPorPulgadas)
 FIN
