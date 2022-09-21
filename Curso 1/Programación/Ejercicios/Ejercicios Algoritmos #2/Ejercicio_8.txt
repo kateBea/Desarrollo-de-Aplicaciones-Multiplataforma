@@ -41,7 +41,7 @@ INICIO
         mostraPorPantalla("Consumo por 1 kM (litros): ", 1 * total_consumo_en_litros / total_km_rec)
         mostraPorPantalla("Consumo por 1 kM (euros): ", 1 * total_consumo_en_litros / total_km_rec * precio_gasolina)
 
-        velocidad_media = (total_km_rec * 1000) / 7500
+        velocidad_media = (total_km_rec * 1000) / tiempo_total_seg
         mostraPorPantalla("Velocidad media (m/s): ", velocidad_media)
         velocidad_media = velocidad_media * (1 / 1000) * (3600 / 1)
         mostraPorPantalla("Velocidad media (kM/h): ", velocidad_media)
