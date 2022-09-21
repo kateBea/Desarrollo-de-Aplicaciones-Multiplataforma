@@ -33,3 +33,5 @@ Definió un total de 12 reglas:
 	10.- Independencia de la integridad
 	11.- Independencia de la distribución
 	12.- La regla de la no subversión
+
+4. Línea de tiempo en captura "timeline_bd.png" (hecha con https://time.graphics/es/editor)
