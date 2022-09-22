@@ -16,7 +16,7 @@ INICIO
         leer dinero
         
         # obtener parte entera (ejemplo 313.14 -> 313)
-        dineroParteEntera = (dinero * 100) / 100
+        dineroParteEntera = parteEnteraPorAbajo(dinero)
 
         # obtener parte decimal (corresponderá a los céntimos)
         dinero = dinero - dineroParteEntera
