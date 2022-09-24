@@ -1,0 +1,36 @@
+Ejercicio 2:
+
+SQLite:
+
+Se trata de un sistema gestor de bases de datos (SGBD) que cumple con las reglas ACID (acrónimo 
+en inglés que en castellano es Atomicidad, Consistencia, Aislamiento y Durabilidad) para bases 
+de datos de modelo relacional. El proyecto es bantante pequeño, de código abierto y está escrito 
+en C. Fue creado por Richard Hipp bajo la licencia de GPL (GNU General Public License) y 
+sido desarrollada por numeors colaboradores para poder soportar desde las consultas y operaciones
+más simples de SQL hasta las más complejas. SQLite implementa el estándard de SQL SQL92 a parte 
+de agregar otras funcionalidades que facilitan su uso en diferentes entornos, cabe destacar que 
+is compatible con alta variedad plataformas sin la necesidad de tener hardware de altas capacidades.
+
+SQLite no implementa un sistema de gestión cliente-servidor, sino que permite al programa sobre el 
+cual se ejecuta aprovechar su funcionalidad a través llamadas a funciones simples. Esto ayuda la 
+reducción de latencia ya que estas no suponen mucho coste de rendimiento. 
+
+Al ser un SGBD muy ligero los datos se guardan en un fichero monitorizado por la máquina del host. 
+Este fichero es bloqueado cuando se inicia una transacción.
+
+
+PostgreSQL:
+
+Es un sistema gestor de bases de datos relacionales y orientadas a objetos, y es de código 
+abierto. PosgreSQL es desarrollado por PGDG, una organización de hobbistas que dedican parte 
+de su tiempo de forma volunataria al desarrollo de PosgreSQL. Al no tener gestor de errores, 
+es difícil conocer el estado de éstos. 
+
+La primera versión de PostgreSQL se desarrolló en la Universidad de California en Barkeley. 
+Era parte de un proyecto llamado POSTGRES dirigido por el profesor Michael Stonebreaker. 
+En un principio no ofrecía soporte para SQL. Más tarde se , acabado el proyecto POSTRGES, 
+dos universitarios decidieron expander el proyecto POSTGRES un añadiéndole un intérprete 
+para SQL, el proyecto pasó a llamarse Postgres95 y con esto se sustituyó el leguaje de 
+utilizado con anterioridad, PostQUEL. Luego decidieron cambiar el nbombre a PostgreSQL 
+para reflejar el soporte a SQL. PostgreSQl es compatible con una gran variedad de aqruitecturas 
+y sistemas operativos, y es poco exigente en cuanto a hardware se refiere.
