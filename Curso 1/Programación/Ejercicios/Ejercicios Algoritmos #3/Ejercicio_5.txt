@@ -4,8 +4,8 @@ INICIO
     # Fecha:			21 Septiembre 2022
     # Autor:			Hugo Pelayo
     # Descripción:      Este programa pide al usuario una cifra de dinero
-                        y muestra por pantalla la cantidad en billetes y monedas
-                        según corresponda
+                        y muestra por pantalla la cantidad mínima de billetes y monedas
+                        necesaria para representarla
 
     # Parte declarativa:
         dinero: decimal
