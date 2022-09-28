@@ -1,0 +1,28 @@
+AlgoritmoEjercicio4
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa aplica el descuento necesario sobre 
+                        los productos de unos almacenes y muestra por pantalla
+                        los precios a pagar y el descuento aplicado
+
+    # Parte declarativa:
+        treshold := 1500.0
+        desc_15 := 0.15
+        desc_08 := 0.08
+
+        precio_traje: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Por favor introduzca el precio de su traje: ")
+        leer precio_traje
+
+        SI precio_traje > treshold
+            mostrarPorPantalla("El precio final de su traje es: ", precio_traje * (1 - desc_15))
+            mostrarPorPantalla("El descuento aplicado es de: ", precio_traje * desc_15)
+        SINO
+            mostrarPorPantalla("El precio final de su traje es: ", precio_traje * (1 - desc_08))
+            mostrarPorPantalla("El descuento aplicado es de: ", desc_08)
+        FIN_SI
+FIN

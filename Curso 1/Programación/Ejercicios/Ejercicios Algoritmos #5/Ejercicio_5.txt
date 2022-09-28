@@ -1,0 +1,31 @@
+AlgoritmoEjercicio5
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa escribe un mensaje por la pantalla
+
+    # Parte declarativa:
+        user := "admin"
+        pass := "1234&"
+        tries := 1
+        limit_tries := 3
+
+        in_user, in_pass: cadena de caracteres
+
+    # Cuerpo del algoritmo
+        REPETIR
+            mostrarPorPantalla("Entra el nombre de usuario: ")
+            leer in_user
+            mostrarPorPantalla("Entra la clave de acceso: ")
+            leer in_pass
+
+            tries = tries + 1
+        HASTA tries > limit_tries o (in_user == user y in_pass == pass)
+
+        SI in_user == user y in_pass == pass
+            mostrarPorPantalla("Usted ha accedido a la aplicación: ")
+        SINO
+            mostrarPorPantalla("Acceso denegado. Superado límite de intentos.")
+        FIN_SI
+FIN

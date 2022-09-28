@@ -1,0 +1,25 @@
+AlgoritmoEjercicio4
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa escribe un mensaje por la pantalla
+
+    # Parte declarativa:
+        numero: decimal
+        acumulador := 0.0
+        total_numeros := 0
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Por favor introduzca una serie de números reales: ")
+        REPETIR
+            leer numero
+            SI numero > 0
+                acumulador = acumulador + numero
+                total_numeros = total_numeros + 1
+            FIN_SI
+        HASTA numero <= 0
+
+        mostrarPorPantalla("La suma total es: ", acumulador)
+        mostrarPorPantalla("El total de números introducidos es: ", total_numeros)
+FIN

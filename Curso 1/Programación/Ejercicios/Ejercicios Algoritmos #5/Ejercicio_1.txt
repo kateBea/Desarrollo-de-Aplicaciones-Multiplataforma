@@ -1,0 +1,84 @@
+Versión 1.0:
+
+AlgoritmoEjercicio1
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide al usuario una seria de números reales
+                        y muestra por pantalla la suma total de estos
+
+    # Parte declarativa:
+        numero: decimal
+        acumulador := 0.0
+        limite_superior := 10
+        
+    # Cuerpo del algoritmo
+        DESDE contador = 1 HASTA limite_superior HACER
+            mostrarPorPantalla("Entre un número real por favor: ")
+            leer numero
+            acumulador = acumulador + numero
+        FIN_DESDE
+
+        mostrarPorPantalla("La suma total de los números es: ", acumulador)
+FIN
+
+
+Versión 1.1:
+
+AlgoritmoEjercicio1
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide al usuario una seria de números reales
+                        y muestra por pantalla la suma total de estos
+
+    # Parte declarativa:
+        numero: decimal
+        acumulador := 0.0
+        contador := 0
+        limite_superior := 10
+
+    # Cuerpo del algoritmo
+        MIENTRAS contador < limite_superior
+            mostrarPorPantalla("Entre un número real por favor: ")
+            leer numero
+            acumulador = acumulador + numero
+            contador = contador + 1
+        FIN_MIENTRAS
+
+        mostrarPorPantalla("La suma total de los números es: ", acumulador)
+FIN
+
+
+Versión 1.2:
+
+AlgoritmoEjercicio1
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide al usuario una seria de números reales
+                        y muestra por pantalla la suma total de estos
+
+    # Parte declarativa:
+        numero: decimal
+        acumulador := 0.0
+        contador := 0
+        limite_superior := 10
+
+    # Cuerpo del algoritmo
+        REPETIR
+            mostrarPorPantalla("Entre un número real por favor: ")
+            leer numero
+            acumulador = acumulador + numero
+            contador = contador + 1
+
+        HASTA contador == limite_superior
+
+        mostrarPorPantalla("La suma total de los números es: ", acumulador)
+FIN
+
+
+    - El más idóneo es el bucle DESDE, porque el rango de iteraciones es finito y conocido

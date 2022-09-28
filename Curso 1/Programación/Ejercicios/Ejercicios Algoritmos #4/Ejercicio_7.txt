@@ -1,0 +1,37 @@
+AlgoritmoEjercicio7
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa 
+
+    # Parte declarativa:
+        tipo: caracter
+        tam: entero
+        total_unidades: entero
+        ganancias: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Entre el total de unidades de venta: ")
+        leer total_unidades
+        mostrarPorPantalla("Entre el tipo de unidades: ")
+        leer tipo
+        mostrarPorPantalla("Entre el tamaño de las unidades: ")
+        leer tam
+
+        SI tipo == 'A' y tam == 1
+            mostrarPorPantalla("Las ganancias seran de: ", 1.20 * total_unidades)
+        FIN_SI
+
+        SI tipo == 'A' y tam == 2
+            mostrarPorPantalla("Las ganancias seran de: ", 1.30 * total_unidades)
+        FIN_SI
+
+        SI tipo == 'B' y tam == 1
+            mostrarPorPantalla("Las ganancias seran de: ", (1 - 0.30) * total_unidades)
+        FIN_SI
+
+        SI tipo == 'B' y tam == 2
+            mostrarPorPantalla("Las ganancias seran de: ", (1 - 0.50) * total_unidades)
+        FIN_SI
+FIN

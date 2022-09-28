@@ -1,0 +1,22 @@
+AlgoritmoEjercicio2
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide un número al usuario y muestra
+                        por pantalla la tabla de multiplicar de dicho número
+
+    # Parte declarativa:
+        numero: entero
+        multiplicador := 0
+        límite_superior := 10
+
+    # Cuerpo del algoritmo
+        muestraPorPantalla("Entre un número: ")
+        leer numero
+
+        MIENTRAS multiplicador < límite_superior
+            muestraPorPantalla(numero, " * ", multiplicador, " = ", numero*multiplicador)
+            multiplicador = multiplicador + 1
+        FIN_MIENTRAS
+FIN

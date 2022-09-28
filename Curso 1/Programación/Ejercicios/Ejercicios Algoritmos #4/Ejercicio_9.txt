@@ -1,0 +1,13 @@
+AlgoritmoEjercicio9
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa determina el precio total por persona 
+                        en un viaje y muestra por pantalla el resultado
+
+    # Parte declarativa:
+        
+    # Cuerpo del algoritmo
+        
+FIN

@@ -1,0 +1,29 @@
+AlgoritmoEjercicio1
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa determina el mayor de dos números
+                        y muestra el resultado por pantalla
+
+    # Parte declarativa:
+        numero1: decimal
+        numero2: decimal
+
+    # Cuerpo del algoritmo
+        muestraPorPantalla("Entre el valor del primer número: ")
+        leer numero1
+
+        muestraPorPantalla("Entre el valor del segundo número: ")
+        leer numero2
+
+        SI numero1 == numero2
+            muestraPorPantalla(numero1, " y ", numero2, " son iguales")
+        SINO
+            SI numero1 > numero2
+                muestraPorPantalla(numero1, " es mayor que ", numero2)
+            SINO
+                muestraPorPantalla(numero1, " es menor que ", numero2)
+            FINSI
+        FINSI
+FIN

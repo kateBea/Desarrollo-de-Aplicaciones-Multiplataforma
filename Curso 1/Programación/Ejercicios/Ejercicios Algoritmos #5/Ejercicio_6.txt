@@ -1,0 +1,72 @@
+AlgoritmoEjercicio6
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa escribe un mensaje por la pantalla
+
+    # Parte declarativa:
+        user := "admin"
+        pass := "1234&"
+        tries := 1
+        limit_tries := 3
+
+        opcion: entero
+        operando1: decimal
+        operando2: decimal
+
+        in_user, in_pass: cadena de caracteres
+
+    # Cuerpo del algoritmo
+        REPETIR
+            mostrarPorPantalla("Entra el nombre de usuario: ")
+            leer in_user
+            mostrarPorPantalla("Entra la clave de acceso: ")
+            leer in_pass
+
+            tries = tries + 1
+        HASTA tries > limit_tries o (in_user == user y in_pass == pass)
+
+        SI in_user == user y in_pass == pass
+            mostrarPorPantalla("Usted ha accedido a la aplicación: ")
+
+            mostrarPorPantalla("Bienvenido a la Mini - calculadora")
+
+            REPETIR
+                mostrarPorPantalla("Por favor seleccione algúno de los comandos siguientes (entre el número):")
+                mostrarPorPantalla("1. Suma")
+                mostrarPorPantalla("2. Resta")
+                mostrarPorPantalla("3. Multiplicación")
+                mostrarPorPantalla("4. Dividir")
+                mostrarPorPantalla("5. Salir")
+                leer opcion
+
+
+                SI opcion <> 5
+                    mostrarPorPantalla("Entre el valor del primer operando: ")
+                    leer operando1
+                    mostrarPorPantalla("Entre el valor del segundo operando: ")
+                    leer operando2
+
+                    SI opcion == 1
+                        mostrarPorPantalla(operando1, " + ", operando2, " = ", operando1 + operando2)
+                    FIN_SI
+
+                    SI opcion == 2
+                        mostrarPorPantalla(operando1, " - ", operando2, " = ", operando1 - operando2)
+                    FIN_SI
+
+                    SI opcion == 3
+                        mostrarPorPantalla(operando1, " * ", operando2, " = ", operando1 * operando2)
+                    FIN_SI
+
+                    SI opcion == 4
+                        mostrarPorPantalla(operando1, " / ", operando2, " = ", operando1 / operando2)
+                    FIN_SI
+                FIN_SI
+            HASTA opcion == 5
+
+        SINO
+            mostrarPorPantalla("Acceso denegado. Superado límite de intentos.")
+        FIN_SI
+FIN
