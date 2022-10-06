@@ -3,12 +3,13 @@ AlgoritmoEjercicio6
 INICIO
     # Fecha:			28 Septiembre 2022
     # Autor:			Hugo Pelayo
-    # Descripción:      Este programa escribe un mensaje por la pantalla
+    # Descripción:      Este programa pide las credeciales de inicio de sesión
+                        a una aplicación al usuario, a implementa dicha aplicación
 
     # Parte declarativa:
         user := "admin"
         pass := "1234&"
-        tries := 1
+        tries: entero
         limit_tries := 3
 
         opcion: entero
@@ -18,6 +19,7 @@ INICIO
         in_user, in_pass: cadena de caracteres
 
     # Cuerpo del algoritmo
+        tries = 0
         REPETIR
             mostrarPorPantalla("Entra el nombre de usuario: ")
             leer in_user
@@ -25,7 +27,7 @@ INICIO
             leer in_pass
 
             tries = tries + 1
-        HASTA tries > limit_tries o (in_user == user y in_pass == pass)
+        HASTA tries >= limit_tries o (in_user == user y in_pass == pass)
 
         SI in_user == user y in_pass == pass
             mostrarPorPantalla("Usted ha accedido a la aplicación: ")
@@ -33,7 +35,7 @@ INICIO
             mostrarPorPantalla("Bienvenido a la Mini - calculadora")
 
             REPETIR
-                mostrarPorPantalla("Por favor seleccione algúno de los comandos siguientes (entre el número):")
+                mostrarPorPantalla("Por favor seleccione algúno de los comandos siguientes (entre el índice):")
                 mostrarPorPantalla("1. Suma")
                 mostrarPorPantalla("2. Resta")
                 mostrarPorPantalla("3. Multiplicación")
@@ -48,25 +50,28 @@ INICIO
                     mostrarPorPantalla("Entre el valor del segundo operando: ")
                     leer operando2
 
-                    SI opcion == 1
+                    SI opcion == 1 ENTONCES
                         mostrarPorPantalla(operando1, " + ", operando2, " = ", operando1 + operando2)
-                    FIN_SI
+                    FINSI
 
-                    SI opcion == 2
+                    SI opcion == 2 ENTONCES
                         mostrarPorPantalla(operando1, " - ", operando2, " = ", operando1 - operando2)
-                    FIN_SI
+                    FINSI
 
-                    SI opcion == 3
+                    SI opcion == 3 ENTONCES
                         mostrarPorPantalla(operando1, " * ", operando2, " = ", operando1 * operando2)
-                    FIN_SI
+                    FINSI
 
-                    SI opcion == 4
-                        mostrarPorPantalla(operando1, " / ", operando2, " = ", operando1 / operando2)
-                    FIN_SI
-                FIN_SI
+                    SI opcion == 4 ENTONCES
+                        SI operando2 == 0
+                            mostrarPorPantalla("Error en división. Denominador nulo: ", operando2)
+                        SINO
+                            mostrarPorPantalla(operando1, " / ", operando2, " = ", operando1 / operando2)
+                        FINSI
+                    FINSI
+                FINSI
             HASTA opcion == 5
-
         SINO
             mostrarPorPantalla("Acceso denegado. Superado límite de intentos.")
-        FIN_SI
+        FINSI
 FIN

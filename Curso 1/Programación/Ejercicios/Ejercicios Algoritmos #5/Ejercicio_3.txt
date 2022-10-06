@@ -19,5 +19,5 @@ INICIO
 
         DESDE contador = 1 HASTA total HACER
             mostrarPorPantalla("Hola ", nombre)
-        FIN_DESDE
+        FINDESDE
 FIN

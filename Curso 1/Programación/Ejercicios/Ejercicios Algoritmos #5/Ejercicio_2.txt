@@ -8,15 +8,17 @@ INICIO
 
     # Parte declarativa:
         numero: entero
-        multiplicador := 0
+        multiplicador: entero
         límite_superior := 10
 
     # Cuerpo del algoritmo
         muestraPorPantalla("Entre un número: ")
         leer numero
 
+        multiplicador = 0
+
         MIENTRAS multiplicador < límite_superior
-            muestraPorPantalla(numero, " * ", multiplicador, " = ", numero*multiplicador)
+            muestraPorPantalla(numero, " * ", multiplicador, " = ", numero * multiplicador)
             multiplicador = multiplicador + 1
-        FIN_MIENTRAS
+        FINMIENTRAS
 FIN

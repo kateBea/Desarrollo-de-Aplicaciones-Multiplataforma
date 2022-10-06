@@ -12,13 +12,13 @@ INICIO
         mostrarPorPantalla("Entre un número real por favor: ")
         leer numero
 
-        SI numero == 0
+        SI numero == 0 ENTONCES
             mostrarPorPantalla("El número es nulo")
         SINO
-            SI numero > 0
+            SI numero > 0 ENTONCES
                 mostrarPorPantalla("El número es positivo")
             SINO
                 mostrarPorPantalla("El número es negativo")
-            FIN_SI
-        FIN_SI
+            FINSI
+        FINSI
 FIN

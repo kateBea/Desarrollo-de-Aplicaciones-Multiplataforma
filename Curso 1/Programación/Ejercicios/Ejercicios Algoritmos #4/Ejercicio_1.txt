@@ -17,13 +17,13 @@ INICIO
         muestraPorPantalla("Entre el valor del segundo número: ")
         leer numero2
 
-        SI numero1 == numero2
+        SI numero1 == numero2 ENTONCES
             muestraPorPantalla(numero1, " y ", numero2, " son iguales")
         SINO
-            SI numero1 > numero2
+            SI numero1 > numero2 ENTONCES
                 muestraPorPantalla(numero1, " es mayor que ", numero2)
             SINO
-                muestraPorPantalla(numero1, " es menor que ", numero2)
+                muestraPorPantalla(numero2, " es menor que ", numero1)
             FINSI
         FINSI
 FIN

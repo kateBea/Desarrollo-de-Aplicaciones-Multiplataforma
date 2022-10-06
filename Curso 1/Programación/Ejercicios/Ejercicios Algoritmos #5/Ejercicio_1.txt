@@ -10,15 +10,16 @@ INICIO
 
     # Parte declarativa:
         numero: decimal
-        acumulador := 0.0
+        acumulador: decimals
         limite_superior := 10
         
     # Cuerpo del algoritmo
+        acumulador = 0.0
         DESDE contador = 1 HASTA limite_superior HACER
             mostrarPorPantalla("Entre un número real por favor: ")
             leer numero
             acumulador = acumulador + numero
-        FIN_DESDE
+        FINDESDE
 
         mostrarPorPantalla("La suma total de los números es: ", acumulador)
 FIN
@@ -36,17 +37,19 @@ INICIO
 
     # Parte declarativa:
         numero: decimal
-        acumulador := 0.0
-        contador := 0
+        acumulador: decimal
+        contador: entero
         limite_superior := 10
 
     # Cuerpo del algoritmo
+        contador = 0
+        acumulador = 0.0
         MIENTRAS contador < limite_superior
             mostrarPorPantalla("Entre un número real por favor: ")
             leer numero
             acumulador = acumulador + numero
             contador = contador + 1
-        FIN_MIENTRAS
+        FINMIENTRAS
 
         mostrarPorPantalla("La suma total de los números es: ", acumulador)
 FIN
@@ -64,11 +67,13 @@ INICIO
 
     # Parte declarativa:
         numero: decimal
-        acumulador := 0.0
-        contador := 0
+        acumulador: decimal
+        contador: entero
         limite_superior := 10
 
     # Cuerpo del algoritmo
+        contador = 0
+        acumulador = 0.0
         REPETIR
             mostrarPorPantalla("Entre un número real por favor: ")
             leer numero

@@ -16,21 +16,21 @@ INICIO
         mostrarPorPantalla("El total de alumnos es: ")
         leer total_alumnos
 
-        SI total_alumnos < 30
+        SI total_alumnos < 30 ENTONCES
             coste = 4000
         SINO
-            SI total_alumnos >= 100
+            SI total_alumnos >= 100 ENTONCES
                 coste = 65 * total_alumnos
-            FIN_SI
+            FINSI
 
-            SI total_alumnos >= 50 y total_alumnos <= 99
+            SI total_alumnos >= 50 y total_alumnos <= 99 ENTONCES
                 coste = 70 * total_alumnos
-            FIN_SI
+            FINSI
 
-            SI total_alumnos >= 30 y total_alumnos <= 49
+            SI total_alumnos >= 30 y total_alumnos <= 49 ENTONCES
                 coste = 95 * total_alumnos
-            FIN_SI
-        FIN_SI
+            FINSI
+        FINSI
 
         mostrarPorPantalla("El total a pagar por la renta del autobús es: ", coste)
 FIN

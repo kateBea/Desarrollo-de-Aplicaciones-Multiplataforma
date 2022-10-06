@@ -17,9 +17,9 @@ INICIO
         mostrarPorPantalla("Por favor entre el total de lápices: ")
         leer total_lapices
 
-        SI total_lapices >= treshold
+        SI total_lapices >= treshold ENTONCES
             mostrarPorPantalla("Usted deberá pagar un total de €", total_lapices * coste_reducido)
         SINO
             mostrarPorPantalla("Usted deberá pagar un total de €", total_lapices * coste_normal)
-        FIN_SI
+        FINSI
 FIN

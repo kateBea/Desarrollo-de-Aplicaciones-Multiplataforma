@@ -1,4 +1,4 @@
-AlgoritmoEjercicio1
+AlgoritmoEjercicio6
 
 INICIO
     # Fecha:			28 Septiembre 2022
@@ -16,20 +16,19 @@ INICIO
         precio_total: decimal
 
     # Cuerpo del algoritmo
+        precio_total = 0
         mostrarPorPantalla("Entra el total de personas")
         leer total_personas
 
-        SI total_personas < lim_inf
-            precio_total = precio_normal * total_personas
-        FIN_SI
-
-        SI total_personas > lim_inf y total_personas <= lim_sup
+        SI total_personas > lim_inf y total_personas <= lim_sup ENTONCES
             precio_total = (precio_normal - 10) * total_personas
-        FIN_SI
-
-        SI total_personas > lim_sup
-            precio_total = (precio_normal - 20) * total_personas
-        FIN_SI
+        SINO
+            SI total_personas < lim_inf ENTONCES
+                precio_total = precio_normal * total_personas
+            SINO
+                precio_total = (precio_normal - 20) * total_personas
+            FINSI
+        FINSI
 
         mostrarPorPantalla("El precio total a pagar es de: ", precio_total)
 FIN

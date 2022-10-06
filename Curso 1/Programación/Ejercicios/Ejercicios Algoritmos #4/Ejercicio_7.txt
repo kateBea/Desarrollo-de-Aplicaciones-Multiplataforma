@@ -3,35 +3,43 @@ AlgoritmoEjercicio7
 INICIO
     # Fecha:			28 Septiembre 2022
     # Autor:			Hugo Pelayo
-    # Descripción:      Este programa 
+    # Descripción:      Este programa calcula el precio de uva
+                        acorde con la polític de la asociación de vincultores
+                        y muestra por pantalla el precio total de una ración
 
     # Parte declarativa:
+        precioATipo1 := 0.20
+        precioATipo2 := 0.30
+
+        precioBTipo1 := -0.30
+        precioBTipo2 := -0.50
+
         tipo: caracter
         tam: entero
-        total_unidades: entero
+        totalTunidades: entero
         ganancias: decimal
 
     # Cuerpo del algoritmo
         mostrarPorPantalla("Entre el total de unidades de venta: ")
-        leer total_unidades
+        leer totalTunidades
         mostrarPorPantalla("Entre el tipo de unidades: ")
         leer tipo
         mostrarPorPantalla("Entre el tamaño de las unidades: ")
         leer tam
 
-        SI tipo == 'A' y tam == 1
-            mostrarPorPantalla("Las ganancias seran de: ", 1.20 * total_unidades)
-        FIN_SI
+        SI tipo == 'A' ENTONCES
+            SI tam == 1 ENTONCES
+                mostrarPorPantalla("Las ganancias seran de: ", precioATipo1 * totalTunidades)
+            SINO
+                mostrarPorPantalla("Las ganancias seran de: ", precioATipo2 * totalTunidades)
+            FINSI
+        FINSI
 
-        SI tipo == 'A' y tam == 2
-            mostrarPorPantalla("Las ganancias seran de: ", 1.30 * total_unidades)
-        FIN_SI
-
-        SI tipo == 'B' y tam == 1
-            mostrarPorPantalla("Las ganancias seran de: ", (1 - 0.30) * total_unidades)
-        FIN_SI
-
-        SI tipo == 'B' y tam == 2
-            mostrarPorPantalla("Las ganancias seran de: ", (1 - 0.50) * total_unidades)
-        FIN_SI
+        SI tipo == 'B' ENTONCES
+            SI tam == 1 ENTONCES
+                mostrarPorPantalla("Las ganancias seran de: ", precioBTipo1 * totalTunidades)
+            SINO
+                mostrarPorPantalla("Las ganancias seran de: ", precioBTipo2 * totalTunidades)
+            FINSI
+        FINSI
 FIN

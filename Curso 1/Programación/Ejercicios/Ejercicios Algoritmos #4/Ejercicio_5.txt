@@ -4,8 +4,8 @@ INICIO
     # Fecha:			28 Septiembre 2022
     # Autor:			Hugo Pelayo
     # Descripción:      Este programa determina, de tres números
-                        introducidos por el usuario, el más grande y lo imrprime por
-                        pantalla
+                        introducidos por el usuario, el más grande 
+                        y lo imrprime por pantalla
 
     # Parte declarativa:
         numero1: decimal
@@ -13,24 +13,24 @@ INICIO
         numero3: decimal
 
     # Cuerpo del algoritmo
-        mostrarPorPantalla("Entre el valor d numero #1: ")
+        mostrarPorPantalla("Entre el valor del numero #1: ")
         leer numero1
-        mostrarPorPantalla("Entre el valor d numero #2: ")
+        mostrarPorPantalla("Entre el valor del numero #2: ")
         leer numero2
-        mostrarPorPantalla("Entre el valor d numero #3: ")
+        mostrarPorPantalla("Entre el valor del numero #3: ")
         leer numero3
 
-        SI numero1 > numero2
-            SI numero1 > numero3
+        SI numero1 > numero2 ENTONCES
+            SI numero1 > numero3 ENTONCES
                 mostrarPorPantalla("El más grande es: ", numero1)
             SINO
                 mostrarPorPantalla("El más grande es: ", numero3)
-            FIN_SI
+            FINSI
         SINO
-            SI numero2 > numero3
+            SI numero2 > numero3 ENTONCES
                 mostrarPorPantalla("El más grande es: ", numero2)
             SINO
                 mostrarPorPantalla("El más grande es: ", numero3)
-            FIN_SI
-        FIN_SI
+            FINSI
+        FINSI
 FIN
