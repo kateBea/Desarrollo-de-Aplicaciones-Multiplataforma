@@ -1,0 +1,55 @@
+- LEER 50 NUMEROS
+- MOSTRAR EL MÍNIMO
+- MOSTRAR EL MÁXIMO
+- MOSTRAR LA MEDIA
+- MOSTRAR EN ORDEN INVERSO AL INTRODUCIDO
+- CAMBIAR LOS PARES POR UN CERO
+- MOSTRAR EL VECTOR MODIFICADO
+
+AlgorithmoEjercicioVectores
+
+INICIO
+    # Parte declarativa
+        totalNumeros := 50
+        reales: decimal[totalNumeros]
+
+        minimo: decimal
+        maximo: decimal
+        average: decimal
+
+    # Cuerpo del algoritmo
+        average = 0
+        mostrarPorPantalla("Porfavor introduzaca " , totalNumeros, " numeros: ")
+
+        leer reales[0]
+        maximo = reales[0]
+        minimo = reales[0]
+
+        DESDE indice = 1 HASTA totalNumeros - 1 HACER
+            SI reales[indice] < minimo ENTONCES
+                minimo = reales[indice]
+            FINSI
+
+            SI reales[indice] > maximo ENTONCES
+                maximo = reales[indice]
+            FINSI
+
+            average = average + reales[indice]
+            leer reales[indice]
+
+        mostrarPorPantalla("El valor mínimo es: ", minimo)
+        mostrarPorPantalla("El valor máximo es: ", maximo)
+        mostrarPorPantalla("El valor de la media es: ", average / totalNumeros)
+
+        DESDE indice = totalNumeros - 1 HASTA 0 HACER
+            mostrarPorPantalla(reales[indice])
+
+            SI reales[indice] % 2 == 0
+                reales[indice] = 0
+            FINSI
+
+        DESDE indice = 0 HASTA totalNumeros - 1 HACER
+            mostrarPorPantalla(reales[indice])
+
+
+FIN
