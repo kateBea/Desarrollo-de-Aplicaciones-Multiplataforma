@@ -8,7 +8,7 @@
 
 AlgorithmoEjercicioVectores
 
-INICI
+INICIO
     # Parte declarativa
         totalNumeros := 50
         reales: decimal[totalNumeros]
