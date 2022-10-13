@@ -1,0 +1,3 @@
+[main eeae7b2] Some changes from local folder ...
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 loginfo.txt
