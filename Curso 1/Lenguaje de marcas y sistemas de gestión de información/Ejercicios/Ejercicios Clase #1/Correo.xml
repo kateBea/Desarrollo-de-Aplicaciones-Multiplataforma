@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mail>
+    <marco> Sección Marco </marco>
+    <procedencia> Correo de procedencia </procedencia>
+    <destinatario> Correo destino </destinatario>
+    <asunto> Asunto mensaje </asunto>
+    <mensaje>
+        <contenido>
+            Bla bla bla bla
+            bla bla bla bla ...
+        </contenido>
+    </mensaje>
+
+    <botones>
+        <adjuntar_fichero> Botón adjuntar fichero </adjuntar_fichero>
+        <insertar_enlace> Botón insertar enlace </insertar_enlace>
+        <insertar_firma> Botón insertar firma </insertar_firma>
+    </botones>
+</mail>

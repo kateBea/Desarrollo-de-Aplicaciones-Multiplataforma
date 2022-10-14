@@ -1,0 +1,14 @@
+html {
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+}
+
+p {
+  color: black;
+  width: 640px;
+}
+
+img {
+    width: 640px;
+    height: 480;
+}
