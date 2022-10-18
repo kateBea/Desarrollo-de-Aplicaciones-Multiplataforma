@@ -1,0 +1,36 @@
+AlgoritmoEjercicio7
+
+INICIO
+    # Fecha:			18 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa almacena comprueba si dos vectores almacenados en
+                        memoria contienen los mismos elementos en todas las posiciones
+
+    # Parte declarativa:
+        diferentes: entero
+        index: entero
+
+    # Cuerpo del algoritmo
+        tamanyoM = size(M)
+        tamanuoN = size(N)
+
+        SI tamanuoN <> tamanyoM ENTONCES
+            mostrarPorPantalla("M y N no pueden ser iguales con tamaño diferente...")
+        SINO
+            diferentes = 0
+            index = 0
+
+            REPETIR
+                SI M[index] <> N[index] ENTONCES
+                    diferentes = diferentes + 1
+                FINSI
+            HASTA (diferentes <> 0)
+
+            SI diferentes == 0 ENTONCES
+                mostrarPorPantalla("Ambos vectores son iguales (:")
+            SINO    
+                mostrarPorPantalla("Los vectores son diferentes...")
+            FINSI
+        FINSI
+FIN
+

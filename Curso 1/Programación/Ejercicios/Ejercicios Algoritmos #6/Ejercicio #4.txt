@@ -1,0 +1,32 @@
+AlgoritmoEjercicio4
+
+INICIO
+    # Fecha:			17 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa almacena 500 números, y el almacena el cuadrado
+                        de estos en otro vector y muestra el resultado por pantalla
+
+    # Parte declarativa:
+        totalElementos := 500
+        original[totalElementos]: decimal
+        salida[totalElementos]: decimal
+        anguloEnGrados: decimal
+
+    # Cuerpo del algoritmo
+        mostratPorPantalla("Rellenando vector original...")
+
+        DESDE index = 1 HASTA totalElementos - 1
+            original[index] = tangente(anguloEnGrados)
+            salida[index] = original[index]
+
+        mostratPorPantalla("Elementos del vector original: ")
+        DESDE index = 1 HASTA totalElementos - 1
+            mostratPorPantalla(numeros[index])
+
+        mostratPorPantalla("Elementos del vector con los datos modificados: ")
+        DESDE index = 1 HASTA totalElementos - 1
+            mostratPorPantalla(numeros[index])
+
+        
+FIN
+

@@ -1,0 +1,27 @@
+AlgoritmoEjercicio2
+
+INICIO
+    # Fecha:			17 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa suma los elementos que se encuentran en los mismos índices 
+                        de un par de vectores del mismo tamaño, almacena el resultado en un tercer vectores
+                        y lo imprime por pantalla
+
+    # Parte declarativa:
+        longitudVectores := 45
+        A[longitudVectores]: decimal
+        B[longitudVectores]: decimal
+        C[longitudVectores]: decimal
+
+    # Cuerpo del algoritmo
+        mostraPorPantalla("Rellenando vectores...")
+
+        DESDE index = 0 HASTA longitudVectores - 1 HACER
+            A[index] = index * index
+            B[index] = sqrt(index)
+        
+            C[index] = A[index] + B[index]
+            mostraPorPantalla("Valor [", C[index], " en índice: ", index)
+        
+FIN
+

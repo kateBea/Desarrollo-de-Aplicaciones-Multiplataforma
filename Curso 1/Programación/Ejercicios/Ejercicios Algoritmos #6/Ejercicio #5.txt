@@ -1,0 +1,51 @@
+AlgoritmoEjercicio5
+
+INICIO
+    # Fecha:			17 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa lee una secuencia de números e indica cuales son ceros,
+                        negativos y positivos. A parte, muestra por pantalla la suma de los positivos  
+                        y negativos
+
+    # Parte declarativa:
+        totalElementos := 300
+        original[totalElementos]: decimal
+        sumaPositivos: decimal
+        sumaNegativos: decimal
+        totalPositivos: entero
+        totalNegativos: entero
+        totalCeros: entero
+
+    # Cuerpo del algoritmo
+        sumaPositivos = 0
+        sumaNegativos = 0
+
+        totalPositivos = 0
+        totalNegativos = 0
+        totalCeros = 0
+
+        mostratPorPantalla("Entroduzca una secuencia de 300 números por favor: ")
+        DESDE index = 1 HASTA totalElementos - 1
+            mostratPorPantalla("Número #", index, ": ")
+            leer original[index]
+
+            SI original[index] == 0 ENTONCES
+                totalCeros = totalCeros + 1
+            SINO
+                SI original[index] > 0 ENTONCES
+                    totalPositivos = totalPositivos + 1
+                    sumaPositivos = sumaPositivos + 1
+                SINO
+                    totalNegativos = totalNegativos + 1
+                    sumaNegativos = sumaNegativos + 1
+                FINSI
+            FINSI
+
+        mostratPorPantalla("Total positivos: ", totalPositivos)
+        mostratPorPantalla("Suma positivos: ", sumaPositivos)
+
+        mostratPorPantalla("Total negativos: ", totalNegativos)
+        mostratPorPantalla("Suma negativos: ", sumaNegativos)
+        mostratPorPantalla("Total ceros: ", totalCeros)
+FIN
+

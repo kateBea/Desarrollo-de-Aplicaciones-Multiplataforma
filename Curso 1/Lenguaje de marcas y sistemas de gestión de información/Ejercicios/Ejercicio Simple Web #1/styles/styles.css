@@ -4,11 +4,11 @@ html {
 }
 
 p {
-  color: black;
-  width: 640px;
+    color: rgb(50, 66, 131);
+    width: 640px;
 }
 
 img {
     width: 640px;
-    height: 480;
+    height: 480px;
 }

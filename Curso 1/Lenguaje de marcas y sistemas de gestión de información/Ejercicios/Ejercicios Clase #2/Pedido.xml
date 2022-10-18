@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<Pedido>
+    <Nombre> bicicleta A2023 </Nombre>
+    <Dirección>
+        <Calle> barco </Calle>
+        <Numero> 4 </Numero>
+        <Piso> tercer piso </Piso>
+        <Puerta> A </Puerta>
+    </Dirección>
+    <Fecha_entrega>
+        <Dia> 19 </Dia>
+        <Mes> 5 </Mes>
+        <Anyo> 2000 </Anyo>
+    </Fecha_entrega>
+</Pedido>

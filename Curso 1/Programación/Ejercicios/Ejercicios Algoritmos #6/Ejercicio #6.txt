@@ -1,0 +1,23 @@
+AlgoritmoEjercicio6
+
+INICIO
+    # Fecha:			18 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa almacena 150 números y los guarda en otro vector
+                        en orden inverso
+
+    # Parte declarativa:
+        size := 150
+        original[size]: decimal
+        inverso[size]: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Introduzca 150 números por favor: ")
+        DESDE index = 0 HASTA size - 1 HACER
+            leer original[index]
+            inverso[(size - 1) - index] = original[index]
+
+        DESDE index = 0 HASTA size - 1
+            mostrarPorPantalla("índice [", index, "] = ", inverso[index])
+FIN
+

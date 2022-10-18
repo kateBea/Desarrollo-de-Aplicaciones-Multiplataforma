@@ -1,0 +1,33 @@
+AlgoritmoEjercicio1
+
+INICIO
+    # Fecha:			17 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa calcula el promedio de 50 valores de un vector y
+                        y cuántos de sus elementos son mayores que el promedio
+
+    # Parte declarativa:
+        totalElementos := 50
+        numeros[totalElementos]: decimal
+        totalMayoresPromedio: entero
+        promedio: decimal
+
+    # Cuerpo del algoritmo
+        promedio = 0
+        totalMayoresPromedio = 0
+        mostrarPorPantalla("Escriba una serie de números reales: ")
+        DESDE index = 0 HASTA totalElementos - 1 HACER
+            leer numeros[index]
+            promedio = promedio + numeros[index]
+
+        promedio = promedio / totalElementos
+        DESDE index = 0 HASTA totalElementos - 1 HACER
+            SI numeros[index] > promedio ENTONCES
+                mostrarPorPantalla(numeros[index], " es mayor que promedio ",  " con índice: ", index)
+                totalMayoresPromedio = totalMayoresPromedio + 1
+            FINSI
+
+        mostrarPorPantalla("Total de números mayores que el promedio: ", totalMayoresPromedio)
+
+FIN
+

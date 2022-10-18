@@ -1,0 +1,74 @@
+
+ALGORITMO EjemploUsoVectores
+# Ejercicio pide 50 numeros y hay que mostrar 
+# mayor, menos, media, en orden inverso, 
+# sustituir pares por cero e imprimir como queda vector
+
+INICIO
+   -- PARTE DECLARATIVA
+   numeros[50]: entero
+   i: entero
+   suma_total: entero
+   menor, mayor: entero
+   
+   MAX_NUMEROS=50
+
+   -- CUERPO ALGORITMO
+
+   #inicializamos variables
+  suma_total=0
+
+   #rellenamos el vector
+   DESDE i=0 HASTA MAX_NUMEROS-1
+     mostrar ("Escribre el nº", i, "por favor:")
+     leer (numeros[i]
+   FINDESDE
+
+   
+
+   #A continuación, recorremos vector para 
+   #calcular mayor, menor y media
+
+   mayor= numeros[0] #suponemos que el nº mayor será el de la primera posicion 
+   menor= numeros[0] #suponemos que el nº menor será el de la primera posicion
+   suma_total=0
+
+   DESDE i=0 HASTA NUM_MAX-1   #inicializo en 1 pq no hace falta comparar pos0
+
+	#comprobar el nº mayor
+	SI numeros[i] > mayor ENTONCES
+		mayor=numeros[i]
+	FINSI
+
+
+	#comprobar el nº menor
+	SI numeros[i] < menor ENTONCES
+		menor=numeros[i]
+	FINSI
+
+	#vamos sumando los números
+	suma_total = suma_total + numeros[i]
+
+   FINDESDE
+   # Mostramos el resultado
+   mostrar_pantalla ("El nº mayor en el vector es: ", mayor)
+   mostrar_pantalla ("El nº menor en el vector es: ", menor)
+   mostrar_pantalla ("La media de los números del vector es: ", suma_total/NUM_MAX)
+
+
+   # Mostramos el vector en orden inverso
+   mostrar_pantalla ("Los numeros en orden inverso son")
+   DESDE i= MAX_NUMEROS-1 HASTA 0 [salto -1]
+	mostrar_pantalla ("Numero: ", numeros[i])
+   FINDESDE
+
+   #Recorrer el vector, si el nº es par asignamos un 0 y mostramos
+   DESDE i=0 HASTA MAX_NUMEROS-1
+	#un num es par si el resto de dividir entre 2 nos da 0
+        SI resto(numeros[i])==0 ENTONCES #es par
+		numeros[i]=0
+	FINSI
+	Mostrar_pantalla ("Numero: ", numeros[i])
+   FINDESDE 	
+
+FIN
