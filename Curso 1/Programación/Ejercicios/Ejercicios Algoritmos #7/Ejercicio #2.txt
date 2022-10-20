@@ -1,0 +1,13 @@
+AlgoritmoEjercicio1
+
+INICIO
+    # Fecha:			20 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa
+
+    # Parte declarativa:
+
+
+    # Cuerpo del algoritmo
+
+FIN

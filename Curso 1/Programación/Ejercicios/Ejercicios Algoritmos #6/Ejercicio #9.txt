@@ -1,0 +1,38 @@
+AlgoritmoEjercicio9
+
+INICIO
+    # Fecha:			19 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa busca un real aleatorio en
+                        en un vector de números no ordenado
+
+    # Parte declarativa:
+    size := 80
+        reales[size]: decimal
+        target: decimal
+        rangoInferior :=  -1024
+        rangoSuperior := 1024
+        index: entero
+        posicion: entero
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Inicializando vector...")
+        DESDE indice = 0 HASTA size - 1 HACER
+            reales[indice] = aleatorio(rangoInferior, rangoSuperior)
+
+        index = 0
+        posicion = -1
+        target = aleatorio(rangoInferior, rangoSuperior)
+        REPETIR
+            SI reales[index] == target ENTONCES
+                posicion = index
+            FINSI
+            ++index
+        HASTA (index >= size y target == reales[index])
+
+        SI posicion == -1 ENTONCES
+            mostrarPorPantalla("NO")
+        SINO
+            mostrarPorPantalla("Elemento [", target, "] encontrado en índice: ", posicion)
+        FINSI
+FIN

@@ -1,0 +1,158 @@
+AlgoritmoEjercicio1
+
+PROCEDIMIENTO lecturaDeDatos(VAR listaNumeros: array, tamanyo: entero)
+INICIO
+    # Parte declarativa
+
+
+    # Cuerpo algoritmo
+    mostrarPorPantalla("Por favor entre cien números naturales como mucho...")
+    DESDE index = 0 HASTA tamanyo - 1 HACER
+        leer listaNumeros[index]
+    
+FIN
+
+PROCEDIMIENTO imprimirDatos(VAR listaNumeros: array, tamanyo: entero)
+INICIO
+    # Parte declarativa
+
+
+    # Cuerpo algoritmo
+        DESDE index = 0 HASTA tamanyo - 1 HACER
+        mostrarPorPantalla(listaNumeros[index], " ")
+    
+FIN
+
+PROCEDIMIENTO calcularMediaAritmetica(VAR listaNumeros: array, tamanyo: entero): decimal
+INICIO
+    # Parte declarativa
+    media: decimal
+
+    # Cuerpo algoritmo
+    SI tamanyo > 0 ENTONCES
+        DESDE index = 0 HASTA tamanyo - 1 HACER
+            media = media + listaNumeros[index]
+    FINSI
+
+    media = media / tamanyo
+    RETORNAR media
+    
+FIN
+
+PROCEDIMIENTO max(VAR listaNumeros: array, tamanyo: entero): decimal
+INICIO
+    # Parte declarativa
+    max: decimal
+
+    # Cuerpo algoritmo
+    SI tamanyo > 0 ENTONCES
+        max = listaNumeros[0]
+        DESDE index = 1 HASTA tamanyo - 1 HACER
+            SI max < listaNumeros[index]
+                max = listaNumeros[index]
+    FINSI
+    
+    RETORNAR max
+FIN
+
+PROCEDIMIENTO min(VAR listaNumeros: array, tamanyo: entero): decimal
+INICIO
+    # Parte declarativa
+    min: decimal
+
+    # Cuerpo algoritmo
+    SI tamanyo > 0 ENTONCES
+        min = listaNumeros[0]
+        DESDE index = 1 HASTA tamanyo - 1 HACER
+            SI min > listaNumeros[index]
+                min = listaNumeros[index]
+    FINSI
+    
+    RETORNAR min
+    
+FIN
+
+PROCEDIMIENTO maxOccs(VAR listaNumeros: array, tamanyo: entero, VAR ocs: entero): decimal
+INICIO
+    # Parte declarativa
+    matCounter[tamanyo, 3]: decimal
+    vectOcurrencias[tamanyo]: entero
+    indiceVector: entero
+
+    # Cuerpo algoritmo
+    SI tamanyo > 0 ENTONCES
+        ocs = 0
+        indiceVector = 0
+
+        # inicializar matriz
+        DESDE index = 0 HASTA tamanyo HACER
+                matCounter[index, 0] = listaNumeros[indiceVector]
+                matCounter[index, 1] = 0
+                matCounter[index, 3] = index
+
+                indiceVector = indiceVector + 1
+
+        DESDE index = 0 HASTA tamanyo HACER
+                vectOcurrencias[matCounter[index, 3]] = vectOcurrencias[matCounter[index, 3]] + 1
+
+                SI vectOcurrencias[matCounter[index, 3]] > ocs ENTONCES
+                    ocs = vectOcurrencias[matCounter[index, 3]]
+                FINSI
+    FINSI
+
+FIN
+
+PROCEDIMIENTO main(args: cadena)
+INICIO
+    # Fecha:			20 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa
+
+    # Parte declarativa:
+    maxNumeros := 100
+    numeros[maxNumeros]: decimal
+    opcion: entero
+    mediaAritmetica: decimal
+    mayor: decimal
+    menor: decimal
+    masOcurrente: decimal
+    ocurrencias: entero
+
+    # Cuerpo del algoritmo
+    mostrarPorPantalla("Por favor, seleccione una de las opciones [introducir índice]")
+    mostrarPorPantalla("1. Leer datos.")
+    mostrarPorPantalla("2. Imprimir datos.")
+    mostrarPorPantalla("3. Calcular media aritmética.")
+    mostrarPorPantalla("4. Calcular número mayor.")
+    mostrarPorPantalla("5. Calcular múmero menor.")
+    mostrarPorPantalla("6. Calcular e número que más se repite y cuántas veces se repite")
+    mostrarPorPantalla("7. Salir de la aplicación.")
+
+    REPETIR
+        SI opcion == 1 ENTONCES
+            lecturaDeDatos(numeros, size)
+        FINSI
+
+        SI opcion == 2 ENTONCES
+            imprimirDatos(numeros, size)
+        FINSI
+
+        SI opcion == 3 ENTONCES
+            mediaAritmetica = calcularMediaAritmetica(numeros, size)
+        FINSI
+
+        SI opcion == 4 ENTONCES
+            mayor = max(numeros, size)
+        FINSI
+
+        SI opcion == 5 ENTONCES
+            menor = min(numeros, size)
+        FINSI
+
+        SI opcion == 6 ENTONCES
+            masOcurrente = maxOccs(numeros, size, ocurrencias)
+        FINSI
+
+        leer opcion
+    HASTA (opcion == 7)
+FIN

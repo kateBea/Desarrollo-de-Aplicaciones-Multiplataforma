@@ -1,0 +1,29 @@
+AlgoritmoEjercicio8
+
+INICIO
+    # Fecha:			19 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa determina si una secuencia de números reales 
+                        está ordenada y muestra por pantalla "SÍ" si este es el caso,
+                        "NO" en caso contrario
+
+    # Parte declarativa:
+        size := 100
+        indice: entero
+
+    # Cuerpo del algoritmo
+    # Se asume el vector ya está inicializado con números reales...
+
+    indice = -1
+    REPETIR
+        ++indice
+        SI A[indice] > A[indice + 1] ENTONCES
+            mostrarPorPantalla("NO")
+            indice = -1
+        FINSI
+    HASTA (indice >= size - 1 y A[indice] > A[indice + 1])
+
+    SI indice <> -1 ENTONCES
+        mostrarPorPantalla("SI")
+
+FIN

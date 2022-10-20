@@ -1,0 +1,26 @@
+AlgoritmoEjercicio10
+
+INICIO
+    # Fecha:			19 Octubre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa multiplica los elementos de dos vectores
+                        , guarda el resultado en un tercer vector y lo imprime
+                        por pantalla
+
+    # Parte declarativa:
+        size := 20
+        A[size]: decimal
+        B[size]: decimal
+        C[size]: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Por favor escriba un par de reales por línea para rellenar los vector A y B...")
+
+        DESDE index = 0 HASTA size - 1 HACER
+            leer A[index]
+            leer B[index]
+            C[index] = A[index] * B[size - 1 - index]
+
+        DESDE index = 0 HASTA size - 1 HACER
+            mostrarPorPantalla("Elemento #", index+1, " de C es: ", C[index])
+FIN
