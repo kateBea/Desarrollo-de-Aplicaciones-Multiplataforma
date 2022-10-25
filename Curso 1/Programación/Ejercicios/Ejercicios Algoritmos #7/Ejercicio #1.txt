@@ -1,105 +1,185 @@
 AlgoritmoEjercicio1
 
-PROCEDIMIENTO lecturaDeDatos(VAR listaNumeros: array, tamanyo: entero)
+FUNCION lecturaDeDatos(VAR listaNumeros: array): entero
 INICIO
-    # Parte declarativa
+# Este procedimiento lee una secuencia de números del usuario
+# y los guarda en el vector que se pasa como parámetro. Retorna el 
+# número de datos válidos entrados por el usuario
 
+    # Parte declarativa
+    limite: entero
+    correcto: buleano
 
     # Cuerpo algoritmo
-    mostrarPorPantalla("Por favor entre cien números naturales como mucho...")
-    DESDE index = 0 HASTA tamanyo - 1 HACER
+    mostrarPorPantalla("¿Cuántos datos desea entrar? ")
+    mostrarPorPantalla("Entre ", limite, " números reales por favor: ")
+
+    REPETIR
+    # validar número de datos
+
+        leer limite
+        correcto = limite >= 0 o limite <= maxNumeros
+        SI limite < 0 o limite > maxNumeros ENOTNCES
+            mostrarPorPantalla("Por favor introduzca un número válido de elementos [0, 100)")
+        FINSI
+    HASTA (correcto)
+
+    DESDE index = 0 HASTA limite - 1 HACER
         leer listaNumeros[index]
-    
+    FINDESDE
+
+    RETORNAR limite
 FIN
 
-PROCEDIMIENTO imprimirDatos(VAR listaNumeros: array, tamanyo: entero)
+PROCEDIMIENTO imprimirDatos(listaNumeros: array, tamanyo: entero)
 INICIO
+# Este procedimiento muestra por pantalla todos los elementos
+# de un vector. tamanyo es el número de elementos válidos del array
+
     # Parte declarativa
 
 
     # Cuerpo algoritmo
         DESDE index = 0 HASTA tamanyo - 1 HACER
-        mostrarPorPantalla(listaNumeros[index], " ")
+            mostrarPorPantalla(listaNumeros[index], " ")
+        FINDESDE
     
 FIN
 
-PROCEDIMIENTO calcularMediaAritmetica(VAR listaNumeros: array, tamanyo: entero): decimal
+PROCEDIMIENTO calcularMediaAritmetica(listaNumeros: array, tamanyo: entero)
 INICIO
+# Este función calcula la media aritmética de una secuencia de
+# números reales. tamanyo es el número de elementos válidos del array
+
     # Parte declarativa
     media: decimal
 
     # Cuerpo algoritmo
-    SI tamanyo > 0 ENTONCES
         DESDE index = 0 HASTA tamanyo - 1 HACER
             media = media + listaNumeros[index]
-    FINSI
+        FINDESDE
 
     media = media / tamanyo
     RETORNAR media
     
 FIN
 
-PROCEDIMIENTO max(VAR listaNumeros: array, tamanyo: entero): decimal
+FUNCION max(listaNumeros: array, tamanyo: entero): decimal
 INICIO
+# Esta función devuelve el índice en el vector del número del 
+# número mas grande de una secuencia guardada en un vector. 
+# tamanyo es el número de elementos válidos del array el array 
+# no puede estar vacío
+
     # Parte declarativa
     max: decimal
 
     # Cuerpo algoritmo
     SI tamanyo > 0 ENTONCES
-        max = listaNumeros[0]
+        max = 0
         DESDE index = 1 HASTA tamanyo - 1 HACER
-            SI max < listaNumeros[index]
-                max = listaNumeros[index]
+            SI listaNumeros[max] < listaNumeros[index] ENOTNCES
+                max = index
+            FINSI
+        FINDESDE
     FINSI
     
     RETORNAR max
 FIN
 
-PROCEDIMIENTO min(VAR listaNumeros: array, tamanyo: entero): decimal
+FUNCION min(listaNumeros: array, inicio: entero, fin: entero): decimal
 INICIO
+# Esta función devuelve el índice en el vector del número mas pequeño de una secuencia 
+# guardada en un vector entre los índices indicados, es decir,
+# el número más pequeño en el rango [inicio, fin] del array 
+
     # Parte declarativa
     min: decimal
 
     # Cuerpo algoritmo
     SI tamanyo > 0 ENTONCES
-        min = listaNumeros[0]
-        DESDE index = 1 HASTA tamanyo - 1 HACER
-            SI min > listaNumeros[index]
-                min = listaNumeros[index]
+        min = 0
+        DESDE index = inicio HASTA fin HACER
+            SI listaNumeros[min] > listaNumeros[index] ENTONCES
+                min = index
+            FINSI
+        FINDESDE
     FINSI
     
     RETORNAR min
     
 FIN
 
-PROCEDIMIENTO maxOccs(VAR listaNumeros: array, tamanyo: entero, VAR ocs: entero): decimal
+PROCEDIMIENTO ordenar(listaNumeros: array, tamanyo: entero)
 INICIO
+# Este procedimiento ordena de manera ascendente una serie de número reales
+# tamanyo es el número de elementos válidos del array
+
     # Parte declarativa
-    matCounter[tamanyo, 3]: decimal
-    vectOcurrencias[tamanyo]: entero
-    indiceVector: entero
+    minimo: decimal
+    auxiliar: decimal
 
     # Cuerpo algoritmo
     SI tamanyo > 0 ENTONCES
-        ocs = 0
-        indiceVector = 0
+        # asumimos que el mínimo está al principio del array
+        min = 0
+        DESDE index = 0 HASTA tamanyo - 1 HACER
+            minimo = min(listaNumeros, index, tamanyo - 1)
 
-        # inicializar matriz
-        DESDE index = 0 HASTA tamanyo HACER
-                matCounter[index, 0] = listaNumeros[indiceVector]
-                matCounter[index, 1] = 0
-                matCounter[index, 3] = index
-
-                indiceVector = indiceVector + 1
-
-        DESDE index = 0 HASTA tamanyo HACER
-                vectOcurrencias[matCounter[index, 3]] = vectOcurrencias[matCounter[index, 3]] + 1
-
-                SI vectOcurrencias[matCounter[index, 3]] > ocs ENTONCES
-                    ocs = vectOcurrencias[matCounter[index, 3]]
-                FINSI
+            # intercambio de valores
+            auxiliar = listaNumeros[index]
+            listaNumeros[index] = listaNumeros[min]
+            listaNumeros[min] = auxiliar
+        FINDESDE
     FINSI
 
+FIN
+
+PROCEDIMIENTO maxOccs(listaNumeros: array, tamanyo: entero, VAR ocs: entero)
+INICIO
+# Esta función encuentra el número con más repeticiones de una secuencia 
+# de números reales y el número de veces que aparece. tamanyo es el 
+# número de elementos válidos del array
+
+    # Parte declarativa
+    indiceMayor: entero
+    mayorOcs: entero
+    ocsActual: entero
+
+    # Cuerpo algoritmo
+    SI tamanyo > 0 ENTONCES
+        LLAMAR_A ordenar(listaNumeros, tamanyo)
+
+        # el mayor está al principio
+        indiceMayor = 0
+        mayorOcs = 0
+        ocsActual = 1
+
+        5 3 4 12 12 12
+        DESDE index = 0 HASTA tamanyo - 2 HACER
+            SI listaNumeros[index] <> listaNumeros[index + 1] ENTONCES
+
+                # actualiza el número que aparece más veces 
+                # sólo si hay uno que aparece más
+                SI ocsActual > mayorOcs ENTONCES
+                    indiceMayor = index
+                    mayorOcs = ocsActual
+                    ocsActual = 1
+                FINSI
+            SINO
+                ocsActual = ocsActual + 1
+
+                # tratamiento para el último elemento
+                SI index == tamanyo - 2 ENTONCES
+                    SI ocsActual > mayorOcs ENTONCES
+                        indiceMayor = index
+                        mayorOcs = ocsActual
+                        ocsActual = 1
+                    FINSI
+                FINSI
+            FINSI
+        FINDESDE
+    FINSI
 FIN
 
 PROCEDIMIENTO main(args: cadena)
@@ -110,49 +190,45 @@ INICIO
 
     # Parte declarativa:
     maxNumeros := 100
+    datosValidos: entero
     numeros[maxNumeros]: decimal
     opcion: entero
-    mediaAritmetica: decimal
-    mayor: decimal
-    menor: decimal
-    masOcurrente: decimal
-    ocurrencias: entero
 
     # Cuerpo del algoritmo
-    mostrarPorPantalla("Por favor, seleccione una de las opciones [introducir índice]")
-    mostrarPorPantalla("1. Leer datos.")
-    mostrarPorPantalla("2. Imprimir datos.")
-    mostrarPorPantalla("3. Calcular media aritmética.")
-    mostrarPorPantalla("4. Calcular número mayor.")
-    mostrarPorPantalla("5. Calcular múmero menor.")
-    mostrarPorPantalla("6. Calcular e número que más se repite y cuántas veces se repite")
-    mostrarPorPantalla("7. Salir de la aplicación.")
-
     REPETIR
+        mostrarPorPantalla("Seleccione opción [introducir índice]: ")
+        mostrarPorPantalla("1. Leer datos.")
+        mostrarPorPantalla("2. Imprimir datos.")
+        mostrarPorPantalla("3. Calcular media aritmética.")
+        mostrarPorPantalla("4. Calcular número mayor.")
+        mostrarPorPantalla("5. Calcular múmero menor.")
+        mostrarPorPantalla("6. Calcular e número que más se repite y cuántas veces se repite")
+        mostrarPorPantalla("7. Salir de la aplicación.")
+
+        leer opcion
+
         SI opcion == 1 ENTONCES
-            lecturaDeDatos(numeros, size)
+            datosValidos = lecturaDeDatos(numeros, datosValidos)
         FINSI
 
         SI opcion == 2 ENTONCES
-            imprimirDatos(numeros, size)
+            LLAMAR_A imprimirDatos(numeros, datosValidos)
         FINSI
 
         SI opcion == 3 ENTONCES
-            mediaAritmetica = calcularMediaAritmetica(numeros, size)
+            LLAMAR_A calcularMediaAritmetica(numeros, datosValidos)
         FINSI
 
         SI opcion == 4 ENTONCES
-            mayor = max(numeros, size)
+            mostrarPorPantalla("El mayor de todos es: ", numeros[max(numeros, datosValidos)])
         FINSI
 
         SI opcion == 5 ENTONCES
-            menor = min(numeros, size)
+            mostrarPorPantalla("El menor de todos es: ", numeros[min(numeros, 0, datosValidos - 1)])
         FINSI
 
         SI opcion == 6 ENTONCES
-            masOcurrente = maxOccs(numeros, size, ocurrencias)
+            LAMAR_A maxOccs(numeros, datosValidos)
         FINSI
-
-        leer opcion
     HASTA (opcion == 7)
 FIN

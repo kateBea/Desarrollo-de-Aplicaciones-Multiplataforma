@@ -1,0 +1,2 @@
+Enunciado 1
+En un centro de salud, un médico atiende a varios pacientes y cada paciente está asignado a un solo médico. Cada médico pasa consulta en una o varias salas. En cada sala pasan consulta varios médicos. Del médico interesa conocer sus datos personales y el año en que se colegió. De la sala interesa conocer su ubicación. Y del paciente, sus datos personales. Se desea conocer también el horario que tiene cada médico en cada sala.

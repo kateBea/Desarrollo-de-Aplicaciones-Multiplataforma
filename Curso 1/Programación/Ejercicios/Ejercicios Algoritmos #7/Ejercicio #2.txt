@@ -1,13 +1,148 @@
-AlgoritmoEjercicio1
+AlgoritmoEjercicio2
 
+PROCEDIMIENTO lecturaDeDatos(VAR listaAlumnos: array, VAR filas: entero, columnas: entero)
+INICIO
+# Este procedimiento lee una secuencia de de alumnos
+# y los guarda en una matriz que se pasa como parámetro.
+# filas es el números de filas válidos de la matriz.
+# por cada alumno se leerán los cinco datos (nombre, apellidos, edad, nota final)
+
+    # Parte declarativa
+    correcto: buleano
+
+    # Cuerpo algoritmo
+    mostrarPorPantalla("¿Cuántos alimnos desea entrar? (5 max.) ")
+
+    REPETIR
+    # validar número de datos
+
+        leer filas
+        correcto = filas >= 0 o filas <= maxAlumnos
+        SI filas < 0 o filas > maxAlumnos ENOTNCES
+            mostrarPorPantalla("Por favor introduzca un número válido de alumnos [0, 5]")
+        FINSI
+    HASTA (correcto)
+
+    DESDE index = 0 HASTA filas - 1 HACER
+    mostrarPorPantalla("Inroduzca los datos del alumno #", index + 1, ": ")
+        leer listaAlumnos[0] # nombre
+        leer listaAlumnos[1] # apellidos
+        leer listaAlumnos[2] # edad
+        leer listaAlumnos[3] # nota final
+    
+FIN
+
+PROCEDIMIENTO imprimirDatos(VAR listaAlumnos: array, filas: entero)
+INICIO
+# Este procedimiento muestra por pantalla la información de
+# una lista de alumnos. filas indica el número de filas válidas
+# de la matriz
+
+    # Parte declarativa
+
+
+    # Cuerpo algoritmo
+        DESDE index = 0 HASTA filas - 1 HACER
+            mostrarPorPantalla(listaNumeros[0], " ",
+                                listaNumeros[1], " ",
+                                listaNumeros[2], " ",
+                                listaNumeros[3], " ",)
+    
+FIN
+
+PROCEDIMIENTO calcularMediaAritmetica(VAR listaNumeros: array, tamanyo: entero): decimal
+INICIO
+    # Parte declarativa
+    
+
+    # Cuerpo algoritmo
+    
+    
+FIN
+
+PROCEDIMIENTO max(VAR listaNumeros: array, tamanyo: entero): decimal
+INICIO
+    # Parte declarativa
+
+
+    # Cuerpo algoritmo
+
+
+    
+FIN
+
+PROCEDIMIENTO min(VAR listaNumeros: array, tamanyo: entero): decimal
+INICIO
+    # Parte declarativa
+
+    # Cuerpo algoritmo
+    
+    
+FIN
+
+PROCEDIMIENTO maxOccs(VAR listaNumeros: array, tamanyo: entero, VAR ocs: entero): decimal
+INICIO
+    # Parte declarativa
+ 
+
+    # Cuerpo algoritmo
+    
+
+FIN
+
+PROCEDIMIENTO main(args: cadena)
 INICIO
     # Fecha:			20 Octubre 2022
     # Autor:			Hugo Pelayo
     # Descripción:      Este programa
 
     # Parte declarativa:
+    filas: entero
+    maxAlumnos := 5
+    alumnos[maxAlumnos, 4]
 
+    nombreBuscar: cadena de caracteres
+    apellidosBuscar: cadena de caracteres
 
     # Cuerpo del algoritmo
 
+    REPETIR
+        mostrarPorPantalla("Por favor, seleccione una de las opciones [introducir índice]")
+        mostrarPorPantalla("1. Leer datos de alumnos.")
+        mostrarPorPantalla("2. Imprimir datos de alumnos.")
+        mostrarPorPantalla("3. Buscar alumno [nombre y apellidos].")
+        mostrarPorPantalla("4. Calcular edad media.")
+        mostrarPorPantalla("5. Mostrar alumno con mejor nota.")
+        mostrarPorPantalla("6. Mostrar alumno con peor nota.")
+        mostrarPorPantalla("7. Salir de la aplicación.")
+
+        leer opcion
+
+        SI opcion == 1 ENTONCES
+            lecturaDeDatos(alumnos, filas)
+        FINSI
+
+        SI opcion == 2 ENTONCES
+            imprimirDatos(alumnos, filas)
+        FINSI
+
+        SI opcion == 3 ENTONCES
+            mostrarPorPantalla("Por favor introduzca el nombre y apellidos del alumno a buscar: ")
+            leer nombreBuscar
+            leer apellidosBuscar
+            LLAMAR_A mostrarMediaAritmetica(alumnos, filas, nombreBuscar, apellidosBuscar)
+        FINSI
+
+        SI opcion == 4 ENTONCES
+            LLAMAR_A mostraEdadMedia(alumnos, filas)
+        FINSI
+
+        SI opcion == 5 ENTONCES
+            LLAMAR_A mostraAlumnoMejorNota(alumnos, filas)
+        FINSI
+
+        SI opcion == 6 ENTONCES
+            LLAMAR_A mostraAlumnoPoerNota(alumnos, filas)
+        FINSI
+    HASTA (opcion == 7)
 FIN
