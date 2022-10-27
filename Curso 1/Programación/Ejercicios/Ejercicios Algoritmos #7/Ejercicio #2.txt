@@ -24,12 +24,12 @@ INICIO
     HASTA (correcto)
 
     DESDE index = 0 HASTA filas - 1 HACER
-    mostrarPorPantalla("Inroduzca los datos del alumno #", index + 1, ": ")
-        leer listaAlumnos[0] # nombre
-        leer listaAlumnos[1] # apellidos
-        leer listaAlumnos[2] # edad
-        leer listaAlumnos[3] # nota final
-    
+        mostrarPorPantalla("Inroduzca los datos del alumno #", index + 1, ": ")
+            leer listaAlumnos[0] # nombre
+            leer listaAlumnos[1] # apellidos
+            leer listaAlumnos[2] # edad
+            leer listaAlumnos[3] # nota final
+    FINDESDE
 FIN
 
 PROCEDIMIENTO imprimirDatos(VAR listaAlumnos: array, filas: entero)
@@ -43,51 +43,102 @@ INICIO
 
     # Cuerpo algoritmo
         DESDE index = 0 HASTA filas - 1 HACER
-            mostrarPorPantalla(listaNumeros[0], " ",
-                                listaNumeros[1], " ",
-                                listaNumeros[2], " ",
-                                listaNumeros[3], " ",)
+            mostrarPorPantalla(listaNumeros[index][0], " ",
+                                listaNumeros[index][1], " ",
+                                listaNumeros[index][2], " ",
+                                listaNumeros[index][3], " ",)
+        FINDESDE
     
 FIN
 
-PROCEDIMIENTO calcularMediaAritmetica(VAR listaNumeros: array, tamanyo: entero): decimal
+PROCEDIMIENTO buscarAlumno(listaAlumnos: array, filas: entero, nombre: cadena, apellidos: cadena)
 INICIO
+# Este procedimiento busca un alumno en listaAlumnos y muestra sus datos
+# por pantalla si lo encuentra, informa de que no existe en caso contrario
+
     # Parte declarativa
-    
+    indice: entero # indice del alumno que se busca
+    posicion: entero # indice para iterar sobre las filas de la matriz
+
 
     # Cuerpo algoritmo
+    indice = -1
+    posicion = 0
+    REPETIR
+        SI listaAlumnos[posicion][0] == nombre y listaAlumnos[posicion][1] == apellidos ENOTNCES
+            indice = posicion
+        FINSI
+
+        posicion = posicion + 1
+    HASTA(posicion < filas y indice <> - 1)
     
-    
+    SI indice == -1 ENOTNCES
+        mostrarPorPantalla("El alumno no existe :'(")
+    SINO
+        mostrarPorPantalla(listaAlumnos[posicion][0], " ", listaAlumnos[posicion][1], " ",
+                            listaAlumnos[posicion][2], " ", listaAlumnos[posicion][3])
+    FINSI
 FIN
 
-PROCEDIMIENTO max(VAR listaNumeros: array, tamanyo: entero): decimal
-INICIO
-    # Parte declarativa
+PROCEDIMIENTO mostraEdadMedia(listaAlumnos: array, filas: entero)
+# Este procedimiento muestra por pantalla la edad media de 
+# una lista de alumnos guardados en una matriz
 
+    # Parte declarativa
+    sumaEdades: decimal
 
     # Cuerpo algoritmo
+    DDESD index = 0 HASTA filas - 1 HACER
+        sumaEdades = sumaEdades + listaAlumnos[index][3]
+    FINDESDE
 
-
-    
+    mostrarPorPantalla("La edad media de los alumnos registrados es: ", sumaEdades / filas)    
 FIN
 
-PROCEDIMIENTO min(VAR listaNumeros: array, tamanyo: entero): decimal
+PROCEDIMIENTO mostraAlumnoMejorNota(listaAlumnos: array, filas: entero)
 INICIO
+# Este procedimiento muestra por pantalla el alumno con la mejor nota
+# de todos los alumnos registrados
+
     # Parte declarativa
+    maximaNota: decimal
+    indiceAlumnoConMaximaNota: entero
 
     # Cuerpo algoritmo
+    maximaNota = listaAlumnos[0][4]
+    indiceAlumnoConMaximaNota = 0
+    DESDE index = 1 HASTA filas - 1 HACER
+        SI listaAlumnos[index][3] > maximaNota ENTONCES
+            indiceAlumnoConMaximaNota = index
+            maximaNota = listaAlumnos[index][3]
+        FINSI
+    FINDESDE
     
-    
+    mostrarPorPantalla("El alumno con la mejor nota es: ", listaAlumnos[indiceAlumnoConMaximaNota][0], " "
+                        listaAlumnos[indiceAlumnoConMaximaNota][1])
 FIN
 
-PROCEDIMIENTO maxOccs(VAR listaNumeros: array, tamanyo: entero, VAR ocs: entero): decimal
+PROCEDIMIENTO mostraAlumnoPeorNota(listaAlumnos: array, filas: entero)
 INICIO
+# Este procedimiento muestra por pantalla el alumno con la peor nota
+# de todos los alumnos registrados
+
     # Parte declarativa
- 
+    minimaNota: decimal
+    indiceAlumnoConMinimaNota: entero
 
     # Cuerpo algoritmo
+    minimaNota = listaAlumnos[0][4]
+    indiceAlumnoConMinimaNota = 0
+    DESDE index = 1 HASTA filas - 1 HACER
+        SI listaAlumnos[index][3] < minimaNota ENTONCES
+            indiceAlumnoConMinimaNota = index
+            minimaNota = listaAlumnos[index][3]
+        FINSI
+    FINDESDE
     
-
+    mostrarPorPantalla("El alumno con la peor nota es: ", listaAlumnos[indiceAlumnoConMinimaNota][0], " "
+                        listaAlumnos[indiceAlumnoConMinimaNota][1])
 FIN
 
 PROCEDIMIENTO main(args: cadena)
@@ -130,7 +181,7 @@ INICIO
             mostrarPorPantalla("Por favor introduzca el nombre y apellidos del alumno a buscar: ")
             leer nombreBuscar
             leer apellidosBuscar
-            LLAMAR_A mostrarMediaAritmetica(alumnos, filas, nombreBuscar, apellidosBuscar)
+            LLAMAR_A buscarAlumno(alumnos, filas, nombreBuscar, apellidosBuscar)
         FINSI
 
         SI opcion == 4 ENTONCES
@@ -142,7 +193,7 @@ INICIO
         FINSI
 
         SI opcion == 6 ENTONCES
-            LLAMAR_A mostraAlumnoPoerNota(alumnos, filas)
+            LLAMAR_A mostraAlumnoPeorNota(alumnos, filas)
         FINSI
     HASTA (opcion == 7)
 FIN
