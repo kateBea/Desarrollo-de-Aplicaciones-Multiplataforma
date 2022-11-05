@@ -25,10 +25,10 @@ INICIO
 
     DESDE index = 0 HASTA filas - 1 HACER
         mostrarPorPantalla("Inroduzca los datos del alumno #", index + 1, ": ")
-            leer listaAlumnos[0] # nombre
-            leer listaAlumnos[1] # apellidos
-            leer listaAlumnos[2] # edad
-            leer listaAlumnos[3] # nota final
+            leer listaAlumnos[index][0] # nombre
+            leer listaAlumnos[index][1] # apellidos
+            leer listaAlumnos[index][2] # edad
+            leer listaAlumnos[index][3] # nota final
     FINDESDE
 FIN
 

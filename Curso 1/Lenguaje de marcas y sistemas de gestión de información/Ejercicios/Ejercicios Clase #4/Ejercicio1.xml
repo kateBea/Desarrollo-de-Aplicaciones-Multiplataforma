@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compra>
+    <pedido>
+        <cliente>
+            <nombre>Roberto</nombre>
+            <direccion>
+                <ciudad>Albacete</ciudad>
+                <calle>Plaza de la Duquesa</calle>
+                <numero>12</numero>
+                <codigo_postal>05020</codigo_postal>
+            </direccion>
+        </cliente>
+        <objeto>
+            <modelo>eléctrico</modelo>
+            <codigo>872-AA</codigo>
+            <precio>148.95 euros</precio>
+            <unidades>1</unidades>
+            <tipo>cortadora de césped</tipo>
+        </objeto>
+        <info_pedido>
+            <!-- Persona que recoge el pedido -->
+            <recogida>Alicia Abad</recogida>
+            <!-- Fecha de realización del pedido -->
+            <fecha_pedido> 
+                <dia>2</dia>
+                <mes>febrero</mes>
+                <anio>2012</anio>
+            </fecha_pedido>
+        </info_pedido>
+        <observaciones>urgente</observaciones>
+    </pedido>
+
+    <pedido>
+        <cliente>
+            <nombre>Roberto</nombre>
+            <direccion>
+                <ciudad>Madrid</ciudad>
+                <calle>General Ricardos</calle>
+                <numero>56</numero>
+                <codigo_postal>28055</codigo_postal>
+            </direccion>
+        </cliente>
+        <objeto>
+            <modelo></modelo>
+            <codigo>926-FH</codigo>
+            <precio>7.98 euros</precio>
+            <unidades>3</unidades>
+            <tipo>podadoras para los setos</tipo>
+        </objeto>
+        <info_pedido>
+            <!-- Persona que recoge el pedido -->
+            <recogida>Roberto</recogida>
+            <!-- Fecha de realización del pedido -->
+            <fecha_pedido> 
+                <dia>2</dia>
+                <mes>febrero</mes>
+                <anio>2012</anio>
+            </fecha_pedido>
+        </info_pedido>
+        <observaciones>urgente</observaciones>
+    </pedido>
+</compra>

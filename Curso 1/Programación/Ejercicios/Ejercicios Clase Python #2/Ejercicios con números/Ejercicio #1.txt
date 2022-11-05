@@ -1,0 +1,5 @@
+>>> a = 'b'                 'b'
+>>> a = a + 'b'             'bb'
+>>> a += 'a'                'bba'
+>>> a = a * 2 + 'b' * 3     'bbabba' + 'bbb' -> 'bbabbabbb'
+>>> a                       'bbabbabbb'
