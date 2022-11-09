@@ -1,0 +1,27 @@
+Dadas las declaraciones de variables:
+
+int a = 10; 
+int b = 2; 
+double d1 = 20.0; 
+double d2 = 3.0;
+
+Resolver las expresiones siguientes indicando resultado y tipo:
+a) a + b; 
+    evaluación: 12
+    tipo: entero (int)
+
+b) a * b; 
+    evaluación: 20
+    tipo: entero (int)
+
+c) d1 % d2; 
+    evaluación: 2
+    tipo: decimal (double)
+
+d) a > b;
+    evaluación: true
+    tipo: buleano (boolean)
+
+e) d1 == d2;
+    evaluación: false
+    tipo: buleano (boolean)

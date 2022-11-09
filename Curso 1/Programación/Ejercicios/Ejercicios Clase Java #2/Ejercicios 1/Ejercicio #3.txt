@@ -1,0 +1,10 @@
+¿Son correctos los siguientes identificadores?, en caso contrario indicar el porqué:
+
+a) Apellido-Uno -> (no válido): utilización de operador signo menos
+b) _apellido$Dos -> (válido)
+c) 4paredes -> (no válido): identificador empieza por un dígito
+d) final -> (no válido): uso de palabra clave
+e) Teléfono1 -> (válido)
+f) Recargo% -> (no válido): utilización de operador módulo
+g) Java’s -> (no válido): carácter (’) no válido
+h) $numeroProducto -> (válido)

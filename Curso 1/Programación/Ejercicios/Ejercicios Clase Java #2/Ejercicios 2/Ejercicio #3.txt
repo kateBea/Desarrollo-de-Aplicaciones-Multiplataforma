@@ -1,0 +1,34 @@
+Define estos tipos enumerados:
+
+a) Tipos de entradas para un museo, pueden ser: estudiante, 
+normal, senior, discapacitado o investigador.
+
+enum EntradasMuseo {
+    ESTUDIANTE,
+    NORMAL,
+    SENIOR,
+    DISCAPACITADO,
+    INVESTIGADOR,
+};
+
+b) Pizzas de un restaurante, pueden ser: margarita, barbacoa, 
+caprichosa, 4 quesos, vegetal o al gusto.
+
+enum Pizzas {
+    MARGARITA,
+    BARBACOA,
+    CAPRICHOSA,
+    CUATRO_QUESOS,
+    VEGETAL,
+    AL_GUSTO,
+};
+
+c) Tipo de alcance: local, comarcal, autonómico, nacional o internacional.
+
+enum TipoAlcance {
+    LOCAL,
+    COMARCAL,
+    AUTONOMICO,
+    NACIONAL,
+    INTERNACIONAL,
+};

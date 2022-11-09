@@ -1,0 +1,13 @@
+Dadas además de las anteriores, las declaraciones de variables:
+
+boolean verdad = true; 
+boolean falso = false; 
+boolean misterio = true;
+
+Resolver las expresiones siguientes indicando resultado:
+
+a) verdad && misterio;  -> true
+b) falso || misterio;   -> true
+c) !falso;              -> true
+d) !verdad;             -> false 
+e) (a < b) || falso;    -> false
