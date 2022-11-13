@@ -1,0 +1,32 @@
+1. LEER UN Nº Y MOSTRAR SU CUADRADO, REPETIR ESTE PROCESO HASTA QUE EL  USUARIO 
+INTRODUZCA UN NUMERO NEGATIVO.
+
+2. PEDIR NUMEROS AL USUARIO, INDICAR  SI ES PAR O IMPAR. SE PARA DE PEDIR NUMEROS  
+CUANDO INTRODUZCA UN CERO.
+
+3. PEDIR NUMS AL USUARIO HASTA QUE INTRODUZCA  NUM NEGATIVO. MOSTRAR CUÁNTOS NUMS 
+SE HAN INTRODUCIDO,   LA SUMA DE TODOS ELLOS Y EL PROMEDIO.
+
+4. PEDIR UN NUMERO N Y MOSTRAR TODOS LOS NUMEROS DEL 1 HASTA N.
+
+5. ESCRIBIR TODOS LOS NUMEROS DEL 100 AL 0 DE 7 EN 7.
+
+6. PEDIR 10 NUMEROS. MOSTRAR LA MEDIA DE LOS NUMEROS POSITIVOS  LA MEDIA DE LOS 
+NUMEROS NEGATIVOS Y LA CANTIDAD DE CEROS.
+
+7. PEDIR UN Nº DEL 0 AL 10 Y MOSTRAR SU TABLA DE MULTIPLICAR
+
+8. Una empresa que se dedica a la venta de desinfectantes  necesita un programa para 
+gestionar las facturas.  En cada factura figura: el código del artículo, la cantidad 
+vendida en litros y el precio por litro.
+
+    - Se pide de 5 facturas introducidas: Facturación total, cantidad en litros  
+    vendidos del artículo 1 y cuantas facturas se emitieron de más de 600 €.
+
+
+9. Igual que el anterior pero suponiendo que no se introduce el precio por litro. 
+Solo existen tres productos con precios:
+
+    1.- 0,6 €/litro, 2- 3 €/litro y 3- 1,25 €/litro.
+
+10. PEDIR UN NUMERO AL USUARIO E INDICAR SI ES UN NÚMERO PRIMO.
