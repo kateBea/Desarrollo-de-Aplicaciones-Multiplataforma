@@ -4,8 +4,11 @@ public class Ejercicio1 {
     public static int busquedaBinaria(char[] letras, char target, int limInf, int limSup) {
         int midle = (limInf + limSup) / 2;
         if (limSup > limInf) {
-            if (letras[midle] > target) return busquedaBinaria(letras, target, limInf, midle - 1);
-            if (letras[midle] < target) return busquedaBinaria(letras, target, midle + 1, limSup);
+            if (letras[midle] > target) 
+                return busquedaBinaria(letras, target, limInf, midle - 1);
+            if (letras[midle] < target) 
+                return busquedaBinaria(letras, target, midle + 1, limSup);
+
             return midle;
         }
 
@@ -33,7 +36,7 @@ public class Ejercicio1 {
             System.out.printf("Carácter [%c] encontrado en índice [%d]", letras[indice], indice);
         }
         else {
-            System.out.println("El carácter no existe");
+            System.out.println("El carácter no existe, debería estar en la posición [" + Math.abs(indice) + "]");
         }
 
         sc.close();
