@@ -1,0 +1,13 @@
+1. Programa en Java que pida al usuario 10 números y el método de 
+ordenación que desea. A continuación, mostrar números ordenados 
+según el algoritmo elegido. Puedes crear un menú con los 
+distintos algoritmos.
+
+2. Programa en Java que genere 10 números aleatorios entre el 0 
+y el 15. A continuación, se solicita un número al usuario y se 
+comprobará si dicho número está entre los generados de forma 
+aleatoria.
+
+3. Programa en Java que permita crear una matriz con las dimensiones 
+que el usuario indique. Podrá ser una matriz irregular, es decir, 
+que tenga 2 filas y para cada fila diferente número de columnas
