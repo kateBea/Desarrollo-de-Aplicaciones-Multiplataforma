@@ -6,10 +6,9 @@
  * Autor: Hugo Pelayo
  */
 
-import java.util.Arrays;
-
 public class Ejercicio4 {
     public static void main(String[] args) {
-        
+        String str = "Vamos a ver qué es lo que sale de este cambio de letras";
+
     }
 }

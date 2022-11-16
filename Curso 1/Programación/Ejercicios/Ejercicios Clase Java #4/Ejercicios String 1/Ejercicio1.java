@@ -5,10 +5,11 @@
  * Autor: Hugo Pelayo
  */
 
-import java.util.Arrays;
-
 public class Ejercicio1 {
     public static void main(String[] args) {
-        
+        String str = "Esta es una frase cualquiera";
+        System.out.println("String: " + str);
+        str = str.replace(" ", "");
+        System.out.println("String: " + str);
     }
 }

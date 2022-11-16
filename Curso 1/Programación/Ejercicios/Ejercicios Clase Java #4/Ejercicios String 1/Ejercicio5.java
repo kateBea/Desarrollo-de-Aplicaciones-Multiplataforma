@@ -10,6 +10,8 @@ import java.util.Arrays;
 
 public class Ejercicio5 {
     public static void main(String[] args) {
-        
+        String str = "Esta es una cadena cualquiera";
+        System.out.println("Orden original:  " + str);
+        System.out.println("Orden invertido: " );
     }
 }

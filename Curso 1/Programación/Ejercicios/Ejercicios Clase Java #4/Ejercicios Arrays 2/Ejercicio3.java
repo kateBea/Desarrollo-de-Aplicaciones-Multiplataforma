@@ -16,5 +16,9 @@ public class Ejercicio3 {
         }
 
         System.out.println("Letras: " + Arrays.toString(letras));
+
+        // Método 2
+        char[] letras2 = borrasca.toCharArray();
+        System.out.println("Letras: " + Arrays.toString(letras));
     }
 }

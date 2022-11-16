@@ -5,10 +5,12 @@
  * Autor: Hugo Pelayo
  */
 
-import java.util.Arrays;
-
 public class Ejercicio2 {
     public static void main(String[] args) {
-        
+        String str = "Esta es una frase cualquiera";
+
+        for (int charIndex = 0; charIndex < str.length(); charIndex += 5) {
+            System.out.println("Character at index #" + (charIndex) + ": " + str.charAt(charIndex));
+        }
     }
 }
