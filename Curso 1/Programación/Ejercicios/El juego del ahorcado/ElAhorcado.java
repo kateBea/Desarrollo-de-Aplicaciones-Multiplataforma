@@ -21,7 +21,7 @@ public class ElAhorcado  {
 
     public static void main(String[] args) throws InterruptedException {
         // declaración de variables
-        int        eleUsuario;
+        int         eleUsuario;
         Random      randObject;
         Scanner     lector;
         GameState   estado;
@@ -34,9 +34,9 @@ public class ElAhorcado  {
         };
 
         // Setup del bucle principal del juego
+        randObject  = new Random();
         lector      = new Scanner(System.in);
         estado      = GameState.RUNNING;
-        randObject  = new Random();
 
         // bucle principal
         do {
@@ -47,6 +47,7 @@ public class ElAhorcado  {
 
             System.out.print("\nElección: ");
             eleUsuario = lector.nextInt();
+
             switch (eleUsuario) {
                 case 1 -> estado = GameState.STOPPED;
                 case 2 -> estado = GameState.RUNNING;
@@ -71,15 +72,15 @@ public class ElAhorcado  {
 
     // Función que ejecuta una sesión de juego
     public static void playGame(String palabraEscogida) throws InterruptedException {
-        Scanner lector;                     // - Objeto Scanner para la lectura de caracteres.
-        char[]  resultado;                  // - Array que gestiona las letras adivinadas.
+        Scanner lector;                     // - Objeto Scanner para la lectura de caracteres
+        char[]  resultado;                  // - Array que gestiona las letras adivinadas
                                             // y no adivinadas por el usuario hasta el momento
-        char[]  partes;                     // - Partes sacrificadas del usuario hasta el momento.
-        char    letra;                      // - Carácter introducido por el usuario
-        boolean descubierto;                // - Flag que indica si el usuario ha descubierto o no la palabra secreta
-        int     letrasAdivinadas;           // - Contador que indica el número de letras adivinadas actual
-        int     indice;                     // - Variable temporal que guarda el índice al resultado del carácter que ha entrado el usuario
-        int     contadorPartesRestantes;    // - Contador que indica cuantas partes al usuario le quedan por sacrificar en caso de fallo
+        char[]  partes;                     // - Representación de las partes sacrificables del usuario
+        char    letra;                      // - Carácter que se lee del usuario
+        boolean descubierto;                // - Flag que indica si el usuario ha acertado todas las letras
+        int     letrasAdivinadas;           // - Contador que indica el número de letras adivinadas actualmente
+        int     indice;                     // - Variable temporal que guarda el índice al array resultado del carácter que ha entrado el usuario
+        int     contadorPartesRestantes;    // - Contador que indica cuantas partes más puede sacrificar el usuario en caso de fallo
 
         // Setup del bucle del juego
         lector                  = new Scanner(System.in);
