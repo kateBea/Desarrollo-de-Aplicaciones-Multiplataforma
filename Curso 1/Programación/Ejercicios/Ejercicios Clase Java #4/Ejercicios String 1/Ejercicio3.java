@@ -8,13 +8,16 @@
 
 public class Ejercicio3 {
     public static void main(String[] args) {
+        String outStr = new String("");
         char[] str = "A ver cuantos asteriscos salen de aquí".toCharArray();
 
-        for (int charIndex = 0; charIndex < str.length; charIndex += 5) {
-            str[charIndex] = '*';
+        for (int charIndex = 0; charIndex < str.length; ++charIndex) {
+            if (charIndex % 5 == 0)
+                outStr = outStr + "*";
+            else 
+                outStr = outStr + str[charIndex]; 
         }
 
-        String outStr = new String(str);
         System.out.println("Nueva cadena: " + outStr);
     }
 }

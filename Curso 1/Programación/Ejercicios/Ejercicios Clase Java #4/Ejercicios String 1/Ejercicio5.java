@@ -6,12 +6,14 @@
  * Autor: Hugo Pelayo
  */
 
-import java.util.Arrays;
-
 public class Ejercicio5 {
     public static void main(String[] args) {
-        String str = "Esta es una cadena cualquiera";
-        System.out.println("Orden original:  " + str);
-        System.out.println("Orden invertido: " );
+        String str = new String("Esta es una cadena cualquiera");
+        System.out.println("Cadena original:  " + str);
+        System.out.print("Cadena invertida: ");
+        for (int i = 0; i < str.length(); ++i)
+            System.out.print(str.charAt(str.length() - 1 - i));
+        
+        System.out.println();
     }
 }

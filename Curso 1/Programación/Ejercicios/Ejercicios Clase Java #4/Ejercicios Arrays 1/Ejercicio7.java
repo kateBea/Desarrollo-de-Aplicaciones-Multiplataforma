@@ -16,9 +16,6 @@ public class Ejercicio7 {
         for (int num : array) {
             arrayRes[indice] = num;
             indice += 2;
-
-            if (indice >= arrayRes.length - 1)
-                indice = arrayRes.length - 1;
         }
 
         System.out.println(Arrays.toString(arrayRes));

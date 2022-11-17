@@ -20,7 +20,7 @@ public class Ejercicio1 {
         int indiceArrayRes = 0;
 
         while (indiceArray1 < array1.length && indiceArray2 < array2.length) {
-            arrayRes[indiceArrayRes++] = (array1[indiceArray1++] + (int)array2[indiceArray2++]);
+            arrayRes[indiceArrayRes++] = (array1[indiceArray1++] + array2[indiceArray2++]);
         }
         
         System.out.println(Arrays.toString(arrayRes));

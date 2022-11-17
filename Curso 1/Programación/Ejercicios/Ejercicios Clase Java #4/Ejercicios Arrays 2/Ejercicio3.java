@@ -11,6 +11,7 @@ public class Ejercicio3 {
         String borrasca = "Filomena";
         char[] letras = new char[borrasca.length()];
 
+        // Método 1
         for (int index = 0; index < borrasca.length(); ++index) {
             letras[index] = borrasca.charAt(index);
         }
