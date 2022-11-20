@@ -11,7 +11,6 @@ def dist_hamming(c1: str, c2: str):
     :param c2:
     :return: int
     """
-    LINGITUD    = len(c1)
     distancia   = 0
     it_c1       = 0
     it_c2       = 0
