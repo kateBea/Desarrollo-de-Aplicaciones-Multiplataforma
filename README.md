@@ -4,7 +4,7 @@ Repo del Ciclo Formativo de Grado Superior de Desarollo de Aplicaciones Multipla
 # Asignaturas de DAM
 - Curso 1:
 
-    - [Bases de Datos](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Bases%20de%20Datos)\n
+    - [Bases de Datos](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Bases%20de%20Datos)
     - [Programación](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Programaci%C3%B3n)
     - [Sistemas Informáticos](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Sistemas%20Inform%C3%A1ticos)
     - [Lenguaje de marcas y sistemas de gestión de información](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Lenguaje%20de%20marcas%20y%20sistemas%20de%20gesti%C3%B3n%20de%20informaci%C3%B3n)
