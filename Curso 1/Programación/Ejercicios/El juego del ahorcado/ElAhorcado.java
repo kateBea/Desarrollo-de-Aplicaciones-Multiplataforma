@@ -1,19 +1,20 @@
 /*
-* Título: Juego del ahorcado
-* Algoritmo: El juego del ahorcado
-* Fecha: 17.11.2022
-* Autor: Hugo Pelayo
-*/
+ * Título: Juego del ahorcado
+ * Algoritmo: El juego del ahorcado
+ * Fecha: 17.11.2022
+ * Autor: Hugo Pelayo
+ */
 
 // NOTAS SOBRE BUGS:
 // Al acertar una de las letras ocultas
-// Si se vuelve a introducir la letra cuenta como un error 
+// Si se vuelve a introducir la letra cuenta como un error
 // de adivinanza y te consume una parte
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class ElAhorcado  {
+    private static Scanner lector;
     public enum GameState {
         RUNNING,    // Iniciar una sesión el juego
         STOPPED,    // Acabar una sesión del juego
@@ -23,7 +24,6 @@ public class ElAhorcado  {
         // declaración de variables
         int         eleUsuario;
         Random      randObject;
-        Scanner     lector;
         GameState   estado;
         String[]    juegoPalabras = {
 
@@ -72,9 +72,8 @@ public class ElAhorcado  {
 
     // Función que ejecuta una sesión de juego
     public static void playGame(String palabraEscogida) throws InterruptedException {
-        Scanner lector;                     // - Objeto Scanner para la lectura de caracteres
         char[]  resultado;                  // - Array que gestiona las letras adivinadas
-                                            // y no adivinadas por el usuario hasta el momento
+        // y no adivinadas por el usuario hasta el momento
         char[]  partes;                     // - Representación de las partes sacrificables del usuario
         char    letra;                      // - Carácter que se lee del usuario
         boolean descubierto;                // - Flag que indica si el usuario ha acertado todas las letras
@@ -142,7 +141,7 @@ public class ElAhorcado  {
             System.out.println("¡Felicidades! Has descubierto la palabra secreta (:");
         else
             System.out.println("Has fracasado... ):");
-        
+
         System.out.println("La palabra era: " + palabraEscogida);
     }
 
