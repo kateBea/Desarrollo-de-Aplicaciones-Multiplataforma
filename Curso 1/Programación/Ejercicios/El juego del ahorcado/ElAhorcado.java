@@ -73,7 +73,7 @@ public class ElAhorcado  {
     // Función que ejecuta una sesión de juego
     public static void playGame(String palabraEscogida) throws InterruptedException {
         char[]  resultado;                  // - Array que gestiona las letras adivinadas
-        // y no adivinadas por el usuario hasta el momento
+                                            // y no adivinadas por el usuario hasta el momento
         char[]  partes;                     // - Representación de las partes sacrificables del usuario
         char    letra;                      // - Carácter que se lee del usuario
         boolean descubierto;                // - Flag que indica si el usuario ha acertado todas las letras
