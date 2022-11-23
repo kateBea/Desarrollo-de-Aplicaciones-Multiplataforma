@@ -1,0 +1,8 @@
+Asigna un tipo de datos adecuado a cada uno de estos valores; 
+si se pueden elegir varios tipos escoge el de menor tamaño:
+
+a) 54 -> byte
+b) 45776 -> int
+c) 'X' -> char
+d) true -> boolean
+e) 557678.568 -> float

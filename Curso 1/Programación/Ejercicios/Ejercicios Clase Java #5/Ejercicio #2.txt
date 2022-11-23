@@ -1,0 +1,17 @@
+Declarar las variables adecuadas para los tipos anteriores con identificadores
+válidos e inicializarlas con esos valores.
+
+a) 54 -> byte
+    byte byteValue = 54;
+
+b) 45776 -> int
+    int integerValue = 45776;
+
+c) 'X' -> char
+    char charValue = 'X';
+
+d) true -> boolean
+    boolean boolValue = true;
+
+e) 557678.568 -> float
+    float floatValue = 557678.568;

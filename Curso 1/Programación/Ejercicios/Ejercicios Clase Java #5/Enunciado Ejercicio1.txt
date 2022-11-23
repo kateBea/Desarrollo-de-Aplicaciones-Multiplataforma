@@ -1,0 +1,4 @@
+Escribir un programa que pida una palabra y un entero n y vaya rotando 
+el carácter inicial de la palabra, al final de la misma, tantas veces 
+como indique n. (Por ejemplo, “monja”, 2 debe devolver “jamon” y 
+“monja”; 5 “monja”).
