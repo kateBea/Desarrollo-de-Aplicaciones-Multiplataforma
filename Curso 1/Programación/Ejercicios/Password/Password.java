@@ -34,7 +34,7 @@ public class Password {
 
             isValiPassword = validatePass(password);
         }
-        while (password.length() < PASSWORD_MINIMUM_LENGHT || password.contains(" ") && !isValiPassword);
+        while (password.length() < PASSWORD_MINIMUM_LENGHT || password.contains(" ") || !isValiPassword);
 
         System.out.println("Programa terminando...");
     }
@@ -63,7 +63,7 @@ public class Password {
 
             // Contiene *, +, -, _, #, $, %, &
             if (pass.contains("*") || pass.contains("+") || pass.contains("-") || pass.contains("_") ||
-                pass.contains("#") || pass.contains("$") || pass.contains("%") || pass.contains("&")) {
+                    pass.contains("#") || pass.contains("$") || pass.contains("%") || pass.contains("&")) {
                 checks[3] = true;
             }
 
@@ -72,8 +72,12 @@ public class Password {
                 checks[4] = true;
         }
 
-        for (boolean valor : checks) {
-            if (!valor)
+        // El string contiene tildes
+        if (checks[4])
+            return false;
+
+        for (int index = 0; index < checks.length - 1; ++index) {
+            if (!checks[index])
                 return false;
         }
 
