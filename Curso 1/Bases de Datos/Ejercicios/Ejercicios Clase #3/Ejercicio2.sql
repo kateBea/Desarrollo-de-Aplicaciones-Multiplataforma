@@ -27,15 +27,30 @@ SELECT *
 FROM Fabricante;
 
 /* Inserts en Producto */
-INSERT INTO Producto VALUES();
+INSERT INTO Producto VALUES(1, 'Disco Duro', 86.99, 5);
+INSERT INTO Producto VALUES(2, 'Memoria RAM', 120, 6);
+INSERT INTO Producto VALUES(3, 'Disco SSD', 150.99, 4);
+INSERT INTO Producto VALUES(4, 'GeForce', 185, 7);
+INSERT INTO Producto VALUES(5, 'Monitor', 202, 1);
+INSERT INTO Producto VALUES(6, 'Portátil', 505, 2);
+INSERT INTO Producto VALUES(7, 'Impresora', 59.99, 3);
 
 /* Inserts en Fabricante */
 INSERT INTO Fabricante VALUES(1, 'Asus');
 INSERT INTO Fabricante VALUES(2, 'Lenovo');
 INSERT INTO Fabricante VALUES(3, 'HP');
-INSERT INTO Fabricante VALUES(4, 'Seagate');
+INSERT INTO Fabricante VALUES(4, 'Samsung');
 INSERT INTO Fabricante VALUES(5, 'Crucial');
-INSERT INTO Fabricante VALUES(6, 'GigaByte');
+INSERT INTO Fabricante VALUES(6, 'Seagate');
+INSERT INTO Fabricante VALUES(7, 'GigaByte');
+
+/* Ignorar esto. Usado para arreglar un error en datos alinsertar */
+UPDATE Fabricante
+SET nombre = 'Samsung'
+WHERE Fabricante.codigo = 4;
+UPDATE Fabricante
+SET nombre = 'Seagate'
+WHERE Fabricante.codigo = 6;
 
 DROP TABLE Producto CASCADE;
 DROP TABLE Fabricante CASCADE;
