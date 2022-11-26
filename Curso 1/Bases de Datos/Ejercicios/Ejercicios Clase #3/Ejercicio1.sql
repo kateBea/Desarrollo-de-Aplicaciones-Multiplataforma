@@ -1,0 +1,26 @@
+/* Ejercicio 01 */
+CREATE DATABASE IF NOT EXISTS EMPRESA 
+CHARACTER SET utf8 
+COLLATE utf8_general_ci;
+
+USE EMPRESA;
+
+CREATE TABLE IF NOT EXISTS Departamento(
+	codDpto VARCHAR (4) PRIMARY KEY,
+	nombreDpto VARCHAR(20) NOT NULL,
+	ciudad VARCHAR(15),
+	codDirector VARCHAR (10)
+);
+
+CREATE TABLE IF NOT EXISTS Empleado (
+	codEmp VARCHAR(10) NOT NULL PRIMARY KEY,
+	nomEmp VARCHAR(30) NOT NULL,
+	sexEmp CHAR(1) NOT NULL CHECK (sexEmp IN ('F','M')),
+	fecNac DATE NOT NULL,
+	fecIncorporacion DATE NOT NULL,
+	salEmp FLOAT NOT NULL,
+	comisionE FLOAT NOT NULL,
+	cargoE VARCHAR(15) NOT NULL,
+	nroDpto VARCHAR(4) NOT NULL,
+	CONSTRAINT	FK_Dpto FOREIGN KEY (nroDpto) REFERENCES Departamento (codDpto)    
+);
