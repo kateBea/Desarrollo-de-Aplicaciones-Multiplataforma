@@ -15,6 +15,7 @@ public class Ejercicio2 {
     private static final Random rand = new Random();
     private static final int LIMITE_SUPERIOR = 122;
     private static final int LIMITE_INFERIOR = 97;
+    
     public static void generarAleatorios(char[] arr) {
         for (int index = 0; index < arr.length; ++index) {
             arr[index] = (char)rand.nextInt(LIMITE_INFERIOR, LIMITE_SUPERIOR);

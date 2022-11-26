@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>SIMPLE CALCULATOR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible">
+        <meta charset="UTF-8"/>
+        <meta name="keywords" content="Calculator, numbers"/>
+        <meta name="description" content="Simple calculator using HTML, CSS and JavaScript"/>
+        <link href="styles.css" rel="stylesheet"/>
+
+        <!--- defer so the script loads up after our entire page--->
+        <script src="calc_func.js" defer></script>
+    </head>
+
+    <body>
+
+        <!--- We have one single div for the output
+        input and all the buttons of our calculator--->
+        <div class="calculator-grid">
+            <div class="output">
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand"></div>
+            </div>
+
+            <button data-all-clear class="two-square">AC</button>
+            <button data-delete>DEL</button>
+            <button data-operation>÷</button>
+
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-operation>+</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-operation>*</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-operation>-</button>
+            <button data-number>.</button>
+
+
+            <button data-number>0</button>
+            <button data-equal class="two-square">=</button>
+
+        </div>
+    </body>
+</html>
