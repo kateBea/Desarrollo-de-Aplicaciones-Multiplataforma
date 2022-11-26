@@ -1,0 +1,5 @@
+Alumno(Dni -> Pk, Nombre, Nota, Opcion);
+Estudio(Codigo -> Pk, Nombre, NotaDeCorte);
+Preincripcion(DniAlumno -> Pk, CodigoEstudio -> Pk, Admitido, Orden);
+    - DniAlumno referencia a Dni de la tabla Alumno
+    - CodigoEstudio referencia a Codigo de la tabla Estudio

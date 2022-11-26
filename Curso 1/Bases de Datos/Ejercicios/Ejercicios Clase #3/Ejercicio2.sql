@@ -1,4 +1,4 @@
-/* Ejercicio 01 */
+/* Ejercicio 02 */
 CREATE DATABASE IF NOT EXISTS Tienda_Informatica 
 CHARACTER SET utf8 
 COLLATE utf8_general_ci;
