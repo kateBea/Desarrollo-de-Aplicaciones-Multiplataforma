@@ -5,16 +5,19 @@ COLLATE utf8_general_ci;
 
 USE Tienda_Informatica;
 
-CREATE TABLE IF NOT EXISTS Producto (
-	codigo INT(10) PRIMARY KEY,
-    nombre VARCHAR(100),
-    precio DOUBLE,
-    codigo_fabricante INT(10)
+/* Fabricante tabla declarada antes a propósito */
+/* Si no, no se puede referenciar en Producto ya que no existe*/
+CREATE TABLE IF NOT EXISTS Fabricante (
+	  codigo INT PRIMARY KEY,
+      nombre VARCHAR(100)
 );
 
-CREATE TABLE IF NOT EXISTS Fabricante (
-	  codigo INT(10) PRIMARY KEY,
-      nombre VARCHAR(100)
+CREATE TABLE IF NOT EXISTS Producto (
+	codigo INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    precio DOUBLE NOT NULL,
+    codigo_fabricante INT NOT NULL,
+    CONSTRAINT Fk_Codigo_Fab FOREIGN KEY (codigo_fabricante) REFERENCES Fabricante (codigo)
 );
 
 SELECT * 
@@ -27,7 +30,12 @@ FROM Fabricante;
 INSERT INTO Producto VALUES();
 
 /* Inserts en Fabricante */
-INSERT INTO Fabricante VALUES();
+INSERT INTO Fabricante VALUES(1, 'Asus');
+INSERT INTO Fabricante VALUES(2, 'Lenovo');
+INSERT INTO Fabricante VALUES(3, 'HP');
+INSERT INTO Fabricante VALUES(4, 'Seagate');
+INSERT INTO Fabricante VALUES(5, 'Crucial');
+INSERT INTO Fabricante VALUES(6, 'GigaByte');
 
 DROP TABLE Producto CASCADE;
 DROP TABLE Fabricante CASCADE;
