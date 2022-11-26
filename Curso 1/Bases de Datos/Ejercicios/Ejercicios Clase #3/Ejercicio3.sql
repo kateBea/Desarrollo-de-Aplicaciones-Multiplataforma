@@ -39,13 +39,24 @@ SELECT *
 FROM Preinscripcion;
 
 /* Inserts en Alumno */
-INSERT INTO Alumno VALUES ();
+INSERT INTO Alumno VALUES ('27183634-K', 'Cynthia Beatriz', 9.78, 'C');
+INSERT INTO Alumno VALUES ('37652481-F', 'Gandalf', 7.22, 'A');
+INSERT INTO Alumno VALUES ('12862499-T', 'Robert Gisbert', 8.88, 'A');
+INSERT INTO Alumno VALUES ('34628456-V', 'Paul Jackson', 9.5, 'D');
+INSERT INTO Alumno VALUES ('37528967-A', 'Isha Roig', 9.99, 'B');
 
 /* Inserts en Estudio */
-INSERT INTO Estudio VALUES ();
+INSERT INTO Estudio VALUES (78899, 'Computer Engineering', 8.99);
+INSERT INTO Estudio VALUES (78870, 'Computer Science', 9.5);
+INSERT INTO Estudio VALUES (42441, 'Philosophy', 6.5);
+INSERT INTO Estudio VALUES (82444, 'The German Language', 7.1);
+INSERT INTO Estudio VALUES (82440, 'The Japanese Language', 9.99);
+INSERT INTO Estudio VALUES (82440, 'The Spanish Language', 6.22);
 
-/* Inserts en Estudio */
-INSERT INTO Estudio VALUES ();
+/* Inserts en Preinscripcion */
+INSERT INTO Preinscripcion VALUES ('27183634-K', 78899, 'S', 122);
+INSERT INTO Preinscripcion VALUES ('27183634-K', 82444, 'S', 224);
+INSERT INTO Preinscripcion VALUES ('27183634-K', 82440, 'N', 554);
 
 
 /* Limpieza */
