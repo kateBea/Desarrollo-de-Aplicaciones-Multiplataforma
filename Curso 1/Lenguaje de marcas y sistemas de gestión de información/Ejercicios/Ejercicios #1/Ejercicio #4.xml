@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<arboles>
+    <especie>
+        <nombre_comun>Arce de Montpellier, Arce menor</nombre_comun>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>De 6 a 10 metros</altura>
+        <forma_estructura>Copa esférica. Tronco rpincipal recto con bifurcaciones. Ramaje colgante</forma_estructura>
+        <color_primavera>Haz verde brillante, envés verde blanquecino</color_primavera>
+        <color_otonio></color_otonio>
+        <resistencia_a_heladas>Heladas fuertes (hasta -15ºC)</resistencia_a_heladas>
+    </especie>
+    <especie>
+        <nombre_comun>Olivo</nombre_comun>
+        <vegetacion>Perenne</vegetacion>
+        <altura>De 8 a 15 metros</altura>
+        <forma_estructura>Copa irregular. Tronco principal irregular con bifurcaciones</forma_estructura>
+        <color_primavera></color_primavera>
+        <color_otonio></color_otonio>
+        <resistencia_a_heladas></resistencia_a_heladas>
+    </especie>
+    <especie>
+        <nombre_comun>Haz verde oscuro, envés verde plateado</nombre_comun>
+        <vegetacion></vegetacion>
+        <altura></altura>
+        <forma_estructura></forma_estructura>
+        <color_primavera></color_primavera>
+        <color_otonio></color_otonio>
+        <resistencia_a_heladas>Heladas medias (hasta -10ºC)</resistencia_a_heladas>
+    </especie>
+    <especie>
+        <nombre_comun>Platano</nombre_comun>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>De 20 a 25 metros</altura>
+        <forma_estructura>Tronco principal recto. Ramaje expandido</forma_estructura>
+        <color_primavera>Haz verde medio, enves verde claro</color_primavera>
+        <color_otonio>Ocre</color_otonio>
+        <resistencia_a_heladas>Heladas fuertes (hasta -20ºC)</resistencia_a_heladas>
+    </especie>
+    <especie>
+        <nombre_comun>Encina</nombre_comun>
+        <vegetacion>Perene</vegetacion>
+        <altura>En torno a 25 metros</altura>
+        <forma_estructura>Copa esférica o elíptica irregular. Tronco principal recto. Remaje tortuoso</forma_estructura>
+        <color_primavera>Plateado en hojas jóvenes. En hojas antiguas, haz verde oscuro, envés plateado</color_primavera>
+        <color_otonio></color_otonio>
+        <resistencia_a_heladas>Heladas fuertes (hasta -15ºC)</resistencia_a_heladas>
+    </especie>
+</arboles>
