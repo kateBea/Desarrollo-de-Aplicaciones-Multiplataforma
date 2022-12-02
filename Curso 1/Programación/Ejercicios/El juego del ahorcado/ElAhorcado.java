@@ -6,9 +6,9 @@
  */
 
 // NOTAS SOBRE BUGS:
-// Al acertar una de las letras ocultas
-// Si se vuelve a introducir la letra cuenta como un error
-// de adivinanza y te consume una parte
+// Al acertar una de las letras ocultas Si se vuelve a introducir la letra 
+// adivinada (en el caso de aparecer una vez) cuenta como un error de 
+// adivinanza y te consume una parte
 
 import java.util.Random;
 import java.util.Scanner;

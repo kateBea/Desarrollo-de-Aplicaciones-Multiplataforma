@@ -1,6 +1,6 @@
 /*
  * Título: Suma números
- * Algoritmo: Suma una serie de número pasados por la línea de comandos
+ * Algoritmo: Suma una serie de números pasados por la línea de comandos
  * Autor: Hugo Pelayo
  * Fecha: 22.11.2022
  */
