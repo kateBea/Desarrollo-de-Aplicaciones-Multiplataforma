@@ -1,0 +1,25 @@
+Cliente(Dni -> Pk, Nombre_completo)
+
+Sucursal(Numero -> Pk, Ciudad, Nombre_activo_actual)
+
+Cuenta(Numero -> Pk, Num_sucursal -> Pk, Saldo)
+    - Num_sucursal referencia a Numero de la tabla Sucursal
+
+Transaccion(Numero -> Pk, Fecha, tipo, Cantidad, Num_cuenta)
+
+Asistencia(Dni_cliente -> Pk, Num_sucursal -> Pk)
+    - Dni_cliente referencia a Dni de la tabla Cliente
+    - Num_sucursal referencia a Numero de la tabla Sucursal
+
+Propiedad(Dni_cliente -> Pk, Num_cuenta -> Pk, Num_sucursal -> Pk)
+    - Dni_cliente referencia a Dni de la tabla Cliente
+    - Num_cuenta referencia a Numero de la tabla Cuenta
+    - Num_sucursal referencia a Numero de la tabla Sucursal
+
+Direccion(Dni_cliente -> Pk, Calle -> Pk, Codigo_postal -> Pk, Ciudad -> Pk, Pais -> Pk)
+    - Dni_cliente referencia a Dni de la tabla Cliente
+
+NOTAS:
+
+    - Puede haber varios actuivos por sucursal
+    - Todos los atributos son obligatorios

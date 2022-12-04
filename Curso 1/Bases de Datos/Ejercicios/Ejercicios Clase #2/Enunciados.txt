@@ -1,0 +1,29 @@
+EJERCICIO 4 (CENTROSALUD)
+Se desea diseñar y crear una base de datos de un centro de salud  para almacenar los datos de los médicos, 
+pacientes, las consultas y horario de las salas del centro; donde:
+
+- Se guardará la siguiente información de los médicos: su NIF, nombre, apellidos, edad y año de colegiado.
+- De los pacientes se guardará el NIF, nombre, apellidos, edad y teléfono.
+
+Un médico atiende a varios pacientes y cada paciente está asignado a un solo médico. 
+Cada médico pasa consulta en una o varias salas. De las salas se almacena su identificador 
+y una descripción. En cada sala pasan consulta varios médicos.
+Se desea conocer también el horario que tiene cada médico en cada sala
+
+Se pide:
+a) realizar el diagrama entidad-relación
+b) realizar el diseño lógico
+c) crear los scripts que creen la base de datos y las tablas; en el orden adecuado y 
+controlando que no den errores cuando se lancen los scripts.
+
+
+EJERCICIO 5 (Sucursales)
+En un banco se tienen varias sucursales. Un cliente puede acudir a cualquier sucursal y abrir una cuenta. 
+En realidad, el cliente puede abrir varias cuentas en la misma o distinta sucursal. Una cuenta puede 
+pertenecer a uno o a varios clientes distintos. Sobre una determinada cuenta se pueden realizar varias 
+transacciones. Cada sucursal viene identificada por un número de sucursal. De ella interesa conocer la 
+ciudad en la que se encuentra ubicada y el activo disponible. Por su parte, cada cuenta tiene asociado 
+un número de cuenta y saldo. Del cliente interesa almacenar el DNI, el nombre completo, la dirección 
+y la ciudad en que reside. Cada transacción que se realiza sobre una cuenta tiene un número diferente. 
+Además, se marca la fecha del día, el tipo de operación que se realiza (Ingreso/Extracción) 
+y la cantidad que se mueve.
