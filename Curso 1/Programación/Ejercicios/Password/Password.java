@@ -39,17 +39,35 @@ public class Password {
         System.out.println("Programa terminando...");
     }
 
+    public static boolean match(char ch) {
+        switch(ch) {
+            case 'À': case 'Á': case 'Ä': case 'Â':
+            case 'É': case 'È': case 'Ë': case 'Ê':
+            case 'Í': case 'Ì': case 'Ï': case 'Î':
+            case 'Ó': case 'Ò': case 'Ö': case 'Ô':
+            case 'Ú': case 'Ù': case 'Ü': case 'Û':
+            case 'á': case 'à': case 'ä': case 'â':
+            case 'é': case 'è': case 'ë': case 'ê':
+            case 'í': case 'ì': case 'ï': case 'î':
+            case 'ó': case 'ò': case 'ö': case 'ô':
+            case 'ú': case 'ù': case 'ü': case 'û': return true;
+            default: return false;
+        }
+    }
+
     public static boolean validatePass(String pass) {
+
         // [0] -> Cierto si el string contiene al menos una mayúscula
         // [1] -> Cierto si el string contiene al menos una minúscula
         // [2] -> Cierto si el string contiene al menos un dígito
         // [3] -> Cierto si el string uno de los caracteres: *, +, -, _, #, $, %, &
         // [4] -> Cierto si el string contiene caracteres con tildes o dieresis
         boolean[] checks = new boolean[5];
+        int index;
         int codePt;
 
-
-        for(int index = 0; index < pass.length(); ++index){
+        index = 0;
+        while (index < pass.length() && !checks[4]){
             codePt = pass.codePointAt(index);
             // Hay al menos una mayúscula
             if (codePt >= "A".codePointAt(0) && codePt <= "Z".codePointAt(0))
@@ -68,15 +86,17 @@ public class Password {
             }
 
             // Contiene acentos
-            if (Pattern.matches(".*[ÀÁÄÂÉÈËÊÍÌÏÎÓÒÖÔÚÙÜÛáàäâéèëêíìïîóòöôúùüû].*", pass))
+            if (match(pass.charAt(index)))
                 checks[4] = true;
+
+            ++index;
         }
 
         // El string contiene tildes
         if (checks[4])
             return false;
 
-        for (int index = 0; index < checks.length - 1; ++index) {
+        for (index = 0; index < checks.length - 1; ++index) {
             if (!checks[index])
                 return false;
         }
