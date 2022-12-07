@@ -73,20 +73,20 @@ public class Password {
             if (codePt >= "A".codePointAt(0) && codePt <= "Z".codePointAt(0))
                 checks[0] = true;
             // Hay al menos una minúscula
-            if (codePt >= "a".codePointAt(0) && codePt <= "z".codePointAt(0))
+            else if (codePt >= "a".codePointAt(0) && codePt <= "z".codePointAt(0))
                 checks[1] = true;
             // Hay almenos un dígito
-            if (Character.isDigit(pass.charAt(index)))
+            else if (Character.isDigit(pass.charAt(index)))
                 checks[2] = true;
 
             // Contiene *, +, -, _, #, $, %, &
-            if (pass.contains("*") || pass.contains("+") || pass.contains("-") || pass.contains("_") ||
+            else if (pass.contains("*") || pass.contains("+") || pass.contains("-") || pass.contains("_") ||
                     pass.contains("#") || pass.contains("$") || pass.contains("%") || pass.contains("&")) {
                 checks[3] = true;
             }
 
             // Contiene acentos
-            if (match(pass.charAt(index)))
+            else if (match(pass.charAt(index)))
                 checks[4] = true;
 
             ++index;
