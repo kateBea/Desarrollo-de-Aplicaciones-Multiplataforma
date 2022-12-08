@@ -95,7 +95,7 @@ def encontrar_pistas():
     # poner pistas en el tablero de minas
     posiciones_visitadas = list()
     posicion_inicio = [input_fila, input_columna]
-    coordenadas_adyacentes = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
+    direcciones = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
     cola_de_visita = [posicion_inicio]
 
     for _ in range(0, NUMERO_FILAS):
@@ -103,29 +103,34 @@ def encontrar_pistas():
 
     # marcar la posición de partida como visitada
     posiciones_visitadas[posicion_inicio[0]][posicion_inicio[1]] = True
+    if int(tablero_de_minas[posicion_inicio[0] - 1][posicion_inicio[1] - 1]) > 0:
+        tablero[posicion_inicio[0] + 1][posicion_inicio[1] + 1] = tablero_de_minas[posicion_inicio[0]][
+            posicion_inicio[1]]
+    else:
+        tablero[posicion_inicio[0] + 1][posicion_inicio[1] + 1] = CASILLA_LIBRE
 
     while len(cola_de_visita) != 0:
         siguiente_posicion = cola_de_visita.pop()
 
         # visitar posiciones adyacentes a 'siguiente posicion'
-        for p in coordenadas_adyacentes:
-            siguiente_a_visitar = [siguiente_posicion[0] + p[0], siguiente_posicion[1] + p[1]]
+        for p in direcciones:
+            adyacente = [siguiente_posicion[0] + p[0], siguiente_posicion[1] + p[1]]
 
             # validar posición (está dentro del tablero) y comprobar que no se ha visitado todavía
-            if -1 < siguiente_a_visitar[0] < NUMERO_FILAS and -1 < siguiente_a_visitar[1] < NUMERO_COLUMNAS and not \
-            posiciones_visitadas[siguiente_a_visitar[0]][siguiente_a_visitar[1]]:
+            if -1 < adyacente[0] < NUMERO_FILAS and -1 < adyacente[1] < NUMERO_COLUMNAS and not \
+            posiciones_visitadas[adyacente[0]][adyacente[1]]:
                 # marcar posición como visitada
-                posiciones_visitadas[siguiente_a_visitar[0]][siguiente_a_visitar[1]] = True
+                posiciones_visitadas[adyacente[0]][adyacente[1]] = True
 
-                if tablero_de_minas[siguiente_a_visitar[0]][siguiente_a_visitar[1]] != MINA:
-                    if int(tablero_de_minas[siguiente_a_visitar[0]][siguiente_a_visitar[1]]) > 0:
-                        tablero[siguiente_a_visitar[0] + 1][siguiente_a_visitar[1] + 1] = tablero_de_minas[siguiente_a_visitar[0]][siguiente_a_visitar[1]]
+                if tablero_de_minas[adyacente[0]][adyacente[1]] != MINA:
+                    if int(tablero_de_minas[adyacente[0]][adyacente[1]]) > 0:
+                        tablero[adyacente[0] + 1][adyacente[1] + 1] = tablero_de_minas[adyacente[0]][adyacente[1]]
                     else:
-                        tablero[siguiente_a_visitar[0] + 1][siguiente_a_visitar[1] + 1] = CASILLA_LIBRE
+                        tablero[adyacente[0] + 1][adyacente[1] + 1] = CASILLA_LIBRE
 
                 # apuntamos esta casilla para seguir buscando pistas en el caso de que no tenga minas a su alrededor
-                if tablero_de_minas[siguiente_a_visitar[0]][siguiente_a_visitar[1]] != MINA and int(tablero_de_minas[siguiente_a_visitar[0]][siguiente_a_visitar[1]]) == 0:
-                    cola_de_visita.append(siguiente_a_visitar)
+                if tablero_de_minas[adyacente[0]][adyacente[1]] != MINA and int(tablero_de_minas[adyacente[0]][adyacente[1]]) == 0:
+                    cola_de_visita.append(adyacente)
 
 
 def generar_minas():
@@ -155,7 +160,7 @@ def generar_minas():
     # poner pistas en el tablero de minas
     posiciones_visitadas = list()
     posicion_inicio = [0, 0]
-    coordenadas_adyacentes = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
+    direcciones = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
     cola_de_visita = [posicion_inicio]
 
     for _ in range(0, NUMERO_FILAS):
@@ -166,17 +171,17 @@ def generar_minas():
         siguiente_posicion = cola_de_visita.pop()
         minas_alrededor = 0 # cuenta las minas alrededor de una celda
         # visitar posiciones adyacentes a 'siguiente posicion'
-        for p in coordenadas_adyacentes:
-            siguiente_a_visitar = [siguiente_posicion[0] + p[0], siguiente_posicion[1] + p[1]]
+        for p in direcciones:
+            adyacente = [siguiente_posicion[0] + p[0], siguiente_posicion[1] + p[1]]
 
             # validar posición (está dentro del tablero) y comprobar que no se ha visitado todavía
-            if -1 < siguiente_a_visitar[0] < NUMERO_FILAS and -1 < siguiente_a_visitar[1] < NUMERO_COLUMNAS and not posiciones_visitadas[siguiente_a_visitar[0]][siguiente_a_visitar[1]]:
-                if tablero_de_minas[siguiente_a_visitar[0]][siguiente_a_visitar[1]] == MINA:
+            if -1 < adyacente[0] < NUMERO_FILAS and -1 < adyacente[1] < NUMERO_COLUMNAS and not posiciones_visitadas[adyacente[0]][adyacente[1]]:
+                if tablero_de_minas[adyacente[0]][adyacente[1]] == MINA:
                     minas_alrededor = minas_alrededor + 1
                 else:
                     # marcar posición como visitada
-                    posiciones_visitadas[siguiente_a_visitar[0]][siguiente_a_visitar[1]] = True
-                    cola_de_visita.append(siguiente_a_visitar)
+                    posiciones_visitadas[adyacente[0]][adyacente[1]] = True
+                    cola_de_visita.append(adyacente)
 
         tablero_de_minas[siguiente_posicion[0]][siguiente_posicion[1]] = str(minas_alrededor)
 
