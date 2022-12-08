@@ -2,13 +2,16 @@
 import random
 
 # constantes
-NUMERO_FILAS = 9
-NUMERO_COLUMNAS = 9
+NUMERO_FILAS = 0
+NUMERO_COLUMNAS = 0
 MINA = '*'
 CASILLA_INCOGNITO = '.'
 CASILLA_LIBRE = '_'
-FACTOR_MINAS = 0.1 # factor 10%
-TOTAL_MINAS = int(FACTOR_MINAS * (NUMERO_FILAS * NUMERO_COLUMNAS))
+FACTOR_MINAS_NIVEL_FACIL = 0.15    # factor 15%
+FACTOR_MINAS_NIVEL_MEDIO = 0.20    # factor 20%
+FACTOR_MINAS_NIVEL_EXPERTO = 0.25  # factor 25%
+FACTOR_MINAS_NIVEL_MAGO = 0.30     # factor 30%
+TOTAL_MINAS = 0
 
 
 # Crear variables
@@ -16,12 +19,46 @@ tablero = list()
 tablero_de_minas = list()
 input_fila = 0
 input_columna = 0
-continuar = True
 pierdes = False
 ganas = False
 
 
 # definición de funciones
+def definir_ajustes():
+    global NUMERO_FILAS
+    global NUMERO_COLUMNAS
+    global TOTAL_MINAS
+    global tablero
+    global tablero_de_minas
+    global pierdes
+    global ganas
+
+    tablero = list()
+    tablero_de_minas = list()
+    ganas = False
+    pierdes = False
+
+    NUMERO_FILAS = int(input('Por favor, introduzca el número de filas del tablero: '))
+    NUMERO_COLUMNAS = int(input('Por favor, introduzca el número de columnas del tablero: '))
+
+    correcto = False
+    while not correcto:
+        dificultad = input('Introduce la dificultad -> [Fácil, Intermedio, Experto, Mago]: ')
+        if dificultad == 'Fácil' or dificultad == 'Facil':
+            TOTAL_MINAS = int(FACTOR_MINAS_NIVEL_FACIL * (NUMERO_FILAS * NUMERO_COLUMNAS))
+            correcto = True
+        elif dificultad == 'Intermedio':
+            TOTAL_MINAS = int(FACTOR_MINAS_NIVEL_MEDIO * (NUMERO_FILAS * NUMERO_COLUMNAS))
+            correcto = True
+        elif dificultad == 'Experto':
+            TOTAL_MINAS = int(FACTOR_MINAS_NIVEL_EXPERTO * (NUMERO_FILAS * NUMERO_COLUMNAS))
+            correcto = True
+        elif dificultad == 'Mago':
+            TOTAL_MINAS = int(FACTOR_MINAS_NIVEL_MAGO * (NUMERO_FILAS * NUMERO_COLUMNAS))
+            correcto = True
+        else:
+            print('Dificultad no definida. Por favor inténtalo de nuevo.')
+
 def generar_posicio_aleatoria():
     pos = list()
     pos.append(random.randint(0, NUMERO_FILAS - 1))
@@ -34,10 +71,10 @@ def inicializar_tablero():
     Función que inicializa el tablero de juego
     :return: None
     """
-    global tablero
     global NUMERO_COLUMNAS
     global NUMERO_FILAS
     global CASILLA_INCOGNITO
+    global tablero
 
     tablero.append([' '])
     for _ in range(1, NUMERO_FILAS + 1):
@@ -94,7 +131,7 @@ def encontrar_pistas():
 
     # poner pistas en el tablero de minas
     posiciones_visitadas = list()
-    posicion_inicio = [input_fila, input_columna]
+    posicion_inicio = [input_fila - 1, input_columna - 1]
     direcciones = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
     cola_de_visita = [posicion_inicio]
 
@@ -103,9 +140,8 @@ def encontrar_pistas():
 
     # marcar la posición de partida como visitada
     posiciones_visitadas[posicion_inicio[0]][posicion_inicio[1]] = True
-    if int(tablero_de_minas[posicion_inicio[0] - 1][posicion_inicio[1] - 1]) > 0:
-        tablero[posicion_inicio[0] + 1][posicion_inicio[1] + 1] = tablero_de_minas[posicion_inicio[0]][
-            posicion_inicio[1]]
+    if int(tablero_de_minas[posicion_inicio[0]][posicion_inicio[1]]) > 0:
+        tablero[posicion_inicio[0] + 1][posicion_inicio[1] + 1] = tablero_de_minas[posicion_inicio[0]][posicion_inicio[1]]
     else:
         tablero[posicion_inicio[0] + 1][posicion_inicio[1] + 1] = CASILLA_LIBRE
 
@@ -145,7 +181,7 @@ def generar_minas():
 
     # incrustar minas en el tablero de minas
     total = 0
-    while (total < TOTAL_MINAS):
+    while total < TOTAL_MINAS:
         posicion = generar_posicio_aleatoria()
 
         if tablero_de_minas[posicion[0]][posicion[1]] == MINA:
@@ -205,31 +241,55 @@ def procesar_entrada():
         tablero[input_fila][input_columna] = MINA
         pierdes = True
 
+def jugar():
+    print('********** Bienvenido al juego de buscaminas **********')
+
+    # Bucle principal
+    while True:
+        respuesta_usuario = input('Para iniciar nueva partida introduce [Sí o S]. Para salir introduce [No o N]: ')
+
+        if (respuesta_usuario != 'Sí') and (respuesta_usuario != 'S') and (respuesta_usuario != 'No') and (respuesta_usuario != 'N'):
+            # si el usuario no ha entrado niguna de las opciones válidas
+            print('Entrada no válida, por favor, vuelve a intentarlo.')
+            continue
+        else:
+            nueva_partida = True if respuesta_usuario == 'S' or respuesta_usuario == 'Sí' else False
+
+        # empezamos una nueva partida si el usuario quiere
+        # seguir jugando a
+        if nueva_partida:
+            # definimos ajustes de una nueva partida y
+            # reinicializamos el tablero
+            definir_ajustes()
+            inicializar_tablero()
+            generar_minas()
+
+            # Bucle para empezar una partida nueva
+            while True:
+                imprimir_tablero()
+                if leer_datos_usuario():
+                    # si las posiciones introducidas son correctas
+                    # proceder con el juego, sino, volver a pedir
+                    procesar_entrada()
+                else:
+                    print('La posición introducida no es válida. Vuelve a introducir una posicón, por favor.')
+
+                # acabamos la partida si ganamos o perdemos
+                if ganas or pierdes:
+                    break
+
+            # cuando acaba la partida escribir si se ha ganado o perdido
+            if pierdes:
+                print('¡Lástima! Has perdido.')
+
+            if ganas:
+                print('¡Felicidades! Has ganado la partida.')
+        else:
+            break
+
+    print('Programa terminando...')
 
 # Este bloque se ejecuta cuando se invoca este módulo
 # directamente (no cuando se importa)
 if __name__ == '__main__':
-    # Inicializar juego
-    inicializar_tablero()
-    generar_minas()
-    imprimir_tablero()
-
-    # Ejecutar Juego
-    while continuar:
-
-        if leer_datos_usuario():
-            # si las posiciones introducidas son correctas
-            # proceder con el juego, sino, volver a pedir
-            procesar_entrada()
-            imprimir_tablero()
-        else:
-            print('La posición introducida no es válida. Vuelve a introducir una posicón, por favor.')
-
-        if pierdes or ganas:
-            continuar = False
-
-    if pierdes:
-        print('¡Lástima! Has perdido.')
-
-    if ganas:
-        print('¡Felicidades! Has ganado la partida.')
+    jugar()
