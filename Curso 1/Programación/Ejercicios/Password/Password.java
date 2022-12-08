@@ -9,7 +9,6 @@
 // https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
 
 import java.io.*;
-import java.util.regex.Pattern;
 
 public class Password {
     public static void main(String[] args) throws IOException {
@@ -40,19 +39,19 @@ public class Password {
     }
 
     public static boolean match(char ch) {
-        switch(ch) {
-            case 'À': case 'Á': case 'Ä': case 'Â':
-            case 'É': case 'È': case 'Ë': case 'Ê':
-            case 'Í': case 'Ì': case 'Ï': case 'Î':
-            case 'Ó': case 'Ò': case 'Ö': case 'Ô':
-            case 'Ú': case 'Ù': case 'Ü': case 'Û':
-            case 'á': case 'à': case 'ä': case 'â':
-            case 'é': case 'è': case 'ë': case 'ê':
-            case 'í': case 'ì': case 'ï': case 'î':
-            case 'ó': case 'ò': case 'ö': case 'ô':
-            case 'ú': case 'ù': case 'ü': case 'û': return true;
-            default: return false;
-        }
+        return switch (ch) {
+            case 'À', 'Á', 'Ä', 'Â',
+                    'É', 'È', 'Ë', 'Ê',
+                    'Í', 'Ì', 'Ï', 'Î',
+                    'Ó', 'Ò', 'Ö', 'Ô',
+                    'Ú', 'Ù', 'Ü', 'Û',
+                    'á', 'à', 'ä', 'â',
+                    'é', 'è', 'ë', 'ê',
+                    'í', 'ì', 'ï', 'î',
+                    'ó', 'ò', 'ö', 'ô',
+                    'ú', 'ù', 'ü', 'û' -> true;
+            default -> false;
+        };
     }
 
     public static boolean validatePass(String pass) {
@@ -69,26 +68,27 @@ public class Password {
         index = 0;
         while (index < pass.length() && !checks[4]){
             codePt = pass.codePointAt(index);
+            // Contiene acentos
+            if (match(pass.charAt(index)))
+                checks[4] = true;
             // Hay al menos una mayúscula
-            if (codePt >= "A".codePointAt(0) && codePt <= "Z".codePointAt(0))
+            else if (codePt >= "A".codePointAt(0) && codePt <= "Z".codePointAt(0))
                 checks[0] = true;
-            // Hay al menos una minúscula
+
+                // Hay al menos una minúscula
             else if (codePt >= "a".codePointAt(0) && codePt <= "z".codePointAt(0))
                 checks[1] = true;
-            // Hay almenos un dígito
+
+                // Hay almenos un dígito
             else if (Character.isDigit(pass.charAt(index)))
                 checks[2] = true;
 
-            // Contiene *, +, -, _, #, $, %, &
+                // Contiene *, +, -, _, #, $, %, &
             else if (pass.contains("*") || pass.contains("+") || pass.contains("-") || pass.contains("_") ||
                     pass.contains("#") || pass.contains("$") || pass.contains("%") || pass.contains("&")) {
-                checks[3] = true;
+                   checks[3] = true;
             }
-
-            // Contiene acentos
-            else if (match(pass.charAt(index)))
-                checks[4] = true;
-
+            
             ++index;
         }
 
