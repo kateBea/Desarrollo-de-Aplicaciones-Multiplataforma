@@ -21,10 +21,17 @@ input_fila = 0
 input_columna = 0
 pierdes = False
 ganas = False
+casillas_abiertas = 0
 
 
 # definición de funciones
 def definir_ajustes():
+    """
+    Función que lee y establece las dimensiones del tablero
+    de juego y la dificultad.
+    :return: None
+    """
+
     global NUMERO_FILAS
     global NUMERO_COLUMNAS
     global TOTAL_MINAS
@@ -59,7 +66,13 @@ def definir_ajustes():
         else:
             print('Dificultad no definida. Por favor inténtalo de nuevo.')
 
-def generar_posicio_aleatoria():
+def generar_posicion_aleatoria():
+    """
+    Función que genera una posición aleatoria dentro
+    de un tablero.
+    :return: None
+    """
+
     pos = list()
     pos.append(random.randint(0, NUMERO_FILAS - 1))
     pos.append(random.randint(0, NUMERO_COLUMNAS - 1))
@@ -68,9 +81,11 @@ def generar_posicio_aleatoria():
 
 def inicializar_tablero():
     """
-    Función que inicializa el tablero de juego
+    Función que inicializa las casillas del tablero
+    con valores incógnitos.
     :return: None
     """
+
     global NUMERO_COLUMNAS
     global NUMERO_FILAS
     global CASILLA_INCOGNITO
@@ -92,9 +107,10 @@ def inicializar_tablero():
 
 def imprimir_tablero():
     """
-    Función imprime por pantalla el tablero de minas
+    Función que imprime el tablero con el progreso actual.
     :return: None
     """
+
     global tablero
 
     for fila in tablero:
@@ -103,7 +119,14 @@ def imprimir_tablero():
 
         print()
 
-def leer_datos_usuario():
+def leer_coordenadas():
+    """
+    Función que lee unas coordenadas por la entrada de datos.
+    Si los valores están dentro de los límetes del tablero devuelve Cierto,
+    si las coordenadas no son válidas devuelve Falso.
+    :return: bool
+    """
+
     global input_fila
     global input_columna
     global NUMERO_FILAS
@@ -115,6 +138,12 @@ def leer_datos_usuario():
     return (0 < input_fila < NUMERO_FILAS + 1) and (0 < input_columna < NUMERO_COLUMNAS + 1)
 
 def encontrar_pistas():
+    """
+    Dada como coordenada de inicio, esta función revela todas
+    las casillas adyacentes sin minas a su alrededor y aquellas que contienen las pistas.
+    :return: None
+    """
+
     global tablero_de_minas
     global tablero
     global NUMERO_FILAS
@@ -124,22 +153,24 @@ def encontrar_pistas():
     global MINA
     global CASILLA_LIBRE
 
-    '''Desde una posición en concreto hay que encontrar todas las posiciones adyacentes sin minas
-    y todas las adyacentes que contienes pistas, es decir, todas las celdas que a su alrededor 
-    contienen al menos una mina. La posicion de partida viene dana por (input_fila - 1) para 
-    coordenada de fila y (input_columna - 1) para coordenada de columna sobre el tablero_de_minas.'''
-
     # poner pistas en el tablero de minas
     posiciones_visitadas = list()
+    # Las coordenadas del tablero de minas están entre [0, NUMERO_FILAS) para las filas y [0, NUMERO_COLUMNAS)
+    # Las coordenadas del tablero de minas están entre [0, NUMERO_FILAS] para las filas y [0, NUMERO_COLUMNAS]
     posicion_inicio = [input_fila - 1, input_columna - 1]
     direcciones = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
     cola_de_visita = [posicion_inicio]
 
+    # Marcamos todas las posiciones del tablero como no visitadas
+    # Esta matriz auxiliar nos indicará cuáles son las casillas adyacentes que hay que visitar
     for _ in range(0, NUMERO_FILAS):
         posiciones_visitadas.append([False] * NUMERO_COLUMNAS)
 
     # marcar la posición de partida como visitada
     posiciones_visitadas[posicion_inicio[0]][posicion_inicio[1]] = True
+
+    # Si la casilla ya contenía una pista (un número indicando la cantidad de minas alrededor)
+    # abrimos la casilla y la dejamos marcada con la pista
     if int(tablero_de_minas[posicion_inicio[0]][posicion_inicio[1]]) > 0:
         tablero[posicion_inicio[0] + 1][posicion_inicio[1] + 1] = tablero_de_minas[posicion_inicio[0]][posicion_inicio[1]]
     else:
@@ -148,7 +179,7 @@ def encontrar_pistas():
     while len(cola_de_visita) != 0:
         siguiente_posicion = cola_de_visita.pop()
 
-        # visitar posiciones adyacentes a 'siguiente posicion'
+        # visitar posiciones adyacentes a 'siguiente_posicion'
         for p in direcciones:
             adyacente = [siguiente_posicion[0] + p[0], siguiente_posicion[1] + p[1]]
 
@@ -164,12 +195,18 @@ def encontrar_pistas():
                     else:
                         tablero[adyacente[0] + 1][adyacente[1] + 1] = CASILLA_LIBRE
 
-                # apuntamos esta casilla para seguir buscando pistas en el caso de que no tenga minas a su alrededor
+                # apuntamos esta casilla adyacente para seguir buscando pistas desde ella en el caso de que no sea una mina
+                # y no queremos explorar más allá de las pistas, si no revelaríamos al jugador las minas
                 if tablero_de_minas[adyacente[0]][adyacente[1]] != MINA and int(tablero_de_minas[adyacente[0]][adyacente[1]]) == 0:
                     cola_de_visita.append(adyacente)
 
 
 def generar_minas():
+    """
+    Función que inicializa el tablero de minas en posiciones aleatorias.
+    :return: None
+    """
+
     global tablero_de_minas
     global NUMERO_FILAS
     global NUMERO_COLUMNAS
@@ -179,10 +216,12 @@ def generar_minas():
     for _ in range(0, NUMERO_FILAS):
         tablero_de_minas.append([CASILLA_INCOGNITO] * NUMERO_COLUMNAS)
 
-    # incrustar minas en el tablero de minas
+    # Controla el número de minas que se han
+    # colocado en el tablero de minas
     total = 0
+
     while total < TOTAL_MINAS:
-        posicion = generar_posicio_aleatoria()
+        posicion = generar_posicion_aleatoria()
 
         if tablero_de_minas[posicion[0]][posicion[1]] == MINA:
             # si la posición ya contiene una mina
@@ -193,7 +232,7 @@ def generar_minas():
 
         total = total + 1
 
-    # poner pistas en el tablero de minas
+    # ponemos pistas en el tablero de minas
     posiciones_visitadas = list()
     posicion_inicio = [0, 0]
     direcciones = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
@@ -222,16 +261,18 @@ def generar_minas():
         tablero_de_minas[siguiente_posicion[0]][siguiente_posicion[1]] = str(minas_alrededor)
 
 def procesar_entrada():
+    """
+    Función que determina los resultados de una entrada de datos.
+    :return:
+    """
+
     global input_fila
     global input_columna
     global tablero
     global tablero_de_minas
-    global CASILLA_LIBRE
     global MINA
     global ganas
     global pierdes
-    global NUMERO_FILAS
-    global NUMERO_COLUMNAS
 
     if tablero_de_minas[input_fila - 1][input_columna - 1] != MINA:
         encontrar_pistas()
@@ -242,6 +283,10 @@ def procesar_entrada():
         pierdes = True
 
 def jugar():
+    """
+    Función principal. Núcleo del juego.
+    :return: None
+    """
     print('********** Bienvenido al juego de buscaminas **********')
 
     # Bucle principal
@@ -249,14 +294,13 @@ def jugar():
         respuesta_usuario = input('Para iniciar nueva partida introduce [Sí o S]. Para salir introduce [No o N]: ')
 
         if (respuesta_usuario != 'Sí') and (respuesta_usuario != 'S') and (respuesta_usuario != 'No') and (respuesta_usuario != 'N'):
-            # si el usuario no ha entrado niguna de las opciones válidas
+            # si el usuario no ha entrado ninguna de las opciones válidas
             print('Entrada no válida, por favor, vuelve a intentarlo.')
             continue
         else:
             nueva_partida = True if respuesta_usuario == 'S' or respuesta_usuario == 'Sí' else False
 
-        # empezamos una nueva partida si el usuario quiere
-        # seguir jugando a
+        # empezamos una nueva partida si el usuario quiere seguir jugando
         if nueva_partida:
             # definimos ajustes de una nueva partida y
             # reinicializamos el tablero
@@ -267,18 +311,17 @@ def jugar():
             # Bucle para empezar una partida nueva
             while True:
                 imprimir_tablero()
-                if leer_datos_usuario():
+                if leer_coordenadas():
                     # si las posiciones introducidas son correctas
-                    # proceder con el juego, sino, volver a pedir
+                    # proceder con el juego, si no, volver a pedir
                     procesar_entrada()
                 else:
-                    print('La posición introducida no es válida. Vuelve a introducir una posicón, por favor.')
+                    print('La posición introducida no es válida. Vuelve a introducir una posición, por favor.')
 
                 # acabamos la partida si ganamos o perdemos
                 if ganas or pierdes:
                     break
 
-            # cuando acaba la partida escribir si se ha ganado o perdido
             if pierdes:
                 print('¡Lástima! Has perdido.')
 
