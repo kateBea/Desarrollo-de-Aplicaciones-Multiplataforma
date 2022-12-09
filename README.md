@@ -20,3 +20,6 @@ algunos apunter del ciclo de DAM junto con bastantes ejercicios de resueltos de 
     - [[PMDMS] Programación multimedia y dispositivos móviles](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Programaci%C3%B3n%20multimedia%20y%20dispositivos%20m%C3%B3viles)
     - [[SGE]   Sistemas de gestión empresarial](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Sistemas%20de%20gesti%C3%B3n%20empresarial)
     - [[IT]    Inlgés técnico](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Inlg%C3%A9s%20t%C3%A9cnico)
+
+- Recursos:
+    - [DAM Ejercicios](https://gradosuperiordam.top/)
