@@ -15,14 +15,14 @@ TOTAL_MINAS = 0
 
 
 # Crear variables
-tablero = list()
-tablero_de_minas = list()
-input_fila = 0
-input_columna = 0
-pierdes = False
-ganas = False
-casillas_abiertas = 0
+tablero = list()                    # tablero que se muestra al usuario por pantalla, al principio del juego muestra todas las casillas incógnitas y se expande a medida que se progresa
+tablero_de_minas = list()           # tablero que contiene las minas y todas las pistas, es decir, para cada casilla libre un número que indica la cantidad de minas a su alrededor
+input_fila = 0                      # dato de coordenada de fila que se va a leer del usuario
+input_columna = 0                   # dato de coordenada de columna que se va a leer del usuario
+pierdes = False                     # esta variable se cambia Cierto si el jugador ha perdido la partida
+ganas = False                       # esta variable se cambia a Cierto si el jugador ha ganado la partida
 
+# NOTA: las variables ganas y pierdes nunca las dos a la vez
 
 # definición de funciones
 def definir_ajustes():
@@ -155,9 +155,11 @@ def encontrar_pistas():
 
     # poner pistas en el tablero de minas
     posiciones_visitadas = list()
-    # Las coordenadas del tablero de minas están entre [0, NUMERO_FILAS) para las filas y [0, NUMERO_COLUMNAS)
-    # Las coordenadas del tablero de minas están entre [0, NUMERO_FILAS] para las filas y [0, NUMERO_COLUMNAS]
+
+    # Las coordenadas del tablero de minas están entre [0, NUMERO_FILAS) para las filas y [0, NUMERO_COLUMNAS) para las columnas
+    # Las coordenadas del tablero que se muestra al usuario están entre [1, NUMERO_FILAS] para las filas y [1, NUMERO_COLUMNAS] para las columnas
     posicion_inicio = [input_fila - 1, input_columna - 1]
+
     direcciones = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
     cola_de_visita = [posicion_inicio]
 
@@ -244,8 +246,11 @@ def generar_minas():
     posiciones_visitadas[posicion_inicio[0]][posicion_inicio[1]] = True
     while len(cola_de_visita) != 0:
         siguiente_posicion = cola_de_visita.pop()
-        minas_alrededor = 0 # cuenta las minas alrededor de una celda
-        # visitar posiciones adyacentes a 'siguiente posicion'
+
+        # cuenta las minas alrededor de una celda
+        minas_alrededor = 0
+        
+        # visitar posiciones adyacentes a 'siguiente_posicion'
         for p in direcciones:
             adyacente = [siguiente_posicion[0] + p[0], siguiente_posicion[1] + p[1]]
 
@@ -277,6 +282,7 @@ def procesar_entrada():
     if tablero_de_minas[input_fila - 1][input_columna - 1] != MINA:
         encontrar_pistas()
         # ganamos si se han abierto todas las casillas que no contienen minas
+        # TODO: Implementar como indicar cuando se gana o se pierde
 
     else:
         tablero[input_fila][input_columna] = MINA
@@ -323,10 +329,13 @@ def jugar():
                     break
 
             if pierdes:
+
                 print('¡Lástima! Has perdido.')
 
             if ganas:
                 print('¡Felicidades! Has ganado la partida.')
+
+            # TODO: Imprimir todas las minas del tablero al cabar la partida
         else:
             break
 
