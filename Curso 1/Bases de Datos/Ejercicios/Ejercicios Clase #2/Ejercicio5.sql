@@ -1,11 +1,9 @@
 /* Ejercicio 05 */
 
 /************************************************************
-
 	Ejecutar el script en el orden en que aparecen las 
 	sentencias para evitar errores de creación de tablas, 
 	borrado de datos, entre otros
-
 ************************************************************/
 
 
@@ -17,17 +15,18 @@ USE Banco;
 
 CREATE TABLE IF NOT EXISTS Cliente (
 	Dni CHAR(10) PRIMARY KEY,
-    Nombre_completo CHAR(100) NOT NULL UNIQUE
+    Nombre VARCHAR(100) NOT NULL UNIQUE,
+    Apellidos VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS Sucursal (
-	Numero INT PRIMARY KEY,
+	Numero CHAR(30) PRIMARY KEY,
     Ciudad CHAR(100) NOT NULL,
-    Nombre_activo_actual CHAR(100) NOT NULL
+    Activo_actual DOUBLE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Cuenta (
-	Numero INT,
+	Numero CHAR(30),
     Num_sucursal INT,
 	Saldo DOUBLE NOT NULL,
     
@@ -37,14 +36,15 @@ CREATE TABLE IF NOT EXISTS Cuenta (
 
 CREATE TABLE IF NOT EXISTS Transaccion (
 	Numero INT PRIMARY KEY,
-    Fecha CHAR(100) NOT NULL,
+    Fecha DATE NOT NULL,
     Tipo CHAR(3) NOT NULL CHECK (Tipo IN ('Ing', 'Ext')),
     Cantidad DOUBLE,
-    Num_cuenta INT NOT NULL,
+    Num_cuenta CHAR(30) NOT NULL,
     
     CONSTRAINT Fk_cuenta FOREIGN KEY (Num_cuenta) REFERENCES Cuenta (Numero)
 );
 
+/* Tabla inecesaria */
 CREATE TABLE IF NOT EXISTS Asistencia (
 	Dni_cliente CHAR(10),
     Num_sucursal INT,
@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS Asistencia (
 
 CREATE TABLE IF NOT EXISTS Propiedad (
 	Dni_cliente CHAR(10),
-    Num_cuenta INT,
-    Num_sucursal INT,
+    Num_cuenta CHAR(30),
+    Num_sucursal CHAR(30),
     
     PRIMARY KEY (Dni_cliente, Num_cuenta, Num_sucursal),
     CONSTRAINT Fk_Propiedad1 FOREIGN KEY (Dni_cliente) REFERENCES Cliente (Dni),
