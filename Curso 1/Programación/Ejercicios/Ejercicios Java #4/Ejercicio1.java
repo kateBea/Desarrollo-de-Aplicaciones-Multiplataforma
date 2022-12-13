@@ -41,6 +41,5 @@ public class Ejercicio1 {
     public static void obtenerParidad(int[] numeros, char[] paridad) {
         for (int index = 0; index < LIMITE_NUMEROS; ++index)
             paridad[index] = (esPar(numeros[index]) ? PAR : IMPAR);
-
     }
 }
