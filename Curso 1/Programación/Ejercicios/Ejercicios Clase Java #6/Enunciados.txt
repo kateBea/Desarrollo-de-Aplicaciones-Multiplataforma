@@ -1,0 +1,32 @@
+
+1.      Realizar un programa que pida como entrada un número decimal y lo muestre 
+        redondeado al entero más próximo. Ejemplos: 2,3 se redondea a 2 y 4,8 se redondea a 5.
+
+2.      Realizar un programa que calcule la longitud y el área de una circunferencia. 
+        La fórmula a aplicar será: longitud = 2π * radio; área = π * radio2
+
+3.      Realizar un programa que calcule la pendiente de una línea recta dada por 
+        dos puntos de la misma (x1,y1) y (x2,y2). La fórmula a aplicar será: 
+        p = (y2-y1) / (x2-x1)
+
+4.      Realizar un programa que pida dos enteros y muestre cual es el mayor 
+        y el menor, si son iguales lo indicará también.
+
+5.      Realizar un programa que pida un entero y muestre si es par o impar.
+
+6.      Realizar un programa que pida una hora de la siguiente forma: hora,
+        minutos y segundos. Se debe mostrar la hora un segundo más tarde. 
+        Ejemplo: [10:31:59] → [10:32:00]
+
+7.      Realizar un programa que pida un entero y una cadena y repita tantas 
+        veces la cadena como indique el entero.
+
+8.      Realizar un programa que muestre las tablas de multiplicar del 1 al 9.
+
+9.      Realizar un programa que pida un entero n y dibuje un triángulo rectángulo 
+        de n elementos de lado.
+
+10.     Realizar un programa para calcular las ganancias anuales de una explotación
+        ganadera que vende leche. El programa generará de forma aleatoria para cada mes 
+        una cantidad de litros de leche entre 1000 y 1500 y un precio de venta
+        entre 0.5 y 1.5 y los almacenará en un array de 2x12 para facilitar el cálculo. 
