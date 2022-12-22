@@ -236,6 +236,6 @@ public class Ejercicio7 {
     }
 
     public static void totalPersonasConMismaEdad(String[][] personas) {
-
+        // TODO. Descripción imcomleta del problema para estae caso
     }
 }
