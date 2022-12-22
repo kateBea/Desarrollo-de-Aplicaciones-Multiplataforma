@@ -71,7 +71,7 @@ public class Ejercicio6 {
             if (op != 's')
                 System.out.printf("El resultado de [%.3f %c %.3f] es : %.3f\n", op1, op, op2, resultado);
             else 
-            System.out.printf("El resultado de sqrt(%.3f) es : %.3f\n", op1, resultado);
+                System.out.printf("El resultado de sqrt(%.3f) es : %.3f\n", op1, resultado);
         }
     }
 }
