@@ -17,6 +17,9 @@ public class Ejercicio7 {
         int opcion;
         int limitePersonas;
         final int LIMITE_DATOS = 5;
+
+        // guarda datos de personas
+        // [0] Nombre, [1] Dirección, [2] Edad, [3] Peso y [4] Altura, respectivamente
         String[][] personas;
         
         System.out.println("********** BIENVENIDO A GESTOR DE PERSONAS **********");
@@ -37,13 +40,11 @@ public class Ejercicio7 {
                 case 1 -> mostrarDatos(personas);
                 case 2 -> ordenar(personas, ORDEN.OrdenPeso);
                 case 3 -> ordenar(personas, ORDEN.OrdenEdad);
-                
-                //case 4 -> ;
-                //case 5 -> ;
-                //case 6 -> ;
-                //case 7 -> ;
-                //case 8 -> ;
-                //case 9 -> ;
+                case 4 -> margenesEdades(personas);
+                case 5 -> margenesPesos(personas);
+                case 6 -> mostrarMediaPeso(personas);
+                case 7 -> mostrarMediaEdad(personas);
+                case 8 -> totalPersonasConMismaEdad(personas);
             }
 
             System.out.println();
@@ -106,8 +107,11 @@ public class Ejercicio7 {
     }
 
     public static void leerDatos(String[][] lista) throws IOException {
-        for (int fila = 0; fila < lista.length; ++fila) 
+        for (int fila = 0; fila < lista.length; ++fila) {
+            System.out.println();
+            System.out.println("Datos persona#" + (fila + 1) + ":");
             leerPersona(lista[fila]);
+        }
     }
 
     public static void leerPersona(String[] persona) throws IOException {
@@ -126,7 +130,7 @@ public class Ejercicio7 {
     }
 
     public static void mostrarMenu() {
-        System.out.println("1. Mostrar datos.");
+        System.out.println("\n1. Mostrar datos.");
         System.out.println("2. Ordenar por peso.");
         System.out.println("3. Ordenar por edad.");
         System.out.println("4. Mostrar pareja con mayor / menor edades.");
@@ -148,6 +152,90 @@ public class Ejercicio7 {
 
     public static void imprimirDatosPersona(String[] persona) {
         System.out.print(persona[0] + "        " + persona[1] + "        " + persona[2] + "           ");
-        System.out.println(persona[3] + "            " + persona[4]);
+        System.out.println(Float.parseFloat(persona[3]) + "            " + Float.parseFloat(persona[4]));
+    }
+
+    public static void margenesEdades(String[][] personas) {
+        int minValor;
+        int maxValor;
+
+        int indiceMin;
+        int indiceMax;
+
+        indiceMin = 0;
+        indiceMax = 0;
+
+        // asumimos los extremos están al principio
+        minValor = Integer.parseInt(personas[indiceMin][2]);
+        maxValor = Integer.parseInt(personas[indiceMax][2]);
+
+        for (int i = 0; i < personas.length; ++i) {
+            int edad = Integer.parseInt(personas[i][2]);
+
+            if (edad < minValor) {
+                minValor = edad;
+                indiceMin = i;
+            }
+
+            if (edad > maxValor) {
+                maxValor = edad;
+                indiceMax = i;
+            }
+        }
+
+        System.out.println("La persona con menor edad es: " + personas[indiceMin][0]);
+        System.out.println("La persona con mayor edad es: " + personas[indiceMax][0]);
+    }
+
+    public static void margenesPesos(String[][] personas) {
+        float minValor;
+        float maxValor;
+
+        int indiceMin;
+        int indiceMax;
+
+        indiceMin = 0;
+        indiceMax = 0;
+
+        // asumimos los extremos están al principio
+        minValor = Float.parseFloat(personas[indiceMin][3]);
+        maxValor = Float.parseFloat(personas[indiceMax][3]);
+
+        for (int i = 0; i < personas.length; ++i) {
+            float peso = Float.parseFloat(personas[i][3]);
+
+            if (peso < minValor) {
+                minValor = peso;
+                indiceMin = i;
+            }
+
+            if (peso > maxValor) {
+                maxValor = peso;
+                indiceMax = i;
+            }
+        }
+
+        System.out.println("La persona con menor peso es: " + personas[indiceMin][0]);
+        System.out.println("La persona con mayor peso es: " + personas[indiceMax][0]);
+    }
+
+    public static void mostrarMediaPeso(String[][] personas) {
+        float pesoMedio = 0;
+        for (int i = 0; i < personas.length; ++i) 
+        pesoMedio += (float)Integer.parseInt(personas[i][3]);
+
+        System.out.println("La media de peso es de: " + (pesoMedio / personas.length));
+    }
+
+    public static void mostrarMediaEdad(String[][] personas) {
+        float edadMedia = 0;
+        for (int i = 0; i < personas.length; ++i) 
+            edadMedia += (float)Integer.parseInt(personas[i][2]);
+
+        System.out.println("La edad media es de: " + (edadMedia / personas.length));
+    }
+
+    public static void totalPersonasConMismaEdad(String[][] personas) {
+
     }
 }
