@@ -56,7 +56,7 @@ public class Ejercicio7 {
         ordenar(personas, orden, 0, personas.length - 1);
     }
 
-    static void ordenar(String[][] personas, ORDEN orden, int left, int right) {
+    public static void ordenar(String[][] personas, ORDEN orden, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
             ordenar(personas, orden, left, mid);
@@ -65,7 +65,7 @@ public class Ejercicio7 {
         }
     }
 
-    static void ordenar(String[][] personas, ORDEN orden, int left, int mid, int right) {
+    public static void ordenar(String[][] personas, ORDEN orden, int left, int mid, int right) {
         int newSize = (right - left) + 1;
         int idxSubvectorIzq = left;
         int idxSubvectorDer = mid + 1; 
@@ -92,6 +92,7 @@ public class Ejercicio7 {
 
         if (idxSubvectorIzq <= mid)
             System.arraycopy(personas, idxSubvectorIzq, arrayAuxiliar, idxArrayAuxiliar, (mid - idxSubvectorIzq) + 1);
+            
         if (idxSubvectorDer <= right)
             System.arraycopy(personas, idxSubvectorDer, arrayAuxiliar, idxArrayAuxiliar, (right - idxSubvectorDer) + 1);
 
@@ -236,6 +237,9 @@ public class Ejercicio7 {
     }
 
     public static void totalPersonasConMismaEdad(String[][] personas) {
-        // TODO. Descripción imcomleta del problema para estae caso
+        // TODO. Descripción incompleta del problema para este caso. Varias interpretaciones
+
+        // 1. Varios grupos de personas con misma edad (mostrar las que tienen mayor/menor edad? )
+        // ...
     }
 }
