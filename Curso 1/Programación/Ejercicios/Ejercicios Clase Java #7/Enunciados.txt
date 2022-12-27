@@ -1,0 +1,66 @@
+1. Realizar un programa que imprima todos los números de un rango de valores. El programa 
+pedirá dos números (el menor y el mayor) y llamará a un método auxiliar encargado de 
+imprimir todos los que se encuentren en su rango.
+
+2. Reutilizando el programa anterior escribir solo los números pares en el rango de valores. 
+El método auxiliar encargado de imprimir todos los valores que se encuentren en su rango 
+tiene que hacer uso de otra función llamada esPar(int num) que devolverá un booleano 
+indicando si el número es par o no.
+
+3. Realizar un programa que determine cuál es el mayor de dos números. El programa tendrá un 
+método mayor que recibirá dos valores de tipo entero y devolverá cual es el mayor. Desde el 
+método main se pedirá al usuario los valores y se llamará al método mayor.
+
+4. Repetir el ejercicio anterior con una versión que devuelva el mayor de tres números pero 
+reutilizando el método mayor de dos números.
+
+5. Realizar un programa que permita simular una calculadora. El programa tendrá un método calculadora 
+que recibirá dos valores de tipo double y un carácter que indicará la operación a realizar (+,-,*,/,). 
+Desde el método main se pedirá al usuario los valores y la operación y se llamará al método calculadora.
+
+6. Añadir la programa anterior las operaciones de potencia y raíz cuadrada
+
+7. Crear una matriz de personas en las que se almacenarán los datos de nombre, dirección, edad, peso y 
+altura. El programa se iniciará dando la bienvenida y preguntando cuántas personas se registrarán. 
+A continuación, para ese nº personas se pedirán todos los datos indicados. Una vez que se ha creado 
+la matriz se presentará un menú con las operaciones:
+
+    1) Mostrar datos
+
+    2) Ordenar por peso
+
+    3) Ordenar por edad
+
+    4) Mostrar el de mayor /menor  edad
+
+    5) Mostrar el de mayor / menor peso
+
+    6) Mostrar la media de peso
+
+    7) Mostrar la media de edad
+
+    8) Mostrar el nº de personas que tienen la misma edad
+
+    9) Salir
+
+8. Crear un programa en Java que permita crear una tabla dinámica, en la que preguntemos al usuario el 
+número de filas y columnas para cada fila. Una vez creada, rellenar datos y mostrarlos.
+
+9. Escribir un programa al que se le pasa un número de teléfono de la forma: 91-8885566. El programa 
+deberá extraer el código de la comunidad y el resto del número, convertir el código de la comunidad 
+en int y el resto en long, y presentarlo por pantalla
+
+10. Escribir un programa que lea una frase y nos diga cuántas palabras la componen.
+
+11. Escribir un programa que pida una cadena y la divida en palabras y presente las palabras en orden inverso. 
+
+12. Crear un array de x posicioes, siendo x un número aleatorio entre 1 y 10. A continuación, rellenar 
+dicho array con frases que solicitemos al usuario. Una vez creado el vector presentar el siguiente menú.
+
+    1) Mostrar contenido vector
+    2) Mostrar todo el contenido en minúsculas
+    3) Mostrar todo el contenido en mayúsculas
+    4) Mostrar el contenido, la primera letra  de cada palabra en mayúsculas
+    5) Mostrar el número de locales y de consonantes de cada texto en cada posición
+    6) Mostrar el contenido más largo
+    7) Salir
