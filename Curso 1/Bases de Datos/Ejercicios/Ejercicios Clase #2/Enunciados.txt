@@ -27,3 +27,25 @@ un número de cuenta y saldo. Del cliente interesa almacenar el DNI, el nombre c
 y la ciudad en que reside. Cada transacción que se realiza sobre una cuenta tiene un número diferente. 
 Además, se marca la fecha del día, el tipo de operación que se realiza (Ingreso/Extracción) 
 y la cantidad que se mueve.
+
+EJERCICIO (VueltaCiclistas)
+
+Se desea diseñar un BD que recoja la organización y gestión de una vuelta ciclista por etapas.
+
+De cada etapa será necesario registrar el número de etapa, fecha, hora de salida, hora estimada de llegada, 
+número de kilómetros de la etapa, denominación del lugar de donde se sale y a donde se llega, puertos de 
+montaña por los que pasa y categoría de dichos puertos. Algunas de las etapas no tendrán puertos, puesto 
+que pueden ser contrarreloj individuales.
+
+Los equipos que participan están formados por nueve ciclistas (identificados por el dorsal). Será necesario 
+guardar el nombre del equipo, nacionalidad, director, patrocinador del equipo y ciclistas que lo componen.
+
+De los ciclistas se guardará, además del dorsal, su nombre, su nacionalidad y las mejores clasificaciones 
+que haya tenido en su carrera (ej. ‘Tercero en el Tour del 92’, ‘Cuarto en el Giro del 95’, …).
+
+Con el fin de obtener la clasificación de la etapa y la clasificación general (suma de los tiempos de cada 
+una de las etapas) se necesita llevar un registro de los tiempos invertidos por cada corredor en cada una de las etapas.
+
+Al finalizar cada etapa los ciclistas conceden entrevistas a las distintas cadenas de radio o televisión. 
+La organización cobra un canon (cantidad fija por entrevista) por lo que desea controlar el número de 
+entrevistas, el nombre del ciclista y la cadena de radio o televisión que la realiza.
