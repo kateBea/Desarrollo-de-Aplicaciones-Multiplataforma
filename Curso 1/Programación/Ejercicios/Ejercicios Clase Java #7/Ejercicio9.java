@@ -92,28 +92,24 @@ public class Ejercicio9 {
             
             System.out.print("Frase #" + (i + 1) + ": ");
             for (String str : frases[i].split(" ")) {
+                if (primeraPalabra) {
+                    primeraPalabra = false;
+                }
+                else
+                    System.out.print(" ");
+
                 primeraLetra = primeraLetra(str);
                 if (primeraLetra != -1 && Character.isLetter(Character.toUpperCase(str.charAt(primeraLetra)))) {
                     aux = new StringBuffer(str);
                     aux.setCharAt(0, Character.toLowerCase(str.charAt(primeraLetra)));
 
-                    if (primeraPalabra) {
-                        primeraPalabra = false;
-                        System.out.print(aux);
-                    }
-                    else
-                        System.out.print(" " + aux);
+                    System.out.print(aux);
                 }
                 else {
                     // en caso de no haber letras
-                    // pro ejemplo si tenemos una palabra como "3289"
+                    // por ejemplo si tenemos una palabra o String como "3289"
                     // en ese caso no hay letras y no hay nada que convertir a minúsculas
-                    if (primeraPalabra) {
-                        primeraPalabra = false;
-                        System.out.print(str);
-                    }
-                    else
-                        System.out.print(" " + str);
+                    System.out.print(str);
                 }
                 
             }
