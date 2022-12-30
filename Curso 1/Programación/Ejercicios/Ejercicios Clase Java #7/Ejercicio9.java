@@ -92,9 +92,8 @@ public class Ejercicio9 {
             
             System.out.print("Frase #" + (i + 1) + ": ");
             for (String str : frases[i].split(" ")) {
-                if (primeraPalabra) {
+                if (primeraPalabra) 
                     primeraPalabra = false;
-                }
                 else
                     System.out.print(" ");
 
