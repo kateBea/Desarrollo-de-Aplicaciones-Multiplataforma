@@ -19,7 +19,6 @@ public class Ejercicio9 {
         tamanioArray = Integer.parseInt(lector.readLine());
         frases = leerFrases(tamanioArray);
 
-
         do {
             mostrarMenu();
 
