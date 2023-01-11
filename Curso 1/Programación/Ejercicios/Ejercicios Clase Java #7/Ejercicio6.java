@@ -40,8 +40,8 @@ public class Ejercicio6 {
         System.out.println("2. Para la resta introduzca ( - )");
         System.out.println("3. Para la multiplicación introduzca ( * )");
         System.out.println("4. Para la división introduzca ( / )");
-        System.out.println("4. Para la división introduzca ( p )");
-        System.out.println("4. Para la división introduzca ( s )");
+        System.out.println("4. Para la potencia introduzca ( p )");
+        System.out.println("4. Para la raíz cuadrada introduzca ( s )");
     }
 
     public static double leerOperando() throws IOException{
@@ -68,10 +68,12 @@ public class Ejercicio6 {
                 case 's' -> resultado = Math.sqrt(op1);
             }
 
-            if (op != 's')
-                System.out.printf("El resultado de [%.3f %c %.3f] es : %.3f\n", op1, op, op2, resultado);
+            if (op == 's')
+                System.out.printf("El resultado de sqrt(%.3f) es: %.3f\n", op1, resultado);
+            else if (op == 'p')
+                System.out.printf("El resultado de %.3f elevado a %.3f es: %.3f\n", op1, op2, resultado);
             else 
-                System.out.printf("El resultado de sqrt(%.3f) es : %.3f\n", op1, resultado);
+                System.out.printf("El resultado de [%.3f %c %.3f] es: %.3f\n", op1, op, op2, resultado);
         }
     }
 }
