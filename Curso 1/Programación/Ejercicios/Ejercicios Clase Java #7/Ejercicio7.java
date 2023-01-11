@@ -224,7 +224,7 @@ public class Ejercicio7 {
     public static void mostrarMediaPeso(String[][] personas) {
         float pesoMedio = 0;
         for (int i = 0; i < personas.length; ++i) 
-        pesoMedio += (float)Integer.parseInt(personas[i][3]);
+        pesoMedio += Float.parseFloat(personas[i][3]);
 
         System.out.println("La media de peso es de: " + (pesoMedio / personas.length));
     }
@@ -246,8 +246,30 @@ public class Ejercicio7 {
         // guardará las edades de todas las personas
         // en el pero de los casos todas las personas tienen edad diferente
         int[] edades = new int[personas.length];
-        for (int i = 0; i < edades.length; ++i)
-            edades[i] = -1;
+        int indice = 0; // para iterar sobre el vector edades
+        int totalConEdad = 0; // cuenta el número de personas con una cierta edad
+        for (indice = 0; indice < edades.length; ++indice)
+            edades[indice] = -1;
+
+        indice = 0;
+        for (String[] persona : personas)
+            edades[indice++] = Integer.parseInt(persona[2]);
+
+        Arrays.sort(edades);
+
+        for (indice = 0; indice < edades.length - 1; ++indice) {
+            if (edades[indice] == edades[indice + 1])
+                totalConEdad++;
+            else {
+                System.out.println("Total de personas con " + edades[indice] + " años: " + totalConEdad);
+                totalConEdad = 0;
+
+                // trato caso final, si la última persona de la lista
+                // y la penúltima no tienen la misma edad
+                if (indice == edades.length - 2)
+                    System.out.println("Total de personas con " + edades[indice] + " años: " + totalConEdad);
+            }
+        }
 
     }
 }
