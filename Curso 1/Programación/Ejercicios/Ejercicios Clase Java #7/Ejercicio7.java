@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Arrays;
 
 public class Ejercicio7 {
     enum ORDEN {
@@ -241,5 +242,12 @@ public class Ejercicio7 {
 
         // 1. Varios grupos de personas con misma edad (mostrar las que tienen mayor/menor edad? )
         // ...
+
+        // guardará las edades de todas las personas
+        // en el pero de los casos todas las personas tienen edad diferente
+        int[] edades = new int[personas.length];
+        for (int i = 0; i < edades.length; ++i)
+            edades[i] = -1;
+
     }
 }
