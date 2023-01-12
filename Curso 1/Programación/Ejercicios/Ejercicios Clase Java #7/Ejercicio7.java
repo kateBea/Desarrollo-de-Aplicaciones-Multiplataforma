@@ -144,17 +144,22 @@ public class Ejercicio7 {
     }
 
     public static void mostrarDatos(String[][] personas) {
-        System.out.println("Nombre         Dirección         Edad         Peso         Altura");
-        System.out.println("------         ---------         ----         ----         ------");
+        System.out.println("-----------------------------------------------------------------");
         for (int fila = 0; fila < personas.length; ++fila) 
             imprimirDatosPersona(personas[fila]);
+
+        System.out.println("-----------------------------------------------------------------");
         
         
     }
 
     public static void imprimirDatosPersona(String[] persona) {
-        System.out.print(persona[0] + "        " + persona[1] + "        " + persona[2] + "           ");
-        System.out.println(Float.parseFloat(persona[3]) + "            " + Float.parseFloat(persona[4]));
+        System.out.println("Nombre:      " + persona[0]);
+        System.out.println("Direciión:   " + persona[1]);
+        System.out.println("Edad:        " + persona[2]);
+        System.out.println("Peso (kg):   " + persona[3]);
+        System.out.println("Altura (cm): " + persona[4]);
+        System.out.println();
     }
 
     public static void margenesEdades(String[][] personas) {
@@ -234,7 +239,7 @@ public class Ejercicio7 {
         for (int i = 0; i < personas.length; ++i) 
             edadMedia += (float)Integer.parseInt(personas[i][2]);
 
-        System.out.println("La edad media es de: " + (edadMedia / personas.length));
+        System.out.println("La edad media de edad es de: " + (edadMedia / personas.length));
     }
 
     public static void totalPersonasConMismaEdad(String[][] personas) {
@@ -247,27 +252,32 @@ public class Ejercicio7 {
         // en el pero de los casos todas las personas tienen edad diferente
         int[] edades = new int[personas.length];
         int indice = 0; // para iterar sobre el vector edades
-        int totalConEdad = 0; // cuenta el número de personas con una cierta edad
+        int totalConEdad = 1; // cuenta el número de personas con una cierta edad
         for (indice = 0; indice < edades.length; ++indice)
             edades[indice] = -1;
 
         indice = 0;
+        // obtener edades
         for (String[] persona : personas)
             edades[indice++] = Integer.parseInt(persona[2]);
 
         Arrays.sort(edades);
 
+        // 22 22 22 55 55 55 88 88 91
+        
+        // totalConEdad vale 1 porque al entrar al bucle se asume
+        // que hay al menos una persona con la edad que se va a tratar
         for (indice = 0; indice < edades.length - 1; ++indice) {
             if (edades[indice] == edades[indice + 1])
                 totalConEdad++;
             else {
                 System.out.println("Total de personas con " + edades[indice] + " años: " + totalConEdad);
-                totalConEdad = 0;
+                totalConEdad = 1;
 
                 // trato caso final, si la última persona de la lista
                 // y la penúltima no tienen la misma edad
                 if (indice == edades.length - 2)
-                    System.out.println("Total de personas con " + edades[indice] + " años: " + totalConEdad);
+                    System.out.println("Total de personas con " + edades[indice + 1] + " años: " + totalConEdad);
             }
         }
 
