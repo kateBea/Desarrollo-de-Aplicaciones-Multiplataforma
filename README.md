@@ -10,7 +10,7 @@ algunos apunter del ciclo de DAM junto con bastantes ejercicios de resueltos de 
     - [[ SI ]    &nbsp;Sistemas Informáticos](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Sistemas%20Inform%C3%A1ticos)
     - [[ LMSGI ] &nbsp;Lenguaje de marcas y sistemas de gestión de información](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Lenguaje%20de%20marcas%20y%20sistemas%20de%20gesti%C3%B3n%20de%20informaci%C3%B3n)
     - [[ ED ]    &nbsp;Entornos de desarollo](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Entornos%20de%20desarollo)
-    - [[ FOL ]   &nbsp;Formación y orientación laboral](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Formaci%C3%B3n%20y%20orientaci%C3%B3n%20laboral/Temario)
+    - [[ FOL ]   &nbsp;Formación y orientación laboral](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Formaci%C3%B3n%20y%20orientaci%C3%B3n%20laboral)
 
 - Asignaturas del segundo curso [TBD]:
 
