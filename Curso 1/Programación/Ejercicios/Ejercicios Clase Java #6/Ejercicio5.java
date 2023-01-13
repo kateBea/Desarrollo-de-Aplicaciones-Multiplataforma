@@ -1,3 +1,14 @@
+/* 
+ * Este programa pide un número por la entrada estándar de datos e indica
+ * mediante un mensaje por pantalla la paridad de dicho número.
+ * 
+ * @author Hugo
+ * @version 1.0
+ * @date 13 de enero de 2013
+ * 
+ * 
+ */
+
 import java.io.*;
 
 public class Ejercicio5 {
@@ -13,6 +24,14 @@ public class Ejercicio5 {
 
     }
 
+    /*
+     * Retorna cierto si el valor pasado como parámetro es un número
+     * par, retorna falso en caso contrario
+     * 
+     * @param numero el número a ser evaluado
+     * @return boolean cierto, si el valor es par, falso en caso contrario
+     * @authro Hugo
+     */
     public static boolean esPar(int numero) {
         return numero % 2 == 0;
     }
