@@ -4,9 +4,9 @@
  * como definición del area de la misma.
  * 
  * 
- * @autor Hugo
+ * @author Hugo
  * @version 1.0
- * @fecha 13 de enero de 2013
+ * @date 13 de enero de 2013
  * 
  * 
  */

@@ -2,9 +2,9 @@
  * Este programa pide el usuario por la entrada de datos un número decimal 
  * y lo muestra redondeado al entero más próximo.
  * 
- * @autor Hugo
+ * @author Hugo
  * @version 1.0
- * @fecha 13 de enero de 2013
+ * @date 13 de enero de 2013
  * 
  * 
  */

@@ -1,3 +1,13 @@
+/* 
+ * 
+ * 
+ * @author Hugo
+ * @version 1.0
+ * @date 13 de enero de 2013
+ * 
+ * 
+ */
+
 import java.io.*;
 
 public class Ejercicio4 {
