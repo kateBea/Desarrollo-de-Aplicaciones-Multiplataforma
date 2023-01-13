@@ -1,5 +1,7 @@
 /* 
- * 
+ * Este programa lee do números enteros de la entrada estándar de datos
+ * y muestra por pantalla el mayor, en caso de ser iguales se indica
+ * un mensaje apropiado.
  * 
  * @author Hugo
  * @version 1.0
@@ -16,7 +18,7 @@ public class Ejercicio4 {
         BufferedReader lector = new BufferedReader(input);
         int numero1;
         int numero2;
-
+        
         System.out.print("Introduzca el primer número: ");
         numero1 = Integer.parseInt(lector.readLine());
         System.out.print("Introduzca el segundo número: ");

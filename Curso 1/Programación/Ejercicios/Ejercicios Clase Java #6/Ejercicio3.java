@@ -30,7 +30,7 @@ public class Ejercicio3 {
      * representa la coordenada y.
      * 
      * @param punto reprensenta el punto a ser transformado
-     * @return float[2]
+     * @return float[2] array representando un punto en el espacio euclídeo
      * @author Hugo
      */
     public static float[] transformarCoordenadas(String punto) {
