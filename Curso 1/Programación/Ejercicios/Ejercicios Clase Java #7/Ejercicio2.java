@@ -1,3 +1,14 @@
+/* 
+ * Este programa lee dos enteros de la entrada de datos y muestra por pantalla
+ * todos los números enteros comprendidos en dicho intervalo.
+ * 
+ * @author Hugo
+ * @version 1.0
+ * @date 14 de enero de 2013
+ * 
+ * 
+ */
+
 import java.util.Scanner;
 
 public class Ejercicio2 {
