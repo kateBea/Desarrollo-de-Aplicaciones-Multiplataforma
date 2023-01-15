@@ -1,5 +1,6 @@
 /* 
- * 
+ * Este programa lee dos números reales de la entrada de datos
+ * y muestra por pantalla cuál de ambos es más grande.
  * 
  * @author Hugo
  * @version 1.0
@@ -10,8 +11,8 @@ import java.io.*;
 
 public class Ejercicio3 {
     public static void main(String[] args) throws IOException {
-        int num1 = 0;
-        int num2 = 0;
+        float num1 = 0;
+        float num2 = 0;
 
         num1 = leerNumero();
         num2 = leerNumero();
@@ -22,15 +23,31 @@ public class Ejercicio3 {
             System.out.println("El mayor es: " + mayor(num1, num2));
     }
     
-    public static int leerNumero() throws IOException {
+    /*
+     * Esta función lee un número real de la entrada de datos.
+     * 
+     * @param None
+     * @return float número real leído
+     * @author Hugo
+     */
+    public static float leerNumero() throws IOException {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader lector = new BufferedReader(input);
 
         System.out.print("Introcue un número: ");
-        return Integer.parseInt(lector.readLine());
+        return Float.parseFloat(lector.readLine());
     }
 
-    public static Integer mayor(int a, int b) {
+    /*
+     * Esta función retorna el mayor de dos números reales.
+     * Retrorna el primero si ambos son iguales
+     * 
+     * @param a número real a ser evaluado
+     * @param b número real a ser evaluado
+     * @return float el mayor de ambos números reales
+     * @author Hugo
+     */
+    public static float mayor(float a, float b) {
         return a < b ? b : a; 
     }
 }
