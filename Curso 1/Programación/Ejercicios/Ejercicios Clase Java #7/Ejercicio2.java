@@ -4,7 +4,7 @@
  * 
  * @author Hugo
  * @version 1.0
- * @date 14 de enero de 2013
+ * @date 14 de enero de 2023
  * 
  * 
  */
@@ -17,7 +17,6 @@ public class Ejercicio2 {
         int limiteInferior;
         int limiteSuperior;
 
-        
         do {
             System.out.print("Introduce la cota inferior de la secuencia: ");
             limiteInferior = lector.nextInt();
@@ -35,15 +34,37 @@ public class Ejercicio2 {
         lector.close();
     }
 
+    /*
+     * Función que imprime todos los números enteros pares comprendidos en
+     * el intervalo [limiteInferior, limiteSuperior], es decir, ambos inclusos.
+     * 
+     * @param limiteInferior cota inferior de la secuencia
+     * @param limiteSuperior cota superior de la secuencia
+     * @return void
+     * @author Hugo
+     */
     public static void imprimirSecuencia(int limiteInferior, int limiteSuperior) {
+        // intervalo vació solo cuando ambos límites son iguales 
+        // y son un número impar
+        boolean intervaloVacio = limiteInferior == limiteSuperior && !esPar(limiteSuperior);
         for (int indice = limiteInferior; indice <= limiteSuperior; ++indice) {
-            if (esPar(indice))
+            if (esPar(indice)) {
                 System.out.print(indice + " ");
+            }
         }
 
-        System.out.print("\n");
+        if (intervaloVacio)
+            System.out.println("El intervalo está vacío.");
     }
 
+    /*
+     * Indica si un número entero es par, en cuyo caso retorna cierto.
+     * Retorna falso en caso contrario
+     * 
+     * @param num el número a ser evaluado
+     * @return boolean cierto si el entero es par, falso en otro caso
+     * @author Hugo
+     */
     public static boolean esPar(int num) {
         return num % 2 == 0;
     }

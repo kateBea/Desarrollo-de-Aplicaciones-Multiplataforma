@@ -1,3 +1,11 @@
+/* 
+ * 
+ * 
+ * @author Hugo
+ * @version 1.0
+ * @date 14 de enero de 2023
+ */
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.*;
