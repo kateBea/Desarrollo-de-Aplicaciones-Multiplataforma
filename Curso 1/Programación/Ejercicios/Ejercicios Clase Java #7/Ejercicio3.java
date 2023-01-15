@@ -39,8 +39,8 @@ public class Ejercicio3 {
     }
 
     /*
-     * Esta función retorna el mayor de dos números reales.
-     * Retrorna el primero si ambos son iguales
+     * Esta función retorna el mayor de dos números reales,
+     * retrorna el primero si ambos son iguales.
      * 
      * @param a número real a ser evaluado
      * @param b número real a ser evaluado
