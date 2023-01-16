@@ -38,7 +38,7 @@ public class Ejercicio7 {
     }
 
     /*
-     * Lee de la enhtrada de datos la información relativa a una serie de personas
+     * Lee de la entrada de datos la información relativa a una serie de personas
      * y ofrece operaciones sobre este listado.
      * 
      * @param None
@@ -219,14 +219,30 @@ public class Ejercicio7 {
         return a <= b;
     }
 
+    /*
+     * Lee los datos de personas de la entrada de datos y los almacena en una matriz
+     * de String. Por cada fila lee cinco cadenas que representan el nombre, dirección,
+     * edad, peso y altura de una persona.
+     * 
+     * @param lista la matriz a ser rellenada
+     * @return void
+     * @author Hugo
+     */
     public static void leerDatos(String[][] lista) throws IOException {
         for (int fila = 0; fila < lista.length; ++fila) {
-            System.out.println();
-            System.out.println("Datos persona#" + (fila + 1) + ":");
+            System.out.println("\nDatos persona#" + (fila + 1) + ":");
             leerPersona(lista[fila]);
         }
     }
 
+    /*
+     * Esta función lee los datos de una persona y los almacena
+     * en un arreglo de String.
+     * 
+     * @param persona el arreglo a ser rellenado
+     * @return void
+     * @author Hugo
+     */
     public static void leerPersona(String[] persona) throws IOException {
         System.out.print("Introduzca el nombre: ");
         persona[0] = lector.readLine();
@@ -240,6 +256,14 @@ public class Ejercicio7 {
         persona[4] = lector.readLine();
     }
 
+    /*
+     * Esta función muestra por pantalla una serie de operaciones que el usuario
+     * puede realizar sobre la matriz que representa datos sobre personas.
+     * 
+     * @param None
+     * @return void
+     * @author Hugo
+     */
     public static void mostrarMenu() {
         System.out.println("\n1. Mostrar datos.");
         System.out.println("2. Ordenar por peso.");
@@ -252,16 +276,30 @@ public class Ejercicio7 {
         System.out.println("9. Salir.\n");
     }
 
+    /*
+     * Esta función muestra de forma formateada por la salida de datos 
+     * la información de personas contenida en una matriz de String
+     * 
+     * @param personas la matriz a imprimir
+     * @return void
+     * @author Hugo
+     */
     public static void mostrarDatos(String[][] personas) {
         System.out.println("-----------------------------------------------------------------");
         for (int fila = 0; fila < personas.length; ++fila) 
             imprimirDatosPersona(personas[fila]);
 
         System.out.println("-----------------------------------------------------------------");
-        
-        
     }
 
+    /*
+     * Función auxiliar que se usa en conjunto con mostrarDatos(String[][])
+     * para imprimir los datos sobre una persona individual.
+     * 
+     * @param persona arreglo conteniendo información sobre una persona
+     * @return void
+     * @author Hugo
+     */
     public static void imprimirDatosPersona(String[] persona) {
         System.out.println("Nombre:      " + persona[0]);
         System.out.println("Direciión:   " + persona[1]);
@@ -271,11 +309,24 @@ public class Ejercicio7 {
         System.out.println();
     }
 
+    /*
+     * Dada una matriz con información sobre personas, calcula la edad mínima
+     * y la edad máxima entre las personas contenidas en la matriz y muestra 
+     * dichos valores por pantalla.
+     * 
+     * @param personas la matriz que contiene información sobre personas
+     * @return void
+     * @author Hugo
+     */
     public static void margenesEdades(String[][] personas) {
+        // contiene el valor del menor edad
         int minValor;
+        // contiene el valor del mayor edad
         int maxValor;
 
+        // contiene el índice a la persona con menor edad
         int indiceMin;
+        // contiene el índice a la persona con mayor edad
         int indiceMax;
 
         indiceMin = 0;
@@ -303,11 +354,24 @@ public class Ejercicio7 {
         System.out.println("La persona con mayor edad es: " + personas[indiceMax][0]);
     }
 
+    /*
+     * Dada una matriz con información sobre personas, calcula el peso mínimo
+     * y la peso máximo entre las personas contenidas en la matriz y muestra 
+     * dichos valores por pantalla.
+     * 
+     * @param personas la matriz que contiene información sobre personas
+     * @return void
+     * @author Hugo
+     */
     public static void margenesPesos(String[][] personas) {
+        // contiene el valor del menor peso
         float minValor;
+        // contiene el valor del mayor peso
         float maxValor;
 
+        // contiene el índice a la persona con menor peso
         int indiceMin;
+        // contiene el índice a la persona con mayor peso
         int indiceMax;
 
         indiceMin = 0;
