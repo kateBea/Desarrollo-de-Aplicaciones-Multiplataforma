@@ -318,6 +318,9 @@ public class Ejercicio12 {
      * Retorna cierto si el carácter es una vocal, retorna 
      * falso en caso contrario.
      * 
+     * @param ch el carácter a ser evaluado
+     * @return boolean cierto si ch es vocal, falso en caso contrario
+     * @author Hugo
      */
     public static boolean esVocal(char ch) {
         // se asume el caracter es alfabético (no es dígito)
@@ -327,6 +330,13 @@ public class Ejercicio12 {
         };
     }
 
+    /*
+     * Muestra por pantalla la cadena más larga de un arreglo de String
+     * 
+     * @param frases el arreglo conteniendo las cadenas
+     * @return void
+     * @author Hugo
+     */
     public static void mostrarContenidoMasLargo(String[] frases) {
         int masLargo = 0;
         
