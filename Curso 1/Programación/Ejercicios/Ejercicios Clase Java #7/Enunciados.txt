@@ -61,6 +61,6 @@ dicho array con frases que solicitemos al usuario. Una vez creado el vector pres
     2) Mostrar todo el contenido en minúsculas
     3) Mostrar todo el contenido en mayúsculas
     4) Mostrar el contenido, la primera letra  de cada palabra en mayúsculas
-    5) Mostrar el número de locales y de consonantes de cada texto en cada posición
+    5) Mostrar el número de vocales y de consonantes de cada texto en cada posición
     6) Mostrar el contenido más largo
     7) Salir
