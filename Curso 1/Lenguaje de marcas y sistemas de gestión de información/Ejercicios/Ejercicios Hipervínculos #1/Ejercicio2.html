@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejemplo de tabla compleja</title>
+    </head>
+
+    <body>
+        <h3>Comparativa de reproductores MP3</h3>
+    </body>
+
+    <table border="1px">
+        <caption>Tabla comparativa de las características técnicas de los reproductores MP3</caption>
+
+        <!-- Fila número 1-->
+        <tr>
+            <td></td>
+            <th colspan="3">
+                <img src="img/mp3.jpeg" width="50" height="50">
+                <p>MP3 mini</p>
+            </th>
+            <th colspan="2">
+                <img src="img/mp3.jpeg" width="100" height="100">
+                <p>MP3 grande</p>
+            </th>
+        </tr>
+
+        <!-- Fila número 2-->
+        <tr>
+            <th>Capacidad de</br>almacenamiento</th>
+            <td align="center">
+                4GB</br>(1.000</br>canciones)
+            </td>
+            <td align="center">
+                8GB</br>(2.000</br>canciones)
+            </td>
+            <td align="center">
+                16GB</br>(4.000</br>canciones)
+            </td>
+            <td align="center">
+                30GB</br>(7.500</br>canciones)
+            </td>
+            <td align="center">
+                80GB</br>(20.000</br>canciones)
+            </td>
+            
+        </tr>
+
+        <!-- Fila número 3-->
+        <tr>
+            <th>Colores</th>
+
+            <!--gris-->
+            <td align="center"><img src="img/bolita_gris.png" width="30px" height="20px"></td>
+
+            <!--negro, verde, cian, lila-->
+            <td>
+                <table>
+                    <tr>
+                        <td><img src="img/bola_negra.png" width="25px" height="25px"></td>
+                        <td><img src="img/bola_verde.png" width="20px" height="20px"></td>
+                        <td><img src="img/bolita_cian.jpg" width="20px" height="20px"></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><img src="img/bolita_lila.jpg" width="18px" height="18px"></td>
+                    </tr>
+                </table>
+            </td>
+
+            <!--negro-->
+            <td></td>
+
+            <!--gris, negro-->
+            <td></td>
+        </tr>
+
+        <!-- Fila número 4-->
+        <tr>
+            <th>Pantalla</th>
+            <td align="center" colspan="3"> LCD de 3 cm (diagonal) con</br>retroiluminación</td>
+            <td align="center" colspan="2"> LCD de 6 cm (diagonal) con</br>retroiluminación</td>
+        </tr>
+
+        <!-- Fila número 5-->
+        <tr>
+            <th rowspan="2">Tiempo de</br>carga</th>
+            <td align="center" rowspan="2" colspan="3">Unas 3 horas</td>
+            <td align="center" colspan="2">Unas 4 horas</td>
+        </tr>
+
+        <tr>
+            <td align="center" colspan="2">Unas 2 horas para</br>alcanzar el 80% de la</br>capacidad</td>
+        </tr>
+    </table>
+</html>
