@@ -1,4 +1,5 @@
 /* Ejercicio 03 */
+
 CREATE DATABASE IF NOT EXISTS Universidad 
 CHARACTER SET utf8 
 COLLATE utf8_general_ci;

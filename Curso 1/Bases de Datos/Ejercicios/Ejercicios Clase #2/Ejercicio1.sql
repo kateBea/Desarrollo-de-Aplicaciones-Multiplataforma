@@ -1,4 +1,5 @@
 /* Ejercicio 01 */
+
 CREATE DATABASE IF NOT EXISTS EMPRESA 
 CHARACTER SET utf8 
 COLLATE utf8_general_ci;

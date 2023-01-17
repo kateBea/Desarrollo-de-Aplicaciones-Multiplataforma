@@ -1,7 +1,10 @@
-CREATE
-DATABASE ciclistas;
-USE
-ciclistas;
+/* Ejercicio 06 */
+
+CREATE DATABASE IF NOT EXISTS Ciclistas 
+CHARACTER SET utf8 
+COLLATE utf8_general_ci;
+
+USE ciclistas;
  
 CREATE TABLE etapas (
     numero INTEGER NOT NULL PRIMARY KEY,
