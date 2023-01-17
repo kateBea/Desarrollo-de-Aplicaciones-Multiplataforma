@@ -1,5 +1,5 @@
 /* 
- * 
+ * Este programa cuenta el número de palabras que contiene una frase.
  * 
  * @author Hugo
  * @version 1.0

@@ -1,5 +1,5 @@
 /* 
- * 
+ * Este programa muestra en orden inverso una frase leída de la entrada de datos.
  * 
  * @author Hugo
  * @version 1.0
