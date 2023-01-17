@@ -1,14 +1,14 @@
-/* 
+/*
  * Este programa lee un entero de la entrada de datos, y crea un arreglo de de frases con el tamaño
  * indicado por el valor del entero leído. El entero debe estar en el rango [1, 11).
  * Sobre las frases usuario puede realizar las operaciones de: mostrar todo el contenido
  * de todas las frases, mostrar el contenido en minúsculas o mayúsculas, mostrar el
  * contenido de la primera letra de cada palabra en mayúsculas, mostrar el número de vocales y consonantes
  * de cada frase y mostrar el contenido más largo.
- * 
+ *
  * NOTA: sobre intervalos. [x, y] -> x, y incluidos
  *                         [x, y) -> x, y-1 incluidos (y está excluido)
- * 
+ *
  * @author Hugo
  * @version 1.0
  * @date 14 de enero de 2023
@@ -28,9 +28,9 @@ public class Ejercicio12 {
     }
 
     /*
-     * Método para gestiona las frases que se leen por la entrada de datos.
+     * Método para gestionar las frases que se leen por la entrada de datos.
      * Lee una serie finita de String por la entrada de datos y ofrece operaciones sobre ellas.
-     * 
+     *
      * @param None
      * @return void
      * @author Hugo
@@ -52,7 +52,7 @@ public class Ejercicio12 {
             // leemos la opción
             System.out.print("Elección: ");
             opcion = Integer.parseInt(lector.readLine());
-            
+
             // asegurarse de que la opción está dentro de
             // los límites preestablecidos
             if (!(opcion > 0 && opcion < 8))
@@ -74,7 +74,7 @@ public class Ejercicio12 {
     /*
      * Método que lee un entero de la entrada de datos. Se asegura que el entero
      * esté en el rango [0, 11).
-     * 
+     *
      * @param None
      * @return int el entero leído
      * @author Hugo
@@ -84,7 +84,7 @@ public class Ejercicio12 {
         int resultado;
 
         // se itera mientras resultado no pertenezca a [1, 10]
-        while (!((resultado = Integer.parseInt(lector.readLine())) > - 1 && resultado < 11)) 
+        while (!((resultado = Integer.parseInt(lector.readLine())) > - 1 && resultado < 11))
             System.out.print("Por favor, introduzca un número en el intervalo [1, 11): ");
 
         return resultado;
@@ -92,8 +92,8 @@ public class Ejercicio12 {
 
     /*
      * Este método lee una serie de Sting por la entrada de datos
-     * y los los retorna en forma de arreglo. Los String no pueden estar vacíos.
-     * 
+     * y los retorna en forma de arreglo. Los String no pueden estar vacíos.
+     *
      * @param limite índica el número total de cadenas a leer
      * @return String[] el arreglo conteniendo las cadenas leídas
      * @author Hugo
@@ -111,7 +111,7 @@ public class Ejercicio12 {
     /*
      * Método que lee un String de la entrada de datos. Se asegura de
      * que el String no esté vació.
-     * 
+     *
      * @param None
      * @return String la cadena leída
      * @author Hugo
@@ -121,7 +121,7 @@ public class Ejercicio12 {
 
         // intentar leer otra vez la cadena si está vacía
         // NOTA: se considera vacía si solo tiene espacios o sólo saltos de línea
-        while ((resultado = lector.readLine().trim()).length() == 0) 
+        while ((resultado = lector.readLine().trim()).length() == 0)
             System.out.print("La frase está vacía, inténtelo de nuevo: ");
 
         return resultado;
@@ -130,7 +130,7 @@ public class Ejercicio12 {
     /*
      * Función que muestra por la entrada las funcionalidades principales
      * del programa a través de un menú formateado por pantalla.
-     * 
+     *
      * @param None
      * @return void
      * @author Hugo
@@ -149,7 +149,7 @@ public class Ejercicio12 {
 
     /*
      * Muestra por la salida de datos los String de un arreglo de cadenas.
-     * 
+     *
      * @param frases el arreglo conteniendo las cadenas
      * @return void
      * @author Hugo
@@ -163,7 +163,7 @@ public class Ejercicio12 {
     /*
      * Muestra por la salida de datos los String de un arreglo de cadenas,
      * con todas las letras en minúsculas.
-     * 
+     *
      * @param frases el arreglo conteniendo las cadenas
      * @return void
      * @author Hugo
@@ -177,7 +177,7 @@ public class Ejercicio12 {
     /*
      * Muestra por la salida de datos los String de un arreglo de cadenas,
      * con todas las letras en mayúsculas.
-     * 
+     *
      * @param frases el arreglo conteniendo las cadenas
      * @return void
      * @author Hugo
@@ -190,8 +190,8 @@ public class Ejercicio12 {
 
     /*
      * Muestra por la salida de datos los String de un arreglo de cadenas,
-     * con sólo las primeras de todas las palabras en minúsculas
-     * 
+     * con solo las primeras de todas las palabras en minúsculas
+     *
      * @param frases el arreglo conteniendo las cadenas
      * @return void
      * @author Hugo
@@ -202,33 +202,35 @@ public class Ejercicio12 {
         boolean primeraPalabra;
 
         // índice que contiene la primera letra de cada palabra
-        // improtante en casos como cuando una palabra no empieza por 
+        // importante en casos como cuando una palabra no empieza por
         // letra (e.g.: por dígito), como 1M (1 de marzo)
         int primeraLetra;
 
-        // se utiliza para recostruir las palabras de cada
+        // se utiliza para reconstruir las palabras de cada
         // una de las cadenas del arreglo de String, ya que las cadenas
         // de la clase String son inmutables
         StringBuffer aux;
 
         for (int i = 0; i < frases.length; ++i) {
             primeraPalabra = true;
-            
+
             System.out.print("Frase #" + (i + 1) + ": ");
             for (String str : frases[i].split(" ")) {
                 // sirve para no poner un espacio al principio de cada cadena
-                if (primeraPalabra) 
+                if (primeraPalabra)
                     primeraPalabra = false;
                 else
                     System.out.print(" ");
-                
+
                 // obtener el índice del primer carácter
                 // alfabético de la palabra
                 primeraLetra = primeraLetra(str);
 
-                if (primeraLetra != -1 && Character.isLetter(str.charAt(primeraLetra))) {
+                if (primeraLetra != -1) {
                     aux = new StringBuffer(str);
-                    aux.setCharAt(0, Character.toUpperCase(str.charAt(primeraLetra)));
+
+                    // se pone el primer carácter alfabético en mayúsculas
+                    aux.setCharAt(primeraLetra, Character.toUpperCase(str.charAt(primeraLetra)));
 
                     System.out.print(aux);
                 }
@@ -238,7 +240,7 @@ public class Ejercicio12 {
                     // en ese caso no hay letras y no hay nada que convertir a minúsculas
                     System.out.print(str);
                 }
-                
+
             }
 
             System.out.print("\n");
@@ -247,7 +249,7 @@ public class Ejercicio12 {
 
     /*
      * Retorna el índice al primer carácter alfabético de una palabra
-     * 
+     *
      * @param palabra representa la palabra a ser evaluada
      * @return int el índice donde se encuentra el primer carácter alfabético, -1 si no hay
      * @author Hugo
@@ -263,7 +265,7 @@ public class Ejercicio12 {
     /*
      * Muestra por pantalla el número de vocales y consonantes de cada una de
      * las cadenas contenidas en un arreglo de cadenas
-     * 
+     *
      * @param frases arreglo conteniendo las cadenas
      * @return void
      * @author Hugo
@@ -272,7 +274,7 @@ public class Ejercicio12 {
         int numeroVocales;
         int numeroConsonantes;
         for (int i = 0; i < frases.length; ++i) {
-            // solución alternativa: retornar un array de dos posiciones que 
+            // solución alternativa: retornar un array de dos posiciones que
             // represente, por una parte, número de consonantes y por otra el número
             // de vocales
             numeroVocales = contarVocales(frases[i]);
@@ -284,14 +286,14 @@ public class Ejercicio12 {
 
     /*
      * Cuenta el número de vocales de un String
-     * 
+     *
      * @param cadena el String del cual cuenta el número de vocales
      * @return int el número total de vocales
      * @author Hugo
      */
     public static int contarVocales(String cadena) {
         int resultado = 0;
-        for (int i = 0; i < cadena.length(); ++i) 
+        for (int i = 0; i < cadena.length(); ++i)
             if (Character.isLetter(cadena.charAt(i)) && esVocal(cadena.charAt(i)))
                 ++resultado;
 
@@ -300,14 +302,14 @@ public class Ejercicio12 {
 
     /*
      * Cuenta el número de consonantes de un String
-     * 
+     *
      * @param cadena el String del cual cuenta el número de vocales
      * @return int el número total de vocales
      * @author Hugo
      */
     public static int contarConsonantes(String cadena) {
         int resultado = 0;
-        for (int i = 0; i < cadena.length(); ++i) 
+        for (int i = 0; i < cadena.length(); ++i)
             if (Character.isLetter(cadena.charAt(i)) && !esVocal(cadena.charAt(i)))
                 ++resultado;
 
@@ -315,9 +317,9 @@ public class Ejercicio12 {
     }
 
     /*
-     * Retorna cierto si el carácter es una vocal, retorna 
+     * Retorna cierto si el carácter es una vocal, retorna
      * falso en caso contrario.
-     * 
+     *
      * @param ch el carácter a ser evaluado
      * @return boolean cierto si ch es vocal, falso en caso contrario
      * @author Hugo
@@ -332,14 +334,14 @@ public class Ejercicio12 {
 
     /*
      * Muestra por pantalla la cadena más larga de un arreglo de String
-     * 
+     *
      * @param frases el arreglo conteniendo las cadenas
      * @return void
      * @author Hugo
      */
     public static void mostrarContenidoMasLargo(String[] frases) {
         int masLargo = 0;
-        
+
         for (int i = 0; i < frases.length; ++i)
             if (frases[i].length() > frases[masLargo].length())
                 masLargo = i;
