@@ -39,6 +39,7 @@ GROUP BY CountryCode;
 SELECT DISTINCT a.CountryCode, b.Name, a.District
 FROM City a, City b
 WHERE a.Name = b.Name AND a.CountryCode <> b.CountryCode;
+
 /**********************************************
 			CONSULTAS AUXILIARES
 **********************************************/
