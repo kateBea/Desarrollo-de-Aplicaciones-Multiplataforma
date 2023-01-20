@@ -126,7 +126,9 @@ WHERE Name NOT LIKE '%MA%';
 
 # 16. Hallar las ciudades de seis letras cuyo nombre tiene una 'A' en la segunda posición
 # y acaba en 'D'
-SELECT FROM
+SELECT Name, District AS 'Provincia'
+FROM City
+WHERE Name LIKE '_A%D';
 
 /**********************************************
 			CONSULTAS AUXILIARES
