@@ -28,6 +28,14 @@ FROM City;
 			     PARA PRACTICAR
 **********************************************/
 
+# Número de ciudades de la tabla City
+SELECT COUNT(*) 
+FROM City;
+
+SELECT CountryCode, Name, MAX(Info->'$.Population')
+FROM City
+GROUP BY CountryCode;
+
 SELECT DISTINCT a.CountryCode, b.Name, a.District
 FROM City a, City b
 WHERE a.Name = b.Name AND a.CountryCode <> b.CountryCode;
