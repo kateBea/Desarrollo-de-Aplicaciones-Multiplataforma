@@ -1,0 +1,79 @@
+NOTA: Las líneas descritas en las soluciones se corresponden con las líneas de las imágenes,
+no hacen referencia a las líneas de este fichero
+
+# Ejercicio 1 -----------------------------------------------------------------------
+
+    begin main
+        int num, divisor, sumadivisores;
+        divisor = 1;
+        sumadivisores = 0;
+        Scanner entrada = new Scanner(System.in);
+        System.out.print ("Introduzca un número mayor que 0: ");
+        num = entrada.nextInt();
+        while (divisor <= num/2)
+            if (num(divisor % == 0)
+                sumadivisores = sumadivisores + divisor;
+            endif
+            divisor++;
+        end while
+        if (num == sumadivisores)
+            System.out.println ("El número " + num + " es un número perfecto");
+        else
+            System.out.println ("El número " + num + " es un número perfecto");
+        endif
+    end main
+
+    - Solución:
+
+    Nodo 1: Línea 2 a línea 7 (ambas inclusas)
+    Nodo 2: Línea 8
+    Nodo 3: Línea 9
+    Nodo 4: Línea 10
+    Nodo 5: Línea 11
+    Nodo 6: Línea 13
+    Nodo 7: Línea 14
+    Nodo 8: Línea 15
+    Nodo 9: Línea 16
+    Nodo 10: Línea 17
+
+
+
+# Ejercicio 2 -----------------------------------------------------------------------
+
+    r:=0;
+    if(x<0 || y<0) then
+            writeIn('X o Y son negativos')
+    else begin
+            r:=(x+y)/2
+            write('La media es: 'r:)
+    end;
+
+    - Solución: 
+    Nodo 1: Línea 1
+    Nodo 2: Línea 2
+    Nodo 3: Línea 2 (condición a evaluar después del operador lógico || si la primera condición es falsa)
+    Nodo 4: Línea 3
+    Nodo 5: Línea 4, línea 5 y línea 6
+    Nodo 6: Línea 7
+
+
+
+# Ejercicio 3 -----------------------------------------------------------------------
+
+    begin aMethod
+        int ret=0;
+        if(a && b) 
+                ret=1;
+        else if (c){
+                ret=2;
+        end if
+        return ret;
+    end aMethod;
+
+    Nodo 1: Línea 2
+    Nodo 2: Línea 3
+    Nodo 3: Línea 3 (condición a evaluar después del operador lógico && si la primera condición es cierta)
+    Nodo 4: Línea 4
+    Nodo 5: Línea 6
+    Nodo 6: Línea 7
+    Nodo 7: Línea 9
