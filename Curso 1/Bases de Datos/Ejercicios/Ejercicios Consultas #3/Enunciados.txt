@@ -1,0 +1,104 @@
+0) Crear las tablas e insertar los datos. Deberás generar el script sql de creación de 
+tablas y el script con los insert de los datos. Como todavía no hemos aprendido los
+ INSERT utiliza el asistente y exporta el fichero que te generará MySQL.
+
+Una vez creadas las tablas e insertado los datos, realiza las siguientes consultas:
+
+1.    Mostrar el apellido, oficio y número de departamento de cada empleado.
+
+2.    Mostrar el número, nombre y localización de cada departamento.
+
+3.    Mostrar todos los datos de todos los empleados.
+
+4.    Mostrar los datos de los empleados cuyo salario sea mayor que 2000000.
+
+5.    Mostrar los datos de los empleados cuyo oficio sea ʻANALISTAʼ.
+
+6.    Seleccionar el apellido y oficio de los empleados del departamento número 20.
+
+7.    Mostrar los empleados que tengan un salario mayor que 200000 o que pertenezcan al 
+    departamento número 20.
+
+8.    Seleccionar de la tabla EMPLE los empleados cuyo apellido empiece por ʻAʼ.
+
+9.    Seleccionar de la tabla EMPLE los empleados cuyo apellido termine por ʻZʼ.
+
+10.   Seleccionar de la tabla EMPLE aquellas filas cuyo APELLIDO empiece por ʻAʼ y el 
+    OFICIO tenga una ʻEʼ en cualquier posición.
+
+11.   Seleccionar los empleados cuyo salario esté entre 100000 y 200000.
+
+12.   Obtener los empleados cuyo oficio sea ʻVENDEDORʼ y tengan una comisión superior a 
+    100000.
+
+13.   Número y apellidos de los empleados cuyo apellido termine por ʻZʼ y tengan un 
+    salario superior a 300000.
+
+14.   Datos de los departamentos cuya localización empiece por ʻBʼ.
+
+15.   Datos de los empleados cuyo oficio sea ʻEMPLEADOʼ, tengan un salario superior a 
+    100000 y pertenezcan al departamento número 10.
+
+16.   Mostrar los apellidos de los empleados que no tengan comisión.
+
+17.   Mostrar los apellidos de los empleados que no tengan comisión y cuyo apellido 
+    empiece por ʻJʼ.
+
+18.   Mostrar los apellidos de los empleados cuyo oficio sea ʻVENDEDORʼ, ʻANALISTAʼ o 
+    ʻEMPLEADOʼ.
+
+19.   Mostrar los apellidos de los empleados cuyo oficio no sea ni ʻANALISTAʼ ni 
+    ʻEMPLEADOʼ, y además tengan un salario mayor de 200000.
+
+20.   Seleccionar de la tabla EMPLE los empleados cuyo salario esté entre 2000000 y 
+    3000000.
+
+21.   Seleccionar el apellido, salario y número de departamento de los empleados cuyo 
+    salario sea mayor que 200000 en los departamentos 10 ó 30.
+
+22.   Mostrar el apellido y número de los empleados cuyo salario no esté entre 100000 
+    y 200000.
+
+23.   Obtener el apellidos de todos los empleados en minúscula.
+
+24.   En una consulta concatena el apellido de cada empleado con su oficio.
+
+25.   Mostrar el apellido y la longitud del apellido  de todos los empleados, ordenados 
+    por la longitud de los apellidos de los empleados descendentemente.
+
+26.   Obtener el año de contratación de todos los empleados.
+
+27.   Mostrar los datos de los empleados que hayan sido contratados en el año 1992.
+
+28.   Mostrar los datos de los empleados que hayan sido contratados en el mes de febrero 
+    de cualquier año.
+
+29.   Mostrar los datos de los empleados cuyo apellido empiece por 'A' y hayan sido 
+    contratados en el año 1990.
+
+30.   Mostrar los datos de los empleados del departamento 10 que no tengan comisión.
+
+31.   Datos de los empleados ordenados por número de departamento descendentemente.
+
+32.   Datos de los empleados ordenados por apellidos.
+
+33.   Datos de los empleados ordenados por número de departamento descendentemente y 
+    dentro de cada departamento ordenados por apellido ascendentemente.
+
+34.   Mostrar todos los datos de los empleados ordenados por apellido.
+
+35.   Seleccionar los empleados cuyo oficio sea ʻVENDEDORʼ. Mostrar los datos ordenados 
+    por apellido.
+
+36.   Mostrar los empleados cuyo departamento sea 10 y cuyo oficio sea ʻANALISTAʼ. 
+    Ordenar el resultado por apellido.
+
+37.   Ordenar los empleados por oficio, y dentro de oficio por nombre.
+
+38.   Seleccionar los datos de los empleados ordenados por número de departamento, y 
+    dentro de cada departamento ordenados por apellido.
+
+39. Mostrar  los  datos  de  los  empleados  cuyo  apellido  empiece  por  'A'  y hayan 
+    sido contratados en el año 1990.
+
+40. Mostrar  los datos de los empleados del departamento 10 que no tengan comisión.
