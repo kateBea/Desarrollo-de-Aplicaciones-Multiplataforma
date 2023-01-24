@@ -52,4 +52,201 @@ FROM Empleados;
 SELECT *
 FROM Dirs;
 
-# Consultas ejercicios
+
+# Consultas ejercicios ----------------------------------------------------------------------
+
+# 1)
+SELECT Apellido, Oficio, Dept_No AS 'Número de Departamento'
+FROM Empleados;
+
+# 2)
+SELECT Dept_No AS 'Número de Departamento', Dnombre AS 'Nombre de Departamento', Loc AS 'Localización'
+FROM Departamentos;
+
+# 3)
+SELECT *
+FROM Empleados;
+
+# 4)
+SELECT *
+FROM Empleados
+WHERE Salario > 2000000;
+
+# 5)
+SELECT *
+FROM Empleados
+WHERE Oficio = 'ANALISTA';
+
+# 6)
+SELECT Apellido, Oficio
+FROM Empleados
+WHERE Dept_No = 20;
+
+# 7)
+SELECT *
+FROM Empleados
+WHERE Dept_No = 20 OR Salario > 200000;
+
+# 8)
+SELECT *
+FROM Empleados
+WHERE Apellido LIKE 'A%';
+
+# 9)
+SELECT *
+FROM Empleados
+WHERE Apellido LIKE '%Z';
+
+# 10)
+SELECT *
+FROM Empleados
+WHERE Apellido LIKE 'A%' AND Oficio LIKE '%E%';
+
+# 11)
+SELECT *
+FROM Empleados
+WHERE Salario BETWEEN 100000 AND 200000;
+
+# 12)
+SELECT *
+FROM Empleados
+WHERE Oficio = 'VENDEDOR' AND Comision IS NOT NULL AND Comision > 100000;
+
+# 13)
+SELECT Emp_No AS 'Número de Empleado', Apellido
+FROM Empleados
+WHERE Apellido LIKE '%Z' AND Salario > 300000;
+
+# 14)
+SELECT *
+FROM Departamentos
+WHERE Loc LIKE 'B%';
+
+# 15)
+SELECT *
+FROM Empleados
+WHERE Salario > 100000 AND Oficio = 'EMPLEADO' AND Dept_No = 10;
+
+# 16)
+SELECT Apellido
+FROM Empleados
+WHERE Comision IS NOT NULL AND Comision = 0;
+
+# 17)
+SELECT Apellido
+FROM Empleados
+WHERE Comision IS NOT NULL AND Comision = 0 AND Apellido LIKE 'J%';
+
+# 18)
+SELECT Apellido
+FROM Empleados
+WHERE Oficio IN ('VENDEDOR', 'ANALISTA', 'EMPLEADO');
+
+# 19)
+SELECT Apellido
+FROM Empleados
+WHERE Oficio NOT IN ('ANALISTA', 'EMPLEADO') AND Salario > 200000;
+
+# 20)
+SELECT *
+FROM Empleados
+WHERE Salario BETWEEN 2000000 AND 3000000; 
+
+# 21)
+SELECT Apellido, Salario, Dept_No AS 'Número de Departamento'
+FROM Empleados
+WHERE Dept_No IN(10, 30) AND Salario > 200000;
+
+# 22)
+SELECT Apellido, Emp_No AS 'Número de Empleado'
+FROM Empleados
+WHERE Salario NOT BETWEEN 100000 AND 200000;
+
+# 23)
+SELECT LOWER(Apellido) AS 'Apellido'
+FROM Empleados;
+
+# 24)
+SELECT CONCAT(Apellido, ' es ', Oficio) AS 'Apellido y Oficio'
+FROM Empleados;
+
+# 25)
+SELECT Apellido, LENGTH(Apellido) AS 'Longitud de Apellido'
+FROM Empleados
+ORDER BY LENGTH(Apellido) DESC;
+
+# 26)
+SELECT YEAR(Fecha_Alt) AS 'Año de Contratación'
+FROM Empleados;
+
+# 27)
+SELECT  *
+FROM Empleados
+WHERE YEAR(Fecha_Alt) = 1992;
+
+# 28)
+SELECT  *
+FROM Empleados
+WHERE MONTH(Fecha_Alt) = 2;
+
+# 29)
+SELECT *
+FROM Empleados
+WHERE Apellido LIKE 'A%' AND YEAR(Fecha_Alt) = 1990;
+
+# 30)
+SELECT *
+FROM Empleados
+WHERE Dept_No = 10 AND Comision IS NOT NULL AND Comision = 0;
+
+# 31)
+SELECT *
+FROM Empleados
+ORDER BY Dept_No DESC;
+
+# 32)
+SELECT *
+FROM Empleados
+ORDER BY Apellido;
+
+# 33)
+SELECT *
+FROM Empleados
+ORDER BY Dept_No DESC, Apellido ASC;
+
+# 34)
+SELECT *
+FROM Empleados
+ORDER BY Apellido;
+
+# 35)
+SELECT *
+FROM Empleados
+WHERE Oficio = 'VENDEDOR'
+ORDER BY Apellido;
+
+# 36)
+SELECT *
+FROM Empleados
+WHERE Dept_No = 10 AND Oficio = 'ANALISTA'
+ORDER BY Apellido;
+
+# 37)
+SELECT *
+FROM Empleados
+ORDER BY Oficio , Apellido;
+
+# 38)
+SELECT *
+FROM Empleados
+ORDER BY Dept_No, Apellido;
+
+# 39)
+SELECT  *
+FROM Empleados
+WHERE Apellido LIKE 'A%' AND YEAR(Fecha_Alt) = 1990;
+
+# 40)
+SELECT *
+FROM Empleados
+WHERE Dept_No = 10 AND Comision IS NOT NULL AND Comision = 0;
