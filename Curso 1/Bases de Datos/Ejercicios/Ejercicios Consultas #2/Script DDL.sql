@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS Personas(
 );
 
 # Limpieza
-DROP TABLE Hospital;
-DROP TABLE Puestos;
 DROP TABLE Personas;
+DROP TABLE Puestos;
+DROP TABLE Hospitales;
 
 DROP DATABASE Organizacion;

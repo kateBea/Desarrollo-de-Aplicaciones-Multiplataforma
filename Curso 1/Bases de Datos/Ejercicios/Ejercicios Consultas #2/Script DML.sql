@@ -49,3 +49,7 @@ SELECT *
 FROM Personas;
 
 # Consultas Ejercicios
+# 1)
+SELECT *
+FROM Personas;
+
