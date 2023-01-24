@@ -53,3 +53,93 @@ FROM Personas;
 SELECT *
 FROM Personas;
 
+# 2)
+SELECT Dni AS 'DNI', Apellidos, Funcion AS 'Función'
+FROM Personas;
+
+# 3)
+SELECT Apellidos
+FROM Personas
+WHERE Localidad = 'LORCA';
+
+# 4)
+SELECT Apellidos
+FROM Personas
+WHERE Localidad = 'LORCA' OR Localidad = 'MURCIA';
+
+# 5)
+SELECT *
+FROM Personas
+WHERE Localidad = 'MURCIA' AND Salario > 1500;
+
+# 6)
+SELECT *
+FROM Personas
+WHERE Localidad = 'MURCIA' AND Salario > 1500 AND Funcion = 'DIRECTOR';
+
+# 7)
+SELECT *
+FROM Personas
+WHERE Funcion = 'MEDICO'
+ORDER BY Apellidos DESC;
+
+# 8)
+SELECT *
+FROM Personas
+WHERE Funcion = 'MEDICO' AND Salario > 1500
+ORDER BY Apellidos DESC;
+
+# 9)
+SELECT *
+FROM Personas
+WHERE Apellidos LIKE 'M%';
+
+# 10)
+SELECT *
+FROM Personas
+WHERE Apellidos LIKE '%M%' AND Funcion = 'CONSERJE';
+
+# 11)
+SELECT *
+FROM Personas
+WHERE Salario BETWEEN 200 AND 1500;
+
+# 12)
+SELECT *
+FROM Personas
+WHERE Funcion IN ('MÉDICO', 'DIRECTOR');
+
+# 13)
+SELECT *
+FROM Personas
+WHERE Funcion NOT IN ('MÉDICO', 'CONSERJE') AND Salario > 1500
+ORDER BY Apellidos DESC;
+
+# 14)
+SELECT *
+FROM Personas
+WHERE Localidad = 'CARTAGENA' OR Localidad = 'MURCIA' AND Cod_Hospital = 1;
+
+# 15)
+SELECT upper(Apellidos)
+FROM Personas
+WHERE Cod_Hospital = 1;
+
+# 16)
+SELECT Apellidos, length(Apellidos) AS 'Longitud Apellidos'
+FROM Personas;
+
+# 17)
+SELECT lower(Apellidos)
+FROM Personas
+WHERE Cod_Hospital <> 1;
+
+# 18)
+SELECT *
+FROM Personas 
+WHERE Salario > 1500 AND Cod_Hospital = 1;
+
+# 19)
+SELECT *
+FROM Personas
+WHERE Localidad = 'MURCIA' AND Cod_Hospital <> 2;

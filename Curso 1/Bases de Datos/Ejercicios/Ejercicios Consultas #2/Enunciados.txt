@@ -49,7 +49,7 @@ Una vez creadas las tablas e insertado los datos, realiza las siguientes consult
 17.      Obtener los apellidos y localidad en minúscula de todas aquellas personas que 
         no trabajen en el hospital número 1.
 
-18.      Obtener los datos de las personas que trabajen en los hospitales 1 ó 2 y tengan 
+18.      Obtener los datos de las personas que trabajen en los hospitales 1 o 2 y tengan 
         un salario superior a 1500 euros.
 
 19.      Visualizar los datos de aquellas personas que no trabajen en el hospital número 
