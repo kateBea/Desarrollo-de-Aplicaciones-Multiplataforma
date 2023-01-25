@@ -20,12 +20,9 @@
 
 */
 import java.io.*;
-import java.util.Arrays;
 
 public class Ej_Arrays {
     public static void main(String[] argumentos) throws IOException {
-
-        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         // Ejemplos de declaración de arrays unidimensionales
 
         // 01
@@ -41,7 +38,6 @@ public class Ej_Arrays {
         System.out.println ("Edad " + edades [2]);
         System.out.println ("Edad " + edades [3]);
         System.out.println ("Edad " + edades [4]);
-
         
 
     }

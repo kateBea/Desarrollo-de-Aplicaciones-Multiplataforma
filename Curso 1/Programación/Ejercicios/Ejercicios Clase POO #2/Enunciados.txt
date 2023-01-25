@@ -1,0 +1,100 @@
+Ejercicio 1
+
+Crea una clase Localidad con los siguientes atributos: nombre, provincia, numHabitantes,
+distanciaACapital, superficie, rentaPerCapita.
+
+Los atributos deben ser privados y declarados del tipo que consideres más conveniente 
+para cumplir la función que se intuye por su nombre.
+
+También debe tener métodos para poder asignar valor y obtenerlo de sus atributos, 
+así como un constructor que reciba por parámetros los datos de los atributos.
+
+Crea un objeto de esa clase, asígnale valores a sus atributos y muestra algunos de 
+ellos por pantalla.
+
+
+Ejercicio 2
+Codifica el método tieneMasPoblacion  de la clase Localidad que comprueba si un objeto 
+de esa clase tiene más población que el objeto Localidad que recibe por parámetro. 
+El resultado será un valor lógico. Declara varios objetos para probar el método.
+
+
+Ejercicio 3
+Codifica el método densidadDePoblacion  de la clase Localidad que calcula la densidad 
+de población. El resultado será un valor numérico. Declara varios objetos para probar 
+el método.
+
+
+Ejercicio 4
+Crea una clase Persona con los siguientes atributos: nombre, apellido1, apellido2, dni, 
+profesión, edad.
+
+Los atributos deben ser privados y declarados del tipo que consideres más conveniente 
+para cumplir la función que se intuye por su nombre.
+
+También debe tener métodos para poder asignar valor y obtenerlo de sus atributos, así 
+como un constructor que reciba por parámetros los datos de los atributos.
+Crea un objeto de esa clase, asígnale valores a sus atributos y muestra 
+algunos de ellos por pantalla.
+
+
+Ejercicio 5
+Codifica el método esMayorQue  de la clase Persona que comprueba si un objeto de esa 
+clase tiene más edad que el objeto Persona que recibe por parámetro. El resultado será 
+un valor lógico. Declara varios objetos para probar el método.
+
+
+Ejercicio 6
+Codifica el método esTocayoDe de la clase Persona que comprueba si un objeto de esa 
+clase tiene el mismo nombre que el objeto Persona que recibe por parámetro. El 
+resultado será un valor lógico. Declara varios objetos para probar el método.
+
+
+Ejercicio 7
+Codifica el método esFamiliarDe de la clase Persona que comprueba si un objeto de esa 
+clase comparte algún apellido con el objeto Persona que recibe por parámetro. El 
+resultado será un valor lógico. Declara varios objetos para probar el método.
+
+
+Ejercicio 8
+Con la clase Persona crea un método esJubilado que verifique si la edad es superior a 
+67 años y en ese caso añada “jubilado” a la profesión. No debe devolver nada.
+
+
+Ejercicio 9
+Con la clase Persona crea un método esMenor que compruebe si es menor de edad. 
+Devolverá un valor lógico.
+
+
+Ejercicio 10
+Con la clase Persona crea un método trabajaEnSector que recibe por parámetro un array 
+de profesiones. El método debe comprobar la profesión y si esta pertenece a alguna de 
+las incluidas en el array devolverá un array con las personas que cumplen la condición.
+
+
+Ejercicio 11
+Con la clase Persona crea un método tieneApellidoCompuesto que devuelva true si el 
+objeto tiene algún apellido compuesto (“Sánchez-Gil”, “García-Cano”, …). Se considera 
+que un apellido es compuesto si incorpora un guion separando dos caracteres.
+
+
+Ejercicio 12
+Con la clase Persona crea un método esJubilado que verifique si la edad es superior a 
+67 años y en ese caso añada “jubilado” a la profesión. No debe devolver nada.
+
+
+Ejercicio 13
+Con la clase Persona crea un método esMenor que compruebe si es menor de edad. 
+Devolverá un valor lógico.
+
+
+Ejercicio 14
+Con la clase Persona crea un método trabajaEnSector que recibe por parámetro un array 
+de profesiones. El método debe comprobar la profesión y si esta pertenece a alguna de 
+las incluidas en el array devolverá un array con las personas que cumplen la condición.
+
+
+Ejercicio 15
+Con la clase Persona crea un método tieneApellidoCompuesto que devuelva true si el 
+objeto tiene algún apellido compuesto (“Sánchez-Gil”, “García-Cano”, …). Se considera 
+que un apellido es compuesto si incorpora un guion separando dos caracteres.
