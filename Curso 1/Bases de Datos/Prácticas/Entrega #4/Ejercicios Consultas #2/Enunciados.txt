@@ -1,0 +1,56 @@
+0) Crear la tabla e insertar los datos. Deberás generar el script sql de creación de 
+tabla y el script con los insert de los datos. Como todavía no hemos aprendido 
+los INSERT utiliza el asistente y exporta el fichero que te generará MySQL.
+
+Una vez creadas las tablas e insertado los datos, realiza las siguientes consultas:
+
+1.       Mostrar todos los datos de todas las personas.
+
+2.       Obtén el DNI, apellidos y función de todas las personas.
+
+3.       Mostrar los apellidos de las personas que vivan en LORCA.
+
+4.       Mostrar los apellidos de las personas que vivan en MURCIA o LORCA
+
+5.       Seleccionar los datos de aquellas personas que vivan en MURCIA y tengan un 
+        salario superior a los 1500 euros.
+
+6.       Mostrar los datos de las personas que vivan en MURCIA, tengan un salario 
+        superior a los 1500 euros y sean DIRECTORES.
+
+7.       Mostrar los datos de las personas cuya función sea MÉDICO ordenados por 
+        apellidos descendentemente.
+
+8.       Mostrar los datos de las personas que tengan un salario superior a 1500 euros 
+        y sean médicos. Ordenar la salida por salario descendentemente.
+
+9.       Seleccionar aquellas personas cuyo apellido comience por M.
+
+10.      Mostrar los datos de las personas que tengan una M en el apellido y cuya función 
+        sea CONSERJE
+
+11.      Mostrar aquellas personas que tengan un salario entre 1500 y 200 euros.
+
+12.      Seleccionar los datos de aquellas personas cuya función sea MÉDICO o DIRECTOR
+
+13.      Obtener los datos de aquellas personas cuya función no sea CONSERJE ni MEDICO y 
+        tengan un salario superior a los 1500 euros, ordenados por apellido 
+        descendentemente.
+
+14.      Mostrar los datos de las personas que sean de MURCIA o CARTAGENA y que 
+        pertenezcan al hospital número 1.
+
+15.      Obtén los apellidos en mayúsculas de las personas que trabajen en el hospital 
+        número 1.
+
+16.      Con una consulta devuelve los apellidos de todas las personas. Al lado debe 
+        aparecer la longitud de cada apellido.
+
+17.      Obtener los apellidos y localidad en minúscula de todas aquellas personas que 
+        no trabajen en el hospital número 1.
+
+18.      Obtener los datos de las personas que trabajen en los hospitales 1 o 2 y tengan 
+        un salario superior a 1500 euros.
+
+19.      Visualizar los datos de aquellas personas que no trabajen en el hospital número 
+        2 y que sean de MURCIA.

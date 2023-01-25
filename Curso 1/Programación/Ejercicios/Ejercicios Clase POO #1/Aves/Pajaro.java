@@ -68,6 +68,6 @@ public class Pajaro {
 
     public void mostrarPosicion() {
         System.out.print("El pájaro " + this.m_Nombre + " está en la posición ");
-        System.out.println("X = " + this.m_CoordenadaX + ", " + this.m_CoordenadaY);
+        System.out.println("X = " + this.m_CoordenadaX + ", Y = " + this.m_CoordenadaY);
     }
 }
