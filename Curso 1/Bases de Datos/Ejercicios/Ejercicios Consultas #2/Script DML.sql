@@ -87,7 +87,7 @@ ORDER BY Apellidos DESC;
 SELECT *
 FROM Personas
 WHERE Funcion = 'MEDICO' AND Salario > 1500
-ORDER BY Apellidos DESC;
+ORDER BY Salario DESC;
 
 # 9)
 SELECT *
@@ -118,26 +118,26 @@ ORDER BY Apellidos DESC;
 # 14)
 SELECT *
 FROM Personas
-WHERE Localidad = 'CARTAGENA' OR Localidad = 'MURCIA' AND Cod_Hospital = 1;
+WHERE (Localidad = 'CARTAGENA' OR Localidad = 'MURCIA') AND Cod_Hospital = 1;
 
 # 15)
-SELECT upper(Apellidos)
+SELECT UPPER(Apellidos) AS 'Apellidos'
 FROM Personas
 WHERE Cod_Hospital = 1;
 
 # 16)
-SELECT Apellidos, length(Apellidos) AS 'Longitud Apellidos'
+SELECT SUBSTRING_INDEX(Apellidos, ',', 1) AS 'Apellidos', LENGTH(SUBSTRING_INDEX(Apellidos, ',', 1)) AS 'Longitud Apellidos'
 FROM Personas;
 
 # 17)
-SELECT lower(Apellidos)
+SELECT LOWER(Apellidos) AS 'Apellidos', LOWER(Localidad) AS 'Localidad'
 FROM Personas
-WHERE Cod_Hospital <> 1;
+WHERE Cod_Hospital <> 1;	
 
 # 18)
 SELECT *
 FROM Personas 
-WHERE Salario > 1500 AND Cod_Hospital = 1;
+WHERE Salario > 1500 AND Cod_Hospital IN (1, 2);
 
 # 19)
 SELECT *

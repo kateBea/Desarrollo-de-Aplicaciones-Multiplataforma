@@ -1,6 +1,6 @@
 /****************************************************
 Este Script contiene la definición de una tabla sencilla
-perteneciente a una basa de datos MySQL. Importante e imprescindible 
+perteneciente a una base de datos MySQL. Importante e imprescindible 
 ejecutar el Script en el orden en que están las sentencias.
 
 Autor: Hugo Pelayo
@@ -27,6 +27,9 @@ CREATE TABLE IF NOT EXISTS Departamentos (
 );
 
 CREATE TABLE IF NOT EXISTS Dirs (
+	# NOTA: Puede que falten datos. Por ello se define el campo Apellido
+	# como opcional ya que no se provee los datos del Dir con
+	# Códogio 7782
     Codigo CHAR(4) PRIMARY KEY,
     Apellido VARCHAR(20)
 );
@@ -44,18 +47,18 @@ CREATE TABLE IF NOT EXISTS Empleados (
     CONSTRAINT Fk_EmpDir FOREIGN KEY (Dir) REFERENCES Dirs(Codigo)
 );
 
-
 /****************************************************
 Queries Auxiliares
 ****************************************************/
 
 # Consulta el estado de las variables de la conexión actual
-# que contengan la cadena 'auto_inc'. Si las variables encontradas no tienen valor
+# que contengan la cadena 'auto_inc' en su nombre. Si las variables encontradas no tienen valor
 # en la conexión actual, se muestra el valor global.
 # Src: https://dev.mysql.com/doc/refman/5.7/en/show-status.html
 SHOW SESSION VARIABLES LIKE '%auto_inc%';
 
 # Limpieza
-DROP TABLE Departamentos;
 DROP TABLE Empleados;
+DROP TABLE Dirs;
+DROP TABLE Departamentos;
 DROP DATABASE Empresa;

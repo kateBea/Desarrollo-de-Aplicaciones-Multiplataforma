@@ -1,6 +1,6 @@
 /****************************************************
 Este Script contiene la definición de una tabla sencilla
-perteneciente a una basa de datos MySQL. Importante e imprescindible 
+perteneciente a una base de datos MySQL. Importante e imprescindible 
 ejecutar el Script en el orden en que están las sentencias.
 
 Autor: Hugo Pelayo
@@ -9,7 +9,7 @@ Fichero: Script DML.sql
 ****************************************************/
 
 # Departamentos table data
-# Autoincrementa el primer campo
+# Se autoincrementa el primer campo
 INSERT INTO Departamentos VALUES (NULL, 'CONTABILIDAD', 'SEVILLA');
 INSERT INTO Departamentos VALUES (NULL, 'INVESTIGACIÓN', 'MADRID');
 INSERT INTO Departamentos VALUES (NULL, 'VENTAS', 'BARCELONA');
@@ -47,10 +47,10 @@ SELECT *
 FROM Departamentos;
 
 SELECT *
-FROM Empleados;
+FROM Dirs;
 
 SELECT *
-FROM Dirs;
+FROM Empleados;
 
 
 # Consultas ejercicios ----------------------------------------------------------------------
