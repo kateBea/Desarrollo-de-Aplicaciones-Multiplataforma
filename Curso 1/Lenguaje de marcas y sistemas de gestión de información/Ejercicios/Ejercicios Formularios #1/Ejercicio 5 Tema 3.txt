@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejemplo de etiqueta select</title>
+    </head>
+    <body>
+        <h3>Datos seleccionables</h3>
+        <form>
+            <p>Sistema operativo</p>
+            <select name="-selecciona-" value="-selecciona-" >
+                <option selected="selected" disabled="disabled" hidden="hidden">-Selecciona-</option>
+                <option>Windows</option>
+                <option>Mac</option>
+                <option>Linux</option>
+                <option>Otro</option>
+            </select><br>
+            <p>Sistema operativo</p>
+            <select name="-selecciona-" value="-selecciona-" >
+                <option>Windows</option>
+                <option>Mac</option>
+                <option>Linux</option>
+                <option>Otro</option>
+            </select>
+        </form>
+    </body>
+</html>
