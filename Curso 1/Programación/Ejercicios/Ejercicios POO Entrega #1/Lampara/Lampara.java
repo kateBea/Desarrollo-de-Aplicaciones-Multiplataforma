@@ -74,8 +74,15 @@ public class Lampara {
     private static int obtenerIntensidadDeVoltaje(double voltaje) {
         // aisgnar intensidad acorde al voltaje
         // dentro del rango [VOLTAJE_MINIMO, VOLTAJE_MAXIMO]
-        double rango = VOLTAJE_MAXIMO - VOLTAJE_MINIMO;
-        return (int)((voltaje / rango) * 100.0);
+        if (voltaje < VOLTAJE_MINIMO)
+            return INTENSIDAD_MINIMA;
+
+        if (voltaje > VOLTAJE_MAXIMO)
+            return INTENSIDAD_MINIMA;
+
+        // ten en cuenta que el rango de voltaje no empieza en cero
+        // esta desplazado y empieza desde VOLTAJE_MINIMO
+        return (int)(((voltaje - VOLTAJE_MINIMO) / (VOLTAJE_MAXIMO - VOLTAJE_MINIMO)) * 100.0);
     }
 
     /*       GETTERS       */
@@ -116,19 +123,24 @@ public class Lampara {
 
     public void setIntensidad(double voltaje) {
         if (voltaje < VOLTAJE_MINIMO) {
-            m_Intensidad = 0;
-            apagar();
+            m_Intensidad = INTENSIDAD_MINIMA;
+            m_Encendida = false;
         }
-        else if (voltaje > VOLTAJE_MAXIMO) {
-            m_Intensidad = 100;
-            encender();
+        else if (voltaje >= VOLTAJE_MAXIMO) {
+            m_Intensidad = INTENSIDAD_MAXIMA;
+            m_Encendida = true;
         }
         else {
+            m_Voltaje = voltaje;
             m_Intensidad = obtenerIntensidadDeVoltaje(m_Voltaje);
+            // encender la lámpara si tenemos intensidad no nula
+            m_Encendida = (m_Intensidad > INTENSIDAD_MINIMA);
         }
     }
 
     public void setVoltaje(double voltaje) {
+        // se asume que no se aceptan voltajes mínimos 
+        // para facilitar los cálculos
         if (voltaje < 0.0) {
             System.out.printf("Valor de voltaje no válido[ %f ]\n", voltaje);
             return;
@@ -141,6 +153,9 @@ public class Lampara {
     }
 
     public void encender() {
+        if (m_Encendida) {
+            System.out.println("La lámpara ya está encendida.");
+        }
         if (!m_Encendida && obtenerIntensidadDeVoltaje(m_Voltaje) == INTENSIDAD_MINIMA) 
             // en el caso de tener voltaje no suficiente 
             // para una intensidad no nula, no podremos enceder la lámpara
@@ -151,11 +166,6 @@ public class Lampara {
             System.out.println("Se ha encendido la lámpara.");
             m_Intensidad = obtenerIntensidadDeVoltaje(m_Voltaje);
             m_Encendida = true;
-        }
-        else {
-            System.out.println("Se ha encendido la lámpara.");
-            m_Intensidad = obtenerIntensidadDeVoltaje(m_Voltaje);
-            m_Encendida = false;
         }
     }
 
