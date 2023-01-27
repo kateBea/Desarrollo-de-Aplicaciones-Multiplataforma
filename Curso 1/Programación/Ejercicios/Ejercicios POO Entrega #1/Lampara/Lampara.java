@@ -32,6 +32,9 @@ public class Lampara {
     private static final double VOLTAJE_MINIMO = 1.5;
     private static final double VOLTAJE_MAXIMO = 12.5;
 
+    private static final int INTENSIDAD_MAXIMA = 100;
+    private static final int INTENSIDAD_MINIMA = 0;
+
     // atributos de la clase 
     private boolean m_Encendida;
     private int m_Intensidad;
@@ -43,7 +46,43 @@ public class Lampara {
         m_Voltaje = 0.0;
     }
 
+    /*       MÉTODOS AUXILIARES        */
+    /*******************************************************
+     *  Estos métodos sólo se utilizan dentro de la clase, 
+     * no está permitido su uso fuera de la clase ya que sirven 
+     * como herramientas auxiliares para implementar ciertos métodos 
+     * de la misma por tanto se declaran todos como privado 
+     * ******************************************************/
+
+    // este método nos devolverá una cantidad determinada de
+    // voltaje dependiendo de la intensidad que le pasamos
+    // intensidad está entre 0 y 100%
+    private static double obtenerVoltajeDeIntensidad(int intensidad) {
+        if (intensidad == 0)
+            return VOLTAJE_MINIMO;
+
+        if (intensidad == 100)
+            return VOLTAJE_MAXIMO;
+
+        // resultado es un valor dentro del intervalo [VOLTAJE_MINIMO, VOLTAJE_MAXIMO]
+        return (intensidad / 100.0) * (VOLTAJE_MAXIMO - VOLTAJE_MINIMO);
+
+    }
+
+    // este método nos devolverá una cantidad determinada de
+    // intensidad dependiendo del voltaje que le pasamos
+    private static int obtenerIntensidadDeVoltaje(double voltaje) {
+        // aisgnar intensidad acorde al voltaje
+        // dentro del rango [VOLTAJE_MINIMO, VOLTAJE_MAXIMO]
+        double rango = VOLTAJE_MAXIMO - VOLTAJE_MINIMO;
+        return (int)((voltaje / rango) * 100.0);
+    }
+
     /*       GETTERS       */
+    /*
+     * Métodos para la consulta de datos
+     */
+
     public boolean estaEncedida() {
         return m_Encendida;
     }
@@ -57,6 +96,24 @@ public class Lampara {
     }
 
     /*       SETTERS       */
+    /*
+     * Métodos para la modificación de atributos
+     */
+
+    public void setIntensidad(int intensidad) {
+        if (!(intensidad >= INTENSIDAD_MINIMA && intensidad <= INTENSIDAD_MAXIMA)) {
+            System.out.printf("Intensidad [ %d ] no válida...\n", intensidad);
+            return;
+        }
+
+        m_Intensidad = intensidad;
+        m_Voltaje = obtenerVoltajeDeIntensidad(intensidad);
+        
+        // encender la luz si la intensidad no es nula
+        if (intensidad > INTENSIDAD_MINIMA)
+            m_Encendida = true;
+    }
+
     public void setIntensidad(double voltaje) {
         if (voltaje < VOLTAJE_MINIMO) {
             m_Intensidad = 0;
@@ -67,11 +124,7 @@ public class Lampara {
             encender();
         }
         else {
-            // aisgnar intensidad acorde al voltaje
-            // dentro del rango [VOLTAJE_MINIMO, VOLTAJE_MAXIMO]
-            double rango = VOLTAJE_MAXIMO - VOLTAJE_MINIMO;
-
-            m_Intensidad = (int)((voltaje / rango) * 100.0);
+            m_Intensidad = obtenerIntensidadDeVoltaje(m_Voltaje);
         }
     }
 
@@ -82,24 +135,38 @@ public class Lampara {
         }
 
         m_Voltaje = voltaje;
+
+        // ajustar intensidad acorde al voltaje actual
         setIntensidad(m_Voltaje);
     }
 
     public void encender() {
-        if (m_Encendida) 
-            System.out.println("La lámpara está encendida.");
-        else if (m_Intensidad > 0)
+        if (!m_Encendida && obtenerIntensidadDeVoltaje(m_Voltaje) == INTENSIDAD_MINIMA) 
+            // en el caso de tener voltaje no suficiente 
+            // para una intensidad no nula, no podremos enceder la lámpara
+            System.out.println("No hay suficiente voltaje.");
+        else if (!m_Encendida && obtenerIntensidadDeVoltaje(m_Voltaje) > INTENSIDAD_MINIMA) {
+            // si tenemos voltaje suficiente para una intensidad no nula entonces 
+            // podremos poner la lámpara en encendida
             System.out.println("Se ha encendido la lámpara.");
+            m_Intensidad = obtenerIntensidadDeVoltaje(m_Voltaje);
+            m_Encendida = true;
+        }
         else {
-            System.out.println("Necesitas más intensidad.");
+            System.out.println("Se ha encendido la lámpara.");
+            m_Intensidad = obtenerIntensidadDeVoltaje(m_Voltaje);
+            m_Encendida = false;
         }
     }
 
     public void apagar() {
         if (!m_Encendida) 
             System.out.println("La lámpara está apagada.");
-        else 
+        else {
             System.out.println("Se ha apagado la lámpara.");
+            m_Intensidad = 0;
+            m_Encendida = false;
+        }
     }
 
     public String toString() {

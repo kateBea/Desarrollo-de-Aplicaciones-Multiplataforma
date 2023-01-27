@@ -1,3 +1,11 @@
+/*
+ * Este es un módulo de pruebas que sirve para testear la clase Lampara
+ * 
+ * @author Hugo
+ * @version 1.0
+ * @date 27 de enero de 2023
+ */
+
 import Lampara.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -48,6 +56,10 @@ public class PruebasLampara  {
 
         lamp.encender();
         lamp.apagar();
+
+        lamp.setIntensidad(5.4);
+        lamp.setIntensidad(66);
+        lamp.setVoltaje(16.4);
         System.out.println("*****************************************");
     }
 }
