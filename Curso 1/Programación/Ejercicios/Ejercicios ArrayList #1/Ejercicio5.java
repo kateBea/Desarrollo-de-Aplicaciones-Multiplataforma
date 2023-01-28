@@ -14,34 +14,32 @@
 
 import java.util.ArrayList;
 import java.util.Vector;
-
-import org.jcp.xml.dsig.internal.dom.Utils;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
 public class Ejercicio5 {
+    // espacios insertados para formatear la salida de datos
+    private static final String[] diasSemana = { "Lunes    ", "Martes   ", "Miércoles", "Jueves   ", "Viernes  ", "Sábado   ", "Domingo  " };  
     private static final InputStreamReader input = new InputStreamReader(System.in);
     private static final BufferedReader lector = new BufferedReader(input);
     public static void main(String[] args) throws IOException {
         ArrayList<String> datos;
-        Vector<Float>[] ciclistas;
-
-        // esta constante se inicializa en tiempo de ejecución
-        // y representa el total de ciclistas
-        final int TOTAL_CICLISTAS;
-
+        ArrayList<Vector<Float>> ciclistas;
 
         datos = leerDatos();
-        TOTAL_CICLISTAS = datos.size();
         
         // si los datos introducidos para todos los ciclistas
         // son válidos, entonces podemos proceder a formatearlos
-        if (validarDatos(datos))
+        if (validarDatos(datos)) {
+            System.out.println("**************** Se han validado los datos ****************");
             ciclistas = formatearDatos(datos);
+            imprimirRecorridoCiclistas(ciclistas);
+        }
+        else {
+            System.out.println("**************** No se han validado los datos ****************");
+        }
 
-        imprimirRecorridoCiclistas(ciclistas);
     }
 
     /*
@@ -73,22 +71,41 @@ public class Ejercicio5 {
     * @return Vector<Float>[] matriz con los datos formateados
     * @author Hugo
     */
-    public static Vector<Float>[] formatearDatos(ArrayList<String> datos) {
-        Vector<Float>[] resultado = new Vector<Float>[];
+    public static ArrayList<Vector<Float>> formatearDatos(ArrayList<String> datos) {
+        int indiceFila = 0;
+        ArrayList<Vector<Float>> resultado = new ArrayList<Vector<Float>>(datos.size());
 
+        for (String datoPorCiclista : datos) {
+            resultado.add(indiceFila, new Vector<>());
+            for (String valor : datoPorCiclista.split(" ")) {
+                resultado.get(indiceFila).add(Float.parseFloat(valor));
+            }
+
+            indiceFila++;
+        }
 
         return resultado;
     }
 
     /*
+    * Este método imprime la información de todos los ciclistas
     * 
-    * 
-    * @param
-    * @return
+    * @param ciclistas El ArrayList conteniendo los datos de los ciclistas
+    * @return void
     * @author Hugo
     */
-    public static void imprimirRecorridoCiclistas(Vector<Float>[] ciclistas) {
+    public static void imprimirRecorridoCiclistas(ArrayList<Vector<Float>> ciclistas) {
+        for (Vector<Float> datosCiclista : ciclistas) {
+            // itera sobre los días de la
+            // semana del vector de diasSemana
+            // ver cabecera para más información
+            int indice = 0;
+            for (Float dato : datosCiclista) {
+                System.out.println(diasSemana[indice++] + ": " + dato + " kM (s) recorridos");
+            }
 
+            System.out.println();
+        }
     }
 
     /*
@@ -107,16 +124,16 @@ public class Ejercicio5 {
         int indexLinea = 0;
         while (indexLinea < datos.size() && validos) {
             
-            // obtenemos los datos por líne (los de cada ciclista)
+            // obtenemos los datos por línea
             String[] datosCiclista = datos.get(indexLinea).split(" ");
             
             // tratamos los datos de cada ciclista
             int indexDato = 0;
             while (indexDato < datos.size() && validos) {
                 // probar si se puede parsear a número decimal
-                // y no que no sea negativo
-                if (!Utils.isParsable(datosCiclista[indexDato]) && 
-                    !Float.parseFloat(datosCiclista[indexDato]) < 0) {
+                // y que no sea negativo
+                // TODO: falta la primera parte
+                if ((Float.parseFloat(datosCiclista[indexDato]) < 0)) {
                         validos = false;
                 }                
                 else {

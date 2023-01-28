@@ -8,7 +8,7 @@ public class Localidad {
     private float m_Superficie;
     private float m_RentaPerCapita;
 
-    Localidad(String nombre,
+    public Localidad(String nombre,
               String provincia,
               int numHabitantes,
               float distanciaACapital,
@@ -45,6 +45,20 @@ public class Localidad {
 
     public float getRentaPerCapita() {
         return m_RentaPerCapita;
+    }
+
+    public boolean tieneMasPoblacion(Localidad other) {
+        return getNumeroHabitantes() > other.getNumeroHabitantes();
+    }
+
+    public void mostrar() {
+        System.out.println("Nombre: " + m_Nombre);
+        System.out.println("Provincia: " + m_Provincia);
+        System.out.println("Número de habitantes: " + m_NumHabitantes);
+        System.out.println("Distancia a capital: " + m_DistanciaACapital + " kM (s)");
+        System.out.println("Superficie: " + m_Superficie + " kM2 (s)");
+        System.out.println("Renta per capita: " + m_RentaPerCapita);
+        System.out.println("----------------------------------");
     }
 
     /*     Setters      */
