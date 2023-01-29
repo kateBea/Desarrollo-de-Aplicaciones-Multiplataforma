@@ -5,6 +5,7 @@ public class Persona {
 
     private String m_Nombre;
     private String m_Apellido1;
+    // m_Apellido2 es opcional
     private String m_Apellido2;
     private String m_Dni;
     private String m_Profesion;
@@ -42,6 +43,20 @@ public class Persona {
 
     public int getEdad() {
         return m_Edad;
+    }
+
+    public void mostrar() {
+        System.out.println("Nombre: " + m_Nombre);
+        System.out.println("Primer Apellido: " + m_Apellido1);
+        System.out.println("Segundo Apellido: " + (m_Apellido2 == null ? "NULL" : m_Apellido2));
+        System.out.println("DNI: " + m_Dni);
+        System.out.println("Profesión: " + m_Profesion);
+        System.out.println("Edad: " + m_Edad);
+        System.out.println("----------------------------------");
+    }
+
+    public boolean esMayorQue(Persona other) {
+        return getEdad() > other.getEdad();
     }
 
     /* SETTERS */

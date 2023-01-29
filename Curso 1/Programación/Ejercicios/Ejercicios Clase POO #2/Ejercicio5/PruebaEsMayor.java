@@ -1,6 +1,8 @@
-package Ejercicio4;
+package Ejercicio5;
 
-public class PruebaPersona {
+import Ejercicio4.Persona;
+
+public class PruebaEsMayor {
     public static void main(String[] args) {
         Persona p1 = new Persona("Roberto", "Carlos", "Rodríguez", "123456789F", "Estudiante", 21);
         Persona p2 = new Persona("Marta", "Bastos", null, "276491742K", "Electricista", 25);
@@ -20,5 +22,21 @@ public class PruebaPersona {
 
         p5.setEdad(19);
         p5.mostrar();
+
+        System.out.println("********** Prueba esMayorQue **********");
+        if (p1.esMayorQue(p2)) 
+            System.out.println(p1.getNombre() + " es mayor que " + p2.getNombre());
+        else 
+            System.out.println(p2.getNombre() + " es mayor que " + p1.getNombre());
+
+        if (p3.esMayorQue(p4)) 
+            System.out.println(p3.getNombre() + " es mayor que " + p4.getNombre());
+        else 
+            System.out.println(p4.getNombre() + " es mayor que " + p3.getNombre());
+
+        if (p5.esMayorQue(p2)) 
+            System.out.println(p5.getNombre() + " es mayor que " + p2.getNombre());
+        else 
+            System.out.println(p2.getNombre() + " es mayor que " + p5.getNombre());
     }
 }
