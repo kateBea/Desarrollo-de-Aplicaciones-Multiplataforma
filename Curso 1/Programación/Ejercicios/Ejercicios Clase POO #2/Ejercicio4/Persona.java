@@ -3,6 +3,8 @@ package Ejercicio4;
 public class Persona {
     // representa una persona
 
+    private static final int EDAD_JUBILACION = 67; 
+
     private String m_Nombre;
     private String m_Apellido1;
     // m_Apellido2 es opcional
@@ -59,6 +61,15 @@ public class Persona {
         return getEdad() > other.getEdad();
     }
 
+    public boolean esFamiliarDe(Persona other) {
+        return (getPrimerApellido().equalsIgnoreCase(other.getPrimerApellido()))
+            || (getSegundoApellido().equalsIgnoreCase(other.getSegundoApellido()));
+    }
+
+    public boolean esTocayoDe(Persona other) {
+        return getNombre().equalsIgnoreCase(other.getNombre());
+    }
+
     /* SETTERS */
     public void setNombre(String nombre) {
         m_Nombre = nombre;
@@ -82,5 +93,12 @@ public class Persona {
 
     public void setEdad(int edad) {
         m_Edad = edad;
+    }
+
+    public void esJubilado() {
+        if (getEdad() >= EDAD_JUBILACION)
+            setProfesion("Jubilado");
+        else 
+            System.out.println((m_Nombre + " " + m_Apellido1) + " con " + m_Edad + " años no está en edad de jubilación");
     }
 }
