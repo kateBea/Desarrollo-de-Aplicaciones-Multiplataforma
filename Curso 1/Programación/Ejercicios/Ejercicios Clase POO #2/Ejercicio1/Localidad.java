@@ -61,6 +61,11 @@ public class Localidad {
         System.out.println("----------------------------------");
     }
 
+    public float densidadDePoblacion() {
+        // en habitantes por kilómetro cuadrado
+        return getNumeroHabitantes() / getSuperficie();
+    }
+
     /*     Setters      */
     public void setNombre(String nombre) {
         m_Nombre = nombre;
