@@ -98,3 +98,5 @@ Ejercicio 15
 Con la clase Persona crea un método tieneApellidoCompuesto que devuelva true si el 
 objeto tiene algún apellido compuesto (“Sánchez-Gil”, “García-Cano”, …). Se considera 
 que un apellido es compuesto si incorpora un guion separando dos caracteres.
+
+NOTA: Algunos ejercicios no se hacen por que son reformulaciones (Ej 12, Ej 13, Ej 14, Ej 15)

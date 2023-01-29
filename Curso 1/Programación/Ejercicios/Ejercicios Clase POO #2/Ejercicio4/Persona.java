@@ -4,6 +4,7 @@ public class Persona {
     // representa una persona
 
     private static final int EDAD_JUBILACION = 67; 
+    private static final int MAYORIA_DE_EDAD = 18;
 
     private String m_Nombre;
     private String m_Apellido1;
@@ -68,6 +69,20 @@ public class Persona {
 
     public boolean esTocayoDe(Persona other) {
         return getNombre().equalsIgnoreCase(other.getNombre());
+    }
+
+    public boolean esMenor() {
+        return getEdad() < MAYORIA_DE_EDAD;
+    }
+
+    public boolean trabajaEnSector(String... profesiones) {
+        // TODO: ... enunciado no se aclara ...
+        return true;
+    }
+
+    public boolean tieneApellidoCompuesto() {
+        return (getPrimerApellido().split("-").length == 2)
+            || (getSegundoApellido().split("-").length == 2);
     }
 
     /* SETTERS */
