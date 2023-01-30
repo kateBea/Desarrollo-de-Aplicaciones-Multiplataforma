@@ -78,7 +78,7 @@ public class Lampara {
             return INTENSIDAD_MINIMA;
 
         if (voltaje > VOLTAJE_MAXIMO)
-            return INTENSIDAD_MINIMA;
+            return INTENSIDAD_MAXIMA;
 
         // ten en cuenta que el rango de voltaje no empieza en cero
         // esta desplazado y empieza desde VOLTAJE_MINIMO
