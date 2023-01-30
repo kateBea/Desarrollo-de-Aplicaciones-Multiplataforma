@@ -1,7 +1,5 @@
 package Ejercicio4;
 
-import java.io.*;
-
 public class Persona {
     // representa una persona
 
