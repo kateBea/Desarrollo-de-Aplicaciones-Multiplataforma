@@ -1,6 +1,6 @@
 # Desarollo de Aplicaciones Multiplataforma (DAM)
 Repo del Ciclo Formativo de Grado Superior de Desarollo de Aplicaciones Multiplataforma. En este repositorio se pueden encontrar
-algunos apunter del ciclo de DAM junto con bastantes ejercicios de resueltos de programación en variedad de lenguajes y otras materias del módulo.
+algunos apuntes del ciclo de DAM junto con ejercicios resueltos de programación en variedad de lenguajes y contenido de otras materias del módulo.
 
 # Asignaturas de DAM
 - Asignaturas del primer curso:
