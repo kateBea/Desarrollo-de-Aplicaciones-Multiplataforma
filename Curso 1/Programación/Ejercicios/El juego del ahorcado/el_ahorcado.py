@@ -1,3 +1,8 @@
+# El ahorcado
+# Algoritmo: Juego del ahorcado
+# Fecha: 31.01.2023
+# Autor: Hugo Pelayo
+
 import random
 
 # NOTA: pequeño bug, si una letra ya se ha adivinado y se
