@@ -111,7 +111,7 @@ public class Vehiculo2 {
         m_Matricula = matricula;
         m_Marca = marca;
         m_Modelo = modelo;
-        m_Velocidad = velocidad;
+        m_Velocidad = velocidad < 0.0 ? 0.0 : velocidad;
         m_Marcha = ajustarMarcha();
         m_LucesEncendidas = estadoLuces;
     }
@@ -232,7 +232,7 @@ public class Vehiculo2 {
      * @param velocidad velocidad a la que se actualiza la actual
      */
     public void setVelocidad(double velocidad) {
-        this.m_Velocidad = velocidad;
+        this.m_Velocidad = velocidad < 0.0 ? 0.0 : velocidad;
     }
 
     /**
