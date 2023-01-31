@@ -1,0 +1,74 @@
+EJERCICIO LÁMPARA
+
+Crear una clase Lámpara como representación de un sistema de iluminación. Nuestra lámpara es capaz de dar distintos niveles de iluminación. Para eso crearemos la clase con dos atributos y sus correspondientes métodos get y set:
+
+    boolean encendida: que indicará si la luz está encendida o no.
+    int intensidad: que indicara el nivel de luz (de 0 a 100 %).
+
+ 
+
+Podemos cambiar la intensidad de la luz mediante el método setIntensidad, indicando la cantidad de luz que queremos recibir. También nos gustaría poder encender la luz indicando el voltaje. El voltaje será un número de tipo double con valores entre 1.5 y 12.5. Para eso crearemos el método: public void setIntensidad(double voltaje). Si el parámetro voltaje es inferior a 1.5, la intensidad está al 0 %. Si el valor es mayor que 12.5, la intensidad está al 100%. Los otros valores del parámetro dependen del voltaje y se pueden calcular mediante una regla de 3.
+
+Por último queremos conocer el estado actual de nuestra luz. Para realizar esto, codificaremos un método toString() para que devuelva un mensaje de tipo: Luz: ON, Intensidad: 45%
+
+Cuando creemos un objeto de tipo Lámpara, asignaremos a los atributos los valores por defecto:
+
+encendida = false
+
+intensidad = 0
+Codificar una clase con método main para probar la clase creada
+
+
+EJERCICIO 2 VEHÍCULO (version1)
+
+Crea un Programa Orientado a Objetos donde se crean 3 objetos vehículos con los siguientes datos:
+
+-          Matrícula: 1234-BCD, Marca: Opel, Modelo: Astra, Velocidad:0 y Luces: Apagadas
+
+-          Matrícula: 2345-EFG, Marca: BMW, Modelo: S1, Velocidad:80 y Luces: Apagadas
+
+-          Matrícula: 4323-QWE, Marca: Audi, Modelo: A3, Velocidad:100 y Luces: Encendidas
+
+Una vez creados los tres objetos vehículos (v1, v2 y v3) se harán las siguientes operaciones:
+
+-          V1 modifica su velocidad a 50 y enciende las luces. A continuación, mostrará la información completa del vehículo tal y como se muestra:
+
+Vehiculo{matricula=1234 BCD, marca=Opel, modelo=Astra, velocidad=50, luces=luces encendidas}
+
+-          V2  modifica su velocidad a 120. A continuación, mostrar la información
+
+Por tanto, deberás generar dos ficheros:
+
+-          Vehículo.java donde modeles la clase Vehículos con la información necesaria
+
+-          PruebaVehiculos.java donde crearás la función main con los objetos v1,v2 y v3 que se indican en el enunciado.
+EJERCICIO 3 VEHÍCULOS (versión 2)
+
+
+-          Crear un nuevo constructor que solo reciba como parámetros la matrícula, la marca y el modelo, de forma que la velocidad será 0 y las luces estarán apagadas.
+
+-          Incorporar un nuevo atributo llamado marcha (int) que podrá tomar valores comprendidos entre el 0 y el 5 junto a los correspondientes métodos get y set.
+
+-          Cambiar el código del método setMarcha de forma que además de establecer el valor del atributo marcha se encargue de establecer la velocidad del vehículo en 0, 10, 30, 60, 90 y 120 correspondiente a la marcha del vehículo.
+
+-          Crear un nuevo constructor que reciba como parámetros la matrícula, la marca, el modelo y la marcha, de forma que dependiendo del valor de la marcha se establezca su velocidad (las luces estarán apagadas).
+
+-          Modificar el método toString para que muestre también la marcha.
+
+Por tanto, deberás generar dos ficheros:
+
+-           Vehículo2.java donde modeles la clase Vehículos con todos los métodos
+
+-          PruebaVehiculos2.java donde se instancien nuevos objetos con los constructores creados en los pasos anteriores y se pruebe el método setMarcha.
+
+Ejercicio Taller
+
+Se desea realizar una aplicación que simule un taller donde se reparan vehículos. El taller debe permitir el cálculo de la reparación de un vehículo en base al coste de las piezas utilizadas y las horas dedicadas a la reparación. La aplicación debe tener tres clases: Taller, Vehículo y Pieza:
+
+·         La clase Pieza representa una pieza del vehículo reparado y contendrá su nombre (String) y su precio (double).
+
+·         El Vehículo contendrá la matrícula (String), marca (String), modelo (String) y un ArrayList con las piezas que se han arreglado.
+
+·         La clase Taller tendrá un nombre (String), teléfono (String) y el precio hora (double). El taller debe tener un método repararVehiculo() que recibirá dos parámetros: un objeto de tipo vehículo y las horas dedicadas a la reparación; a partir del objeto vehículo sabremos las piezas utilizadas y su precio y con el coste de la hora debe ser capaz de devolver el importe total de la reparación.
+
+Crear las clases y los métodos necesarios para poder implementar el método repararVehiculo() y una clase PruebaTaller con método main para poder probarlas.
