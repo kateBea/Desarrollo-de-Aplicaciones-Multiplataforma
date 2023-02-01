@@ -1,7 +1,10 @@
 package Taller;
 
+import java.util.TreeSet;
+import java.util.ArrayList;
+
 /**
- * <h2>Representa un objeto vehículo</h2> 
+ * <h2>Representa un vehículo</h2> 
  * 
  * Para más clases:
  * <a href="https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma">GitHub ref</a>
@@ -10,23 +13,18 @@ package Taller;
  * clase se recogen propiedades como la matrícula, la marca,
  * el modelo la velocidad, en este caso hace referencia a
  * la velocidad punta, que sería la velocidad máxima alcanzable 
- * en un trayecto en línea recta, y, por último, se guarda
- * inforación sobre el estado actual de las luces que podrían 
- * estar apagadas o encendidas. A continuación un recogido de los
- * atributos de con sus respectivas descripciones:
- *  
- * <ul>
- *     <li><b>Matrícula:</b> Hace referencia a la matrícula actual del vehículo</li>
- *     <li><b>Marca:</b> Hace referencia a la marca del vehículo</li>
- *     <li><b>Modelo:</b> Describe el modelo del vehículo</li>
- *     <li><b>Velocidad:</b> Guarda la velocidad punta del vehículo</li>
- *     <li><b>Luces:</b> Indica si las luces están apagadas o encendidas</li>
- *     <li><b>Marcha:</b> Indica la mcrcha actual del vehículo. Valor en el rango [0, 5]</li>
- * </ul>
+ * en un trayecto en línea recta, y, se guarda inforación sobre el 
+ * estado actual de las luces que podrían estar apagadas o encendidas. 
+ * La clase también provee información sobre la marcha actual del vehículo
+ * y las piezas que lo componen. La información de las piezas se puede proveer 
+ * en el momento de instanciación del vehículo o añadir posteriormente
+ * con los métodos apropiados una vez tengamos el objeto creado.
  * 
  * @author Hugo Pelayo
  * @version 1.0
  */
+
+
 public class Vehiculo {
     // Atributos privados de la clase
 
@@ -45,6 +43,9 @@ public class Vehiculo {
     private boolean m_LucesEncendidas;
     //indica la marcha actual
     private byte m_Marcha;
+    //contiene las piezas arregladas de un vehículo
+    //(se utiliza un set para evitar los duplicados)
+    TreeSet<Pieza> m_Piezas;
 
     /*
      * Ajusta la velocidad acorde a la marcha actual
@@ -90,6 +91,71 @@ public class Vehiculo {
         m_Modelo = null;
         m_Velocidad = 0.0;
         m_LucesEncendidas = false;
+        m_Piezas = null;
+    }
+
+    /**
+     * Este método contruye un objeto vehículo con los atributos
+     * que se le pasan como parámetros.
+     * 
+     * @param marca marca del vehículo
+     * @param modelo modelo del vehículo
+     * @param matricula matricula del vehículo
+     * @param velocidad velocidad del vehículo
+     * @param estadoLuces estado de luces del vehículo
+     * @param piezas piezas ha ser añadidas al vehículo
+     */
+    public Vehiculo(String marca, 
+                    String modelo,
+                    String matricula,
+                    double velocidad,
+                    boolean estadoLuces,
+                    ArrayList<Pieza> piezas) {
+        
+        m_Matricula = matricula;
+        m_Marca = marca;
+        m_Modelo = modelo;
+        m_Velocidad = velocidad < 0.0 ? 0.0 : velocidad;
+        m_Marcha = ajustarMarcha();
+        m_LucesEncendidas = estadoLuces;
+        
+        // no hacemos m_Piezas = piezas para evitar aliasing
+        // si se modifica el conjunto que se pasa como parámetro
+        // las piezas de este vehículo se ven afectadas!
+        m_Piezas = new TreeSet<>(new Pieza.ComparadorPiezas());
+        addPiezas(piezas);
+    }
+
+    /**
+     * Este método contruye un objeto vehículo con los atributos
+     * que se le pasan como parámetros.
+     * 
+     * @param marca marca del vehículo
+     * @param modelo modelo del vehículo
+     * @param matricula matricula del vehículo
+     * @param velocidad velocidad del vehículo
+     * @param estadoLuces estado de luces del vehículo
+     * @param piezas piezas ha ser añadidas al vehículo
+     */
+    public Vehiculo(String marca, 
+                    String modelo,
+                    String matricula,
+                    double velocidad,
+                    boolean estadoLuces,
+                    Pieza[] piezas) {
+        
+        m_Matricula = matricula;
+        m_Marca = marca;
+        m_Modelo = modelo;
+        m_Velocidad = velocidad < 0.0 ? 0.0 : velocidad;
+        m_Marcha = ajustarMarcha();
+        m_LucesEncendidas = estadoLuces;
+        
+        // no hacemos m_Piezas = piezas para evitar aliasing
+        // si se modifica el conjunto que se pasa como parámetro
+        // las piezas de este vehículo se ven afectadas!
+        m_Piezas = new TreeSet<>();
+        addPiezas(piezas);
     }
 
     /**
@@ -114,6 +180,7 @@ public class Vehiculo {
         m_Velocidad = velocidad < 0.0 ? 0.0 : velocidad;
         m_Marcha = ajustarMarcha();
         m_LucesEncendidas = estadoLuces;
+        m_Piezas = null;
     }
 
     /**
@@ -134,6 +201,7 @@ public class Vehiculo {
         m_Marcha = 0;
         m_Velocidad = 0.0;
         m_LucesEncendidas = false;
+        m_Piezas = null;
     }
 
     /**
@@ -156,6 +224,7 @@ public class Vehiculo {
         m_Marcha = marcha;
         m_Velocidad = ajustarVelocidad();
         m_LucesEncendidas = false;
+        m_Piezas = null;
     }
 
     /**
@@ -275,6 +344,57 @@ public class Vehiculo {
         m_Velocidad = ajustarVelocidad();
     }
 
+    /**
+     * Añade todas las piezas de la lista a las piezas de este vehículo.
+     * 
+     * @param piezas la lista de piezas a ser añadida
+     */
+    public void addPiezas(ArrayList<Pieza> piezas) {
+        if (m_Piezas == null)
+            m_Piezas = new TreeSet<>(new Pieza.ComparadorPiezas());
+
+        for (Pieza pieza : piezas)
+            addPieza(pieza);
+    }
+
+    /**
+     * Añade todas las piezas de la lista a las piezas de este vehículo.
+     * 
+     * @param piezas la lista de piezas a ser añadida
+     */
+    public void addPiezas(Pieza[] piezas) {
+        if (m_Piezas == null)
+            m_Piezas = new TreeSet<>(new Pieza.ComparadorPiezas());
+
+        for (Pieza pieza : piezas)
+            addPieza(pieza);
+    }
+
+    /**
+     * Añade la pieza a este vehículo
+     * 
+     * @param pieza la pieza a ser añadida
+     */
+    public void addPieza(Pieza pieza) {
+        if (m_Piezas == null)
+            m_Piezas = new TreeSet<>(new Pieza.ComparadorPiezas());
+
+        m_Piezas.add(new Pieza(pieza));
+    }
+
+    public TreeSet<Pieza> getPiezas() {
+        return m_Piezas;
+    }
+
+    public void mostraPiezas() {
+        if (m_Piezas.isEmpty()) {
+            System.out.println("El coche no tiene piezas.");
+            return;
+        }
+
+        for (Pieza item : m_Piezas)
+            System.out.println(item.toStringOnLine());
+    }
     /**
      * Retorna una cadena formateada que describe la clase.
      * Para cada atributo muestra su valor con un buen formateado.
