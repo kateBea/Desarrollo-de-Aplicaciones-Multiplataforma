@@ -1,4 +1,4 @@
-package Taller;
+package taller;
 
 /**
  * <h2>Programa de pruebas para el pauqete Taller</h2>

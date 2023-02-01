@@ -1,4 +1,4 @@
-package Taller;
+package taller;
 
 /**
  * <h2>Representa un taller</h2>

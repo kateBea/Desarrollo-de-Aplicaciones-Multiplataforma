@@ -1,4 +1,4 @@
-package Taller;
+package taller;
 
 import java.util.TreeSet;
 import java.util.ArrayList;
