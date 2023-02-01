@@ -1,5 +1,14 @@
 package Taller;
 
+/**
+ * <h2>Programa de pruebas para el pauqete Taller</h2>
+ * 
+ * Define un programa para poner a prueba todas las clases 
+ * del paquete taller
+ * 
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
 public class PruebaVehiculo {
     public static void main(String[] args) {
         Vehiculo v1 = new Vehiculo("Opel", "Astra", "1234-BCD", 0.0, false);
@@ -51,7 +60,7 @@ public class PruebaVehiculo {
 
         Taller arcor = new Taller("Arcor", "652 22 88 11", 3.4);
 
-        System.out.printf("Reparación de " + v3.getMarca() + " " + v3.getModelo() + ": %.3f euro(s)\n",
+        System.out.printf("\nReparación de " + v3.getMarca() + " " + v3.getModelo() + ": %.3f euro(s)\n",
             arcor.repararVehiculo(v3, 4.6));
 
     }
