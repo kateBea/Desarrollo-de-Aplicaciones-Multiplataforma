@@ -10,11 +10,28 @@ public class Persona {
     private static String[] ESTADOS_CIVILES = { "Soltero", "Casado" };
 
     public Persona(String dni, String nombre, String estado, int edad) {
+        m_Dni = dni;
+        m_Nombre = nombre;
+        setEstado(estado);
+        setEdad(edad);
+    }
 
+    public boolean equals(Persona other) {
+        return m_Dni.equalsIgnoreCase(other.m_Dni) &&
+            m_Nombre.equalsIgnoreCase(other.m_Nombre) &&
+            m_EstadoCivil.equalsIgnoreCase(other.m_EstadoCivil) &&
+            m_Edad == other.m_Edad;
     }
 
     public Persona(Persona persona) {
-        
+        m_Dni = persona.m_Dni;
+        m_Nombre = persona.m_Nombre;
+        m_EstadoCivil = persona.m_EstadoCivil;
+        m_Edad = persona.m_Edad;
+    }
+
+    public void cumpleanios() {
+        System.out.println(m_Nombre + " tiene " + m_Edad + " años.");
     }
 
     public String getDni() {
@@ -30,7 +47,7 @@ public class Persona {
     }
 
     public String getNif() {
-        return "";
+        return m_Dni;
     }
 
     public int getEdad() {
@@ -62,7 +79,7 @@ public class Persona {
                             "Edad: %d\n" +
                             "Estado civil: %s\n" +
                             "Nombre: %s\n" +
-                            "---------------------------\n",
+                            "---------------------------",
         m_Dni, m_Edad, m_EstadoCivil, m_Nombre);
     }
 }
