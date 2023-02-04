@@ -1,15 +1,20 @@
 Ejercicio POO Empleados.
 
-El siguiente ejemplo de POO consiste en la creación de una serie de clases que nos permiten gestionar los empleados de una empresa.
+El siguiente ejemplo de POO consiste en la creación de una serie de clases que nos 
+permiten gestionar los empleados de una empresa.
 
 Para ello, se deberá codificar el siguiente diagrama de clases:
 
 Se creará un paquete “empleados” donde se incluirán las clases.
 
-Una vez creado el paquete desarrollamos las siguientes clases: Persona, Empleado, Empresa y Departamento
+Una vez creado el paquete desarrollamos las siguientes clases: Persona, 
+Empleado, Empresa y Departamento
 
-Para probar las clases vamos a realizar una clase “Main” en la que crearemos la empresa Indra, con dos departamentos Informática en Madrid y Personal en Barcelona.
+Para probar las clases vamos a realizar una clase “Main” en la que 
+crearemos la empresa Indra, con dos departamentos Informática en Madrid y 
+Personal en Barcelona.
 
-A continuación, crear tres empleados. Dos de ellos trabajaran en Informática y uno en Personal.
+A continuación, crear tres empleados. Dos de ellos trabajaran en Informática y 
+uno en Personal.
 
 Después prueba los métodos que puedan hacer estos empleados

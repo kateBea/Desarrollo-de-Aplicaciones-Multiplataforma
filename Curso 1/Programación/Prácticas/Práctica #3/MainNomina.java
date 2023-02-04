@@ -1,6 +1,7 @@
 import empleados.*;
+import nominas.*;
 
-public class PruebaEmpleados {
+public class MainNomina {
     public static void main(String[] args) {
         
     }
