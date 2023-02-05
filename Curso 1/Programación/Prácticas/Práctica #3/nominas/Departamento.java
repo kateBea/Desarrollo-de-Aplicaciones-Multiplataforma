@@ -1,4 +1,4 @@
-package empleados;
+package nominas;
 
 import java.util.ArrayList;
 

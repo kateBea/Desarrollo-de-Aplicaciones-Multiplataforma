@@ -1,4 +1,4 @@
-package empleados;
+package nominas;
 
 /**
  * <h2>Representa una empresa</h2>

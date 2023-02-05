@@ -1,4 +1,3 @@
-import empleados.*;
 import nominas.*;
 import java.util.Random;
 import java.util.ArrayList;

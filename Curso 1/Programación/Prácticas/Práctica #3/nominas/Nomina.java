@@ -1,9 +1,6 @@
 package nominas;
 
-import empleados.Empleado;
 import java.time.LocalDate;
-import empleados.Departamento;
-import empleados.Empresa;
 
 /**
  * <h2>Representa la nómina de un empleado</h2>

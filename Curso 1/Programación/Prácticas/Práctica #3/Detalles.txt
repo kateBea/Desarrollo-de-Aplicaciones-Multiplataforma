@@ -1,0 +1,25 @@
+Se pretende realizar el ejercicio POO Nóminas, con los requisitos que se especifican en el fichero adjunto
+
+Se deberá entregar en un fichero ApellidosAlumno.zip todos los ficheros del proyecto con el programa principal, el directorio del paquete nominas (dentro las clases) y el directorio help (con la ayuda generada de javadoc) de la siguiente estructura:
+
+* Directorio ApellidosAlumno
+
+       * nombre_paquete
+
+                 - Ficheros.java
+
+      * directorio help
+
+     * Main Programa
+
+Requisitos programa para ser considerado APTO:
+
+  - El programa compila sin errores
+
+  - El programa funciona y realiza las especificaciones
+
+ - Las clases se han documentado teniendo en cuenta las pautas de javadoc
+
+ - Se ha incluido la documentación en el directorio help
+
+Nota: se recuerda que los comandos para generar ayuda era desde la terminal: javadoc -d "nombredirectorio"  Clase.java

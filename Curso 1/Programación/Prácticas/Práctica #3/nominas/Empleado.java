@@ -1,4 +1,4 @@
-package empleados;
+package nominas;
 
 /**
  * <h2>Representa un empleado</h2>
@@ -100,7 +100,7 @@ public class Empleado extends Persona {
      * Devuelve el salario bruto de este empleado, es decir,
      * el salario sin aplicación de retenciones
      * 
-     * @return
+     * @return El salario bruto de este empleado
      */
     public double getSueldo() {
         return m_Sueldo;

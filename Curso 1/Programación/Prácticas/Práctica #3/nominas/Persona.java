@@ -1,4 +1,4 @@
-package empleados;
+package nominas;
 
 /**
  * <h2>Representa una persona</h2>
@@ -125,7 +125,7 @@ public class Persona {
      * o <b>Casado</b>. Si no es ninguno de esta valores, esta función
      * no tiene efecto
      * 
-     * @param estado
+     * @param estado Nuevo estado civil de esta persona
      */
     public void setEstado(String estado) {
         if (!estado.equalsIgnoreCase(ESTADOS_CIVILES[0]) && 
