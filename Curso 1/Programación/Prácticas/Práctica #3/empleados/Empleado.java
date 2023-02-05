@@ -152,10 +152,10 @@ public class Empleado extends Persona {
     public String toString() {
         return super.toString() + String.format("\n-- Datos Empleado ---------\n" +
                                                 "Cargo: %s\n" +
-                                                "%s\n" +
+                                                "Nombre departamento: %s\n" +
                                                 "Sueldo: %.4f\n" +
                                                 "---------------------------",
-        m_Cargo, m_Departamento.toString(), m_Sueldo);
+        m_Cargo, m_Departamento.getNombre(), m_Sueldo);
     }
 
 }
