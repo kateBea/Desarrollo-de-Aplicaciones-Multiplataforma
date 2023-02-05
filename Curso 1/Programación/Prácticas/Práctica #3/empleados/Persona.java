@@ -104,8 +104,11 @@ public class Persona {
     }
 
     /**
+     * Cambia la edad de esta persona a la que se pasa por parámetro.
+     * Si la edad es negativa no se realizan cambios y se informa de ello
+     * con un mensaje apropiado
      * 
-     * @param edad
+     * @param edad Nueva edad de esta persona
      */
     public void setEdad(int edad) {
         if (edad < 0) {
@@ -116,6 +119,14 @@ public class Persona {
         m_Edad = edad;
     }
 
+    /**
+     * Cambia el estado civil de esta persona al que se pasa
+     * como parámetro. El estado civil puede ser <b>"Soltero"</b>
+     * o <b>Casado</b>. Si no es ninguno de esta valores, esta función
+     * no tiene efecto
+     * 
+     * @param estado
+     */
     public void setEstado(String estado) {
         if (!estado.equalsIgnoreCase(ESTADOS_CIVILES[0]) && 
         !estado.equalsIgnoreCase(ESTADOS_CIVILES[1])) {
