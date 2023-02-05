@@ -142,9 +142,16 @@ public class Empleado extends Persona {
             System.out.println("Valor de sueldo no válido");
     }
 
+    /**
+     * Retorna una cadena de caracteres formateada describiendo
+     * este empleado
+     * 
+     * @return Un String formateado representando este empleado
+     */
     @Override
     public String toString() {
-        return super.toString() + String.format("\nCargo: %s\n" +
+        return super.toString() + String.format("\n-- Datos Empleado ---------\n" +
+                                                "Cargo: %s\n" +
                                                 "%s\n" +
                                                 "Sueldo: %.4f\n" +
                                                 "---------------------------",

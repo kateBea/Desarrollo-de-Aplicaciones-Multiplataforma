@@ -1,5 +1,12 @@
 package empleados;
 
+/**
+ * <h2></h2>
+ * 
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
+
 public class Persona {
     private String m_Dni;
     private String m_Nombre;
@@ -73,9 +80,16 @@ public class Persona {
         m_EstadoCivil = estado;
     }
 
+    /**
+     * Retorna una cadena de caracteres formateada describiendo
+     * esta persona
+     * 
+     * @return Un String formateado representando esta persona
+     */
     @Override
     public String toString() {
-        return String.format("DNI: %s\n" +
+        return String.format("-- Datos Persona ---------\n" +
+                            "DNI: %s\n" +
                             "Edad: %d\n" +
                             "Estado civil: %s\n" +
                             "Nombre: %s\n" +

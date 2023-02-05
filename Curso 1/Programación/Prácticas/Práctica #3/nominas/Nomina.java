@@ -215,6 +215,7 @@ public class Nomina {
                             "%s\n" +
                             "%s\n" +
                             "%s\n" +
+                            "-- Datos Nómina ---------\n" +
                             "Salario bruto: %.4f\n" +
                             "Salario neto: %.4f\n" +
                             "Retención: %.4f",
