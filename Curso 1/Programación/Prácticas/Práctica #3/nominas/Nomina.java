@@ -57,6 +57,8 @@ public class Nomina {
 
         if (!(m_Retencion >= 0.0 && m_Retencion <= 100.0))
             m_Retencion = .0;
+        else 
+            m_Retencion = retencion;
 
         m_SalarioNeto = calcularNeto();
     }
@@ -77,6 +79,8 @@ public class Nomina {
 
         if (!(m_Retencion >= 0.0 && m_Retencion <= 100.0))
             m_Retencion = .0;
+        else 
+            m_Retencion = retencion;
 
         m_SalarioNeto = calcularNeto();
     }
@@ -211,15 +215,16 @@ public class Nomina {
      */
     @Override
     public String toString() {
-        return String.format("%s\n" +
-                            "%s\n" +
-                            "%s\n" +
-                            "%s\n" +
-                            "-- Datos Nómina ---------\n" +
+        return String.format("-- Datos Nómina ---------\n" +
+                            "Nombre empresa: %s\n" +
+                            "Nombre deprtamento: %s\n" +
+                            "Nombre empleado: %s\n" +
+                            "Fecha emisión: %s\n" +
                             "Salario bruto: %.4f\n" +
                             "Salario neto: %.4f\n" +
-                            "Retención: %.4f",
-        m_Empresa.toString(), m_Departamento.toString(), m_Empleado.toString(),
+                            "Retención: %.4f\n" +
+                            "--------------------------",
+        m_Empresa.getNombre(), m_Departamento.getNombre(), m_Empleado.getNombre(),
         m_Fecha.toString(), m_SalarioBruto, m_SalarioNeto, m_Retencion);
     }
 }
