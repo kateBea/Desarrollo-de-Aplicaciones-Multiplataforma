@@ -148,23 +148,39 @@ public class Nomina {
         return m_Fecha;
     }
 
-    
+
     /**
+     * Cambia la empresa de esta nómina a la que se pasa por parámetro
      * 
-     * @param empresa
+     * @param empresa Nueva empresa de esta nómina
      */
     public void setEmpresa(Empresa empresa) {
         m_Empresa = empresa;
     }
 
+    /**
+     * Cambia el departamento de esta nómina al que se pasa por parámetro
+     * 
+     * @param departamento Nuevo departamento de esta nómina 
+     */
     public void setDepartamento(Departamento departamento) {
         m_Departamento = departamento;
     }
 
+    /**
+     * Cambia el empleado al que pertenece esta nómina
+     * 
+     * @param empleado Nuevo empleado de esta nómina
+     */
     public void setEmpleado(Empleado empleado) {
         m_Empleado = empleado;
     }
 
+    /**
+     * Cambia el salario bruto de esta nómina
+     * 
+     * @param bruto Nuevo salario bruto de esta nómina
+     */
     public void setSalarioBruto(double bruto) {
         if (!(bruto < 0.0)) {
             m_SalarioBruto = bruto;
@@ -175,13 +191,24 @@ public class Nomina {
 
     }
 
+    /**
+     * Cambia la retención a aplicar sobre esta nómina
+     * 
+     * @param retencion Nuevo retención a aplicar sobre esta nómina
+     */
     public void setRetencion(double retencion) {
         if (m_Retencion >= 0.0 && m_Retencion <= 100.0)
             m_Retencion = .0;
         else 
             System.out.println("Valor de retención no válido...");
     }
-
+    
+    /**
+     * Retorna una cadena de caracteres formateada describiendo
+     * esta nómina
+     * 
+     * @return Un String formateado representando esta nómina
+     */
     @Override
     public String toString() {
         return String.format("%s\n" +
