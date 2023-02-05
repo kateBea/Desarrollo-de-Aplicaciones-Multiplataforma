@@ -3,7 +3,7 @@ package nominas;
 import java.time.LocalDate;
 
 /**
- * <h2>Representa la nómina de un empleado</h2>
+ * <h2>Representa una nomina</h2>
  * 
  * Esta clase representa la nómina de un Empleado. Permite gestionar
  * el salario neto y el salario bruto de un empleado. 
