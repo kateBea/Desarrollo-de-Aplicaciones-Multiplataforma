@@ -6,8 +6,9 @@ import java.util.ArrayList;
  * <h2>Representa un departamento</h2> 
  * 
  * Esta clase representa un departamento. Los departamentos
- * son elementos que forman parte de una empresa. Para cada departamento
- * se conoce la empresa a la que pertenece y el conjunto de empleados que lo forman
+ * son elementos que forman parte de una empresa. Para cada 
+ * departamento se conoce la empresa a la que pertenece y el 
+ * conjunto de empleados que lo forman
  * 
  * @author Hugo Pelayo
  * @version 1.0
