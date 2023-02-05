@@ -149,4 +149,6 @@ CMakeFiles/salario.dir/main.cc.o: \
  /usr/include/c++/12/bits/locale_facets.tcc \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
- /usr/include/c++/12/bits/istream.tcc
+ /usr/include/c++/12/bits/istream.tcc /usr/include/c++/12/array \
+ /usr/include/c++/12/compare /usr/include/c++/12/cstddef \
+ /usr/include/c++/12/utility /usr/include/c++/12/bits/stl_relops.h
