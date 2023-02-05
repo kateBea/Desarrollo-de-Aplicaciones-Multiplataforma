@@ -62,9 +62,11 @@ public class Nomina {
     }
 
     /**
+     * Inicializa los atributos de esta nómina a partir de los que se
+     * pasan como parámetros
      * 
-     * @param empleado
-     * @param retencion
+     * @param empleado Empleado al que pertenece esta nómina
+     * @param retencion Retención a aplicar sobre el salario bruto
      */
     public Nomina(Empleado empleado, double retencion) {
         m_Empresa = empleado.getDepartamento().getEmpresa();
@@ -79,36 +81,78 @@ public class Nomina {
         m_SalarioNeto = calcularNeto();
     }
 
+    /**
+     * Devuelve el salario bruto correspondiente a esta nómina
+     * 
+     * @return Salario bruto de esta nómina
+     */
     public double getSalarioBruto() {
         return m_SalarioBruto;
     }
 
+    /**
+     * Devuelve la retención correspondiente a esta nómina
+     * 
+     * @return Retención de esta nómina
+     */
     public double getRetencion() {
         return m_Retencion;
     }
 
+    /**
+     * Devuelve el salario neto correspondiente a esta nómina
+     * 
+     * @return Salario neto de esta nómina
+     */
     public double getSalarioNeto() {
         return m_SalarioNeto;
     }
 
+    /**
+     * Devuelve la empresa del empleado con esta nómina
+     * 
+     * @return Empresa de esta nómina
+     */
     public Empresa getEmpresa() {
         return m_Empresa;
     }
 
+    /**
+     * Devuelve departamento del empleado con esta nómina
+     * 
+     * @return Departamento de esta nómina
+     */
     public Departamento getDepartamento() {
         return m_Departamento;
     }
 
+    /**
+     * Devuelve el empleado al que pertenece esta nómina
+     * 
+     * @return Empleado con esta nómina
+     */
     public Empleado getEmpleado() {
         return m_Empleado;
     }
 
+    /**
+     * Devuelve la fecha en que se emitió esta nómina
+     * 
+     * @return Fecha de emisión de esta nómina
+     */
     public LocalDate getFechaLocal() {
-        // no es necesario m_LocalDate porque
-        // now es static
-        return LocalDate.now();
+        // aunque LocalDate.now() sea static
+        // podría no devolver la fecha de emisión que tenemos
+        // guardada en el atributo privado m_Fecha, por eso
+        // retornamos m_Fecha y no LocalDate.now()
+        return m_Fecha;
     }
 
+    
+    /**
+     * 
+     * @param empresa
+     */
     public void setEmpresa(Empresa empresa) {
         m_Empresa = empresa;
     }
