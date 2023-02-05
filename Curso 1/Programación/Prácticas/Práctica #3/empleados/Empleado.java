@@ -1,5 +1,12 @@
 package empleados;
 
+/**
+ * <h2></h2>
+ * 
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
+
 public class Empleado extends Persona {
     private String m_Cargo;
     private Departamento m_Departamento;

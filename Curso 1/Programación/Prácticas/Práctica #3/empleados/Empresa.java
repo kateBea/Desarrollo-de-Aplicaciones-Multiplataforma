@@ -1,5 +1,12 @@
 package empleados;
 
+/**
+ * <h2></h2>
+ * 
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
+
 public class Empresa {
     private String m_Cif;
     private String m_Nombre;
@@ -30,7 +37,7 @@ public class Empresa {
     @Override
     public String toString() {
         return String.format("Número CIF: %s\n" +
-                            "Nombre: %s\n" +
+                            "Nombre empresa: %s\n" +
                             "----------------------",
                             m_Cif, m_Nombre);
     }

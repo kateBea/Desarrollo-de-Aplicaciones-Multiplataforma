@@ -2,6 +2,13 @@ package empleados;
 
 import java.util.ArrayList;
 
+/**
+ * <h2></h2> 
+ * 
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
+
 public class Departamento {
     private ArrayList<Empleado> m_Empleados;
     private Empresa m_Empresa;
