@@ -32,7 +32,8 @@ public:
     calculadora(std::int16_t    dias, // los días trabajados en el último més del contarto
                 double          base, // valor del salario base
                 double          pl_conv, // valor del plus de convenio
-                double          pl_transp, // valor de plus de transporte o distancia
+                double          pl_transp, // valor de plus de transporte
+                double          pl_distancia,
                 std::int16_t    extras, // número de pagas extras al año
                 bool            prorrat, // indica si las pagas extras son prorrateadas (cierto) o no (falso)
                 bool            causas, // indica si el la finalización del contrato es un despido por causas objetivas
@@ -50,6 +51,7 @@ public:
             , m_salario_base{ base }
             , m_plus_convenio{ pl_conv }
             , m_plus_transporte{ pl_transp }
+            , m_plus_distancia{ pl_distancia }
             , m_extras_prorrateadas{ prorrat }
             , m_num_pagas_extras{ extras }
             , m_ultimo_mes{ ultimo }
@@ -110,7 +112,11 @@ public:
         // salario base
         resultado += m_salario_base * (static_cast<double>(m_dias_trabajados) / dias_mes[m_ultimo_mes - 1]);
         resultado += m_plus_convenio * (static_cast<double>(m_dias_trabajados) / dias_mes[m_ultimo_mes - 1]);
-        resultado += m_plus_transporte * (static_cast<double>(m_dias_trabajados) / dias_mes[m_ultimo_mes - 1]);
+
+        if (m_plus_distancia == 0.0)
+            resultado += m_plus_transporte * (static_cast<double>(m_dias_trabajados) / dias_mes[m_ultimo_mes - 1]);
+        else
+            resultado += m_plus_distancia * (static_cast<double>(m_dias_trabajados) / dias_mes[m_ultimo_mes - 1]);
 
         // suma paga extra prorrata (en caso de haber trabjado todo ese més)
         // salario_base * (pagas_extras_por_doce_meses)
@@ -126,7 +132,9 @@ public:
     }
 
     auto calcular_salario_neto() -> double {
-        return calcular_retencion(calcular_salario_bruto());
+        // plus de distancia es extrasalrial
+        double temp{ calcular_salario_bruto() };
+        return temp - calcular_deducion(temp - m_plus_distancia);
 
     }
 
@@ -136,7 +144,6 @@ public:
         // indeferentemente de haber meses con 31 días
         constexpr std::int16_t dias_mes_vacaciones{ 30 };
         constexpr std::int16_t dias_anio{ 365 };
-
         auto fecha_fin{ fecha_t(m_dias_trabajados, m_ultimo_mes) };
         double total{ dias_trabajados * (dias_mes_vacaciones / static_cast<double>(dias_anio)) };
 
@@ -153,14 +160,16 @@ public:
     auto valor_neto_vacaciones(fecha_t inicio) -> double {
         // aquí tomamos como base el valor de las vacaciones brutas
         // a partir de ello el resto de cálculos es similar al del salario neto neto
-        return calcular_retencion(valor_bruto_vacaciones(inicio));
+        double temp{ valor_bruto_vacaciones(inicio) };
+        return temp - calcular_deducion(temp);
     }
 
     // dias_trabajados indica el total de días trabajados
     auto valor_neto_vacaciones(double dias_trabajados) -> double {
         // aquí tomamos como base el valor de las vacaciones brutas
         // a partir de ello el resto de cálculos es similar al del salario neto neto
-        return calcular_retencion(valor_bruto_vacaciones(dias_trabajados));
+        double temp{ valor_bruto_vacaciones(dias_trabajados) };
+        return temp - calcular_deducion(temp);
     }
 
     // dias_trabajados indica el total de días trabajados
@@ -173,7 +182,7 @@ public:
     // anios indica el total de años trabajaados (antigüedad)
     auto finiquito(std::int32_t anios) -> double {
         // tener en cuenta si toca indemnización o no
-        return calcular_salario_neto() + valor_neto_vacaciones(calcular_total_dias(fecha_t(31, 1),
+        return calcular_salario_neto() + valor_neto_vacaciones(calcular_total_dias(fecha_t(1, 1),
             fecha_t(m_dias_trabajados, m_ultimo_mes))) +
         (!m_causas_objetivas ? 0.0 : calcular_indemnizacion(anios));
     }
@@ -240,15 +249,14 @@ private:
     }
 
     auto salario_diario() -> double {
-        constexpr static std::int16_t dias_mes{ 30 };
-        return (m_salario_base + m_plus_convenio + obtener_prorrata()) / dias_mes;
+        std::int16_t dias{ static_cast<std::int16_t>(dias_mes[m_ultimo_mes - 1] < 31 ? 30 : 31) };
+        return (m_salario_base + m_plus_convenio + obtener_prorrata()) / dias;
     }
 
-    auto calcular_retencion(double bruto) -> double {
+    auto calcular_deducion(double bruto) -> double {
         double total_deducciones = (contingencias + fp + m_valor_por_desempleo + m_irpf) *
             bruto;
-
-        return bruto - total_deducciones;
+        return total_deducciones;
     }
 
     auto obtener_prorrata() -> double {
@@ -285,8 +293,9 @@ private:
     double m_plus_convenio{};
     // plus de transporte
     double m_plus_transporte{};
-    // vale cierto si si las pagas extras son prorrateadas
-    // vale falso en caso contrario
+    // plus de distancia
+    double m_plus_distancia{};
+    // vale cierto si si las pagas extras son prorrateadas vale falso en caso contrario
     bool m_extras_prorrateadas{};
     // número de pagas extras anuales
     std::int16_t m_num_pagas_extras{};
