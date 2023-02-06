@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 
 public abstract class Vehiculo {
     // Matrícula del vehículo
-    String m_Matrícula;
+    String m_Matricula;
     // Fecha de entrada (fecha y hora)
     LocalDateTime m_FechaEntrada;
     // indica si tiene abono (true) o no (false)
@@ -36,7 +36,7 @@ public abstract class Vehiculo {
      * @param tieneAbono Indica si corresponde o no abono a este vehículo
      */
     public Vehiculo(String matricula, LocalDateTime fechaEntrada, boolean tieneAbono) {
-        m_Matrícula = matricula;
+        m_Matricula = matricula;
         m_FechaEntrada = fechaEntrada;
         m_TieneAbono = tieneAbono;
     }
@@ -49,17 +49,96 @@ public abstract class Vehiculo {
      * @param tieneAbono Indica si corresponde o no abono a este vehículo
      */
     public Vehiculo(String matricula, boolean tieneAbono) {
-        m_Matrícula = matricula;
+        m_Matricula = matricula;
         m_FechaEntrada = LocalDateTime.now();
         m_TieneAbono = tieneAbono;
     }
 
     /**
      * Devuelve el importe a pagar por el aparcamiento de este
-     * vehículo. Lo implementan las clases derivadas
+     * vehículo para el tiempo indicado en minutos. Lo implementan las clases derivadas
+     * Si el valor es negativo o 0 esta función retorna -1
      * 
-     * @return
+     * @return El importe por aparcamiento
      */
-    abstract double calcularImporte();
+    abstract double calcularImporte(int minutos);
+
+    /**
+     * Devuelve el importe a pagar por el aparcamiento de este
+     * vehículo para el tiempo indicado en minutos. Lo implementan las clases derivadas
+     * Si el parámetro es nulo o la fecha de salida es inválida esta función retorna -1
+     * 
+     * @return El importe por aparcamiento
+     */
+    abstract double calcularImporte(LocalDateTime fechaSalida);
+
+    /**
+     * Devuelve la matrícula de este vehículo
+     * 
+     * @return Matrícula de este vehículo
+     */
+    public String getMatricula() {
+        return m_Matricula;
+    }
+
+    /**
+     * Cambia la mtrícula de este vehículo a la que se pasa como parámetro
+     * No tiene efecto si la referencia es nula
+     * 
+     * @param matricula Nueva matrícula de este vehículo
+    */
+    public void setMatricula(String matricula) {
+        if (matricula  != null)
+            m_Matricula = matricula;
+    }
+
+    public LocalDateTime getFechaEntrada() {
+        return m_FechaEntrada;
+    }
+
+    /**
+     * Cambia la fecha de entrada de este vehículo a la que se pasa
+     * como parámetro. Si la referencia es nula se toma la fecha del sistema
+     * 
+     * @param fechaEntrada Nueva fecha de entrada de este vehículo
+     */
+    public void setFechaEntrada(LocalDateTime fechaEntrada) {
+        m_FechaEntrada = fechaEntrada == null ? LocalDateTime.now() : fechaEntrada;
+    }
+
+    /**
+     * Devuelve cierto si a este vehículo le corresponde abono
+     * de descuento por aparcamiento, devuelve falso en caso contrario
+     * 
+     * @return Correspondencia abono
+     */
+    public boolean correspondeAbono() {
+        return m_TieneAbono;
+    }
+
+    /**
+     * Si el parámetro es cierto a este vehículo pasa a corresponderle 
+     * un abono de descuento por aparcamiento, en caso contrario no lo
+     * corresponde el abono
+     * 
+     * @param abono
+     */
+    public void setCorrespondeAbono(boolean abono) {
+
+    }
+
+    /**
+     * Retorna un Strign formateado representando este vehículo
+     * 
+     * @return Un String representando este vehículo
+     */
+    @Override
+    public String toString() {
+        return String.format("Matrícula: %s\n" +
+                            "Fecha entrada: \n" +
+                            "Corresponde abono: %s" +
+                            "----------------------------",
+        m_Matricula, m_FechaEntrada.toString(), m_TieneAbono ? "Sí" : "No");
+    }
     
 }
