@@ -10,11 +10,37 @@ namespace kt {
 
 class calculadora {
 public:
+    // NOTA: de cara a el cálculo del finiquito, vacaciones brutas, vacaciones netas,
+    // a indemnizaciones. Las funciones que reciben un fecha_t asumen que el contrato se extingue
+    // dentro del mismo año en el cual se empieza. Si no, hay que calcular el total de días
+    // que se ha estado en la empresa manualmente y pasarlo como parametro a las correspondientes
+    // funciones que reciben el total de dias como 'double'
+
+    // Representa un tipo de indemnizaión
+    enum class indemnizacion_t {
+        TIPO_1, // 12 días por año realizado
+        TIPO_2, // 20 días por año trabajado
+        TIPO_3, // 33 días por año trabajado
+        NULL_0,   // no corresponde indemnización
+    };
+
     // fecha dentro de un año (día, mes)
     using fecha_t = std::pair<std::int16_t, std::int16_t>;
+
     calculadora() = default;
 
-    calculadora(std::int16_t dias, double base, double pl_conv, double pl_transp, std::int16_t extras, bool prorrat, bool causas, double irpf, std::int16_t ultimo) noexcept
+    calculadora(std::int16_t    dias,
+                double          base,
+                double          pl_conv,
+                double          pl_transp,
+                std::int16_t    extras,
+                bool            prorrat,
+                bool            causas,
+                double          irpf,
+                std::int16_t    ultimo,
+                bool            cont_indef,
+                indemnizacion_t indem = indemnizacion_t::NULL_0) noexcept
+
             : m_dias_trabajados{ dias }
             , m_salario_base{ base }
             , m_plus_convenio{ pl_conv }
@@ -24,8 +50,9 @@ public:
             , m_ultimo_mes{ ultimo }
             , m_causas_objetivas{ causas }
             // se asume el contrato es indefinido por defecto
-            , m_valor_por_desempleo{ 0.016 }
+            , m_valor_por_desempleo{ cont_indef ? 0.0155 : 0.016 }
             , m_irpf{ irpf / 100.0 }
+            , m_tipo_indemnizacion{ causas ? indem : indemnizacion_t::NULL_0 }
 
     {
 
@@ -109,10 +136,7 @@ public:
         auto fecha_fin{ fecha_t(m_dias_trabajados, m_ultimo_mes) };
         double total{ dias_trabajados * (dias_mes_vacaciones / static_cast<double>(dias_anio)) };
 
-        // en las vacaciones no tenemos en cuenta el plus de transporte
-        double temp{ (m_salario_base + m_plus_convenio + obtener_prorrata()) / dias_mes_vacaciones };
-
-        return total * temp;
+        return total * salario_diario();
     }
 
     auto valor_bruto_vacaciones(fecha_t fecha_inicio) -> double {
@@ -135,6 +159,54 @@ public:
         return calcular_retencion(valor_bruto_vacaciones(dias_trabajados));
     }
 
+    // dias_trabajados indica el total de días trabajados
+    auto finiquito(double dias_trabajados) -> double {
+        // tener en cuenta si toca indemnización o no
+        return calcular_salario_neto() + valor_neto_vacaciones(dias_trabajados) +
+        (!m_causas_objetivas ? 0.0 : calcular_indemnizacion(dias_trabajados));
+    }
+
+    // anios indica el total de años trabajaados (antigüedad)
+    auto finiquito(std::int32_t anios) -> double {
+        // tener en cuenta si toca indemnización o no
+        return calcular_salario_neto() + valor_neto_vacaciones(calcular_total_dias(fecha_t(31, 1),
+            fecha_t(m_dias_trabajados, m_ultimo_mes))) +
+        (!m_causas_objetivas ? 0.0 : calcular_indemnizacion(anios));
+    }
+
+    // inicio indica la fecha de inicio del contrato
+    auto finiquito(fecha_t inicio) -> double {
+        // tener en cuenta si toca indemnización o no
+        return finiquito(calcular_total_dias(inicio,
+            fecha_t(m_dias_trabajados, m_ultimo_mes)));
+    }
+
+    // dias_trabajados indica el total de días trabajados
+    auto calcular_indemnizacion(double dias_trabajados) -> double {
+        constexpr double total_dias_anio{ 365 };
+        // NOTA: este valor sólo tiene sentido si
+        // corresponde la indemnización, ya dependería del problema descrito por el enunciado
+        // (dias_trabajados / total_dias_anio) representa la antigüedad
+        return obtener_dias_indeminzacion(m_tipo_indemnizacion) * salario_diario() * (dias_trabajados / total_dias_anio);
+    }
+
+    // anios indica el total de años trabajaados (antigüedad)
+    auto calcular_indemnizacion(std::int32_t anios) -> double {
+        constexpr double total_dias_anio{ 365 };
+        // NOTA: este valor sólo tiene sentido si
+        // corresponde la indemnización, ya dependería del problema descrito por el enunciado
+        // (dias_trabajados / total_dias_anio) representa la antigüedad
+        return obtener_dias_indeminzacion(m_tipo_indemnizacion) * salario_diario() * anios;
+    }
+
+    // inicio indica la fecha de inicio del contrato
+    auto calcular_indemnizacion(fecha_t inicio) -> double {
+        // NOTA: este valor sólo tiene sentido si
+        // corresponde la indemnización, ya dependería del problema
+        return calcular_indemnizacion(calcular_total_dias(inicio,
+            fecha_t(m_dias_trabajados, m_ultimo_mes)));
+    }
+
     auto mostrar_datos() -> void {
         static constexpr std::array str_mes {
             "enero", "febreo", "marzo", "abril", "mayo", "junio",
@@ -149,9 +221,24 @@ public:
         std::cout << "Las pagas extras son prorrateadas: " <<
             (m_extras_prorrateadas ? "Sí" : "No") << '\n';
         std::cout << "Último mes de trabajo: " << str_mes[m_ultimo_mes - 1] << '\n';
+        std::cout << "Fin de contrato por causas ojetivas: " << (m_causas_objetivas ?
+            "Sí" : "No") << '\n';
     }
 
 private:
+    auto obtener_dias_indeminzacion(indemnizacion_t indem) -> double {
+        switch (indem) {
+            case indemnizacion_t::TIPO_1: return 12;
+            case indemnizacion_t::TIPO_2: return 20;
+            default: return 33;
+        }
+    }
+
+    auto salario_diario() -> double {
+        constexpr static std::int16_t dias_mes{ 30 };
+        return (m_salario_base + m_plus_convenio + obtener_prorrata()) / dias_mes;
+    }
+
     auto calcular_retencion(double bruto) -> double {
         double total_deducciones = (contingencias + fp + m_valor_por_desempleo + m_irpf) *
             bruto;
@@ -205,12 +292,12 @@ private:
     // porcentaje por desempleo (1.6% contrato no indefinido, 1.55% contrato definido)
     double m_valor_por_desempleo{};
     double m_irpf{};
+    // tipo de indemnización
+    indemnizacion_t m_tipo_indemnizacion{};
 
 
-};
+};  // END class calculadora
 
-
-
-}
+}   // END NAMESPACE kt
 
 #endif
