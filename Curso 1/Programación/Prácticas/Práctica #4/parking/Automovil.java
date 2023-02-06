@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
  * <h2>Representa un Automóvil</h2>
  * 
  * Esta clase representa un Automóvil. Describe un objeto derivado
- * de la clase Vehículo y e implementa el método <b>consultarImporte()</b>
+ * de la clase automóvil e implementa el método <b>consultarImporte()</b>
  * a través del cual se puede consultar el importe a pagar por aparcamiento.
  * Se distinguen tres tipos de automóvil: <b>Turismo</b>, <b>Todoterreno<b> y <b>Furgoneta</b>.
  * 
@@ -55,9 +55,9 @@ public final class Automovil extends Vehiculo {
      * Inicializa los datos de este Automóvil con los que se
      * pasan como parámetro
      * 
-     * @param matricula Matrícula que asigna a este vehículo
-     * @param fechaEntrada Fecha de entrada que se asigna a este vehículo
-     * @param tieneAbono Indica si corresponde o no abono a este vehículo
+     * @param matricula Matrícula que asigna a este automóvil
+     * @param fechaEntrada Fecha de entrada que se asigna a este automóvil
+     * @param tieneAbono Indica si corresponde o no abono a este automóvil
      * @param tipo Tipo de automóvil
      */
     public Automovil(String matricula, LocalDateTime fechaEntrada, boolean tieneAbono, AutomovilType tipo) {
@@ -69,8 +69,8 @@ public final class Automovil extends Vehiculo {
      * Inicializa los datos de este Automóvil con los que se
      * pasan como parámetro. La fecha y hora se obtienen del sistema
      * 
-     * @param matricula Matrícula que asigna a este vehículo
-     * @param tieneAbono Indica si corresponde o no abono a este vehículo
+     * @param matricula Matrícula que asigna a este automóvil
+     * @param tieneAbono Indica si corresponde o no abono a este automóvil
      * @param tipo Tipo de automóvil
      */
     public Automovil(String matricula, boolean tieneAbono, AutomovilType tipo) {
@@ -79,9 +79,27 @@ public final class Automovil extends Vehiculo {
     } 
 
     /**
+     * Devuelve el tipo de este automóvil
+     * 
+     * @return tipo de este automóvil
+     */
+    public AutomovilType getTipo() {
+        return m_Tipo;
+    }
+
+    /**
+     * Cambio el tipo de este automóvil al que se pasa como parámetro
+     * 
+     * @param tipo Nuevo tipo de este automóvil
+     */
+    public void setTipo(AutomovilType tipo) {
+        m_Tipo = tipo;
+    }
+
+    /**
      * Devuelve el importe a pagar por el aparcamiento de este
-     * vehículo para el tiempo indicado en minutos. Lo implementan las clases derivadas
-     * Si el valor es negativo o 0 esta función retorna -1
+     * automóvil para el tiempo indicado en minutos. Si el valor es negativo 
+     * o 0 esta función retorna -1
      * 
      * @return El importe por aparcamiento
      */
@@ -90,15 +108,17 @@ public final class Automovil extends Vehiculo {
         double resultado = -1.0;
         
         if (!(minutos < 0.0))
-            resultado = minutos * getFactor(m_Tipo);
+            // también aplicamos descuento si corresponde
+            resultado = minutos * getFactor(m_Tipo) *
+                (correspondeAbono() ? ABONO_PARKING : 1.0);
 
         return resultado;
     }
 
     /**
      * Devuelve el importe a pagar por el aparcamiento de este
-     * vehículo para el tiempo indicado en minutos. Lo implementan las clases derivadas
-     * Si el parámetro es nulo o la fecha de salida es inválida esta función retorna -1
+     * automóvil para el tiempo indicado en minutos. Si el parámetro es nulo 
+     * o la fecha de salida es inválida esta función retorna -1
      * 
      * @return El importe por aparcamiento
      */
@@ -111,7 +131,9 @@ public final class Automovil extends Vehiculo {
             // calcular minutos transcurrido entra llegada y salida
 
 
-            resultado = minutos * getFactor(m_Tipo);
+            // también aplicamos descuento si corresponde
+            resultado = minutos * getFactor(m_Tipo) *
+                (correspondeAbono() ? ABONO_PARKING : 1.0);
 
         }
 
