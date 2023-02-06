@@ -240,11 +240,11 @@ public:
     }
 
 private:
-    auto obtener_dias_indeminzacion(indemnizacion_t indem) -> double {
+    constexpr auto obtener_dias_indeminzacion(indemnizacion_t indem) -> double {
         switch (indem) {
-            case indemnizacion_t::TIPO_1: return 12;
-            case indemnizacion_t::TIPO_2: return 20;
-            default: return 33;
+            case indemnizacion_t::TIPO_1: return 12.0;
+            case indemnizacion_t::TIPO_2: return 20.0;
+            default: return 33.0;
         }
     }
 
@@ -283,33 +283,21 @@ private:
     }
 
     static constexpr std::array dias_mes{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-    static constexpr double contingencias{ 0.047 };
-    static constexpr double fp{ 0.001 };
-    // dias trabajados en el último (cuando finaliza el contrato)
-    std::int16_t m_dias_trabajados{};
-    // salario base (según lo establecido en el contrato)
-    double m_salario_base{};
-    // plus de convenio
-    double m_plus_convenio{};
-    // plus de transporte
-    double m_plus_transporte{};
-    // plus de distancia
-    double m_plus_distancia{};
-    // vale cierto si si las pagas extras son prorrateadas vale falso en caso contrario
-    bool m_extras_prorrateadas{};
-    // número de pagas extras anuales
-    std::int16_t m_num_pagas_extras{};
-    // último més de trabajo
-    std::int16_t m_ultimo_mes{};
-    // fin por casusas objetivas (decie si tiene derecho a indemnización o no)
-    bool m_causas_objetivas{};
-    // porcentaje por desempleo (1.6% contrato no indefinido, 1.55% contrato definido)
-    double m_valor_por_desempleo{};
-    // procentaje de irpf, en el rango [0.0, 1.0]
-    double m_irpf{};
-    // tipo de indemnización
-    indemnizacion_t m_tipo_indemnizacion{};
+    static constexpr double     contingencias{ 0.047 };
+    static constexpr double     fp{ 0.001 };
 
+    std::int16_t    m_dias_trabajados{};        // dias trabajados en el último (cuando finaliza el contrato)
+    double          m_salario_base{};           // salario base (según lo establecido en el contrato)
+    double          m_plus_convenio{};          // plus de convenio
+    double          m_plus_transporte{};        // plus de transporte
+    double          m_plus_distancia{};         // plus de distancia
+    bool            m_extras_prorrateadas{};    // vale cierto si si las pagas extras son prorrateadas vale falso en caso contrario
+    std::int16_t    m_num_pagas_extras{};       // número de pagas extras anuales
+    std::int16_t    m_ultimo_mes{};             // último més de trabajo
+    bool            m_causas_objetivas{};       // fin por casusas objetivas (decie si tiene derecho a indemnización o no)
+    double          m_valor_por_desempleo{};    // porcentaje por desempleo (1.6% contrato no indefinido, 1.55% contrato definido)
+    double          m_irpf{};                   // procentaje de irpf, en el rango [0.0, 1.0]
+    indemnizacion_t m_tipo_indemnizacion{};     // tipo de indemnización
 
 };  // END class calculadora
 
