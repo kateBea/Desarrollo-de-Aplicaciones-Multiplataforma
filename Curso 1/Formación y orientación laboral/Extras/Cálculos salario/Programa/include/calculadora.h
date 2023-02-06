@@ -291,6 +291,7 @@ private:
     bool m_causas_objetivas{};
     // porcentaje por desempleo (1.6% contrato no indefinido, 1.55% contrato definido)
     double m_valor_por_desempleo{};
+    // procentaje de irpf, en el rango [0.0, 1.0]
     double m_irpf{};
     // tipo de indemnización
     indemnizacion_t m_tipo_indemnizacion{};
