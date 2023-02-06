@@ -29,17 +29,22 @@ public:
 
     calculadora() = default;
 
-    calculadora(std::int16_t    dias,
-                double          base,
-                double          pl_conv,
-                double          pl_transp,
-                std::int16_t    extras,
-                bool            prorrat,
-                bool            causas,
-                double          irpf,
-                std::int16_t    ultimo,
-                bool            cont_indef,
-                indemnizacion_t indem = indemnizacion_t::NULL_0) noexcept
+    calculadora(std::int16_t    dias, // los días trabajados en el último més del contarto
+                double          base, // valor del salario base
+                double          pl_conv, // valor del plus de convenio
+                double          pl_transp, // valor de plus de transporte o distancia
+                std::int16_t    extras, // número de pagas extras al año
+                bool            prorrat, // indica si las pagas extras son prorrateadas (cierto) o no (falso)
+                bool            causas, // indica si el la finalización del contrato es un despido por causas objetivas
+                                        // importante para decidir si hay que añadir la indemnización al finiquito
+
+                double          irpf, // valor del irpf. Es un porcentaje en el rango [0.0, 100.0]
+                std::int16_t    ultimo, // ultimo mes en que se ha trabajado
+                bool            cont_indef, // cierto si el contrato es indefinido, falso en caso contrario
+                                            // importante para calcular el valor de retención por desempleo
+
+                indemnizacion_t indem = indemnizacion_t::NULL_0 // indica el tipo de indemnización que corresponde
+            ) noexcept
 
             : m_dias_trabajados{ dias }
             , m_salario_base{ base }
@@ -66,6 +71,7 @@ public:
     }
 
     auto set_data() -> void {
+        // TODO: Lectura de los otros datos
         std::cout << "Días trabajados último més: ";
         std::cin >> m_dias_trabajados;
 
@@ -92,8 +98,6 @@ public:
         std::cout << "Despido por causas objetivas? [S -> Sí | N -> No]: ";
         std::cin >> temp;
         m_causas_objetivas = temp == 'S';
-
-
 
         std::cout << "Valor de IRFP (porcentaje sobre cien) :";
         std::cin >> m_irpf;
@@ -208,6 +212,7 @@ public:
     }
 
     auto mostrar_datos() -> void {
+        // TODO: muestra el resto de datos
         static constexpr std::array str_mes {
             "enero", "febreo", "marzo", "abril", "mayo", "junio",
             "agosto", "septiembre", "octubre", "noviembre", "diciembre"
