@@ -73,7 +73,8 @@ public:
     }
 
     auto set_data() -> void {
-        // TODO: Lectura de los otros datos
+        // TODO: Lectura de los otros datos.
+
         std::cout << "Días trabajados último més: ";
         std::cin >> m_dias_trabajados;
 
@@ -85,6 +86,9 @@ public:
 
         std::cout << "Plus de transporte: ";
         std::cin >> m_plus_transporte;
+
+        std::cout << "Plus de distancia: ";
+        std::cin >> m_plus_distancia;
 
         std::cout << "Número de pagas extras anuales: ";
         std::cin >> m_num_pagas_extras;
@@ -104,6 +108,7 @@ public:
         std::cout << "Valor de IRFP (porcentaje sobre cien) :";
         std::cin >> m_irpf;
         m_irpf = m_irpf / 100.0;
+
     }
 
     auto calcular_salario_bruto() -> double {

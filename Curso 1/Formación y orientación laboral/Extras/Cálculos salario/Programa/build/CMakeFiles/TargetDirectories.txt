@@ -1,3 +1,0 @@
-/mnt/c/Users/zanet/Documents/Grado_DAM/Asignaturas/Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Formación y orientación laboral/Extras/Cálculos salario/Programa/build/CMakeFiles/salario.dir
-/mnt/c/Users/zanet/Documents/Grado_DAM/Asignaturas/Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Formación y orientación laboral/Extras/Cálculos salario/Programa/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/zanet/Documents/Grado_DAM/Asignaturas/Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Formación y orientación laboral/Extras/Cálculos salario/Programa/build/CMakeFiles/rebuild_cache.dir

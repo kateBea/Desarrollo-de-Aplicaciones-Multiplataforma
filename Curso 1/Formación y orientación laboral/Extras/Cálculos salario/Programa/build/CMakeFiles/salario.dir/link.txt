@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/salario.dir/main.cc.o -o salario 
