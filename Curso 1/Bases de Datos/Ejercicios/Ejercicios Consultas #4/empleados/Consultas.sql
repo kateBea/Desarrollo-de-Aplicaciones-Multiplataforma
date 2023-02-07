@@ -1,93 +1,65 @@
-# 1:
-SELECT Apellido1 AS 'Primer apellido'
+-- 1
+SELECT Apellido1 AS 'Apellido'
 FROM Empleado;
 
-# 2:
-SELECT DISTINCT Apellido1 AS 'Primer apellido'
+-- 2
+SELECT DISTINCT Apellido1 AS 'Apellido'
 FROM Empleado;
 
-# 3:
+-- 3
 SELECT *
 FROM Empleado;
 
-# 4:
-SELECT Nombre, Apellido1 AS 'Primer apellido', IFNULL(Apellido2, '') AS 'Segundo Apellido'
+-- 4
+SELECT Nombre, Apellido1 AS 'Primer Apellido', Apellido2 AS 'Segundo Apellido'
 FROM Empleado;
 
-# 5:
-SELECT codigo_departamento
+-- 5
+SELECT Codigo_Departamento AS 'Código de departamento'
 FROM Empleado;
 
-# 6:
-SELECT DISTINCT codigo_departamento
+-- 6
+SELECT DISTINCT Codigo_Departamento AS 'Código de departamento'
 FROM Empleado;
 
-# 7:
-SELECT CONCAT(Nombre, ' ', Apellido1, ' ', IFNULL(Apellido2, '')) AS 'Nombre completo'
+-- 7
+SELECT CONCAT(Nombre, ' ', Apellido1 , ' ', IFNULL(Apellido2, '')) AS 'Nombre completo'
 FROM Empleado;
 
-# 8:
-SELECT UPPER(CONCAT(Nombre, ' ', Apellido1, ' ', IFNULL(Apellido2, ''))) AS 'Nombre completo'
+-- 8
+ SELECT UPPER(CONCAT(Nombre, ' ', Apellido1 , ' ', IFNULL(Apellido2, ''))) AS 'Nombre completo'
 FROM Empleado;
 
-# 9:
-SELECT LOWER(CONCAT(Nombre, ' ', Apellido1, ' ', IFNULL(Apellido2, ''))) AS 'Nombre completo'
+-- 9
+ SELECT lOWER(CONCAT(Nombre, ' ', Apellido1 , ' ', IFNULL(Apellido2, ''))) AS 'Nombre completo'
 FROM Empleado;
 
-# 10:
-SELECT Nombre, SUBSTR(Nif, 1, 8) AS 'Dígitos NIF', SUBSTR(Nif, 9, 1) AS 'Letra NIF'
+-- 10
+SELECT SUBSTR(Nif, 1, 8) AS 'Código', SUBSTR(Nif, 9, 2) AS Letras
 FROM Empleado;
 
-# 11:
+-- 11
+SELECT Nombre AS 'Nombre', (Presupuesto - Gastos) AS 'Presupuesto'
+FROM Departamento;
 
-# 12:
+-- 12
+SELECT Nombre, Presupuesto
+FROM Departamento
+ORDER BY Nombre, Presupuesto;
 
-# 13:
+-- 13
+SELECT Nombre
+FROM Departamento
+ORDER BY Nombre;
 
-# 14:
+-- 14
+SELECT Nombre
+FROM Departamento
+ORDER BY Nombre DESC;
 
-# 15:
+-- 15
 
-# 16:
 
-# 17:
 
-# 18:
-
-# 19:
-
-# 20:
-
-# 21:
-
-# 22:
-
-# 23:
-
-# 24:
-
-# 25:
-
-# 26:
-
-# 27:
-
-# 28:
-
-# 29:
-
-# 30:
-
-# 31:
-
-# 32:
-
-# 33:
-
-# 34:
-
-# 35:
-
-# 36:
 
 

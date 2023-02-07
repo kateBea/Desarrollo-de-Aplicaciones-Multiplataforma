@@ -35,7 +35,7 @@ public final class Automovil extends Vehiculo {
         return switch(tipo) {
             case TURISMO -> "Turismo";
             case TODOTERRENO -> "Todoterreno"; 
-            case FURGONETA ->"Todoterreno";
+            case FURGONETA ->"Furgoneta";
         };
     }
 

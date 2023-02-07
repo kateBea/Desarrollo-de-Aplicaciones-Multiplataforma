@@ -26,7 +26,7 @@ public abstract class Vehiculo {
 
     // descuento sobre importe de aparcamiento, 
     // si corresponde (40% menos sobre el importe final)
-    protected static double ABONO_PARKING = 0.4;
+    protected static final double ABONO_PARKING = 0.6;
 
     /**
      * Inicializa los datos de este vehículo con los que se

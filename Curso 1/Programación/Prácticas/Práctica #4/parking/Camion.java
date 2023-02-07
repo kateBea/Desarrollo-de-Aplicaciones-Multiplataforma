@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
  * <h2>Representa un camión</h2>
  * 
  * Esta clase representa un camión. Describe un objeto derivado
- * de la clase camión e implementa el método <b>consultarImporte()</b>
+ * de la clase vehículo e implementa el método <b>consultarImporte()</b>
  * a través del cual se puede consultar el importe a pagar por aparcamiento.
  * Se distinguen dos tipos de camión: <b>con 3 o menos ejes</b> y
  *  <b>con más de 3 ejes</b>.
