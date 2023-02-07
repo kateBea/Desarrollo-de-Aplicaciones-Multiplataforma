@@ -1,6 +1,7 @@
 package parking;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * <h2>Representa un Vehículo</h2>
@@ -65,8 +66,9 @@ public abstract class Vehiculo {
 
     /**
      * Devuelve el importe a pagar por el aparcamiento de este
-     * vehículo para el tiempo indicado en minutos. Lo implementan las clases derivadas
-     * Si el parámetro es nulo o la fecha de salida es inválida esta función retorna -1
+     * vehículo por la estancia. Si el parámetro es nulo 
+     * o la fecha de salida es inválida esta función retorna -1. Si la
+     * referencia es nula se toma la fecha y hora locales del sistema
      * 
      * @return El importe por aparcamiento
      */
@@ -124,7 +126,28 @@ public abstract class Vehiculo {
      * @param abono
      */
     public void setCorrespondeAbono(boolean abono) {
+        m_TieneAbono = abono;
+    }
 
+    /**
+     * Devuelve cierto si este vehículo es el mismo que el que se pasa
+     * como parámetro, falso en caso contrario
+     * 
+     * @param otro El otro vehículo con el cual se compara este
+     * @return Cierto si son el mismo, falso en caso contrario
+     */
+    public boolean equals(Vehiculo otro) {
+        return getMatricula().equalsIgnoreCase(otro.getMatricula());
+    }
+
+     /**
+     * Devuelve cierto si este vehículo tiene la mtrícula que se pasa como parámetro
+     * 
+     * @param matricula El otro vehículo con el cual se compara este
+     * @return Cierto si las matrículas son iguales
+     */
+    public boolean equals(String matricula) {
+        return getMatricula().equalsIgnoreCase(matricula);
     }
 
     /**
@@ -135,10 +158,10 @@ public abstract class Vehiculo {
     @Override
     public String toString() {
         return String.format("Matrícula: %s\n" +
-                            "Fecha entrada: \n" +
-                            "Corresponde abono: %s" +
-                            "----------------------------",
-        m_Matricula, m_FechaEntrada.toString(), m_TieneAbono ? "Sí" : "No");
+                            "Fecha entrada: %s\n" +
+                            "Corresponde abono: %s\n" +
+                            "--------------------------------------------",
+        m_Matricula, m_FechaEntrada.format(DateTimeFormatter.ofPattern("dd MMMM yyyy kk:mm:ss")), m_TieneAbono ? "Sí" : "No");
     }
     
 }

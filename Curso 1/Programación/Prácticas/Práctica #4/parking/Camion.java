@@ -1,6 +1,7 @@
 package parking;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 /**
  * <h2>Representa un camión</h2>
@@ -115,19 +116,24 @@ public final class Camion extends Vehiculo {
 
     /**
      * Devuelve el importe a pagar por el aparcamiento de este
-     * camión para el tiempo indicado en minutos. Si el parámetro es nulo 
-     * o la fecha de salida es inválida esta función retorna -1
+     * camión por la estancia. Si el parámetro es nulo 
+     * o la fecha de salida es inválida esta función retorna -1. Si la
+     * referencia es nula se toma la fecha y hora locales del sistema
      * 
      * @return El importe por aparcamiento
      */
     @Override
     public double calcularImporte(LocalDateTime fechaSalida) {
+        if (fechaSalida == null)
+            fechaSalida = LocalDateTime.now();
+
         double resultado = -1.0;
         int minutos = 0;
 
-        if (!(minutos < 0.0)) {
+        // minutos no negativos y nos aseguramos que la fecha de salida es posterior a la de entrada
+        if (!(minutos < 0.0) && this.getFechaEntrada().isBefore(fechaSalida)) {
             // calcular minutos transcurrido entra llegada y salida
-
+            minutos = (int)getFechaEntrada().until(fechaSalida, ChronoUnit.MINUTES);
 
             // también aplicamos descuento si corresponde
             resultado = minutos * getFactor(m_Tipo) *
@@ -145,8 +151,8 @@ public final class Camion extends Vehiculo {
      */
     @Override
     public String toString() {
-        return String.format("Tipo de camión: %s" +
-                            "%s",
+        return String.format("Tipo de camión: %s\n" +
+                            "%s\n",
         getStringTipo(m_Tipo), super.toString());
     }
 }
