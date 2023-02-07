@@ -1,0 +1,67 @@
+Tipo de automóvil: Todoterreno
+Matrícula: 2754 HHR
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: No
+--------------------------------------------
+
+Tipo de automóvil: Furgoneta
+Matrícula: 3864 AAA
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: Sí
+--------------------------------------------
+
+Tipo de automóvil: Todoterreno
+Matrícula: 3761 OPR
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: Sí
+--------------------------------------------
+
+Tipo de automóvil: Turismo
+Matrícula: 4561 GHS
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: No
+--------------------------------------------
+
+Tipo de automóvil: Todoterreno
+Matrícula: 1111 YOU
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: Sí
+--------------------------------------------
+
+Tipo de automóvil: Turismo
+Matrícula: 3951 MNA
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: No
+--------------------------------------------
+
+Tipo de automóvil: Furgoneta
+Matrícula: 6996 NBA
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: Sí
+--------------------------------------------
+
+Tipo de camión: Más de 3 ejes
+Matrícula: 5861 BBS
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: Sí
+--------------------------------------------
+
+Tipo de camión: Con 3 o menos Ejes
+Matrícula: 4751 POR
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: Sí
+--------------------------------------------
+
+Tipo de camión: Con 3 o menos Ejes
+Matrícula: 4658 MFB
+Fecha entrada: 07 February 2023 02:31:17
+Corresponde abono: No
+--------------------------------------------
+
+El vehículo con matrícula [ 2754 HHR ] a ser añadido ya existe
+Error: No se pudo completar la operación, plazas insuficientes...
+La máxima capacidad era [ 3 ] y el número de plazas libres ahora es es [ 0 ].
+Retirar el coche con matrícula '3864 AAA' cuesta 0.023333 euros.
+Retirar el coche con matrícula '3761 OPR' cuesta 0.033333 euros.
+Retirar el coche con matrícula '3761 OPR' cuesta 0.125000 euros.
+El vehículo con matrícula [ 3864 AAA ] a ser sacado no existe

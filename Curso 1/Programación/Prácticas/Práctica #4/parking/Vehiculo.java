@@ -123,7 +123,7 @@ public abstract class Vehiculo {
      * un abono de descuento por aparcamiento, en caso contrario no lo
      * corresponde el abono
      * 
-     * @param abono
+     * @param abono Indicará si a este vehículo le corresponde abono o no
      */
     public void setCorrespondeAbono(boolean abono) {
         m_TieneAbono = abono;

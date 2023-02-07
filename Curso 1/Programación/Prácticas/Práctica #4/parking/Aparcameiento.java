@@ -57,6 +57,9 @@ public final class Aparcameiento {
                 // con menos plazas
                 --m_Capacidad;
             }
+            else 
+                System.out.printf("El vehículo con matrícula [ %s ] a ser añadido ya existe\n",
+                    v.getMatricula());
         }
         else 
             System.out.println("Error: No se pudo completar la operación, plazas insuficientes...");
@@ -87,6 +90,9 @@ public final class Aparcameiento {
             m_Vechiculos.remove(indice - 1);
             ++m_Capacidad;
         }
+        else 
+            System.out.printf("El vehículo con matrícula [ %s ] a ser sacado no existe\n",
+                v.getMatricula());
 
         return importe;
     }
@@ -116,6 +122,9 @@ public final class Aparcameiento {
             m_Vechiculos.remove(indice - 1);
             ++m_Capacidad;
         }
+        else 
+            System.out.printf("El vehículo con matrícula [ %s ] a ser sacado no existe\n",
+                matricula);
 
         return importe;
     }

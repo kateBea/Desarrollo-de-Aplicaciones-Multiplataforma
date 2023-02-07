@@ -10,7 +10,7 @@ import java.time.temporal.ChronoUnit;
  * de la clase camión e implementa el método <b>consultarImporte()</b>
  * a través del cual se puede consultar el importe a pagar por aparcamiento.
  * Se distinguen dos tipos de camión: <b>con 3 o menos ejes</b> y
- *  <b>con más de 3 ejes<b>.
+ *  <b>con más de 3 ejes</b>.
  * 
  * @author Hugo Pelayo 
  * @version 1.0
@@ -32,10 +32,14 @@ public final class Camion extends Vehiculo {
      * Retorna el tipo de camión en formato String
      */
     private static String getStringTipo(CamionType tipo) {
-        return switch(tipo) {
-            case MENOS_EJES -> "Con 3 o menos Ejes";
-            case MAS_EJES -> "Más de 3 ejes";
-        };
+        String result = "";
+
+        switch(tipo) {
+            case MENOS_EJES: result = "Con 3 o menos Ejes"; break;
+            default: result = "Más de 3 ejes"; break;
+        }
+
+        return result;
     }
 
     /*
@@ -44,10 +48,13 @@ public final class Camion extends Vehiculo {
      * en las unidades euros/minuto
      */
     private static double getFactor(CamionType tipo) {
-        return switch(tipo) {
-            case MENOS_EJES -> 4.5 / 60.0;
-            case MAS_EJES -> 6.5 / 60.0;
-        };
+        double result;
+        switch(tipo) {
+            case MENOS_EJES: result = 4.5 / 60.0; break;
+            default: result = 6.5 / 60.0; break;
+        }
+
+        return result;
     }
 
     /**

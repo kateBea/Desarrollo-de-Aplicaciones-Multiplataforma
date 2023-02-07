@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
  * Esta clase representa un Automóvil. Describe un objeto derivado
  * de la clase automóvil e implementa el método <b>consultarImporte()</b>
  * a través del cual se puede consultar el importe a pagar por aparcamiento.
- * Se distinguen tres tipos de automóvil: <b>Turismo</b>, <b>Todoterreno<b> y <b>Furgoneta</b>.
+ * Se distinguen tres tipos de automóvil: <b>Turismo</b>, <b>Todoterreno</b> y <b>Furgoneta</b>.
  * 
  * @author Hugo Pelayo 
  * @version 1.0
@@ -32,11 +32,15 @@ public final class Automovil extends Vehiculo {
      * Retorna el tipo de automóvil en formato String
      */
     private static String getStringTipo(AutomovilType tipo) {
-        return switch(tipo) {
-            case TURISMO -> "Turismo";
-            case TODOTERRENO -> "Todoterreno";
-            case FURGONETA -> "Furgoneta";
-        };
+        String result;
+
+        switch(tipo) {
+            case TURISMO: result = "Turismo"; break;
+            case TODOTERRENO: result = "Todoterreno"; break;
+            default: result =  "Todoterreno"; break;
+        }
+
+        return result;
     }
 
     /*
@@ -45,11 +49,14 @@ public final class Automovil extends Vehiculo {
      * en las unidades euros/minuto
      */
     private static double getFactor(AutomovilType tipo) {
-        return switch(tipo) {
-            case TURISMO -> 1.5 / 60.0;
-            case TODOTERRENO -> 2.5 / 60.0;
-            case FURGONETA -> 3.5 / 60.0;
-        };
+        double result;
+        switch(tipo) {
+            case TURISMO: result =  1.5 / 60.0; break;
+            case TODOTERRENO: result = 2.5 / 60.0; break;
+            default: result =  3.5 / 60.0; break;
+        }
+
+        return result;
     }
 
     /**
