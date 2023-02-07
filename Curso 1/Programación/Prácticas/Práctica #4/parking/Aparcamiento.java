@@ -20,9 +20,9 @@ import java.util.ArrayList;
 
 public final class Aparcamiento {
     // Contiene todos los vehículos almacenados
-    ArrayList<Vehiculo> m_Vechiculos;
+    private ArrayList<Vehiculo> m_Vechiculos;
     // Capacidad del aparcamiento
-    int m_Capacidad;
+    private int m_Capacidad;
 
     /**
      * Inicializa un aparcamiento con una capacidad máxima igual

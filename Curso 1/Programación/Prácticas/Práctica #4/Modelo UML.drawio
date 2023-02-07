@@ -1,0 +1,78 @@
+<mxfile host="65bd71144e">
+    <diagram id="64ux3xw01iIy8Rv3G04n" name="Page-1">
+        <mxGraphModel dx="300" dy="325" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-1" value="Automóvil" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="630" width="290" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-2" value="- m_Tipo: enum" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VXsTuzQ5hqxrarNn9fZp-1" vertex="1">
+                    <mxGeometry y="26" width="290" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="VXsTuzQ5hqxrarNn9fZp-1" vertex="1">
+                    <mxGeometry y="52" width="290" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-4" value="- getStringTipo(enum): String&#10;- getFactor(enum): double&#10;+ Automovil(String, LocalDateTime, boolean, enum)&#10;+ Automovil(String, boolean, enum)&#10;+ getTipo(): enum&#10;+ setTipo(enum): void&#10;+ calcularImporte(int): double&#10;+ calcularImporte(LocalDateTime): double&#10;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VXsTuzQ5hqxrarNn9fZp-1" vertex="1">
+                    <mxGeometry y="60" width="290" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-5" value="Vehículo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="274" width="250" height="280" as="geometry">
+                        <mxRectangle x="510" y="274" width="90" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-6" value="- m_Matrícula: String&#10;- m_FechaEntrada: LocalDateTime&#10;- m_TieneAbono: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VXsTuzQ5hqxrarNn9fZp-5" vertex="1">
+                    <mxGeometry y="26" width="250" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="VXsTuzQ5hqxrarNn9fZp-5" vertex="1">
+                    <mxGeometry y="80" width="250" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-8" value="+ Vehiculo(String, LocalDateTime, boolean)&#10;+ Vehiculo(String, boolean)&#10;+ calcularImporte(int): double&#10;+ calcularImporte(LocalDateTime): double&#10;+ getMatricula(): String&#10;+ setMatrícula(String). void&#10;+ setFechaEntrada(LocalDateTime): void&#10;+ correspondeAbono(): boolean&#10;+ setCorrespondeAbono(boolean): void&#10;+ equals(Vehiculo): boolean&#10;+ equals(Strning): boolean&#10;+ toString(): String&#10; " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=default;fontStyle=0;" parent="VXsTuzQ5hqxrarNn9fZp-5" vertex="1">
+                    <mxGeometry y="88" width="250" height="192" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-9" value="Camión" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="630" width="290" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-10" value="- m_Tipo: enum" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VXsTuzQ5hqxrarNn9fZp-9" vertex="1">
+                    <mxGeometry y="26" width="290" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="VXsTuzQ5hqxrarNn9fZp-9" vertex="1">
+                    <mxGeometry y="52" width="290" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-12" value="- getStringTipo(enum): String&#10;- getFactor(enum): double&#10;+ Camion(String, LocalDateTime, boolean, enum)&#10;+ Camion(String, boolean, enum)&#10;+ getTipo(): enum&#10;+ setTipo(enum): void&#10;+ calcularImporte(int): double&#10;+ calcularImporte(LocalDateTime): double&#10;+ toString(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VXsTuzQ5hqxrarNn9fZp-9" vertex="1">
+                    <mxGeometry y="60" width="290" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-13" value="Aparcamiento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="274" width="250" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-14" value="- m_Vehiculos: ArrayList&#10;- m_Capacidad: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VXsTuzQ5hqxrarNn9fZp-13" vertex="1">
+                    <mxGeometry y="26" width="250" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="VXsTuzQ5hqxrarNn9fZp-13" vertex="1">
+                    <mxGeometry y="70" width="250" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="VXsTuzQ5hqxrarNn9fZp-16" value="+ Aparcamiento(int)&#10;+ introducirVehiculo(Vehiculo): void&#10;+ sacarVehiculo(Vehiculo): double&#10;+ sacarVehiculo(String): double&#10;+ getCapacidad(): int&#10;+ getMaxCapacidad(): int&#10;+ setCapacidad(int): void&#10;+ getVehiculos(): ArrayList&#10;+ getPlazasOcupadas(): int&#10;+ toString: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="VXsTuzQ5hqxrarNn9fZp-13" vertex="1">
+                    <mxGeometry y="78" width="250" height="172" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;fontColor=default;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="VXsTuzQ5hqxrarNn9fZp-1" target="VXsTuzQ5hqxrarNn9fZp-8">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="560.0000000000001" y="630" as="sourcePoint"/>
+                        <mxPoint x="630" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;fontColor=default;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.641;entryY=1.004;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="VXsTuzQ5hqxrarNn9fZp-9" target="VXsTuzQ5hqxrarNn9fZp-8">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="690.0000000000001" y="627.12" as="sourcePoint"/>
+                        <mxPoint x="670" y="550" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=open;endFill=1;endSize=12;html=1;fontColor=default;" edge="1" parent="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="760" y="390" as="sourcePoint"/>
+                        <mxPoint x="900" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

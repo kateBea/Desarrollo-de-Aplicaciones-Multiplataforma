@@ -18,11 +18,11 @@ import java.time.format.DateTimeFormatter;
 
 public abstract class Vehiculo {
     // Matrícula del vehículo
-    String m_Matricula;
+    private String m_Matricula;
     // Fecha de entrada (fecha y hora)
-    LocalDateTime m_FechaEntrada;
+    private LocalDateTime m_FechaEntrada;
     // indica si tiene abono (true) o no (false)
-    boolean m_TieneAbono;
+    private boolean m_TieneAbono;
 
     // descuento sobre importe de aparcamiento, 
     // si corresponde (40% menos sobre el importe final)

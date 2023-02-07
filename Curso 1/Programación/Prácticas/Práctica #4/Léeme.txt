@@ -1,3 +1,11 @@
+Autor: Hugo Pelayo
+Modelo UML hecho con: https://app.diagrams.net/
+
+NOTAS:
+Abajo se adjunta una posible salida del programa. Cabe destacar que para que salgan valores significativos de importe hay que introducir los minutos manualmente al llamar a la función para calcular el importe, por el contrario se puede usar los métodos del main para hacer una espera breve y retirar un vehículo, de este modo al intentar retirar un vehículo se tendrá en cuenta para el cálculo del importe el intervalo transcurrido en esta espera breve. Tal y como está ahora el programa se espera un minuto antes de retirar cada vehículo, ver cuerpo main().
+
+Ejemplo output:
+
 Tipo de automóvil: Todoterreno
 Matrícula: 2754 HHR
 Fecha entrada: 07 February 2023 02:31:17
