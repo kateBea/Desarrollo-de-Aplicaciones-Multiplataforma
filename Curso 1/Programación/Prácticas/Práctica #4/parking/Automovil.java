@@ -32,15 +32,11 @@ public final class Automovil extends Vehiculo {
      * Retorna el tipo de automóvil en formato String
      */
     private static String getStringTipo(AutomovilType tipo) {
-        String result;
-
-        switch(tipo) {
-            case TURISMO: result = "Turismo"; break;
-            case TODOTERRENO: result = "Todoterreno"; break;
-            default: result =  "Todoterreno"; break;
-        }
-
-        return result;
+        return switch(tipo) {
+            case TURISMO -> "Turismo";
+            case TODOTERRENO -> "Todoterreno"; 
+            case FURGONETA ->"Todoterreno";
+        };
     }
 
     /*
@@ -49,14 +45,11 @@ public final class Automovil extends Vehiculo {
      * en las unidades euros/minuto
      */
     private static double getFactor(AutomovilType tipo) {
-        double result;
-        switch(tipo) {
-            case TURISMO: result =  1.5 / 60.0; break;
-            case TODOTERRENO: result = 2.5 / 60.0; break;
-            default: result =  3.5 / 60.0; break;
-        }
-
-        return result;
+        return switch(tipo) {
+            case TURISMO -> 1.5 / 60.0;
+            case TODOTERRENO -> 2.5 / 60.0;
+            case FURGONETA -> 3.5 / 60.0; 
+        };
     }
 
     /**
