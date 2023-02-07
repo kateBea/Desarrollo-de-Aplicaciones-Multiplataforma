@@ -12,7 +12,7 @@ public class Programa1 {
 
         do {
             // no hace falta tratamiento de errores sobre el DNI
-            // será siempre una tira de 8 dígitos
+            // será siempre una tira de dígitos
 
             dni = leerDni();
         }
