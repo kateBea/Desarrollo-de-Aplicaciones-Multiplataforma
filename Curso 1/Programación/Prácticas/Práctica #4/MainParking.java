@@ -1,4 +1,4 @@
-import parking.Aparcameiento;
+import parking.Aparcamiento;
 import parking.Automovil;
 import parking.Camion;
 import parking.Vehiculo;
@@ -17,7 +17,7 @@ public class MainParking {
             System.out.println(veh.toString());
 
         // creamos un aparmiento 
-        Aparcameiento sanAndreas = new Aparcameiento(3);
+        Aparcamiento sanAndreas = new Aparcamiento(3);
 
         // introducimos vehículos al aprcamiento
         sanAndreas.introducirVehiculo(vehiculos.get(0));

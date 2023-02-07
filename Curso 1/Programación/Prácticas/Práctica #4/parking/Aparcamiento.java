@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 
-public final class Aparcameiento {
+public final class Aparcamiento {
     // Contiene todos los vehículos almacenados
     ArrayList<Vehiculo> m_Vechiculos;
     // Capacidad del aparcamiento
@@ -31,7 +31,7 @@ public final class Aparcameiento {
      * 
      * @param limite Capacidad inicial del aparcamiento
      */
-    public Aparcameiento(int limite) {
+    public Aparcamiento(int limite) {
         m_Vechiculos = new ArrayList<>();
         m_Capacidad = limite;
     }
