@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 import listas.*;
 import productos.Producto;
