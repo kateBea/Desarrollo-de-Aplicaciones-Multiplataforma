@@ -58,6 +58,175 @@ FROM Departamento
 ORDER BY Nombre DESC;
 
 -- 15
+SELECT CONCAT(IFNULL(Apellido2, ''), ' ', Apellido1, ', ', Nombre) AS 'Nombre y Apellidos'
+FROM Empleado
+ORDER BY Apellido2, Apellido1, Nombre;
+
+-- 16
+SELECT Nombre, Presupuesto
+FROM Departamento
+ORDER BY Presupuesto DESC
+LIMIT 3;
+
+-- 17
+SELECT Nombre, Presupuesto
+FROM Departamento
+ORDER BY Presupuesto
+LIMIT 3;
+
+-- 18
+SELECT Nombre, Gastos
+FROM Departamento
+ORDER BY Gastos DESC
+LIMIT 2;
+
+-- 19
+SELECT Nombre, Gastos
+FROM Departamento
+ORDER BY Gastos
+LIMIT 2;
+
+-- 20
+SELECT * 
+FROM Empleado
+LIMIT 2, 5;
+
+-- 21
+SELECT Nombre, Presupuesto
+FROM Departamento
+WHERE Presupuesto >= 150000;
+
+-- 22
+SELECT Nombre, Gastos
+FROM Departamento
+WHERE Gastos < 5000;
+
+-- 23
+SELECT *
+FROM Departamento
+WHERE Presupuesto <= 200000 and Presupuesto >= 100000;
+
+-- 24
+SELECT *
+FROM Departamento
+WHERE NOT (Presupuesto <= 200000 and Presupuesto >= 100000);
+
+-- 25
+SELECT *
+FROM Departamento
+WHERE Presupuesto BETWEEN 100000 and 200000;
+
+-- 26
+SELECT *
+FROM Departamento
+WHERE Presupuesto NOT BETWEEN 100000 and 200000;
+
+-- 27
+SELECT Nombre, Gastos, Presupuesto
+FROM Departamento
+WHERE Gastos > Presupuesto;
+
+-- 28
+SELECT Nombre, Gastos, Presupuesto
+FROM Departamento
+WHERE Gastos < Presupuesto;
+
+-- 29
+SELECT Nombre, Gastos, Presupuesto
+FROM Departamento
+WHERE Gastos = Presupuesto;
+
+-- 30
+SELECT * 
+FROM Empleado
+WHERE Apellido2 IS NULL;
+
+-- 31
+SELECT * 
+FROM Empleado
+WHERE Apellido2 IS NOT NULL;
+
+-- 32
+SELECT * 
+FROM Empleado
+WHERE Apellido2 LIKE 'López';
+
+-- 33
+SELECT * 
+FROM Empleado
+WHERE Apellido2 LIKE 'Díaz' OR Apellido2 LIKE 'Moreno';
+
+-- 34
+SELECT * 
+FROM Empleado
+WHERE Apellido2 IN ('Díaz', 'Moreno');
+
+-- 35
+SELECT Nombre, CONCAT(Apellido1, ' ', IFNULL(Apellido2, '')) AS Apellidos, NIF
+FROM Empleado
+WHERE Codigo_Departamento = 3;
+
+-- 36
+SELECT Nombre, CONCAT(Apellido1, ' ', IFNULL(Apellido2, '')) AS Apellidos, NIF
+FROM Empleado
+WHERE Codigo_Departamento IN (2, 4, 5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
