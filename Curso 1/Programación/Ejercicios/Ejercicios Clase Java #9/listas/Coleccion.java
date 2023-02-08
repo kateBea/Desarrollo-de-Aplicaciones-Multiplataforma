@@ -1,7 +1,6 @@
 package listas;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import productos.Producto;
 
