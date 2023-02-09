@@ -42,6 +42,7 @@ public class ArrayList1{
         myArray1.add (0, "Otro ejemplo");
         System.out.println ("El contenido es " + myArray1);
         myArray1.add("Adios");
+
         System.out.println ("El contenido es " + myArray1);
 
         //si la lista tiene el valor "Juan"

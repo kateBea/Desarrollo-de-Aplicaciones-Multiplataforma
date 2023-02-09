@@ -1,5 +1,3 @@
-import java.util.HashSet;
-
 /*
  * Ejemplos de Colecciones 
  * Ejemplo: Uso Set (no permite duplicados), concreto clase TreeSet que almacena de manor a mayor
