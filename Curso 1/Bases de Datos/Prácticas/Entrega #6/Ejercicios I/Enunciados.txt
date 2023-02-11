@@ -1,0 +1,51 @@
+1.       Mostrar los datos de los empleados que pertenezcan al mismo departamento que 'GIL'.
+
+2.       Mostrar los datos de los empleados que tengan el mismo oficio que 'CEREZO'. El resultado debe ir ordenado por apellido.
+
+3.       Mostrar los empleados (nombre, oficio, salario y fecha de alta) que desempeñen el mismo oficio que 'JIMÉNEZ' o que tengan un salario mayor o igual que 'FERNÁNDEZ'.
+
+4.       Mostrar en pantalla el apellido, oficio y salario de los empleados del departamento de 'FERNÁNDEZ' que tengan su mismo salario.
+
+5.       Mostrar los datos de los empleados que tengan un salario mayor que 'GIL' y que pertenezcan al departamento número 10.
+
+6.       Mostrar los apellidos, oficios y localizaciones de los departamentos de cada uno de los empleados.
+
+7.       Seleccionar el apellido, el oficio y la localidad de los departamentos donde trabajan los ANALISTAS.
+
+8.       Seleccionar el apellido, el oficio y salario de los empleados que trabajan en Madrid.
+
+9.       Seleccionar el apellido, salario y localidad donde trabajan de los empleados que tengan un salario entre 200000 y 300000.
+
+10.   Mostrar el apellido, salario y nombre del departamento de los empleados que tengan el mismo oficio que 'GIL'.
+
+11.   Mostrar el apellido, salario y nombre del departamento de los empleados que tengan el mismo oficio que 'GIL' y que no tengan comisión.
+
+12.   Mostrar los datos de los empleados que trabajan en el departamento de contabilidad, ordenados por apellidos.
+
+13.   Apellido de los empleados que trabajan en Sevilla y cuyo oficio sea analista o empleado.
+
+14.   Calcula el salario medio de todos los empleados.
+
+15.   ¿Cuál es el máximo salario de los empleados del departamento 10?
+
+16.   Calcula el salario mínimo de los empleados del departamento 'VENTAS'.
+
+17.   Calcula el promedio del salario de los empleados del departamento de 'CONTABILIDAD'.
+
+18.   Mostrar los datos de los empleados cuyo salario sea mayor que la media de todos los salarios.
+
+19.   ¿Cuántos empleados hay en el departamento número 10?
+
+20.   ¿Cuántos empleados hay en el departamento de 'VENTAS'?
+
+21.   Calcula el número de empleados que hay que no tienen comisión.
+
+22.   Seleccionar el apellido del empleado que tiene máximo salario.
+
+23.   Mostrar los apellidos del empleado que tiene el salario más bajo.
+
+24.   Mostrar los datos del empleado que tiene el salario más alto en el departamento de 'VENTAS'.
+
+25.   A partir de la tabla EMPLE visualizar cuántos apellidos de los empleados empiezan por la letra 'A'.
+
+26.   Dada la tabla EMPLE, obtener el sueldo medio, el número de comisiones no nulas, el máximo sueldo y el sueldo mínimo de los empleados del departamento 30

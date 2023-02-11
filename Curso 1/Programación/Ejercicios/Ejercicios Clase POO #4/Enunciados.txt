@@ -1,0 +1,17 @@
+Realiza en Java un diagrama de clases que de solución a los siguientes requisitos.
+
+Se pretende poder modelar diferentes figuras geométricas (círculo, cuadrado y triángulo).
+ Todas ellas, tienen un nombre, una posición (coordenada x, coordenada y) y un color. 
+ Luego, en función del tipo de figura, tendremos:
+- En caso de los círculos: un radio que será double
+- En caso de los cuadrados: un lado que será double
+- En caso de los triángulos: la base y la altura (double)
+
+Todas las figuras podrán moverse de posición, cambiar de color, calcular su área y 
+dibujara por pantalla (con caracteres asterisctos*)
+
+Una vez analizada las clases necesarias, codifícalas en Java teniendo en cuenta los 
+principios de la POO. Por último, en una programa TestFiguras.java muestra un menú 
+al usuario que le permita dar de alta diferentes figuras geométricas y añadirlas en 
+un arrayList. Una vez, creadas podrá hacer diferentes operaciones como calcular su 
+área y dibujarla por pantalla
