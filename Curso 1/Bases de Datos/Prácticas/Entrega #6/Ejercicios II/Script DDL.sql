@@ -1,10 +1,15 @@
+drop database if exists gestor_fabricantes;
+
 #Creación de Tablas en Base de datos
+create database if not exists gestor_fabricantes;
+
+use gestor_fabricantes;
 
 create table fabricante (id_fab INTEGER PRIMARY KEY, nombre VARCHAR(50) NOT NULL, pais VARCHAR(30));
 create table programa (codigo INTEGER PRIMARY KEY, nombre VARCHAR(50) NOT NULL, version VARCHAR(50));
 create table comercio (cif INTEGER PRIMARY KEY, nombre VARCHAR(50) NOT NULL, ciudad VARCHAR(50));
 create table cliente (dni INTEGER PRIMARY KEY, nombre VARCHAR(50) NOT NULL, edad INTEGER);
-create table registra ( medio VARCHAR(20), cif INTEGER, dni INTEGER, codigo INTEGER);
+create table registra (cif INTEGER, dni INTEGER, codigo INTEGER, medio VARCHAR(20));
 create table desarrolla (id_fab INTEGER, codigo INTEGER);
 create table distribuye (cif INTEGER, codigo INTEGER, cantidad INTEGER); 
 
@@ -15,7 +20,9 @@ INSERT INTO fabricante VALUES (2,'MICROSOFT','ESTADOS UNIDOS');
 INSERT INTO fabricante VALUES (3,'IBM','ESTADOS UNIDOS');
 INSERT INTO fabricante VALUES (4,'DINAMIC','ESPAÑA');
 INSERT INTO fabricante VALUES (5,'BORLAND','ESTADOS UNIDOS');
-INSERT INTO fabricante VALUES (6,'SYMANTEC','ESTADOS UNIDOS'); Datos a insertar en Tabla programa
+INSERT INTO fabricante VALUES (6,'SYMANTEC','ESTADOS UNIDOS'); 
+
+# Datos a insertar en Tabla programa
 INSERT INTO programa VALUES (1,'APPLICATION SERVER','9i');
 INSERT INTO programa VALUES (2,'DATABASE','8i');
 INSERT INTO programa VALUES (3,'DATABASE','9i');
@@ -38,16 +45,19 @@ INSERT INTO programa VALUES (19,'JBUILDER','X');
 INSERT INTO programa VALUES (20,'LA PRISION','10');
  
 #Datos a insertar en Tabla comercio 
-
 INSERT INTO comercio VALUES (1,'El Corte Inglȩs','Sevilla');
 INSERT INTO comercio VALUES (2,'El Corte Inglȩs','Madrid');
 INSERT INTO comercio VALUES (3,'Jump','Valencia');
 INSERT INTO comercio VALUES (4,'Centro Mail','Sevilla');
-INSERT INTO comercio VALUES (5,'FNAC','Barcelona'); Datos a insertar en Tabla cliente
+INSERT INTO comercio VALUES (5,'FNAC','Barcelona'); 
+
+# Datos a insertar en Tabla cliente
 INSERT INTO cliente VALUES (1,'PEPITO PEREZ', 38);
 INSERT INTO cliente VALUES (2,'JUAN CHARRASQUIADO', 55);
 INSERT INTO cliente VALUES (3,'MARTIN PESCADOR', 38);
-INSERT INTO cliente VALUES (4,'ROSA CANTOR', 25); Datos a insertar en Tabla registra
+INSERT INTO cliente VALUES (4,'ROSA CANTOR', 25); 
+
+# Datos a insertar en Tabla registra
 INSERT INTO registra VALUES (1, 1, 1, 'INTERNET');
 INSERT INTO registra VALUES (1, 3, 4, 'TARJETA POSTAL');
 INSERT INTO registra VALUES (4, 2, 10, 'TELEFONO');
@@ -56,7 +66,6 @@ INSERT INTO registra VALUES (5, 2, 12, 'INTERNET');
 INSERT INTO registra VALUES (2, 4, 15, 'INTERNET');
 
 #Datos a insertar en Tabla desarrolla 
-
 INSERT INTO desarrolla VALUES (1, 1);
 INSERT INTO desarrolla VALUES (1, 2);
 INSERT INTO desarrolla VALUES (1, 3);
@@ -79,7 +88,6 @@ INSERT INTO desarrolla VALUES (4, 14);
 INSERT INTO desarrolla VALUES (4, 20);
  
 #Datos a insertar en Tabla distribuye 
-
 INSERT INTO distribuye VALUES (1, 1, 10);
 INSERT INTO distribuye VALUES (1, 2, 11);
 INSERT INTO distribuye VALUES (1, 6, 5);
