@@ -22,9 +22,9 @@ create table inscrito(
 documento char(8) not null,
 codigocurso tinyint unsigned,
 codigomateria tinyint unsigned,
-año year,
+anio year,
 cuota char(1),/* ‘s’ si esta pagado o ‘n’ si no*/
-primary key (documento,codigocurso,codigomateria,año)
+primary key (documento,codigocurso,codigomateria,anio)
 );
 
 /* Inserts en los cursos*/
