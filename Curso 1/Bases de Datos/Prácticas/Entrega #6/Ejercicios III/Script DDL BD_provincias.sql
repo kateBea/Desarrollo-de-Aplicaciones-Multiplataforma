@@ -1,5 +1,7 @@
-drop table if exists clientes, provincias;
+create database if not exists bd_provincias;
+use bd_provincias;
 
+drop table if exists clientes, provincias;
 
  create table clientes (
   codigo int unsigned auto_increment,
@@ -27,7 +29,7 @@ drop table if exists clientes, provincias;
  insert into provincias (nombre) values('Neuquen');
 
  insert into clientes (nombre,domicilio,ciudad,codigoProvincia,telefono)
-  values ('Lopez Marcos', 'Colon 111', 'Córdoba',1,'null');
+  values ('Lopez Marcos', 'Colon 111', 'CÃ³rdoba',1,'null');
  insert into clientes (nombre,domicilio,ciudad,codigoProvincia,telefono)
   values ('Perez Ana', 'San Martin 222', 'Cruz del Eje',1,'4578585');
  insert into clientes (nombre,domicilio,ciudad,codigoProvincia,telefono)
