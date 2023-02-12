@@ -1,5 +1,5 @@
 package figuras;
 
-public class Cuadrado {
+public final class Cuadrado extends Figura {
     
 }

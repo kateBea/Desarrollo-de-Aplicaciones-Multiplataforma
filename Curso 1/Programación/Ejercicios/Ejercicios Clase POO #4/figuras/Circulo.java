@@ -1,5 +1,5 @@
 package figuras;
 
-public class Circulo {
+public final class Circulo extends Figura {
     
 }

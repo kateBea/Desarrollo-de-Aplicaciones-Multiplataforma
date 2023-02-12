@@ -1,5 +1,5 @@
 package figuras;
 
-public class Triangulo {
+public final class Triangulo extends Figura {
     
 }
