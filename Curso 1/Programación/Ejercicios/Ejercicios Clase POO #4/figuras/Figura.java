@@ -98,6 +98,92 @@ public abstract class Figura {
         m_CoordY = coordy;
     }
 
+    /**
+     * Cambia el color de esta figura por el que se pasa como parámetro
+     * 
+     * @param color Nuevo color de esta figura
+     */
+    public void setColor(ColorType color) {
+        m_Color = color;
+    }
+
+    /**
+     * Retorna una cadena de carcateres representando el color de esta figura
+     * 
+     * @return Color de esta figura
+     */
+    public String getColor() {
+        return getColorStr(m_Color);
+    }
+
+    /**
+     * Cmabia el nombre de esta figura por le que se pasa 
+     * como parámetro
+     * 
+     * @param nombre Nuevo nombre de esta figura
+     */
+    public void setNombre(String nombre) {
+        m_Nombre = nombre;
+    }
+    
+    /**
+     * Retorna el nombre de esta figura
+     * 
+     * @return Nombre de esta figura
+     */
+    public String getNombre() {
+        return m_Nombre;
+    }
+
+    /**
+     * Operación igual que mover(double, double). En este caso simplemente
+     * se recibe como parámetro un array de coordenadas que se valida. Si 
+     * el array es inválido esta función no tiene efecto
+     * 
+     * @param coordenadas
+     */
+    public void setCoordenadas(float[] coordenadas) {
+        if (coordenadas != null && coordenadas.length == 2) {
+            m_CoordX = coordenadas[0];
+            m_CoordY = coordenadas[1];
+        }
+        else 
+            System.out.println("Coordenadas inválidas...");
+    }
+
+    /**
+     * Retorna las coordenadas de esta figura como arra de decimales. La primera
+     * posición representa la coordenada X y la segunda posición del array 
+     * representa la coordenada Y
+     * 
+     * @return Posición en el plano euclídeo de esta figura
+     */
+    public double[] getCoordenadas() {
+        return new double[]{ m_CoordX, m_CoordY };
+    }
+    /**
+     * Mueve la figura a la posición que se le pasa como
+     * parámetro. La posición de la figura pasa a ser la que se pasa como
+     * parámetro
+     * 
+     * @param newX Nueva coordenada X de esta figura
+     * @param newY Nueva coordenada Y de esta figura
+     */
+    public void mover(double newX, double newY) {
+        m_CoordX = newX;
+        m_CoordY = newY;
+    }
+    /**
+     * Mueve la figura a una posición del espacio euclídeo. La posición
+     * final se calcula desplazando el objeto desde su posición actual.
+     * 
+     * @param offsetX Desplazamiento por el eje X
+     * @param offsetY Desplazamiento por el eje Y
+     */
+    public void desplazar(double offsetX, double offsetY) {
+        m_CoordX += offsetX;
+        m_CoordY += offsetY;
+    }
 
     /**
      * Dibuja por la salida de datos la forma que tiene la figura

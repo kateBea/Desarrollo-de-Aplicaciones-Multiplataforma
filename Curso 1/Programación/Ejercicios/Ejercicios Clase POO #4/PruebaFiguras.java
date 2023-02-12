@@ -23,10 +23,15 @@ public class PruebaFiguras {
             System.out.print("-> ");
             opcion = Integer.parseInt(reader.readLine());
 
-            if (!(opcion > 0 && opcion < 5))
+            if (!(opcion > 0 && opcion < 6))
                 System.out.println("Opción no válida");
+            else {
+                switch (opcion) {
+                    
+                }
+            }
         }
-        while(opcion != 4);
+        while(opcion != 5);
     }
     
     public static void mostrarMenu() {
@@ -34,6 +39,7 @@ public class PruebaFiguras {
         System.out.println("1. Añadir figura");
         System.out.println("2. Eliminar figura (indicar índice)");
         System.out.println("3. Mostrar listado de figuras");
-        System.out.println("4. Salir");
+        System.out.println("4. Editar figura");
+        System.out.println("5. Salir");
     }
 }
