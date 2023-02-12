@@ -1,6 +1,8 @@
 package figuras;
 
 /**
+ * <h2>Representa una Figura geométrica</h2>
+ * 
  * Esta clase representa una figura geométrica que se puede mover
  * por el plano euclídeo. A parte de ello describe también el
  * color de la figura.
@@ -12,7 +14,7 @@ public abstract class Figura {
     /**
      * Representa un color
      */
-    enum ColorType {
+    public static enum ColorType {
         AZUL,
         ROJO,
         CIAN,
@@ -40,7 +42,14 @@ public abstract class Figura {
     // Corrdenada Y de la figura
     private double m_CoordY;
     // Color de la figura
-    ColorType m_Color;
+    private ColorType m_Color;
+
+    public Figura(Figura other) {
+        m_Nombre = other.m_Nombre;
+        m_Color = other.m_Color;
+        m_CoordX = other.m_CoordX;
+        m_CoordY = other.m_CoordY;
+    }
 
     /*
      * Retorna un String representando el color que se le pasa
@@ -202,6 +211,7 @@ public abstract class Figura {
      * 
      * @return La representación de esta figura
      */
+    @Override
     public String toString() {
         return String.format("Nombre: %s\n" +
                             "Coordenadas: [%.3f, %.3f]\n" +
