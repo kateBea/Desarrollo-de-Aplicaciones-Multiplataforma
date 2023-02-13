@@ -11,16 +11,8 @@ package figuras;
  * @version 1.0
  */
 public abstract class Figura {
-    // Conjunto de colores
-    private static String[] s_Colores = {
-        "Rojo", "Cian", "Violeta", "Verde", "Magenta",
-        "Amarillo", "Gris", "Rosa", "Granate", "Tomate", 
-        "Lila", "Fúcsia", "Gualda", "Naranja", "Negro", 
-        "Blanco", "Crema", "???"
-    };
-
     /**
-     * Representa un color
+     * Representa un color. Implicitly extends from Enum class
      */
     public static enum ColorType {
         AZUL,
@@ -64,27 +56,7 @@ public abstract class Figura {
      * Retorna un String representando el color que se le pasa
      */
     private static String getColorStr(ColorType color) {
-        return switch (color) {
-            case AZUL -> "Azul";
-            case ROJO -> "Rojo";
-            case CIAN -> "Cian";
-            case VIOLETA -> "Violeta";
-            case VERDE -> "Verde";
-            case MAGENTA -> "Magenta";
-            case AMARILLO -> "Amarillo";
-            case GRIS -> "Gris";
-            case ROSA -> "Rosa";
-            case GRANATE -> "Granate";
-            case TOMATE -> "Tomate";
-            case LILA -> "Lila";
-            case FUCSIA -> "Fúcsia";
-            case GUALDA -> "Gualda";
-            case NARANJA -> "Naranja";
-            case NEGRO -> "Negro";
-            case BLANCO -> "Blanco";
-            case CREMA -> "Crema";
-            case DESCONOCIDO -> "???";
-        };
+        return color.toString().toLowerCase();
     }
 
     /**
@@ -94,6 +66,11 @@ public abstract class Figura {
      * @return El color de esta figura
      */
     public static ColorType getColorType(String color) {
+        for (ColorType c : ColorType.values()) {
+            if (color.equalsIgnoreCase(c.toString()))
+                return c;
+        }
+            
         return ColorType.DESCONOCIDO;
     }
     
