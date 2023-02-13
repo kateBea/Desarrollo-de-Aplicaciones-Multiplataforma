@@ -24,7 +24,7 @@ public class PruebaFiguras {
             System.out.print("-> ");
             opcion = Integer.parseInt(reader.readLine());
 
-            if (!(opcion > 0 && opcion < 6))
+            if (!(opcion > 0 && opcion < 7))
                 System.out.println("Opción no válida");
             else {
                 switch (opcion) {
@@ -36,10 +36,15 @@ public class PruebaFiguras {
                     }
                     case 3 -> mostrarFiguras(figuras);
                     case 4 -> editarFigura(figuras);
+                    case 5 -> {
+                        System.out.print("Entra índice: ");
+                        indiceFigura = Integer.parseInt(reader.readLine());
+                        dibujarFigura(indiceFigura, figuras);
+                    }
                 }
             }
         }
-        while(opcion != 5);
+        while(opcion != 6);
     }
     
     public static void mostrarMenu() {
@@ -48,7 +53,8 @@ public class PruebaFiguras {
         System.out.println("2. Eliminar figura (indicar índice)");
         System.out.println("3. Mostrar listado de figuras");
         System.out.println("4. Editar figura");
-        System.out.println("5. Salir");
+        System.out.println("5. Dibujar figura");
+        System.out.println("6. Salir");
     }
 
     public static void anadirFigura(ArrayList<Figura> figuras) throws IOException {
@@ -110,4 +116,17 @@ public class PruebaFiguras {
     public static void editarFigura(ArrayList<Figura> figuras) {
         // TODO: Implementar
     }
+
+    public static void dibujarFigura(int indice, ArrayList<Figura> figuras) {
+        if (figuras.isEmpty()) {
+            System.out.println("No hay figuras...");
+            return;
+        }
+
+        if (indice > -1 && indice < figuras.size())
+            figuras.get(indice).dibujar();
+        else 
+            System.out.println("Valor de índice inválido...");
+    }
+    
 }

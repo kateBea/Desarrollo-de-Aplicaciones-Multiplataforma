@@ -194,14 +194,14 @@ public abstract class Figura {
     /**
      * Dibuja por la salida de datos la forma que tiene la figura
      */
-    abstract void dibujar();
+    public abstract void dibujar();
 
     /**
      * Devuelve el valor del área de esta figura
      * 
      * @return Área de esta figura
      */
-    abstract double calcularArea();
+    public abstract double calcularArea();
 
     /**
      * Retorna un String representando las propiedades de esta figura
