@@ -11,6 +11,14 @@ package figuras;
  * @version 1.0
  */
 public abstract class Figura {
+    // Conjunto de colores
+    private static String[] s_Colores = {
+        "Rojo", "Cian", "Violeta", "Verde", "Magenta",
+        "Amarillo", "Gris", "Rosa", "Granate", "Tomate", 
+        "Lila", "Fúcsia", "Gualda", "Naranja", "Negro", 
+        "Blanco", "Crema", "???"
+    };
+
     /**
      * Representa un color
      */
@@ -33,6 +41,7 @@ public abstract class Figura {
         NEGRO,
         BLANCO,
         CREMA,
+        DESCONOCIDO,
     }
 
     // Nombre de la figura
@@ -74,7 +83,18 @@ public abstract class Figura {
             case NEGRO -> "Negro";
             case BLANCO -> "Blanco";
             case CREMA -> "Crema";
+            case DESCONOCIDO -> "???";
         };
+    }
+
+    /**
+     * Devuelve el color acorde con el String que se pasa como
+     * parámetro
+     * 
+     * @return El color de esta figura
+     */
+    public static ColorType getColorType(String color) {
+        return ColorType.DESCONOCIDO;
     }
     
     /** 

@@ -25,6 +25,8 @@ public final class Circulo extends Figura {
 
     public Circulo(Circulo other) {
         super(other);
+
+        m_Radio = other.getRadio();
     }
 
     public void setRadio(double radio) {
@@ -37,7 +39,7 @@ public final class Circulo extends Figura {
 
     @Override
     public void dibujar() {
-
+        // TODO: Implementar
     }
 
     @Override
@@ -47,6 +49,6 @@ public final class Circulo extends Figura {
 
     @Override
     public String toString() {
-        return String.format("El radio del círculo es: %.3", m_Radio);
+        return super.toString() + String.format("\n-> El radio del círculo es: %.3f", m_Radio);
     }
 }
