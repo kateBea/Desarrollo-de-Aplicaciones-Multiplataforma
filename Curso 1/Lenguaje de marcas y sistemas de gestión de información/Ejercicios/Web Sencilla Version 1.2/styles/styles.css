@@ -28,8 +28,7 @@ body {
 }
 
 .greet-button {
-    transition-duration: 1s;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     background-color: rgb(209, 50, 201);
     font-size: 20px;
     border-radius: 8px;
@@ -40,6 +39,7 @@ body {
     background-color: rgb(92, 50, 209);
     font-size: 20px;
     border-radius: 8px;
+    cursor: pointer;    
 }
 
 
