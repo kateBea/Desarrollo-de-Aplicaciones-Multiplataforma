@@ -115,6 +115,7 @@ public class PruebaFiguras {
 
     public static void editarFigura(ArrayList<Figura> figuras) {
         // TODO: Implementar
+        
     }
 
     public static void dibujarFigura(int indice, ArrayList<Figura> figuras) {
