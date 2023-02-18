@@ -1,20 +1,11 @@
 import book
-import publisher
+from publisher import Publisher
 import member
 
 def main():
-    pubs = [
-        Publisher('123', 'ABCD', 'Tesla'),
-        Publisher('385', 'BFHG', 'Arcor'),
-        Publisher('462', 'OTJH', 'Circus'),
-        Publisher('782', 'MFNA', 'Gamer'),
-        Publisher('999', 'KGSA', 'Unknown'),
-        Publisher('692', 'QPRT', 'Comp'),
-        Publisher('961', 'KLAN', 'Cresla'),
-    ]
+    p1 = Publisher('123', 'ABCD', 'Tesla')
 
-    for my_pubs in pubs:
-        print(my_pubs)
+    print(p1)
 
 
 
