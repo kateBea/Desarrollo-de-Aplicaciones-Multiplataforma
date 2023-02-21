@@ -1,0 +1,1 @@
+Abrir ejercicios con Visual Studio Code en el directorio de este documento de texto
