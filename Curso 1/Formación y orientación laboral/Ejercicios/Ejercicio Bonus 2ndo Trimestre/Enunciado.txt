@@ -1,0 +1,51 @@
+1) Lee atentamente la siguiente noticia:
+
+150 despidos en un segundo: así funcionan los algoritmos que deciden a quién echar del trabajo
+Una empresa de ‘software’ prescindió el pasado agosto de cientos de empleados siguiendo únicamente el dictamen de una inteligencia artificial, un caso que podría convertirse en lo habitual
+
+
+A usted le despedirá un algoritmo. Suena a ominosa profecía pero al grueso de los trabajadores por cuenta ajena de este ajetreado primer tercio del siglo XXI le espera ese destino: ser contratados y despedidos por máquinas, sin apenas intermediación humana. Es posible que muchos de ellos pasen por este ciclo de destrucción creativa en varias ocasiones a lo largo de unas trayectorias laborales que se prevén convulsas. Es el fin del trabajo para toda la vida que era habitual hasta finales del siglo XX.
+El pasado agosto, Xsolla, la filial rusa de una empresa de software y servicios interactivos con sede en Los Ángeles, ejecutó una vanguardista reestructuración de su plantilla que ha captado el interés de medios de comunicación de todo el mundo. Sin previo aviso, decidió prescindir de 150 de los 450 empleados de sus oficinas de Perm y Moscú siguiendo únicamente el dictamen de un algoritmo de rendimiento laboral que los consideraba “improductivos” y “poco comprometidos” con los objetivos de la empresa.Ni el impacto de la pandemia ni las tan socorridas “razones estructurales”. Esta vez, la causa esgrimida para justificar despidos masivos ha sido el frío dictamen de un programa de inteligencia artificial alimentado con big data. Tan drástica y poco frecuente resultó la medida que el director general y fundador de la compañía, Alexander Agapitov, se apresuró a declarar a Forbes Rusia que no estaba del todo de acuerdo con el veredicto de la máquina, pero se veía obligado a acatarlo debido a los protocolos internos consensuados con su junta de accionistas. Incluso se ofreció a ayudar a los trabajadores despedidos a encontrar nuevos trabajos lo antes posible porque, en su opinión, la mayoría de ellos son “buenos profesionales”.
+
+(...)
+
+Que las máquinas acabarían sustituyendo a los trabajadores humanos es algo que ya sabían los luditas británicos del siglo XIX y que Charles Chaplin nos mostró de manera muy elocuente en Tiempos modernos, película de 1936. Lo que no esperábamos es que las máquinas se convirtiesen en nuestros jefes.
+
+Existe al menos un precedente muy llamativo. En 2019, Amazon, la madre de todas las empresas disruptivas de nuevo cuño, ya llamó la atención de la revista Bloomberg por su tendencia a despedir a su personal basándose en criterios informáticos. En aquella ocasión, uno de los damnificados, Stephen Normandin, fue entrevistado por la cabecera y se convirtió en símbolo de esta manera de proceder en apariencia gélida y deshumanizada.
+Normandin, veterano del ejército estadounidense de 63 años residente en Phoenix, Estado de Arizona, llevaba varios meses ejerciendo de repartidor en plantilla para la compañía de Jeff Bezos cuando recibió un correo electrónico en el que se le informaba, sin más, de la extinción de su contrato. El algoritmo de rastreo de su actividad cotidiana le había considerado no apto. 
+
+Una máquina acababa de despedirle.
+
+Normandin, que en la revista se definía a sí mismo como “un tipo de la vieja escuela”, con una ética laboral “a prueba de bombas”, se lo tomó como una afrenta personal. En su opinión, se trataba de un despido “desconsiderado y abusivo”, además de inmerecido. Nadie se dirigió a él para explicarle cuáles eran los criterios que habían llevado a la inteligencia artificial a cuestionar su compromiso y su nivel de competencia: “He hecho turnos de 12 horas diarias en un comedor comunitario para refugiados vietnamitas en Arkansas”, explicaba. “He demostrado en múltiples ocasiones que soy una persona disciplinada y responsable, no me merezco que se prescinda de mí sin escucharme, atender a mis circunstancias o darme explicaciones”. En su opinión, el algoritmo le despidió por su edad, sin tener en cuenta factores como sus ganas de trabajar y su óptimo estado de salud física y mental, pero sus intentos de demostrarlo acudiendo a un tribunal de arbitraje resultaron infructuosos.
+Spencer Soper, que escribió aquel artículo, opina que la de Normandin contra la máquina es “una guerra perdida”, fruto de un “siniestro equívoco”: “Hombres como él siguen apelando a la cultura del esfuerzo y la dignidad del trabajo, mientras compañías como Amazon basan su modelo en una creciente automatización de los procesos productivos y las rutinas laborales que excluye casi por completo el factor humano”
+
+En una entrevista para la CNBC, Jeff Bezos afirmaba que las únicas decisiones empresariales que es imprescindible dejar en manos de seres humanos son “las estratégicas”. El resto, las decisiones “cotidianas”, por trascendentes que resulten, es preferible que las tomen algoritmos de inteligencia artificial, porque actúan “teniendo en cuenta toda la información relevante y sin interferencias emocionales”. Para el presidente ejecutivo de Amazon, “la inteligencia artificial optimiza los procesos y, a medio y largo plazo, creará muchos más puestos de trabajo de los que destruya”. Casos concretos más o menos lamentables desde un punto de vista humano, como el de Stephen Normandin, no son más que daños colaterales de una revolución que avanza imparable.
+
+Para Fabián Nevado, experto en derecho laboral y asesor del Sindicat de Periodistes de Catalunya (SPC), “resulta impresentable desde un punto de vista moral que te despida un algoritmo aplicando criterios generales que no atiendan a tus circunstancias personales y, sobre todo, que ningún ser humano se tome la molestia de comunicártelo en persona con un mínimo de respeto y empatía”.
+
+Pese a todo, Nevado no cree que se trate del tipo de acontecimientos que solo pueden producirse en mercados laborales poco regulados, como los de Rusia o Estados Unidos. “Al contrario, en España, en contra de lo que la gente cree, el despido es libre. Lo que ocurre es que hay que argumentar cuáles son las razones de ese despido y, en caso de que no haya acuerdo, un juez acaba decidiendo si resultan convincentes o no”. Pero resulta perfectamente legal que las empresas hagan uso de la inteligencia artificial para monitorizar el rendimiento de sus trabajadores siempre que lo hagan dentro del marco de la Ley Orgánica de Datos de Carácter Personal: “En cualquier caso”, explica Nevado, “quien despide va a ser siempre un empleador, un ser humano o un grupo de ellos. Pero la máquina podría ser la herramienta utilizada para justificar un despido. De hecho, ya está ocurriendo en muchos casos”.
+
+En última instancia, decidirá un juez, como ocurre en el fútbol profesional con la mayoría de recomendaciones del videoarbitraje (VAR), esa polémica herramienta que iba a revolucionar para siempre la justicia deportiva. Lo que resulta a todas luces inaceptable, según el experto, “es que ni los jefes de área ni los departamentos de recursos humanos asuman la responsabilidad de ese despido, que se escuden en algoritmos y demás innovaciones tecnológicas para escurrir el bulto y deshumanizar aún más las relaciones laborales”. Si sigue la tendencia, Nevado augura a los departamentos de recursos humanos “un futuro muy negro”.
+
+(...)
+
+El dique de contención contra los algoritmos que despiden a personas tiene que ser, según reclama la Unión General de Trabajadores (UGT) en su documento de trabajo Las relaciones algorítmicas en las relaciones laborales, una regulación clara que obligue, en primer lugar, a dar a conocer cuáles son los criterios que maneja la inteligencia artificial utilizada. Lo dice el responsable de digitalización del sindicato, José Varela: “Hay que aplicar el principio de precaución”. Porque los algoritmos, como cualquier producto de la inteligencia humana, se equivocan. Y, además, no se preocupan de si sus decisiones tienen un impacto negativo sobre “la seguridad de las personas o sus derechos fundamentales”. Es decir, que si a usted va a despedirle un algoritmo exijámosle que nos demuestre, en primer lugar, que sabe lo que hace.
+
+EL PAÍS. 10 DE OCTUBRE DE 2021
+
+Enlace: https://elpais.com/icon/2021-10-10/150-despidos-en-un-segundo-asi-funcionan-los-algoritmos-que-deciden-a-quien-echar-del-trabajo.html?event_log=oklogin
+
+
+2) Escribe una crítica (puede ser positiva o negativa) sobre el siguiente artículo. Puedes emplear la opción de comentar del blog situada al finalizar el post. También puedes contestar alguna de las respuestas de tus compañeros. Te recomiendo escribirla primero en word o programa similar. Otra opción es enviar tu respuesta por correo. 
+
+La respuesta debe ser de como mínimo 300 palabras y debe responder como mínimo a las siguientes preguntas:
+
+a) ¿Estas de acuerdo o en contra de que sea un algoritmo el que pueda despedir a los trabajadores?
+
+b)  Haz tu propia aportación: describe como te sentirías si en el momento de despedirte no se justifica la decisión ya que ha sido tomada por los criterios de una máquina. 
+
+c) ¿Consideras que la gente mayor debe ser despedida simplemente porque ser mayor? ¿Hay una edad de caducidad para el trabajo?
+
+d) ¿Qué criterios emplearías tú a la hora de despedir a una persona?
+
+e) ¿Crees que las tecnologías podrán sustituir a la larga a los recursos humanos? ¿Y a qué otras profesiones?
