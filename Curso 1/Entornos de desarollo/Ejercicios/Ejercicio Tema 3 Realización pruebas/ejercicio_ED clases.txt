@@ -1,0 +1,35 @@
+Enunciado:
+Nivel: A1, A2, B1, B2, C1
+Idiomas: Inglés, Francés
+Edad: 10 < x <= 30
+Tarjeta de crédito: 16 dígitos
+Beca: Esta becado
+
+
+clases inválidas si no se especifica lo contrario
+1. en el conjunto A1, A2, B1, B2, C1 [clase válida]
+2. dos o más niveles a la vez
+3. nivel fuera de los válidos
+4. no tener nivel asignado
+
+5. idioma inglés o francés (o exclusiva, sólo un idioma) [clase válida]
+6. más de un idioma
+7. ningún idioma
+8. idioma no es ni inglés ni francés
+
+9. edad en el rango (10, 30]
+10. edad < 10
+11. edd > 30
+12. No es número
+
+13. Tiene 16 dígitos
+14. Menos de 16 dígitos
+15. Más de 16 dígitos
+16. Algún digito es letra
+
+17. Sí/No
+18. Sin información o respuesta no válida
+
+límites:
+Edad: 9 (límite inferior), 31 (límite inferior)
+Rango: rango (10, 30]
