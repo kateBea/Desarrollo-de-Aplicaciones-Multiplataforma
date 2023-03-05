@@ -6,26 +6,45 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * <p>Unidad de prueba para las clases del paquete proveedor. Realiza pruebas sobre
+ * las clases <b>Tienda</b> y <b>Producto</b>.</p>
+ * <p>Los productos del proveedor se leen do un fichero. Dicho fichero
+ * debe tener un formato específico, donde en cada línea lista un producto
+ * con el formato <b>nombreProducto : precio</b>. Se crean cinco empresas
+ * o tiendas (se entienden del enunciado como sinónimos) y para cada empresa
+ * se registra su encargo. Finalizado este registro tenemos para cada empresa
+ * los productos que ha encargado y un listado donde tenemos todos los productos
+ * que se han encargado entre las cinco empresas.</p>
+ *
+ * @author Hugo Pelayo
+ * @version 1.0
+ * */
 public class Principal {
     public static void main(String[] args) {
-        // Inicialización datos
+        // Inicialización de datos
 
-        // Configurado por defecto al directorio principal del proyecto
+        // Mostramos el directorio de trabajo actual de la clase Principal
+        // que está configurada por defecto al directorio principal del proyecto.
+        // (Puede ser de ayuda para indicar la dirección relativa del fichero de datos
+        // y no tener que especificar la ruta completa del fichero)
         printCurrentWorkingDirectory();
 
         // registrar productos del proveedor
         ArrayList<Producto> datos = loadData("./src/Productos.txt");
 
         if (datos == null) {
+            // Si so se pudieron cargar los datos finalizamos el programa
+
             System.out.println("--------------------------------");
             System.out.println("Could not load data from file...");
             System.out.println("--------------------------------");
             return;
         }
 
-        // Solicitar productos
+        // Gestionamos los encargos:
         // loadStoreData se encarga de actualizar la cantidad
-        // de productos que tenemos solicitados
+        // de productos acorde a los encargos de las empresas
         ArrayList<Tienda> tiendas = loadStoreData(datos);
         double importeTotal = 0.0;
 
@@ -62,7 +81,7 @@ public class Principal {
 
         int idProducto = 0;
         int cantidad;
-        ArrayList<Tienda> retVal = new ArrayList<>(TOTAL_TIENDAS);
+        ArrayList<Tienda> retVal = new ArrayList<>();
 
         retVal.add(new Tienda("Alampo"));
         retVal.add(new Tienda("Mercadona"));
@@ -73,18 +92,20 @@ public class Principal {
         // Para cada tienda vamos a registrar los productos que tiene encargados
         for (int i = 0; i < TOTAL_TIENDAS; ++i) {
             System.out.println("Tienda: " + retVal.get(i).getNombre());
+
             do{
-                // Leemos el índice de producto
-                System.out.print("¿Qué producto desea? ");
+                // Leemos el índice de producto.
+                System.out.print("¿Qué producto desea [1, 14)? ");
                 try {
                     idProducto = Integer.parseInt(lector.readLine());
+
                 }
                 catch (IOException exp) {
-                    System.out.println("Formato de índice no válido. Inténtelo de nuevo.");
+                    System.out.println("Formato de índice no válido o error de I/O. Inténtelo de nuevo.");
                     continue;
                 }
 
-                // Si el índice es -1 ya hemos acabado de trata esta tienda
+                // Si el índice es -1 ya hemos acabado de tratar esta tienda
                 if (idProducto == -1) {
                     System.out.println();
                     break;
@@ -93,12 +114,12 @@ public class Principal {
                 System.out.println(datos.get(idProducto - 1).getNombre() + '\n');
                 System.out.print("¿Qué cantidad desea? ");
 
-                // Leemos la cantidad de producto
+                // Leemos la cantidad a encargar de este producto
                 try {
                     cantidad = Integer.parseInt(lector.readLine());
                 }
                 catch (IOException exp) {
-                    System.out.println("Formato de cantidad no válido. Inténtelo de nuevo.");
+                    System.out.println("Formato de cantidad no válido o error de I/O. Inténtelo de nuevo.");
                     continue;
                 }
 
@@ -109,7 +130,7 @@ public class Principal {
                                                        datos.get(idProducto - 1).getPrecio(),
                                                         cantidad));
 
-                // Actualizamos la cantidad solicitada del producto actual
+                // Actualizamos la cantidad solicitada del producto actual [datos.get(idProducto - 1)]
                 // La cantidad del producto será la actual más la que haya solicitado la tienda o empresa
                 datos.get(idProducto - 1).setCantidad(datos.get(idProducto - 1).getCantidad() + cantidad);
 
@@ -121,14 +142,17 @@ public class Principal {
     }
 
     /**
-     * Lee una lista de productos de un fichero
-     * @param dataFilePath directorio del fichero a procesar
-     * @return Lista de productos leídos donde en cada índice tenemos el nombre de producto y su precio
+     * Lee una lista de productos de un fichero. Devuelve un ArrayList conteniendo
+     * para cada producto leído, su nombre y su precio. Todos los productos vienen
+     * inicializados con el stock a 0. En caso de no poder abrir el fichero se
+     * retorna una referencia nula (null)
+     * @param dataFilePath directorio del fichero del cual se leen los datos
+     * @return Lista de productos leídos donde tenemos el nombre de producto y su precio
      * */
     public static ArrayList<Producto> loadData(String dataFilePath) {
         // El fichero con directorio debe contener una lista de productos
         // donde en cada línea hay el nombre de un producto seguido de dos puntos y el precio
-        final BufferedReader buffer;
+        BufferedReader buffer;
         ArrayList<Producto> retVal = null;
         String tempLine;
         try {
@@ -145,6 +169,7 @@ public class Principal {
             buffer.close();
         }
         catch (IOException exp) {
+            // Mostramos la razón de excepción
             System.out.println("Excepción capturada: " + exp.getMessage());
         }
 
@@ -153,7 +178,8 @@ public class Principal {
 
     /**
      * Interpreta una cadena separándola en nombre de producto y su precio
-     * @param product línea del producto
+     * con la cantidad inicializada a 0
+     * @param product String con datos de un producto
      * @return Nombre de producto y su precio
      * */
     public static Producto parseProduct(String product) {
