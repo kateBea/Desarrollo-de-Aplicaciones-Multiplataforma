@@ -25,6 +25,8 @@ public class Ejercicio {
         
         System.out.println("Valor [base 2]:  " + userInput);
         System.out.println("Valor [base 10]: " + decimal);
+
+        sc.close();
     }
 
     public static boolean isValidBinary(String number) {
