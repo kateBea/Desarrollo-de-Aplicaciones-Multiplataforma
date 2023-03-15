@@ -1,0 +1,2 @@
+Diseñar objeto pájaro utilizando la programación orientada a objetos
+El pájaro debe tendrá un nombre y dos valores reales que representas su posición en un espacio.
