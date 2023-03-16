@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Ejercicio de selectores</title>
+<style>
+/* También se podría haber hecho con clases o ids */
+tr:first-child {color: teal;}
+tr:nth-child(2) {color: red;}
+tr:nth-child(3) {color: blue;}
+tr:nth-child(4) {color: orange;}
+tr:nth-child(5) {color: purple;}
+tr:nth-child(6) {color: olive;}
+tr:nth-child(7) {color: fuchsia;}
+tr:last-child {color: green;}
+
+/* Segunda columna */
+td + td {background-color: red;}
+
+/* Tercera columna */
+td + td + td {background-color: green;}
+
+/* Cuarta columna */
+td + td + td + td {background-color: blue;}
+</style>
+</head>
+<body>
+<table border="1">
+<tr><td>teal</td><td>teal</td><td>teal</td><td>teal</td></tr>
+<tr><td>red</td><td>red</td><td>red</td><td>red</td></tr>
+<tr><td>blue</td><td>blue</td><td>blue</td><td>blue</td></tr>
+<tr><td>orange</td><td>orange</td><td>orange</td><td>orange</td></tr>
+<tr><td>purple</td><td>purple</td><td>purple</td><td>purple</td></tr>
+<tr><td>olive</td><td>olive</td><td>olive</td><td>olive</td></tr>
+<tr><td>fuchsia</td><td>fuchsia</td><td>fuchsia</td><td>fuchsia</td></tr>
+<tr><td>green</td><td>green</td><td>green</td><td>green</td></tr>
+</table>
+</body>
+</html>

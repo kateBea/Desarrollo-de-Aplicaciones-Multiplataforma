@@ -1,0 +1,8 @@
+Requisitos:
+
+- El tipo de letra de la página es Arial, con el tipo de respaldo Verdana.
+- El encabezado de nivel 1 utiliza el tipo de letra Georgia, con un tamaño de letra de 32 px y en versalitas.
+- El encabezado de nivel 2 utiliza el tipo de letra Georgia, con un tamaño de letra de 24 px, en cursiva y en versalitas.
+- Los títulos de los elementos de las listas aparecen en negrita.
+- El contenido de los elementos de las listas, aunque están etiquetados como <strong>, no se visualizan en negrita.
+Nota: no puedes modificar el código HTML de la página, sólo puedes añadir las reglas CSS necesarias para lograr la presentación deseada.

@@ -1,0 +1,7 @@
+Requisitos:
+
+- El encabezado de nivel 1 debe aparecer centrado y en mayúsculas.
+- El encabezado de nivel 2 debe aparecer en mayúsculas.
+- El contenido etiquetado como <strong> debe aparecer subrayado.
+
+Nota: no puedes modificar el código HTML de la página, sólo puedes añadir las reglas CSS necesarias para lograr la presentación deseada.
