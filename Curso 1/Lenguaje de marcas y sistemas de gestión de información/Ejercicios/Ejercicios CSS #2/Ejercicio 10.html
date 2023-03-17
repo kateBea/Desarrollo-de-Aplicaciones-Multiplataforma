@@ -1,0 +1,108 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Ejercicio formatear tabla</title>
+    <style type="text/css">
+        table {
+            font: .9em Arial, Helvetica, sans-serif;
+            border: 1px solid #333;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table th {
+            background: #F5F5F5;
+            padding: 0 .3em;
+            text-align: left;
+        }
+
+        table thead th {
+            text-align: center;
+        }
+
+        table th.euro {
+            background: #E6F3FF url(../../comun/imagenes/euro.png) no-repeat left center;
+            padding: 0 .3em 0 1.2em;
+        }
+
+        table th.dolar {
+            background: #E6F3FF url(../../comun/imagenes/dolar.png);
+            padding: 0 .3em 0 1.2em;
+        }
+
+        table th.libra {
+            background: #E6F3FF url(../../comun/imagenes/libra.png) no-repeat left center;
+            padding: 0 .3em 0 1.2em;
+        }
+
+        table th.yen {
+            background: #E6F3FF url(../../comun/imagenes/yen.png) no-repeat left center;
+            padding: 0 .3em 0 1.2em;
+        }
+
+        table th,
+        table,
+        td {
+            border: 1px solid #333;
+            line-height: 2em;
+        }
+
+        .par {
+            background-color: #FFFFCC;
+        }
+
+        table tr:hover {
+            background: #FFFF66;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr class="cabecera">
+                <th>Cambio</th>
+                <th>Compra</th>
+                <th>Venta</th>
+                <th>Máximo</th>
+                <th>Mínimo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="par">
+                <th class="euro">Euro/Dolar</th>
+                <td>1.2524</td>
+                <td>1.2527</td>
+                <td>1.2539</td>
+                <td>1.2488</td>
+            </tr>
+            <tr>
+                <th class="dolar">Dolar/Yen</th>
+                <td>119.01</td>
+                <td>119.05</td>
+                <td>119.82</td>
+                <td>119.82</td>
+            </tr>
+            <tr class="par">
+                <th class="libra">Libra/Dolar</th>
+                <td>1.8606</td>
+                <td>1.8611</td>
+                <td>1.8651</td>
+                <td>1.8522</td>
+            </tr>
+            <tr>
+                <th class="yen">Yen/Euro</th>
+                <td>0.6711</td>
+                <td>0.6705</td>
+                <td>0.6676</td>
+                <td>0.6713</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
