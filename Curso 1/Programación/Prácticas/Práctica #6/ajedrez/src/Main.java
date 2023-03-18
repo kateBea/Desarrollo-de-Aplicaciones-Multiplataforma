@@ -138,6 +138,7 @@ public class Main {
                 if (c != '-')
                     System.out.print(c + " ");
                 else
+                    // dos espacios en el caso de haber un guion
                     System.out.print("  ");
             }
 
@@ -176,13 +177,13 @@ public class Main {
 
         // hacemos dos bucles porque no necesariamente (fila, columna) es un punto media en la diagonal principal
 
-        for ( ; posValida(tempFila, tempColumna); ++tempFila, ++tempColumna)
+        for ( ;posValida(tempFila, tempColumna); ++tempFila, ++tempColumna)
             tablero[tempFila - 1][tempColumna - 1] = '*';
 
         tempFila = fila - 1;
         tempColumna = columna - 1;
 
-        for ( ; posValida(tempFila, tempColumna); --tempFila, --tempColumna)
+        for ( ;posValida(tempFila, tempColumna); --tempFila, --tempColumna)
             tablero[tempFila - 1][tempColumna - 1] = '*';
 
     }
