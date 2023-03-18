@@ -1,0 +1,109 @@
+PRIMERA PARTE:
+
+# Crear un primer directorio llamado ej2 y acceder a él. Este será el directorio . de la imagen de la derecha.
+mkdir ej2 && cd ej2
+
+# Crear este subárbol dentro de ese directorio. NOTA: entre corchetes van los subdirectorios y sin comillas
+mkdir -p {FOTOS,GRAFICOS}/{INVIERNO,VERANO}/{GRANDES,peques} TEXTOS VIDEOS/{INVIERNO/{GRANDES,peques},VERANO}
+tree .
+
+.
+├── FOTOS
+│   ├── INVIERNO
+│   │   ├── GRANDES
+│   │   └── peques
+│   └── VERANO
+│       ├── GRANDES
+│       └── peques
+├── GRAFICOS
+│   ├── INVIERNO
+│   │   ├── GRANDES
+│   │   └── peques
+│   └── VERANO
+│       ├── GRANDES
+│       └── peques
+├── TEXTOS
+└── VIDEOS
+    ├── INVIERNO
+    │   ├── GRANDES
+    │   └── peques
+    └── VERANO
+
+# Situaros en el directorio ./FOTOS/INVIERNO/peques
+cd ./FOTOS/INVIERNO/peques
+
+# Ejecuta la orden
+touch fotoPeque001.JPG
+
+# Comprobar el resultado de esta orden mediante el comando ls.
+ls -la .
+
+# Ahora crear otros 4 archivos con nombre similar y número hasta el 005
+touch fichero{002..005}.txt
+
+# Volver al directorio . de la figura y ejecutar ahora la orden tree. Presentar el resultado
+cd -
+tree .
+
+.
+├── FOTOS
+│   ├── INVIERNO
+│   │   ├── GRANDES
+│   │   └── peques
+│   │       ├── fichero002.txt
+│   │       ├── fichero003.txt
+│   │       ├── fichero004.txt
+│   │       ├── fichero005.txt
+│   │       └── fotoPeque001.JPG
+│   └── VERANO
+│       ├── GRANDES
+│       └── peques
+├── GRAFICOS
+│   ├── INVIERNO
+│   │   ├── GRANDES
+│   │   └── peques
+│   └── VERANO
+│       ├── GRANDES
+│       └── peques
+├── TEXTOS
+└── VIDEOS
+    ├── INVIERNO
+    │   ├── GRANDES
+    │   └── peques
+    └── VERANO
+
+
+SEGUNDA PARTE:
+
+cp ./FOTOS/INVIERNO/peques/fotoPeque001.JPG ./VIDEOS/INVIERNO/peques/fotoPeque001.JPG
+tree .
+
+.
+├── FOTOS
+│   ├── INVIERNO
+│   │   ├── GRANDES
+│   │   └── peques
+│   │       ├── fichero002.txt
+│   │       ├── fichero003.txt
+│   │       ├── fichero004.txt
+│   │       ├── fichero005.txt
+│   │       └── fotoPeque001.JPG
+│   └── VERANO
+│       ├── GRANDES
+│       └── peques
+├── GRAFICOS
+│   ├── INVIERNO
+│   │   ├── GRANDES
+│   │   └── peques
+│   └── VERANO
+│       ├── GRANDES
+│       └── peques
+├── TEXTOS
+└── VIDEOS
+    ├── INVIERNO
+    │   ├── GRANDES
+    │   └── peques
+    │       └── fotoPeque001.JPG
+    └── VERANO
+
+
