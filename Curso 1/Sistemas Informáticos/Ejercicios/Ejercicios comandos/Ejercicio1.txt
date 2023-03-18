@@ -1,0 +1,37 @@
+Serie de comandos:
+
+# Crear este subárbol en vuestro directorio de inicio de linux.
+mkdir '1/AO/access/' '1/AO/excell/' '1/AO/gimp/' '1/AO/word/' '1/FOL/' '1/MME/' '1/RAL/' '1/SOM/comandosLinux/' '2/AW/' '2/EIE/' '2/SER/' '2/SI/' '2/SOR/' -p
+
+# Situaros en el directorio ./1/AO/word
+cd 1/AO/word/
+
+# En el directorio actual, ejecutar la orden: touch miTrabajo.docx
+touch miTrabajo.docx
+
+# Ahora comprobar qué archivos hay en el directorio.
+ls -la
+
+# Copiar con una sola orden el archivo miTrabajo.docx al directorio SOR
+cp miTrabajo.docx ../../../2/SOR/miTrabajoSOR.docx
+
+.
+├── 1
+│   ├── AO
+│   │   ├── access
+│   │   ├── excell
+│   │   ├── gimp
+│   │   └── word
+│   │       └── miTrabajo.docx
+│   ├── FOL
+│   ├── MME
+│   ├── RAL
+│   └── SOM
+│       └── comandosLinux
+├── 2
+│   ├── AW
+│   ├── EIE
+│   ├── SER
+│   ├── SI
+│   └── SOR
+│       └── miTrabajoSOR.docx
