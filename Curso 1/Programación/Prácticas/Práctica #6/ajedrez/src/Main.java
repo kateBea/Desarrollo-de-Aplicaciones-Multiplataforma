@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 // BUG DAMA FILA = 6 COLUMNA = 7
 public class Main {
+    // El tablero es un cuadrado, es decir, una matriz de DIMENSION x DIMENSION
+    private static final int DIMENSION = 8;
     private static final int TOTAL_FILAS = 8;
     private static final int TOTAL_COLUMNAS = 8;
     private static char[][] tablero;
@@ -13,17 +15,18 @@ public class Main {
 
     private static final String[] nombrePieza = { "Rey", "Dama", "Torre", "Alfil" };
     public static void main(String[] args) throws IOException {
-        int numeroPieza;
-        int fila;
-        int columna;
+        int fila;           // Fila del tablero. Está en el rango [1, 8]
+        int columna;        // Columna del tablero. Está en el rango [1, 8]
+        int numeroPieza;    // Índice de la pieza
+        boolean correcto;   // Auxiliar que sirve como indicador de validez de los datos entrados
 
         // inicializar tablero
-        tablero = new char[TOTAL_FILAS][TOTAL_COLUMNAS];
-        for (int i = 0; i < TOTAL_FILAS; ++i)
+        tablero = new char[DIMENSION][DIMENSION];
+        for (int i = 0; i < DIMENSION; ++i)
             Arrays.fill(tablero[i], '-');
 
-        boolean correcto;
         do {
+            // Leemos el índice de pieza
             mostrarPiezas();
             numeroPieza = Integer.parseInt(reader.readLine());
             System.out.println("\nOpción elegida: " + numeroPieza);
@@ -32,6 +35,7 @@ public class Main {
         while (!correcto);
 
         do {
+            // Leemos la fila
             System.out.print("\nElige la fila donde quieras colocar tu pieza (1-8): ");
             fila = Integer.parseInt(reader.readLine());
             correcto = fila >= 1 && fila <= 8;
@@ -39,6 +43,7 @@ public class Main {
         while (!correcto);
 
         do {
+            // Leemos la columna
             System.out.print("\nElige la columna donde quieras colocar tu pieza (1-8): ");
             columna = Integer.parseInt(reader.readLine());
             correcto = columna >= 1 && columna <= 8;
