@@ -175,7 +175,7 @@ public class Main {
         int tempFila = fila + 1;
         int tempColumna = columna + 1;
 
-        // hacemos dos bucles porque no necesariamente (fila, columna) es un punto media en la diagonal principal
+        // hacemos dos bucles porque no necesariamente (fila, columna) es un punto medio en la diagonal principal
 
         for ( ;posValida(tempFila, tempColumna); ++tempFila, ++tempColumna)
             tablero[tempFila - 1][tempColumna - 1] = '*';
@@ -196,7 +196,7 @@ public class Main {
         int tempFila = fila - 1;
         int tempColumna = columna + 1;
 
-        // hacemos dos bucles porque no necesariamente (fila, columna) es un punto media en la diagonal invertida
+        // hacemos dos bucles porque no necesariamente (fila, columna) es un punto medio en la diagonal invertida
 
         for ( ; posValida(tempFila, tempColumna); --tempFila, ++tempColumna)
             tablero[tempFila - 1][tempColumna - 1] = '*';
