@@ -82,16 +82,28 @@ public class Main {
     }
 
     public static void posRey(int fila, int columna) {
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
+
+
+        // representan una dirección a la que se puede mover la pieza
+        // hay 8 casillas adyacentes al Rey al que este se puede mover
         int[] dirFilas    = { 0, -1, -1, -1, 0, 1, 1, 1 };
         int[] dirColumnas = { -1, -1, 0, 1, 1, 1, 0, -1 };
 
         tablero[fila - 1][columna - 1] = 'R';
-        // dirFilas y dirColumnas tienen el mismo size
-        for (int i = 0; i < TOTAL_FILAS; ++i)
+
+        // dirFilas y dirColumnas tienen el mismo tamaño
+        for (int i = 0; i < DIMENSION; ++i)
+            // iteramos sobre las casillas adyacentes a la del rey
             if (posValida(fila + dirFilas[i], columna + dirColumnas[i]))
                 tablero[fila + dirFilas[i] - 1][columna + dirColumnas[i] - 1] = '*';
     }
+
     public static void posDama(int fila, int columna) {
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
+
         // VERTICALES
         for (int i = 0; i < TOTAL_COLUMNAS; ++i)
             tablero[fila - 1][i] = '*';
@@ -130,41 +142,20 @@ public class Main {
     }
 
     public static void posTorre(int fila, int columna) {
-        for (int i = 0; i < TOTAL_COLUMNAS; ++i)
-            tablero[fila - 1][i] = '*';
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
 
-        for (int i = 0; i < TOTAL_FILAS; ++i)
-            tablero[i][columna - 1] = '*';
-
+        trazarRectaHorizontal(fila, columna);
+        trazarRectaVertical(fila, columna);
         tablero[fila - 1][columna - 1] = 'T';
     }
 
     public static void posAlfil(int fila, int columna) {
-        int startCol = 1;
-        int startRow = 1;
-        boolean encontrado = false;
-        // diagonal principal
-        for (; !encontrado && startRow <= TOTAL_FILAS; ++startRow) {
-            startCol = 1;
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
 
-            for (; startCol <= TOTAL_COLUMNAS && !encontrado; ++startCol)
-                encontrado = Math.abs(fila - startRow) == Math.abs(columna - startCol);
-        }
-
-        for (--startRow, --startCol; startRow <= TOTAL_FILAS && startCol <= TOTAL_COLUMNAS; ++startCol, ++startRow)
-            tablero[startRow - 1][startCol - 1] = '*';
-
-        // diagonal invertida
-        encontrado = false;
-        for (startRow = 1; !encontrado && startRow <= TOTAL_FILAS; ++startRow) {
-            startCol = TOTAL_COLUMNAS;
-
-            for (; startCol >= 1 && !encontrado; --startCol)
-                encontrado = Math.abs(fila - startRow) == Math.abs(columna - startCol);
-        }
-
-        for (--startRow, ++startCol; startRow <= TOTAL_FILAS && startCol > 0; --startCol, ++startRow)
-            tablero[startRow - 1][startCol - 1] = '*';
+        trazarDiagonalPrincipal(fila, columna);
+        trazarDiagonalInvertida(fila, columna);
 
         tablero[fila - 1][columna - 1] = 'A';
     }
@@ -189,5 +180,33 @@ public class Main {
     public static boolean posValida(int fila, int columna) {
         return (fila >= 1 && fila <= TOTAL_FILAS) &&
                 (columna >= 1 && columna <= TOTAL_COLUMNAS);
+    }
+
+    public static void trazarRectaVertical(int fila, int columna) {
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
+
+        for (int i = 0; i < DIMENSION; ++i)
+            tablero[fila - 1][i] = '*';
+    }
+
+    public static void trazarRectaHorizontal(int fila, int columna) {
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
+
+        for (int i = 0; i < DIMENSION; ++i)
+            tablero[i][columna - 1] = '*';
+    }
+
+    public static void trazarDiagonalPrincipal(int fila, int columna) {
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
+
+        
+    }
+
+    public static void trazarDiagonalInvertida(int fila, int columna) {
+        // Rango fila [1, 8]
+        // Rango columna [1, 8]
     }
 }
