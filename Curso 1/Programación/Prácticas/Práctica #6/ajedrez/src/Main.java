@@ -3,12 +3,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Arrays;
 
-// BUG DAMA FILA = 6 COLUMNA = 7
 public class Main {
-    // El tablero es un cuadrado, es decir, una matriz de DIMENSION x DIMENSION
+    // El tablero es un cuadrado, es decir, una matriz de DIMENSION * DIMENSION
     private static final int DIMENSION = 8;
-    private static final int TOTAL_FILAS = 8;
-    private static final int TOTAL_COLUMNAS = 8;
     private static char[][] tablero;
     private static final InputStreamReader input = new InputStreamReader(System.in);
     private static final BufferedReader reader = new BufferedReader(input);
@@ -104,39 +101,10 @@ public class Main {
         // Rango fila [1, 8]
         // Rango columna [1, 8]
 
-        // VERTICALES
-        for (int i = 0; i < TOTAL_COLUMNAS; ++i)
-            tablero[fila - 1][i] = '*';
-
-        for (int i = 0; i < TOTAL_FILAS; ++i)
-            tablero[i][columna - 1] = '*';
-
-        // DIAGONALES
-        int startCol = 1;
-        int startRow = 1;
-        boolean encontrado = false;
-        // diagonal principal
-        for (; !encontrado && startRow <= TOTAL_FILAS; ++startRow) {
-            startCol = 1;
-
-            for (; startCol <= TOTAL_COLUMNAS && !encontrado; ++startCol)
-                encontrado = Math.abs(fila - startRow) == Math.abs(columna - startCol);
-        }
-
-        for (--startRow, --startCol; startRow <= TOTAL_FILAS && startCol <= TOTAL_COLUMNAS; ++startCol, ++startRow)
-            tablero[startRow - 1][startCol - 1] = '*';
-
-        // diagonal invertida
-        encontrado = false;
-        for (startRow = 1; !encontrado && startRow <= TOTAL_FILAS; ++startRow) {
-            startCol = TOTAL_COLUMNAS;
-
-            for (; startCol >= 1 && !encontrado; --startCol)
-                encontrado = Math.abs(fila - startRow) == Math.abs(columna - startCol);
-        }
-
-        for (--startRow, ++startCol; startRow <= TOTAL_FILAS && startCol > 0; --startCol, ++startRow)
-            tablero[startRow - 1][startCol - 1] = '*';
+        trazarRectaVertical(fila, columna);
+        trazarRectaHorizontal(fila, columna);
+        trazarDiagonalPrincipal(fila, columna);
+        trazarDiagonalInvertida(fila, columna);
 
         tablero[fila - 1][columna - 1] = 'R';
     }
@@ -162,7 +130,7 @@ public class Main {
 
     public static void mostrarTablero() {
         System.out.println("  1 2 3 4 5 6 7 8");
-        for (int i = 0; i < TOTAL_FILAS; ++i) {
+        for (int i = 0; i < DIMENSION; ++i) {
             System.out.print((i + 1) + " ");
 
             // imprime la fila
@@ -178,8 +146,8 @@ public class Main {
     }
 
     public static boolean posValida(int fila, int columna) {
-        return (fila >= 1 && fila <= TOTAL_FILAS) &&
-                (columna >= 1 && columna <= TOTAL_COLUMNAS);
+        return (fila >= 1 && fila <= DIMENSION) &&
+                (columna >= 1 && columna <= DIMENSION);
     }
 
     public static void trazarRectaVertical(int fila, int columna) {
@@ -202,11 +170,41 @@ public class Main {
         // Rango fila [1, 8]
         // Rango columna [1, 8]
 
-        
+        // empezamos por la posición siguiente
+        int tempFila = fila + 1;
+        int tempColumna = columna + 1;
+
+        // hacemos dos bucles porque no necesariamente (fila, columna) es un punto media en la diagonal principal
+
+        for ( ; posValida(tempFila, tempColumna); ++tempFila, ++tempColumna)
+            tablero[tempFila - 1][tempColumna - 1] = '*';
+
+        tempFila = fila - 1;
+        tempColumna = columna - 1;
+
+        for ( ; posValida(tempFila, tempColumna); --tempFila, --tempColumna)
+            tablero[tempFila - 1][tempColumna - 1] = '*';
+
     }
 
     public static void trazarDiagonalInvertida(int fila, int columna) {
         // Rango fila [1, 8]
         // Rango columna [1, 8]
+
+        // empezamos por la posición siguiente
+        int tempFila = fila - 1;
+        int tempColumna = columna + 1;
+
+        // hacemos dos bucles porque no necesariamente (fila, columna) es un punto media en la diagonal invertida
+
+        for ( ; posValida(tempFila, tempColumna); --tempFila, ++tempColumna)
+            tablero[tempFila - 1][tempColumna - 1] = '*';
+
+        tempFila = fila + 1;
+        tempColumna = columna - 1;
+
+        for ( ; posValida(tempFila, tempColumna); ++tempFila, --tempColumna)
+            tablero[tempFila - 1][tempColumna - 1] = '*';
+
     }
 }
