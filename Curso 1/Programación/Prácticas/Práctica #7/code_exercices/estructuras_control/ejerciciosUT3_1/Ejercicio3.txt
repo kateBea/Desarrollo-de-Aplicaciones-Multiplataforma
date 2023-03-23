@@ -1,0 +1,4 @@
+Introduce un número entero:
+Número introducido: 5
+Doble de 5 -> 10
+Cuadrado de 5 -> 25
