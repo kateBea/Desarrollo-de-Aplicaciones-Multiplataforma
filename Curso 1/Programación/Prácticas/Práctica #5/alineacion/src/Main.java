@@ -29,24 +29,24 @@ public class Main {
         for (String numero : alineacion.split("-"))
             jugadoresPorLinea.add(Integer.parseInt(numero));
 
-        System.out.println("                     [" + jugadores[0] + "]\n");
+        System.out.println("                [" + jugadores[0] + "]\n");
         int indice = 1; // primer jugador se ha puesto
         for (Integer linea : jugadoresPorLinea) {
             switch (linea) {
                 case 1 -> {
-                    System.out.print("                     [" + jugadores[indice] + ']');
+                    System.out.print("                [" + jugadores[indice] + ']');
                 }
                 case 2 -> {
                     for (int i = 0; i < linea; ++i)
-                        System.out.print("             [" + jugadores[indice] + ']');
+                        System.out.print("         [" + jugadores[indice] + ']');
                 }
                 case 3 -> {
                     for (int i = 0; i < linea; ++i)
-                        System.out.print("      [" + jugadores[indice] + ']');
+                        System.out.print("     [" + jugadores[indice] + ']');
                 }
                 default -> {
                     for (int i = 0; i < linea; ++i)
-                        System.out.print('[' + jugadores[indice++] + "]        ");
+                        System.out.print('[' + jugadores[indice++] + "]   ");
                 }
             }
 

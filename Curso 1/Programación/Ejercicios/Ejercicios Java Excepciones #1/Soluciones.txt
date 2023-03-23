@@ -1,0 +1,26 @@
+Ejercicio 1 ------------------------------------------
+
+Se acaba el try con valor: 12
+Se acaba el finally con valor: 13
+Se sale del método con valor: 14
+14
+
+
+Ejercicio 2 ------------------------------------------
+
+Se acaba el catch con valor: 21
+Se acaba el finally con valor: 22
+Se sale del método con valor: 23
+23
+
+
+Ejercicio 3 ------------------------------------------
+
+Se acaba el finally con valor: 2
+Excepción en metodo()
+
+
+Ejercicio 4 ------------------------------------------
+
+Se acaba el finally con valor: 2
+Excepción en metodo()

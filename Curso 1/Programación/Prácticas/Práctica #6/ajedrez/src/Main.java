@@ -12,8 +12,8 @@ public class Main {
 
     private static final String[] nombrePieza = { "Rey", "Dama", "Torre", "Alfil" };
     public static void main(String[] args) throws IOException {
-        int fila;           // Fila del tablero. Está en el rango [1, 8]
-        int columna;        // Columna del tablero. Está en el rango [1, 8]
+        int fila;           // Fila del tablero. Está en el rango [1, DIMENSION]
+        int columna;        // Columna del tablero. Está en el rango [1, DIMENSION]
         int numeroPieza;    // Índice de la pieza
         boolean correcto;   // Auxiliar que sirve como indicador de validez de los datos entrados
 
@@ -54,7 +54,7 @@ public class Main {
 
     public static void mostrarPiezas() {
         System.out.print(
-                // Text block
+                // For learning purposes String formatting is a text block
                 """
                 Piezas disponibles
                 ==================
@@ -150,7 +150,6 @@ public class Main {
         return (fila >= 1 && fila <= DIMENSION) &&
                 (columna >= 1 && columna <= DIMENSION);
     }
-
     public static void trazarRectaVertical(int fila, int columna) {
         // Rango fila [1, 8]
         // Rango columna [1, 8]
