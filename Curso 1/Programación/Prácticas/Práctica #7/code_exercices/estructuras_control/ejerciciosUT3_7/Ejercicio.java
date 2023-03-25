@@ -32,8 +32,8 @@ public class Ejercicio {
     public static boolean valida(int dia, int mes, int anio) {
         // si año es bisiesto febrero tiene 29 días (un día más)
         // si no pues se queda con el número de días establecido, que son 28 (sumamos 1 al final porque tenemos un menor stricto)
-        return (dia > 0 && dia < (diasPorMes[mes - 1] + ((esBisiesto(anio) && mes == 2) ? 1 : 0)) + 1) &&
-               (mes > 1 && mes < 12) &&
+        return (mes > 1 && mes < 12) &&
+               (dia > 0 && dia < (diasPorMes[mes - 1] + ((esBisiesto(anio) && mes == 2) ? 1 : 0)) + 1) &&
                (anio > 1499 && anio < 2201);
 
     }
