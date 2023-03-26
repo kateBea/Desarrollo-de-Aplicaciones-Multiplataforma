@@ -14,6 +14,8 @@ public class Ejercicio2 {
         while(num < 0 || num > 20);
 
         System.out.println("Factorial de " + num + " es " + factorial(num));
+
+        sc.close();
     }
 
     public static long factorial(long num) {

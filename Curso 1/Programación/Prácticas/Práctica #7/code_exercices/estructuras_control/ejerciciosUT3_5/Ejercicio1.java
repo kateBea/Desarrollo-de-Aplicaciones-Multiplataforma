@@ -9,6 +9,8 @@ public class Ejercicio1 {
         System.out.print("Entra número: ");
         int a = sc.nextInt();
         System.out.println("Número de cifras de " + a + " es: " + numeroCifras(a));
+
+        sc.close();
         
     }
 
