@@ -16,7 +16,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class EjerPalabraMisteriosa  {
-    private static final Scanner lector;
+    private static final Scanner lector = new Scanner(System.in);
 
     public enum GameState {
         RUNNING,    // Iniciar una sesión el juego
@@ -38,9 +38,7 @@ public class EjerPalabraMisteriosa  {
 
         // Setup del bucle principal del juego
         randObject  = new Random();
-        lector      = new Scanner(System.in);
         estado      = GameState.RUNNING;
-        lector      = new Scanner(System.in);
 
         // bucle principal
         do {
