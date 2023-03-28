@@ -3,7 +3,6 @@ package poo;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Random;
 import java.util.ArrayList;
 
 import poo.electrodomesticos.Producto;
@@ -23,63 +22,73 @@ public class EjerTiendaElectroDomesticos {
 
         public Key getKey() { return m_Key; }
         public Value getValue() { return m_Value; }
-        public boolean equals(Pair<Key, Value> other) {
-            return m_Key.equals(other.getKey()) && m_Value.equals(other.getValue());
-        }
     }
 
-    private static final Random rand = new Random();
     private static final InputStreamReader input = new InputStreamReader(System.in);
     private static final BufferedReader reader = new BufferedReader(input);
 
     public static void main(String[] args) {
-        int dia = 1;
-        int indiceProducto;
-        int limiVentasPorDia;
-        int vendidosPorDia;
-        boolean liquidacionAcabada = false;
-        double totalDiario;
+        int dia = 0;
+        int indiceProducto;                     // Índice de un producto dentro del Array
+        boolean liquidacionAcabada = false;     // Controla si se han liquidado ya todos los productos
+        double totalDiario;                     // Acumula las ventas diarias (ganacias)
 
         ArrayList<Pair<String, Producto>> productos = setupProductos();
 
         while (!liquidacionAcabada) {
-            System.out.printf("--- DIA [%d] ---\n", dia++);
+            System.out.printf("\n--- DIA [%d] ---\n", (dia + 1));
 
             totalDiario = 0.0;
-            vendidosPorDia = 0;
-            limiVentasPorDia = rand.nextInt(1, productos.size() + 1);
+            indiceProducto = 0;
 
             // tendremos una cantidad limitada de 
             // productos que podemos vender al dia
-            while (vendidosPorDia < limiVentasPorDia) {
+            do {
                 mostrarArticulos(productos);
                 
                 try {
                     System.out.printf("\n¿Qué producto desea comprar? (1 - %d)? -> ", productos.size());
                     indiceProducto = Integer.parseInt(reader.readLine());
-    
-                    System.out.printf("Se ha vendido %s %s por %.1f €\n",
-
-                        productos.get(indiceProducto - 1).getKey(),
-                        productos.get(indiceProducto - 1).getValue().getFabricante(), 
-                        productos.get(indiceProducto - 1).getValue().getPrecio());
                     
-                    totalDiario += productos.get(indiceProducto - 1).getValue().getPrecio();
-                    productos.remove(indiceProducto - 1);
-                    ++vendidosPorDia;
+                    if (indiceProducto != -1) {
+                        System.out.printf("Se ha vendido %s %s por %.1f €\n\n",
+                            productos.get(indiceProducto - 1).getKey(),
+                            productos.get(indiceProducto - 1).getValue().getFabricante(), 
+                            productos.get(indiceProducto - 1).getValue().getPrecio());
+                        
+                        totalDiario += productos.get(indiceProducto - 1).getValue().getPrecio();
+                        productos.remove(indiceProducto - 1);
+                    }
 
                 } 
                 catch (NumberFormatException | IndexOutOfBoundsException | IOException e) {
                     System.out.println("Formato de entero inválido o índice no válido. Inténtelo de nuevo.");
                 }
             }
+            while (indiceProducto != -1 && !productos.isEmpty());
 
             System.out.println("\nHoy se ha vendido artículos por un total de " + totalDiario + " €\n");
 
             mostrarRestantes(productos);
 
+            // incrementamos primero los dias
+            // para aplicar el descuento y ya tenerlo
+            // en la siguiente iteración
+            ++dia;
+
             if (productos.isEmpty())
                 liquidacionAcabada = true;
+            else if (dia != 0 && dia % 2 == 0)
+                // cada dos dias se aplica descuento
+                aplicarDescuento(productos);
+        }
+    }
+
+    public static void aplicarDescuento(ArrayList<Pair<String, Producto>> productos) {
+        final double DESCUENTO = 0.9;
+        
+        for (Pair<String, Producto> item : productos) {
+            item.getValue().setPrecio(item.getValue().getPrecio() * DESCUENTO);
         }
     }
 
@@ -116,6 +125,8 @@ public class EjerTiendaElectroDomesticos {
         ArrayList<Integer> indiceLavadoras = new ArrayList<>();
         ArrayList<Integer> indiceMicroondas = new ArrayList<>();
         int indice = 0;
+
+        // Localizamos donde tenemos cada tipo de producto en nuestro array
         for (Pair<String, Producto> item : productos) {
             if (item.getKey().equalsIgnoreCase("Televisor"))
                 indiceTelevisores.add(indice++);
@@ -127,10 +138,46 @@ public class EjerTiendaElectroDomesticos {
                 indiceMicroondas.add(indice++);
         }
 
-        for (Integer index : indiceLavadoras) 
-            System.out.printf("%s %s %.1f %.1f €\n", 
-                productos.get(index).getValue().getFabricante(),
-                productos.get(index).getValue().getPulgadas(),
-                )
+        // Mostramos los televisores pendientes por vender si quedan
+        System.out.println();
+        if (indiceTelevisores.isEmpty())
+            System.out.println("No quedan televisores por vender\n");
+        else {
+            System.out.printf("Quedan %d televisores\n", indiceTelevisores.size());
+            for (Integer index : indiceTelevisores) {
+                Televisor temp = (Televisor)productos.get(index).getValue();
+                System.out.printf("%s %s %.1f pulgadas %.1f €\n", 
+                    temp.getFabricante(), temp.getNumeroSerie(), temp.getPulgadas(), temp.getPrecio());
+    
+            }
+        }
+
+        // Mostramos las lavadoras pendientes por vender si quedan
+        System.out.println();
+        if (indiceLavadoras.isEmpty()) 
+            System.out.println("No quedan lavadoras por vender\n");
+        else {
+            System.out.printf("Quedan %d lavadoras\n", indiceLavadoras.size());
+            for (Integer index : indiceLavadoras) {
+                Lavadora temp = (Lavadora)productos.get(index).getValue();
+                System.out.printf("%s %s %.1f kg %.1f €\n", 
+                    temp.getFabricante(), temp.getNumeroSerie(), temp.getCapacidad(), temp.getPrecio());
+    
+            }
+        }
+
+        // Mostramos los microondas pendientes por vender si quedan
+        System.out.println();
+        if (indiceMicroondas.isEmpty())
+            System.out.println("No quedan microondas por vender\n");
+        else {
+            System.out.printf("Quedan %d microondas\n", indiceMicroondas.size());
+            for (Integer index : indiceMicroondas) {
+                Microondas temp = (Microondas)productos.get(index).getValue();
+                System.out.printf("%s %s %.1f watts %.1f €\n", 
+                    temp.getFabricante(), temp.getNumeroSerie(), temp.getPotencia(), temp.getPrecio());
+    
+            }
+        } 
     }
 }
