@@ -122,9 +122,10 @@ public class Intervalo {
     public Intervalo interseccion(Intervalo other) {
         Intervalo resultado = null;
 
-        if (other.getCotaSuperior() >= this.getCotaInferior()) {
-            resultado = new Intervalo(this.getCotaInferior(), other.getCotaSuperior());
-        }
+        resultado = new Intervalo(
+                Math.max(this.getCotaInferior(), other.getCotaInferior()), 
+                Math.min(this.getCotaSuperior(), other.getCotaSuperior())
+            );
 
         return resultado;
     }
