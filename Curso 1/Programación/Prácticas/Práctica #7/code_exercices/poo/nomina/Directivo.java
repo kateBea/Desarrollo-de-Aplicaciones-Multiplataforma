@@ -2,7 +2,7 @@ package poo.nomina;
 
 import java.util.Random;
 
-public class Directivo extends Empleado implements Cobro {
+public class Directivo extends Empleado {
     // se usa para determinar el cumplimiento
     // de los objetivos de cada directivo con una probabilidad de 50 %
     private static final Random rand = new Random();
@@ -13,6 +13,10 @@ public class Directivo extends Empleado implements Cobro {
         super(dni, nombre, primerApellido, segundoApellido, diasAntiguedad);
 
         m_CumplimientoObjetivos = rand.nextInt(2) == 0 ? false : true;
+    }
+
+    public Directivo(Directivo other) {
+        this(other.getDni(), other.getNombre(), other.getPrimerApellido(), other.getSegundoApellido(), other.getDiasAntiguedad());
     }
     
     public double sueldo() {
@@ -32,5 +36,9 @@ public class Directivo extends Empleado implements Cobro {
 
     public boolean cumpleObjetivos() {
         return m_CumplimientoObjetivos;
+    }
+
+    public double plusCumplimiento() {
+        return (PLUS_POR_CUMPLIMIENTO / 100) * SUELDO_DIRECTIVO; 
     }
 }

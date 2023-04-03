@@ -1,11 +1,14 @@
 package poo.nomina;
 
-public class MozoAlmacen extends Empleado implements Cobro {
+public class MozoAlmacen extends Empleado {
 
     public MozoAlmacen(String dni, String nombre, String primerApellido, String segundoApellido, int diasAntiguedad) {
         super(dni, nombre, primerApellido, segundoApellido, diasAntiguedad);
     }
     
+    public MozoAlmacen(MozoAlmacen other) {
+        this(other.getDni(), other.getNombre(), other.getPrimerApellido(), other.getSegundoApellido(), other.getDiasAntiguedad());
+    }
     public double sueldo() {
         return SUELDO_MOZO_ALMACEN;
     }

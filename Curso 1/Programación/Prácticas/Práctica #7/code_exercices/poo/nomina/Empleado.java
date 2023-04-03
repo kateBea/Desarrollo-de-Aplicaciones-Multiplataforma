@@ -1,6 +1,6 @@
 package poo.nomina;
 
-public abstract class Empleado {
+public abstract class Empleado implements Cobro {
     private String m_Dni;
     private String m_Nombre;
     private String m_PrimerApellido;
@@ -16,6 +16,10 @@ public abstract class Empleado {
         m_DiasAntiguedad = diasAntiguedad < 0 ? 0 : diasAntiguedad;
     }
 
+    public Empleado(Empleado other) {
+        this(other.getDni(), other.getNombre(), other.getPrimerApellido(), other.getSegundoApellido(), other.getDiasAntiguedad());
+    }
+    
     public String getDni() {
         return m_Dni;
     }
@@ -61,6 +65,4 @@ public abstract class Empleado {
     }
     
     
-    
-
 }

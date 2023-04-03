@@ -1,11 +1,20 @@
 package poo.nomina;
 
-public class JefeSeccion extends Empleado implements Cobro {
+import java.util.Random;
+
+public class JefeSeccion extends Empleado{
+    private static final Random rand = new Random();
+
+    private int m_Ventas;
 
     public JefeSeccion(String dni, String nombre, String primerApellido, String segundoApellido, int diasAntiguedad) {
         super(dni, nombre, primerApellido, segundoApellido, diasAntiguedad);
+        m_Ventas = rand.nextInt(15, 44);
     }
     
+    public JefeSeccion(JefeSeccion other) {
+        this(other.getDni(), other.getNombre(), other.getPrimerApellido(), other.getSegundoApellido(), other.getDiasAntiguedad());
+    }
     public double sueldo() {
         return SUELDO_JEFE_SECCION;
     }
@@ -19,5 +28,13 @@ public class JefeSeccion extends Empleado implements Cobro {
         resultado = DIAS_POR_ANIO_TRABAJADO * antiguedadEnAnios * salarioDiario;
 
         return resultado;
+    }
+
+    public int getVentas() {
+        return m_Ventas;
+    }
+
+    public double plusComision() {
+        return (COMISION_JEFE_SECCION / 100) * getVentas();
     }
 }

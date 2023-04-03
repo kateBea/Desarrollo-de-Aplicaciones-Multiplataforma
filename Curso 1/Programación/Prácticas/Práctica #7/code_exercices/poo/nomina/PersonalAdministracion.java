@@ -1,12 +1,15 @@
 package poo.nomina;
 
-public class PersonalAdministracion extends Empleado implements Cobro {
+public class PersonalAdministracion extends Empleado {
 
     public PersonalAdministracion(String dni, String nombre, String primerApellido, String segundoApellido,
             int diasAntiguedad) {
         super(dni, nombre, primerApellido, segundoApellido, diasAntiguedad);
     }
     
+    public PersonalAdministracion(PersonalAdministracion other) {
+        this(other.getDni(), other.getNombre(), other.getPrimerApellido(), other.getSegundoApellido(), other.getDiasAntiguedad());
+    }
     public double sueldo() {
         return SUELDO_PERSONAL_ADMINISTRACION;
     }

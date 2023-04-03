@@ -26,6 +26,9 @@ public interface Cobro {
     final double COMISION_JEFE_SECCION = 12.0;
     final double COMISION_JEFE_PLANTA = 6.0;
 
+    // plus de cumplimiento de objetivos para directivos
+    final double PLUS_POR_CUMPLIMIENTO = 35.0;
+
     // dias de indemnización por año trabajado
     // factor necesario para calcular la indemnnización
     final int DIAS_POR_ANIO_TRABAJADO = 20;
