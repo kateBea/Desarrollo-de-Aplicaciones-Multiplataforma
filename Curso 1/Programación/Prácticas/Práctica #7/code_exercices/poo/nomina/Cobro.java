@@ -1,5 +1,11 @@
 package poo.nomina;
 
+/**
+ * Esta interfaz describe aspectos generales sobre objetos especializados 
+ * de la clas Empleado.  Define constantes y declara métodos.
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
 public interface Cobro {
     // Sueldo correspondiente a cada tipo de empleado
     final double SUELDO_MOZO_ALMACEN = 1200.0;

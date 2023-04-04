@@ -266,23 +266,39 @@ public class PracticaNominas {
             System.out.println("Error de excepción al leer el dni...");
         }
 
-        System.out.println();
-        System.out.print("Puesto [1.- Mozo, 2.- Jefe de sección, 3.- Jefe de Planta, 4.- Personal Administrativo, 5.- Directivo]: ");
-        try {
-            puesto = Integer.parseInt(reader.readLine());
-        } 
-        catch (NumberFormatException | IOException e) {
-            System.out.println("Error de excepción al leer el puesto...");
-        }
+        do {
+            System.out.println();
+            System.out.print("Puesto [1.- Mozo, 2.- Jefe de sección, 3.- Jefe de Planta, 4.- Personal Administrativo, 5.- Directivo]: ");
+            try {
+                puesto = Integer.parseInt(reader.readLine());
 
-        System.out.println();
-        System.out.print("Días de antigüedad: ");
-        try {
-            antiguedadEnDias = Integer.parseInt(reader.readLine());
-        } 
-        catch (NumberFormatException | IOException e) {
-            System.out.println("Error de excepción al leer los días de antigüedad...");
+                if (puesto < 1 || puesto > 5)
+                    System.out.println("Valor de puesto inválido");
+            } 
+            catch (NumberFormatException | IOException e) {
+                System.out.println("Error de excepción al leer el puesto...");
+            }
         }
+        while (puesto < 1 || puesto > 5);
+
+
+        do {
+            System.out.println();
+            System.out.print("Días de antigüedad: ");
+            try {
+                antiguedadEnDias = Integer.parseInt(reader.readLine());
+
+                if (antiguedadEnDias < 0)
+                    System.out.println("Valor de antiguedad en días debe ser positivo o 0");
+            } 
+            catch (NumberFormatException | IOException e) {
+                // para reiterar y volver a pedir los días
+                antiguedadEnDias = -1;
+                System.out.println("Error de excepción al leer los días de antigüedad...");
+            }
+        }
+        while (antiguedadEnDias < 0);
+
 
         switch (puesto) {
             case 1 -> empleado.setSecond(new MozoAlmacen(dni, nombreEmpleado, primerApellido, segundoApellido, antiguedadEnDias));
