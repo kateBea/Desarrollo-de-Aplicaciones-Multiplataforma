@@ -1,20 +1,6 @@
 package poo.hipodromo;
 
-import java.util.Comparator;
-
 public class Caballo {
-    public static class ComparadorCaballo implements Comparator<Integer>  {
-        public int compare(Integer first, Integer second) {
-            if (first < second)
-                return -1;
-
-            if (first == second)
-                return 0;
-
-            return 1;
-        }
-    }
-
     private String m_Nombre;
     private int m_Recorrido;
     private int m_Dorsal;

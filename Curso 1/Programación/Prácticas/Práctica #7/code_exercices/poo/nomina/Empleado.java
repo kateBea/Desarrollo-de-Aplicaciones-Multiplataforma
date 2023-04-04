@@ -16,12 +16,14 @@ public abstract class Empleado implements Cobro {
     private int m_DiasAntiguedad;
 
     /**
-     * 
-     * @param dni
-     * @param nombre
-     * @param primerApellido
-     * @param segundoApellido
-     * @param diasAntiguedad
+     * Inicializa este empleado con los datos
+     * que se pasa como parámetro. Si las referencias son
+     * nulas se marcan los respectivos atributos como desconocidos
+     * @param dni Dni para este Empleado
+     * @param nombre Nombre para este Empleado
+     * @param primerApellido Primer apellido para este Empleado
+     * @param segundoApellido Segundo apellido para este Empleado
+     * @param diasAntiguedad Días de antiguedad de este Empleado
      */
     public Empleado(String dni, String nombre, String primerApellido, String segundoApellido, int diasAntiguedad) {
         m_Dni = dni != null ? dni : "Unknown";
@@ -32,24 +34,26 @@ public abstract class Empleado implements Cobro {
     }
 
     /**
-     * 
-     * @param other
+     * Inicializa este empleado como copia del Empleado
+     * que se pasa por parámetro
+     * @param other Empleado a partir del cual se inicializa el parámetro implícito
      */
     public Empleado(Empleado other) {
         this(other.getDni(), other.getNombre(), other.getPrimerApellido(), other.getSegundoApellido(), other.getDiasAntiguedad());
     }
 
     /**
-     * 
-     * @return
+     * Retorna el DNI de este Empleado
+     * @return DNI de este Empleado
      */
     public String getDni() {
         return m_Dni;
     }
 
     /**
-     * 
-     * @param dni
+     * Cambia el DNI de este Empleado. Si el parámetro es
+     * nulo, esta función no tiene efectos
+     * @param dni nuevo DNI de este Empleado
      */
     public void setDni(String dni) {
         if (dni != null)
@@ -57,16 +61,17 @@ public abstract class Empleado implements Cobro {
     }
 
     /**
-     * 
-     * @return
+     * Retorna el nombre de este Empleado
+     * @return nombre de este empleado
      */
     public String getNombre() {
         return m_Nombre;
     }
     
     /**
-     * 
-     * @param nombre
+     * Cambia el nombre de este Empleado. Si el parámetro es
+     * nulo, esta función no tiene efectos
+     * @param nombre Nuevo nombre de este Empleado
      */
     public void setNombre(String nombre) {
         if (nombre != null)
@@ -74,16 +79,17 @@ public abstract class Empleado implements Cobro {
     }
 
     /**
-     * 
-     * @return
+     * Retorna el primer apellido de este Empleado
+     * @return Primer apellido de este Empleado
      */
     public String getPrimerApellido() {
         return m_PrimerApellido;
     }
 
     /**
-     * 
-     * @param primerApellido
+     * Cambia el primer apellido de este Empleado. Si el parámetro es
+     * nulo, esta función no tiene efectos
+     * @param primerApellido Nuevo primer apellido de este empleado
      */
     public void setPrimerApellido(String primerApellido) {
         if (primerApellido != null)
@@ -91,16 +97,17 @@ public abstract class Empleado implements Cobro {
     }
 
     /**
-     * 
-     * @return
+     * Retorna el segundo apellido de este Empleado
+     * @return Segundo apellido de este Empleado
      */
     public String getSegundoApellido() {
         return m_SegundoApellido;
     }
 
     /**
-     * 
-     * @param segundoApellido
+     * Cambia el segundo apellido de este Empleado. Si el parámetro es
+     * nulo, esta función no tiene efectos
+     * @param segundoApellido Nuevo segundo apellido de este Empleado
      */
     public void setSegundoApellido(String segundoApellido) {
         if (segundoApellido != null)
@@ -108,16 +115,17 @@ public abstract class Empleado implements Cobro {
     }
 
     /**
-     * 
-     * @return
+     * Retorna los días de antiguedad de este Empleado
+     * @return días de antiguedad de este Empleado
      */
     public int getDiasAntiguedad() {
         return m_DiasAntiguedad;
     }
 
     /**
-     * 
-     * @param diasAntiguedad
+     * Cambia los días de antiguedad de este Empleado. Si el valor
+     * es negativo, esta función no tiene efectos
+     * @param diasAntiguedad Nueva antiguedad de este Empleado
      */
     public void setDiasAntiguedad(int diasAntiguedad) {
         if (diasAntiguedad >= 0)

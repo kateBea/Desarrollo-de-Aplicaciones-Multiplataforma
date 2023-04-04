@@ -42,6 +42,15 @@ public interface Cobro {
     final int TOTAL_MESES_ANIO = 12;
     final int TOTAL_DIAS_ANIO = 365;
 
+    /**
+     * Retorna el sueldo que le corresponde a un tipo Empleado
+     * @return el sueldo
+     */
     double sueldo();
+
+    /**
+     * Retorna la indemnización que le corresponde a un tipo Empleado
+     * @return la indemnización
+     */
     double indemnizacion();
 }

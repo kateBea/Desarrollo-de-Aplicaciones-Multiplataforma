@@ -120,6 +120,7 @@ public class Intervalo {
     }
 
     public Intervalo interseccion(Intervalo other) {
+        // se aume que ambos intervalos se intersectan en el menos un punto
         Intervalo resultado = null;
 
         resultado = new Intervalo(
