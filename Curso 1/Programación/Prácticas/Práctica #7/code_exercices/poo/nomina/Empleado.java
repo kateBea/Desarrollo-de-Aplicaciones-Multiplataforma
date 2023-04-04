@@ -9,10 +9,15 @@ package poo.nomina;
  * @version 1.0
  */
 public abstract class Empleado implements Cobro {
+    // DNI de este Empleado
     private String m_Dni;
+    // Nombre de este Empleado
     private String m_Nombre;
+    // Primer apellido de este Empleado
     private String m_PrimerApellido;
+    // Segundo apellido de este Empleado
     private String m_SegundoApellido;
+    // Diás de antiguedad de este Empleado
     private int m_DiasAntiguedad;
 
     /**

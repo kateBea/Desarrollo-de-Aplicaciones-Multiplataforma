@@ -31,6 +31,11 @@ public class PracticaHipodromo {
         while (!caballos.isEmpty() && indiceGanador == -1) {
             System.out.println();
             mostrarRecorridoCaballos();
+
+            // si desues de mostrar los recorridos nos quedamos sin caballos
+            // entonces se han caído todos y acabamos la partida
+            if (caballos.isEmpty())
+                indiceGanador = -2;
             
             int index = 0; 
             int valorMaximo = 0;
@@ -57,12 +62,16 @@ public class PracticaHipodromo {
         }
 
         System.out.println("\nFIN DE LA CARRERA");
-        System.out.printf("\nEl ganador es %s con el dorsal %d\n", caballos.get(indiceGanador).getNombre(), caballos.get(indiceGanador).getDorsal());
-
-        if (apuesta == caballos.get(indiceGanador).getDorsal())
-            System.out.printf("\n¡Enorabuena, ha ganado su apuesta!\n", caballos.get(indiceGanador).getDorsal());
-        else 
-            System.out.printf("\nLo sentimos, no ha ganado su apuesta. Vuelva a intentarlo\n", caballos.get(indiceGanador).getDorsal());
+        if (indiceGanador == -2)
+            System.out.println("Se han caído todos los caballos :'(");
+        else {
+            System.out.printf("\nEl ganador es %s con el dorsal %d\n", caballos.get(indiceGanador).getNombre(), caballos.get(indiceGanador).getDorsal());
+    
+            if (apuesta == caballos.get(indiceGanador).getDorsal())
+                System.out.printf("\n¡Enorabuena, ha ganado su apuesta!\n", caballos.get(indiceGanador).getDorsal());
+            else 
+                System.out.printf("\nLo sentimos, no ha ganado su apuesta. Vuelva a intentarlo\n", caballos.get(indiceGanador).getDorsal());
+        }
     }
 
     public static void inicializarCaballos() {
@@ -107,10 +116,10 @@ public class PracticaHipodromo {
     }
 
     /*
-     * Retorna 0 con una probabilidad de 1/prob
+     * Retorna 0 con una probabilidad de (1 / prob)
      */
     public static int probabilidad(int prob) {
-        int[] array = new int[prob * caballos.size()];
+        int[] array = new int[prob];
 
         Arrays.fill(array, 1);
         array[rand.nextInt(array.length)] = 0;
