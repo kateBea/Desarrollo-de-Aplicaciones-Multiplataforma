@@ -8,8 +8,6 @@ import java.util.Random;
  * @version 1.0
  */
 public class Directivo extends Empleado {
-    // se usa para determinar el cumplimiento
-    // de los objetivos de cada directivo con una probabilidad de 50 %
     /*
      * Generador de números aleatorios que sirve
      * para determinar el cumplimiento  de los objetivos 
