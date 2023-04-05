@@ -180,20 +180,24 @@ public class PracticaNominas {
     
                     for (Pair<Integer, Empleado> item : empleados) {
                         if (item.getFirst() == indice) {
-                            if (indice == 5)
-                                // si es un directivo se muestra el plus de cumplimiento
-                                System.out.println("Plus cumplimiento de objetivos = " + ((Directivo)item.getSecond()).plusCumplimiento());
-    
-                            if (indice == 2)
-                                // mostrar comisiones si es jefe de sección
-                                System.out.println("Plus por comisiones de ventas: " + ((JefeSeccion)empleados.get(indice).getSecond()).plusComision());
-    
-                            if (indice == 3)
-                                // mostrar comisiones si es jefe de planta
-                                System.out.println("Plus por comisiones de ventas: " + ((JefePlanta)empleados.get(indice).getSecond()).plusComision());
-    
+                            switch (indice) {
+                                case 5 -> {
+                                    // si es un directivo se muestra el plus de cumplimiento
+                                    System.out.println("Plus cumplimiento de objetivos = " + ((Directivo)item.getSecond()).plusCumplimiento());
+                                }
+        
+                                case 2 -> {
+                                    // mostrar comisiones si es jefe de sección
+                                    System.out.println("Plus por comisiones de ventas: " + ((JefeSeccion)item.getSecond()).plusComision());
+                                }
+                                case 3 -> {
+                                    // mostrar comisiones si es jefe de planta
+                                    System.out.println("Plus por comisiones de ventas: " + ((JefePlanta)item.getSecond()).plusComision());
+                                }
+                            }
+
                             System.out.printf(
-                                "%s %s %s %s %.4 %d\n",
+                                "%s %s %s %s corresponde indemnización %.4f con %d días de antiguedad\n",
                                 item.getSecond().getNombre(),
                                 item.getSecond().getPrimerApellido(),
                                 item.getSecond().getSegundoApellido(),

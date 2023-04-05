@@ -74,6 +74,6 @@ public class JefePlanta extends Empleado {
      * @return Cuntía de plus por comisión
      */
     public double plusComision() {
-        return (COMISION_JEFE_PLANTA / 100) * getVentas();
+        return (COMISION_JEFE_PLANTA / 100 * sueldo()) * getVentas();
     }
 }
