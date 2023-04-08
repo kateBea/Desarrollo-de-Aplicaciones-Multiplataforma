@@ -22,14 +22,17 @@ public class PracticaAlquilerVehiculos {
 
 
     public static void main(String[] args) {
+        // índice de Empresa
         int seleccion;
+        // Cuent los días
         int contadorDias;
+        // Días de alquiler de tipo de Vehículo elegido
         int cantidadDeDias;
+        // Índice de tipo de Vehículo a alquilar
         int vehiculoAlquilado;
 
         // inicializar flota de vehículos
         // Se asume que sólo hay una agencia que alquila vehículos
-
         inicializarAlquileres();
         inicializarEmpresas();
 
