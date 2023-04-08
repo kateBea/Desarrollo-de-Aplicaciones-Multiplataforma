@@ -1,9 +1,9 @@
 package string_arrays;
 
 /*
- * Título: Juego del ahorcado
- * Algoritmo: El juego del ahorcado
- * Fecha: 17.11.2022
+ * Título: Palabra misteriosa
+ * Algoritmo: Descubrir palabra misteriosa
+ * Fecha: 26.03.2023
  * Autor: Hugo Pelayo
  */
 
@@ -13,17 +13,20 @@ package string_arrays;
 // adivinanza y te consume una parte
 
 import java.util.Random;
-import java.util.Scanner;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
 public class EjerPalabraMisteriosa  {
-    private static final Scanner lector = new Scanner(System.in);
+    private static final InputStreamReader input = new InputStreamReader(System.in);
+    private static final BufferedReader lector = new BufferedReader(input);
 
     public enum GameState {
         RUNNING,    // Iniciar una sesión el juego
         STOPPED,    // Acabar una sesión del juego
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         // declaración de variables
         int         eleUsuario;
         Random      randObject;
@@ -42,17 +45,19 @@ public class EjerPalabraMisteriosa  {
 
         // bucle principal
         do {
-            System.out.println("\n******* BIENVENIDO AL JUEGO DEL AHORCADO ******");
             System.out.println("Para continuar selecciona una de las siguientes opciones:");
             System.out.println("[1]. Dejar de jugar.");
             System.out.println("[2]. Empezar una nueva sesión de juego.");
 
             System.out.print("\nElección: ");
-            eleUsuario = lector.nextInt();
+            eleUsuario = Integer.parseInt(lector.readLine());
 
             switch (eleUsuario) {
                 case 1 -> estado = GameState.STOPPED;
                 case 2 -> estado = GameState.RUNNING;
+                default -> {
+                    System.out.println("Índice inválido...");
+                }
             }
 
             // Salto de línea para formatear salida
@@ -66,14 +71,11 @@ public class EjerPalabraMisteriosa  {
         }
         while(estado == GameState.RUNNING);
 
-        System.out.println("Finalizando juego y haciendo limpieza...");
-
-        // Limpieza
-        lector.close();
+        System.out.println("Finalizando juego...");
     }
 
     // Función que ejecuta una sesión de juego
-    public static void playGame(String palabraEscogida) throws InterruptedException {
+    public static void playGame(String palabraEscogida) throws InterruptedException, IOException {
         char[]  resultado;                  // - Array que gestiona las letras adivinadas
                                             // y no adivinadas por el usuario hasta el momento
         char[]  partes;                     // - Representación de las partes sacrificables del usuario
@@ -99,7 +101,7 @@ public class EjerPalabraMisteriosa  {
             // Pintamos el estado actual de las letras que estamos adivinando
             System.out.print("Estado actual de letras: ");
 
-            for (int index = 0; index < palabraEscogida.length(); ++index)
+            for (int index = 0; index < palabraEscogida.length(); ++index) {
                 // las letras acertadas estarán marcadas con un '*'
                 // las que no lo están son las que todavía se debe adivinar y
                 // por ello se imprimen en pantalla con un guion bajo
@@ -107,17 +109,15 @@ public class EjerPalabraMisteriosa  {
                     System.out.print("_ ");
                 else
                     System.out.print(palabraEscogida.charAt(index) + " ");
+            }
 
 
             System.out.print("\nIntroduce una letra: ");
-            letra = lector.nextLine().charAt(0);
+            letra = lector.readLine().charAt(0);
             indice = busquedaLineal(resultado, letra);
 
             if (indice == -1) {
                 contadorPartesRestantes--;
-                System.out.println("La has cagado LuL. Venga, inténtalo otra vez.");
-                System.out.println("Pero me quedo una parte de tí si no te importa... (:");
-
                 System.out.print("Partes consumidas: ");
                 for (int index = partes.length - 1; index >= contadorPartesRestantes; --index)
                     System.out.print("[" + partes[index] + "] ");

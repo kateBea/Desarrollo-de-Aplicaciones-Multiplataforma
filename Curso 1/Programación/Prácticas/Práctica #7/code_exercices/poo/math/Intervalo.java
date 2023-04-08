@@ -1,5 +1,7 @@
 package poo.math;
 
+// TODO: añadir Javadocs
+
 public class Intervalo {
     private double m_CotaInferior;
     private double m_CotaSuperior;
