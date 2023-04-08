@@ -3,6 +3,7 @@ package poo.agencia;
 import java.util.ArrayList;
 
 import poo.agencia.Vehiculo.VehiculoType;
+import poo.utils.MutableInteger;
 import poo.utils.Pair;
 
 /**
@@ -17,7 +18,7 @@ public class Empresa {
     private String m_Nombre;
     // Contiene el conjunto de Vehiculos alquilados de una empresa, cada elemento de la lista
     // representa (días de alquiler, (tipo de Vehículo, Vehículo))
-    ArrayList<Pair<Integer, Pair<VehiculoType, Vehiculo>>> m_Alquileres;
+    ArrayList<Pair<MutableInteger, Pair<VehiculoType, Vehiculo>>> m_Alquileres;
 
     /**
      * Incicializa esta Empresa con los valores que se pasan como 
@@ -100,7 +101,7 @@ public class Empresa {
      * @param item Contiene el Vehículo a ser alquilado por esta empresa por los días indicados
      */
     public void addAlquiler(Pair<Integer, Pair<VehiculoType, Vehiculo>> item) {
-        m_Alquileres.add(item);
+        m_Alquileres.add(new Pair<>(new MutableInteger(item.getFirst()), item.getSecond()));
     }
 
     /**
@@ -111,25 +112,21 @@ public class Empresa {
      * @return Lista de vehículos que ya no están en alquiler
      */
     public ArrayList<Pair<VehiculoType, Vehiculo>> disminuirDiasAlquilerTodos() {
-        // Lista que contendrá todos los Vehículo para los cuales este Empresa ha agota el tiempo de alquiler
+        // TODO: debug
+        // Lista que contendrá todos los Vehículo para los cuales este 
+        // Empresa ha agota el tiempo de alquiler
         ArrayList<Pair<VehiculoType, Vehiculo>> resultado = new ArrayList<>();
 
         for (int i = 0; i < m_Alquileres.size(); ++i) {
-            Integer dias;
-            Pair<Integer, Pair<VehiculoType, Vehiculo>> item;
+            MutableInteger diasRestantes = m_Alquileres.get(i).getFirst();
+            m_Alquileres.get(i).getFirst().setValue(diasRestantes.getValue() - 1);
 
-            dias = m_Alquileres.get(i).getFirst() - 1;
 
-            if (dias == 0) {
+            if (m_Alquileres.get(i).getFirst().getValue() == 0) {
                 resultado.add(m_Alquileres.get(i).getSecond());
                 // quitamos el alquiler de la lista 
                 // de alquileres de esta Empresa
                 m_Alquileres.remove(i);
-            }
-            else {
-                item = new Pair<>(dias - 1, m_Alquileres.get(i).getSecond());
-                m_Alquileres.remove(i);
-                m_Alquileres.add(i, item);
             }
         }
 
@@ -141,14 +138,23 @@ public class Empresa {
      * Muestra los alquileres de esta Empresa
      */
     public void mostrarAlquileres() {
-        for (Pair<Integer, Pair<VehiculoType, Vehiculo>> item : m_Alquileres) {
-            System.out.println(getNombre());
+        System.out.println(getNombre());
+        for (Pair<MutableInteger, Pair<VehiculoType, Vehiculo>> item : m_Alquileres) {
             System.out.printf(
                 "%s %s %s quedan %d días de alquiler\n",
                 item.getSecond().getSecond().getMarca(), 
                 item.getSecond().getSecond().getModelo(), 
                 item.getSecond().getSecond().getMatricula(),
-                item.getFirst());
+                item.getFirst().getValue());
         }
+    }
+
+    /**
+     * Retorna cierto si esta Empresa tiene alquileres,
+     * falso en caso contrario
+     * @return cierto si esta Empresa tiene alquileres
+     */
+    public boolean tieneAlquileres() {
+        return !m_Alquileres.isEmpty();
     }
 }

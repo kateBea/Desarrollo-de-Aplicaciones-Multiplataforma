@@ -47,7 +47,7 @@ public class PracticaAlquilerVehiculos {
                 ++contadorDias;
                 mostrarStock();
                 reducirDiasAlquiler();
-                
+
                 System.out.println("DIA " + (contadorDias));
             }
             else if (seleccion > 0) {
@@ -139,8 +139,11 @@ public class PracticaAlquilerVehiculos {
         System.out.println('\n');
         
         for (Empresa empresa : empresas) {
-            empresa.mostrarAlquileres();
-            System.out.println();
+            
+            if (empresa.tieneAlquileres()) {
+                empresa.mostrarAlquileres();
+                System.out.println();
+            }
         }
         
     }
@@ -240,9 +243,9 @@ public class PracticaAlquilerVehiculos {
     public static void inicializarEmpresas() {
         empresas = new ArrayList<>();
 
+        empresas.add(new Empresa("R-92872101", "Carrefour"));
         empresas.add(new Empresa("B-76345879", "IKEA"));
         empresas.add(new Empresa("C-00373762", "Media Markt"));
-        empresas.add(new Empresa("R-92872101", "Carrefour"));
         empresas.add(new Empresa("F-20834281", "Alcampo"));
         empresas.add(new Empresa("T-00283621", "KIABI"));
     }
