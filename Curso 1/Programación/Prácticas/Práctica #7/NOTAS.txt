@@ -1,0 +1,5 @@
+Algunos de los proyectos requieren de características disponibles 
+en el JDK 15 en adelanta de Java. VSCode en ocasiones cambia la version del 
+runtime a Java 11, en estos casos abría que cambiarlo manualmente a una versión posterior.
+Se recomienda tener por defecto la versión 17 del JDK para ejecutar todos los
+programas de este proyecto sin problemas.
