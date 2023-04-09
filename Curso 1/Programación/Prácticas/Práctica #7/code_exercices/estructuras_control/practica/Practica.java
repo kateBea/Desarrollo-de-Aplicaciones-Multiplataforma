@@ -136,6 +136,8 @@ public class Practica {
 
             System.out.println();
         }
+
+        System.out.println("\nTriángulo terminado");
     }
 
     /*
@@ -168,6 +170,7 @@ public class Practica {
             System.out.println("Valor entero no válido");
             result = 0;
         }
+
         return result;
     }
 }
