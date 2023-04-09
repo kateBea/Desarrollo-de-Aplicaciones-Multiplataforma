@@ -112,7 +112,6 @@ public class Empresa {
      * @return Lista de vehículos que ya no están en alquiler
      */
     public ArrayList<Pair<VehiculoType, Vehiculo>> disminuirDiasAlquilerTodos() {
-        // TODO: debug
         // Lista que contendrá todos los Vehículo para los cuales este 
         // Empresa ha agota el tiempo de alquiler
         ArrayList<Pair<VehiculoType, Vehiculo>> resultado = new ArrayList<>();

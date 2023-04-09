@@ -1,3 +1,11 @@
+/**
+ * Este fichero contiene la salida del programa del ejercicio 3 de la colección
+ * de ejercicios del fichero EjerciciosUT3_1.pdf
+ * 
+ * Creado por Hugo Pelayo
+ * 25 de marzo de 2023
+ */
+
 Introduce un número entero:
 Número introducido: 5
 Doble de 5 -> 10

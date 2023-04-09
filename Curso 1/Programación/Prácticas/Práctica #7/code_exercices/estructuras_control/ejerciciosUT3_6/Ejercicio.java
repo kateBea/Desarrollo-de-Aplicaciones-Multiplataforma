@@ -2,18 +2,23 @@ package estructuras_control.ejerciciosUT3_6;
 
 import java.util.Scanner;
 
+/**
+* Este programa piede un número binario del teclado y lo valida,
+* luego muestra el correspondiente valor decimal
+* 
+* Creado por Hugo Pelayo
+* 25 de marzo de 2023
+*/
 public class Ejercicio {
+    private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         String userInput;
         boolean correcto = false;
 
         do {
-            System.out.print("Entra valor binario: ");
-            userInput = sc.nextLine();
-            correcto = isValidBinary(userInput);
+            userInput = leerCadena("Entra valor binario: ");
 
-            if (!correcto)
+            if (!(correcto = isValidBinary(userInput)))
                 System.out.println("Valor binario incorrecto");
         }
         while (!correcto);
@@ -29,6 +34,10 @@ public class Ejercicio {
         sc.close();
     }
 
+    /*
+     * Retorna cierto si number es una cadena binaria válida,
+     * retorna falso en caso contrario
+     */
     public static boolean isValidBinary(String number) {
         boolean correcto = true;
         int index = 0;
@@ -41,4 +50,13 @@ public class Ejercicio {
 
         return correcto;
     } 
+
+    /*
+     * Lee una cadena de la entrada estándar mostrando primero
+     * el mensaje que se pasa como parámetro
+     */
+    public static String leerCadena(String promt) {
+        System.out.print(promt);
+        return sc.nextLine();
+    }
 }
