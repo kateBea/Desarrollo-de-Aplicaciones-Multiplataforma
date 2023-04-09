@@ -6,6 +6,11 @@ package poo.math;
  * @version 1.0
  */
 public class InvalidRangeException extends RuntimeException {
+    /**
+     * Contruye una nueva excepción con el mensaje que se pasa como
+     * parámetro como causa de excepción
+     * @param msg Causa de excepción
+     */
     public InvalidRangeException(String msg) {
         super(msg);
     }
