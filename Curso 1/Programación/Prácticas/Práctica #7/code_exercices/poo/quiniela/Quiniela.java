@@ -48,7 +48,7 @@ public class Quiniela {
      * El formato de cadena válido para un partido es
      * "Equipo1 - Equipo2" o "Equipo1 vs Equipo2"
      */
-    public static boolean esPartidoValido(String partido) {
+    private static boolean esPartidoValido(String partido) {
         return partido.split("-").length == 2 ||
         partido.split("vs").length == 2;
     }
@@ -372,7 +372,7 @@ public class Quiniela {
 
     /**
      * Retorna el número máximo de parejas de apuestas y partidos
-     * @return Máximos número de apuestas y partidos
+     * @return Máximo número de apuestas y partidos
      */
     public static int getMaxApuestasPartidos() {
         return NUMERO_PARTIDOS;

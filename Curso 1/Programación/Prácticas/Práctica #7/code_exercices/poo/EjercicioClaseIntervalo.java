@@ -46,7 +46,7 @@ public class EjercicioClaseIntervalo {
         System.out.println(" incluye punto " + "3.4"+ "? " + intervalo1.incluye(3.4));
 
         System.out.println();
-        System.out.println("Progamos intersecciones");
+        System.out.println("Probamos intersecciones");
         System.out.println("Intersección [-1, 3] y [1, 5]: " + 
             (new Intervalo(-1.0, 3.0).interseccion(new Intervalo(1.0, 5.0))).toString());
 
