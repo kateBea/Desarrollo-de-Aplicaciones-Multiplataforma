@@ -18,6 +18,7 @@ public class Ejercicio3 {
         for (int numero : array) {
             suma += numero;
         }
+        
         System.out.println("La suma es: " + suma);
 
         // Método 2

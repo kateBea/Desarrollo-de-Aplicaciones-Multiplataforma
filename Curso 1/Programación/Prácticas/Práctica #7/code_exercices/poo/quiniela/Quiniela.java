@@ -295,7 +295,6 @@ public class Quiniela {
             System.out.println("Debe leer partidos primero");
 
         apuestasLeidas = true;
-
     }
 
     /**
@@ -317,7 +316,7 @@ public class Quiniela {
      * @param partidos Nueva lista de partidos de esta Quiniela
      */
     public void copiarPartidos(String[] partidos) {
-        if (partidos.length == getMaxApuestasPartidos()) {
+        if (partidos.length >= getMaxApuestasPartidos()) {
             int indice = 0;
             for (String partido : partidos)
                 this.partido[indice++] = new String(partido);
@@ -345,7 +344,7 @@ public class Quiniela {
      * @param apuestas Nueva lista de apuestas de esta Quiniela
      */
     public void copiarApuestas(char[] apuestas) {
-        if (apuestas.length != getMaxApuestasPartidos()) {
+        if (apuestas.length >= getMaxApuestasPartidos()) {
             int indice = 0;
             for (char ch : apuestas) 
                 this.apuesta[indice++] = ch;
