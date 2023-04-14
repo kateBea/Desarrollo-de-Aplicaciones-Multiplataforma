@@ -18,6 +18,7 @@ public class Intervalo {
         return a.getCotaSuperior() < b.getCotaInferior() ||
             b.getCotaSuperior() < a.getCotaInferior();
     }
+    
     /**
      * Inicializa este Intervallo entre los valores pasados
      * como parámetro, ambos inclusos. Si "minimo" es inferior
