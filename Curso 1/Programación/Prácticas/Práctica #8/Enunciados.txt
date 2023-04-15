@@ -1,0 +1,55 @@
+1. Ejercicio1.java
+
+Crear un fichero "ejercicio01.txt" que contenga la fecha y hora actual 
+en el mismo directorio donde esté Ejercicio1.java. 
+
+
+2. Ejercicio2.java
+
+Crear un fichero "ejercicio02.txt" que contenga la fecha y hora actual 
+en un directorio  'txt' (no existe previamente)
+
+
+3. Ejercicio3.java
+
+Preguntar al usuario el nombre del directorio y del fichero que se desea 
+crear. A continuación, se creará dicho fichero en un nuevo directorio con 
+el nombre indicado (en el mismo lugar que se ejecuta Ejercicio3.java) 
+El contenido del fichero será la fecha y hora actual.
+
+
+4. Ejercicio4.java
+
+Modificar el ejercicio anterior para que sirva para un nuevo 
+path /nuevo_directorio/nuevodirectorio2...
+
+
+5. Ejercicio5.java
+
+Listar el contenido del directorio 'txt'
+
+
+6. Ejercicio6
+
+Partiendo del ejercicio anterior, donde se listan todos los ficheros 
+de la carpeta 'txt' ... se preguntará al usuario qué fichero desea 
+eliminar. Una vez indicado se eliminará.
+
+
+
+7- Ejercicio FicheroProducto.java
+
+Realizar una aplicación que tomará como entrada un fichero de texto 
+de un listado de productos, cada una de sus líneas representa un 
+producto donde el último dato es el precio sin IVA, y producirá como 
+salida otro fichero idéntico pero con los precios con IVA. 
+
+ 
+
+Ejemplo de línea de producto:
+
+ 
+Portátil Asus; Intel i5 4200U; 8Gb RAM; 500GB; nVidia GeForce 740M; 15.6 Panorámico; 800;
+
+ 
+Nota: Para la lectura de los distintos campos de los productos se recomienda la utilización de la clase StringTokenizer o el método split de la clase String.
