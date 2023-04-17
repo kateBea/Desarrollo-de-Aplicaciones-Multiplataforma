@@ -21,6 +21,7 @@ public class Ejercicio4 {
                 System.out.println("El número es múltiplo de 5");
         }
         
+        sc.close();
     }
 
     /***

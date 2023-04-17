@@ -16,5 +16,6 @@ public class Ejercicio5 {
         }
         while(n != muestra++);
 
+        sc.close();
     }
 }

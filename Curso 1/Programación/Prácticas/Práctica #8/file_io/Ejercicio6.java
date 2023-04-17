@@ -1,6 +1,6 @@
 package file_io;
 
-public class Ejercicio1 {
+public class Ejercicio6 {
     public static void main(String[] args) {
         
     }

@@ -8,6 +8,8 @@ public class Ejercicio1 {
         System.out.print("Entra número: ");
         long num = sc.nextInt();
         System.out.println("Factorial de " + num + " es " + factorial(num));
+
+        sc.close();
     }
 
     public static long factorial(long num) {

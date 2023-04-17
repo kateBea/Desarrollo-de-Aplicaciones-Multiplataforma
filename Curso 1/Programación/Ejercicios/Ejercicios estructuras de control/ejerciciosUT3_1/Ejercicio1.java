@@ -15,5 +15,7 @@ public class Ejercicio1 {
         b = sc.nextInt();
 
         System.out.println("Result: " + (a > b ? (a - b) : (b - a)));
+
+        sc.close();
     }   
 }
