@@ -44,12 +44,44 @@ de un listado de productos, cada una de sus líneas representa un
 producto donde el último dato es el precio sin IVA, y producirá como 
 salida otro fichero idéntico pero con los precios con IVA. 
 
- 
-
 Ejemplo de línea de producto:
 
- 
 Portátil Asus; Intel i5 4200U; 8Gb RAM; 500GB; nVidia GeForce 740M; 15.6 Panorámico; 800;
 
- 
-Nota: Para la lectura de los distintos campos de los productos se recomienda la utilización de la clase StringTokenizer o el método split de la clase String.
+Nota: Para la lectura de los distintos campos de los productos se recomienda la utilización de 
+la clase StringTokenizer o el método split de la clase String.
+
+
+
+
+Ejercicios de la unidad:
+
+Ejercicio 1:
+
+Escribir un programa que pida una palabra y un entero n y vaya rotando el carácter inicial de la 
+palabra, al final de la misma, tantas veces como indique n. (Por ejemplo, “monja”,3 debe devolver “jamon” y “monja”;5 “monja”).
+
+
+Ejercicio 2:
+
+Escribir un programa que genere 50 números enteros aleatorios entre el 97 y el 122 que 
+representarán las letras del alfabeto (exceptuando la ñ), los almacene en un array de caracteres, 
+y cuente cuantas vocales se han generado. Nota: para pasar del código entero a carácter 
+se utiliza: char  c = (char) numero;
+
+
+Ejercicio 3:
+
+Escribir un programa que solicite una cadena y una letra y nos devuelva las posiciones que 
+ocupa esa letra en la cadena.
+
+
+Ejercicio 4 Primitiva:
+
+Escribir un programa que simule el juego de la Primitiva.
+
+Un método jugar se encargará de pedir al usuario seis enteros entre el 1 y el 49 sin repetición 
+y los devolverá en un array, otro módulo (método sortear) generará un array de seis enteros al 
+azar entre el 1 y el 49 sin repetición y por último el método comprobar dirá el número de aciertos.
+
+Además hay que escribir un método auxiliar imprimir que permita imprimir los arrays de las combinaciones.
