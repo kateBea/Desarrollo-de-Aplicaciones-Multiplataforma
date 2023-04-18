@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio de pseudo-clases</title>
+        <style>
+            ul {
+                list-style-type: disc;
+            }
+
+            li:first-child, li:nth-child(5) {
+                color: blue;
+            }
+
+            li {
+                font-size: 1rem; /* Set the base font size */
+            }
+
+            li:first-child {
+                font-size: 1.2rem;
+            }
+
+            li:nth-child(2) {
+                font-size: 1.4rem;
+            }
+
+            li:nth-child(3) {
+                font-size: 1.6rem;
+            }
+
+            li:nth-child(4) {
+                font-size: 1.8rem;
+            }
+
+            li:last-child {
+                font-size: 2.0rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul>
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+            <li>Cuarto</li>
+            <li>Quinto</li>
+        </ul>
+    </body>
+</html>

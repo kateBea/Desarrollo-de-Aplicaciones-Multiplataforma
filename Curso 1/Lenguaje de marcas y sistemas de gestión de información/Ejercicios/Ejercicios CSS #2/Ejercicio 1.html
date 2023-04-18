@@ -4,11 +4,15 @@
         <meta charset="utf-8">
         <title></title>
         <style>
-            .azul {
+            * {
+                font-family: Arial;
+            }
+
+            body p {
                 color: blue;
             }
 
-            .rojo {
+            body p + p {
                 color: red;
             }
 
@@ -19,6 +23,8 @@
         </style>
     </head>
 
-    <p class="azul">Soy Azul</p>
-    <p class="rojo">Soy Rojo</p>
+    <body>
+        <p><b>Soy Azul</b></p>
+        <p><b>Soy Rojo</b></p>
+    </body>
 </html>

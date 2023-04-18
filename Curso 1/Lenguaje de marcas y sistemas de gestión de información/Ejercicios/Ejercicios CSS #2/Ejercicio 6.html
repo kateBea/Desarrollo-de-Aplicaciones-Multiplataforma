@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio de pseudo-clases</title>
+        <style>
+            /* AUTOINCREMENTAR EL TAMAÑO DE LAS LETRAS SIN PONERLO MANUALMENTE PARA CADA LIST ITEM*/
+            ul {
+                list-style-type: none;
+
+                /* Initializa el contador a 1*/
+                counter-reset: my-counter;
+            }
+
+            li {
+                /* Auto incrementa la fuente basado en el contador*/
+                font-size: calc(1rem + calc(0.2rem * (counter(my-counter) - 1)));
+            }
+
+            li:before {
+                counter-increment: my-counter;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul>
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+            <li>Cuarto</li>
+            <li>Quinto</li>
+        </ul>
+    </body>
+</html>

@@ -6,50 +6,50 @@
     <title>Ejercicio de selectores</title>
     <style>
         /* También se podría haber hecho con clases o ids */
-        #fila1 {
+        tr:first-child {
             color: teal;
         }
 
-        #fila2 {
+        tr:nth-child(2) {
             color: red;
         }
 
-        #fila3 {
+        tr:nth-child(3) {
             color: blue;
         }
 
-        #fila4 {
+        tr:nth-child(4) {
             color: orange;
         }
 
-        #fila5 {
+        tr:nth-child(5) {
             color: purple;
         }
 
-        #fila6 {
+        tr:nth-child(6) {
             color: olive;
         }
 
-        #fila7 {
+        tr:nth-child(7) {
             color: fuchsia;
         }
 
-        #fila8 {
+        tr:last-child {
             color: green;
         }
 
         /* Segunda columna */
-        td+td {
+        td + td {
             background-color: red;
         }
 
         /* Tercera columna */
-        td+td+td {
+        td + td + td {
             background-color: green;
         }
 
         /* Cuarta columna */
-        td+td+td+td {
+        td + td + td + td {
             background-color: blue;
         }
     </style>
@@ -57,49 +57,49 @@
 
 <body>
     <table border="1">
-        <tr id="fila1">
+        <tr>
             <td>teal</td>
             <td>teal</td>
             <td>teal</td>
             <td>teal</td>
         </tr>
-        <tr id="fila2">
+        <tr>
             <td>red</td>
             <td>red</td>
             <td>red</td>
             <td>red</td>
         </tr>
-        <tr id="fila3">
+        <tr>
             <td>blue</td>
             <td>blue</td>
             <td>blue</td>
             <td>blue</td>
         </tr>
-        <tr id="fila4">
+        <tr>
             <td>orange</td>
             <td>orange</td>
             <td>orange</td>
             <td>orange</td>
         </tr>
-        <tr id="fila5">
+        <tr>
             <td>purple</td>
             <td>purple</td>
             <td>purple</td>
             <td>purple</td>
         </tr>
-        <tr id="fila6">
+        <tr>
             <td>olive</td>
             <td>olive</td>
             <td>olive</td>
             <td>olive</td>
         </tr>
-        <tr id="fila7">
+        <tr>
             <td>fuchsia</td>
             <td>fuchsia</td>
             <td>fuchsia</td>
             <td>fuchsia</td>
         </tr>
-        <tr id="fila8">
+        <tr>
             <td>green</td>
             <td>green</td>
             <td>green</td>
