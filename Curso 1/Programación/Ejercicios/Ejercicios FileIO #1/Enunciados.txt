@@ -1,0 +1,47 @@
+Crea una carpeta "src_exercises_files" donde crearás los siguientes ejercicios, organizados en paquetes.
+
+1) 
+
+Crear un programa en Java exercise01.java que esté dentro del paquete writing_files
+  Preguntar al usuario por consola que escriba líneas y las almacene en un fichero "writing_files/file01.txt"
+
+  Si el fichero ya existiera las añade
+  Cuando el usuario pulse no escriba ninguna línea, el programa acabará
+
+2) 
+Crea un programa en Java exercise01.java dentro del paquete "reading_files"
+  Se deberá consultar al usuario por consola el nombre del fichero que desea leer
+  A continuación, se mostrará el contenido del mismo
+  Nota: usar Scanner para leer el nombre del fichero y las clases FileReader, BufferReader para leer fichero
+
+3)
+Crea un paquete "loggerapp" que contendrá:
+- una clase Logger, con un método estático Write, que agregará un texto determinado a un archivo: Logger.Write("myLog.txt", 
+"Este texto se está registrando"); También debe incluir la fecha y hora actual antes del texto (en la misma línea), 
+para que el archivo de registro sea más fácil de analizar.
+
+- un TestLogger con una función main que pruebe el método de la clase Looger
+
+4)
+Crea un paquete "cuenta_letras" y dentro  un programa en Java que cuente las letras en un determinado fichero
+  Para ello, se pide por consola el nombre del fichero y la letra que se desea contar
+  Nota: usa Scanner para leer la letra y el nombre del fichero
+
+5) 
+Crea un paquete "replace" y dentro 
+Crea un programa en Java para reemplazar palabras en un fichero de texto,
+guardando el resultado en nuevo fichero de texto
+Para ello, se deberá crear un método ReplaceTextFile que reciba tres parámetros:
+-el archivo
+-la palabra a buscar
+-la nueva palabra con la que se reemplaza la palabra buscada
+El resultado se guardará en file_out.txt
+
+6)
+Crea un paquete "reverse"
+Crea un programa en Java que invierta el contenido de un fichero de texto.
+  Para ello, se deberá crear un fichero con el mismo nombre seguido del texto 'reverse'
+  con las mismas líneas que el fichero original pero la 1ª lína será la última,
+  la 2ª línea será la penúltima... la última línea será la 1ª
+  Nota:  leer los archivos fuente dos veces: la primera vez para contar la cantidad
+  de líneas en el archivo y la segunda vez para almacenarlas en una matriz

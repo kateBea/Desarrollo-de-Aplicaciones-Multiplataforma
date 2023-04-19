@@ -11,23 +11,23 @@ Código base:
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>Ejercicio sobre enlaces</title>
-</head>
-<body>
-<h1>Instituto Valle Inclán</h1>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ejercicio sobre enlaces</title>
+    </head>
+    <body>
+        <h1>Instituto Valle Inclán</h1>
 
-<ul>
-<li><a href="XXX">Avisos y novedades</a></li>
-<li><a href="XXX">Secretaría</a></li>
-<li><a href="XXX">Nuestro centro</a></li>
-<li><a href="XXX">Quiénes somos</a></li>
-<li><a href="XXX">Enseñanzas</a></li>
-<li><a href="XXX">Programa Accede</a></li>
-<li><a href="XXX">Libros de texto curso 2022-2023</a></li>
-<li><a href="XXX">Erasmus+</a></li>
-<li><a href="XXX">EVAU Curso 21-22</a></li>
-</ul>
-</body>
+        <ul>
+            <li><a href="XXX">Avisos y novedades</a></li>
+            <li><a href="XXX">Secretaría</a></li>
+            <li><a href="XXX">Nuestro centro</a></li>
+            <li><a href="XXX">Quiénes somos</a></li>
+            <li><a href="XXX">Enseñanzas</a></li>
+            <li><a href="XXX">Programa Accede</a></li>
+            <li><a href="XXX">Libros de texto curso 2022-2023</a></li>
+            <li><a href="XXX">Erasmus+</a></li>
+            <li><a href="XXX">EVAU Curso 21-22</a></li>
+        </ul>
+    </body>
 </html>

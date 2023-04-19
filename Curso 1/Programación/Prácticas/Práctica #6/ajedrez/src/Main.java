@@ -153,15 +153,12 @@ public class Main {
     public static void trazarRectaVertical(int fila, int columna) {
         // Rango fila [1, 8]
         // Rango columna [1, 8]
-
-        for (int i = 0; i < DIMENSION; ++i)
-            tablero[fila - 1][i] = '*';
+        Arrays.fill(tablero[fila - 1], '*');
     }
 
     public static void trazarRectaHorizontal(int fila, int columna) {
         // Rango fila [1, 8]
         // Rango columna [1, 8]
-
         for (int i = 0; i < DIMENSION; ++i)
             tablero[i][columna - 1] = '*';
     }
