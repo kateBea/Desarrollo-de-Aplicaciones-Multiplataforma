@@ -32,11 +32,11 @@ public class EjerPalabraMisteriosa  {
         Random      randObject;
         GameState   estado;
         String    juegoPalabras = 
-            "golondrina  avetoro  codorniz  garcilla  alcotan  abubilla" +
-            "perdiz  abejaruco  vencejo  gavilan  papamoscas  petirrojo" + 
-            "colirrojo  pechiazul lavandera mosquitero milano aguila roquero" + 
-            "estornino treparriscos halcon buitre canastera  picapinos  gorrion" +
-            "verderon  verdecillo  buitron  bigotudo";
+            "golondrina avetoro codorniz garcilla alcotan abubilla " +
+            "perdiz abejaruco vencejo gavilan papamoscas petirrojo " + 
+            "colirrojo pechiazul lavandera mosquitero milano aguila roquero " + 
+            "estornino treparriscos halcon buitre canastera picapinos gorrion " +
+            "verderon verdecillo buitron bigotudo";
         
         String[] palabras = juegoPalabras.split(" ");
 
@@ -79,16 +79,14 @@ public class EjerPalabraMisteriosa  {
     public static void playGame(String palabraEscogida) throws InterruptedException, IOException {
         char[]  resultado;                  // - Array que gestiona las letras adivinadas
                                             // y no adivinadas por el usuario hasta el momento
-        char[]  partes;                     // - Representación de las partes sacrificables del usuario
         char    letra;                      // - Carácter que se lee del usuario
         boolean descubierto;                // - Flag que indica si el usuario ha acertado todas las letras
         int     letrasAdivinadas;           // - Contador que indica el número de letras adivinadas actualmente
         int     indice;                     // - Variable temporal que guarda el índice al array resultado del carácter que ha entrado el usuario
         int     contadorPartesRestantes;    // - Contador que indica cuantas partes más puede sacrificar el usuario en caso de fallo
-
+        final int MAX_INTENTOS = 10;
         // Setup del bucle del juego
-        partes                  = new char[]{ 'º', '>', '<', '|', '\\', '/' };
-        contadorPartesRestantes = partes.length;
+        contadorPartesRestantes = MAX_INTENTOS;
         resultado               = palabraEscogida.toCharArray();
         descubierto             = false;
         letrasAdivinadas        = 0;
@@ -99,9 +97,6 @@ public class EjerPalabraMisteriosa  {
         System.out.println();
 
         do {
-            // Pintamos el estado actual de las letras que estamos adivinando
-            System.out.print("Estado actual de letras: ");
-
             for (int index = 0; index < palabraEscogida.length(); ++index) {
                 // las letras acertadas estarán marcadas con un '*'
                 // las que no lo están son las que todavía se debe adivinar y
@@ -113,17 +108,14 @@ public class EjerPalabraMisteriosa  {
             }
 
 
-            System.out.print("\nIntroduce una letra: ");
+            System.out.print("\n\nIntroduce una letra: ");
             letra = lector.readLine().charAt(0);
             indice = busquedaLineal(resultado, letra);
 
             if (indice == -1) {
                 contadorPartesRestantes--;
-                System.out.print("Partes consumidas: ");
-                for (int index = partes.length - 1; index >= contadorPartesRestantes; --index)
-                    System.out.print("[" + partes[index] + "] ");
-
-                System.out.println();
+                System.out.print("\nIntentos hechos: " + (MAX_INTENTOS - contadorPartesRestantes));
+                System.out.print("\nIntentos restantes: " + contadorPartesRestantes + '\n');
             }
             else {
                 ++letrasAdivinadas;
@@ -140,11 +132,11 @@ public class EjerPalabraMisteriosa  {
         while (contadorPartesRestantes > 0 && !descubierto);
 
         if (descubierto)
-            System.out.println("¡Felicidades! Has descubierto la palabra secreta (:");
+            System.out.println("ENORABUENA! Has acertado con" + (MAX_INTENTOS - contadorPartesRestantes) + " intentos");
         else
             System.out.println("Has fracasado... ):");
 
-        System.out.println("La palabra era: " + palabraEscogida);
+        System.out.println("La palabra misteriosa era era: " + palabraEscogida);
     }
 
     // Función que busca una letra en un array de caracteres
