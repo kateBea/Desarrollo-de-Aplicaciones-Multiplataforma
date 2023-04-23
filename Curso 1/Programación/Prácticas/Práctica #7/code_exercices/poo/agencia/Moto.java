@@ -1,5 +1,10 @@
 package poo.agencia;
 
+/**
+ * Representa una Moto
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
 public class Moto extends Vehiculo {
     // Indica si esta moto tiene maletín portacasco
     // en cuyo caso es cierto, en caso contrario es falso

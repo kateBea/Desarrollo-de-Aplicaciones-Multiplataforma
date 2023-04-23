@@ -89,6 +89,7 @@ public class Empresa {
     * días es negativo o la referencia es nula esta función no tiene efecto
     * @param dias Número de días del alquiler
     * @param vehiculo Vehículo a añadir a la lista de alquileres
+    * @param tipo Representa el tipo de Vehiculo
     */
     public void addAlquiler(int dias, Vehiculo vehiculo, VehiculoType tipo) {
         addAlquiler(new Pair<>(dias, new Pair<>(tipo, vehiculo)));
@@ -108,7 +109,6 @@ public class Empresa {
      * Disminuye los días que le quedan de alquiler a los coches 
      * que tiene alquilados esta Empresa. Se duevlve una lista conteniendo
      * todos los vehículos para los cuales esta Empresa ha agotado el alquiler 
-     * @param dias Número de días de alquiler que restar
      * @return Lista de vehículos que ya no están en alquiler
      */
     public ArrayList<Pair<VehiculoType, Vehiculo>> disminuirDiasAlquilerTodos() {

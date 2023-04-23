@@ -1,5 +1,10 @@
 package poo.agencia;
 
+/**
+ * Representa una Furgoneta
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
 public class Furgoneta extends Vehiculo {
     // Capacidad interior de esta Furgoneta en litros
     private double m_Capacidad;

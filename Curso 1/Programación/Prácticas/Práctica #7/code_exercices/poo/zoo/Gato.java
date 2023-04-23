@@ -12,9 +12,21 @@ public class Gato extends Animal {
      * Representa un tipo de pelaje de un Gato
      */
     public static enum PelajeType {
+        /**
+         * Pelaje corto de Gato
+         */
         CORTO,
+        /**
+         * Pelaje Mediano de Gato
+         */
         MEDIANO,
+        /**
+         * Pelaje Largo de Gato
+         */
         LARGO,
+        /**
+         * Pelaje Desconocido de Gato
+         */
         DESCONOCIDO,
     }
 

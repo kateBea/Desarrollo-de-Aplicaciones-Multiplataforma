@@ -38,7 +38,7 @@ public abstract class Animal {
     /**
      * Inicializa este animal como copia del que se pasa
      * como parámetro
-     * @param other
+     * @param other Otro Animal a partir del cual se inicializa este
      */
     public Animal(Animal other) {
         this(other.getNombre(), other.getEdad());
@@ -86,7 +86,7 @@ public abstract class Animal {
      * Cambia la edad de este Animal por la que
      * se pasa como parámetro, si la edad es negativa
      * esta función no tiene efecto
-     * @param edad
+     * @param edad Nueva edad para este Animal
      */
     public void setEdad(int edad) {
         if (edad >= 0) 

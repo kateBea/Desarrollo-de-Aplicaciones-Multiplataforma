@@ -1,5 +1,10 @@
 package poo.electrodomesticos;
 
+/**
+ * Representa un Producto genérico
+ * @author Hugo Pelayo
+ * @version 1.0
+ */
 public abstract class Producto {
     private String m_Fabricante;
     private String m_NumeroSerie;

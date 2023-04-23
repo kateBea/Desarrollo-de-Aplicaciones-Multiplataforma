@@ -48,7 +48,7 @@ public class Intervalo {
      * Si la cota superior es negativa, se lanza una excepción
      * por rango inválido
      * @param maximo Cota superior para este Intervalo
-     * @throws InvalidRangeException
+     * @throws InvalidRangeException Rango inválido
      */
     public Intervalo(double maximo) {
         if (maximo < .0)

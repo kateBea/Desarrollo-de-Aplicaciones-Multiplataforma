@@ -36,7 +36,7 @@ public class Televisor extends Producto {
      * Cambia las pulgadas de este Televisor por las que se pasan 
      * como parámetro, si el valor es negativo esta función no 
      * tiene efectos
-     * @param potencia Nuevo valor de pulgadas para este Televisor
+     * @param pulgadas Nuevo valor de pulgadas para este Televisor
      */
     public void setPulgadas(float pulgadas) {
         if (!(pulgadas < 0.0))

@@ -6,12 +6,21 @@ package poo.agencia;
  * @version 1.0
  */
 public abstract class Vehiculo {
-    /*
+    /**
      * Describe un tipo de Vehículo
      */
     public static enum VehiculoType {
+        /**
+         * Vehícula de tipo Coche
+         */
         COCHE, 
+        /**
+         * Vehícula de tipo Furgoneta
+         */
         FURGONETA,
+        /**
+         * Vehícula de tipo Moto
+         */
         MOTO,
     }
 
