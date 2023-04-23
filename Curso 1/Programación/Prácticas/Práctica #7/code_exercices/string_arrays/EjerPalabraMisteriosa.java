@@ -31,13 +31,14 @@ public class EjerPalabraMisteriosa  {
         int         eleUsuario;
         Random      randObject;
         GameState   estado;
-        String[]    juegoPalabras = {
-
-                "almendra", "cataclismo", "hibernar", "aniquilar",
-                "torbellino", "memoria", "unidad", "controlador",
-                "terremoto", "reluciente", "aleatorio", "personaje",
-                "anime", "caracteres", "lectura", "problema",
-        };
+        String    juegoPalabras = 
+            "golondrina  avetoro  codorniz  garcilla  alcotan  abubilla" +
+            "perdiz  abejaruco  vencejo  gavilan  papamoscas  petirrojo" + 
+            "colirrojo  pechiazul lavandera mosquitero milano aguila roquero" + 
+            "estornino treparriscos halcon buitre canastera  picapinos  gorrion" +
+            "verderon  verdecillo  buitron  bigotudo";
+        
+        String[] palabras = juegoPalabras.split(" ");
 
         // Setup del bucle principal del juego
         randObject  = new Random();
@@ -66,7 +67,7 @@ public class EjerPalabraMisteriosa  {
             if (estado == GameState.RUNNING) {
                 // empieza una nueva sesión de juego con una
                 // palabra aleatoria del juego de palabras
-                playGame(juegoPalabras[randObject.nextInt(0, juegoPalabras.length)]);
+                playGame(palabras[randObject.nextInt(0, palabras.length)]);
             }
         }
         while(estado == GameState.RUNNING);
