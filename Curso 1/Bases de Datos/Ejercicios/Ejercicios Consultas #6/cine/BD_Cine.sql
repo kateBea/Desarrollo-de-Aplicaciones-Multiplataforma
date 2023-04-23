@@ -38,58 +38,75 @@ INSERT INTO salas (id_sala, nombre, id_pelicula) VALUES (5, 'Sala 1b', 5);
 INSERT INTO salas (id_sala, nombre, id_pelicula) VALUES (6, 'Sala 2b', 6);
 
 -- 3.  Mostrar las distintas calificaciones de edad que existen.
-
+SELECT DISTINCT edad_minima AS 'Calificaciones de edad' 
+FROM Peliculas;
 
 
 -- 4.  Mostrar todas las películas que no han sido calificadas.
-
+SELECT * 
+FROM Peliculas 
+WHERE edad_minima IS NULL;
 
 -- 5.  Mostrar la información de todas las películas 
 -- cuya calificación de edad es menor que 13.
-
+SELECT * 
+FROM Peliculas 
+WHERE edad_minima < 13;
 
 
 -- 6.  Mostrar la información de todas las películas
 -- cuya calificación de edad esté comprendida entre 7 y 13, ambos inclusive.
 
-/*con AND */
+/* con AND */
+SELECT * 
+FROM Peliculas 
+WHERE edad_minima >= 7 AND edad_minima <= 13;
 
-
-/*con BETWEEN */
-
+/* con BETWEEN */
+SELECT * 
+FROM Peliculas 
+WHERE edad_minima BETWEEN 7 AND 13;
 
 -- 7.  Mostrar la calificación de edad más alta de todas las películas.
-
+SELECT MAX(edad_minima) AS 'Calificación máxima'
+FROM Peliculas;
 
 
 -- 8.  Mostrar la media de calificación de edad de todas las películas.
-
+SELECT AVG(edad_minima) AS 'Media calificación'
+FROM Peliculas;
 
 
 -- 9.  Mostrar la información de todas las salas y, 
 -- si se proyecta alguna película en la sala, 
 -- mostrar también la información de la película.
-
+SELECT * 
+FROM salas LEFT JOIN Peliculas ON salas.id_pelicula = Peliculas.id_pelicula;
 
 
 -- 10.  Mostrar la información de todas las películas y, 
 -- si se proyecta en alguna sala, mostrar también la información de la sala.
-
+SELECT * 
+FROM salas RIGHT JOIN Peliculas ON salas.id_pelicula = Peliculas.id_pelicula;
 
 
 -- 11.  Mostrar los nombres de las películas que no se proyectan en ninguna sala. 
 
 /* Con JOIN */
-
+SELECT peliculas.nombre 
+FROM Peliculas LEFT JOIN Salas ON salas.id_pelicula = Peliculas.id_pelicula
+WHERE id_sala IS NULL;
 
 /* Con Subconsulta */
-
+SELECT peliculas.nombre 
+FROM Peliculas
+WHERE id_pelicula NOT IN (SELECT id_pelicula FROM salas WHERE id_pelicula IS NOT NULL);
 
 -- 12.  Mostrar la información de todas las películas, 
 -- incluyendo el número de salas en las que se proyecta.
-
-
-
+SELECT peliculas.*, COUNT(salas.id_pelicula) AS 'Número de salas' 
+FROM salas INNER JOIN (SELECT salas.id_pelicula, COUNT(*) FROM Salas WHERE salas.id_pelicula IS NOT NULL GROUP BY salas.id_pelicula) AS Valor
+GROUP BY salas.id_pelicula;
 -- 13.  Mostrar la información de las salas que proyecten películas 
 -- ordenando el listado por la calificación de edad de mayor a menor.
 
