@@ -3,3 +3,65 @@ en el JDK 15 en adelanta de Java. VSCode en ocasiones cambia la version del
 runtime a Java 11, en estos casos abría que cambiarlo manualmente a una versión posterior.
 Se recomienda tener por defecto la versión 17 del JDK para ejecutar todos los
 programas de este proyecto sin problemas.
+
+Todos los ejemplos se pueden localizar en la carpeta code_examples. 
+Los ejemplos están organizados por paquetes.  Cada paquete corresponde a 
+una carpeta en el directorio de code_example.
+
+Como ejemplo si nos vamos a la Figura 17 del manual, vemos que en la cabecera del fichero 
+pone "package introduccion", en esta caso este ejemplo se encuentra en el paquete introduccion,
+por tanto, nos vamos a la carpeta "introduccion" dentro del directorio "code_examples" y ahí encontraremos 
+el ejemplo, que en el caso de la Figura 17 como se puede apreciar, la clase se llama Operadores.java.
+
+Para saber el nombre de la clase, en la parte superior de la imagen sale el nombre y justo debajo de él una línea
+recta (que es así como se representa el fichero que está seleccionado y siendo editado actualmenete en el
+entorno de desarrollo del autor), este es el nombre de la clase que se aprecia en el ejemplo. 
+
+El procedimiento explicado anteriormente se aplica para el resto de ejemplos mostrados en las Figuras expuestas en el manual.
+
+Para generar un entorno de trabajo con VSCode, asumiendo que lo tenemos configurado para ejecutar programas Java,
+simplemente debemos abrir una terminal en el directorio de este fichero bloc de notas y escribir el comando "code ."
+en caso de que tengamos el VSCode añadido a la variable de entorno PATH de nuestro sistema. Si no, también podemos abrir la carpeta
+donde está contenida este fichero de bloc de notas con VSCode utilizando la opción de abrir carpetas del editor.
+
+A continuación tenemos una estructura global de carpetas de este proyecto (carpeta donde se encuentra este fichero de bloc de notas)
+
+├───code_examples
+│   ├───arrays
+│   ├───collections
+│   ├───entrada_salida
+│   ├───estructuras_control
+│   │   ├───de_salto
+│   │   ├───repetitivas
+│   │   └───selectivas
+│   ├───generics
+│   ├───introduccion
+│   ├───otras_clases
+│   ├───poo
+│   └───starter
+└───code_exercices
+    ├───estructuras_control
+    │   ├───ejerciciosUT3_1
+    │   ├───ejerciciosUT3_2
+    │   ├───ejerciciosUT3_3
+    │   ├───ejerciciosUT3_4
+    │   ├───ejerciciosUT3_5
+    │   ├───ejerciciosUT3_6
+    │   ├───ejerciciosUT3_7
+    │   ├───Enunciados
+    │   └───practica
+    ├───poo
+    │   ├───agencia
+    │   ├───electrodomesticos
+    │   ├───Enunciados
+    │   ├───hipodromo
+    │   ├───math
+    │   ├───nomina
+    │   ├───quiniela
+    │   ├───utils
+    │   └───zoo
+    └───string_arrays
+        ├───arrays1
+        ├───arrays2
+        ├───Enunciados
+        └───string1

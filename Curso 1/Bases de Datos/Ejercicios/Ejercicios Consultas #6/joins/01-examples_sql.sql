@@ -6,7 +6,9 @@ Hay tres tipos de uniones:
    - INNER JOIN, 
    - OUTER (LEFT JOIN o RIGHT JOIN) 
     - y CROSS JOIN 
-         nota: en MySQL CROSS JOIN es lo mismo que una unión interna. En otros sistemas de administración de bases de datos como Microsoft SQL Server, las uniones cruzadas mostrar cada combinación de todas las filas en las tablas unidas. Esto se puede lograr en MySQL usando una combinación sin una columna común.
+         nota: en MySQL CROSS JOIN es lo mismo que una unión interna. En otros sistemas de administración de bases de datos 
+         como Microsoft SQL Server, las uniones cruzadas mostrar cada combinación de todas las filas en las tablas unidas. 
+         Esto se puede lograr en MySQL usando una combinación sin una columna común.
 
 REGLAS:
 *Cuando se unen dos tablas, las dos tablas están relacionadas por la columna de clave principal en una tabla y la columna de clave externa en otra tabla. 

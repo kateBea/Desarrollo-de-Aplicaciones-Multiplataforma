@@ -104,41 +104,58 @@ WHERE id_pelicula NOT IN (SELECT id_pelicula FROM salas WHERE id_pelicula IS NOT
 
 -- 12.  Mostrar la información de todas las películas, 
 -- incluyendo el número de salas en las que se proyecta.
-SELECT peliculas.*, COUNT(salas.id_pelicula) AS 'Número de salas' 
-FROM salas INNER JOIN (SELECT salas.id_pelicula, COUNT(*) FROM Salas WHERE salas.id_pelicula IS NOT NULL GROUP BY salas.id_pelicula) AS Valor
-GROUP BY salas.id_pelicula;
+SELECT Peliculas.*, COUNT(DISTINCT Salas.id_sala) as num_salas
+FROM Peliculas LEFT JOIN Salas ON Peliculas.id_pelicula = Salas.id_pelicula
+GROUP BY Peliculas.id_pelicula;
+
 -- 13.  Mostrar la información de las salas que proyecten películas 
 -- ordenando el listado por la calificación de edad de mayor a menor.
-
+SELECT Salas.*, Peliculas.nombre, IFNULL(edad_minima, 'Desconocida')
+FROM Salas INNER JOIN Peliculas ON Peliculas.id_pelicula = Salas.id_pelicula
+ORDER BY edad_minima DESC;
 
 
 -- 14.  Mostrar la información de las salas cuyo nombre
 -- termine por un espacio, luego un carácter y luego la letra ‘a’.
-
+SELECT *
+FROM Salas
+WHERE nombre LIKE '% _a';
 
 
 -- 15.  Mostrar el número de películas de cada una
 -- de las distintas calificaciones de edad que existen.
-
+SELECT edad_minima, COUNT(DISTINCT id_pelicula) AS 'Cantidad pelis'
+FROM peliculas
+GROUP BY edad_minima;
 
 
 -- 16.  Mostrar el número de de salas en las que se proyectan
 -- cada una de las películas que existen (sólo hace falta mostrar el id de la película).
-
+SELECT Peliculas.id_pelicula, COUNT(DISTINCT Salas.id_sala) as num_salas
+FROM Peliculas LEFT JOIN Salas ON Peliculas.id_pelicula = Salas.id_pelicula
+GROUP BY Peliculas.id_pelicula;
 
 
 -- 17. Actualizar todas las películas que no han sido calificadas
 -- como no recomendables para menores de 13 años'.
+UPDATE Peliculas
+SET edad_minima = 13
+WHERE peliculas.id_pelicula IN (SELECT id_pelicula WHERE peliculas.edad_minima IS NULL);
 
-
+SELECT * FROM peliculas;
 
 -- 18.  Eliminar todas las salas que proyectan películas
 -- recomendadas para todos los públicos.
+DELETE FROM Peliculas
+WHERE edad_minima = 0;
 
+ALTER TABLE Salas ADD FOREIGN KEY (id_pelicula) REFERENCES peliculas (id_pelicula) ON DELETE SET NULL;
 
 
 -- 19.  Vaciar los datos de las salas.
-
+TRUNCATE Peliculas;
+TRUNCATE Salas;
 
 
 -- 20.  Eliminar la tabla de las salas.
+DROP TABLE Salas;
