@@ -3,21 +3,25 @@ use northwind_mysql;
 
 # Se desea conocer los empleados que han atendido una orden y en qué fecha lo hicieron, los
 # registros se deben ordenar por el campo EmployeeID
-
-
+SELECT *
+FROM employees CROSS JOIN Orders
+WHERE employees.EmployeeID IN (SELECT DISTINCT EmployeeID FROM orders)
+ORDER BY employees.EmployeeID;
 
 # Mostrar el nombre del proveedor de cada producto
-
+SELECT products.ProductName, suppliers.CompanyName AS 'Proveedor'
+FROM products INNER JOIN suppliers ON products.SupplierID = suppliers.SupplierID;
 
 
 # Mostrar el nombre de producto, su proveedor y categoría 
-
+SELECT ProductName, suppliers.CompanyName AS 'Proveedor', CategoryName AS 'Categoría'
+FROM 
+products INNER JOIN suppliers INNER JOIN categories ON products.SupplierID = suppliers.SupplierID AND products.CategoryID = categories.CategoryID;
 
 
 # qué empresas han realizado pedidos
-
-
-
+SELECT DISTINCT CompanyName
+FROM shippers INNER JOIN orders ON shippers.ShipperID = orders.ShipVia;
 
 # mostrar todas las empresas y cualquier pedido que hubieran realizado
 
