@@ -1,0 +1,19 @@
+INSTRUCCIONES:
+
+ -Durante la realización del examen, no se podrá hablar ni compartir materiales con otros compañeros. Tampoco será posible salir de clase durante el examen, a no ser por una situación excepcional. El móvil debe permanecer apagado y fuera del alcance del alumno. 
+
+ -Está prohibido el uso de Internet, apuntes u otros recursos. 
+
+ -Sólo se podrá tener una pestaña abierta en Workbench con este fichero.
+
+ -El no cumplimiento de alguno de los puntos anteriores supondrá un suspenso.
+
+ -Responde debajo de cada pregunta con la sentencia SQL que da respuesta al ejercicio, añade los comentarios que consideres oportunos.
+
+ -La solución SQL propuesta debe tener en cuenta evitar posibles errores de ejecución SQL (por ejemplo, si ya existiera o no ese objeto)
+
+ -Guarda el fichero con las soluciones como examen_Apellidos_Nombre.sql y súbelo al aula virtual.
+
+ -El examen consta de 20 preguntas SQL, todas valen 0,5 puntos
+
+ -Duración 1h 30 min. 

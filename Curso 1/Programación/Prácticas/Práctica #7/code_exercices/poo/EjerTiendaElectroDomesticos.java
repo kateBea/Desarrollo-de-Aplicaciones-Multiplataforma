@@ -10,20 +10,9 @@ import poo.electrodomesticos.Televisor;
 import poo.electrodomesticos.Lavadora;
 import poo.electrodomesticos.Microondas;
 
+import poo.utils.Pair;
+
 public class EjerTiendaElectroDomesticos {
-    private static class Pair<Key, Value> {
-        private Key m_Key;
-        private Value m_Value;
-
-        public Pair(Key key, Value val) {
-            m_Key = key;
-            m_Value = val;
-        }
-
-        public Key getKey() { return m_Key; }
-        public Value getValue() { return m_Value; }
-    }
-
     private static final InputStreamReader input = new InputStreamReader(System.in);
     private static final BufferedReader reader = new BufferedReader(input);
 
@@ -52,11 +41,11 @@ public class EjerTiendaElectroDomesticos {
                     
                     if (indiceProducto != -1) {
                         System.out.printf("Se ha vendido %s %s por %.1f €\n\n",
-                            productos.get(indiceProducto - 1).getKey(),
-                            productos.get(indiceProducto - 1).getValue().getFabricante(), 
-                            productos.get(indiceProducto - 1).getValue().getPrecio());
+                            productos.get(indiceProducto - 1).getFirst(),
+                            productos.get(indiceProducto - 1).getSecond().getFabricante(), 
+                            productos.get(indiceProducto - 1).getSecond().getPrecio());
                         
-                        totalDiario += productos.get(indiceProducto - 1).getValue().getPrecio();
+                        totalDiario += productos.get(indiceProducto - 1).getSecond().getPrecio();
                         productos.remove(indiceProducto - 1);
                     }
 
@@ -88,7 +77,7 @@ public class EjerTiendaElectroDomesticos {
         final double DESCUENTO = 0.9;
         
         for (Pair<String, Producto> item : productos) {
-            item.getValue().setPrecio(item.getValue().getPrecio() * DESCUENTO);
+            item.getSecond().setPrecio(item.getSecond().getPrecio() * DESCUENTO);
         }
     }
 
@@ -116,7 +105,7 @@ public class EjerTiendaElectroDomesticos {
         int indice = 1;
         for (Pair<String, Producto> item : productos) {
             System.out.printf("%d.- %s %s %.1f €\n", 
-                indice++, item.getKey(), item.getValue().getFabricante(), item.getValue().getPrecio());
+                indice++, item.getFirst(), item.getSecond().getFabricante(), item.getSecond().getPrecio());
         }
     }
 
@@ -128,13 +117,13 @@ public class EjerTiendaElectroDomesticos {
 
         // Localizamos donde tenemos cada tipo de producto en nuestro array
         for (Pair<String, Producto> item : productos) {
-            if (item.getKey().equalsIgnoreCase("Televisor"))
+            if (item.getFirst().equalsIgnoreCase("Televisor"))
                 indiceTelevisores.add(indice++);
 
-            if (item.getKey().equalsIgnoreCase("Lavadora"))
+            if (item.getFirst().equalsIgnoreCase("Lavadora"))
                 indiceLavadoras.add(indice++);
 
-            if (item.getKey().equalsIgnoreCase("Microondas"))
+            if (item.getFirst().equalsIgnoreCase("Microondas"))
                 indiceMicroondas.add(indice++);
         }
 
@@ -145,7 +134,7 @@ public class EjerTiendaElectroDomesticos {
         else {
             System.out.printf("Quedan %d televisores\n", indiceTelevisores.size());
             for (Integer index : indiceTelevisores) {
-                Televisor temp = (Televisor)productos.get(index).getValue();
+                Televisor temp = (Televisor)productos.get(index).getSecond();
                 System.out.printf("%s %s %.1f pulgadas %.1f €\n", 
                     temp.getFabricante(), temp.getNumeroSerie(), temp.getPulgadas(), temp.getPrecio());
     
@@ -159,7 +148,7 @@ public class EjerTiendaElectroDomesticos {
         else {
             System.out.printf("Quedan %d lavadoras\n", indiceLavadoras.size());
             for (Integer index : indiceLavadoras) {
-                Lavadora temp = (Lavadora)productos.get(index).getValue();
+                Lavadora temp = (Lavadora)productos.get(index).getSecond();
                 System.out.printf("%s %s %.1f kg %.1f €\n", 
                     temp.getFabricante(), temp.getNumeroSerie(), temp.getCapacidad(), temp.getPrecio());
     
@@ -173,7 +162,7 @@ public class EjerTiendaElectroDomesticos {
         else {
             System.out.printf("Quedan %d microondas\n", indiceMicroondas.size());
             for (Integer index : indiceMicroondas) {
-                Microondas temp = (Microondas)productos.get(index).getValue();
+                Microondas temp = (Microondas)productos.get(index).getSecond();
                 System.out.printf("%s %s %.1f watts %.1f €\n", 
                     temp.getFabricante(), temp.getNumeroSerie(), temp.getPotencia(), temp.getPrecio());
     

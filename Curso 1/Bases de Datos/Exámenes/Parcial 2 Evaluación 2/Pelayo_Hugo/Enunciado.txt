@@ -1,0 +1,20 @@
+Examen de Bases de Datos.
+
+Duración 1 hora 15 min
+
+Durante la realización del examen:
+
+   - no se podrá consultar Internet, ni abrir apuntes u otros ejemplos o ejercicios que no sean los propios del examen
+   - solamente se podrá mantener abierto MySQL WorkBench para la realización de los ejercicios  y el Aula Virtual para subir los ejercicios al buzón de entrega.
+
+    - tampoco será posible salir de clase durante el examen, a no ser por una situación excepcional.
+
+    - el móvil debe permanecer apagado y fuera del alcance del alumno. 
+
+ El no cumplimiento de las normas anteriores es motivo de suspenso.
+
+Se adjunta un script SQL de la creación de la base de datos 'CINE' con dos tablas: PELICULAS Y SALAS. Este script se corresponde al fichero: script_bd_peliculas.sql
+
+Deberás ejecutar este script para disponer de la base de datos en MySQL y poder solucionar las consultas que se proponen en el fichero: examen bd peliculas_enunciado.sql
+
+Se deberá entregar el fichero examen bd peliculas_enunciado.sql, con la solución de cada consulta justo debajo de su enunciado. Renombrar este fichero con la solución con el nombre Apellidos_Nombre_solucion.sql
