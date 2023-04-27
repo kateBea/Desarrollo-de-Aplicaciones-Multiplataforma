@@ -1,0 +1,25 @@
+AlgoritmoEjercicio3
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa calcula el precio a pagar por
+                        la compra de una cantidad de lápices
+
+    # Parte declarativa:
+        coste_reducido := 0.25
+        coste_normal := 0.75
+        treshold := 1000
+
+        total_lapices: entero
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Por favor entre el total de lápices: ")
+        leer total_lapices
+
+        SI total_lapices >= treshold ENTONCES
+            mostrarPorPantalla("Usted deberá pagar un total de €", total_lapices * coste_reducido)
+        SINO
+            mostrarPorPantalla("Usted deberá pagar un total de €", total_lapices * coste_normal)
+        FINSI
+FIN

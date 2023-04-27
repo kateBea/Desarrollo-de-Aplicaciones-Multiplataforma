@@ -1,0 +1,36 @@
+AlgoritmoEjercicio8
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa calcula el precio a pagar por la
+                        renta de un autobús en una compñía de viajes y
+                        muestra el resultado por pantalla
+
+    # Parte declarativa:
+        treshold := 30
+        total_alumnos: entero
+        coste: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("El total de alumnos es: ")
+        leer total_alumnos
+
+        SI total_alumnos < 30 ENTONCES
+            coste = 4000
+        SINO
+            SI total_alumnos >= 100 ENTONCES
+                coste = 65 * total_alumnos
+            FINSI
+
+            SI total_alumnos >= 50 y total_alumnos <= 99 ENTONCES
+                coste = 70 * total_alumnos
+            FINSI
+
+            SI total_alumnos >= 30 y total_alumnos <= 49 ENTONCES
+                coste = 95 * total_alumnos
+            FINSI
+        FINSI
+
+        mostrarPorPantalla("El total a pagar por la renta del autobús es: ", coste)
+FIN

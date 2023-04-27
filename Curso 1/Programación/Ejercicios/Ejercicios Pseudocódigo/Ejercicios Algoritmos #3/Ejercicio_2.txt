@@ -1,0 +1,24 @@
+AlgoritmoEjercicio2
+
+INICIO
+    # Fecha:			21 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide al usuario tres medidas que 
+                        que corresponden a las bases  y altura de un trapecio
+                        y calcula el área asociado
+
+    # Parte declarativa:
+        base1: decimal
+        base2: decimal
+        altura: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Introduzca el valor de la base 1: ")
+        leer base1
+        mostrarPorPantalla("Introduzca el valor de la base 2: ")
+        leer base2
+        mostrarPorPantalla("Introduzca el valor de la altura: ")
+        leer altura
+
+        mostrarPorPantalla("El área del trapecio es: ", altura * ((base1 + base2) / 2))
+FIN

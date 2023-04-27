@@ -1,0 +1,66 @@
+AlgoritmoEjercicio5
+
+INICIO
+    # Fecha:			21 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide al usuario una cifra de dinero
+                        y muestra por pantalla la cantidad mínima de billetes y monedas
+                        necesaria para representarla
+
+    # Parte declarativa:
+        dinero: decimal
+        dineroParteEntera: entero
+        min_bill: entero
+        min_coins: entero
+
+    # Cuerpo del algoritmo
+        muestraPorPantallla("Introduzca una suma de euros: ")
+        leer dinero
+        
+        # obtener parte entera (ejemplo 313.14 -> 313)
+        dineroParteEntera = parteEnteraPorAbajo(dinero)
+
+        # obtener parte decimal (corresponderá a los céntimos)
+        dinero = dinero - dineroParteEntera
+
+        muestraPorPantallla("Usted ha introducido la cantidad correspondiente a:")
+        muestraPorPantallla("Billetes de 100: ", dineroParteEntera / 100)
+        dineroParteEntera = dineroParteEntera % 100
+        min_bill = min_bill + dineroParteEntera / 100
+        muestraPorPantallla("Billetes de 50: ", dinero / 50)
+        dineroParteEntera = dineroParteEntera % 50
+        min_bill = min_bill + dineroParteEntera / 50
+        muestraPorPantallla("Billetes de 20: ", dineroParteEntera / 20)
+        dineroParteEntera = dineroParteEntera % 20
+        min_bill = min_bill + dineroParteEntera / 20
+        muestraPorPantallla("Billetes de 10: ", dineroParteEntera / 10)
+        dineroParteEntera = dineroParteEntera % 10
+        min_bill = min_bill + dineroParteEntera / 10
+        muestraPorPantallla("Billetes de 5: ", dineroParteEntera / 5)
+        min_bill = min_bill + dineroParteEntera / 5
+        muestraPorPantallla("Monedas de € 2: ", dineroParteEntera / 2)
+        dineroParteEntera = dineroParteEntera % 2
+        min_coins = min_coins + dineroParteEntera / 2
+        muestraPorPantallla("Monedas de € 1: ", dineroParteEntera)
+        min_coins = min_coins + dineroParteEntera
+
+        dinero = dinero * 100
+        muestraPorPantallla("Monedas de € 0.5: ", dinero / 50)
+        dinero = dinero % 50
+        min_coins = min_coins + dinero / 50
+        muestraPorPantallla("Monedas de € 0.2: ", dinero / 20)
+        dinero = dinero % 20
+        min_coins = min_coins + dinero / 20
+        muestraPorPantallla("Monedas de € 0.1: ", dinero / 10)
+        dinero = dinero % 10
+        min_coins = min_coins + dinero / 10
+        muestraPorPantallla("Monedas de € 0.05: ", dinero / 5)
+        dinero = dinero % 5
+        min_coins = min_coins + dinero / 5
+        muestraPorPantallla("Monedas de € 0.02: ", dinero / 2)
+        dinero = dinero % 2
+        min_coins = min_coins + dinero / 2
+        muestraPorPantallla("Monedas de € 0.01: ", dinero)
+        min_coins = min_coins + dinero
+
+FIN

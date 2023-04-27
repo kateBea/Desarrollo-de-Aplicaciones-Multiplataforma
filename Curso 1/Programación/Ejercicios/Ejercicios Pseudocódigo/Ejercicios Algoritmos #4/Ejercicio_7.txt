@@ -1,0 +1,45 @@
+AlgoritmoEjercicio7
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa calcula el precio de uva
+                        acorde con la polític de la asociación de vincultores
+                        y muestra por pantalla el precio total de una ración
+
+    # Parte declarativa:
+        precioATipo1 := 0.20
+        precioATipo2 := 0.30
+
+        precioBTipo1 := -0.30
+        precioBTipo2 := -0.50
+
+        tipo: caracter
+        tam: entero
+        totalTunidades: entero
+        ganancias: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Entre el total de unidades de venta: ")
+        leer totalTunidades
+        mostrarPorPantalla("Entre el tipo de unidades: ")
+        leer tipo
+        mostrarPorPantalla("Entre el tamaño de las unidades: ")
+        leer tam
+
+        SI tipo == 'A' ENTONCES
+            SI tam == 1 ENTONCES
+                mostrarPorPantalla("Las ganancias seran de: ", precioATipo1 * totalTunidades)
+            SINO
+                mostrarPorPantalla("Las ganancias seran de: ", precioATipo2 * totalTunidades)
+            FINSI
+        FINSI
+
+        SI tipo == 'B' ENTONCES
+            SI tam == 1 ENTONCES
+                mostrarPorPantalla("Las ganancias seran de: ", precioBTipo1 * totalTunidades)
+            SINO
+                mostrarPorPantalla("Las ganancias seran de: ", precioBTipo2 * totalTunidades)
+            FINSI
+        FINSI
+FIN

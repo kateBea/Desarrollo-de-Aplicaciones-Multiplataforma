@@ -1,0 +1,15 @@
+AlgoritmoEjercicio2
+
+INICIO
+    # Fecha:			16 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide un número al usuario y lo muestra
+                        por la pantalla
+
+    # Parte declarativa:
+        input_usuario: decimal
+
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Usted ha entrado el entero: ", input_usuario)
+        leer input_usuario
+FIN

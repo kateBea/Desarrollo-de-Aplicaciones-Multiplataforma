@@ -1,0 +1,33 @@
+AlgoritmoEjercicio5
+
+INICIO
+    # Fecha:			28 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide las credeciales de inicio de sesión
+                        a una aplicación al usuario
+
+    # Parte declarativa:
+        user := "admin"
+        pass := "1234&"
+        tries: entero
+        limit_tries := 3
+
+        in_user, in_pass: cadena de caracteres
+
+    # Cuerpo del algoritmo
+        tries = 0
+        REPETIR
+            mostrarPorPantalla("Entra el nombre de usuario: ")
+            leer in_user
+            mostrarPorPantalla("Entra la clave de acceso: ")
+            leer in_pass
+
+            tries = tries + 1
+        HASTA tries >= limit_tries o (in_user == user y in_pass == pass)
+
+        SI in_user == user y in_pass == pass ENTONCES
+            mostrarPorPantalla("Usted ha accedido a la aplicación: ")
+        SINO
+            mostrarPorPantalla("Acceso denegado. Superado límite de intentos.")
+        FINSI
+FIN

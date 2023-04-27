@@ -1,0 +1,24 @@
+AlgoritmoEjercicio3
+
+INICIO
+    # Fecha:			21 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa pide al usuario el radio y la altura
+                        de un cilindro y mustra por pantalla el área del mismo 
+
+    # Parte declarativa:
+        numeroPi: 3.14159 
+        radio: decimal
+        altura: decimal
+        area: decimal
+
+    # Cuerpo del algoritmo
+        mustraPorPantalla("Entre el valor del radio: ")
+        leer radio
+        mustraPorPantalla("Entre el valor de la altura: ")
+        leer altura
+
+        area =  2 * numeroPi * radio * (radio + altura)
+        mustraPorPantalla("El área del cilindro es: ", area)
+
+FIN

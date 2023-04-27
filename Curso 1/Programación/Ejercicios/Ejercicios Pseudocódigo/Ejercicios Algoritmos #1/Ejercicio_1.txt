@@ -1,0 +1,12 @@
+AlgoritmoEjercicio1
+
+INICIO
+    # Fecha:			16 Septiembre 2022
+    # Autor:			Hugo Pelayo
+    # Descripción:      Este programa escribe un mensaje por la pantalla
+
+    # Parte declarativa:
+        
+    # Cuerpo del algoritmo
+        mostrarPorPantalla("Hola bienvenido a clase.")
+FIN
