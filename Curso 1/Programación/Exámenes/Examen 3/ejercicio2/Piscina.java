@@ -5,13 +5,16 @@ import java.io.Serializable;
 public class Piscina implements Serializable {
     private static final int MIN = 25000;
     private static final int MAX = 50000;
-    private static int NIVEL_MAXIMO;
+    private int NIVEL_MAXIMO;
     private int nivel;
 
     public Piscina(int maxLitros) {
         if (maxLitros > getMax())
             throw new NivelPiscinaException("Valor supera lo máximo posible");
 
+        if (maxLitros < 0)
+            throw new NivelPiscinaException("No se puede introducir una cantidad negativa");
+            
         NIVEL_MAXIMO = maxLitros;
         nivel = 0;
     }

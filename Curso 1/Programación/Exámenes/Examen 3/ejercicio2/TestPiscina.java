@@ -11,7 +11,10 @@ public class TestPiscina {
     public static void main(String[] args) {
         System.out.println("************** Ejercicio 2 **************************");
         inicializarPiscina();
-        gestionarPiscina();
+
+        if (piscina != null)
+            gestionarPiscina();
+
         System.out.println("Fin del programa");
     }
 
@@ -32,6 +35,12 @@ public class TestPiscina {
             }
         }
         while (maxCapacity != -1 && !(maxCapacity >= ejercicio1.Piscina.getMin() && maxCapacity <= ejercicio1.Piscina.getMax()));
+
+        // cancelar si el usuario entra -1
+        if (maxCapacity == -1) {
+            piscina = null;
+            return;
+        }
 
         piscina = new Piscina(maxCapacity);
         System.out.println("Piscina creada");
@@ -74,7 +83,7 @@ public class TestPiscina {
                     piscina.rellenar(cantidad);
                     System.out.println(piscina.toString());
                 }
-                catch (ejercicio1.NivelPiscinaException npe) {
+                catch (NivelPiscinaException npe) {
                     System.out.println(npe.getMessage());
                 }
                 break;
@@ -99,8 +108,8 @@ public class TestPiscina {
                 System.out.println(piscina.toString());
                 break;
             case 4:
-                System.out.println("Serialización del objeto: " + piscina.toString());
                 serializarPiscina();
+                System.out.println("Serialización del objeto: " + piscina.toString());
                 break;
         }
     }

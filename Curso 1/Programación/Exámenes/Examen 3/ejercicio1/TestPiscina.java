@@ -13,7 +13,9 @@ public class TestPiscina {
     public static void main(String[] args) {
         System.out.println("************** Ejercicio 1 **************************");
         inicializarPiscina();
-        gestionarPiscina();
+        if (piscina != null)
+            gestionarPiscina();
+
         System.out.println("Fin del programa");
     }
 
@@ -34,10 +36,17 @@ public class TestPiscina {
             }
         }
         while (maxCapacity != -1 && !(maxCapacity >= Piscina.getMin() && maxCapacity <= Piscina.getMax()));
+        
+        // cancelar si el usuario entra -1
+        if (maxCapacity == -1) {
+            piscina = null;
+            return;
+        }
 
         piscina = new Piscina(maxCapacity);
         System.out.println("Piscina creada");
     }
+    
     public static void gestionarPiscina() {
         System.out.println("¿Qué operación desea realizar?");
         System.out.println(piscina.toString());

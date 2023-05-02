@@ -26,18 +26,24 @@ use rentacar;
 Inserta tres coches. Los valores para el campo ID_Vehiculo serán 513, 514 y 515 y en Estado aparecerá “En uso”; 
 el resto de los campos han de respetar la configuración de la BD pero con libertad para introducir los valores que prefieras
 */
-insert into vehiculos (id_vehiculo, estado, matricula, marca, modelo, tipocarnet) 
-values (513, "En uso", "4562YYY", "Toyota", "Yaris", "Coche"),
+INSERT INTO vehiculos (id_vehiculo, estado, matricula, marca, modelo, tipocarnet) 
+VALUES (513, "En uso", "4562YYY", "Toyota", "Yaris", "Coche"),
 		(514, "En uso", "3651YZY", "Toyota", "Corola", "Coche"),
 		(515, "En uso", "4391TVY", "Nissa", "PF", "Coche");
+        
+SELECT * 
+FROM vehiculos 
+WHERE id_vehiculo IN (513, 514, 515);
 
 /*Ejercicio 2
  Inserta tres motos más, de la misma marca que las que ya tenemos, pero modelo 
 “City-Cruiser”. Sus ID_Vehiculo serán 516, 517 y 518 y en Estado aparecerá “En uso” 
 Completa los datos con valores adecuados. 
 Nota: Haz las tres incorporaciones con una sola sentencia*/
-
-
+INSERT INTO Vehiculos (ID_Vehiculo, Matricula, Marca, Modelo, TipoCarnet, Estado) 
+VALUES (516, '1111BBB', 'Yamaha', 'T-Max', 'Moto', 'En uso'),
+       (517, '2222CCC', 'Yamaha', 'T-Max', 'Moto', 'En uso'),
+       (518, '3333DDD', 'Yamaha', 'T-Max', 'Moto', 'En uso');
 
         
 /* Ejercicio 3
@@ -72,6 +78,10 @@ values (111, 'Clara', 'López', 'Rodriguez', '1234567890765432', 'Todos', '65478
 Inserta un alquiler para dos de los nuevos clientes anteriores, uno alquilará un coche y otro una moto, ambos de los vehículos recién incorporados a la flota.
 NOTA: Deberás hacerlo con una sola sentencia 
 */
+INSERT INTO Alquileres (ID_Alquiler, InicioAlquiler, ID_Cliente, ID_Vehiculo, SeguroExtra)
+VALUES 
+    (1041, CURRENT_TIMESTAMP(), 111, (SELECT id_vehiculo FROM vehiculos WHERE tipoCarnet LIKE 'Moto' LIMIT 1), 'Sí'),
+    (1042, CURRENT_TIMESTAMP(), 112, (SELECT id_vehiculo FROM vehiculos WHERE tipoCarnet LIKE 'Coche' LIMIT 1), 'No');
 
 
                     
@@ -112,7 +122,7 @@ drop view VistaAlquileresFebrero;
 
 /* Ejercicio 11
 Se ha ampliado la plantilla de personal. Crea un usuario con el nombre Consultor y las pass que consideres */
-create user Consultor;
+ create user Consultor identified by 'createUser';
 
 /* Ejercicio 12
 Da permiso de SELECT e INSERT a la tabla Clientes de RentACar al usuario “consultor”.
@@ -210,7 +220,15 @@ select * from AlquileresTipo;
 
 /* Ejercicio 20
 Insertar tres vehículos nuevos con los datos que consideres apropiados pero de la misma marca y modelo del vehículo que ha sido más alquilado.*/
+INSERT INTO Vehiculos (ID_Vehiculo, Matricula, Marca, Modelo, TipoCarnet, Estado) 
+VALUES ((SELECT 519, '1231BTB', marca, modelo, tipoCarnet, 'En uso' FROM Vehiculos WHERE id_vehiculo = 501),
+		(SELECT 520, '7521CEC', marca, modelo, tipoCarnet, 'En uso' FROM Vehiculos WHERE id_vehiculo = 501),
+		(SELECT 521, '3213WDD', marca, modelo, tipoCarnet, 'En uso' FROM Vehiculos WHERE id_vehiculo = 501));
 
+select id_vehiculo, count(*)
+from alquileres
+group by id_vehiculo
+order by count(*) desc;
 
     
 /*Usar al acabar para limpieza*/

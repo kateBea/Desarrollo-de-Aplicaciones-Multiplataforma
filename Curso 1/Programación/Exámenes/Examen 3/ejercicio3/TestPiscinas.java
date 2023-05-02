@@ -7,7 +7,6 @@ import java.util.Hashtable;
 import java.util.Map;
 
 public class TestPiscinas {
-    private static ObjectOutputStream outFile;
     private static final InputStreamReader input = new InputStreamReader(System.in);
     private static final BufferedReader lector = new BufferedReader(input);
 
@@ -16,8 +15,9 @@ public class TestPiscinas {
     public static void main(String[] args) {
         System.out.println("************** Ejercicio 3 **************************");
         piscinas = new Hashtable<>();
-        inicializarSerializacion();
+
         gestionarPiscinas();
+
         System.out.println("Fin del programa");
     }
 
@@ -36,15 +36,6 @@ public class TestPiscinas {
             }
         }
         while (opcion != 6);
-    }
-
-    public static void inicializarSerializacion() {
-        try {
-            outFile = new ObjectOutputStream(new FileOutputStream(("piscina.dat")));
-        }
-        catch (IOException e) {
-            System.out.println("Excepcion de IO");
-        }
     }
 
     public static void procesarOpcion(int opcion) {
@@ -199,13 +190,25 @@ public class TestPiscinas {
     }
 
     public static void serializarPiscina(Piscina piscina) {
+        ObjectOutputStream outFile = null;
         try {
-            outFile.writeObject(piscina);
+            outFile = new ObjectOutputStream(new FileOutputStream(("piscina.dat")));
+            serializar(outFile, piscina);
+        }
+        catch (IOException e) {
+            System.out.println("Excepcion de IO");
+        }
+    }
+
+    public static void serializar(ObjectOutputStream obj, Piscina piscina) {
+        try {
+            obj.writeObject(piscina);
         }
         catch (IOException e) {
             System.out.println("Error. No se pudo serializar el objeto Piscina");
         }
     }
+
     public static void mostrarMenuPorPiscina() {
         System.out.println("1. Rellenar piscina");
         System.out.println("2. Vaciar piscina");
