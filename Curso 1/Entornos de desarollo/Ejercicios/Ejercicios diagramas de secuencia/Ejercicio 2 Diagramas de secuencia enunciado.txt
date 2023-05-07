@@ -1,0 +1,1 @@
+Elaborar un diagrama de secuencia para el alquiler de libros en una biblioteca. Para regularlo, es esencial que los estudiantes tengan acceso en línea al registro para la consulta de libros disponibles. Este sistema informará al alumno si ha superado el tiempo asignado para el alquiler de un libro y se aplicará una penalización en consecuencia.

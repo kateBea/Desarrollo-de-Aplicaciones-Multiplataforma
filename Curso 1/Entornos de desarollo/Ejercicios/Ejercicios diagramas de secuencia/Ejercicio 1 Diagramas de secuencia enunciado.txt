@@ -1,0 +1,7 @@
+Se necesita realizar el diagrama de secuencia de un sistema de visión artificial para clasificar cacahuetes. El sistema está formado por la unidad de visión artificial la cual recibe datos de 50 sensores.
+
+Los sensores se colocan sobre la cinta transportadora y transmiten un código que indica el color de lo que hay debajo de ellos. Los cacahuetes tienen un color marrón claro, pero los que están malos son más oscuros.
+
+Al recibir la unidad de visión el código, esta activará una matriz que expulsar el cacahuete si está malo.
+
+Todo el proceso se hace de manera sincronizada con el reloj del sistema de la cinta transportadora. Los sensores de visión artificial están sincronizados con el reloj del sistema.
