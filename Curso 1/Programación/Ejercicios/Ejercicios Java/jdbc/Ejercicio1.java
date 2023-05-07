@@ -17,7 +17,9 @@ public class Ejercicio1 {
     public static void main(String[] args) throws Exception {
         String user;
         String password;
-        initConnection();
+        
+        if (!initConnection())
+            return; 
 
         user = leerCadena("Introduzca el usuario por favor: ");
         password = leerCadena("Introduzca la contraseña por favor ('none' si no tiene): ");
@@ -50,7 +52,7 @@ public class Ejercicio1 {
         }
     }
 
-    public static void initConnection() {
+    public static boolean initConnection() {
         try {
             // Driver obsoleto
             //Class.forName("com.mysql.jdbc.Driver");
@@ -59,8 +61,10 @@ public class Ejercicio1 {
         } 
         catch (Exception e) {
             System.out.print("No se pudo cargar el driver" + e);
-            return;
+            return false;
         }
+
+        return true;
     }
 
     public static String leerCadena(String prompt) {
