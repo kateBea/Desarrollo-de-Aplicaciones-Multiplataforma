@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS db_runners;
+
 USE db_runners;
 
 DROP TABLE IF EXISTS Carreras, Corredores, Inscritos;
