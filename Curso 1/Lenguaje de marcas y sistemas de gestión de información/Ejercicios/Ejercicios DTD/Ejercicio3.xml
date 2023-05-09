@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedidos [
+    <!ELEMENT pedidos (pedido)*>
+    <!ELEMENT pedido (serie, cantidad, peso?)+>
+    <!ELEMENT serie (#PCDATA)>
+    <!ELEMENT cantidad (#PCDATA)>
+    <!ELEMENT peso (#PCDATA)>
+]>
+<pedidos>
+    <pedido>
+        <serie>RTYE444</serie>
+        <cantidad>5</cantidad>
+    </pedido>
+</pedidos>
