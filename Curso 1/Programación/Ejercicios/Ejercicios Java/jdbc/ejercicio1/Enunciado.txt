@@ -1,0 +1,1 @@
+1. Crea una aplicación en Java que muestre todos los empleados del departamento 30. Deberías tener de ejercicios hechos en BD la vista empleados_30, la cual podrías utilizar de nuevo

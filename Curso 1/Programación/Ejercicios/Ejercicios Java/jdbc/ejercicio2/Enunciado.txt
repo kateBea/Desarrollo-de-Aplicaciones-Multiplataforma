@@ -1,0 +1,15 @@
+2. Crea desde WorkBench una base de datos con el nombre test_programacion.
+
+3. Crea una app en Java que se conecte a la bd del ejercicio anterior para realizar las siguientes operaciones.
+
+* Crear una tabla con el nombre COCHES que tenga una matrícula PK, marca not null, modelo, not null, fecha compra datetime
+
+* Inserta varias registros 
+
+4. Haz una versión más avanzada de la aplicación anterior que presente un menú con las opciones:
+
+1) Listar vehículos
+2) Buscar vehículo
+3) Eliminar vehículo
+4) Modificar vehículo
+5) Salir
