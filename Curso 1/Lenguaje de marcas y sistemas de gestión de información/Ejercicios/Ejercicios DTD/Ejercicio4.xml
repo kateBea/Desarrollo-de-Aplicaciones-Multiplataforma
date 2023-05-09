@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE productos [
+    <!ELEMENT productos (producto+)>
+    <!ELEMENT producto (raton | teclado | monitor)+>
+    <!ELEMENT raton (codigo, nombre?, descripcion?)>
+    <!ELEMENT teclado (codigo, nombre?, descripcion?)>
+    <!ELEMENT monitor (codigo, nombre?, descripcion?)>
+    <!ELEMENT codigo (#PCDATA)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+]>
+
+<productos>
+    <producto>
+        <raton>
+            <codigo>RTRUE</codigo>
+            <nombre>True Gaming</nombre>
+        </raton>
+    </producto>
+
+    <producto>
+        <teclado>
+            <codigo>YETRW</codigo>
+            <nombre>Gaming series</nombre>
+        </teclado>
+    </producto>
+</productos>

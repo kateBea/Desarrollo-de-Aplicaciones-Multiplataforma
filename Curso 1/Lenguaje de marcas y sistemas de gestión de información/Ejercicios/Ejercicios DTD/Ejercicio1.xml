@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE productos [
+    <!ELEMENT productos   (raton|teclado)* >
+    <!ELEMENT raton       (codigo, descripcion?) >
+    <!ELEMENT codigo      (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT teclado     (codigo,descripcion,peso?)>
+    <!ELEMENT peso        (#PCDATA)>
+]>
+
+<productos>
+    <raton>
+        <codigo>272256</codigo>
+        <!-- La descripción es opcional para el ratón, obligatoria para teclados-->
+        <descripcion>"Raton gaming</descripcion>
+    </raton>
+    <teclado>
+        <codigo>822221</codigo>
+        <descripcion>Un teclado genérico</descripcion>
+    </teclado>
+</productos>
