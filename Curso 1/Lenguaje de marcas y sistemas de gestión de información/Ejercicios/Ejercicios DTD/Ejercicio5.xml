@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE billete [
+    <!ELEMENT billete (pasajero, origen, destino, fecha, hora)>
+    <!ELEMENT pasajero (#PCDATA)>
+    <!ELEMENT origen (#PCDATA)>
+    <!ELEMENT destino (#PCDATA)>
+    <!ELEMENT fecha (#PCDATA)>
+    <!ELEMENT hora (#PCDATA)>
+]>
+
+<billete>
+    <pasajero>Alfredo Pujol</pasajero>
+    <origen>Josep Taradellas - Barcelona - El Prat</origen>
+    <destino>Madrid - Barajas - Adolfo Suárez</destino>
+    <fecha>03-09-2023</fecha>
+    <hora>14:20:00</hora>
+</billete>

@@ -39,6 +39,7 @@ public class LoteriaPrim {
                 System.out.println("Boleto rellenado correctamente");
             }
             case 2 -> {
+                // TODO: IMPLEMENT
                 
                 System.out.println("Boleto rellenado correctamente");
             }

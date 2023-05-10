@@ -65,17 +65,94 @@ public class Main {
     }
 
     private static void procesarOpcion(int opcion, DatabaseConnection dbc) {
+        String matriculaVehiculo;
         switch(opcion) {
             case 1 -> displayAll(dbc);
             case 2 -> {
+                matriculaVehiculo = leerCadena("Introduzca la matrícula del vehículo: ");
+                lookFor(dbc, matriculaVehiculo);
             }
             case 3 -> {
-
+                matriculaVehiculo = leerCadena("Introduzca la matrícula del vehículo: ");
+                deleteCar(dbc, matriculaVehiculo);
             }
             case 4 -> {
-
+                matriculaVehiculo = leerCadena("Introduzca la matrícula del vehículo: ");
+                modifyCar(dbc, matriculaVehiculo);
             }
 
+        }
+    }
+
+    private static void modifyCar(DatabaseConnection dbc, String matriculaVehiculo) {
+        try {
+            ResultSet result = dbc.fetch(String.format("SELECT * FROM Coches WHERE Matricula LIKE '%s'", matriculaVehiculo));
+
+            if (result.next()) {
+                int opcion;
+                String dato;
+                opcion = Integer.parseInt(leerCadena("¿Qué atributo desea modificar (1. Marca, 2. Modelo, 3. Fecha)? "));
+
+                switch (opcion) {
+                    case 1 -> {
+                        dato = leerCadena("Introduzca la nueva marca del coche: ");
+                        dbc.execute(String.format("UPDATE Coches SET Marca = '%s' WHERE Matricula LIKE '%s'", dato, matriculaVehiculo));
+                    }
+                    case 2 -> {
+                        dato = leerCadena("Introduzca el nuevo modelo del coche: ");
+                        dbc.execute(String.format("UPDATE Coches SET Modelo = '%s' WHERE Matricula LIKE '%s'", dato, matriculaVehiculo));
+                    }
+                    case 3 -> {
+                        dato = leerCadena("Introduzca la nueva fecha de compra (introduzca 'current' para indicar fecha actual, presione enter para introducir la fecha manualmente): ");
+
+                        if (dato.equalsIgnoreCase("current"))
+                            dbc.execute(String.format("UPDATE Coches SET Fecha_Compra = CURRENT_DATE() WHERE Matricula LIKE '%s'", matriculaVehiculo));
+                        else {
+                            int year = Integer.parseInt(leerCadena("Introduzca el año de compra: "));
+                            int month = Integer.parseInt(leerCadena("Introduzca el mes de compra: "));
+                            int day = Integer.parseInt(leerCadena("Introduzca el día de compra: "));
+
+                            String[] time = leerCadena("Introduzca el tiempo de compra. Formato (hh mm ss): ").split(" ");
+                            
+                            dbc.execute(String.format("UPDATE Coches SET Fecha_Compra = '%d-%d-%d %s:%s:%s' WHERE Matricula LIKE '%s'", 
+                                    year, month, day, time[0], time[1], time[2], matriculaVehiculo));
+                        }
+                    }
+                }
+            }
+            else
+                System.out.printf("No existe coche con matrícula %s en la base de datos %s\n", matriculaVehiculo, dbc.getDataBaseName());
+        } 
+        catch (SQLException e) {
+            System.out.println(e.getSQLState());
+        }
+    }
+
+    private static void deleteCar(DatabaseConnection dbc, String matriculaVehiculo) {
+        try {
+            dbc.execute(String.format("DELETE FROM Coches WHERE Matricula LIKE '%s'", matriculaVehiculo));
+        } 
+        catch (SQLException e) {
+            System.out.println(e.getSQLState());
+        }
+    }
+
+    private static void lookFor(DatabaseConnection dbc, String matriculaVehiculo) {
+        try {
+            ResultSet result = dbc.fetch(String.format("SELECT * FROM Coches WHERE Matricula LIKE '%s'", matriculaVehiculo));
+            
+            // se debe iterar una sola vez porque Matricula es PK y la PK solo tiene un atributo
+            // por tanto solo nos debe salir una entrada buscando por matrícula, por tanto, si 
+            // se entra al menos una vez quiere decir que el coche existe
+            if (result.next()) {
+                System.out.printf("Matrícula: %s | Marca: %s | Modelo: %s | Fecha Compra: %s\n",
+                        result.getString(1), result.getString(2), result.getString(3), result.getString(4));
+            }
+            else
+                System.out.printf("No existe coche con matrícula %s en la base de datos %s\n", matriculaVehiculo, dbc.getDataBaseName());
+        } 
+        catch (SQLException e) {
+            System.out.println(e.getSQLState());
         }
     }
 
@@ -99,6 +176,7 @@ public class Main {
         System.out.println("2. Buscar vehículo");
         System.out.println("3. Eliminar vehículo");
         System.out.println("4. Modificar vehículo");
+        System.out.println("5. Salir");
         System.out.println();
     }
 
