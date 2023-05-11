@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE receta [
+    <!ELEMENT receta (nombre, ingredientes+, instrucciones)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT ingredientes (ingrediente+)>
+    <!ELEMENT ingrediente (#PCDATA)>
+    <!ELEMENT instrucciones (#PCDATA)>
+    <!ATTLIST receta
+              raciones CDATA #REQUIRED
+              dificultad (baja | media | alta) "alta">
+    <!ATTLIST ingrediente
+              cantidad CDATA #REQUIRED
+              unidades CDATA #REQUIRED>
+]>
+
+<receta dificultad="alta" raciones="1">
+    <nombre>Pizza casera</nombre>
+    <ingredientes>
+        <ingrediente cantidad="500" unidades="g">harina</ingrediente>
+        <ingrediente cantidad="1" unidades="cuchara">levadura seca</ingrediente>
+        <ingrediente cantidad="1" unidades="cuchara">azúcar</ingrediente>
+        <ingrediente cantidad="1/2" unidades="cuchara">sal</ingrediente>
+        <ingrediente cantidad="250" unidades="ml">agua tibia</ingrediente>
+        <ingrediente cantidad="2" unidades="cuchara">aceite de oliva</ingrediente>
+        <ingrediente cantidad="300" unidades="g">salsa de tomate</ingrediente>
+        <ingrediente cantidad="250" unidades="g">mozzarella rallada</ingrediente>
+        <ingrediente cantidad="2" unidades="cuchara">orégano al gusto</ingrediente>
+    </ingredientes>
+    <instrucciones>
+        Mezcle la harina, la levadura seca, el azúcar y la sal en un tazón grande.
+        Agregue agua tibia y aceite de oliva y mezcle hasta que la masa se forme.
+        Amasar la masa durante unos minutos y dejarla reposar durante 30 minutos.
+        Precalentar el horno a 220°C.
+        Extienda la masa de pizza en una bandeja para hornear y cubra
+    </instrucciones>
+</receta>

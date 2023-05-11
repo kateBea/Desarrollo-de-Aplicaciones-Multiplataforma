@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE videojuego [
+    <!ELEMENT videojuego (titulo, generos+)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ATTLIST videojuego titulo CDATA #REQUIRED>
+    <!ELEMENT generos (genero+)>
+    <!ELEMENT genero (#PCDATA)>
+]>
+
+<videojuego titulo="CS:GO">
+    <titulo>Counter Strike: Global Offenisve</titulo>
+    <generos>
+        <genero>FPS</genero>
+    </generos>
+</videojuego>

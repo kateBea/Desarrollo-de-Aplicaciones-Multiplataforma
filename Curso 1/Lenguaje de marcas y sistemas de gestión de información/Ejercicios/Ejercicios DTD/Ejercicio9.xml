@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pelicula [
+    <!ELEMENT pelicula (titulo, director, sinopsis, actores, estreno?)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT director (#PCDATA)>
+    <!ELEMENT sinopsis (#PCDATA)>
+    <!ELEMENT estreno (#PCDATA)>
+    <!ELEMENT actores (actor+)>
+    <!ELEMENT actor (#PCDATA)>
+]>
+
+<pelicula>
+    <titulo>Los vengadores: Infinity War</titulo>
+    <director>Joe Russo</director>
+    <sinopsis>
+        Los Vengadores deben evitar que Thanos, un señor de la guerra 
+        intergaláctico, ponga sus manos en todas las piedras infinitas.
+        Sin embargo, Thanos está preparado para hacer todo lo posible
+        para llevar a cabo su loco plan.
+    </sinopsis>
+    <actores>
+        <actor>Robert Downey Jr.</actor>
+        <actor>Scarllet Johanson</actor>
+        <actor>Chris Hemsworth</actor>
+        <actor>Chris Evans</actor>
+    </actores>
+    <estreno>17 abril 2018</estreno>
+</pelicula>
