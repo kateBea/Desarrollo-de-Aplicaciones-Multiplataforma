@@ -7,12 +7,12 @@ class Hormiga {
 public:
     Hormiga(int id, bool viva) : m_id{ id }, m_viva{ viva } {}
 
-    int getId() const { 
-        return m_id; 
+    auto getId() const -> int {
+        return m_id;
     }
 
-    bool estaViva() const { 
-        return m_viva; 
+    auto estaViva() const -> bool {
+        return m_viva;
     }
 
 private:
