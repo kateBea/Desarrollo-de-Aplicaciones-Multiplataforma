@@ -64,7 +64,7 @@ private:
         return computeFeromonas(count_vivas - 1) + computeFeromonas(count_vivas - 2);
     }
 
-    auto contarVivas(const std::vector<Hormiga>& vec) -> int {
+    static auto contarVivas(const std::vector<Hormiga>& vec) -> int {
         int total{};
 
         for (const auto& it : vec)

@@ -74,9 +74,10 @@ private:
         Node(const T& info)
             :   m_info{ info }, m_next{ nullptr }
         {}
+
         template<typename... Args>
         Node(Args... args)
-            : m_info{ std::forward<Args>(args)... }, m_next{ nullptr }
+            :   m_info{ std::forward<Args>(args)... }, m_next{ nullptr }
         {}
     };
 
