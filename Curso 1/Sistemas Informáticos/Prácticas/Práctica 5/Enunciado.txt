@@ -1,7 +1,7 @@
 PUNTO DE RESTAURACIÓN Y COPIA DE SEGURIDAD
 
 Realizar un punto de restauración del sistema.
-Instalar un programa, añador algún documento y cambiar el fondo de pantalla.
+Instalar un programa, añadir algún documento y cambiar el fondo de pantalla.
 Restaurar el sistema a partir del punto de restauración e indicar qué elementos del anterior punto ya no aparecen.
 Realizar el mismo proceso de los 3 apartados anteriores pero esta vez haciendo una copia de seguridad.
 
