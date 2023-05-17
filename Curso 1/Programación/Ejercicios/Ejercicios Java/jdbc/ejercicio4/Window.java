@@ -1,4 +1,8 @@
+package jdbc.ejercicio4;
+
 import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public abstract class Window extends JFrame {
     protected static final int DEFAULT_WIDTH = 1280;
@@ -8,11 +12,24 @@ public abstract class Window extends JFrame {
 
     public Window(String tile) {
         super(tile);
-        setDefaultCloseOperation(HIDE_ON_CLOSE);
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+                | UnsupportedLookAndFeelException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // spawn window in the middle of the screen
+        setLocationRelativeTo(null); 
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     public void displayWindow() {
         setVisible(true);
+    }
+
+    public void hideWindow() {
+        setVisible(false);
     }
 
 }

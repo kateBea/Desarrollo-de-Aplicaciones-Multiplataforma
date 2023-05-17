@@ -1,3 +1,5 @@
+package jdbc.ejercicio4;
+
 import java.sql.*;
 
 public class DatabaseConnection {
