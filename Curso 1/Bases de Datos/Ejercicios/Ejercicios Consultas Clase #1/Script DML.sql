@@ -49,7 +49,7 @@ WHERE Procedencia LIKE '%pa%';
 -- 11
 SELECT Nombre, Procedencia
 FROM Jugadores
-WHERE Procedencia LIKE '%p%a%';
+WHERE Procedencia LIKE '%pa%';
 
 -- 12
 SELECT AVG(Puntos_Visitante) 'Media Puntos Visitante'

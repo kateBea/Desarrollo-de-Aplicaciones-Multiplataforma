@@ -1,0 +1,9 @@
+Ejercicio basado en ventanas que pretende mostrar la información de la tabla Departamentos de la base de datos curso.
+
+Al iniciar la app se muestran los datos del primer registro. Se podrá navegar al siguiente y anterior.
+
+Añadir la programación pendiente: conexión a bd, mostrar información primer registro, porder navegar por los registros. Es conveniente que las operaciones con la BD se hagan en un fichero aparte.
+
+Una vez conseguido:
+- probar a añadir dos botones más: ir al primero e ir al último
+- probar a cambiar el layout del JFrame a BorderLayout

@@ -15,7 +15,7 @@ public class SubmitWindow extends Window implements ActionListener {
     private JButton m_SubmitButton;
     private JButton m_CancelButton;
 
-    private JTextArea m_UserTextField;
+    private JTextField m_UserTextField;
     private JPasswordField m_PasswordTextField;
 
     private MainMenuWindow m_MainMenuWindow;
@@ -111,7 +111,7 @@ public class SubmitWindow extends Window implements ActionListener {
         m_MainMenuWindow = null;
         m_Dbc = null;
 
-        m_UserTextField = new JTextArea(1, 20);
+        m_UserTextField = new JTextField(20);
         m_PasswordTextField = new JPasswordField(20);
 
         m_SubmitButton.addActionListener(this);
