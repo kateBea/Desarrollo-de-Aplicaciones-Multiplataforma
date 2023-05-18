@@ -1,3 +1,0 @@
-Ejercicio basado en ventanas que pretende mostrar la información de la tabla Departamentos de la base de datos curso.
-
-Al iniciar la app se muestran los datos del primer registro. Se podrá navegar al siguiente y anterior.

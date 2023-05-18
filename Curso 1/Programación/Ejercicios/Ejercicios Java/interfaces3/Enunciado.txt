@@ -7,3 +7,7 @@ Añadir la programación pendiente: conexión a bd, mostrar información primer 
 Una vez conseguido:
 - probar a añadir dos botones más: ir al primero e ir al último
 - probar a cambiar el layout del JFrame a BorderLayout
+
+
+OJOOOO LA SOLUCIÓN SUBIDA NO ES LA MÁS OPTIMA. HABRÍA QUE SEPARAR EN DOS FICHEROS
+e2023_17_05_EJ7.zip solución compartida por un compañero. Ojo que en esta versión utiliza un método para moverse por el resultset en el que va directamente al nº de un registro.  Esto le ha ocasionado algún problema que ha parcheado. Pero como podéis ver ha separado la lógica de datos de la interfaz gráfica

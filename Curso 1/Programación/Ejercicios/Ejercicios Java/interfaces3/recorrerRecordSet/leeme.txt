@@ -1,0 +1,3 @@
+¡¡OJO!!
+Este ejercicio está todo hecho en un único fichero pero no debería ser así
+Debería existir un fichero .java para la interfaz gráfica y navegación y otro fichero java que cree la conexión, lance consultas, incerte, etc.
