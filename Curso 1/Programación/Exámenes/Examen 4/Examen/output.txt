@@ -1,0 +1,16 @@
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+100         Steven          King          skin@gnal.com          1987-06-17          515.123.4567
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+101         Neena          Kochhar          ko@gmail.com          1987-06-18          515.123.4568
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+102         Lex          De Haan          lexgmail.com          1987-06-19          515.123.4569
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+103         Alex          Hunold          alex@gmail.com          1987-06-20          590.423.4567
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+104         Bruce          Ernst          bruce@gmail.es          1987-06-21          590.423.4568
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+105         David          Austin          austin@gmail.es          1987-06-22          590.423.4569
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+106         Valli          Patab          pat@gmail.es          1987-06-23          590.423.4560
+Código      Nombre      Apellidos      Email      Fecha      Telefóno
+107         Diana          Lorentz          lont@gmail.com          1987-06-24          590.423.5567
