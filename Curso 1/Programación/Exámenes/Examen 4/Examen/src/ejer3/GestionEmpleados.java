@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -185,5 +186,9 @@ public class GestionEmpleados extends JFrame implements ActionListener {
 
     public void setStatusLabel(String info) {
         estadoField.setText(info);
+    }
+
+    public static String requestValue(String promt) {
+        return JOptionPane.showInputDialog(null, promt);
     }
 }

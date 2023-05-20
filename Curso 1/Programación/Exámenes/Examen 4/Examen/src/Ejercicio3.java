@@ -2,8 +2,8 @@ import ejer3.*;
 
 public class Ejercicio3 {
     public static void main(String[] args)  {
-        final String USER = "root";
-        final String PASSWORD = "none";
+        final String USER = GestionEmpleados.requestValue("Enter database user name");
+        final String PASSWORD = GestionEmpleados.requestValue("Enter database user password");
         final String DB_NAME = "exProg3Ev";
         DatabaseConnection dbc;
         GestionEmpleados gestorGui;
