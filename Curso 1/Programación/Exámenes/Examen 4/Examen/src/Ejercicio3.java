@@ -3,7 +3,7 @@ import ejer3.*;
 public class Ejercicio3 {
     public static void main(String[] args)  {
         final String USER = "root";
-        final String PASSWORD = "daddyWentForCookies6996+";
+        final String PASSWORD = "none";
         final String DB_NAME = "exProg3Ev";
         DatabaseConnection dbc;
         GestionEmpleados gestorGui;
