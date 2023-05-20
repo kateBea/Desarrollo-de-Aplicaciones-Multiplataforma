@@ -6,7 +6,6 @@ public class Job {
     private double minSalario;
     private double maxSalario;
 
-    
     public Job(int id, String titulo, double maxSalario, double minSalario) {
         this.id = id;
         this.titulo = titulo;
