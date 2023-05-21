@@ -94,83 +94,104 @@ SELECT * FROM Alquileres;
                     
 /* Ejercicio 7
 Ya tenemos de vuelta en el servicio activo todas las furgonetas que estaban en “Averiado”, cambia de nuevo su estado a “En uso”.*/
-update vehiculos
-set estado = 'En uso'
-where id_vehiculo in (select id_vehiculo from vehiculos where estado like 'Averidado' and tipocarnet like 'Furgoneta');
+UPDATE Vehiculos
+SET estado = 'En uso'
+WHERE id_vehiculo IN 
+	/* Para evitar Error Code: 1093. You can't specify target table 'Vehiculos' for update in FROM clause
+		Al intentar modificar la misma tabla de la subconsulta*/
+	(SELECT * FROM (SELECT id_vehiculo 
+    	FROM Vehiculos 
+    	WHERE tipocarnet LIKE 'Furgoneta') AS VehiculosTabla);
 
+SELECT * FROM Vehiculos WHERE tipocarnet LIKE 'Furgoneta';
 
 /* Ejercicio 8
 Crea una vista llamada “VistaAlquileresFebrero” con los datos de los alquileres de vehículos que se han iniciado en febrero. 
 ¿Cuántas filas tiene? */
-create or replace view VistaAlquileresFebrero as
-select id_alquiler, inicioalquiler, finalquiler, id_cliente, alquileres.id_vehiculo, seguroextra, marca, modelo, matricula 
-from alquileres inner join vehiculos on alquileres.id_vehiculo = vehiculos.id_vehiculo
-where month(inicioalquiler) = 2;
+CREATE OR REPLACE VIEW VistaAlquileresFebrero AS
+SELECT id_alquiler, inicioalquiler, finalquiler, id_cliente, Alquileres.id_vehiculo, seguroextra, marca, modelo, matricula 
+FROM Alquileres INNER JOIN Vehiculos ON Alquileres.id_vehiculo = Vehiculos.id_vehiculo
+WHERE MONTH(inicioalquiler) = 2;
 
 -- número de filas de la vista (tiene 4 filas)
-select count(*) from VistaAlquileresFebrero;
+SELECT count(*) AS 'Número registros' FROM VistaAlquileresFebrero;
 
 
 /* Ejercicio 9
-Crea una vista llamada “VistaAlquilerFinDeSemana” con todos los datos de los alquileres que comienzan en fin de semana (viernes, sábado o domingo). ¿Cuántas filas tiene? */
+Crea una vista llamada “VistaAlquilerFinDeSemana” con todos los datos de los alquileres que comienzan en fin de semana (viernes, sábado o domingo). 
+¿Cuántas filas tiene? */
 CREATE OR REPLACE VIEW VistaAlquilerFinDeSemana AS
-SELECT id_alquiler, inicioalquiler, finalquiler, id_cliente, alquileres.id_vehiculo, seguroextra, marca, modelo, matricula 
-FROM alquileres INNER JOIN vehiculos ON alquileres.id_vehiculo = vehiculos.id_vehiculo
-where dayofweek(inicioalquiler) in (6, 7, 1);
+SELECT id_alquiler, inicioalquiler, finalquiler, id_cliente, Alquileres.id_vehiculo, seguroextra, marca, modelo, matricula 
+FROM Alquileres INNER JOIN Vehiculos ON Alquileres.id_vehiculo = Vehiculos.id_vehiculo
+WHERE dayofweek(inicioalquiler) IN (6, 7, 1);
 
--- número de filas de la vista (tiene 18 filas)
-select count(*) from VistaAlquilerFinDeSemana;
+-- número de filas de la vista (tiene 27 filas)
+SELECT count(*) AS 'Número registros' FROM VistaAlquilerFinDeSemana;
 
 
 /* Ejercicio 10
 Elimina, sin que nos pueda dar ningún error,  la vista “VistaAlquileresFebrero”, ya ha dejado de ser útil. */
-drop view VistaAlquileresFebrero;
+DROP VIEW IF EXISTS VistaAlquileresFebrero;
 
 
 /* Ejercicio 11
 Se ha ampliado la plantilla de personal. Crea un usuario con el nombre Consultor y las pass que consideres */
- create user Consultor identified by 'createUser';
+CREATE USER Consultor IDENTIFIED BY 'pass1234';
 
 /* Ejercicio 12
 Da permiso de SELECT e INSERT a la tabla Clientes de RentACar al usuario “consultor”.
 */
-grant select, insert on RentACar.Clientes to Consultor;
+GRANT SELECT, INSERT ON rentacar.Clientes TO Consultor;
 
 /* Ejercicio 13
 Todos los vehículos con más de 4 alquileres tienen que pasar por el taller. Cambia su estado de “En uso” a “Revisión”. 
 */
-update vehiculos
-set estado = 'Revisión'
-where id_vehiculo in 
-(select vehiculos.id_vehiculo
-from vehiculos inner join alquileres on vehiculos.id_vehiculo = alquileres.id_vehiculo
-group by vehiculos.id_vehiculo
-having count(distinct id_alquiler) > 4);
+SET SQL_SAFE_UPDATES = 0;
 
-                        
+UPDATE Vehiculos
+SET estado = 'Revisión'
+WHERE id_vehiculo IN 
+	(SELECT * FROM (SELECT Vehiculos.id_vehiculo
+	FROM Vehiculos INNER JOIN Alquileres ON Vehiculos.id_vehiculo = Alquileres.id_vehiculo
+	GROUP BY Vehiculos.id_vehiculo
+	HAVING COUNT(id_alquiler) > 4) AS Lista);
+    
+SELECT Vehiculos.id_vehiculo AS 'Identificador', COUNT(id_alquiler) AS 'Num. Alquileres', Vehiculos.estado
+FROM Vehiculos INNER JOIN Alquileres ON Vehiculos.id_vehiculo = Alquileres.id_vehiculo
+GROUP BY Vehiculos.id_vehiculo, Vehiculos.estado;
+
+SET SQL_SAFE_UPDATES = 1;
+
 /* Ejercicio 14
- Nos han comunicado el positivo por covid-19 del cliente con ID 109, hay pasar todos los vehículos que se alquilaran entre el 1 y el 15 de marzo a una
- desinfección exhaustiva que conducirá su Estado a “Revisión”.
- Es indiferente si acabó o empezó el alquiler en ese lapso, si estuvo algún vehículo en contacto con el cliente tiene que ser desinfectado.*/
-update vehiculos
-set estado = 'Revisión'
-where vehiculos.id_vehiculo in
-(select alquileres.id_vehiculo 
-from alquileres inner join vehiculos on vehiculos.id_vehiculo = alquileres.id_vehiculo
-where id_cliente = 109 and ((month(inicioalquiler) = 3 and day(inicioalquiler) between 1 and 15) or
-		(month(finalquiler) = 3 and day(finalquiler) between 1 and 15)));
+ Nos han comunicado el positivo por covid-19 del cliente con ID 109, hay que pasar todos los vehículos que se alquilaran 
+ entre el 1 y el 15 de marzo a una desinfección exhaustiva que conducirá su Estado a “Revisión”.
+ Es indiferente si acabó o empezó el alquiler en ese lapso, si estuvo algún vehículo en contacto con el cliente 
+tiene que ser desinfectado.*/
+UPDATE Vehiculos
+SET estado = 'Revisión'
+WHERE id_vehiculo IN (SELECT * FROM (SELECT Alquileres.id_vehiculo 
+	FROM Alquileres INNER JOIN Vehiculos ON Vehiculos.id_vehiculo = Alquileres.id_vehiculo
+	WHERE id_cliente = 109 AND ((MONTH(inicioalquiler) = 3 AND DAY(inicioalquiler) BETWEEN 1 AND 15) OR
+								(MONTH(finalquiler) = 3 AND DAY(finalquiler) BETWEEN 1 AND 15))) AS Placeholder);
  
-
+SELECT *
+FROM Alquileres INNER JOIN Vehiculos ON Vehiculos.id_vehiculo = Alquileres.id_vehiculo
+WHERE id_cliente = 109 AND ((MONTH(inicioalquiler) = 3 AND DAY(inicioalquiler) BETWEEN 1 AND 15) OR
+							(MONTH(finalquiler) = 3 AND DAY(finalquiler) BETWEEN 1 AND 15));
 
 /* Ejercicio 15
 Todos los vehículos no afectados por el coronavirus que estaban en revisión pasan de nuevo al estado “En uso”.*/
-update vehiculos
-set estado = 'En uso'
-where estado = 'Revisión' and vehiculos.id_vehiculo not in
-(select alquileres.id_vehiculo 
-from alquileres inner join vehiculos on vehiculos.id_vehiculo = alquileres.id_vehiculo
-where id_cliente = 109 and ((month(inicioalquiler) = 3 and day(inicioalquiler) between 1 and 15) or
-		(month(finalquiler) = 3 and day(finalquiler) between 1 and 15)));
+UPDATE Vehiculos
+SET estado = 'En uso'
+WHERE id_vehiculo IN (SELECT * FROM (SELECT Alquileres.id_vehiculo 
+	FROM Alquileres INNER JOIN Vehiculos ON Vehiculos.id_vehiculo = Alquileres.id_vehiculo
+	WHERE id_cliente = 109 AND ((MONTH(inicioalquiler) = 3 AND DAY(inicioalquiler) BETWEEN 1 AND 15) OR
+								(MONTH(finalquiler) = 3 AND DAY(finalquiler) BETWEEN 1 AND 15))) AS Placeholder);
+                                
+SELECT *
+FROM Alquileres INNER JOIN Vehiculos ON Vehiculos.id_vehiculo = Alquileres.id_vehiculo
+WHERE id_cliente = 109 AND ((MONTH(inicioalquiler) = 3 AND DAY(inicioalquiler) BETWEEN 1 AND 15) OR
+							(MONTH(finalquiler) = 3 AND DAY(finalquiler) BETWEEN 1 AND 15));
 
  
  /* Ejercicio 16
@@ -182,12 +203,14 @@ The unit for the result (an integer) is given by the unit argument.
 Ejemplo:
 mysql> SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');
         -> 128885*/
-create or replace view VistaAlquileresCortos
-(ID_Alquiler, InicioAlquiler, FinAlquiler) as
-select ID_Alquiler, InicioAlquiler, FinAlquiler
-where day(FinAlquiler) = day(FinAlquiler) and hour(FinAlquiler) - hour(FinAlquiler) < 3;
+        
+CREATE OR REPLACE VIEW VistaAlquileresCortos
+	(ID_Alquiler, InicioAlquiler, FinAlquiler, Duracion_en_Horas) AS
+SELECT ID_Alquiler, InicioAlquiler, FinAlquiler, ((TO_SECONDS(FinAlquiler) - TO_SECONDS(InicioAlquiler)) / 3600)
+FROM Alquileres
+WHERE ((TO_SECONDS(FinAlquiler) - TO_SECONDS(InicioAlquiler)) / 3600) < 3;
 
-select * from VistaAlquileresCortos;
+SELECT * FROM VistaAlquileresCortos;
 
 
 /* Ejercicio 17
@@ -195,47 +218,56 @@ Crea una vista "VistaContactosClientesAlquieleresFurgoneta" con los campos
 'Nombre_Cliente', 'TfnoCliente', 'Email', 'FechaInicio', 'FechaFin', 'Marca', 'Modelo'
 . Muestra el contenido de la vista
 */
-create or replace view VistaContactosClientesAlquieleresFurgoneta
-(Nombre_Cliente, TfnoCliente, Email, FechaInicio, FechaFin, Marca, Modelo) as
-select concat(nombre, ' ', apellido1, ' ', ifnull(apellido2,'')), telefono, email, inicioalquiler, finalquiler, marca, modelo
-from clientes inner join alquileres inner join vehiculos on alquileres.id_cliente = clientes.id_cliente and alquileres.id_vehiculo = vehiculos.id_vehiculo;
+CREATE OR REPLACE VIEW VistaContactosClientesAlquieleresFurgoneta
+	(Nombre_Cliente, TfnoCliente, Email, FechaInicio, FechaFin, Marca, Modelo) AS
+SELECT CONCAT(nombre, ' ', apellido1, ' ', ifnull(apellido2,'')), telefono, email, inicioalquiler, finalquiler, marca, modelo
+FROM Clientes INNER JOIN Alquileres INNER JOIN Vehiculos 
+	ON Alquileres.id_cliente = Clientes.id_cliente AND Alquileres.id_vehiculo = Vehiculos.id_vehiculo;
 
-select * from VistaContactosClientesAlquieleresFurgoneta;
+SELECT * FROM VistaContactosClientesAlquieleresFurgoneta;
 
 /* Ejercicio 18
- Crea una vista "AlquileresMotos" donde se muestre el nombre, tfno y email de los clientes que han alquilado motos. Muestra el contenido de la vista
+ Crea una vista "AlquileresMotos" donde se muestre el nombre, tfno y email de los clientes que han alquilado motos. 
+ Muestra el contenido de la vista
 */
-create or replace view AlquileresMotos
-(Nombre_Cliente, Email, TfnoCliente) as
-select distinct concat(nombre, ' ', apellido1, ' ', ifnull(apellido2,'')), email, telefono
-from clientes inner join alquileres inner join vehiculos on alquileres.id_cliente = clientes.id_cliente and alquileres.id_vehiculo = vehiculos.id_vehiculo
-where vehiculos.tipocarnet like 'Moto';
+CREATE OR REPLACE VIEW AlquileresMotos (Nombre_Cliente, Email, TfnoCliente) AS
+select distinct CONCAT(nombre, ' ', apellido1, ' ', ifnull(apellido2, '')), email, telefono
+FROM Clientes INNER JOIN Alquileres INNER JOIN Vehiculos 
+	ON Alquileres.id_cliente = Clientes.id_cliente AND Alquileres.id_vehiculo = Vehiculos.id_vehiculo
+WHERE Vehiculos.tipocarnet LIKE 'Moto';
 
-
-select * from AlquileresMotos;
+SELECT * FROM AlquileresMotos;
 
 /* Ejercicio 19
 Crea una vista "AlquileresTipo" que muestre el número de alquileres que hay para cada tipo de vehiculo */
-create or replace view AlquileresTipo
-(Tipo, Cantidad) as
-select tipoCarnet, count(id_alquiler)
-from alquileres inner join vehiculos on alquileres.id_vehiculo = vehiculos.id_vehiculo
-group by tipoCarnet;
+CREATE OR REPLACE VIEW AlquileresTipo (Tipo, Cantidad) AS
+SELECT tipoCarnet, COUNT(id_alquiler)
+FROM Alquileres INNER JOIN Vehiculos ON Alquileres.id_vehiculo = Vehiculos.id_vehiculo
+GROUP BY tipoCarnet;
 
-select * from AlquileresTipo;
+SELECT * FROM AlquileresTipo;
 
 
 /* Ejercicio 20
 Insertar tres vehículos nuevos con los datos que consideres apropiados pero de la misma marca y modelo del vehículo que ha sido más alquilado.*/
 INSERT INTO Vehiculos (ID_Vehiculo, Matricula, Marca, Modelo, TipoCarnet, Estado) 
-VALUES ((SELECT 519, '1231BTB', marca, modelo, tipoCarnet, 'En uso' FROM Vehiculos WHERE id_vehiculo = 501),
-		(SELECT 520, '7521CEC', marca, modelo, tipoCarnet, 'En uso' FROM Vehiculos WHERE id_vehiculo = 501),
-		(SELECT 521, '3213WDD', marca, modelo, tipoCarnet, 'En uso' FROM Vehiculos WHERE id_vehiculo = 501));
+VALUES ((519, '1231BTB', (SELECT marca, modelo, tipoCarnet, 'En uso' 
+		FROM Vehiculos 
+        WHERE id_vehiculo = 501)),
+        
+		(520, '7521CEC', (SELECT marca, modelo, tipoCarnet, 'En uso' 
+        FROM Vehiculos 
+        WHERE id_vehiculo = 501)),
 
-select id_vehiculo, count(*)
-from alquileres
-group by id_vehiculo
-order by count(*) desc;
+		(21, '3213WDD', (SELECT marca, modelo, tipoCarnet, 'En uso' 
+        FROM Vehiculos 
+        WHERE id_vehiculo = 501)));
+
+/*Encontrar vehículo más alquilado*/
+SELECT Vehiculos.id_vehiculo, Modelo, Marca, COUNT(*)
+FROM Alquileres INNER JOIN Vehiculos ON Alquileres.id_vehiculo = Vehiculos.id_vehiculo
+GROUP BY id_vehiculo
+ORDER BY count(*) DESC;
 
     
 /*Usar al acabar para limpieza*/
