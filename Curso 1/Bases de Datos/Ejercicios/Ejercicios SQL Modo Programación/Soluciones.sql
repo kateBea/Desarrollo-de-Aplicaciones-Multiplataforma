@@ -10,6 +10,7 @@ USE jardineria;
 
 /*************************************************************/
 SET GLOBAL log_bin_trust_function_creators = 1;
+SET GLOBAL max_sp_recursion_depth = 50;
 
 -- Helper functions ----------------------------------------------
 DROP FUNCTION IF EXISTS boolalpha;
@@ -63,7 +64,7 @@ BEGIN
 END//
 DELIMITER ;
 
-SELECT '¿44 es par?', boolaplha(esPar(44));
+SELECT boolaplha(esPar(44)) AS '¿44 es par?';
 
 -- 3
 DROP FUNCTION IF EXISTS maxThree;
@@ -131,8 +132,8 @@ BEGIN
 END//
 DELIMITER ;
 
-SELECT 'suma primeros 5 naturales', sumaN(5);
-SELECT 'suma primeros 5 naturales', sumaNOptimized(5);
+SELECT sumaN(5) AS 'suma primeros 5 naturales';
+SELECT sumaNOptimized(5) AS 'suma primeros 5 naturales';
 
 -- 6:
 DROP FUNCTION IF EXISTS sumaNDivisor;
@@ -150,9 +151,154 @@ BEGIN
 END//
 DELIMITER ;
 
-SELECT 'suma primeros 1/1 + 1/2 + ... + 1/5', sumaNDivisor(5);
+SELECT sumaNDivisor(5) AS 'suma primeros 1/1 + 1/2 + ... + 1/5';
 
+-- 7:
+DROP FUNCTION IF EXISTS computeHipotenusa;
+DELIMITER //
+CREATE FUNCTION computeHipotenusa(catAdj FLOAT, catOpuest FLOAT)
+RETURNS FLOAT
+BEGIN
+	RETURN SQRT(POW(catAdj, 2) + POW(catOpuest, 2));
+END//
+DELIMITER ;
+
+SELECT computeHipotenusa(3.6, 7.88) AS 'hipotenusa';
+
+-- 8:
+DROP FUNCTION IF EXISTS imc;
+DELIMITER //
+/*Recibe el peso en kilogramos y la altura en centímetros*/
+CREATE FUNCTION imc(peso FLOAT, altura FLOAT)
+RETURNS FLOAT
+BEGIN
+	RETURN peso / POW(altura / 100, 2);
+END//
+DELIMITER ;
+
+SELECT imc(76.9, 178) AS 'imc peso (kG) altura (cm)';
+
+-- 9:
+DROP FUNCTION IF EXISTS imcStr;
+DELIMITER //
+/*Recibe el peso en kilogramos y la altura en centímetros*/
+CREATE FUNCTION imcStr(peso FLOAT, altura FLOAT)
+RETURNS VARCHAR(128)
+BEGIN
+	DECLARE result VARCHAR(128) DEFAULT '';
+    DECLARE resultado FLOAT;
+    SET resultado = imc(peso, altura);
+    
+    SET result =
+		CASE 
+			WHEN resultado BETWEEN 16 AND 18.4 THEN 'Bajo Peso'
+            WHEN resultado BETWEEN 18.5 AND 24.9 THEN 'Rango Normal'
+			WHEN resultado BETWEEN 25 AND 29.9 THEN 'Sobrepeso'
+            ELSE 'Obesidad'
+		END;
+    SET result = CONCAT(result, ' [ imc: ', resultado,  ' ]');
+    RETURN result;
+END//
+DELIMITER ;
+
+SELECT imcStr(76.9, 155) AS 'imc peso (kG) altura (cm)';
+
+-- 10:
+DROP FUNCTION IF EXISTS precioConIva;
+DELIMITER //
+/*el valor del IVA se recibe en tanto por 100*/
+CREATE FUNCTION precioConIva(precioSinInva FLOAT, valorIVA FLOAT)
+RETURNS FLOAT
+BEGIN
+	RETURN precioSinInva * (1.0 + (valorIVA / 100)); 
+END//
+DELIMITER ;
+
+SELECT precioConIva(14.45, 20) AS 'precio con IVA (20%)';
+
+-- 12:
+DROP FUNCTION IF EXISTS factorial;
+DELIMITER //
+CREATE FUNCTION factorial(numero INT)
+RETURNS INT
+BEGIN
+	DECLARE counter INT DEFAULT 1;
+    DECLARE result INT DEFAULT 1;
+    WHILE counter <= numero DO
+		SET result = result * counter;
+        SET counter = counter + 1;
+    END WHILE;
+    
+    RETURN result;
+END//
+DELIMITER ;
+
+SELECT factorial(5) AS 'factorial de 5';
+
+-- 13:
+DROP PROCEDURE IF EXISTS recursiveFactorial;
+DELIMITER //
+CREATE PROCEDURE recursiveFactorial(IN limite INT, OUT result LONG)
+BEGIN
+	IF limite <= 0 THEN 
+		SET result = 1;
+	ELSE
+		CALL recursiveFactorial(limite - 1, result);
+		SET result = result * limite;
+    END IF;
+END//
+DELIMITER ;
+
+CALL recursiveFactorial(5, @my_variable);
+SELECT @my_variable;
+
+-- 14:
+DROP PROCEDURE IF EXISTS fibonacci;
+delimiter //
+CREATE PROCEDURE fibonacci (IN numero INT, OUT resultado LONG)
+BEGIN
+	DECLARE resultado1 LONG;
+    DECLARE resultado2 LONG;
+    IF numero = 0 THEN
+		SET resultado =0;
+    ELSEIF numero <= 2 THEN
+		SET resultado = 1;
+    ELSE
+		CALL fibonacci (numero - 1, resultado1);
+        CALL fibonacci (numero - 2, resultado2);
+        SET resultado = resultado1 + resultado2;
+    END IF;
+END//
+DELIMITER ;
+CALL fibonacci (5, @numero);
+SELECT @numero;
+
+-- 15:
+DROP PROCEDURE IF EXISTS division;
+DELIMITER //
+CREATE PROCEDURE division(IN dividendo INT, IN divisor INT, OUT cociente INT, OUT resto INT)
+BEGIN
+	SET cociente = TRUNCATE(dividendo / divisor, 0);
+    SET resto = dividendo % divisor;
+END//
+DELIMITER ;
+
+SET @dividendo = 23;
+SET @divisor = 4;
+CALL division(@dividendo, @divisor, @cociente, @resto);
+SELECT @dividendo, @divisor, @cociente, @resto;
+
+-- 16:
+
+SHOW FUNCTION STATUS;
 -- Cleanup
+DROP PROCEDURE IF EXISTS fibonacci;
+DROP FUNCTION IF EXISTS recursiveFactorial;
+DROP FUNCTION IF EXISTS factorial;
+DROP FUNCTION IF EXISTS precioConIva;
+DROP FUNCTION IF EXISTS imcStr;
+DROP FUNCTION IF EXISTS imc;
+DROP FUNCTION IF EXISTS computeHipotenusa;
 DROP FUNCTION IF EXISTS sumaNDivisor;
 DROP FUNCTION IF EXISTS sumaNOptimized;
 DROP FUNCTION IF EXISTS sumaN;
