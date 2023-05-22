@@ -289,6 +289,7 @@ CALL division(@dividendo, @divisor, @cociente, @resto);
 SELECT @dividendo, @divisor, @cociente, @resto;
 
 -- 16:
+    -- TODO: craft
 
 SHOW FUNCTION STATUS;
 -- Cleanup
