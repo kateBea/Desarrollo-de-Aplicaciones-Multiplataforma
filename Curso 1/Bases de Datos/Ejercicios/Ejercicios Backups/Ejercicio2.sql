@@ -1,0 +1,6 @@
+DROP DATABASE IF EXISTS totales;
+
+CREATE DATABASE IF NOT EXISTS totales;
+
+USE totales;
+

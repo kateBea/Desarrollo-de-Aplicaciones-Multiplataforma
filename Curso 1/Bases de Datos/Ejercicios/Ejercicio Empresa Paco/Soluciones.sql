@@ -41,7 +41,7 @@ BEGIN
     DECLARE resultado INT DEFAULT 0;
     DECLARE emp_comision INT;
     DECLARE erro_comision_mayor CONDITION FOR SQLSTATE '45000';
-    DECLARE cursor_result CURSOR FOR SELECT emp_no FROM empleados WHERE emp_no = par_codEmpleado;
+    DECLARE cursor_result CURSOR FOR SELECT comision FROM empleados WHERE emp_no = par_codEmpleado;
     
     DECLARE EXIT HANDLER FOR NOT FOUND
         SELECT par_codEmpleado AS 'No existe empleado';
@@ -67,6 +67,9 @@ DELIMITER ;
 
 CALL pone_comision(12, 3.4);
 CALL pone_comision(7654, 500);
+CALL pone_comision(7876, 500);
+
+SELECT * FROM empleados;
 
 
 
