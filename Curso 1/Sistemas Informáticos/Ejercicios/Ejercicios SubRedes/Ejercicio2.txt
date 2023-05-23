@@ -1,0 +1,36 @@
+Genera 4090 subredes a partir de la IP 172.16.5.0  / 16
+
+a) Número de bits:
+    => Disponemos de la dirección genérica de red que es de Tipo B
+
+    Enconramos mínimo número de bits necesarios del host 
+    para generar las direcciones de las subredes:
+
+    2^n - 2 >= 4090 => 2^n >= 4092 => log(2^n) = log(4092) => n >= log(4092) / log(2)
+    => n >= 12
+
+    Necesitamos 12 bits del host como mínimo para las suberedes
+
+b) Máscara de las subredes:
+    Máscara red IP original: 11111111.11111111.00000000.00000000 -> 255.255.0.0
+    Máscara red IP subredes: 11111111.11111111.11111111.11110000 -> 255.255.255.240
+
+c) Número de hosts por subred:
+    Primero inferimos el número de bits para el host:
+    Tenemos 4 ya que en total hay 4 * 8 y hemos usado 3 octetos para las subredes (ver apartado anterior)
+    2^n - 2 (con n = bits host) = hosts => 2⁴ - 2 = 14 hosts
+
+d) Para la primera y última subredes:
+    - Primera subred
+
+    1. Dirección red:           172.16.0.16
+    2. Dirección broadcast:     172.16.0.31
+    3. Primera IP asignable:    172.16.0.17
+    4. Última IP asignable:     172.16.0.30
+
+    - Última subred
+
+    1. Dirección red:           172.16.255.224
+    2. Dirección broadcast:     172.16.254.239
+    3. Primera IP asignable:    172.16.254.225
+    4. Última IP asignable:     172.16.254.238
