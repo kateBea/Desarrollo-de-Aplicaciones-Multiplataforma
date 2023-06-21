@@ -1,0 +1,56 @@
+Introducción
+Implemente la funcionalidad básica de la tienda: gestionar el almacén, gestionar los clientes y 
+realizar ventas.
+
+Descripción del proyecto
+La práctica a desarrollar consistirá en diseñar e implementar completamente el sistema de 
+gestión de una tienda virtual. Se deberá realizar un diagrama de clases adaptado a la 
+funcionalidad requerida en esta práctica e implementar la funcionalidad posteriormente. 
+Se valorará un diseño que aplique adecuadamente los principios de orientación a objetos
+(jerarquías de clase, modularidad, etc.)
+
+El almacenamiento se realizará en Arrays.
+
+El sistema a implementar consistirá en una aplicación que simulará el comportamiento de una
+tienda online que venderá distintos tipos de artículos (en el ejemplo a implementar libros,
+discos y películas)
+
+Existirán dos posibles perfiles de usuario:
+
+·         Un perfil administrador que se encargará de gestionar el almacén.
+
+·         Y un perfil cliente que será el que realice las compras en la tienda.
+
+Las posibles acciones para el administrador serán, al menos, las siguientes:
+
+·         Mostrar el inventario completo de la tienda/almacén, ordenados por id de artículo
+
+·         Mostrar el inventario de un tipo de artículo concreto ordenado por descripción de artículo
+
+·         Realizar búsquedas de artículos
+
+·         Aumentar el stock de un artículo
+
+·         Mostrar el listado de clientes de la tienda
+
+Por su parte, las acciones para los clientes serán, al menos:
+
+·         Registrarse como usuario en la tienda.
+
+·         Aumentar su saldo para compras.
+
+·         Realizar búsquedas de artículos concretos (queda a disposición del alumno el definir los mecanismos de búsqueda que proporcionará la aplicación).
+
+·         Añadir y eliminar artículos de su carrito de la compra.
+
+·         Comprar los artículos que ha añadido al carrito (si no hay saldo suficiente a la hora de realizar la compra ésta no será posible)
+
+·         Visualizar su histórico de compras entre dos fechas dadas
+
+En la tienda de prueba que se implementará se gestionarán al menos tres posibles tipos de artículos: libros, discos y películas. Cada uno de ellos tendrá los siguientes atributos:
+
+·         Libro: id interno, título, autor, editorial.
+
+·         Disco: id interno, título, intérprete, año de publicación.
+
+·         Película: id interno, título, género, director.

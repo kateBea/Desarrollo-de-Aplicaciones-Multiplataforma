@@ -1,0 +1,12 @@
+// IMPORTANTE: No modificar este fichero. Se controla atra vés del programa. Esta línea es sólo un comentario
+
+Maria Martinez,     616 74 62 16,   www.perez.com, empresa
+Juan Perez,         613 17 41 35,   www.productosquimicos.com, empresa
+Carlos Garcia,      605 81 62 79,   www.supergarcia.com, empresa
+Elena Sanchez,      611 38 10 92,   23-marzo,      persona
+Pedro Rodriguez,    638 56 14 75,   www.ferreteriaspedro.com, empresa
+Ana Fernandez,      638 32 97 84,   12-marzo,      persona
+Marta Lopez,        605 27 16 87,   21-abril,      persona
+Diego Ramirez,      615 60 79 29,   1-diciembre,      persona
+Luis Gomez,         648 95 32 92,   www.concesionariogomez.es, empresa
+Laura Torres,       604 88 68 41,   6-marzo, empresa
