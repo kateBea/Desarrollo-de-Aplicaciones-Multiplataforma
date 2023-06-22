@@ -1,0 +1,4 @@
+12345, Clara, 2
+74513, Huskky, 4
+86251, Gandalf, 2
+82745, Lunar, 1
