@@ -2,9 +2,9 @@ from Cita import *
 from Mascota import *
 from Cliente import *
 
-DIRECTORIO_FICHERO_MASCOTAS = 'Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios Python/Ejercicios Python POO #2/Citas/mascotas.txt'
-DIRECTORIO_FICHERO_CLIENTES = 'Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios Python/Ejercicios Python POO #2/Citas/clientes.txt'
-DIRECTORIO_FICHERO_CITAS =  'Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios Python/Ejercicios Python POO #2/Citas/citas.txt'
+DIRECTORIO_FICHERO_MASCOTAS = 'mascotas.txt'
+DIRECTORIO_FICHERO_CLIENTES = 'clientes.txt'
+DIRECTORIO_FICHERO_CITAS =  'citas.txt'
 
 clientes = list()
 citas = list()
