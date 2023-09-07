@@ -38,7 +38,7 @@ public class MostrarDatos extends JFrame implements ActionListener{
     DataBaseLogic dblogic = new DataBaseLogic();
 
     public static void main(String[]args){
-        MostrarDatos mmain = new MostrarDatos();
+        MostrarDatos main = new MostrarDatos();
         
     }
 
@@ -85,12 +85,6 @@ public class MostrarDatos extends JFrame implements ActionListener{
         editFields(false);
         pack();
         setVisible(true);
-      
-        
-       
-
-
-
     }
 
 
