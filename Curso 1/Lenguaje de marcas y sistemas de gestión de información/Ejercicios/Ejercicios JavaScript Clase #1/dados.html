@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <script src="dados.js"></script>
+    <title>Modelos para los Ejercicios</title>
+</head>
+
+<body onload="init()">
+    <h1> Mesa de dados</h1>
+   
+    <hr>
+  
+    <table>
+      <tr>
+        <td>Saldo: </td><td id="s_saldo"> </td>
+      </tr>
+      <tr>
+        <td>Apuesta: </td> <td> <input type="number" id="e_apuesta"></td>
+      </tr>
+      <tr>
+        <td>Numero jugado: </td> <td> <input type="number" onchange="comprobarDado()" id="e_jugado"></td>
+      </tr>
+    </table>
+    <input type="button" value="jugar" id="elBoton" onclick="dados()">
+    <p>SALIDA:</p>
+    <div class="rtexto" id="salida">_</div>
+
+</body>
+
+</html>
