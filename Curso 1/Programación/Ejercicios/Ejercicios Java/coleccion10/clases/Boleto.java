@@ -45,6 +45,7 @@ public class Boleto {
 
         return false;
     }
+    
     public static int getLimiteCasilla() {
         return LIMITE_CASILLAS;
     }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplos básicos</title>
+        <meta charset="utf-8">
+        <script>
+            var index = 0;
+
+            function changeBg() {
+                if (index == 0) {
+                    index = 1;
+                    document.write('<div><img src="img1.png"></div>' +
+                    '<div><input type="button" value="Cambiar imagen" onclick="changeBg()"></div>')
+                }
+                else {
+                    index = 0;
+                    document.write('<div><img src="img2.jpg"></div>' +
+                    '<div><input type="button" value="Cambiar imagen" onclick="changeBg()"></div>')
+                }
+
+                document.close()
+            }
+            
+        </script>
+    </head>
+
+    <body>
+        <div><input type="button" value="Cambiar imagen" onclick="changeBg()"></div>
+    </body>
+</html>
