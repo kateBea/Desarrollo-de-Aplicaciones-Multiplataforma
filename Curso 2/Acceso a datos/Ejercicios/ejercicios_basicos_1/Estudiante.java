@@ -1,4 +1,7 @@
+package ejercicios_basicos_1;
+
 import java.time.LocalDate;
+import utilidades.FormattedIO;
 
 public class Estudiante {
     private String m_Nia;
@@ -9,7 +12,7 @@ public class Estudiante {
     private static double validarNota() {
         double nota = 0.0;
         while (nota <= 0.0 || nota > 10.0) {
-            nota = Double.parseDouble(Lector.leerCadena("Introduce la media por favor, entre 0 y 10"));
+            nota = Double.parseDouble(FormattedIO.leerCadena("Introduce la media por favor, entre 0 y 10: "));
         }
 
         return nota;
@@ -40,20 +43,27 @@ public class Estudiante {
         if (m_Nia == null) {
             if (other.m_Nia != null)
                 return false;
-        } else if (!m_Nia.equals(other.m_Nia))
+        } 
+        else if (!m_Nia.equals(other.m_Nia))
             return false;
+
         if (m_Nombre == null) {
             if (other.m_Nombre != null)
                 return false;
-        } else if (!m_Nombre.equals(other.m_Nombre))
+        } 
+        else if (!m_Nombre.equals(other.m_Nombre))
             return false;
+
         if (m_FechaNacimiento == null) {
             if (other.m_FechaNacimiento != null)
                 return false;
-        } else if (!m_FechaNacimiento.equals(other.m_FechaNacimiento))
+        } 
+        else if (!m_FechaNacimiento.equals(other.m_FechaNacimiento))
             return false;
+
         if (Double.doubleToLongBits(m_Nota) != Double.doubleToLongBits(other.m_Nota))
             return false;
+
         return true;
     }
 
@@ -66,12 +76,14 @@ public class Estudiante {
         boolean fechaValida = false;
 
         while (!fechaValida) {
-            String[] input = Lector.leerCadena("Introduce la fecha de nacimiento. Formato: DD/MM/YYYY (e.g. 12 5 2017)").split(" ");
+            String[] input = FormattedIO.leerCadena("Introduce la fecha de nacimiento. Formato: DD/MM/YYYY (e.g. 12 5 2017): ").split(" ");
+            
             if (input.length != 3) {
                 continue;
             }
             else {
-                fecha = LocalDate.of(Integer.parseInt(input[0]), Integer.parseInt(input[1]), Integer.parseInt(input[2]));
+                fecha = LocalDate.of(Integer.parseInt(input[2]), Integer.parseInt(input[1]), Integer.parseInt(input[0]));
+                fechaValida = true;
             }
         }
         
@@ -124,8 +136,8 @@ public class Estudiante {
     }
 
     public void leer() {
-        m_Nia = Lector.leerCadena("Introduce el NIA del estudiante: ");
-        m_Nombre = Lector.leerCadena("Introduce el nombre completo del estudiante: ");
+        m_Nia = FormattedIO.leerCadena("Introduce el NIA del estudiante: ");
+        m_Nombre = FormattedIO.leerCadena("Introduce el nombre completo del estudiante: ");
         
         m_Nota = validarNota();
         m_FechaNacimiento = validarFechaNacimiento();
