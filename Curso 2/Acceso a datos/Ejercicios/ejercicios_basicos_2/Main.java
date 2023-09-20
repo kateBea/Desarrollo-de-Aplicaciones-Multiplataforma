@@ -29,15 +29,7 @@ public class Main {
     public static class Ordenar implements Comparator<Producto> {
         @Override
         public int compare(Producto arg0, Producto arg1) {
-            if (arg0.getPrecio() < arg1.getPrecio()) {
-                return -1;
-            }
-
-            if (arg0.getPrecio() > arg1.getPrecio()) {
-                return 1;
-            }
-
-            return 0;
+            return Double.compare(arg0.getPrecio(), arg1.getPrecio());
         }
         
     }
@@ -51,7 +43,6 @@ public class Main {
 
         @Override
         public boolean test(Producto arg0) {
-            
             return arg0.getPrecio() > precioFiltro && !arg0.isPerecedero();
         }
 
@@ -79,8 +70,8 @@ public class Main {
         filtro = new FiltroEliminacion(precioFiltro);
         
         System.out.println("\nLista ordenada con filtro");
-        productos.sort(comparador);
         productos.removeIf(filtro);
+        productos.sort(comparador);
         productos.forEach(
             new Consumer<Producto>() {
                 @Override
