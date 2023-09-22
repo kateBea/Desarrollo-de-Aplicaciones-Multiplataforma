@@ -1,0 +1,12 @@
+body {
+    background-color: burlywood;
+    display: block;
+    align-items: center;
+}
+
+div {
+    font-size: 500%;
+    color: white;
+    margin: auto;
+    padding: 600px;
+}

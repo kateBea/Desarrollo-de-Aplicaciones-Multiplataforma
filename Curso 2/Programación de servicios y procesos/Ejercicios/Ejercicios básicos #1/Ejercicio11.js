@@ -12,11 +12,14 @@ function esDivisiblePor(num1, num2) {
 function mostrarDivisores(numero) {
     let str = ''
 
-    for (let count = 1; count * count <= numero; ++count) {
+    for (let count = 1; count <= numero / 2; ++count) {
         if (esDivisiblePor(numero, count)) {
             str = str + count + ' '
         }
     }
+
+    // numero es divisible por sí mismo también
+    str += numero
 
     console.log('Divisores de ' + numero)
     console.log(str)

@@ -30,6 +30,8 @@ function parseDatos() {
 
     document.write(
         `
+        <link rel="stylesheet" href="styles.css" type="text/css">
+
         <form>
             <div>
                 <input type="text" value="Usuario" disabled="disabled">
@@ -38,12 +40,12 @@ function parseDatos() {
             
             <span>
             <div>
-                <input type="radio" id="3-uertas" name="3-puertas">3 Puertas
+                <input type="radio" id="3-uertas" name="puertas">3 Puertas
                 <input type="checkbox" id="gasolina-id" name="gasolina">Gasolina<br/>
             </div>
 
             <div>
-                <input type="radio" id="5 Puertas" name="5-puertas">5 Puertas
+                <input type="radio" id="5 Puertas" name="puertas">5 Puertas
                 <input type="checkbox" id="diesel-id" name="diesel">Diesel
             </div>
             </span>

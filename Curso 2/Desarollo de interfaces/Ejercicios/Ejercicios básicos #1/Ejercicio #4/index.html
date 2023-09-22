@@ -4,15 +4,16 @@
         <title>Validación usuario</title>
         <meta charset="utf-8">
         <script src="script.js"></script>
-        <link rel="styles" href="styles.css">
+        <link rel="stylesheet" href="styles.css" type="text/css">
     </head>
 
     <body>
-        <form>
-            <div><input type="text" value="Contraseña" disabled="disabled"></div>
-            <div><input id="usuario-input" type="text" name="Usuario" placeholder="Usuario"></div>
-            <div><input type="text" placeholder="Contraseña" disabled="disabled"></div>
-            <div><input id="password-input" type="password" placeholder="Contraseña"></div>
+        <form id="formulario-principal">
+            <p>Usuario</p>
+            <div><input id="usuario-input" type="text" name="Usuario"></div>
+            <p>Contraseña</p>
+            <div><input id="password-input" type="password"></div>
+            
             <div><button onclick="parseDatos()">Verificar</button></div>
         </form>
     </body>

@@ -1,7 +1,30 @@
 body {
-    color: burlywood;
+    background-color: burlywood;
 }
 
 input {
-    margin-top: 5px;
+    border-radius: 7px;
+    border: 3px solid;
+    padding-top: 10px;
+    margin-top: 7px;
+}
+
+button {
+    margin-top: 7px;
+    padding: 10px 32px;
+    margin-left: 35px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+#formulario-principal {
+    transform: translate(45%, 100%);
+}
+
+p {
+    border-radius: 7px;
+    border: 2px solid;
+    width: 182px;
+    height: 30px;
+    background-color: white;
 }
