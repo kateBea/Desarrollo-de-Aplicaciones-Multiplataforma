@@ -7,61 +7,58 @@
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
     <body>
-        <div>
-            <!-- Cabecera de calculadora-->
-            <img id="logo-iesvb" src="Logo-IES-Villablanca.png"/>
-            <p>Ejercicio 4 - Tabla de multiplicar</p>
-        </div>
-
-        <div>
+        <div class="box-calculadora">
+            <div id="caja-superior"> <!-- Cabecera de calculadora-->
+                <img id="logo-iesvb" src="IESVBLogo.png"/>
+                <p>Ejercicio 4 - Tabla de multiplicar</p>
+            </div>
+    
             <!-- Casilla de resultados de operaciones -->
             <input id="casilla-resultado" type="text" name="resultado" disabled="disabled">
-        </div>
-        
-        <div>
-            <!-- Botones-->
-
-            <!-- Set de botones panel izquierdo (Dígitos) -->
-            <span>
-                <div>
-                    <button id="digit1" value="1" onclick="digit1()">1</button>
-                    <button id="digit2" value="2" onclick="digit2()">2</button>
-                    <button id="digit3" value="3" onclick="digit3()">3</button>
+            
+            <div id="caja-inferior"> <!-- Botones-->
+                <!-- Set de botones panel izquierdo (Dígitos) -->
+                <div class="contenedor-botones">
+                    <div>
+                        <button id="digit1" value="1" onclick="dispatchValue(value)">1</button>
+                        <button id="digit2" value="2" onclick="dispatchValue(value)">2</button>
+                        <button id="digit3" value="3" onclick="dispatchValue(value)">3</button>
+                    </div>
+    
+                    <div>
+                        <button id="digit4" value="4" onclick="dispatchValue(value)">4</button>
+                        <button id="digit5" value="5" onclick="dispatchValue(value)">5</button>
+                        <button id="digit6" value="6" onclick="dispatchValue(value)">6</button>
+                    </div>
+    
+                    <div>
+                        <button id="digit7" value="7" onclick="dispatchValue(value)">7</button>
+                        <button id="digit8" value="8" onclick="dispatchValue(value)">8</button>
+                        <button id="digit9" value="9" onclick="dispatchValue(value)">9</button>
+                    </div>
+    
+                    <div>
+                        <button id="open-parenthesis" value="(" onclick="dispatchValue(value)">&#40;</button>
+                        <button id="digit0" value="0" onclick="dispatchValue(value)">0</button>
+                        <button id="closed-parenthesis" value=")" onclick="dispatchValue(value)">&#41;</button>
+                    </div>
                 </div>
-
-                <div>
-                    <button id="digit4" value="4" onclick="digit4()">4</button>
-                    <button id="digit5" value="5" onclick="digit5()">5</button>
-                    <button id="digit6" value="6" onclick="digit6()">6</button>
+    
+                <!-- Set de botones panel derecho (Operaciones) -->
+                <div class="contenedor-operadores">
+                    <div>
+                        <button id="operador-suma" value="+" onclick="dispatchValue(value)">+</button>
+                        <button id="operador-resta" value="-" onclick="dispatchValue(value)">-</button>
+                    </div>
+                    <div>
+                        <button id="operador-division" value="*" onclick="dispatchValue(value)">*</button>
+                        <button id="operador-multiplicacion" value="÷" onclick="dispatchValue(value)">÷</button>
+                    </div>
+                    <div>
+                        <button id="equals-operator" value="=" onclick="dispatchValue(value)">=</button>
+                    </div>
                 </div>
-
-                <div>
-                    <button id="digit7" value="7" onclick="digit7()">7</button>
-                    <button id="digit8" value="8" onclick="digit8()">8</button>
-                    <button id="digit9" value="9" onclick="digit9()">9</button>
-                </div>
-
-                <div>
-                    <button>&#40;</button>
-                    <button id="digit0" value="0" onclick="digit0()">0</button>
-                    <button>&#41;</button>
-                </div>
-            </span>
-
-            <!-- Set de botones panel derecho (Operaciones) -->
-            <span>
-                <div>
-                    <button id="operador-suma" value="+" onclick="suma()">+</button>
-                    <button id="operador-resta" value="-" onclick="resta()">-</button>
-                </div>
-                <div>
-                    <button id="operador-division" value="*" onclick="division()">*</button>
-                    <button id="operador-multiplicacion" value="÷" onclick="producto()">÷</button>
-                </div>
-                <div>
-                    <button>=</button>
-                </div>
-            </span>
+            </div>
         </div>
     </body>
 </html>

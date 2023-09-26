@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			
+
+	<!-- ======================================== -->
+	<!-- 	Definiciones de tipos simples	    -->
+	<!--========================================-->
+	
+	<!-- ========== Tipo "tipoMes" ============ -->
+	<xsd:simpleType name="tipoMes">
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:minInclusive value="1"/>
+			<xsd:maxInclusive value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ========== Tipo "tipoAnyo" ========== -->
+	<xsd:simpleType name="tipoAnyo">
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:minInclusive value="1900"/>
+			<xsd:maxInclusive value="2011"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ========== Tipo "tipoNombre" ========== -->
+	<xsd:simpleType name="tipoNombre">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="0"/>
+			<xsd:maxLength value="100"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ========== Tipo "tipoISBN" ========== -->
+	<xsd:simpleType name="tipoISBN">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="13"/>
+			<xsd:maxLength value="17"/>			
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ========== Tipo "tipoCategoria" ========== -->
+	<xsd:simpleType name="tipoCategoria">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="autobiografia"/>
+			<xsd:enumeration value="noficcion"/>
+			<xsd:enumeration value="ficcion"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ========== Tipo "tipoCategoria" ========== -->
+	<xsd:simpleType name="tipoStock">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="true"/>
+			<xsd:enumeration value="false"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+			
+	<!-- =================================================== -->
+	<!-- Definiciones de otros elementos de tipos simples -->
+	<!-- =================================================== -->
+	<xsd:element name="titulo" type="tipoNombre"/>
+	<xsd:element name="autor" type="tipoNombre"/>
+	<xsd:element name="mes" type="tipoMes"/>
+	<xsd:element name="anyo" type="tipoAnyo"/>
+	<xsd:element name="ISBN" type="tipoISBN"/>
+	<xsd:element name="editor" type="tipoNombre"/>
+
+	<!-- ========================================== -->
+	<!-- Definiciones de atributos -->
+	<!-- ========================================== -->
+
+	<xsd:attribute name="categoria" type="tipoCategoria"/>
+	<xsd:attribute name="enstock" type="tipoStock"/>
+	<xsd:attribute name="revisor" type="xsd:string"/>
+	
+	<!-- ========================================== -->
+	<!-- Definiciones de tipos complejos		 -->
+	<!-- ========================================== -->
+	
+	<!-- ========== Tipo "tipoFecha" ========== -->
+	<xsd:complexType name="tipoFecha">
+		<xsd:sequence>
+			<xsd:element ref="mes" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="anyo"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<!-- ========== Tipo "tipoLibro" ========== -->
+	<xsd:complexType name="tipoLibro">
+		<xsd:sequence>
+			<xsd:element ref="titulo"/>
+			<xsd:element ref="autor" maxOccurs="unbounded"/>
+			<xsd:element ref="fecha"/>
+			<xsd:element ref="ISBN"/>
+			<xsd:element ref="editor"/>
+		</xsd:sequence>
+		<xsd:attribute ref="categoria" use="required"/>
+		<xsd:attribute ref="enstock" default="false"/>
+		<xsd:attribute ref="revisor" default=""/>
+	</xsd:complexType>
+	
+	
+	<!-- ========================================== -->
+	<!-- Definiciones de elementos de tipo complejo -->
+	<!-- ========================================== -->
+
+	<!-- ========== Elemento "fecha" ========== -->
+
+	<xsd:element name="fecha" type="tfecha"/>
+
+    <!-- ========== Elemento "libro" ========== -->
+
+	<xsd:element name="libro" type="tlibro"/>
+
+	<!-- ========== Elemento "catalogoLibros" ========== -->	
+	<xsd:element name="catalogoLibros">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="libro" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>	
+    
+</xsd:schema>
+
+

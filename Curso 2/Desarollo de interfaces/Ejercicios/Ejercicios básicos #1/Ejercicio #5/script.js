@@ -1,9 +1,5 @@
 function factorialRecursivo(numero) {
-    if (numero <= 0) {
-        return 1;
-    }
-
-    return numero * factorialRecursivo(numero - 1);
+    return numero <= 0 ? 1 : numero * factorialRecursivo(numero - 1);
 }
 
 function factorialIterativo(numero) {
@@ -17,5 +13,5 @@ function factorialIterativo(numero) {
 }
 
 const num = parseInt(prompt("Introduce un número entre el 1 y el 100"));
-document.write("<div>El factorial de " + num + " es " + factorialRecursivo(num) + "</div>");
+document.write("<p>El factorial de " + num + " es " + factorialRecursivo(num) + "</p>");
 document.close();

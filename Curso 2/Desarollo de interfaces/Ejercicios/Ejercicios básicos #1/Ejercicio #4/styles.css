@@ -1,30 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=JetBrains Mono");
+
+* {
+    font-family: 'JetBrains Mono';
+    font-size: large;
+    margin-top: 5px;
+}
+
 body {
     background-color: burlywood;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 input {
-    border-radius: 7px;
-    border: 3px solid;
-    padding-top: 10px;
-    margin-top: 7px;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 10px;
 }
 
 button {
-    margin-top: 7px;
     padding: 10px 32px;
-    margin-left: 35px;
     border-radius: 5px;
     border: 1px solid;
+    position: relative;
+    left: 29px;
 }
 
-#formulario-principal {
-    transform: translate(45%, 100%);
-}
-
-p {
-    border-radius: 7px;
-    border: 2px solid;
-    width: 182px;
-    height: 30px;
+.cabeceras-campos, input {
+    border-radius: 5px;
+    border: 1px solid black;
     background-color: white;
+    padding: 4%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+input {
+    width: 200px;
+}
+
+textarea {
+    width: 635px;
+    height: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+.formulario-principal * {
+    margin-top: 10px;
+}
+
+.boton-submit {
+    margin-top: 50px;
+}
+
+.cabecera-precios {
+    float: left;
+    margin-right: 5px;
 }

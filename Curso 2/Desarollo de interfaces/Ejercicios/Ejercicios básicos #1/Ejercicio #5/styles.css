@@ -1,12 +1,13 @@
 body {
-    background-color: burlywood;
-    display: block;
+    background: linear-gradient(to bottom, #9b21d3, #d30453);
+    font-family: 'Courier New', monospace; 
+    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-div {
+p {
     font-size: 500%;
     color: white;
-    margin: auto;
-    padding: 600px;
 }
