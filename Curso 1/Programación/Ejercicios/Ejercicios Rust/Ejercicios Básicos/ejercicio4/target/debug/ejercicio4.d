@@ -1,1 +1,0 @@
-/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso\ 1/Programación/Ejercicios/Ejercicios\ Rust/Ejercicios\ Básicos/ejercicio4/target/debug/ejercicio4: /home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso\ 1/Programación/Ejercicios/Ejercicios\ Rust/Ejercicios\ Básicos/ejercicio4/src/main.rs
