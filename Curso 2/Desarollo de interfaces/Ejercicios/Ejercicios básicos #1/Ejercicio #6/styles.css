@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=JetBrains Mono");
 
+* {
+    font-family: 'JetBrains Mono', 'Trebuchet MS';
+}
+
+/** Sección selectores elementos HTML */
 body {
     background-color: burlywood;
-    font-family: 'JetBrains Mono';
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div {
     margin: 5px;
     border-radius: 10px;
     border: none;
-}
-
-.box-calculadora {
-    display: grid;
-    justify-content: center;
-    align-items: center;
 }
 
 button {
@@ -26,32 +27,49 @@ button {
 
     width: 65px;
     height: 60px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4);
 }
 
 button:hover {
     background-color: rgba(167, 167, 167, 0.747);
 }
 
-#caja-inferior, #casilla-resultado {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-#casilla-resultado {
-    padding: 3%;
-    font-style: bold;
-    font-size: xx-large;
-    color: black;
+img {
+    width: 20%;
+    height: 20%;
     border-radius: 10px;
-    border: 1px solid black;
-    background-color: rgb(7, 231, 82);
+    border: none;
+    position: relative;
+    left: 38%;
 }
 
-#casilla-resultado:hover {
-    cursor: text;
+/** Sección selectores clases HTML */
+
+.box-calculadora {
+    position: relative; 
+    top: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
 }
 
-#caja-superior {
+.contenedor-botones, .contenedor-operadores {
+    background-color: #ff7b00;
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4);
+    height: fit-content;
+    width: fit-content;
+}
+
+input[type="text"] {
+    text-align: center;
+}
+
+/** Sección selectores IDs HTML. 
+ * Se usan ID's para estos elementos porque luego se aprovecha en los script .js
+ * */
+
+ #caja-superior {
     background-color: rgba(0, 0, 0, 0.281);
     font-size: x-large;
 }
@@ -62,30 +80,42 @@ button:hover {
     align-items: center;
 }
 
+#caja-inferior, #casilla-resultado {
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+#casilla-resultado {
+    padding: 3%;
+    font-style: bold;
+    font-size: xx-large;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(7, 231, 82);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: inherit;
+    position: relative;
+    left: 13%;
+}
+
+#casilla-resultado:hover {
+    cursor: text;
+}
+
 #caja-inferior {
     background-color: #ffa600;
     display: flex;
     justify-content: center;
+    height: fit-content;
+    width: fit-content;
 }
 
-#logo-iesvb {
-    width: 20%;
-    height: 20%;
-    border-radius: 10px;
-    border: none;
+#caja-inferior {
+    width: inherit;
     position: relative;
-    left: 38%;
+    left: 15%;
 }
 
-.contenedor-botones, .contenedor-operadores {
-    background-color: #ff7b00;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.contenedor-operadores {
-    height: 200px;
-}
-
-input[type="text"] {
-    text-align: center;
+#caja-superior, #casilla-resultado, #caja-inferior {
+    margin-top: 20px;
 }
