@@ -7,7 +7,6 @@ import java.util.function.Consumer;
 public class PruebaOptional {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Optional<Producto> p1,p2;
 		
 		p1 = Optional.empty();
@@ -17,7 +16,6 @@ public class PruebaOptional {
 
 					@Override
 					public void accept(Producto t) {
-						// TODO Auto-generated method stub
 						System.out.println(t);
 					}
 			

@@ -12,7 +12,6 @@ import java.util.Comparator;
 public class AppProductos {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		List<Producto> productos = new ArrayList<>();
 		List<Producto> copia;
 		Consumer<Producto> mostrar,subirPrecio;
@@ -33,7 +32,6 @@ public class AppProductos {
 
 					@Override
 					public void accept(Producto t) {
-						// TODO Auto-generated method stub
 						System.out.println(t.getReferencia() + "," + t.getPrecio());
 					}
 			
@@ -44,7 +42,6 @@ public class AppProductos {
 
 					@Override
 					public boolean test(Producto t) {
-						// TODO Auto-generated method stub
 						return !t.isPerecedero();
 					}
 			
@@ -55,7 +52,6 @@ public class AppProductos {
 
 						@Override
 						public int compare(Producto o1, Producto o2) {
-							// TODO Auto-generated method stub
 							return Float.compare(o1.getPrecio(), o2.getPrecio());
 						}
 				
@@ -85,7 +81,6 @@ public class AppProductos {
 
 						@Override
 						public void accept(Producto t) {
-							// TODO Auto-generated method stub
 							t.setPrecio(t.getPrecio()*1.1f);
 						}
 				

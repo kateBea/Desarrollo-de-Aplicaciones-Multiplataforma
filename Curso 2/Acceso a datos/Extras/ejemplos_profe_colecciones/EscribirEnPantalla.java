@@ -6,7 +6,6 @@ public class EscribirEnPantalla implements Consumer<Alumno> {
 
 	@Override
 	public void accept(Alumno t) {
-		// TODO Auto-generated method stub
 		System.out.println(t);
 	}
 

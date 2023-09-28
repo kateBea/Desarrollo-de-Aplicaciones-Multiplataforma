@@ -100,7 +100,6 @@ public class Alumno implements Comparable <Alumno>{
 
 	@Override
 	public int compareTo(Alumno o) {
-		// TODO Auto-generated method stub
 		System.out.println("ejecutando compareTo... " + nia + "-" + o.nia);
 		return nia.compareTo(o.nia);
 	}
@@ -112,7 +111,6 @@ public class Alumno implements Comparable <Alumno>{
 	}
 
 	public void leerOtrosDatos() {
-		// TODO Auto-generated method stub
 		nombre = Teclado.leerString("nombre");
 		do 
 		{
@@ -127,7 +125,6 @@ public class Alumno implements Comparable <Alumno>{
 	}
 
 	public void leerClave() {
-		// TODO Auto-generated method stub
 		nia = Teclado.leerString("nia");
 		
 	}

@@ -1,16 +1,16 @@
 Indicar cuál de las siguientes expresiones lambda no son válidas
 
-    () -> {}
-    () -> "Raoul"
-    () -> {return "Mario";}
-    (Integer i) -> return "Alan" + i;
-    (String s) -> {"Iron Man";}
+    () -> {}                            (válida)
+    () -> "Raoul"                       (válido)
+    () -> {return "Mario";}             (válida)
+    (Integer i) -> return "Alan" + i;   (inválida)
+    (String s) -> {"Iron Man";}         (válida)
 
 Indicar qué significan las siguientes expresiones lambda y escribir su signatura
 
-    (List<String> list) -> list.isEmpty()
-    () -> new Apple(10)
-    (Apple a) -> {System.out.println(a.getWeight());}
-    (String s) -> s.length()
-    (int a, int b) -> a * b
-    (Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight())
+    (List<String> list) -> list.isEmpty()                               : Recibe un  List<String> y retorna un boolean  (Predictate)             
+    () -> new Apple(10)                                                 : Recibe ningún parámetro y retorna un Apple    (Supplier)
+    (Apple a) -> {System.out.println(a.getWeight());}                   : Recibe un Apple y retorna void                (Consumer)
+    (String s) -> s.length()                                            : Recibe un String y retorna un int             (Function)
+    (int a, int b) -> a * b                                             : Recibe dos enteros y retorna un int           (Function)
+    (Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight())    : Recibe dos Apple y retorna un int             (Predictate)
