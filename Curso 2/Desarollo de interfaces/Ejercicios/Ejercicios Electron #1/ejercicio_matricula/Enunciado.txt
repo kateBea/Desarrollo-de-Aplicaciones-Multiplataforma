@@ -1,0 +1,23 @@
+Formulario inscripción:
+
+    - Logo del villablanca a la derecha
+    - Datos alumno:
+        1. Nombre y apellidos
+        2. Fecha de nacimiento
+        3. Lugar de nacimiento  
+        4. Número de telefono
+        5. Correo electrónico
+
+    - Dirección principal:
+        Tipo dirección:
+        Dirección:
+        Número:
+        Piso:
+        Escalera:
+        Puerta:
+
+    - Curso:
+        CFGS (nombre y desc) { ASMR, SMR, DAM, DAW }
+        Turno { DIURNO, VESPERTINO }
+        Instituto:
+        Año académico

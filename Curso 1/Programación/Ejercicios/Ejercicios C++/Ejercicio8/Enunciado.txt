@@ -1,0 +1,61 @@
+Ordenamiento y Búsqueda
+
+Descripción:
+
+Debes crear un programa en C++ que haga uso de los algoritmos proporcionados por la 
+biblioteca <algorithm> para ordenar y buscar elementos en una lista de números enteros.
+
+Requisitos:
+
+1. El programa debe contener una función para generar una lista de números enteros 
+aleatorios. El usuario debe especificar la cantidad de números y el rango (mínimo y máximo).
+
+2. Debes utilizar los algoritmos de <algorithm> para realizar lo siguiente:
+   - Ordenar la lista de números de manera ascendente.
+   - Ordenar la lista de números de manera descendente.
+   - Buscar un número específico en la lista y mostrar su posición si se encuentra.
+
+3. El programa debe mostrar la lista de números antes y después de cada operación de 
+ordenamiento y mostrar el resultado de la búsqueda.
+
+4. Utiliza un menú para permitir al usuario elegir entre las diferentes operaciones y 
+salir del programa.
+
+Ejemplo de Salida:
+
+Ordenamiento y Búsqueda con <algorithm>
+
+1. Generar Lista Aleatoria
+2. Ordenar Ascendentemente
+3. Ordenar Descendentemente
+4. Buscar Número
+5. Salir
+
+Ingresa tu elección: 1
+
+Ingresa la cantidad de números: 10
+Ingresa el valor mínimo: 1
+Ingresa el valor máximo: 100
+
+Lista de Números Generada:
+34 21 68 42 5 12 97 78 9 56
+
+Ingresa tu elección: 2
+
+Lista de Números Ordenados Ascendentemente:
+5 9 12 21 34 42 56 68 78 97
+
+Ingresa tu elección: 3
+
+Lista de Números Ordenados Descendentemente:
+97 78 68 56 42 34 21 12 9 5
+
+Ingresa tu elección: 4
+
+Ingresa el número a buscar: 42
+
+El número 42 se encuentra en la posición 4.
+
+Ingresa tu elección: 5
+
+Saliendo del programa...

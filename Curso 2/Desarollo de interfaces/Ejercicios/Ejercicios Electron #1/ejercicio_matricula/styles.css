@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=JetBrains Mono");
+
+* {
+    font-family: 'JetBrains Mono', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 100%;
+}
+
+body {
+    background-color: burlywood;
+}
+
+fieldset {
+    margin-left: 20px;
+    width: 500px;
+}

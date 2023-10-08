@@ -106,7 +106,7 @@ auto muestraSuma(std::list<char> num1, std::list<char> num2, std::list<char> res
         if (res.size() == std::max(num1.size(), num2.size()))
             res.insert(res.begin(), ' ');
 
-        for (int i{}; i < num1.size() - num2.size(); ++i)
+        for (std::list<char>::size_type i{}; i < num1.size() - num2.size(); ++i)
             num2.insert(num2.begin(), ' ');
 
         num1.insert(num1.begin(), ' ');

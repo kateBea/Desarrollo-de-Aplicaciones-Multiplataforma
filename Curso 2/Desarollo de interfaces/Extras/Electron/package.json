@@ -1,0 +1,16 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "Introducción Electron",
+  "main": "main.js",
+  "scripts": {
+    "dev" : "electron ."
+  },
+  "keywords": [],
+  "author": "Hugo Pelayo",
+  "license": "MIT",
+
+  "dependencies": {
+    "electron": "^26.2.4"
+  }
+}

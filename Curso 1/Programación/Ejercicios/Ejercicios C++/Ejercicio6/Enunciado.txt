@@ -1,0 +1,100 @@
+Sistema de Gestión de Biblioteca
+
+Descripción:
+
+Se te ha asignado crear un sistema de gestión de biblioteca utilizando C++. El sistema debe permitir a los usuarios 
+administrar una colección de libros. Cada libro tiene la siguiente información:
+
+- Título
+- Autor
+- ISBN (Número Internacional Normalizado del Libro)
+- Año de Publicación
+
+Debes implementar las siguientes funcionalidades:
+
+1. Agregar un nuevo libro a la biblioteca.
+2. Mostrar una lista de todos los libros en la biblioteca.
+3. Buscar un libro por su ISBN y mostrar sus detalles.
+4. Eliminar un libro de la biblioteca por su ISBN.
+5. Calcular y mostrar el número total de libros en la biblioteca.
+6. Salir del programa.
+
+Requisitos:
+
+1. Utiliza asignación de memoria dinámica (por ejemplo, new y delete o malloc y free) para gestionar la lista de libros. 
+La lista debe crecer y reducirse dinámicamente a medida que se agregan o eliminan libros.
+
+2. Implementa una interfaz basada en menús que permita al usuario elegir entre las operaciones mencionadas anteriormente.
+
+3. Utiliza un manejo adecuado de errores para manejar entradas inválidas o fallos en la asignación de memoria.
+
+4. Implementa una estructura de datos (por ejemplo, una lista enlazada o un arreglo dinámico) para almacenar y gestionar 
+eficientemente los libros.
+
+5. Proporciona retroalimentación significativa al usuario para cada operación.
+
+Ejemplo de Salida:
+
+Sistema de Gestión de Biblioteca
+
+1. Agregar Libro
+2. Mostrar Todos los Libros
+3. Buscar Libro por ISBN
+4. Eliminar Libro por ISBN
+5. Número Total de Libros
+6. Salir
+
+Ingresa tu elección: 1
+
+Ingresa el Título: "Matar a un Ruiseñor"
+Ingresa el Autor: Harper Lee
+Ingresa el ISBN: 9780061120084
+Ingresa el Año de Publicación: 1960
+
+Libro agregado con éxito.
+
+Ingresa tu elección: 1
+
+Ingresa el Título: "1984"
+Ingresa el Autor: George Orwell
+Ingresa el ISBN: 9780451524935
+Ingresa el Año de Publicación: 1949
+
+Libro agregado con éxito.
+
+Ingresa tu elección: 2
+
+Lista de Libros:
+1. Título: "Matar a un Ruiseñor"
+   Autor: Harper Lee
+   ISBN: 9780061120084
+   Año: 1960
+
+2. Título: "1984"
+   Autor: George Orwell
+   ISBN: 9780451524935
+   Año: 1949
+
+Ingresa tu elección: 3
+
+Ingresa el ISBN a buscar: 9780061120084
+
+Libro encontrado:
+Título: "Matar a un Ruiseñor"
+Autor: Harper Lee
+ISBN: 9780061120084
+Año: 1960
+
+Ingresa tu elección: 4
+
+Ingresa el ISBN a eliminar: 9780061120084
+
+Libro eliminado con éxito.
+
+Ingresa tu elección: 5
+
+Número Total de Libros: 1
+
+Ingresa tu elección: 6
+
+Saliendo del programa...

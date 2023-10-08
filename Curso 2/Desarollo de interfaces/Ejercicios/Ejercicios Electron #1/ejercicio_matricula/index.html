@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrícula CFGS</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+        <form>
+            <!-- Datos personales -->
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="mb-3">
+                    <label for="nombre-completo" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control form-control-sm" id="nombre-completo" placeholder="Nombre">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="primer-apellido" class="form-label">Primer Apellido</label>
+                    <input type="text" class="form-control form-control-sm" id="primer-apellido" placeholder="Primer apellido">
+                </div>
+
+                <div class="mb-3">
+                    <label for="segundo-apellido" class="form-label">Segundo Apellido</label>
+                    <input type="text" class="form-control form-control-sm" id="segundo-apellido" placeholder="Segundo apellido">
+                </div>
+
+                <div class="mb-3">
+                    <label for="birthday" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" class="form-control form-control-sm" id="birthday" placeholder="Fecha de nacimiento">
+                </div>
+            </fieldset>
+
+            <!-- Dirección y Contacto -->
+            <fieldset>
+                <legend>Dirección y Contacto</legend>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="text" class="form-control form-control-sm" id="email" placeholder="Correo electrónico">
+                </div>
+
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control form-control-sm" id="direccion" placeholder="Dirección">
+                </div>
+                
+                <div>
+                    <label class="form-label" for="tipo-via">Tipo de via</label>
+                    <select id="tipo-via" class="form-select form-select-sm">
+                        <option value="Calle">Calle</option>
+                        <option value="Avenida" selected>Avenida</option>
+                        <option value="Plaza">Plaza</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="dir-numero" class="form-label">Número</label>
+                    <input type="text" class="form-control form-control-sm" id="dir-numero" placeholder="Número" required="required" maxlength="4">
+                </div>
+
+                <div class="mb-3">
+                    <label for="dir-piso" class="form-label">Piso</label>
+                    <input type="text" class="form-control form-control-sm" id="dir-piso" placeholder="Piso">
+                </div>
+
+                <div class="mb-3">
+                    <label for="dir-escalera" class="form-label">Escalera</label>
+                    <input type="text" class="form-control form-control-sm" id="dir-escalera" placeholder="Escalera">
+                </div>
+
+                <div class="mb-3">
+                    <label for="dir-Puerta" class="form-label">Puerta</label>
+                    <input type="text" class="form-control form-control-sm" id="dir-Puerta" placeholder="Puerta">
+                </div>
+            </fieldset>
+
+            <!-- Curso y año académico -->
+            <fieldset>
+                <legend>Curso</legend>
+
+                <div>
+                    <label class="form-label" for="ciclo-formativo">Ciclo formativo</label>
+                    <select id="ciclo-formativo" class="form-select form-select-sm">
+                        <option value="ciclo-DAM" selected="selected">DAM</option>
+                        <option value="ciclo-DAW">DAW</option>
+                        <option value="ciclo-SMR">SMR</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="form-label" for="curso-academico">Curso</label>
+                    <select id="curso-academico" class="form-select form-select-sm">
+                        <option value="curso2020-2021">2020 - 2021</option>
+                        <option value="curso2021-2022">2021 - 2022</option>
+                        <option value="curso-actual" selected="selected">Actual</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="form-label" for="curso-turno">Turno</label>
+                    <select id="curso-turno" class="form-select form-select-sm">
+                        <option value="turno-diurno">Diurno</option>
+                    <option value="turno-vespertino">Vespertino</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- Serialize to PDF -->
+            <button class="btn btn-success" value="Save" onclick="serialieForm()">Imprimir</button>
+        </form>
+
+        <script src="bootstrap.min.js.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

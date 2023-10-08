@@ -1,0 +1,16 @@
+{
+  "name": "ejercicio_matricula",
+  "version": "1.0.0",
+  "description": "Matrícula CFGS",
+  "main": "main.js",
+  "scripts": {
+    "dev" : "electron ."
+  },
+  "keywords": [],
+  "author": "Hugo Pelayo",
+  "license": "MIT",
+
+  "dependencies": {
+    "electron": "^26.2.4"
+  }
+}

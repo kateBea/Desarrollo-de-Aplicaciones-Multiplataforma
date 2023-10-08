@@ -4,3 +4,8 @@
  * Hugo Pelayo
  * 7 de mayo de 2023
 */
+
+int main(int, char**) {
+
+    return 0;
+}
