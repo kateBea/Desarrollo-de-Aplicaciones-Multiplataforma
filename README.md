@@ -14,7 +14,7 @@ algunos apuntes del ciclo de DAM junto con ejercicios resueltos de programación
   - [[ ED ]    &nbsp;Entornos de desarollo](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Entornos%20de%20desarollo)
   - [[ FOL ]   &nbsp;Formación y orientación laboral](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%201/Formaci%C3%B3n%20y%20orientaci%C3%B3n%20laboral)
 
-- Asignaturas del segundo curso [TBD]:
+- Asignaturas del segundo curso:
 
   - [[ AC ]    &nbsp;Acceso a datos](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Acceso%20a%20datos)
   - [[ DI ]    &nbsp;Desarollo de interfaces](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Desarollo%20de%20interfaces)
