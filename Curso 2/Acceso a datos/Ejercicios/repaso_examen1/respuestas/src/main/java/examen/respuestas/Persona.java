@@ -34,7 +34,6 @@ public class Persona {
 	@ToString.Include
 	private LocalDate fechaNacimiento;
 	
-	@Singular
-	private List<String> telefonos;
+	private Contacto contacto;
 	private Optional<Vehiculo> vehiculo;
 }

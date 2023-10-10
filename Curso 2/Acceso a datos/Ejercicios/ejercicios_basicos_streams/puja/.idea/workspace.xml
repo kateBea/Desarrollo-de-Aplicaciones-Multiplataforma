@@ -5,37 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dc254c7-9c55-4727-811e-683dd2d02a16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enunciado Pujas.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solucion_profe.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Cuestionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Puja.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Subasta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio2/Ejercicio3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio2/Ejercicio3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio2/Ejercicio4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio2/Ejercicio4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio3/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio4/gestor/Estudiante.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio4/gestor/Estudiante.hh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio4/gestor/Nota.hh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio4/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio1/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio1/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio2/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio2/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio3/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio3/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio3/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio4/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio4/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../Curso 1/Programación/Ejercicios/Ejercicios Rust/Ejercicios Básicos/ejercicio4/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Ejercicios/Ejercicios básicos #3/Ejercicio #10.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Ejercicios/Ejercicios básicos #3/Ejercicio #10.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Ejercicios/Ejercicios básicos #3/Ejercicio #11.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Ejercicios/Ejercicios básicos #3/Ejercicio #11.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Ejercicios/Ejercicios básicos #3/Ejercicio #9.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Ejercicios/Ejercicios básicos #3/Ejercicio #9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Programación multimedia y dispositivos móviles/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +66,8 @@
       <workItem from="1696547661804" duration="68000" />
       <workItem from="1696548273312" duration="5604000" />
       <workItem from="1696628504777" duration="1203000" />
-      <workItem from="1696715378686" duration="1804000" />
+      <workItem from="1696715378686" duration="1807000" />
+      <workItem from="1696795514484" duration="607000" />
     </task>
     <servers />
   </component>
