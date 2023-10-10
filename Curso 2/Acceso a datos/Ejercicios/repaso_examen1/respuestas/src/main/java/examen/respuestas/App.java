@@ -4,11 +4,13 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 /**
  * Examen simulacro
@@ -107,7 +109,16 @@ public class App
 			
 			// Listado del nombre y todos los datos de todos los teléfonos de 
 			// contactos de todas las personas menores de edad por nombre de instituto.
-			
+			final Function<Persona, String> NOMBRE_CONTACTOS =
+				persona -> persona.getNombre() + " Contactos: " +
+				"numero(" + persona.getContacto().getNumero() + ") " +
+				"os(" + persona.getContacto().getNumero() + ") ";
+				
+			final Function<Instituto, Stream<String>> NOMBRE_CONTACTOS_PERSONAS_MENORES =
+				insti -> insti.getPersonas().stream().filter(MAYOR_EDAD.negate()).map(NOMBRE_CONTACTOS);
+				
+			institutos.stream().sorted(Comparator.comparing(Instituto::getNombre)).map(NOMBRE_CONTACTOS_PERSONAS_MENORES).
+				forEach(System.out::println);
 			
 		}
 	}
