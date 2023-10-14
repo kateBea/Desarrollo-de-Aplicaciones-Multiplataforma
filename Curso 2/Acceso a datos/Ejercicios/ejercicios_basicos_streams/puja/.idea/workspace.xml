@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5dc254c7-9c55-4727-811e-683dd2d02a16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Cuestionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Cuestionario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,12 +68,39 @@
       <workItem from="1696548273312" duration="5604000" />
       <workItem from="1696628504777" duration="1203000" />
       <workItem from="1696715378686" duration="1807000" />
-      <workItem from="1696795514484" duration="607000" />
+      <workItem from="1696795514484" duration="1253000" />
+      <workItem from="1697109390492" duration="480000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

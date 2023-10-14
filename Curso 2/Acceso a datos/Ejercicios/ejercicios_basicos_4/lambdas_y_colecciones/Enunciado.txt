@@ -1,0 +1,15 @@
+Dada la clase Alumno del ejercicio de Repaso, añádele un atributo más de tipo String que represente 
+el curso en el que está matriculado, realizar un programa que realice las siguientes opciones, 
+después de cargar 10 alumnos en una colección de alumnos:
+
+1. Mostrar ordenada la lista de alumnos por:
+
+apellidos y nombre
+apellidos y nombre ascendente (z- a)
+edad y apellidos
+curso y nota
+
+2. Mostrar la distinta lista de cursos, a continuación seleccionar un curso y mostrar el nombre, 
+apellidos y nota de los alumnos que han aprobado el curso.
+
+3. Mostrar el alumno más joven y con mayor edad.

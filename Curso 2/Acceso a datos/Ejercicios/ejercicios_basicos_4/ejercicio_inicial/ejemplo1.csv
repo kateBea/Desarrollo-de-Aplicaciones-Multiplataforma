@@ -1,0 +1,700 @@
+Government;Canada; Carretera ; None ; 1618.50 ; 3.00 ; 20.00 
+Government;Germany; Carretera ; None ; 1321.00 ; 3.00 ; 20.00 
+Midmarket;France; Carretera ; None ; 2178.00 ; 3.00 ; 15.00 
+Midmarket;Germany; Carretera ; None ; 888.00 ; 3.00 ; 15.00 
+Midmarket;Mexico; Carretera ; None ; 2470.00 ; 3.00 ; 15.00 
+Government;Germany; Carretera ; None ; 1513.00 ; 3.00 ; 350.00 
+Midmarket;Germany; Montana ; None ; 921.00 ; 5.00 ; 15.00 
+Channel Partners;Canada; Montana ; None ; 2518.00 ; 5.00 ; 12.00 
+Government;France; Montana ; None ; 1899.00 ; 5.00 ; 20.00 
+Channel Partners;Germany; Montana ; None ; 1545.00 ; 5.00 ; 12.00 
+Midmarket;Mexico; Montana ; None ; 2470.00 ; 5.00 ; 15.00 
+Enterprise;Canada; Montana ; None ; 2665.50 ; 5.00 ; 125.00 
+Small Business;Mexico; Montana ; None ; 958.00 ; 5.00 ; 300.00 
+Government;Germany; Montana ; None ; 2146.00 ; 5.00 ; 7.00 
+Enterprise;Canada; Montana ; None ; 345.00 ; 5.00 ; 125.00 
+Midmarket;United States of America; Montana ; None ; 615.00 ; 5.00 ; 15.00 
+Government;Canada; Paseo ; None ; 292.00 ; 10.00 ; 20.00 
+Midmarket;Mexico; Paseo ; None ; 974.00 ; 10.00 ; 15.00 
+Channel Partners;Canada; Paseo ; None ; 2518.00 ; 10.00 ; 12.00 
+Government;Germany; Paseo ; None ; 1006.00 ; 10.00 ; 350.00 
+Channel Partners;Germany; Paseo ; None ; 367.00 ; 10.00 ; 12.00 
+Government;Mexico; Paseo ; None ; 883.00 ; 10.00 ; 7.00 
+Midmarket;France; Paseo ; None ; 549.00 ; 10.00 ; 15.00 
+Small Business;Mexico; Paseo ; None ; 788.00 ; 10.00 ; 300.00 
+Midmarket;Mexico; Paseo ; None ; 2472.00 ; 10.00 ; 15.00 
+Government;United States of America; Paseo ; None ; 1143.00 ; 10.00 ; 7.00 
+Government;Canada; Paseo ; None ; 1725.00 ; 10.00 ; 350.00 
+Channel Partners;United States of America; Paseo ; None ; 912.00 ; 10.00 ; 12.00 
+Midmarket;Canada; Paseo ; None ; 2152.00 ; 10.00 ; 15.00 
+Government;Canada; Paseo ; None ; 1817.00 ; 10.00 ; 20.00 
+Government;Germany; Paseo ; None ; 1513.00 ; 10.00 ; 350.00 
+Government;Mexico; Velo ; None ; 1493.00 ; 120.00 ; 7.00 
+Enterprise;France; Velo ; None ; 1804.00 ; 120.00 ; 125.00 
+Channel Partners;Germany; Velo ; None ; 2161.00 ; 120.00 ; 12.00 
+Government;Germany; Velo ; None ; 1006.00 ; 120.00 ; 350.00 
+Channel Partners;Germany; Velo ; None ; 1545.00 ; 120.00 ; 12.00 
+Enterprise;United States of America; Velo ; None ; 2821.00 ; 120.00 ; 125.00 
+Enterprise;Canada; Velo ; None ; 345.00 ; 120.00 ; 125.00 
+Small Business;Canada; VTT ; None ; 2001.00 ; 250.00 ; 300.00 
+Channel Partners;Germany; VTT ; None ; 2838.00 ; 250.00 ; 12.00 
+Midmarket;France; VTT ; None ; 2178.00 ; 250.00 ; 15.00 
+Midmarket;Germany; VTT ; None ; 888.00 ; 250.00 ; 15.00 
+Government;France; VTT ; None ; 1527.00 ; 250.00 ; 350.00 
+Small Business;France; VTT ; None ; 2151.00 ; 250.00 ; 300.00 
+Government;Canada; VTT ; None ; 1817.00 ; 250.00 ; 20.00 
+Government;France; Amarilla ; None ; 2750.00 ; 260.00 ; 350.00 
+Channel Partners;United States of America; Amarilla ; None ; 1953.00 ; 260.00 ; 12.00 
+Enterprise;Germany; Amarilla ; None ; 4219.50 ; 260.00 ; 125.00 
+Government;France; Amarilla ; None ; 1899.00 ; 260.00 ; 20.00 
+Government;Germany; Amarilla ; None ; 1686.00 ; 260.00 ; 7.00 
+Channel Partners;United States of America; Amarilla ; None ; 2141.00 ; 260.00 ; 12.00 
+Government;United States of America; Amarilla ; None ; 1143.00 ; 260.00 ; 7.00 
+Midmarket;United States of America; Amarilla ; None ; 615.00 ; 260.00 ; 15.00 
+Government;France; Paseo ; Low ; 3945.00 ; 10.00 ; 7.00 
+Midmarket;France; Paseo ; Low ; 2296.00 ; 10.00 ; 15.00 
+Government;France; Paseo ; Low ; 1030.00 ; 10.00 ; 7.00 
+Government;France; Velo ; Low ; 639.00 ; 120.00 ; 7.00 
+Government;Canada; VTT ; Low ; 1326.00 ; 250.00 ; 7.00 
+Channel Partners;United States of America; Carretera ; Low ; 1858.00 ; 3.00 ; 12.00 
+Government;Mexico; Carretera ; Low ; 1210.00 ; 3.00 ; 350.00 
+Government;United States of America; Carretera ; Low ; 2529.00 ; 3.00 ; 7.00 
+Channel Partners;Canada; Carretera ; Low ; 1445.00 ; 3.00 ; 12.00 
+Enterprise;United States of America; Carretera ; Low ; 330.00 ; 3.00 ; 125.00 
+Channel Partners;France; Carretera ; Low ; 2671.00 ; 3.00 ; 12.00 
+Channel Partners;Germany; Carretera ; Low ; 766.00 ; 3.00 ; 12.00 
+Small Business;Mexico; Carretera ; Low ; 494.00 ; 3.00 ; 300.00 
+Government;Mexico; Carretera ; Low ; 1397.00 ; 3.00 ; 350.00 
+Government;France; Carretera ; Low ; 2155.00 ; 3.00 ; 350.00 
+Midmarket;Mexico; Montana ; Low ; 2214.00 ; 5.00 ; 15.00 
+Small Business;United States of America; Montana ; Low ; 2301.00 ; 5.00 ; 300.00 
+Government;France; Montana ; Low ; 1375.50 ; 5.00 ; 20.00 
+Government;Canada; Montana ; Low ; 1830.00 ; 5.00 ; 7.00 
+Small Business;United States of America; Montana ; Low ; 2498.00 ; 5.00 ; 300.00 
+Enterprise;United States of America; Montana ; Low ; 663.00 ; 5.00 ; 125.00 
+Midmarket;United States of America; Paseo ; Low ; 1514.00 ; 10.00 ; 15.00 
+Government;United States of America; Paseo ; Low ; 4492.50 ; 10.00 ; 7.00 
+Enterprise;United States of America; Paseo ; Low ; 727.00 ; 10.00 ; 125.00 
+Enterprise;France; Paseo ; Low ; 787.00 ; 10.00 ; 125.00 
+Enterprise;Mexico; Paseo ; Low ; 1823.00 ; 10.00 ; 125.00 
+Midmarket;Germany; Paseo ; Low ; 747.00 ; 10.00 ; 15.00 
+Channel Partners;Germany; Paseo ; Low ; 766.00 ; 10.00 ; 12.00 
+Small Business;United States of America; Paseo ; Low ; 2905.00 ; 10.00 ; 300.00 
+Government;France; Paseo ; Low ; 2155.00 ; 10.00 ; 350.00 
+Government;France; Velo ; Low ; 3864.00 ; 120.00 ; 20.00 
+Government;Mexico; Velo ; Low ; 362.00 ; 120.00 ; 7.00 
+Enterprise;Canada; Velo ; Low ; 923.00 ; 120.00 ; 125.00 
+Enterprise;United States of America; Velo ; Low ; 663.00 ; 120.00 ; 125.00 
+Government;Canada; Velo ; Low ; 2092.00 ; 120.00 ; 7.00 
+Government;Germany; VTT ; Low ; 263.00 ; 250.00 ; 7.00 
+Government;Canada; VTT ; Low ; 943.50 ; 250.00 ; 350.00 
+Enterprise;United States of America; VTT ; Low ; 727.00 ; 250.00 ; 125.00 
+Enterprise;France; VTT ; Low ; 787.00 ; 250.00 ; 125.00 
+Small Business;Germany; VTT ; Low ; 986.00 ; 250.00 ; 300.00 
+Small Business;Mexico; VTT ; Low ; 494.00 ; 250.00 ; 300.00 
+Government;Mexico; VTT ; Low ; 1397.00 ; 250.00 ; 350.00 
+Enterprise;France; VTT ; Low ; 1744.00 ; 250.00 ; 125.00 
+Channel Partners;United States of America; Amarilla ; Low ; 1989.00 ; 260.00 ; 12.00 
+Midmarket;France; Amarilla ; Low ; 321.00 ; 260.00 ; 15.00 
+Enterprise;Canada; Carretera ; Low ; 742.50 ; 3.00 ; 125.00 
+Channel Partners;Canada; Carretera ; Low ; 1295.00 ; 3.00 ; 12.00 
+Small Business;Germany; Carretera ; Low ; 214.00 ; 3.00 ; 300.00 
+Government;France; Carretera ; Low ; 2145.00 ; 3.00 ; 7.00 
+Government;Canada; Carretera ; Low ; 2852.00 ; 3.00 ; 350.00 
+Channel Partners;United States of America; Montana ; Low ; 1142.00 ; 5.00 ; 12.00 
+Government;United States of America; Montana ; Low ; 1566.00 ; 5.00 ; 20.00 
+Channel Partners;Mexico; Montana ; Low ; 690.00 ; 5.00 ; 12.00 
+Enterprise;Mexico; Montana ; Low ; 1660.00 ; 5.00 ; 125.00 
+Midmarket;Canada; Paseo ; Low ; 2363.00 ; 10.00 ; 15.00 
+Small Business;France; Paseo ; Low ; 918.00 ; 10.00 ; 300.00 
+Small Business;Germany; Paseo ; Low ; 1728.00 ; 10.00 ; 300.00 
+Channel Partners;United States of America; Paseo ; Low ; 1142.00 ; 10.00 ; 12.00 
+Enterprise;Mexico; Paseo ; Low ; 662.00 ; 10.00 ; 125.00 
+Channel Partners;Canada; Paseo ; Low ; 1295.00 ; 10.00 ; 12.00 
+Enterprise;Germany; Paseo ; Low ; 809.00 ; 10.00 ; 125.00 
+Enterprise;Mexico; Paseo ; Low ; 2145.00 ; 10.00 ; 125.00 
+Channel Partners;France; Paseo ; Low ; 1785.00 ; 10.00 ; 12.00 
+Small Business;Canada; Paseo ; Low ; 1916.00 ; 10.00 ; 300.00 
+Government;Canada; Paseo ; Low ; 2852.00 ; 10.00 ; 350.00 
+Enterprise;Canada; Paseo ; Low ; 2729.00 ; 10.00 ; 125.00 
+Midmarket;United States of America; Paseo ; Low ; 1925.00 ; 10.00 ; 15.00 
+Government;United States of America; Paseo ; Low ; 2013.00 ; 10.00 ; 7.00 
+Channel Partners;France; Paseo ; Low ; 1055.00 ; 10.00 ; 12.00 
+Channel Partners;Mexico; Paseo ; Low ; 1084.00 ; 10.00 ; 12.00 
+Government;United States of America; Velo ; Low ; 1566.00 ; 120.00 ; 20.00 
+Government;Germany; Velo ; Low ; 2966.00 ; 120.00 ; 350.00 
+Government;Germany; Velo ; Low ; 2877.00 ; 120.00 ; 350.00 
+Enterprise;Germany; Velo ; Low ; 809.00 ; 120.00 ; 125.00 
+Enterprise;Mexico; Velo ; Low ; 2145.00 ; 120.00 ; 125.00 
+Channel Partners;France; Velo ; Low ; 1055.00 ; 120.00 ; 12.00 
+Government;Mexico; Velo ; Low ; 544.00 ; 120.00 ; 20.00 
+Channel Partners;Mexico; Velo ; Low ; 1084.00 ; 120.00 ; 12.00 
+Enterprise;Mexico; VTT ; Low ; 662.00 ; 250.00 ; 125.00 
+Small Business;Germany; VTT ; Low ; 214.00 ; 250.00 ; 300.00 
+Government;Germany; VTT ; Low ; 2877.00 ; 250.00 ; 350.00 
+Enterprise;Canada; VTT ; Low ; 2729.00 ; 250.00 ; 125.00 
+Government;United States of America; VTT ; Low ; 266.00 ; 250.00 ; 350.00 
+Government;Mexico; VTT ; Low ; 1940.00 ; 250.00 ; 350.00 
+Small Business;Germany; Amarilla ; Low ; 259.00 ; 260.00 ; 300.00 
+Small Business;Mexico; Amarilla ; Low ; 1101.00 ; 260.00 ; 300.00 
+Enterprise;Germany; Amarilla ; Low ; 2276.00 ; 260.00 ; 125.00 
+Government;Germany; Amarilla ; Low ; 2966.00 ; 260.00 ; 350.00 
+Government;United States of America; Amarilla ; Low ; 1236.00 ; 260.00 ; 20.00 
+Government;France; Amarilla ; Low ; 941.00 ; 260.00 ; 20.00 
+Small Business;Canada; Amarilla ; Low ; 1916.00 ; 260.00 ; 300.00 
+Enterprise;France; Carretera ; Low ; 4243.50 ; 3.00 ; 125.00 
+Government;Germany; Carretera ; Low ; 2580.00 ; 3.00 ; 20.00 
+Small Business;Germany; Carretera ; Low ; 689.00 ; 3.00 ; 300.00 
+Channel Partners;United States of America; Carretera ; Low ; 1947.00 ; 3.00 ; 12.00 
+Channel Partners;Canada; Carretera ; Low ; 908.00 ; 3.00 ; 12.00 
+Government;Germany; Montana ; Low ; 1958.00 ; 5.00 ; 7.00 
+Channel Partners;France; Montana ; Low ; 1901.00 ; 5.00 ; 12.00 
+Government;France; Montana ; Low ; 544.00 ; 5.00 ; 7.00 
+Government;Germany; Montana ; Low ; 1797.00 ; 5.00 ; 350.00 
+Enterprise;France; Montana ; Low ; 1287.00 ; 5.00 ; 125.00 
+Enterprise;Germany; Montana ; Low ; 1706.00 ; 5.00 ; 125.00 
+Small Business;France; Paseo ; Low ; 2434.50 ; 10.00 ; 300.00 
+Enterprise;Canada; Paseo ; Low ; 1774.00 ; 10.00 ; 125.00 
+Channel Partners;France; Paseo ; Low ; 1901.00 ; 10.00 ; 12.00 
+Small Business;Germany; Paseo ; Low ; 689.00 ; 10.00 ; 300.00 
+Enterprise;Germany; Paseo ; Low ; 1570.00 ; 10.00 ; 125.00 
+Channel Partners;United States of America; Paseo ; Low ; 1369.50 ; 10.00 ; 12.00 
+Enterprise;Canada; Paseo ; Low ; 2009.00 ; 10.00 ; 125.00 
+Midmarket;Germany; Paseo ; Low ; 1945.00 ; 10.00 ; 15.00 
+Enterprise;France; Paseo ; Low ; 1287.00 ; 10.00 ; 125.00 
+Enterprise;Germany; Paseo ; Low ; 1706.00 ; 10.00 ; 125.00 
+Enterprise;Canada; Velo ; Low ; 2009.00 ; 120.00 ; 125.00 
+Small Business;United States of America; VTT ; Low ; 2844.00 ; 250.00 ; 300.00 
+Channel Partners;Mexico; VTT ; Low ; 1916.00 ; 250.00 ; 12.00 
+Enterprise;Germany; VTT ; Low ; 1570.00 ; 250.00 ; 125.00 
+Small Business;Canada; VTT ; Low ; 1874.00 ; 250.00 ; 300.00 
+Government;Mexico; VTT ; Low ; 1642.00 ; 250.00 ; 350.00 
+Midmarket;Germany; VTT ; Low ; 1945.00 ; 250.00 ; 15.00 
+Government;Canada; Carretera ; Low ; 831.00 ; 3.00 ; 20.00 
+Government;Mexico; Paseo ; Low ; 1760.00 ; 10.00 ; 7.00 
+Government;Canada; Velo ; Low ; 3850.50 ; 120.00 ; 20.00 
+Channel Partners;Germany; VTT ; Low ; 2479.00 ; 250.00 ; 12.00 
+Midmarket;Mexico; Montana ; Low ; 2031.00 ; 5.00 ; 15.00 
+Midmarket;Mexico; Paseo ; Low ; 2031.00 ; 10.00 ; 15.00 
+Midmarket;France; Paseo ; Low ; 2261.00 ; 10.00 ; 15.00 
+Government;United States of America; Velo ; Low ; 736.00 ; 120.00 ; 20.00 
+Government;Canada; Carretera ; Low ; 2851.00 ; 3.00 ; 7.00 
+Small Business;Germany; Carretera ; Low ; 2021.00 ; 3.00 ; 300.00 
+Government;United States of America; Carretera ; Low ; 274.00 ; 3.00 ; 350.00 
+Midmarket;Canada; Montana ; Low ; 1967.00 ; 5.00 ; 15.00 
+Small Business;Germany; Montana ; Low ; 1859.00 ; 5.00 ; 300.00 
+Government;Canada; Montana ; Low ; 2851.00 ; 5.00 ; 7.00 
+Small Business;Germany; Montana ; Low ; 2021.00 ; 5.00 ; 300.00 
+Enterprise;Mexico; Montana ; Low ; 1138.00 ; 5.00 ; 125.00 
+Government;Canada; Paseo ; Low ; 4251.00 ; 10.00 ; 7.00 
+Enterprise;Germany; Paseo ; Low ; 795.00 ; 10.00 ; 125.00 
+Small Business;Germany; Paseo ; Low ; 1414.50 ; 10.00 ; 300.00 
+Small Business;United States of America; Paseo ; Low ; 2918.00 ; 10.00 ; 300.00 
+Government;United States of America; Paseo ; Low ; 3450.00 ; 10.00 ; 350.00 
+Enterprise;France; Paseo ; Low ; 2988.00 ; 10.00 ; 125.00 
+Midmarket;Canada; Paseo ; Low ; 218.00 ; 10.00 ; 15.00 
+Government;Canada; Paseo ; Low ; 2074.00 ; 10.00 ; 20.00 
+Government;United States of America; Paseo ; Low ; 1056.00 ; 10.00 ; 20.00 
+Midmarket;United States of America; Paseo ; Low ; 671.00 ; 10.00 ; 15.00 
+Midmarket;Mexico; Paseo ; Low ; 1514.00 ; 10.00 ; 15.00 
+Government;United States of America; Paseo ; Low ; 274.00 ; 10.00 ; 350.00 
+Enterprise;Mexico; Paseo ; Low ; 1138.00 ; 10.00 ; 125.00 
+Channel Partners;United States of America; Velo ; Low ; 1465.00 ; 120.00 ; 12.00 
+Government;Canada; Velo ; Low ; 2646.00 ; 120.00 ; 20.00 
+Government;France; Velo ; Low ; 2177.00 ; 120.00 ; 350.00 
+Channel Partners;France; VTT ; Low ; 866.00 ; 250.00 ; 12.00 
+Government;United States of America; VTT ; Low ; 349.00 ; 250.00 ; 350.00 
+Government;France; VTT ; Low ; 2177.00 ; 250.00 ; 350.00 
+Midmarket;Mexico; VTT ; Low ; 1514.00 ; 250.00 ; 15.00 
+Government;Mexico; Amarilla ; Low ; 1865.00 ; 260.00 ; 350.00 
+Enterprise;Mexico; Amarilla ; Low ; 1074.00 ; 260.00 ; 125.00 
+Government;Germany; Amarilla ; Low ; 1907.00 ; 260.00 ; 350.00 
+Midmarket;United States of America; Amarilla ; Low ; 671.00 ; 260.00 ; 15.00 
+Government;Canada; Amarilla ; Low ; 1778.00 ; 260.00 ; 350.00 
+Government;Germany; Montana ; Medium ; 1159.00 ; 5.00 ; 7.00 
+Government;Germany; Paseo ; Medium ; 1372.00 ; 10.00 ; 7.00 
+Government;Canada; Paseo ; Medium ; 2349.00 ; 10.00 ; 7.00 
+Government;Mexico; Paseo ; Medium ; 2689.00 ; 10.00 ; 7.00 
+Channel Partners;Canada; Paseo ; Medium ; 2431.00 ; 10.00 ; 12.00 
+Channel Partners;Canada; Velo ; Medium ; 2431.00 ; 120.00 ; 12.00 
+Government;Mexico; VTT ; Medium ; 2689.00 ; 250.00 ; 7.00 
+Government;Mexico; Amarilla ; Medium ; 1683.00 ; 260.00 ; 7.00 
+Channel Partners;Mexico; Amarilla ; Medium ; 1123.00 ; 260.00 ; 12.00 
+Government;Germany; Amarilla ; Medium ; 1159.00 ; 260.00 ; 7.00 
+Channel Partners;France; Carretera ; Medium ; 1865.00 ; 3.00 ; 12.00 
+Channel Partners;Germany; Carretera ; Medium ; 1116.00 ; 3.00 ; 12.00 
+Government;France; Carretera ; Medium ; 1563.00 ; 3.00 ; 20.00 
+Small Business;United States of America; Carretera ; Medium ; 991.00 ; 3.00 ; 300.00 
+Government;Germany; Carretera ; Medium ; 1016.00 ; 3.00 ; 7.00 
+Midmarket;Mexico; Carretera ; Medium ; 2791.00 ; 3.00 ; 15.00 
+Government;United States of America; Carretera ; Medium ; 570.00 ; 3.00 ; 7.00 
+Government;France; Carretera ; Medium ; 2487.00 ; 3.00 ; 7.00 
+Government;France; Montana ; Medium ; 1384.50 ; 5.00 ; 350.00 
+Enterprise;United States of America; Montana ; Medium ; 3627.00 ; 5.00 ; 125.00 
+Government;Mexico; Montana ; Medium ; 720.00 ; 5.00 ; 350.00 
+Channel Partners;Germany; Montana ; Medium ; 2342.00 ; 5.00 ; 12.00 
+Small Business;Mexico; Montana ; Medium ; 1100.00 ; 5.00 ; 300.00 
+Government;France; Paseo ; Medium ; 1303.00 ; 10.00 ; 20.00 
+Enterprise;United States of America; Paseo ; Medium ; 2992.00 ; 10.00 ; 125.00 
+Enterprise;France; Paseo ; Medium ; 2385.00 ; 10.00 ; 125.00 
+Small Business;Mexico; Paseo ; Medium ; 1607.00 ; 10.00 ; 300.00 
+Government;United States of America; Paseo ; Medium ; 2327.00 ; 10.00 ; 7.00 
+Small Business;United States of America; Paseo ; Medium ; 991.00 ; 10.00 ; 300.00 
+Government;United States of America; Paseo ; Medium ; 602.00 ; 10.00 ; 350.00 
+Midmarket;France; Paseo ; Medium ; 2620.00 ; 10.00 ; 15.00 
+Government;Canada; Paseo ; Medium ; 1228.00 ; 10.00 ; 350.00 
+Government;Canada; Paseo ; Medium ; 1389.00 ; 10.00 ; 20.00 
+Enterprise;United States of America; Paseo ; Medium ; 861.00 ; 10.00 ; 125.00 
+Enterprise;France; Paseo ; Medium ; 704.00 ; 10.00 ; 125.00 
+Government;Canada; Paseo ; Medium ; 1802.00 ; 10.00 ; 20.00 
+Government;United States of America; Paseo ; Medium ; 2663.00 ; 10.00 ; 20.00 
+Government;France; Paseo ; Medium ; 2136.00 ; 10.00 ; 7.00 
+Midmarket;Germany; Paseo ; Medium ; 2116.00 ; 10.00 ; 15.00 
+Midmarket;United States of America; Velo ; Medium ; 555.00 ; 120.00 ; 15.00 
+Midmarket;Mexico; Velo ; Medium ; 2861.00 ; 120.00 ; 15.00 
+Enterprise;Germany; Velo ; Medium ; 807.00 ; 120.00 ; 125.00 
+Government;United States of America; Velo ; Medium ; 602.00 ; 120.00 ; 350.00 
+Government;United States of America; Velo ; Medium ; 2832.00 ; 120.00 ; 20.00 
+Government;France; Velo ; Medium ; 1579.00 ; 120.00 ; 20.00 
+Enterprise;United States of America; Velo ; Medium ; 861.00 ; 120.00 ; 125.00 
+Enterprise;France; Velo ; Medium ; 704.00 ; 120.00 ; 125.00 
+Government;France; Velo ; Medium ; 1033.00 ; 120.00 ; 20.00 
+Small Business;Germany; Velo ; Medium ; 1250.00 ; 120.00 ; 300.00 
+Government;Canada; VTT ; Medium ; 1389.00 ; 250.00 ; 20.00 
+Government;United States of America; VTT ; Medium ; 1265.00 ; 250.00 ; 20.00 
+Government;Germany; VTT ; Medium ; 2297.00 ; 250.00 ; 20.00 
+Government;United States of America; VTT ; Medium ; 2663.00 ; 250.00 ; 20.00 
+Government;United States of America; VTT ; Medium ; 570.00 ; 250.00 ; 7.00 
+Government;France; VTT ; Medium ; 2487.00 ; 250.00 ; 7.00 
+Government;Germany; Amarilla ; Medium ; 1350.00 ; 260.00 ; 350.00 
+Government;Canada; Amarilla ; Medium ; 552.00 ; 260.00 ; 350.00 
+Government;Canada; Amarilla ; Medium ; 1228.00 ; 260.00 ; 350.00 
+Small Business;Germany; Amarilla ; Medium ; 1250.00 ; 260.00 ; 300.00 
+Midmarket;France; Paseo ; Medium ; 3801.00 ; 10.00 ; 15.00 
+Government;United States of America; Carretera ; Medium ; 1117.50 ; 3.00 ; 20.00 
+Midmarket;Canada; Carretera ; Medium ; 2844.00 ; 3.00 ; 15.00 
+Channel Partners;Mexico; Carretera ; Medium ; 562.00 ; 3.00 ; 12.00 
+Channel Partners;Canada; Carretera ; Medium ; 2299.00 ; 3.00 ; 12.00 
+Midmarket;United States of America; Carretera ; Medium ; 2030.00 ; 3.00 ; 15.00 
+Government;United States of America; Carretera ; Medium ; 263.00 ; 3.00 ; 7.00 
+Enterprise;Germany; Carretera ; Medium ; 887.00 ; 3.00 ; 125.00 
+Government;Mexico; Montana ; Medium ; 980.00 ; 5.00 ; 350.00 
+Government;Germany; Montana ; Medium ; 1460.00 ; 5.00 ; 350.00 
+Government;France; Montana ; Medium ; 1403.00 ; 5.00 ; 7.00 
+Channel Partners;United States of America; Montana ; Medium ; 2723.00 ; 5.00 ; 12.00 
+Government;France; Paseo ; Medium ; 1496.00 ; 10.00 ; 350.00 
+Channel Partners;Canada; Paseo ; Medium ; 2299.00 ; 10.00 ; 12.00 
+Government;United States of America; Paseo ; Medium ; 727.00 ; 10.00 ; 350.00 
+Enterprise;Canada; Velo ; Medium ; 952.00 ; 120.00 ; 125.00 
+Enterprise;United States of America; Velo ; Medium ; 2755.00 ; 120.00 ; 125.00 
+Midmarket;Germany; Velo ; Medium ; 1530.00 ; 120.00 ; 15.00 
+Government;France; Velo ; Medium ; 1496.00 ; 120.00 ; 350.00 
+Government;Mexico; Velo ; Medium ; 1498.00 ; 120.00 ; 7.00 
+Small Business;France; Velo ; Medium ; 1221.00 ; 120.00 ; 300.00 
+Government;France; Velo ; Medium ; 2076.00 ; 120.00 ; 350.00 
+Midmarket;Canada; VTT ; Medium ; 2844.00 ; 250.00 ; 15.00 
+Government;Mexico; VTT ; Medium ; 1498.00 ; 250.00 ; 7.00 
+Small Business;France; VTT ; Medium ; 1221.00 ; 250.00 ; 300.00 
+Government;Mexico; VTT ; Medium ; 1123.00 ; 250.00 ; 20.00 
+Small Business;Canada; VTT ; Medium ; 2436.00 ; 250.00 ; 300.00 
+Enterprise;France; Amarilla ; Medium ; 1987.50 ; 260.00 ; 125.00 
+Government;Mexico; Amarilla ; Medium ; 1679.00 ; 260.00 ; 350.00 
+Government;United States of America; Amarilla ; Medium ; 727.00 ; 260.00 ; 350.00 
+Government;France; Amarilla ; Medium ; 1403.00 ; 260.00 ; 7.00 
+Government;France; Amarilla ; Medium ; 2076.00 ; 260.00 ; 350.00 
+Government;France; Montana ; Medium ; 1757.00 ; 5.00 ; 20.00 
+Midmarket;United States of America; Paseo ; Medium ; 2198.00 ; 10.00 ; 15.00 
+Midmarket;Germany; Paseo ; Medium ; 1743.00 ; 10.00 ; 15.00 
+Midmarket;United States of America; Paseo ; Medium ; 1153.00 ; 10.00 ; 15.00 
+Government;France; Paseo ; Medium ; 1757.00 ; 10.00 ; 20.00 
+Government;Germany; Velo ; Medium ; 1001.00 ; 120.00 ; 20.00 
+Government;Mexico; Velo ; Medium ; 1333.00 ; 120.00 ; 7.00 
+Midmarket;United States of America; VTT ; Medium ; 1153.00 ; 250.00 ; 15.00 
+Channel Partners;Mexico; Carretera ; Medium ; 727.00 ; 3.00 ; 12.00 
+Channel Partners;Canada; Carretera ; Medium ; 1884.00 ; 3.00 ; 12.00 
+Government;Mexico; Carretera ; Medium ; 1834.00 ; 3.00 ; 20.00 
+Channel Partners;Mexico; Montana ; Medium ; 2340.00 ; 5.00 ; 12.00 
+Channel Partners;France; Montana ; Medium ; 2342.00 ; 5.00 ; 12.00 
+Government;France; Paseo ; Medium ; 1031.00 ; 10.00 ; 7.00 
+Midmarket;Canada; Velo ; Medium ; 1262.00 ; 120.00 ; 15.00 
+Government;Canada; Velo ; Medium ; 1135.00 ; 120.00 ; 7.00 
+Government;United States of America; Velo ; Medium ; 547.00 ; 120.00 ; 7.00 
+Government;Canada; Velo ; Medium ; 1582.00 ; 120.00 ; 7.00 
+Channel Partners;France; VTT ; Medium ; 1738.50 ; 250.00 ; 12.00 
+Channel Partners;Germany; VTT ; Medium ; 2215.00 ; 250.00 ; 12.00 
+Government;Canada; VTT ; Medium ; 1582.00 ; 250.00 ; 7.00 
+Government;Canada; Amarilla ; Medium ; 1135.00 ; 260.00 ; 7.00 
+Government;United States of America; Carretera ; Medium ; 1761.00 ; 3.00 ; 350.00 
+Small Business;France; Carretera ; Medium ; 448.00 ; 3.00 ; 300.00 
+Small Business;France; Carretera ; Medium ; 2181.00 ; 3.00 ; 300.00 
+Government;France; Montana ; Medium ; 1976.00 ; 5.00 ; 20.00 
+Small Business;France; Montana ; Medium ; 2181.00 ; 5.00 ; 300.00 
+Enterprise;Germany; Montana ; Medium ; 2500.00 ; 5.00 ; 125.00 
+Small Business;Canada; Paseo ; Medium ; 1702.00 ; 10.00 ; 300.00 
+Small Business;France; Paseo ; Medium ; 448.00 ; 10.00 ; 300.00 
+Enterprise;Germany; Paseo ; Medium ; 3513.00 ; 10.00 ; 125.00 
+Midmarket;France; Paseo ; Medium ; 2101.00 ; 10.00 ; 15.00 
+Midmarket;United States of America; Paseo ; Medium ; 2931.00 ; 10.00 ; 15.00 
+Government;France; Paseo ; Medium ; 1535.00 ; 10.00 ; 20.00 
+Small Business;Germany; Paseo ; Medium ; 1123.00 ; 10.00 ; 300.00 
+Small Business;Canada; Paseo ; Medium ; 1404.00 ; 10.00 ; 300.00 
+Channel Partners;Mexico; Paseo ; Medium ; 2763.00 ; 10.00 ; 12.00 
+Government;Germany; Paseo ; Medium ; 2125.00 ; 10.00 ; 7.00 
+Small Business;France; Velo ; Medium ; 1659.00 ; 120.00 ; 300.00 
+Government;Mexico; Velo ; Medium ; 609.00 ; 120.00 ; 20.00 
+Enterprise;Germany; Velo ; Medium ; 2087.00 ; 120.00 ; 125.00 
+Government;France; Velo ; Medium ; 1976.00 ; 120.00 ; 20.00 
+Government;United States of America; Velo ; Medium ; 1421.00 ; 120.00 ; 20.00 
+Small Business;United States of America; Velo ; Medium ; 1372.00 ; 120.00 ; 300.00 
+Government;Germany; Velo ; Medium ; 588.00 ; 120.00 ; 20.00 
+Channel Partners;Canada; VTT ; Medium ; 3244.50 ; 250.00 ; 12.00 
+Small Business;France; VTT ; Medium ; 959.00 ; 250.00 ; 300.00 
+Small Business;Mexico; VTT ; Medium ; 2747.00 ; 250.00 ; 300.00 
+Enterprise;Canada; Amarilla ; Medium ; 1645.00 ; 260.00 ; 125.00 
+Government;France; Amarilla ; Medium ; 2876.00 ; 260.00 ; 350.00 
+Enterprise;Germany; Amarilla ; Medium ; 994.00 ; 260.00 ; 125.00 
+Government;Canada; Amarilla ; Medium ; 1118.00 ; 260.00 ; 20.00 
+Small Business;United States of America; Amarilla ; Medium ; 1372.00 ; 260.00 ; 300.00 
+Government;Canada; Montana ; Medium ; 488.00 ; 5.00 ; 7.00 
+Government;United States of America; Montana ; Medium ; 1282.00 ; 5.00 ; 20.00 
+Government;Canada; Paseo ; Medium ; 257.00 ; 10.00 ; 7.00 
+Government;United States of America; Amarilla ; Medium ; 1282.00 ; 260.00 ; 20.00 
+Enterprise;Mexico; Carretera ; Medium ; 1540.00 ; 3.00 ; 125.00 
+Midmarket;France; Carretera ; Medium ; 490.00 ; 3.00 ; 15.00 
+Government;Mexico; Carretera ; Medium ; 1362.00 ; 3.00 ; 350.00 
+Midmarket;France; Montana ; Medium ; 2501.00 ; 5.00 ; 15.00 
+Government;Canada; Montana ; Medium ; 708.00 ; 5.00 ; 20.00 
+Government;Germany; Montana ; Medium ; 645.00 ; 5.00 ; 20.00 
+Small Business;France; Montana ; Medium ; 1562.00 ; 5.00 ; 300.00 
+Small Business;Canada; Montana ; Medium ; 1283.00 ; 5.00 ; 300.00 
+Midmarket;Germany; Montana ; Medium ; 711.00 ; 5.00 ; 15.00 
+Enterprise;Mexico; Paseo ; Medium ; 1114.00 ; 10.00 ; 125.00 
+Government;Germany; Paseo ; Medium ; 1259.00 ; 10.00 ; 7.00 
+Government;Germany; Paseo ; Medium ; 1095.00 ; 10.00 ; 7.00 
+Government;Germany; Paseo ; Medium ; 1366.00 ; 10.00 ; 20.00 
+Small Business;Mexico; Paseo ; Medium ; 2460.00 ; 10.00 ; 300.00 
+Government;United States of America; Paseo ; Medium ; 678.00 ; 10.00 ; 7.00 
+Government;Germany; Paseo ; Medium ; 1598.00 ; 10.00 ; 7.00 
+Government;Germany; Paseo ; Medium ; 2409.00 ; 10.00 ; 7.00 
+Government;Germany; Paseo ; Medium ; 1934.00 ; 10.00 ; 20.00 
+Government;Mexico; Paseo ; Medium ; 2993.00 ; 10.00 ; 20.00 
+Government;Germany; Paseo ; Medium ; 2146.00 ; 10.00 ; 350.00 
+Government;Mexico; Paseo ; Medium ; 1946.00 ; 10.00 ; 7.00 
+Government;Mexico; Paseo ; Medium ; 1362.00 ; 10.00 ; 350.00 
+Channel Partners;Canada; Velo ; Medium ; 598.00 ; 120.00 ; 12.00 
+Government;United States of America; Velo ; Medium ; 2907.00 ; 120.00 ; 7.00 
+Government;Germany; Velo ; Medium ; 2338.00 ; 120.00 ; 7.00 
+Small Business;France; Velo ; Medium ; 386.00 ; 120.00 ; 300.00 
+Small Business;Mexico; Velo ; Medium ; 635.00 ; 120.00 ; 300.00 
+Government;France; VTT ; Medium ; 574.50 ; 250.00 ; 350.00 
+Government;Germany; VTT ; Medium ; 2338.00 ; 250.00 ; 7.00 
+Government;France; VTT ; Medium ; 381.00 ; 250.00 ; 350.00 
+Government;Germany; VTT ; Medium ; 422.00 ; 250.00 ; 350.00 
+Small Business;Canada; VTT ; Medium ; 2134.00 ; 250.00 ; 300.00 
+Small Business;United States of America; VTT ; Medium ; 808.00 ; 250.00 ; 300.00 
+Government;Canada; Amarilla ; Medium ; 708.00 ; 260.00 ; 20.00 
+Government;United States of America; Amarilla ; Medium ; 2907.00 ; 260.00 ; 7.00 
+Government;Germany; Amarilla ; Medium ; 1366.00 ; 260.00 ; 20.00 
+Small Business;Mexico; Amarilla ; Medium ; 2460.00 ; 260.00 ; 300.00 
+Government;Germany; Amarilla ; Medium ; 1520.00 ; 260.00 ; 20.00 
+Midmarket;Germany; Amarilla ; Medium ; 711.00 ; 260.00 ; 15.00 
+Channel Partners;Mexico; Amarilla ; Medium ; 1375.00 ; 260.00 ; 12.00 
+Small Business;Mexico; Amarilla ; Medium ; 635.00 ; 260.00 ; 300.00 
+Government;United States of America; VTT ; Medium ; 436.50 ; 250.00 ; 20.00 
+Small Business;Canada; Carretera ; Medium ; 1094.00 ; 3.00 ; 300.00 
+Channel Partners;Mexico; Carretera ; Medium ; 367.00 ; 3.00 ; 12.00 
+Small Business;Canada; Montana ; Medium ; 3802.50 ; 5.00 ; 300.00 
+Government;France; Montana ; Medium ; 1666.00 ; 5.00 ; 350.00 
+Small Business;France; Montana ; Medium ; 322.00 ; 5.00 ; 300.00 
+Channel Partners;Canada; Montana ; Medium ; 2321.00 ; 5.00 ; 12.00 
+Enterprise;France; Montana ; Medium ; 1857.00 ; 5.00 ; 125.00 
+Government;Canada; Montana ; Medium ; 1611.00 ; 5.00 ; 7.00 
+Enterprise;United States of America; Montana ; Medium ; 2797.00 ; 5.00 ; 125.00 
+Small Business;Germany; Montana ; Medium ; 334.00 ; 5.00 ; 300.00 
+Small Business;Mexico; Paseo ; Medium ; 2565.00 ; 10.00 ; 300.00 
+Government;Mexico; Paseo ; Medium ; 2417.00 ; 10.00 ; 350.00 
+Midmarket;United States of America; Paseo ; Medium ; 3675.00 ; 10.00 ; 15.00 
+Small Business;Canada; Paseo ; Medium ; 1094.00 ; 10.00 ; 300.00 
+Midmarket;France; Paseo ; Medium ; 1227.00 ; 10.00 ; 15.00 
+Channel Partners;Mexico; Paseo ; Medium ; 367.00 ; 10.00 ; 12.00 
+Small Business;France; Paseo ; Medium ; 1324.00 ; 10.00 ; 300.00 
+Channel Partners;Germany; Paseo ; Medium ; 1775.00 ; 10.00 ; 12.00 
+Enterprise;United States of America; Paseo ; Medium ; 2797.00 ; 10.00 ; 125.00 
+Midmarket;Mexico; Velo ; Medium ; 245.00 ; 120.00 ; 15.00 
+Small Business;Canada; Velo ; Medium ; 3793.50 ; 120.00 ; 300.00 
+Government;Germany; Velo ; Medium ; 1307.00 ; 120.00 ; 350.00 
+Enterprise;Canada; Velo ; Medium ; 567.00 ; 120.00 ; 125.00 
+Enterprise;Mexico; Velo ; Medium ; 2110.00 ; 120.00 ; 125.00 
+Government;Canada; Velo ; Medium ; 1269.00 ; 120.00 ; 350.00 
+Channel Partners;United States of America; VTT ; Medium ; 1956.00 ; 250.00 ; 12.00 
+Small Business;Germany; VTT ; Medium ; 2659.00 ; 250.00 ; 300.00 
+Government;United States of America; VTT ; Medium ; 1351.50 ; 250.00 ; 350.00 
+Channel Partners;Germany; VTT ; Medium ; 880.00 ; 250.00 ; 12.00 
+Small Business;United States of America; VTT ; Medium ; 1867.00 ; 250.00 ; 300.00 
+Channel Partners;France; VTT ; Medium ; 2234.00 ; 250.00 ; 12.00 
+Midmarket;France; VTT ; Medium ; 1227.00 ; 250.00 ; 15.00 
+Enterprise;Mexico; VTT ; Medium ; 877.00 ; 250.00 ; 125.00 
+Government;United States of America; Amarilla ; Medium ; 2071.00 ; 260.00 ; 350.00 
+Government;Canada; Amarilla ; Medium ; 1269.00 ; 260.00 ; 350.00 
+Midmarket;Germany; Amarilla ; Medium ; 970.00 ; 260.00 ; 15.00 
+Government;Mexico; Amarilla ; Medium ; 1694.00 ; 260.00 ; 20.00 
+Government;Germany; Carretera ; Medium ; 663.00 ; 3.00 ; 20.00 
+Government;Canada; Carretera ; Medium ; 819.00 ; 3.00 ; 7.00 
+Channel Partners;Germany; Carretera ; Medium ; 1580.00 ; 3.00 ; 12.00 
+Government;Mexico; Carretera ; Medium ; 521.00 ; 3.00 ; 7.00 
+Government;United States of America; Paseo ; Medium ; 973.00 ; 10.00 ; 20.00 
+Government;Mexico; Paseo ; Medium ; 1038.00 ; 10.00 ; 20.00 
+Government;Germany; Paseo ; Medium ; 360.00 ; 10.00 ; 7.00 
+Channel Partners;France; Velo ; Medium ; 1967.00 ; 120.00 ; 12.00 
+Midmarket;Mexico; Velo ; Medium ; 2628.00 ; 120.00 ; 15.00 
+Government;Germany; VTT ; Medium ; 360.00 ; 250.00 ; 7.00 
+Government;France; VTT ; Medium ; 2682.00 ; 250.00 ; 20.00 
+Government;Mexico; VTT ; Medium ; 521.00 ; 250.00 ; 7.00 
+Government;Mexico; Amarilla ; Medium ; 1038.00 ; 260.00 ; 20.00 
+Midmarket;Canada; Amarilla ; Medium ; 1630.50 ; 260.00 ; 15.00 
+Channel Partners;France; Amarilla ; Medium ; 306.00 ; 260.00 ; 12.00 
+Channel Partners;United States of America; Carretera ; High ; 386.00 ; 3.00 ; 12.00 
+Government;United States of America; Montana ; High ; 2328.00 ; 5.00 ; 7.00 
+Channel Partners;United States of America; Paseo ; High ; 386.00 ; 10.00 ; 12.00 
+Enterprise;United States of America; Carretera ; High ; 3445.50 ; 3.00 ; 125.00 
+Enterprise;France; Carretera ; High ; 1482.00 ; 3.00 ; 125.00 
+Government;United States of America; Montana ; High ; 2313.00 ; 5.00 ; 350.00 
+Enterprise;United States of America; Montana ; High ; 1804.00 ; 5.00 ; 125.00 
+Midmarket;France; Montana ; High ; 2072.00 ; 5.00 ; 15.00 
+Government;France; Paseo ; High ; 1954.00 ; 10.00 ; 20.00 
+Small Business;Mexico; Paseo ; High ; 591.00 ; 10.00 ; 300.00 
+Midmarket;France; Paseo ; High ; 2167.00 ; 10.00 ; 15.00 
+Government;Germany; Paseo ; High ; 241.00 ; 10.00 ; 20.00 
+Midmarket;Germany; Velo ; High ; 681.00 ; 120.00 ; 15.00 
+Midmarket;Germany; Velo ; High ; 510.00 ; 120.00 ; 15.00 
+Midmarket;United States of America; Velo ; High ; 790.00 ; 120.00 ; 15.00 
+Government;France; Velo ; High ; 639.00 ; 120.00 ; 350.00 
+Enterprise;United States of America; Velo ; High ; 1596.00 ; 120.00 ; 125.00 
+Small Business;United States of America; Velo ; High ; 2294.00 ; 120.00 ; 300.00 
+Government;Germany; Velo ; High ; 241.00 ; 120.00 ; 20.00 
+Government;Germany; Velo ; High ; 2665.00 ; 120.00 ; 7.00 
+Enterprise;Canada; Velo ; High ; 1916.00 ; 120.00 ; 125.00 
+Small Business;France; Velo ; High ; 853.00 ; 120.00 ; 300.00 
+Enterprise;Mexico; VTT ; High ; 341.00 ; 250.00 ; 125.00 
+Midmarket;Mexico; VTT ; High ; 641.00 ; 250.00 ; 15.00 
+Government;United States of America; VTT ; High ; 2807.00 ; 250.00 ; 350.00 
+Small Business;Mexico; VTT ; High ; 432.00 ; 250.00 ; 300.00 
+Small Business;United States of America; VTT ; High ; 2294.00 ; 250.00 ; 300.00 
+Midmarket;France; VTT ; High ; 2167.00 ; 250.00 ; 15.00 
+Enterprise;Canada; VTT ; High ; 2529.00 ; 250.00 ; 125.00 
+Government;Germany; VTT ; High ; 1870.00 ; 250.00 ; 350.00 
+Enterprise;United States of America; Amarilla ; High ; 579.00 ; 260.00 ; 125.00 
+Government;Canada; Amarilla ; High ; 2240.00 ; 260.00 ; 350.00 
+Small Business;United States of America; Amarilla ; High ; 2993.00 ; 260.00 ; 300.00 
+Channel Partners;Canada; Amarilla ; High ; 3520.50 ; 260.00 ; 12.00 
+Government;Mexico; Amarilla ; High ; 2039.00 ; 260.00 ; 20.00 
+Channel Partners;Germany; Amarilla ; High ; 2574.00 ; 260.00 ; 12.00 
+Government;Canada; Amarilla ; High ; 707.00 ; 260.00 ; 350.00 
+Midmarket;France; Amarilla ; High ; 2072.00 ; 260.00 ; 15.00 
+Small Business;France; Amarilla ; High ; 853.00 ; 260.00 ; 300.00 
+Channel Partners;France; Carretera ; High ; 1198.00 ; 3.00 ; 12.00 
+Government;France; Paseo ; High ; 2532.00 ; 10.00 ; 7.00 
+Channel Partners;France; Paseo ; High ; 1198.00 ; 10.00 ; 12.00 
+Midmarket;Canada; Velo ; High ; 384.00 ; 120.00 ; 15.00 
+Channel Partners;Germany; Velo ; High ; 472.00 ; 120.00 ; 12.00 
+Government;United States of America; VTT ; High ; 1579.00 ; 250.00 ; 7.00 
+Channel Partners;Mexico; VTT ; High ; 1005.00 ; 250.00 ; 12.00 
+Midmarket;United States of America; Amarilla ; High ; 3199.50 ; 260.00 ; 15.00 
+Channel Partners;Germany; Amarilla ; High ; 472.00 ; 260.00 ; 12.00 
+Channel Partners;Canada; Carretera ; High ; 1937.00 ; 3.00 ; 12.00 
+Government;Germany; Carretera ; High ; 792.00 ; 3.00 ; 350.00 
+Small Business;Germany; Carretera ; High ; 2811.00 ; 3.00 ; 300.00 
+Enterprise;France; Carretera ; High ; 2441.00 ; 3.00 ; 125.00 
+Midmarket;Canada; Carretera ; High ; 1560.00 ; 3.00 ; 15.00 
+Government;Mexico; Carretera ; High ; 2706.00 ; 3.00 ; 7.00 
+Government;Germany; Montana ; High ; 766.00 ; 5.00 ; 350.00 
+Government;Germany; Montana ; High ; 2992.00 ; 5.00 ; 20.00 
+Midmarket;Mexico; Montana ; High ; 2157.00 ; 5.00 ; 15.00 
+Small Business;Canada; Paseo ; High ; 873.00 ; 10.00 ; 300.00 
+Government;Mexico; Paseo ; High ; 1122.00 ; 10.00 ; 20.00 
+Government;Canada; Paseo ; High ; 2104.50 ; 10.00 ; 350.00 
+Channel Partners;Canada; Paseo ; High ; 4026.00 ; 10.00 ; 12.00 
+Channel Partners;France; Paseo ; High ; 2425.50 ; 10.00 ; 12.00 
+Government;Canada; Paseo ; High ; 2394.00 ; 10.00 ; 20.00 
+Midmarket;Mexico; Paseo ; High ; 1984.00 ; 10.00 ; 15.00 
+Enterprise;France; Paseo ; High ; 2441.00 ; 10.00 ; 125.00 
+Government;Germany; Paseo ; High ; 2992.00 ; 10.00 ; 20.00 
+Small Business;Canada; Paseo ; High ; 1366.00 ; 10.00 ; 300.00 
+Government;France; Velo ; High ; 2805.00 ; 120.00 ; 20.00 
+Midmarket;Mexico; Velo ; High ; 655.00 ; 120.00 ; 15.00 
+Government;Mexico; Velo ; High ; 344.00 ; 120.00 ; 350.00 
+Government;Canada; Velo ; High ; 1808.00 ; 120.00 ; 7.00 
+Channel Partners;France; VTT ; High ; 1734.00 ; 250.00 ; 12.00 
+Enterprise;Mexico; VTT ; High ; 554.00 ; 250.00 ; 125.00 
+Government;Canada; VTT ; High ; 2935.00 ; 250.00 ; 20.00 
+Enterprise;Germany; Amarilla ; High ; 3165.00 ; 260.00 ; 125.00 
+Government;Mexico; Amarilla ; High ; 2629.00 ; 260.00 ; 20.00 
+Enterprise;France; Amarilla ; High ; 1433.00 ; 260.00 ; 125.00 
+Enterprise;Mexico; Amarilla ; High ; 947.00 ; 260.00 ; 125.00 
+Government;Mexico; Amarilla ; High ; 344.00 ; 260.00 ; 350.00 
+Midmarket;Mexico; Amarilla ; High ; 2157.00 ; 260.00 ; 15.00 
+Government;United States of America; Paseo ; High ; 380.00 ; 10.00 ; 7.00 
+Government;Mexico; Carretera ; High ; 886.00 ; 3.00 ; 350.00 
+Enterprise;Canada; Carretera ; High ; 2416.00 ; 3.00 ; 125.00 
+Enterprise;Mexico; Carretera ; High ; 2156.00 ; 3.00 ; 125.00 
+Midmarket;Canada; Carretera ; High ; 2689.00 ; 3.00 ; 15.00 
+Midmarket;United States of America; Montana ; High ; 677.00 ; 5.00 ; 15.00 
+Small Business;France; Montana ; High ; 1773.00 ; 5.00 ; 300.00 
+Government;Mexico; Montana ; High ; 2420.00 ; 5.00 ; 7.00 
+Government;Canada; Montana ; High ; 2734.00 ; 5.00 ; 7.00 
+Government;Mexico; Montana ; High ; 1715.00 ; 5.00 ; 20.00 
+Small Business;France; Montana ; High ; 1186.00 ; 5.00 ; 300.00 
+Small Business;United States of America; Paseo ; High ; 3495.00 ; 10.00 ; 300.00 
+Government;Mexico; Paseo ; High ; 886.00 ; 10.00 ; 350.00 
+Enterprise;Mexico; Paseo ; High ; 2156.00 ; 10.00 ; 125.00 
+Government;Mexico; Paseo ; High ; 905.00 ; 10.00 ; 20.00 
+Government;Mexico; Paseo ; High ; 1715.00 ; 10.00 ; 20.00 
+Government;France; Paseo ; High ; 1594.00 ; 10.00 ; 350.00 
+Small Business;Germany; Paseo ; High ; 1359.00 ; 10.00 ; 300.00 
+Small Business;Mexico; Paseo ; High ; 2150.00 ; 10.00 ; 300.00 
+Government;Mexico; Paseo ; High ; 1197.00 ; 10.00 ; 350.00 
+Midmarket;Mexico; Paseo ; High ; 380.00 ; 10.00 ; 15.00 
+Government;Mexico; Paseo ; High ; 1233.00 ; 10.00 ; 20.00 
+Government;Mexico; Velo ; High ; 1395.00 ; 120.00 ; 350.00 
+Government;United States of America; Velo ; High ; 986.00 ; 120.00 ; 350.00 
+Government;Mexico; Velo ; High ; 905.00 ; 120.00 ; 20.00 
+Channel Partners;Canada; VTT ; High ; 2109.00 ; 250.00 ; 12.00 
+Midmarket;France; VTT ; High ; 3874.50 ; 250.00 ; 15.00 
+Government;Canada; VTT ; High ; 623.00 ; 250.00 ; 350.00 
+Government;United States of America; VTT ; High ; 986.00 ; 250.00 ; 350.00 
+Enterprise;United States of America; VTT ; High ; 2387.00 ; 250.00 ; 125.00 
+Government;Mexico; VTT ; High ; 1233.00 ; 250.00 ; 20.00 
+Government;United States of America; Amarilla ; High ; 270.00 ; 260.00 ; 350.00 
+Government;France; Amarilla ; High ; 3421.50 ; 260.00 ; 7.00 
+Government;Canada; Amarilla ; High ; 2734.00 ; 260.00 ; 7.00 
+Midmarket;United States of America; Amarilla ; High ; 2548.00 ; 260.00 ; 15.00 
+Government;France; Carretera ; High ; 2521.50 ; 3.00 ; 20.00 
+Channel Partners;Mexico; Montana ; High ; 2661.00 ; 5.00 ; 12.00 
+Government;Germany; Paseo ; High ; 1531.00 ; 10.00 ; 20.00 
+Government;France; VTT ; High ; 1491.00 ; 250.00 ; 7.00 
+Government;Germany; VTT ; High ; 1531.00 ; 250.00 ; 20.00 
+Channel Partners;Canada; Amarilla ; High ; 2761.00 ; 260.00 ; 12.00 
+Midmarket;United States of America; Carretera ; High ; 2567.00 ; 3.00 ; 15.00 
+Midmarket;United States of America; VTT ; High ; 2567.00 ; 250.00 ; 15.00 
+Government;Canada; Carretera ; High ; 923.00 ; 3.00 ; 350.00 
+Government;France; Carretera ; High ; 1790.00 ; 3.00 ; 350.00 
+Government;Germany; Carretera ; High ; 442.00 ; 3.00 ; 20.00 
+Government;United States of America; Montana ; High ; 982.50 ; 5.00 ; 350.00 
+Government;United States of America; Montana ; High ; 1298.00 ; 5.00 ; 7.00 
+Channel Partners;Mexico; Montana ; High ; 604.00 ; 5.00 ; 12.00 
+Government;Mexico; Montana ; High ; 2255.00 ; 5.00 ; 20.00 
+Government;Canada; Montana ; High ; 1249.00 ; 5.00 ; 20.00 
+Government;United States of America; Paseo ; High ; 1438.50 ; 10.00 ; 7.00 
+Small Business;Germany; Paseo ; High ; 807.00 ; 10.00 ; 300.00 
+Government;United States of America; Paseo ; High ; 2641.00 ; 10.00 ; 20.00 
+Government;Germany; Paseo ; High ; 2708.00 ; 10.00 ; 20.00 
+Government;Canada; Paseo ; High ; 2632.00 ; 10.00 ; 350.00 
+Enterprise;Canada; Paseo ; High ; 1583.00 ; 10.00 ; 125.00 
+Channel Partners;Mexico; Paseo ; High ; 571.00 ; 10.00 ; 12.00 
+Government;France; Paseo ; High ; 2696.00 ; 10.00 ; 7.00 
+Midmarket;Canada; Paseo ; High ; 1565.00 ; 10.00 ; 15.00 
+Government;Canada; Paseo ; High ; 1249.00 ; 10.00 ; 20.00 
+Government;Germany; Paseo ; High ; 357.00 ; 10.00 ; 350.00 
+Channel Partners;Germany; Paseo ; High ; 1013.00 ; 10.00 ; 12.00 
+Midmarket;France; Velo ; High ; 3997.50 ; 120.00 ; 15.00 
+Government;Canada; Velo ; High ; 2632.00 ; 120.00 ; 350.00 
+Government;France; Velo ; High ; 1190.00 ; 120.00 ; 7.00 
+Channel Partners;Mexico; Velo ; High ; 604.00 ; 120.00 ; 12.00 
+Midmarket;Germany; Velo ; High ; 660.00 ; 120.00 ; 15.00 
+Channel Partners;Mexico; Velo ; High ; 410.00 ; 120.00 ; 12.00 
+Small Business;Mexico; Velo ; High ; 2605.00 ; 120.00 ; 300.00 
+Channel Partners;Germany; Velo ; High ; 1013.00 ; 120.00 ; 12.00 
+Enterprise;Canada; VTT ; High ; 1583.00 ; 250.00 ; 125.00 
+Midmarket;Canada; VTT ; High ; 1565.00 ; 250.00 ; 15.00 
+Enterprise;Canada; Amarilla ; High ; 1659.00 ; 260.00 ; 125.00 
+Government;France; Amarilla ; High ; 1190.00 ; 260.00 ; 7.00 
+Channel Partners;Mexico; Amarilla ; High ; 410.00 ; 260.00 ; 12.00 
+Channel Partners;Germany; Amarilla ; High ; 1770.00 ; 260.00 ; 12.00 
+Government;Mexico; Carretera ; High ; 2579.00 ; 3.00 ; 20.00 
+Government;United States of America; Carretera ; High ; 1743.00 ; 3.00 ; 20.00 
+Government;United States of America; Carretera ; High ; 2996.00 ; 3.00 ; 7.00 
+Government;Germany; Carretera ; High ; 280.00 ; 3.00 ; 7.00 
+Government;France; Montana ; High ; 293.00 ; 5.00 ; 7.00 
+Government;United States of America; Montana ; High ; 2996.00 ; 5.00 ; 7.00 
+Midmarket;Germany; Paseo ; High ; 278.00 ; 10.00 ; 15.00 
+Government;Canada; Paseo ; High ; 2428.00 ; 10.00 ; 20.00 
+Midmarket;United States of America; Paseo ; High ; 1767.00 ; 10.00 ; 15.00 
+Channel Partners;France; Paseo ; High ; 1393.00 ; 10.00 ; 12.00 
+Government;Germany; VTT ; High ; 280.00 ; 250.00 ; 7.00 
+Channel Partners;France; Amarilla ; High ; 1393.00 ; 260.00 ; 12.00 
+Channel Partners;United States of America; Amarilla ; High ; 2015.00 ; 260.00 ; 12.00 
+Small Business;Mexico; Carretera ; High ; 801.00 ; 3.00 ; 300.00 
+Enterprise;France; Carretera ; High ; 1023.00 ; 3.00 ; 125.00 
+Small Business;Canada; Carretera ; High ; 1496.00 ; 3.00 ; 300.00 
+Small Business;United States of America; Carretera ; High ; 1010.00 ; 3.00 ; 300.00 
+Midmarket;Germany; Carretera ; High ; 1513.00 ; 3.00 ; 15.00 
+Midmarket;Canada; Carretera ; High ; 2300.00 ; 3.00 ; 15.00 
+Enterprise;Mexico; Carretera ; High ; 2821.00 ; 3.00 ; 125.00 
+Government;Canada; Montana ; High ; 2227.50 ; 5.00 ; 350.00 
+Government;Germany; Montana ; High ; 1199.00 ; 5.00 ; 350.00 
+Government;Canada; Montana ; High ; 200.00 ; 5.00 ; 350.00 
+Government;Canada; Montana ; High ; 388.00 ; 5.00 ; 7.00 
+Government;Mexico; Montana ; High ; 1727.00 ; 5.00 ; 7.00 
+Midmarket;Canada; Montana ; High ; 2300.00 ; 5.00 ; 15.00 
+Government;Mexico; Paseo ; High ; 260.00 ; 10.00 ; 20.00 
+Midmarket;Canada; Paseo ; High ; 2470.00 ; 10.00 ; 15.00 
+Midmarket;Canada; Paseo ; High ; 1743.00 ; 10.00 ; 15.00 
+Channel Partners;United States of America; Paseo ; High ; 2914.00 ; 10.00 ; 12.00 
+Government;France; Paseo ; High ; 1731.00 ; 10.00 ; 7.00 
+Government;Canada; Paseo ; High ; 700.00 ; 10.00 ; 350.00 
+Channel Partners;Canada; Paseo ; High ; 2222.00 ; 10.00 ; 12.00 
+Government;United States of America; Paseo ; High ; 1177.00 ; 10.00 ; 350.00 
+Government;France; Paseo ; High ; 1922.00 ; 10.00 ; 350.00 
+Enterprise;Mexico; Velo ; High ; 1575.00 ; 120.00 ; 125.00 
+Government;United States of America; Velo ; High ; 606.00 ; 120.00 ; 20.00 
+Small Business;United States of America; Velo ; High ; 2460.00 ; 120.00 ; 300.00 
+Small Business;Canada; Velo ; High ; 269.00 ; 120.00 ; 300.00 
+Small Business;Germany; Velo ; High ; 2536.00 ; 120.00 ; 300.00 
+Government;Mexico; VTT ; High ; 2903.00 ; 250.00 ; 7.00 
+Small Business;United States of America; VTT ; High ; 2541.00 ; 250.00 ; 300.00 
+Small Business;Canada; VTT ; High ; 269.00 ; 250.00 ; 300.00 
+Small Business;Canada; VTT ; High ; 1496.00 ; 250.00 ; 300.00 
+Small Business;United States of America; VTT ; High ; 1010.00 ; 250.00 ; 300.00 
+Government;France; VTT ; High ; 1281.00 ; 250.00 ; 350.00 
+Small Business;Canada; Amarilla ; High ; 888.00 ; 260.00 ; 300.00 
+Enterprise;United States of America; Amarilla ; High ; 2844.00 ; 260.00 ; 125.00 
+Channel Partners;France; Amarilla ; High ; 2475.00 ; 260.00 ; 12.00 
+Midmarket;Canada; Amarilla ; High ; 1743.00 ; 260.00 ; 15.00 
+Channel Partners;United States of America; Amarilla ; High ; 2914.00 ; 260.00 ; 12.00 
+Government;France; Amarilla ; High ; 1731.00 ; 260.00 ; 7.00 
+Government;Mexico; Amarilla ; High ; 1727.00 ; 260.00 ; 7.00 
+Midmarket;Mexico; Amarilla ; High ; 1870.00 ; 260.00 ; 15.00 
+Enterprise;France; Carretera ; High ; 1174.00 ; 3.00 ; 125.00 
+Enterprise;Germany; Carretera ; High ; 2767.00 ; 3.00 ; 125.00 
+Enterprise;Germany; Carretera ; High ; 1085.00 ; 3.00 ; 125.00 
+Small Business;Mexico; Montana ; High ; 546.00 ; 5.00 ; 300.00 
+Government;Germany; Paseo ; High ; 1158.00 ; 10.00 ; 20.00 
+Midmarket;Canada; Paseo ; High ; 1614.00 ; 10.00 ; 15.00 
+Government;Mexico; Paseo ; High ; 2535.00 ; 10.00 ; 7.00 
+Government;Mexico; Paseo ; High ; 2851.00 ; 10.00 ; 350.00 
+Midmarket;Canada; Paseo ; High ; 2559.00 ; 10.00 ; 15.00 
+Government;United States of America; Paseo ; High ; 267.00 ; 10.00 ; 20.00 
+Enterprise;Germany; Paseo ; High ; 1085.00 ; 10.00 ; 125.00 
+Midmarket;Germany; Paseo ; High ; 1175.00 ; 10.00 ; 15.00 
+Government;United States of America; Paseo ; High ; 2007.00 ; 10.00 ; 350.00 
+Government;Mexico; Paseo ; High ; 2151.00 ; 10.00 ; 350.00 
+Channel Partners;United States of America; Paseo ; High ; 914.00 ; 10.00 ; 12.00 
+Government;France; Paseo ; High ; 293.00 ; 10.00 ; 20.00 
+Channel Partners;Mexico; Velo ; High ; 500.00 ; 120.00 ; 12.00 
+Midmarket;France; Velo ; High ; 2826.00 ; 120.00 ; 15.00 
+Enterprise;France; Velo ; High ; 663.00 ; 120.00 ; 125.00 
+Small Business;United States of America; Velo ; High ; 2574.00 ; 120.00 ; 300.00 
+Enterprise;United States of America; Velo ; High ; 2438.00 ; 120.00 ; 125.00 
+Channel Partners;United States of America; Velo ; High ; 914.00 ; 120.00 ; 12.00 
+Government;Canada; VTT ; High ; 865.50 ; 250.00 ; 20.00 
+Midmarket;Germany; VTT ; High ; 492.00 ; 250.00 ; 15.00 
+Government;United States of America; VTT ; High ; 267.00 ; 250.00 ; 20.00 
+Midmarket;Germany; VTT ; High ; 1175.00 ; 250.00 ; 15.00 
+Enterprise;Canada; VTT ; High ; 2954.00 ; 250.00 ; 125.00 
+Enterprise;Germany; VTT ; High ; 552.00 ; 250.00 ; 125.00 
+Government;France; VTT ; High ; 293.00 ; 250.00 ; 20.00 
+Small Business;France; Amarilla ; High ; 2475.00 ; 260.00 ; 300.00 
+Small Business;Mexico; Amarilla ; High ; 546.00 ; 260.00 ; 300.00 
+Government;Mexico; Montana ; High ; 1368.00 ; 5.00 ; 7.00 
+Government;Canada; Paseo ; High ; 723.00 ; 10.00 ; 7.00 
+Channel Partners;United States of America; VTT ; High ; 1806.00 ; 250.00 ; 12.00 

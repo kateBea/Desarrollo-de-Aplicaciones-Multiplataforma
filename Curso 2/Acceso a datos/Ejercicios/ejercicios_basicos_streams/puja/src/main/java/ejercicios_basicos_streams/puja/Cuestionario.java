@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Cuestionario {
@@ -78,17 +80,12 @@ public class Cuestionario {
             // y que sean propietarios de subastas
             System.out.println("\nCuestión 5:");
 
-            // Listado de todos los usuarios propietarios de subastas
-            final Stream<Usuario> propietarios = subastas.stream().map(Subasta::getPropietario).distinct();
+            final boolean existe = ! (subastas.stream().
+                    filter(subasta -> !subasta.isAbierta()).
+                    map(Subasta::getPropietario).
+                    distinct().toList().isEmpty());
 
-            // Listado de usuarios que han ganado alguna subasta
-            final Stream<Usuario> ganadores = subastas.stream().
-                    filter(subasta -> !subasta.isAbierta()).    // si no está abierta tenemos ganador
-                    map(subasta -> subasta.getPujaMayor().map(Puja::getUsuario).orElse(null));
-
-            boolean hayUsuarios = propietarios.anyMatch(usuario -> ganadores.anyMatch(usuario1 -> usuario1.equals(usuario)));
-
-            System.out.println("¿Existen usuarios ganadores de subastas que son propietarios de otras? " + hayUsuarios);
+            System.out.println("¿Existen usuarios ganadores de subastas que son propietarios de otras? " + existe);
         }
     }
 
@@ -100,7 +97,11 @@ public class Cuestionario {
             // todas las pujas que se hayan realizado en las subastas.
             System.out.println("\nCuestión 6:");
 
+            Set<Puja> pujas;
 
+            pujas = subastas.stream().flatMap(sub -> sub.getPujas().stream()).collect(Collectors.toSet());
+
+            pujas.forEach(System.out::println);
         }
     }
 
