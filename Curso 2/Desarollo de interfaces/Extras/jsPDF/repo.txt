@@ -1,3 +1,0 @@
-EL fichero .js de la carpeta es el de los labs
-
-https://github.com/parallax/jsPDF

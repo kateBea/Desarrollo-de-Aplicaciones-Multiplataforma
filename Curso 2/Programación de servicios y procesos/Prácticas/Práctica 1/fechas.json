@@ -1,0 +1,26 @@
+[
+    {
+        "dia": "13-12-2022",
+        "hora": "10:00",
+        "motivo": "Envío de boletines de 2º de ciclos",
+        "color": "red"
+    },
+    {
+        "dia": "24-06-2023",
+        "hora": "10:00",
+        "motivo": "Envío de boletines extraordinaria de 2º de ciclos",
+        "color": "orange"
+    },
+    {
+        "dia": "19-12-2022",
+        "hora": "10:00",
+        "motivo": "Envío de boletines extraordinaria de 2º de ciclos. Alumnos con pendientes",
+        "color": "yellow"
+    },
+    {
+        "dia": "14-10-2022",
+        "hora": "10:00",
+        "motivo": "Comedor escolar: Plazo límite para firmar el anexo 8 (Firma del contrato)",
+        "color": "green"
+    }
+]

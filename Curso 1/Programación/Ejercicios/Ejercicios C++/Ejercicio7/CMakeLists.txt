@@ -19,5 +19,8 @@ else()
     add_link_options(-fsanitize=address)
 endif()
 
+# Headers
+include_directories(Estructuras)
+
 # Executable List
 add_executable(Estructuras main.cpp)
