@@ -1,0 +1,5 @@
+MongoDb a veces require permisos para usar socket: /var/run/docker.sock 
+
+Solución temporal:
+
+sudo chmod ugo=rw /var/run/docker.sock 
