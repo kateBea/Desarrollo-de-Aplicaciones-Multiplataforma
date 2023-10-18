@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="jspdf.min.js"></script>
+  <script src="jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body class="justify-content-md-center">
+
+
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Registrar</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="serializar()">Imprimir</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <form class="container col-6 mt-5">
+    <div class="col-12 mt-2">
+      <label for="username" class="form-label m-lg-2">Usuario</label>
+      <input type="text" class="form-control" id="username" placeholder="Nombre de Usuario">
+    </div>
+    <div class="col-12 mt-2">
+      <label for="email" class="form-label m-lg-2">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+    </div>
+    <div class="row mt-2">
+      <div class="col-6 col">
+        <label for="password" class="form-label m-lg-2">Contraseña</label>
+        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+      </div>
+      <div class="col-6 col">
+        <label for="repeat-pass" class="form-label m-lg-2">Repetir Contraseña</label>
+        <input type="password" class="form-control" id="repeat-pass" placeholder="Repetir contraseña">
+      </div>
+    </div>
+
+    <div class="form-check mt-4">
+      <input class="form-check-input" type="checkbox" value="" id="terminos-priv">
+      <label class="form-check-label" for="terminos-priv">
+        Acepto Política de privacidad y condiciones
+      </label>
+    </div>
+
+    <div class="form-check mt-2">
+      <input class="form-check-input" type="checkbox" value="" id="publicidad">
+      <label class="form-check-label" for="publicidad">
+        Desea recibir anuncios de forma regular al correo electrónico
+      </label>
+    </div>
+
+
+    <div class="text-center mt-4">
+      <button type="button" class="btn btn-primary" onclick="registrar()">Registrar</button>
+    </div>
+  </form>
+
+  <table id="tabla"></table>
+
+  <!-- Scripts import -->
+  <script src="bootstrap.bundle.min.js.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

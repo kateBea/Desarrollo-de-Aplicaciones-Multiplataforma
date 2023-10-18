@@ -1,0 +1,2 @@
+- jsPDF: https://cdnjs.com/libraries/jspdf
+- jsPDF (autotable plugin): https://cdnjs.com/libraries/jspdf-autotable

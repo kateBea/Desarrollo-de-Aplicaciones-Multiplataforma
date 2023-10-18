@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo autotable</title>
+    <script src="../../Common/jsPDF/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.18/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <script>
+
+        const doc = new jsPDF();
+
+        doc.autoTable({
+            head: [['Name', 'Country', 'Language']],
+            body: [
+                ['John Doe', 'USA', 'English'],
+                ['Juan Perez', 'Mexico', 'Spanish'],
+                ['Jean Dupont', 'France', 'French']
+            ],
+        });
+
+        doc.save('table.pdf');
+
+    </script>
+</body>
+
+</html>
