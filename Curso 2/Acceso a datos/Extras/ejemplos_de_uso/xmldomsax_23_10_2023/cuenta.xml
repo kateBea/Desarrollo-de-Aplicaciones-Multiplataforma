@@ -1,0 +1,19 @@
+<cuenta>
+	<ncc>200-100-200</ncc>
+	<saldo>1500</saldo>
+	<cliente>
+		<dni>50817860G</dni>
+		<nombre>miguel</nombre>
+		<edad>38</edad>
+	</cliente>
+	<cliente>
+		<dni>1111111110J</dni>
+		<nombre>donald</nombre>
+		<edad>68</edad>
+	</cliente>
+	<cliente>
+		<dni>6060606060H</dni>
+		<nombre>pedro marmol</nombre>
+		<edad>34</edad>
+	</cliente>
+</cuenta>

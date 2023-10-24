@@ -5,8 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dc254c7-9c55-4727-811e-683dd2d02a16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Cuestionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ejercicios_basicos_streams/puja/Cuestionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/src/main/java/dam2/pruebalombbok/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/src/main/java/dam2/pruebalombbok/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/src/test/java/dam2/pruebalombbok/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/target/classes/META-INF/maven/dam2/pruebalombbok/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/target/classes/META-INF/maven/dam2/pruebalombbok/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/target/classes/dam2/pruebalombbok/Alumno$AlumnoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/target/classes/dam2/pruebalombbok/Alumno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/target/classes/dam2/pruebalombbok/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Más Ejemplos Lombok/pruebalombbok/target/test-classes/dam2/pruebalombbok/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/PredicateUsage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Uso clase Optional/AlumnoConOptional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Uso clase Optional/EjemploAlumnoOptional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Uso clase Optional/Notas sobre uso.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/Uso clase Optional/alumnos1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/AppComparador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/AppConsumidor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/AppListas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/AppMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/AppPredicado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/AppProductos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/AppSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/Aprobado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/ComparadorPorNota.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/Escribidor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/MasCaro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/Producto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_basicos_profe_ad/PruebaOptional.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_profe_colecciones/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_profe_colecciones/AppColecciones.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_profe_colecciones/EscribirEnPantalla.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/ejemplos_profe_colecciones/MenorDeEdad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/streams_09_29/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/streams_09_29/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Extras/streams_09_29/Grupo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Prácticas/Práctica 1/calendario.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Programación de servicios y procesos/Prácticas/Práctica 1/calendario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programación multimedia y dispositivos móviles/readme.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,26 +76,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso 2/Acceso a datos/Extras/Intro Lombok/lombok-1.18.26.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso 2/Acceso a datos/Ejercicios/ejercicios_basicos_streams/puja/src/main/java/ejercicios_basicos_streams/puja/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso 2/Programación multimedia y dispositivos móviles/Ejercicios/ejercicios_basicos_1/Numeros",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso 2/Acceso a datos/Ejercicios/ejercicios_basicos_streams/puja/src/main/java/ejercicios_basicos_streams/puja/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,6 +112,7 @@
       <workItem from="1696715378686" duration="1807000" />
       <workItem from="1696795514484" duration="1253000" />
       <workItem from="1697109390492" duration="480000" />
+      <workItem from="1698091668957" duration="20000" />
     </task>
     <servers />
   </component>

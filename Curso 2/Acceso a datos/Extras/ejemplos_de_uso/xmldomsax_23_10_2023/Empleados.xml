@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empleados>
+<empleado>
+<id>007</id>
+<nombre>james</nombre>
+<dept>boom</dept>
+<sueldo>900.0</sueldo>
+</empleado>
+</empleados>

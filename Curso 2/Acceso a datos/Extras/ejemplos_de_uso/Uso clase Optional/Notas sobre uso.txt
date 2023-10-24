@@ -1,0 +1,29 @@
+clase Optional<T>
+
+Optional es una clase que encapsula un objeto (que puede ser o no null)  
+para poder hacer ciertas operaciones/comprobaciones sobre él.
+
+    Creación de Optional.
+
+    Optional.empty () devuelve un Optional vacio.
+
+    Optional.of (T value) devuelve un Optional con el valor pasado como argumento.
+
+    Optional.ofNullable (T value) devuelve un Optional con el valor pasado, si no 
+    es null, en caso contrario devuelve un Optional vacio.
+
+Funciones de uso.
+
+    isPresent devuelve true si hay valor
+
+    get: devuelve el valor si lo hay en caso contrario lanza la excepción NoSuchElementException
+
+    ifPresent(Consumer)  Si hay valor invoca al consumer que se pasa como argumento
+
+    orElse (T other) Si hay valor lo devuelve, sino devuelve other
+
+    orElseGet (Supplier) Si hay valor lo devuelve, sino lo toma del Supplier
+
+    orElseThrow(Supplier) Si hay valor lo devuelve, sino lanza una Excepción.
+
+    map(Function) : devuelve el resultado de aplicar Function al valor del Optional

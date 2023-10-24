@@ -1,0 +1,14 @@
+<clientes>
+	<cliente dni="50817860G">
+		<nombre>miguel</nombre>
+		<edad>38</edad>
+	</cliente>
+	<cliente dni="1111111110J">
+		<nombre>donald</nombre>
+		<edad>68</edad>
+	</cliente>
+	<cliente dni="6060606060H">
+		<nombre>pedro marmol</nombre>
+		<edad>34</edad>
+	</cliente>
+</clientes>

@@ -1,0 +1,19 @@
+body {
+    background-color: wheat;
+}
+
+.event-red {
+    background-color: red;
+}
+
+.event-green {
+    background-color: green;
+}
+
+.event-green-yellow {
+    background-color: yellowgreen;
+}
+
+.event-details-bg {
+    background-color: white;
+}
