@@ -1,19 +1,97 @@
 body {
-    background-color: wheat;
+    background-color: rgb(214, 212, 209);
 }
 
 .event-red {
-    background-color: red;
+    background-color: rgb(218, 45, 33);
 }
+
+.event-orange {
+    background-color: rgb(218, 92, 33);
+}
+
 
 .event-green {
     background-color: green;
+}
+
+.event-blue {
+    background-color: rgb(11, 86, 185);
 }
 
 .event-green-yellow {
     background-color: yellowgreen;
 }
 
+.event-yellow {
+    background-color: yellow;
+}
+
 .event-details-bg {
     background-color: white;
+}
+
+.embed-pos {
+    position: relative;
+    top: 3px;
+}
+
+.container-adjusted {
+    width: 85%;
+}
+
+.bg-color-1 {
+    background-color: rgb(22, 226, 165);
+}
+
+.bg-color-2 {
+    background-color: rgb(10, 132, 180);
+}
+
+.bg-color-3 {
+    background-color: rgb(104, 30, 201);
+}
+
+.bg-color-4 {
+    background-color: rgb(204, 20, 204);
+}
+
+.bg-color-5 {
+    background-color: rgb(187, 12, 134);
+}
+
+.bg-color-6 {
+    background-color: rgb(187, 12, 50);
+}
+
+.bg-color-7 {
+    background-color: rgba(129, 13, 67, 0.342);
+}
+
+.bg-color-8 {
+    background-color: rgb(214, 91, 20);
+}
+
+.bg-color-9 {
+    background-color: rgb(219, 190, 24);
+}
+
+.bg-color-10 {
+    background-color: rgb(123, 219, 32);
+}
+
+.bg-color-11 {
+    background-color: rgb(40, 241, 117);
+}
+
+.bg-color-12 {
+    background-color: rgb(12, 187, 120);
+}
+
+img {
+    width: 55px;
+}
+
+.nav-bar-color {
+    background-color: gray;
 }
