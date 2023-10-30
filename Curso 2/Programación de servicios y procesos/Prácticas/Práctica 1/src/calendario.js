@@ -1,3 +1,11 @@
+/**
+ * Programa que genera calendarios para los eventos que se le pasa por fichero JSON.
+ * Necesario nodejs con soporte para replaceAll. Ver https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V15.md#15.0.0 
+ * 
+ * @author Hugo Pelayo
+ * @version 1.0.0
+ * */
+
 // Imports
 
 const fs = require("fs");

@@ -14,6 +14,12 @@ import java.util.Comparator;
 
 /**
  * Examen Acceso a Datos
+ * 
+ * Este es un proyecto Maven hecho con Visual Studio Code.
+ * Para ejecutarlo hay que abrir la carpeta examen con VS code.
+ * El fichero pom.xml contendrá todas las dependencias y la versión de JDK
+ * empleda.
+ * 
  * @author Hugo Pelayo
  * @date 10.20.2023
  * */
@@ -25,8 +31,10 @@ public class App
     // Contantes
     private static final Predicate<Corredor> ES_MAYOR_EDAD = c -> Period.between(c.getBirthday(), LocalDate.now()).getYears() > 18;
 
-    // Respuestas
-
+    /** 
+     * Listado del nombre, año y director de todas las vueltas 
+     * con más de 10 etapas, ordenado en sentido creciente (de menor a mayor).
+     * */
     private static class Ej1 implements Runnable {
         @Override
         public void run() {
@@ -40,7 +48,10 @@ public class App
                 forEach(vuelta -> System.out.println("Nombre: " + vuelta.getNombre() + " Año: " + vuelta.getAnio() + " Director: " + vuelta.getDirector()));
         }
     }
-
+    /** 
+     * Listado del nombre de todos los corredores que participen
+     * en vueltas de ciclistas con un premio superior a 30.000 euros.
+     * */
     private static class Ej2 implements Runnable {
         @Override
         public void run() {
@@ -51,6 +62,7 @@ public class App
                 filter(vuelta -> vuelta.getPremio() > 30000).
                 flatMap(vuelta -> vuelta.getEquipos().stream()).
                 flatMap(equipo -> equipo.getCorredores().stream()).
+                distinct().
                 map(Corredor::getNombre).
                 reduce((c1, c2) -> c1 + ", " + c2).orElse("No hay corredores");
 
@@ -58,6 +70,9 @@ public class App
         }
     }
 
+    /** 
+     * Listado del nombre de los corredores que participen en equipos sin patrocinador.
+     * */
     private static class Ej3 implements Runnable {
         @Override
         public void run() {
@@ -69,6 +84,7 @@ public class App
                 flatMap(vuelta -> vuelta.getEquipos().stream()).
                 filter(equipo -> equipo.getPatrocinador().isEmpty()).
                 flatMap(equipo -> equipo.getCorredores().stream()).
+                distinct().
                 map(Corredor::getNombre).
                 reduce((c1, c2) -> c1 + ", " + c2).orElse("No hay corredores");
 
@@ -76,6 +92,9 @@ public class App
         }
     }
 
+    /** 
+     * Listado de todos los equipos con corredores profesionales menores de edad.
+     * */
     private static class Ej4 implements Runnable {
         @Override
         public void run() {
@@ -87,15 +106,22 @@ public class App
             String participadores =
                 vueltas.stream().
                 flatMap(vuelta -> vuelta.getEquipos().stream()).
-                flatMap(equipo -> equipo.getCorredores().stream()).
-                filter(ES_MAYOR_EDAD.negate().and(ES_PROFESIONAL)).
-                map(Corredor::getNombre).
-                reduce((c1, c2) -> c1 + ", " + c2).orElse("No hay corredores");
+                filter(equipo -> {
+                    return equipo.getCorredores().stream().
+                            filter(ES_MAYOR_EDAD.negate().and(ES_PROFESIONAL)).toList().isEmpty();
+                }).
+                map(Equipo::getNombre).
+                reduce((c1, c2) -> c1 + ", " ww+ c2).orElse("No hay corredores");
 
             System.out.println(participadores);   
         }
     }
 
+    /** 
+     * Listad del nombre y dni de los corredores mayores de edad por nombre 
+     * de vuelta ciclista. Es decir, para cada nombre de vuelta ciclista 
+     * mostrar el nombre y el dni de sus corredores mayores de edad.
+     * */
     private static class Ej5 implements Runnable {
         @Override
         public void run() {
@@ -107,7 +133,6 @@ public class App
             final Function<Vuelta, Stream<Corredor>> CORREDORES_ADULTOS =
                 v -> v.getEquipos().stream().flatMap(e -> e.getCorredores().stream().filter(ES_MAYOR_EDAD));
 
-            
 
                        
         }

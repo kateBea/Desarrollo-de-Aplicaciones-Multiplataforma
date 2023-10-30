@@ -1,0 +1,39 @@
+<cartelera>
+	<pelicula codigo="p1" duracion="152" fecha="01-01-2002">
+		<titulo>AQUELLAS JUERGAS UNIVERSITARIAS</titulo>
+		<titulo_original>Old School</titulo_original>
+		<nacionalidad>Estados Unidos</nacionalidad>
+		<genero>Comedia</genero>
+		<clasificacion edad="tp"/>
+		<sinopsis>
+			Mitch, Frank y Beanie son tres amigos treintañeros cuyas vidas no son exactamente lo que esperaban...
+		</sinopsis>
+		<director>Todd Philips</director>
+		<reparto>
+			<actor>Luke Wilson</actor>
+			<actor>Will Farrel</actor>
+			<actor>Vince Vaughn</actor>
+		</reparto>
+		<web>http://www.uip.es</web>
+		<cartel>caratulas/Aquellas juergas.jpg</cartel>
+	</pelicula>
+	<pelicula codigo="p17" duracion="06" fecha="12-05-2005">
+		<titulo>EL ORO DE MOSCÚ</titulo>
+		<nacionalidad>España</nacionalidad>
+		<genero>Comedia</genero>
+		<clasificacion/>
+		<sinopsis>
+			Por una extraña coincidencia del destino, alguien recibe una información...
+		</sinopsis>
+		<director>Jesús Bonilla</director>
+		<reparto>
+			<actor>Jesús Bonilla</actor>
+			<actor>Santiago Segura</actor>
+			<actor>Alfredo Landa</actor>
+			<actor>Concha Velasco</actor>
+			<actor>Antonio Resines</actor>
+			<actor>Gabino Diego</actor>
+			<actor>María Barranco</actor>
+		</reparto>
+	</pelicula>
+</cartelera>
