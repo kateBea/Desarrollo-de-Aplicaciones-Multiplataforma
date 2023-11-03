@@ -1,0 +1,26 @@
+1.- Dado el fichero personas.json, escribe el fichero XML equivalente, 
+así como los POJOs necesarios para su representación en Java.
+
+
+2.- Dado el fichero pruebasdenivel.json , escribe el fichero XML equivalente,
+así como los POJOs necesarios para su representación en Java.
+
+A continuación realiza un programa en Java que lea el fichero y conteste a las siguientes preguntas:
+
+    - ¿Cuántas pruebas de idiomas están descritas en el documento?
+    - Muestra el título de las pruebas de nivel que van a durar más de dos horas.
+    - De las pruebas de tipo "No Presencial" muestra la URL de información.
+    - Pide por teclado el código de la prueba "ID" y muestra su título y profesores.
+    - Para cada uno de las pruebas, muestra su título y sus profesores.
+
+
+3.- Utilizando el fichero provincias.json de provincias y municipios de España, crea un 
+programa en Java, que realicen las siguientes funciones:
+
+    - Lista todas las provincias.
+    - Lista todos los municipios.
+    - Lista de provincias y el total de municipios que tiene cada una.
+    - Leer por teclado el nombre de una provincia y mostrar sus municipios.
+    - Leer por teclado el nombre de un municipio y mostrar la provincia donde se encuentra.
+    - En una lista tenemos distintos identificadores de provincias, mostrar el nombre 
+    de las provincias y todos los municipios correspondientes a los identificadores que se encuentran en la lista.
