@@ -1,4 +1,4 @@
-package dam2.org.cartelera;
+package ejercicios_jaxb_1.Cartelera_Solucion;
 
 import java.util.HashSet;
 import java.util.Set;

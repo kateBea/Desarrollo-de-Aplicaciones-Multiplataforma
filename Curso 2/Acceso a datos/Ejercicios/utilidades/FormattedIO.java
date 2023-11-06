@@ -30,4 +30,26 @@ public class FormattedIO {
         return resultado;
     }
 
+    public static String leerCadena() {
+        return leerCadena(null);
+    }
+
+    public static Integer leerInteger() {
+        Integer result = null;
+
+        return result;
+    }
+
+    public static Double leerDouble() {
+        Double result = null;
+
+        return result;
+    }
+
+    public static Double leerBoolean() {
+        Double result = null;
+
+        return result;
+    }
+
 }

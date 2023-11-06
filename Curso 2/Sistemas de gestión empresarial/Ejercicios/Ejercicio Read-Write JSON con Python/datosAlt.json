@@ -1,0 +1,29 @@
+{
+    "usuario": [
+        {
+            "username": "Juan Pablo",
+            "email": "juanpablo@odoo.es",
+            "password": "juanpablo123"
+        },
+        {
+            "username": "Luis Miguel",
+            "email": "luismigel@odoo.es",
+            "password": "luismiguel123"
+        },
+        {
+            "username": "Sofia",
+            "email": "sofia@odoo.es",
+            "password": "sofial123"
+        },
+        {
+            "username": "Lucas",
+            "email": "lucas@odoo.es",
+            "password": "lucasl123"
+        },
+        {
+            "username": "Aaron",
+            "email": "aaronl@odoo.es",
+            "password": "aronl123"
+        }
+    ]
+}

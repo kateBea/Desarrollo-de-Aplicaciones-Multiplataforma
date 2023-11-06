@@ -10,7 +10,17 @@
 
 /** Imports */
 import java.util.Random
+import javax.xml.stream.events.Characters
 
+/** Constantes */
+const val BASIC_1 = 1;
+const val BASIC_2 = 2;
+const val BASIC_3 = 3;
+const val BASIC_4 = 4;
+const val BASIC_5 = 5;
+
+/** Clases */
+data class Alumno(val nombre: String)
 
 /**
  * Adivinar el número. Se prepara un número oculto y se pide por consola al usuario
@@ -108,12 +118,43 @@ fun basicEj3() {
     }
 }
 
+/**
+ * Crear una función que inicializa una variable con nombre alumno y que pueda ser nula.
+ * Asignarle un valor string y imprimirlo. A continuación, asignar null y escribir
+ * utilizando los operadores: "?.", "?:" y "!!."
+ * */
 fun basicEj4() {
     println("\nEjercicio básico 4:")
+
+    var alumno: String? = "Juan"
+    println("El valor es $alumno")
+
+
+    alumno = null
+
+    val nombre: String = alumno?: "Nombre por defecto"
+    println(nombre)
+
+    println("La longitud del string es ${nombre!!.length}")
+
+}
+
+
+/**
+ * Lee entero de consola. Lo devuelve si es correcto, null
+ * en caso contrario.
+ * @returns entero leído de consola
+ * */
+fun leerEntero(): Int? {
+    print("Introduce un entero: ")
+    return readlnOrNull()?.toIntOrNull()
 }
 
 fun basicEj5() {
     println("\nEjercicio básico 5:")
+    val valor = leerEntero()
+
+    print("El valor introducido es $valor")
 }
 
 fun funcionesEj1() {
@@ -152,30 +193,32 @@ fun main(args: Array<String>) {
 
         // leer sección
         print("\nEntre la sección que desea ejecutar: ")
-        val section = readln();
+        val section: String? = readlnOrNull();
 
-        if (section == "c") {
-            terminar = true;
-        }
-        else {
-            // leer índice de ejercicio
-            print("\nEntre el índice de ejercicio, por favor: ")
-            val index = Integer.parseInt(readln())
-
-            if (section == "a") {
-                when (index) {
-                    1 -> basicEj1()
-                    2 -> basicEj2()
-                    3 -> basicEj3()
-                    4 -> basicEj4()
-                    5 -> basicEj5()
-                }
+        if (section != null) {
+            if (section == "c") {
+                terminar = true;
             }
-            else if (section == "b") {
-                when (index) {
-                    1 -> funcionesEj1()
-                    2 -> funcionesEj2()
-                    3 -> funcionesEj3()
+            else {
+                // leer índice de ejercicio
+                print("\nEntre el índice de ejercicio, por favor: ")
+                val index = Integer.parseInt(readln())
+
+                if (section == "a") {
+                    when (index) {
+                        BASIC_1 -> basicEj1()
+                        BASIC_2 -> basicEj2()
+                        BASIC_3 -> basicEj3()
+                        BASIC_4 -> basicEj4()
+                        BASIC_5 -> basicEj5()
+                    }
+                }
+                else if (section == "b") {
+                    when (index) {
+                        1 -> funcionesEj1()
+                        2 -> funcionesEj2()
+                        3 -> funcionesEj3()
+                    }
                 }
             }
         }

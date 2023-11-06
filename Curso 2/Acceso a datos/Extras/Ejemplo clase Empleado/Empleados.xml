@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empleados>
+	<empleado dni="0003948">
+		<id>002</id>
+		<nombre>miguel</nombre>
+		<dept>infor</dept>
+		<sueldo>3000.0</sueldo>
+	</empleado>
+	<empleado dni="0003947">
+		<id>003</id>
+		<nombre>pedro</nombre>
+		<dept>lengua</dept>
+		<sueldo>2000.0</sueldo>
+	</empleado>
+	<empleado>
+		<id>007</id>
+		<nombre>james</nombre>
+		<dept>secreto</dept>
+		<sueldo>8000.0</sueldo>
+	</empleado>
+</empleados>

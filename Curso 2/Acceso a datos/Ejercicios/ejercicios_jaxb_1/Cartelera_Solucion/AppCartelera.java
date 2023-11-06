@@ -1,5 +1,4 @@
-package dam2.org.cartelera;
-
+package ejercicios_jaxb_1.Cartelera_Solucion;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

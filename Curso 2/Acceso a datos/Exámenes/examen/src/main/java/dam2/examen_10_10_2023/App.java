@@ -111,7 +111,7 @@ public class App
                             filter(ES_MAYOR_EDAD.negate().and(ES_PROFESIONAL)).toList().isEmpty();
                 }).
                 map(Equipo::getNombre).
-                reduce((c1, c2) -> c1 + ", " ww+ c2).orElse("No hay corredores");
+                reduce((c1, c2) -> c1 + ", " + c2).orElse("No hay corredores");
 
             System.out.println(participadores);   
         }

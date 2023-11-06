@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<personas>
+    <persona>
+        <nombre>Juan Pérez Galones</nombre>
+        <altura>1.72</altura>
+        <peso>75.0</peso>
+        <soltero>true</soltero>
+        <pasatiempos>
+            <pasatiempo>Comics</pasatiempo>
+            <pasatiempo>Baloncesto</pasatiempo>
+            <pasatiempo>Gaming</pasatiempo>
+        </pasatiempos>
+    </persona>
+    <persona>
+        <nombre>Pedro Motos Sandez</nombre>
+        <altura>1.69</altura>
+        <peso>72.0</peso>
+        <soltero>true</soltero>
+        <pasatiempos>
+            <pasatiempo>Programación</pasatiempo>
+            <pasatiempo>Senderismo</pasatiempo>
+        </pasatiempos>
+    </persona>
+</personas>

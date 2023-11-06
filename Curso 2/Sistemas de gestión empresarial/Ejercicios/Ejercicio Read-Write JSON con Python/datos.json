@@ -1,0 +1,29 @@
+{
+    "usuarios": [
+        {
+            "usuario": "Kate Beatriz",
+            "email": "kateBeatriz@gmail.com",
+            "password": "1234"
+        },
+        {
+            "usuario": "Sandra",
+            "email": "sandra44@gmail.com",
+            "password": "2642"
+        },
+        {
+            "usuario": "Carlos",
+            "email": "carlos66@gmail.com",
+            "password": "3761"
+        },
+        {
+            "usuario": "Antonio",
+            "email": "antonio44@gmail.com",
+            "password": "2453"
+        },
+        {
+            "usuario": "Roberto",
+            "email": "roberto36@gmail.com",
+            "password": "2212"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-package dam2.org.cartelera;
+package ejercicios_jaxb_1.Cartelera_Solucion;
 
 public enum Genero {
 	COMEDIA {public String toString() {return "Comedia";}}, 

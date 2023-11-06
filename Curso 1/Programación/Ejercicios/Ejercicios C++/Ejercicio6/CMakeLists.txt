@@ -19,5 +19,12 @@ else()
     add_link_options(-fsanitize=address)
 endif()
 
+# Sources
+set(SOURCES biblioteca/gestor.cc)
+
+# Include
+include_directories(vector/include)
+include_directories(.)
+
 # Executable List
-add_executable(Biblioteca main.cpp)
+add_executable(Biblioteca ${SOURCES} main.cc)
