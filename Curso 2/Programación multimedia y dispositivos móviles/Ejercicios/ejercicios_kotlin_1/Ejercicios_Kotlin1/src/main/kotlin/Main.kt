@@ -19,6 +19,10 @@ const val BASIC_3 = 3;
 const val BASIC_4 = 4;
 const val BASIC_5 = 5;
 
+const val FUNCIONES_1 = 1;
+const val FUNCIONES_2 = 2;
+const val FUNCIONES_3 = 3;
+
 /** Clases */
 data class Alumno(val nombre: String)
 
@@ -157,12 +161,68 @@ fun basicEj5() {
     print("El valor introducido es $valor")
 }
 
+fun muchasCadenas(str1: String, str2: String, repeatCount: Int = 0): String {
+    var result = str1 + str2;
+    for (counter in 1..repeatCount) {
+        result = "$result $str1$str2";
+    }
+
+    return result;
+}
+
+/**
+ * Calcula la media de los elementos de una lista de enteros.
+ * */
+fun<T> media(vararg lista: T): Float {
+    var adder = 0;
+
+    for (element in lista) {
+        if (element is Int) {
+            adder += element;
+        }
+    }
+
+    return adder.toFloat() / lista.size
+}
+
+/**
+ * Imprime los elementos de una lista de manera formateada.
+ * */
+fun<T> toListString(lista: Array<T>): String {
+    var result = "[ ";
+    var first = true;
+    for (element in lista) {
+        if (first) {
+            first = false;
+        }
+        else {
+            result += " "
+        }
+
+        result += element.toString()
+    }
+
+    result += " ]"
+    return result
+}
+
 fun funcionesEj1() {
     println("\nEjercicio funciones 1:")
+
+    // Llamada con parámetro
+    println(muchasCadenas("Juan", "Pedro", 4))
+    // Llamada sin parámetro
+    println(muchasCadenas("Juan", "Pedro"))
+    // Llamada parámetros con nombre
+    println(muchasCadenas(str2 = "Juan", str1 = "Pedro"))
 }
 
 fun funcionesEj2() {
     println("\nEjercicio funciones 2:")
+    
+    val lista = arrayOf(1, 2, 3, 4, 5)
+    println("Lista ${toListString(lista)}")
+    println("Media ${media(lista)}")
 }
 
 fun funcionesEj3() {
@@ -215,9 +275,9 @@ fun main(args: Array<String>) {
                 }
                 else if (section == "b") {
                     when (index) {
-                        1 -> funcionesEj1()
-                        2 -> funcionesEj2()
-                        3 -> funcionesEj3()
+                        FUNCIONES_1 -> funcionesEj1()
+                        FUNCIONES_2 -> funcionesEj2()
+                        FUNCIONES_3 -> funcionesEj3()
                     }
                 }
             }

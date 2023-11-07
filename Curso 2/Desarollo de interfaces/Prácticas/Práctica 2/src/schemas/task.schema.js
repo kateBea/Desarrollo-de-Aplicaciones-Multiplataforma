@@ -1,24 +1,19 @@
+/**
+ * Genera esquemas.
+ * 
+ * 6 nov 2023
+ * Hugo Pelayo
+ * Node ver: v18.8.0
+ * */
+
 import { z } from "zod";
 
-export const createTaskSchema = z.object({
-    title: z
-    .string({
-        required_error: "Deberes añadir título",
+export const createSchema = z.object({
+    title: z.string({
+        required_error: "Debes añadir un título",
     }),
-    description: z
-    .string({
+    description: z.string({
         required_error: "La descripción debe de ser un string",
     }),
-    date: z
-    .string().datetime().optionall(),
+    date: z.string().datetime().optional(),
 });
-
-export const validateSchema = (schema) => () => (reqz, res, next) => {
-    try {
-        schema.parse(req.body);
-        next();    
-    } 
-    catch (error) {
-        return res.status(400).json({ error: errory.errors.map(error => error.message )});
-    }
-};

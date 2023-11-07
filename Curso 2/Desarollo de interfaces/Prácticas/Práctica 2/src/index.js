@@ -1,8 +1,24 @@
-import application from "./application.js";
+/**
+ * Entrada principal a nuestro backend.
+ * 
+ * 6 nov 2023
+ * Hugo Pelayo
+ * Node ver: v21.0.0
+ * */
+
+
+/* Imports */
+
+import app from "./app.js";
 import { connectDB } from "./db.js";
 
-const port = 4000;
-application.listen(port);
-console.log(`Servidor abierto en puerto ${port}`);
+/* Constantes */
+const LISTEN_PORT = 4000;
+
+
+// Escuha en el puerto
+app.listen(LISTEN_PORT);
+
+console.log(`Servidor escuchando en el puerto ${LISTEN_PORT}`);
 
 connectDB();
