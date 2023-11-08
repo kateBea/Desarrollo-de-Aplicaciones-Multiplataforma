@@ -40,4 +40,12 @@
             <artifactId>jaxb-core</artifactId>
             <version>2.3.0.1</version>
         </dependency>
+
+        <!-- H2 (Borrar la etiqueta <scope>, o no se incluye h2 en el build de la carpeta main) -->
+        <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.2.224</version>
+        </dependency>
 </dependencies>

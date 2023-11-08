@@ -10,21 +10,6 @@
 
 /** Imports */
 import java.util.Random
-import javax.xml.stream.events.Characters
-
-/** Constantes */
-const val BASIC_1 = 1;
-const val BASIC_2 = 2;
-const val BASIC_3 = 3;
-const val BASIC_4 = 4;
-const val BASIC_5 = 5;
-
-const val FUNCIONES_1 = 1;
-const val FUNCIONES_2 = 2;
-const val FUNCIONES_3 = 3;
-
-/** Clases */
-data class Alumno(val nombre: String)
 
 /**
  * Adivinar el número. Se prepara un número oculto y se pide por consola al usuario
@@ -75,7 +60,7 @@ fun basicEj1() {
  * @returns Retorna cierto si el número es par.
  * */
 fun esPar(numero: Int): Boolean {
-    return numero % 2 == 0;
+    return numero % 2 == 0
 }
 
 
@@ -98,7 +83,7 @@ fun basicEj2() {
         ++numero
 
         if (controlador == 0) {
-            acabado = true;
+            acabado = true
         }
     }
 
@@ -162,38 +147,56 @@ fun basicEj5() {
 }
 
 fun muchasCadenas(str1: String, str2: String, repeatCount: Int = 0): String {
-    var result = str1 + str2;
+    var result = str1 + str2
     for (counter in 1..repeatCount) {
-        result = "$result $str1$str2";
+        result = "$result $str1$str2"
     }
 
-    return result;
+    return result
 }
 
 /**
  * Calcula la media de los elementos de una lista de enteros.
  * */
 fun<T> media(vararg lista: T): Float {
-    var adder = 0;
+    var adder = 0.0f
 
     for (element in lista) {
         if (element is Int) {
-            adder += element;
+            adder += element
         }
     }
 
-    return adder.toFloat() / lista.size
+    return adder / lista.size.toFloat()
+}
+
+/**
+ * Calcula la media de los elementos de una lista de enteros o reales.
+ * */
+fun<T> mediaIntOrDouble(vararg lista: T): Double {
+    var adder = 0.0
+
+    for (element in lista) {
+        when (element) {
+            is Int -> adder += element
+            is Float -> adder += element
+            is Double -> adder += element
+        }
+    }
+
+    return adder / lista.size
 }
 
 /**
  * Imprime los elementos de una lista de manera formateada.
  * */
 fun<T> toListString(lista: Array<T>): String {
-    var result = "[ ";
-    var first = true;
+    var result = "[ "
+    var first = true
+
     for (element in lista) {
         if (first) {
-            first = false;
+            first = false
         }
         else {
             result += " "
@@ -206,6 +209,13 @@ fun<T> toListString(lista: Array<T>): String {
     return result
 }
 
+/**
+ * Crear una función “muchasCadenas” que admite dos parámetros string de entrada y
+ * un entro. La función crea un nuevo string con la primera cadena y la segunda
+ * repetida tantas veces como indica el parámetro entero. Este parámetro entero debe
+ * tener un valor por defecto de “1”. Probar la función invocando con y sin parámetro
+ * por defecto y usando llamadas con parámetros con nombre.
+ * */
 fun funcionesEj1() {
     println("\nEjercicio funciones 1:")
 
@@ -217,16 +227,47 @@ fun funcionesEj1() {
     println(muchasCadenas(str2 = "Juan", str1 = "Pedro"))
 }
 
+/**
+ * Crear una función que admite un número de parámetros variables y devuelve el
+ * cálculo de la media aritmética. Incluir en las pruebas una llamada con un array.
+ * */
 fun funcionesEj2() {
     println("\nEjercicio funciones 2:")
     
     val lista = arrayOf(1, 2, 3, 4, 5)
-    println("Lista ${toListString(lista)}")
-    println("Media ${media(lista)}")
+    println("Lista ${ toListString(lista) }")
+    println("Media ${ media(*lista) }")
 }
 
+/**
+ * Helper para ejercicio funcionesEj3.
+ * */
+fun<T> mostrarConMedia(lista: Array<T>) {
+    println("Lista ${ toListString(lista) }")
+    println("Media ${ mediaIntOrDouble(*lista) }")
+}
+/**
+ * Crear una función basada en el ejercicio anterior que esté parametrizada para
+ * funcionar solamente con enteros y double.
+ * */
 fun funcionesEj3() {
     println("\nEjercicio funciones 3:")
+
+    val listEnteros = arrayOf(1, 2, 3, 4, 5)
+    val listFloats = arrayOf(1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 7.0f)
+    val listDoubles = arrayOf(1.0, 2.2, 3.44, 4.2, 5.44, 9.22)
+
+    mostrarConMedia(listEnteros)
+    mostrarConMedia(listFloats)
+    mostrarConMedia(listDoubles)
+}
+
+fun lambdas1() {
+    println("\nEjercicio lambdas 1:")
+}
+
+fun lambdas2() {
+    println("\nEjercicio lambdas 2:")
 }
 
 fun mostrarMenu() {
@@ -242,43 +283,39 @@ fun mostrarMenu() {
     println("    2. Media aritmética")
     println("    3. Media aritmética alt.")
 
-    println("\nc. Salir")
+    println("\nc. Ejercicios lambdas:")
+    println("    1. Lambdas")
+    println("    2. Transformer")
+
+    println("\nd. Salir")
 }
 
 fun main(args: Array<String>) {
     var terminar = false
 
+    val basics = arrayOf(Runnable { basicEj1() }, Runnable { basicEj2() }, Runnable { basicEj3() }, Runnable { basicEj4() }, Runnable { basicEj5() } )
+    val functions = arrayOf(Runnable { funcionesEj1() }, Runnable { funcionesEj2() }, Runnable { funcionesEj3() })
+    val lambdas = arrayOf(Runnable { lambdas1() }, Runnable { lambdas2() })
+
     while (!terminar) {
         mostrarMenu()
 
-        // leer sección
         print("\nEntre la sección que desea ejecutar: ")
-        val section: String? = readlnOrNull();
+        val section: String? = readlnOrNull()
 
         if (section != null) {
-            if (section == "c") {
-                terminar = true;
+            if (section == "d") {
+                terminar = true
             }
             else {
                 // leer índice de ejercicio
                 print("\nEntre el índice de ejercicio, por favor: ")
                 val index = Integer.parseInt(readln())
 
-                if (section == "a") {
-                    when (index) {
-                        BASIC_1 -> basicEj1()
-                        BASIC_2 -> basicEj2()
-                        BASIC_3 -> basicEj3()
-                        BASIC_4 -> basicEj4()
-                        BASIC_5 -> basicEj5()
-                    }
-                }
-                else if (section == "b") {
-                    when (index) {
-                        FUNCIONES_1 -> funcionesEj1()
-                        FUNCIONES_2 -> funcionesEj2()
-                        FUNCIONES_3 -> funcionesEj3()
-                    }
+                when (section) {
+                    "a" -> basics[index - 1].run()
+                    "b" -> functions[index - 1].run()
+                    "c" -> lambdas[index - 1].run()
                 }
             }
         }

@@ -1,0 +1,17 @@
+los apckage.json no se suben
+
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "Pruebas para la aplicación client-server",
+  "main": "tests/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-subir": "node tests/index.js test-case-subir",
+    "test-bajar": "node tests/index.js test-case-bajar",
+    "test-listado": "node tests/index.js test-case-listado",
+    "test-borrar": "node tests/index.js test-case-borrar"
+  },
+  "author": "Hugo Pelayo",
+  "license": "MIT"
+}

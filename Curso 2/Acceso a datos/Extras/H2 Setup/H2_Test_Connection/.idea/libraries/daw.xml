@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="daw">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/resources/daw.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
