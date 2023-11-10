@@ -32,3 +32,13 @@ comandos desde el cliente. Los posibles comandos son:
     4. borrar: Borra un archivo del servidor.
 
     Ejemplo: node cliente.js pepe 12345 borrar archivo.txt
+
+Para más más comodidad al ejecutar las prueba, recomendable
+ejecutar el servidor en una terminal (npm init-server) y en otro
+ejecutar los casos de prueba. Tenemos disponibles varios casos
+prueba a través de los comando:
+
+npm run test-subir      (pruebas de subida de archivos)
+npm run test-bajar      (pruebas de descarga de archivos)
+npm run test-listado    (pruebas de listado de archivos)
+npm run test-borrar     (pruebas de borrado de archivos)

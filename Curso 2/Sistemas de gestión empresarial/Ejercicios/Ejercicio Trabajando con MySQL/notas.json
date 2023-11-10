@@ -1,0 +1,154 @@
+{
+    "notas": [
+        {
+            "nombre": "Kate Beatriz",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo de interfaces",
+                    "nota1": 6.657504046295479,
+                    "nota2": 3.9284495741672156
+                },
+                {
+                    "nombreModulo": "Accesso a Datos",
+                    "nota1": 4.629365767064768,
+                    "nota2": 6.7028265825640565
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de Servicios y procesos",
+                    "nota1": 10.097964727620695,
+                    "nota2": 6.572409497594398
+                },
+                {
+                    "nombreModulo": "Ingl\u00e9s t\u00e9cnico",
+                    "nota1": 9.987024714775835,
+                    "nota2": 3.705030954720068
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de dispositivos m\u00f3viles",
+                    "nota1": 3.6778086396920253,
+                    "nota2": 4.227660795549318
+                }
+            ]
+        },
+        {
+            "nombre": "Sandra",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo de interfaces",
+                    "nota1": 3.8308562777850828,
+                    "nota2": 4.479398434560331
+                },
+                {
+                    "nombreModulo": "Accesso a Datos",
+                    "nota1": 4.93133675981291,
+                    "nota2": 3.4822675202214786
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de Servicios y procesos",
+                    "nota1": 9.886000745469714,
+                    "nota2": 3.3594526446649344
+                },
+                {
+                    "nombreModulo": "Ingl\u00e9s t\u00e9cnico",
+                    "nota1": 3.2521926794737066,
+                    "nota2": 10.180952991315001
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de dispositivos m\u00f3viles",
+                    "nota1": 9.86503629444396,
+                    "nota2": 8.096856046832599
+                }
+            ]
+        },
+        {
+            "nombre": "Carlos",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo de interfaces",
+                    "nota1": 1.723262877308164,
+                    "nota2": 9.38455886639083
+                },
+                {
+                    "nombreModulo": "Accesso a Datos",
+                    "nota1": 8.10381553132731,
+                    "nota2": 8.68533267204068
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de Servicios y procesos",
+                    "nota1": 8.099270836136416,
+                    "nota2": 9.237502540376926
+                },
+                {
+                    "nombreModulo": "Ingl\u00e9s t\u00e9cnico",
+                    "nota1": 7.92210823618882,
+                    "nota2": 8.972908473936085
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de dispositivos m\u00f3viles",
+                    "nota1": 4.881418046693779,
+                    "nota2": 11.301288988974473
+                }
+            ]
+        },
+        {
+            "nombre": "Antonio",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo de interfaces",
+                    "nota1": 9.142611889090627,
+                    "nota2": 8.589280710321038
+                },
+                {
+                    "nombreModulo": "Accesso a Datos",
+                    "nota1": 4.268843622201799,
+                    "nota2": 4.467954771635467
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de Servicios y procesos",
+                    "nota1": 8.834710204103864,
+                    "nota2": 4.603265453140688
+                },
+                {
+                    "nombreModulo": "Ingl\u00e9s t\u00e9cnico",
+                    "nota1": 3.0145240022291366,
+                    "nota2": 8.830370007905625
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de dispositivos m\u00f3viles",
+                    "nota1": 7.783314933656116,
+                    "nota2": 5.0181688892563345
+                }
+            ]
+        },
+        {
+            "nombre": "Roberto",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo de interfaces",
+                    "nota1": 4.166733265764701,
+                    "nota2": 5.824296991159605
+                },
+                {
+                    "nombreModulo": "Accesso a Datos",
+                    "nota1": 9.968491914221822,
+                    "nota2": 6.688781834783244
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de Servicios y procesos",
+                    "nota1": 3.2841858707808127,
+                    "nota2": 4.204989654272336
+                },
+                {
+                    "nombreModulo": "Ingl\u00e9s t\u00e9cnico",
+                    "nota1": 3.215567711343418,
+                    "nota2": 10.564772120463331
+                },
+                {
+                    "nombreModulo": "Programaci\u00f3n de dispositivos m\u00f3viles",
+                    "nota1": 1.4825501850053082,
+                    "nota2": 4.8975546209945255
+                }
+            ]
+        }
+    ]
+}

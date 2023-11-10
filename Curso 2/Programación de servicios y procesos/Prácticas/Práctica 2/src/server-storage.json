@@ -1,0 +1,25 @@
+[
+    {
+        "usuario": "pepe",
+        "password": "12345",
+        "cuota": 5353,
+        "archivos": [
+            {
+                "nombre": "archivo1.txt",
+                "contenido": "Contenidos del archivo1"
+            },
+            {
+                "nombre": "archivo2.txt",
+                "contenido": "Contenidos del archivo2"
+            }
+        ]
+    },
+    {
+        "usuario": "lolo",
+        "password": "12345",
+        "cuota": 10000,
+        "archivos": [
+            
+        ]
+    }
+]
