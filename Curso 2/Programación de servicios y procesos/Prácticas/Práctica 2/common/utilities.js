@@ -1,5 +1,6 @@
 /**
- * Listado de funciones de utilidad. Version node: v18.18.0.
+ * Listado de funciones y constantes de utilidad. 
+ * Version node: v18.18.0.
  * 
  * @author Hugo Pelayo
  * @version 1.0.0
@@ -16,12 +17,13 @@ const CASE_SUBIR = "subir";
 const CASE_BORRAR = "borrar";
 const CASE_LISTADO = "listado";
 const CASE_DESCARGAR = "descargar";
+const CASE_CERRAR = "cerrar";
 
 
 /**
  * Parsea una cadena JSON y devuelve el objeto resultante o null si hay un error.
  * @param {string} contentsStr - Cadena que contiene datos en formato JSON.
- * @returns {object | null} - Objeto resultante del análisis JSON (lista u objeto) o null si hay un error.
+ * @returns {Object} Objeto resultante del análisis JSON (lista u objeto) o null si hay un error.
  * */
 function ParseJSON(constentsStr) {
     let result = null;
@@ -74,6 +76,7 @@ exports.CargarArchivo = CargarArchivo;
 exports.GenRandomInt = GenRandomInt;
 
 exports.CASE_SUBIR = CASE_SUBIR;
+exports.CASE_CERRAR = CASE_CERRAR;
 exports.CASE_BORRAR = CASE_BORRAR;
 exports.CASE_LISTADO = CASE_LISTADO;
 exports.CASE_DESCARGAR = CASE_DESCARGAR;

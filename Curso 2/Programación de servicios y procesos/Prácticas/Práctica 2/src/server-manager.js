@@ -22,6 +22,9 @@ const LOCALHOST             = "127.0.0.1";
 const ADDRESS               = LOCALHOST;
 const DATABASE_FILE_PATH    = "./src/server-storage.json";
 
+const USER_ADMIN        = "administrador";
+const USER_ADMIN_PASS   = "YGWpDasGa123+";
+
 
 /**
  * Verifica si algún elemento de la lista cumple con la condición proporcionada por el predicado, en dicho caso retorna el primero.
@@ -79,13 +82,13 @@ function ValidateClient(clientName, clientPass) {
 
 /**
  * Valida un usuario. Si el usuario es válido procesa peticiones de el cliente identificado
- * por sus credenciales. Retorna un objeto con tres campos ({"respuesta", "comando", "message"}),
+ * por sus credenciales. Devuelve al cliente un objeto con tres campos ({"respuesta", "comando", "message"}),
  * donde "respuesta" un string JSON conteniendo la respuesta del servidor, "comando" indica 
  * el comando para el cual se retorna la respuesta y "message" es el mensaje indicando informativo
- * sobre la ejecuación de la petición.
+ * sobre la ejecuación de la petición. Retorna una promesa con tres campos
  * @param {string} socket - Socket por el cual sel servidor se comunica con el cliente.
  * @param {string} data - String JSON con los datos enviados por el cliente
- * @returns {object} - Objeto con los datos procesados.
+ * @returns {Promise<Object>} - Objeto con los datos procesados.
  * */
 async function HandleRequest(socket, data) {
     const jsonContents = Utils.ParseJSON(data);
@@ -103,14 +106,39 @@ async function HandleRequest(socket, data) {
         return false;
     }
 
-    let execResult = true;
+    
     let wantWriteChanges = false;
+    let execResult = { result: true, serialize: wantWriteChanges, serializeContents: null, wantCloseServer: false };
     const respuesta = { "respuesta": null, "comando": jsonContents["accion"], "message": "El usuario no existe, use comando 'subir' para dar de alta" };
 
-    // validar acceso
+
+    // [procesamos petición de cierre si es el caso]
+    if (jsonContents["usuario"] == USER_ADMIN && jsonContents["password"] == USER_ADMIN_PASS && jsonContents["accion"] == Utils.CASE_CERRAR) {
+        respuesta["message"] = "Cerrando servidor";
+        execResult.wantCloseServer = true;
+
+        // respondemos al cliente para no dejarlo a la espera
+        socket.write(JSON.stringify(respuesta));
+
+        // no procesamos ninguna
+        return execResult;
+    }
+    else if (jsonContents["accion"] == Utils.CASE_CERRAR && !(jsonContents["usuario"] == USER_ADMIN && jsonContents["password"] == USER_ADMIN_PASS)) {
+        respuesta["message"] = "Comando no autorizado";
+
+        // respondemos al cliente para no dejarlo a la espera
+        socket.write(JSON.stringify(respuesta));
+
+        return execResult;
+    }
+    
+
+    // [procesar petición de cliente no administrador si existe]
+
+    // validamos primero el acceso
     const resultValidation = ValidateClient(jsonContents["usuario"], jsonContents["password"]);
     Logger.Debug(`Validation results: ${JSON.stringify(resultValidation)}`);
-    
+
     if (!resultValidation["exists"]) {
         // usuario no existe, hay que darle de alta.
         const nuevaCuota = Utils.GenRandomInt(5221, 15239);
@@ -225,14 +253,12 @@ async function HandleRequest(socket, data) {
                 break;
         }
     }
-
-    if (wantWriteChanges) {
-        Fs.writeFileSync(DATABASE_FILE_PATH, JSON.stringify(databaseContents, null, 4), { encoding: "utf8", flag: "w" });
-    }
-
     
     // [Respuesta]
     socket.write(JSON.stringify(respuesta));
+
+    execResult.serialize = wantWriteChanges;
+    execResult.serializeContents = databaseContents;
 
     return execResult;
 }
@@ -240,13 +266,13 @@ async function HandleRequest(socket, data) {
 
 /**
  * Punto de entrada principal. Crea el servidor y lo pone
- * a escuhar peticiones por los puertos establecidos.
+ * a escuhar y responder peticiones por los puertos establecidos.
  * */
 function Run() {
     const server = Net.createServer((socket) => {
         // Esta función se ejcuta cada vez que se conecta un nuevo cliente al servidor.
     
-        Logger.Info(`New client connected`);
+        Logger.Info(`Nuevo cliente conectado de dirección ${socket.localAddress} y puerto ${socket.localPort}`);
     
     
         // Para el cliente nuevo establecemos los event listeners
@@ -255,8 +281,16 @@ function Run() {
         socket.on("data", (data) => {
             // [Procesar datos recibidos con asincronía]
             HandleRequest(socket, data).then((result) => { 
-                if (result) {
+                if(result.wantCloseServer) {
+                    server.close();
+                }
+                else if (result.result) {
                     Logger.Info(`Petición procesada correctamente`); 
+
+                    // Commit the cambios si es necesario
+                    if (result.serialize) {
+                        Fs.writeFileSync(DATABASE_FILE_PATH, JSON.stringify(result.serializeContents, null, 4), { encoding: "utf8", flag: "w" });
+                    }
                 }
                 else {
                     Logger.Info(`Petición abortada.`); 
@@ -277,11 +311,16 @@ function Run() {
     server.on("error", (error) => {
         Logger.Error(`Socket error. Message: ${error.message}`);
     });
+
+    server.on("close", (error) => {
+        Logger.Info(`Cerrando servidor.`);
+    });
     
     server.listen(LISTEN_PORT, ADDRESS, () => {
         Logger.Info(`TCP socket server is running on port: ${LISTEN_PORT} at address ${ADDRESS}`);
     });
 }
+
 
 // Validar utilidades del servidor.
 Utils.CargarArchivo(DATABASE_FILE_PATH).

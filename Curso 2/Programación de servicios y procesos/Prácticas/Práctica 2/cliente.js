@@ -15,11 +15,6 @@ const COMMAND_LINE_ARGS = process.argv;
 
 const HELP_COMMAND = "--help";
 
-const CASE_SUBIR = "subir";
-const CASE_BORRAR = "borrar";
-const CASE_LISTADO = "listado";
-const CASE_DESCARGAR = "descargar";
-
 /**
  * Muestra los comandos de este programa.
  * */
@@ -106,7 +101,7 @@ function Run() {
     const command = COMMAND_LINE_ARGS[4];
 
     switch (command) {
-    case CASE_SUBIR:
+    case Utils.CASE_SUBIR:
         Logger.Debug(`Ejecutando comando subir para usuario ${user}`);
         Utils.CargarArchivo(COMMAND_LINE_ARGS[5]).then((result) => {
             const file = { path: COMMAND_LINE_ARGS[5], contents: result };
@@ -114,23 +109,28 @@ function Run() {
         });
         break;
 
-    case CASE_DESCARGAR:
+    case Utils.CASE_DESCARGAR:
         RunCase(`Ejecutando comando descargar para usuario ${user}`, () => {
             const file = { path: COMMAND_LINE_ARGS[5], contents: null };
             Client.Execute(user, password, command, file);
         });
         break;
 
-    case CASE_LISTADO:
+    case Utils.CASE_LISTADO:
         RunCase(`Ejecutando comando listado para usuario ${user}`, () => {
             Client.Execute(user, password, command, undefined);
         });
         break;
 
-    case CASE_BORRAR:
+    case Utils.CASE_BORRAR:
         RunCase(`Ejecutando comando borrar para usuario ${user}`, () => {
             const file = { path: COMMAND_LINE_ARGS[5], contents: null };
             Client.Execute(user, password, command, file);
+        });
+        break;
+    case Utils.CASE_CERRAR:
+        RunCase(`Ejecutando comando cerrar el servidor ${user}`, () => {
+            Client.Execute(user, password, command, undefined);
         });
         break;
 

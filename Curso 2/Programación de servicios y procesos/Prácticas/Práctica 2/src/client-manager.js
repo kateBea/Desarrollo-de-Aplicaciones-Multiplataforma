@@ -104,6 +104,10 @@ function Execute(clientName, clientPassword, command, file) {
             case Utils.CASE_BORRAR:
                 Logger.Info(respuesta["message"]);
                 break;
+
+            case Utils.CASE_CERRAR:
+                Logger.Info(respuesta["message"]);
+                break;
         
             default:
                 Logger.Error("Comando no reconocido");
