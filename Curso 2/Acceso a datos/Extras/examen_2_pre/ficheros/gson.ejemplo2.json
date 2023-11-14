@@ -1,0 +1,52 @@
+[
+  {
+    "dni": "12345678K",
+    "nombre": "Eduardo",
+    "curso": "2022-2023",
+    "media": 8.552500000000002,
+    "asignaturas": [
+      {
+        "nombre": "Mates",
+        "nota": 9.22
+      },
+      {
+        "nombre": "Castellano",
+        "nota": 8.22
+      },
+      {
+        "nombre": "Química",
+        "nota": 9.22
+      },
+      {
+        "nombre": "Catalán",
+        "nota": 8.55
+      }
+    ],
+    "fecha_nacimiento": "2003-11-13"
+  },
+  {
+    "dni": "24362791T",
+    "nombre": "Tiago",
+    "curso": "2022-2023",
+    "media": 6.635,
+    "asignaturas": [
+      {
+        "nombre": "Mates",
+        "nota": 5.22
+      },
+      {
+        "nombre": "Castellano",
+        "nota": 6.22
+      },
+      {
+        "nombre": "Química",
+        "nota": 7.22
+      },
+      {
+        "nombre": "Catalán",
+        "nota": 8.88
+      }
+    ],
+    "fecha_nacimiento": "2002-11-13"
+  }
+]

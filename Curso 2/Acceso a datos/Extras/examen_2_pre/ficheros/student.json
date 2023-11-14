@@ -1,0 +1,25 @@
+{
+  "dni": "12345678K",
+  "nombre": "Eduardo",
+  "curso": "2022-2023",
+  "media": 8.552500000000002,
+  "asignaturas": [
+    {
+      "nombre": "Mates",
+      "nota": 9.22
+    },
+    {
+      "nombre": "Castellano",
+      "nota": 8.22
+    },
+    {
+      "nombre": "Química",
+      "nota": 9.22
+    },
+    {
+      "nombre": "Catalán",
+      "nota": 8.55
+    }
+  ],
+  "fecha_nacimiento": "2003-11-12"
+}

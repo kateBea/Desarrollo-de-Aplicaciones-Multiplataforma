@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <dni>12345678K</dni>
+    <nombre>Eduardo</nombre>
+    <curso>2022-2023</curso>
+    <media>8.22</media>
+    <edad>19</edad>
+</student>

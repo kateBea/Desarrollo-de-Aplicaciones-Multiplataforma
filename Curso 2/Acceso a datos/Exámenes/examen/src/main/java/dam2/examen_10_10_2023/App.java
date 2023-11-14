@@ -2,15 +2,10 @@ package dam2.examen_10_10_2023;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collector;
 import java.util.stream.Stream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * Examen Acceso a Datos
@@ -44,8 +39,8 @@ public class App
 
             vueltas.stream().
                 filter(VUELTAS_MAS_10_ETAPAS).
-                sorted(Comparator.comparing(Vuelta::getAnio)).
-                forEach(vuelta -> System.out.println("Nombre: " + vuelta.getNombre() + " Año: " + vuelta.getAnio() + " Director: " + vuelta.getDirector()));
+                sorted(Comparator.comparing(Vuelta::getYear)).
+                forEach(vuelta -> System.out.println("Nombre: " + vuelta.getNombre() + " Año: " + vuelta.getYear() + " Director: " + vuelta.getDirector()));
         }
     }
     /** 
@@ -119,7 +114,7 @@ public class App
 
     /** 
      * Listad del nombre y dni de los corredores mayores de edad por nombre 
-     * de vuelta ciclista. Es decir, para cada nombre de vuelta ciclista 
+     * de vuelta ciclista, es decir, para cada nombre de vuelta ciclista
      * mostrar el nombre y el dni de sus corredores mayores de edad.
      * */
     private static class Ej5 implements Runnable {
@@ -127,13 +122,13 @@ public class App
         public void run() {
             System.out.println("\nEj5:");
 
-            final Function<Corredor, String> NOMBRE_Y_DNI = 
-                c -> "Nombre: " + c.getNombre() + " DNI: " + c.getDni();
-
-            final Function<Vuelta, Stream<Corredor>> CORREDORES_ADULTOS =
-                v -> v.getEquipos().stream().flatMap(e -> e.getCorredores().stream().filter(ES_MAYOR_EDAD));
-
-
+            vueltas.stream().
+                    map(Vuelta::getEquipos).
+                    flatMap(Collection::stream).
+                    map(Equipo::getCorredores).
+                    flatMap(Collection::stream).
+                    filter(ES_MAYOR_EDAD).
+                    forEach(System.out::println);
                        
         }
     }
@@ -190,8 +185,8 @@ public class App
         Equipo eq6 = Equipo.builder().nombre("Getafe").corredores(Arrays.asList(c11, c12)).patrocinador(Optional.of(p2)).build();
 
         // Vueltas
-        Vuelta v1 = Vuelta.builder().nombre("Vuelta 1").premio(422000.24).director("Diego").etapas(11).anio(2023).equipos(Arrays.asList(eq1, eq2, eq3)).build();
-        Vuelta v2 = Vuelta.builder().nombre("Vuelta 2").premio(400028.22).director("Ronaldo").etapas(3).anio(2024).equipos(Arrays.asList(eq4, eq5, eq6)).build();
+        Vuelta v1 = Vuelta.builder().nombre("Vuelta 1").premio(422000.24).director("Diego").etapas(11).year(2023).equipos(Arrays.asList(eq1, eq2, eq3)).build();
+        Vuelta v2 = Vuelta.builder().nombre("Vuelta 2").premio(400028.22).director("Ronaldo").etapas(3).year(2024).equipos(Arrays.asList(eq4, eq5, eq6)).build();
 
         vueltas.add(v1);
         vueltas.add(v2);

@@ -1,0 +1,16 @@
+{
+  "name": "login_form",
+  "version": "1.0.0",
+  "description": "Sistema de registro",
+  "main": "main.js",
+  "scripts": {
+    "dev" : "electron ."
+  },
+  "keywords": [],
+  "author": "Hugo Pelayo",
+  "license": "MIT",
+
+  "dependencies": {
+    "electron": "^26.2.4"
+  }
+}

@@ -1,0 +1,151 @@
+{
+    "notas":[
+        {
+            "nombre": "Juan Pablo",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 5,
+                    "nota2": 6
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 6,
+                    "nota2": 5
+                },
+                {
+                    "nombreModulo": "Programacion de Servicios y Procesos",
+                    "nota1": 5,
+                    "nota2": 3
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 6,
+                    "nota2": 5
+                },
+                {
+                    "nombreModulo": "Sistemas de Gestión Empresarial",
+                    "nota1": 7,
+                    "nota2": 8
+                }
+            ]
+        },{
+            "nombre": "Luis Miguel",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 7,
+                    "nota2": 8
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 4,
+                    "nota2": 7
+                },
+                {
+                    "nombreModulo": "Programacion de Servicios y Procesos",
+                    "nota1": 3,
+                    "nota2": 8
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 9,
+                    "nota2": 9
+                },
+                {
+                    "nombreModulo": "Sistemas de Gestión Empresarial",
+                    "nota1": 9,
+                    "nota2": 9
+                }
+            ]
+        },{
+            "nombre": "Sofia ",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 5,
+                    "nota2": 6
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 6,
+                    "nota2": 5
+                },
+                {
+                    "nombreModulo": "Programacion de Servicios y Procesos",
+                    "nota1": 5,
+                    "nota2": 3
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 6,
+                    "nota2": 5
+                },
+                {
+                    "nombreModulo": "Sistemas de Gestión Empresarial",
+                    "nota1": 7,
+                    "nota2": 8
+                }
+            ]
+        },{
+            "nombre": "Lucas",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 5,
+                    "nota2": 7
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 6,
+                    "nota2": 6
+                },
+                {
+                    "nombreModulo": "Programacion de Servicios y Procesos",
+                    "nota1": 5,
+                    "nota2": 4
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 6,
+                    "nota2": 9
+                },
+                {
+                    "nombreModulo": "Sistemas de Gestión Empresarial",
+                    "nota1": 7,
+                    "nota2": 6
+                }
+            ]
+        },{
+            "nombre": "Aaron",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 8,
+                    "nota2": 8
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 8,
+                    "nota2": 9
+                },
+                {
+                    "nombreModulo": "Programacion de Servicios y Procesos",
+                    "nota1": 9,
+                    "nota2": 8
+                },
+                {
+                    "nombreModulo": "Acceso a Datos",
+                    "nota1": 9,
+                    "nota2": 9
+                },
+                {
+                    "nombreModulo": "Sistemas de Gestión Empresarial",
+                    "nota1": 10,
+                    "nota2": 10
+                }
+            ]
+        }
+        
+    ]
+}

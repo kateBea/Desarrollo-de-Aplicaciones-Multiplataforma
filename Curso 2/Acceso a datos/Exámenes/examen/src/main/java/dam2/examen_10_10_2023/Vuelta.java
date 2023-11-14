@@ -22,7 +22,7 @@ public class Vuelta {
     private int etapas;
 
     @EqualsAndHashCode.Include
-    private int anio;
+    private int year;
 
     private List<Equipo> equipos;
 }

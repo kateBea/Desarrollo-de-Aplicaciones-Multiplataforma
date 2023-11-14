@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <dni>12345678K</dni>
+    <nombre>Eduardo</nombre>
+    <curso>2022-2023</curso>
+    <media>8.552500000000002</media>
+    <edad>19</edad>
+    <materias>
+        <asignatura>
+            <nombre>Mates</nombre>
+            <nota>9.22</nota>
+        </asignatura>
+        <asignatura>
+            <nombre>Castellano</nombre>
+            <nota>8.22</nota>
+        </asignatura>
+        <asignatura>
+            <nombre>Química</nombre>
+            <nota>9.22</nota>
+        </asignatura>
+        <asignatura>
+            <nombre>Catalán</nombre>
+            <nota>8.55</nota>
+        </asignatura>
+    </materias>
+</student>
