@@ -1,0 +1,35 @@
+{
+    "personas": [
+        {
+            "nombre": "Juan Pérez Galones",
+            "altura": 1.72,
+            "peso": 75,
+            "pasatiempos": [
+                "Comics",
+                "Baloncesto",
+                "Gaming"
+            ],
+            "soltero": true,
+            "direccion": {
+                "calle": "Avenida Soleares",
+                "numero": "44",
+                "pais": "Chile"
+            }
+        },
+        {
+            "nombre": "Pedro Motos Sandez",
+            "altura": 1.69,
+            "peso": 72,
+            "pasatiempos": [
+                "Programación",
+                "Senderismo"
+            ],
+            "soltero": true,
+            "direccion": {
+                "calle": "Torero Pedro Cano",
+                "numero": "78",
+                "pais": "México"
+            }
+        }
+    ]
+}

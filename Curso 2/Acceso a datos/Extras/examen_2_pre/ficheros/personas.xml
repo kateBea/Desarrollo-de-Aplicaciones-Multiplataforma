@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<personas>
+    <persona>
+        <nombre>Juan Pérez Galones</nombre>
+        <altura>1.72</altura>
+        <peso>75.0</peso>
+        <pasatiempos>
+            <pasatiempo>Comics</pasatiempo>
+            <pasatiempo>Baloncesto</pasatiempo>
+            <pasatiempo>Gaming</pasatiempo>
+        </pasatiempos>
+        <soltero>true</soltero>
+        <direccion>
+            <calle>Avenida Soleares</calle>
+            <numero>44</numero>
+            <pais>Chile</pais>
+        </direccion>
+    </persona>
+    <persona>
+        <nombre>Pedro Motos Sandez</nombre>
+        <altura>1.69</altura>
+        <peso>72.0</peso>
+        <pasatiempos>
+            <pasatiempo>Programación</pasatiempo>
+            <pasatiempo>Senderismo</pasatiempo>
+        </pasatiempos>
+        <soltero>true</soltero>
+        <direccion>
+            <calle>Torero Pedro Cano</calle>
+            <numero>78</numero>
+            <pais>México</pais>
+        </direccion>
+    </persona>
+</personas>

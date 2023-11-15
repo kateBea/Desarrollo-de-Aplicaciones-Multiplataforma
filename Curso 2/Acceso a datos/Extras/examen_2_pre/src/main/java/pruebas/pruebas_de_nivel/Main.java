@@ -18,7 +18,7 @@ public class Main {
         initContext();
 
         try (Reader lector = new FileReader(INPUT_FILE_PATH)) {
-            List<Prueba> pruebas = List.of(gson.fromJson(lector, Prueba[].class));
+            final List<Prueba> pruebas = List.of(gson.fromJson(lector, Prueba[].class));
 
             // [Depuración]
             System.out.println(gson.toJson(pruebas));
