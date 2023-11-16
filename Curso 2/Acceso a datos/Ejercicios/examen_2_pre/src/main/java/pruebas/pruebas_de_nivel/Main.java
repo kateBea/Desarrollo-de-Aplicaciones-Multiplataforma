@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         final String INPUT_FILE_PATH = "ficheros/pruebasdenivel.json";
-        final String OUTNPUT_XML_FILE_PATH = "ficheros/pruebasdenivel.xml";
+        final String OUTPUT_XML_FILE_PATH = "ficheros/pruebasdenivel.xml";
 
         try {
             initContext();
@@ -32,7 +32,7 @@ public class Main {
 
             PruebasXMLWrapper pruebasXMLWrapper = PruebasXMLWrapper.builder().pruebas(pruebas).build();
             marshaller.marshal(pruebasXMLWrapper, System.out);
-            Writer writer = new FileWriter(OUTNPUT_XML_FILE_PATH);
+            Writer writer = new FileWriter(OUTPUT_XML_FILE_PATH);
             marshaller.marshal(pruebasXMLWrapper, writer);
             writer.close();
 
