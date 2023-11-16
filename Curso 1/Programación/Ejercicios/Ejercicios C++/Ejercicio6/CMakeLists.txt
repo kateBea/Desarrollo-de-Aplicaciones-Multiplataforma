@@ -23,7 +23,6 @@ endif()
 set(SOURCES biblioteca/gestor.cc)
 
 # Include
-include_directories(vector/include)
 include_directories(.)
 
 # Executable List

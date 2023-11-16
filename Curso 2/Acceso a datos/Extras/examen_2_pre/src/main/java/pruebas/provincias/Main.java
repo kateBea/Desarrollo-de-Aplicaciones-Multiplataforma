@@ -75,9 +75,9 @@ public class Main {
     public static void initContext() throws JAXBException {
         // GSON -------------------------------------------------------------
         GsonBuilder builder = new GsonBuilder().
-                setPrettyPrinting();
+                setPrettyPrinting().
+                registerTypeAdapter(Localidades.class, new LocalidadesAdapter());
 
-        builder.registerTypeAdapter(Localidades.class, new LocalidadesAdapter());
         gson = builder.create();
 
         // JAXB -------------------------------------------------------------

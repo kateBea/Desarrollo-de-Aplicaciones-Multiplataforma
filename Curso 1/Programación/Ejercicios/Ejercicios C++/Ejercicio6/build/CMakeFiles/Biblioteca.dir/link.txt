@@ -1,1 +1,0 @@
-/usr/bin/c++ -fsanitize=address CMakeFiles/Biblioteca.dir/biblioteca/gestor.cc.o CMakeFiles/Biblioteca.dir/main.cc.o -o Biblioteca 

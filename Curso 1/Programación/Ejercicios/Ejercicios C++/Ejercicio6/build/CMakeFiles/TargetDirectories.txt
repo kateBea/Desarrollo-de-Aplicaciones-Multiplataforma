@@ -1,3 +1,0 @@
-/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio6/build/CMakeFiles/Biblioteca.dir
-/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio6/build/CMakeFiles/edit_cache.dir
-/home/kate/Documents/DAM/Desarollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios C++/Ejercicio6/build/CMakeFiles/rebuild_cache.dir
