@@ -1,0 +1,98 @@
+[
+  {
+    "tipo": {
+      "tipo": "Navidad",
+      "definicion": "postre"
+    },
+    "dificultad": "Fácil",
+    "nombre": "Tarta de chocolate",
+    "ingredientes": [],
+    "calorias": 600,
+    "pasos": [
+      {
+        "orden": 1,
+        "descripcion": "Mezclar el cola-cao con la mantequilla."
+      },
+      {
+        "orden": 2,
+        "descripcion": "Separar las yemas y mezclarlas con el azúcar."
+      },
+      {
+        "orden": 3,
+        "descripcion": "Unir ambas mezclas y añadir la harina."
+      },
+      {
+        "orden": 4,
+        "descripcion": "Montar las claras y añadirlas a la mezcla anterior mezclando siempre de arriba hacia abajo para que no se bajen las claras."
+      },
+      {
+        "orden": 5,
+        "descripcion": "Untar un molde de mantequilla y espolvorear de harina."
+      },
+      {
+        "orden": 6,
+        "descripcion": "Precalentar el horno y hornear a 175º durante unos 40 min."
+      }
+    ],
+    "tiempo": {
+      "valor": 45,
+      "unidad": "minutos"
+    }
+  },
+  {
+    "tipo": {
+      "tipo": "",
+      "definicion": "postre"
+    },
+    "dificultad": "Media",
+    "nombre": "Tiramisú",
+    "ingredientes": [],
+    "calorias": 450,
+    "pasos": [
+      {
+        "orden": 1,
+        "descripcion": " Echar la mitad del azúcar en la nata liquida y montarla hasta que quede muy compacta."
+      },
+      {
+        "orden": 2,
+        "descripcion": "Separar las claras de las yemas y montarlas a punto de nieve."
+      },
+      {
+        "orden": 3,
+        "descripcion": "Mezclar despacio el queso y las yemas de huevo, añadiendo el resto del azúcar."
+      },
+      {
+        "orden": 4,
+        "descripcion": "Cuando el queso y las yemas estén mezclados juntar con la nata montada y las claras a punto de nieve y mezclar todo bien, pero despacio."
+      },
+      {
+        "orden": 5,
+        "descripcion": "En el café caliente disolver un tercio del chocolate y echar un chorrito de licor."
+      },
+      {
+        "orden": 6,
+        "descripcion": "Mojar muy ligeramente los bizcochos en el café sin dejar que se empapen y disponer la mitad de ellos cubriendo el fondo de una fuente."
+      },
+      {
+        "orden": 7,
+        "descripcion": "Echar la mitad de la mezcla sobre los bizcochos cubriéndolos uniformemente."
+      },
+      {
+        "orden": 8,
+        "descripcion": "Poner una nueva capa de bizcochos mojados sobre la mezcla."
+      },
+      {
+        "orden": 9,
+        "descripcion": "Echar el resto de la mezcla sobre la segunda capa de bizcochos."
+      },
+      {
+        "orden": 10,
+        "descripcion": "Dejar reposar al menos 6 horas antes de servir."
+      }
+    ],
+    "tiempo": {
+      "valor": 7,
+      "unidad": "horas"
+    }
+  }
+]

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<empresa nombre="ABC Corp">
+    <empleados>
+        <empleado>
+            <id>1</id>
+            <nombre>Juan Pérez</nombre>
+            <edad>35</edad>
+            <departamento>Desarrollo</departamento>
+            <salario>80000</salario>
+            <proyectos>
+                <proyecto>
+                    <id>101</id>
+                    <nombre>Proyecto A</nombre>
+                </proyecto>
+                <proyecto>
+                    <id>102</id>
+                    <nombre>Proyecto B</nombre>
+                </proyecto>
+            </proyectos>
+            <habilidades>Java Spring JavaScript</habilidades>
+        </empleado>
+        <empleado>
+            <id>2</id>
+            <nombre>María Gómez</nombre>
+            <edad>28</edad>
+            <departamento>Recursos Humanos</departamento>
+            <salario>60000</salario>
+            <proyectos>
+                <proyecto>
+                    <id>103</id>
+                    <nombre>Proyecto C</nombre>
+                </proyecto>
+            </proyectos>
+            <habilidades>Gestión de Recursos Humanos Comunicación</habilidades>
+        </empleado>
+        <empleado>
+            <id>3</id>
+            <nombre>Carlos Rodríguez</nombre>
+            <edad>40</edad>
+            <departamento>Desarrollo</departamento>
+            <salario>90000</salario>
+            <proyectos>
+                <proyecto>
+                    <id>101</id>
+                    <nombre>Proyecto A</nombre>
+                </proyecto>
+                <proyecto>
+                    <id>104</id>
+                    <nombre>Proyecto D</nombre>
+                </proyecto>
+            </proyectos>
+            <habilidades>Java Spring Python</habilidades>
+        </empleado>
+    </empleados>
+</empresa>

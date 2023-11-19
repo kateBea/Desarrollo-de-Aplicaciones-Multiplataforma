@@ -1,0 +1,373 @@
+{
+    "instituto": "Instituto XYZ",
+    "profesores": [
+        {
+            "id": 1,
+            "nombre": "Laura Martínez",
+            "edad": 40,
+            "materia": "Matemáticas",
+            "cursos": [
+                {
+                    "id": 101,
+                    "nombre": "Álgebra",
+                    "estudiantes": [
+                        {
+                            "id": 201,
+                            "nombre": "Carlos Sánchez"
+                        },
+                        {
+                            "id": 202,
+                            "nombre": "Ana Rodríguez"
+                        }
+                    ]
+                },
+                {
+                    "id": 102,
+                    "nombre": "Geometría",
+                    "estudiantes": [
+                        {
+                            "id": 203,
+                            "nombre": "Miguel González"
+                        },
+                        {
+                            "id": 204,
+                            "nombre": "Elena García"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Juan Gómez",
+            "edad": 35,
+            "materia": "Historia",
+            "cursos": [
+                {
+                    "id": 103,
+                    "nombre": "Historia Antigua",
+                    "estudiantes": [
+                        {
+                            "id": 205,
+                            "nombre": "Luisa Pérez"
+                        },
+                        {
+                            "id": 206,
+                            "nombre": "Roberto Fernández"
+                        }
+                    ]
+                },
+                {
+                    "id": 104,
+                    "nombre": "Historia Contemporánea",
+                    "estudiantes": [
+                        {
+                            "id": 207,
+                            "nombre": "Sara Martín"
+                        },
+                        {
+                            "id": 208,
+                            "nombre": "Javier López"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "María Sánchez",
+            "edad": 38,
+            "materia": "Biología",
+            "cursos": [
+                {
+                    "id": 105,
+                    "nombre": "Biología Celular",
+                    "estudiantes": [
+                        {
+                            "id": 209,
+                            "nombre": "Alejandro Ruiz"
+                        },
+                        {
+                            "id": 210,
+                            "nombre": "Isabel Vargas"
+                        }
+                    ]
+                },
+                {
+                    "id": 106,
+                    "nombre": "Ecología",
+                    "estudiantes": [
+                        {
+                            "id": 211,
+                            "nombre": "Carmen Torres"
+                        },
+                        {
+                            "id": 212,
+                            "nombre": "Pablo García"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "José López",
+            "edad": 45,
+            "materia": "Física",
+            "cursos": [
+                {
+                    "id": 107,
+                    "nombre": "Física Cuántica",
+                    "estudiantes": [
+                        {
+                            "id": 213,
+                            "nombre": "María José Rodríguez"
+                        },
+                        {
+                            "id": 214,
+                            "nombre": "Daniel Martínez"
+                        }
+                    ]
+                },
+                {
+                    "id": 108,
+                    "nombre": "Termodinámica",
+                    "estudiantes": [
+                        {
+                            "id": 215,
+                            "nombre": "Rosa Gutiérrez"
+                        },
+                        {
+                            "id": 216,
+                            "nombre": "Manuel Ruiz"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "Elena Pérez",
+            "edad": 32,
+            "materia": "Literatura",
+            "cursos": [
+                {
+                    "id": 109,
+                    "nombre": "Literatura Española",
+                    "estudiantes": [
+                        {
+                            "id": 217,
+                            "nombre": "Pedro Morales"
+                        },
+                        {
+                            "id": 218,
+                            "nombre": "Laura Gómez"
+                        }
+                    ]
+                },
+                {
+                    "id": 110,
+                    "nombre": "Literatura Universal",
+                    "estudiantes": [
+                        {
+                            "id": 219,
+                            "nombre": "Isaac Fernández"
+                        },
+                        {
+                            "id": 220,
+                            "nombre": "Eva Sánchez"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "Roberto Fernández",
+            "edad": 42,
+            "materia": "Química",
+            "cursos": [
+                {
+                    "id": 111,
+                    "nombre": "Química Orgánica",
+                    "estudiantes": [
+                        {
+                            "id": 221,
+                            "nombre": "Adriana López"
+                        },
+                        {
+                            "id": 222,
+                            "nombre": "Miguel Soto"
+                        }
+                    ]
+                },
+                {
+                    "id": 112,
+                    "nombre": "Química Inorgánica",
+                    "estudiantes": [
+                        {
+                            "id": 223,
+                            "nombre": "Cristina Martínez"
+                        },
+                        {
+                            "id": 224,
+                            "nombre": "Juan Carlos Vargas"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "Ana Rodríguez",
+            "edad": 37,
+            "materia": "Arte",
+            "cursos": [
+                {
+                    "id": 113,
+                    "nombre": "Historia del Arte",
+                    "estudiantes": [
+                        {
+                            "id": 225,
+                            "nombre": "Ricardo Gómez"
+                        },
+                        {
+                            "id": 226,
+                            "nombre": "Alicia Martín"
+                        }
+                    ]
+                },
+                {
+                    "id": 114,
+                    "nombre": "Dibujo Artístico",
+                    "estudiantes": [
+                        {
+                            "id": 227,
+                            "nombre": "Cecilia Torres"
+                        },
+                        {
+                            "id": 228,
+                            "nombre": "Lorenzo Sánchez"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "Sara Martín",
+            "edad": 33,
+            "materia": "Idiomas",
+            "cursos": [
+                {
+                    "id": 115,
+                    "nombre": "Inglés Avanzado",
+                    "estudiantes": [
+                        {
+                            "id": 229,
+                            "nombre": "Fernando López"
+                        },
+                        {
+                            "id": 230,
+                            "nombre": "Diana Sánchez"
+                        }
+                    ]
+                },
+                {
+                    "id": 116,
+                    "nombre": "Francés Básico",
+                    "estudiantes": [
+                        {
+                            "id": 231,
+                            "nombre": "Mario Torres"
+                        },
+                        {
+                            "id": 232,
+                            "nombre": "Laura Soto"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "Miguel González",
+            "edad": 39,
+            "materia": "Educación Física",
+            "cursos": [
+                {
+                    "id": 117,
+                    "nombre": "Gimnasia",
+                    "estudiantes": [
+                        {
+                            "id": 233,
+                            "nombre": "Isabel García"
+                        },
+                        {
+                            "id": 234,
+                            "nombre": "Javier Martínez"
+                        }
+                    ]
+                },
+                {
+                    "id": 118,
+                    "nombre": "Atletismo",
+                    "estudiantes": [
+                        {
+                            "id": 235,
+                            "nombre": "Natalia López"
+                        },
+                        {
+                            "id": 236,
+                            "nombre": "Carlos Rodríguez"
+                        },
+                        {
+                            "id": 237,
+                            "nombre": "Clara Ramos"
+                        },
+                        {
+                            "id": 238,
+                            "nombre": "Clara Santos"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "nombre": "Carlos Sánchez",
+            "edad": 36,
+            "materia": "Informática",
+            "cursos": [
+                {
+                    "id": 119,
+                    "nombre": "Programación Java",
+                    "estudiantes": [
+                        {
+                            "id": 237,
+                            "nombre": "Eva Martínez"
+                        },
+                        {
+                            "id": 238,
+                            "nombre": "Luis Torres"
+                        }
+                    ]
+                },
+                {
+                    "id": 120,
+                    "nombre": "Bases de Datos",
+                    "estudiantes": [
+                        {
+                            "id": 239,
+                            "nombre": "Ana Gómez"
+                        },
+                        {
+                            "id": 240,
+                            "nombre": "David Fernández"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

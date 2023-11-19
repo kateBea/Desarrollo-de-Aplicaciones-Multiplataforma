@@ -129,7 +129,7 @@ public class Queries {
 
     /**
      * En una lista tenemos distintos identificadores de provincias, mostrar el nombre
-     * de las provincias y todos los municipios correspondientes a los identificadores
+     * de los municipios y todas las provincias correspondientes a los identificadores
      * que se encuentran en la lista.
      * */
     public static class Query6 implements Runnable {
@@ -138,6 +138,10 @@ public class Queries {
         public void run() {
             final List<String> identificadores = List.of("01", "02", "03");
 
+            queryProvincias.getProvincias().stream().
+                    filter(provincia -> identificadores.contains(provincia.getId())).
+                    collect(Collectors.toMap(Provincia::getNombre, Provincia::getLocalidades)).
+                    forEach((nombre, localidades) -> System.out.println(nombre + " " + localidades.getLocalidades()));
 
         }
     }

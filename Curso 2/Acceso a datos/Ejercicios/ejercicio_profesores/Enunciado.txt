@@ -1,0 +1,19 @@
+Buscar Profesores de un Departamento:
+    ¿Cuántos profesores hay en el departamento de "Matemáticas"?
+    ¿Cuál es el promedio de edad de los profesores del departamento de "Química"?
+
+Filtrar Profesores por Materia:
+    ¿Quiénes son los profesores que enseñan "Historia"?
+    ¿Cuántos profesores enseñan "Idiomas"?
+
+Agrupar Profesores por Departamento:
+    ¿Cuántos profesores hay en cada departamento?
+    ¿Cuál es el profesor más joven de cada departamento?
+
+Obtener Información Detallada de Cursos:
+    ¿Cuántos cursos hay en total en el instituto?
+    ¿Cuál es el curso con más estudiantes?
+
+Filtrar Estudiantes por Materia:
+    ¿Quiénes son los estudiantes que asisten al curso "Biología Celular"?
+    ¿Cuántos estudiantes hay en el curso "Inglés Avanzado"?

@@ -5,13 +5,13 @@ import java.util.Arrays;
 
 public class FormacionXMLAdapter extends XmlAdapter<String, Formacion> {
     @Override
-    public Formacion unmarshal(String v) throws Exception {
+    public Formacion unmarshal(String v) {
         return Arrays.stream(Formacion.values()).filter(formacion -> formacion.toString().equalsIgnoreCase(v)).
                 findFirst().orElse(Formacion.PRESENCIAL);
     }
 
     @Override
-    public String marshal(Formacion v) throws Exception {
+    public String marshal(Formacion v) {
         return v.toString();
     }
 }

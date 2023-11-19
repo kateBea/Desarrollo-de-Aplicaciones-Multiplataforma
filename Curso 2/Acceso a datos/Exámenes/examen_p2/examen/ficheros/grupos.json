@@ -1,0 +1,106 @@
+[
+  {
+    "id": "BACH-1-MATEMATICAS",
+    "nombre": "Matemáticas",
+    "curso": "1º de Bachillerato",
+    "itinerario": "Científico - Técnico",
+    "tutor": {
+      "dni": "00000000A",
+      "nombre": "Laura",
+      "apellido1": "García",
+      "apellido2": "López",
+      "alta": {
+          "dia": 13,
+          "mes": 9,
+          "año": 2019
+          },
+      "direccion": {
+        "calle": "Cerezo",
+        "numero": 17,
+        "cpostal": 28017
+      }
+    },
+    "alumnos": [
+      {
+        "dni": "12345678A",
+        "nombre": "Marta",
+        "apellido1": "López",
+        "apellido2": "Martín",
+        "edad": 12,
+        "repetidor": "Sí",
+        "notas": [7.8, 3,2, 5.0]
+      },
+      {
+        "dni": "12345678B",
+        "nombre": "Jorge",
+        "apellido1": "Martínez",
+        "apellido2": "González",
+        "edad": 11,
+        "repetidor": "No",
+        "notas": 8.1
+      },
+      {
+        "dni": "12345678A",
+        "nombre": "Beatriz",
+        "apellido1": "García",
+        "apellido2": "Gómez",
+        "edad": 12,
+        "repetidor": "No",
+        "notas": [9.3, 5.3]
+      }
+    ]
+  },
+  {
+    "id": "BACH-2-MATEMATICAS",
+    "nombre": "Matemáticas",
+    "curso": "2º de Bachillerato",
+    "itinerario": "Científico - Técnico",
+    "tutor": {
+      "dni": "00000000B",
+      "nombre": "Luis",
+      "apellido1": "Sánchez",
+      "apellido2": "Martín",
+      "alta": {
+          "dia": 18,
+          "mes": 2,
+          "año": 2012
+          },
+      "direccion": {
+        "calle": "Aragón",
+        "numero": 15,
+        "cpostal": 28048
+      }
+    },
+    "alumnos": [
+      {
+        "dni": "22222222A",
+        "nombre": "Juan",
+        "apellido1": "Martín",
+        "apellido2": "Martín",
+        "edad": 14,
+        "repetidor": "No",
+        "notas": [2.8, 3,2, 5.0]
+      },
+      {
+        "dni": "33333333B",
+        "nombre": "Ana",
+        "apellido1": "Martínez",
+        "apellido2": "Martínez",
+        "edad": 16,
+        "repetidor": "No",
+        "notas": 6.1
+      },
+      {
+        "dni": "55555555C",
+        "nombre": "Beatriz",
+        "apellido1": "Gómez",
+        "apellido2": "Gómez",
+        "edad": 18,
+        "repetidor": "No",
+        "notas": [9.3, 5.3]
+      }
+    ]
+  }
+  
+  
+]

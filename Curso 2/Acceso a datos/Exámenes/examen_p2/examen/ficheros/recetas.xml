@@ -1,0 +1,49 @@
+<recetas>
+    <receta>
+        <tipo definicion="postre">Navidad</tipo>
+        <dificultad>Fácil</dificultad>
+        <nombre>Tarta de chocolate</nombre>
+        <ingrediente nombre="Cola-Cao" cantidad="250 gramos"/>
+        <ingrediente nombre="mantequilla" cantidad="200 gramos"/>
+        <ingrediente nombre="harina" cantidad="1 vaso"/>
+        <ingrediente nombre="azúcar" cantidad="1 vaso"/>
+        <ingrediente nombre="huevos" cantidad="3"/>
+        <calorias>600</calorias>
+        <pasos>
+            <paso orden="1">Mezclar el cola-cao con la mantequilla.</paso>
+            <paso orden="2">Separar las yemas y mezclarlas con el azúcar.</paso>
+            <paso orden="3">Unir ambas mezclas y añadir la harina.</paso>
+            <paso orden="4">Montar las claras y añadirlas a la mezcla anterior mezclando siempre de arriba hacia abajo para que no se bajen las claras.</paso>
+            <paso orden="5">Untar un molde de mantequilla y espolvorear de harina.</paso>
+            <paso orden="6">Precalentar el horno y hornear a 175º durante unos 40 min.</paso>
+        </pasos>
+        <tiempo unidad="minutos">45</tiempo>
+    </receta>
+    <receta>
+        <tipo definicion="postre"/>
+        <dificultad>Media</dificultad>
+        <nombre>Tiramisú</nombre>
+        <ingrediente nombre="cobertura Valor" cantidad="100 gramos"/>
+        <ingrediente nombre="bizcochos blandos" cantidad="24"/>
+        <ingrediente nombre="azúcar" cantidad="0.5 vasos"/>
+        <ingrediente nombre="café solo" cantidad="1 tazón"/>
+        <ingrediente nombre="huevos" cantidad="3"/>
+        <ingrediente nombre="licor" cantidad="1 chorrito"/>
+        <ingrediente nombre="nata líquida" cantidad="0.3 litros"/>
+        <ingrediente nombre="queso mascarpone" cantidad="250 gramos"/>
+        <calorias>450</calorias>
+        <pasos>
+            <paso orden="1"> Echar la mitad del azúcar en la nata liquida y montarla hasta que quede muy compacta.</paso>
+            <paso orden="2">Separar las claras de las yemas y montarlas a punto de nieve.</paso>
+            <paso orden="3">Mezclar despacio el queso y las yemas de huevo, añadiendo el resto del azúcar.</paso>
+            <paso orden="4">Cuando el queso y las yemas estén mezclados juntar con la nata montada y las claras a punto de nieve y mezclar todo bien, pero despacio.</paso>
+            <paso orden="5">En el café caliente disolver un tercio del chocolate y echar un chorrito de licor.</paso>
+            <paso orden="6">Mojar muy ligeramente los bizcochos en el café sin dejar que se empapen y disponer la mitad de ellos cubriendo el fondo de una fuente.</paso>
+            <paso orden="7">Echar la mitad de la mezcla sobre los bizcochos cubriéndolos uniformemente.</paso>
+            <paso orden="8">Poner una nueva capa de bizcochos mojados sobre la mezcla.</paso>
+            <paso orden="9">Echar el resto de la mezcla sobre la segunda capa de bizcochos.</paso>
+            <paso orden="10">Dejar reposar al menos 6 horas antes de servir.</paso>
+        </pasos>
+        <tiempo unidad="horas">7</tiempo>
+    </receta>
+</recetas>

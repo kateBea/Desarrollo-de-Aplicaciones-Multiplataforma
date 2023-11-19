@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<grupos>
+    <grupo>
+        <id>BACH-1-MATEMATICAS</id>
+        <nombre>Matemáticas</nombre>
+        <curso>1º de Bachillerato</curso>
+        <itinerario>Científico - Técnico</itinerario>
+        <tutor>
+            <dni>00000000A</dni>
+            <nombre>Laura</nombre>
+            <apellido1>García</apellido1>
+            <apellido2>López</apellido2>
+            <alta>2019-09-13</alta>
+            <direccion>
+                <calle>Cerezo</calle>
+                <numero>17</numero>
+                <cpostal>28017</cpostal>
+            </direccion>
+        </tutor>
+        <alumnos>
+            <alumno>
+                <dni>12345678A</dni>
+                <nombre>Marta</nombre>
+                <apellido1>López</apellido1>
+                <apellido2>Martín</apellido2>
+                <edad>12</edad>
+                <repetidor>Sí</repetidor>
+                <notas>7.8 3.0 2.0 5.0</notas>
+            </alumno>
+            <alumno>
+                <dni>12345678B</dni>
+                <nombre>Jorge</nombre>
+                <apellido1>Martínez</apellido1>
+                <apellido2>González</apellido2>
+                <edad>11</edad>
+                <repetidor>No</repetidor>
+                <notas>8.1</notas>
+            </alumno>
+            <alumno>
+                <dni>12345678A</dni>
+                <nombre>Beatriz</nombre>
+                <apellido1>García</apellido1>
+                <apellido2>Gómez</apellido2>
+                <edad>12</edad>
+                <repetidor>No</repetidor>
+                <notas>9.3 5.3</notas>
+            </alumno>
+        </alumnos>
+    </grupo>
+    <grupo>
+        <id>BACH-2-MATEMATICAS</id>
+        <nombre>Matemáticas</nombre>
+        <curso>2º de Bachillerato</curso>
+        <itinerario>Científico - Técnico</itinerario>
+        <tutor>
+            <dni>00000000B</dni>
+            <nombre>Luis</nombre>
+            <apellido1>Sánchez</apellido1>
+            <apellido2>Martín</apellido2>
+            <alta>2012-02-18</alta>
+            <direccion>
+                <calle>Aragón</calle>
+                <numero>15</numero>
+                <cpostal>28048</cpostal>
+            </direccion>
+        </tutor>
+        <alumnos>
+            <alumno>
+                <dni>22222222A</dni>
+                <nombre>Juan</nombre>
+                <apellido1>Martín</apellido1>
+                <apellido2>Martín</apellido2>
+                <edad>14</edad>
+                <repetidor>No</repetidor>
+                <notas>2.8 3.0 2.0 5.0</notas>
+            </alumno>
+            <alumno>
+                <dni>33333333B</dni>
+                <nombre>Ana</nombre>
+                <apellido1>Martínez</apellido1>
+                <apellido2>Martínez</apellido2>
+                <edad>16</edad>
+                <repetidor>No</repetidor>
+                <notas>6.1</notas>
+            </alumno>
+            <alumno>
+                <dni>55555555C</dni>
+                <nombre>Beatriz</nombre>
+                <apellido1>Gómez</apellido1>
+                <apellido2>Gómez</apellido2>
+                <edad>18</edad>
+                <repetidor>No</repetidor>
+                <notas>9.3 5.3</notas>
+            </alumno>
+        </alumnos>
+    </grupo>
+</grupos>

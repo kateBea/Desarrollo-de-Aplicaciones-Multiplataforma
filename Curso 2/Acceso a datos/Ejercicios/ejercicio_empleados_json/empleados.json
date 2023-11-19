@@ -1,0 +1,68 @@
+{
+    "empresa": "ABC Corp",
+    "empleados": [
+        {
+            "id": 1,
+            "nombre": "Juan Pérez",
+            "edad": 35,
+            "departamento": "Desarrollo",
+            "salario": 80000,
+            "proyectos": [
+                {
+                    "id": 101,
+                    "nombre": "Proyecto A"
+                },
+                {
+                    "id": 102,
+                    "nombre": "Proyecto B"
+                }
+            ],
+            "habilidades": [
+                "Java",
+                "Spring",
+                "JavaScript"
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "María Gómez",
+            "edad": 28,
+            "departamento": "Recursos Humanos",
+            "salario": 60000,
+            "jefeId": 1,
+            "proyectos": [
+                {
+                    "id": 103,
+                    "nombre": "Proyecto C"
+                }
+            ],
+            "habilidades": [
+                "Gestión de Recursos Humanos",
+                "Comunicación"
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Carlos Rodríguez",
+            "edad": 40,
+            "departamento": "Desarrollo",
+            "salario": 90000,
+            "jefeId": 1,
+            "proyectos": [
+                {
+                    "id": 101,
+                    "nombre": "Proyecto A"
+                },
+                {
+                    "id": 104,
+                    "nombre": "Proyecto D"
+                }
+            ],
+            "habilidades": [
+                "Java",
+                "Spring",
+                "Python"
+            ]
+        }
+    ]
+}

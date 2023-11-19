@@ -6,13 +6,13 @@ import java.util.Optional;
 
 public class CategoriaXMLAdapter extends XmlAdapter<String, Categoria> {
     @Override
-    public Categoria unmarshal(String v) throws Exception {
+    public Categoria unmarshal(String v) {
         return Arrays.stream(Categoria.values()).filter(categoria -> categoria.toString().equalsIgnoreCase(v)).
                 findFirst().orElse(Categoria.DESCONOCIDO);
     }
 
     @Override
-    public String marshal(Categoria v) throws Exception {
+    public String marshal(Categoria v) {
         return v.toString();
     }
 }
