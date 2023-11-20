@@ -6,6 +6,7 @@
  * Node ver: v21.0.0
  * */
 
+import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
@@ -14,6 +15,8 @@ import ruta from "./routes/author.routes.js";
 import rutasTareas from "./routes/tasks.routes.js";
 
 const app = new express();
+
+app.use(cors());
 
 // Antes de las rutas o no recoge 
 // la cookie al  iniciar sesión
