@@ -1,0 +1,13 @@
+1. Modifique el ejemplo anterior para que usar claves públicas y privadas generadas desde
+línea de comandos.
+
+2. Haga un programa al que se le pase por línea de comandos 3 argumentos, el nombre del
+archivo que guarda la clave pública, el nombre de un archivo y el nombre del archivo de
+salida. Se debe guardar el archivo cifrado en el archivo de salida. Guarde el texto en formato
+base64.
+
+3. Haga ahora un programa que descifre el archivo generado en el ejemplo anterior. Se le
+deben de pasar 3 argumentos, el nombre del archivo que guarda la clave privada, el nombre
+del archivo cifrado y el nombre del archivo en el que se guardará la salida.
+
+4. Verifique que con los programas anteriores no se pueden cifrar archivos grandes.

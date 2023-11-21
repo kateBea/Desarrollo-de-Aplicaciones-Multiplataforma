@@ -1,0 +1,1 @@
+const CLIENT_DISCONNECT = "/dc";
