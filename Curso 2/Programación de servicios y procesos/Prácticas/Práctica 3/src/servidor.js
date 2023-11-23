@@ -1,6 +1,7 @@
 'use strict'
 
 const dgram = require('dgram');
+const Utils = require("./utils.js");
 
 const BIND_PORT = 8000;
 
@@ -16,7 +17,8 @@ server.on('message', (msg, rinfo) => {
     const clientPort = rinfo.port;
     const clientAddress = rinfo.address;
 
-    console.log('Mensaje: ' + clientMsg + " recibido de " + clientAddress + ':' + clientPort);
+    console.log(Utils.NEW_CONNECTION.replace("__ADDRESS__", `${clientAddress}:${clientPort}`));
+    console.log(`Mensaje: '${clientMsg}'  recibido de ${clientAddress}:${clientPort}`);
 });
 
 server.on('listening', () => {
