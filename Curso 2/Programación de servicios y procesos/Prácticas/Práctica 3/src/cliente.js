@@ -7,7 +7,7 @@
 
 "use strict"
 
-/* Imports */
+/** Imports */
 
 const Dgram = require('dgram');
 const Utils = require("./utils.js");
@@ -24,7 +24,8 @@ const SOCKET_TYPE = "udp4";
 const COMMAND_LINE_ARGS = process.argv;
 
 /** Globales */
-let userInput = "";
+let client;
+let readliner;
 
 /**
  * Muestra los comandos de este programa.
@@ -74,47 +75,47 @@ function ParseComdLineArguments() {
 
 function Init() {
     // client
-    const client = Dgram.createSocket(SOCKET_TYPE);
-    
-    // readline
-    process.stdout.write('> ');
+    client = Dgram.createSocket(SOCKET_TYPE);
 
-    const rl = Readline.createInterface({
+    // readline
+    readliner = Readline.createInterface({
         input: process.stdin,
-        output: process.stdout,
-        terminal: true
+        output: process.stdout
     });
 
-    return [ client, rl ];
+    readliner.on('close', () => {
+        client.close();
+        console.log('Desconectado.');
+    });
 }
 
-function RunMainLoop(client, inputReader) {
-    inputReader.on("line", (line) => {
-        userInput = new Buffer.from(line);
-
-        client.send(userInput, 0, userInput.length, PORT, ADDRESS, (err, bytes) => {
-            if (err) {
-                throw err;
-            }
+function HandleUserInputs(targetString) {
+    readliner.question(`[Channel: Main] (escribe '${targetString}' para desconetar): `, (userInput) => {
+        if (userInput === targetString) {
+            readliner.close();
+        } else {
+            const message = new Buffer.from(userInput);
             
-            console.log('UDP message sent to ' + ADDRESS + ':' + PORT);
-        });
-
-        process.stdout.write("\r> ");
+            client.send(message, 0, message.length, PORT, ADDRESS, (err, bytes) => {
+                if (err) {
+                    throw err;
+                }
+            
+                console.log('UDP message sent to ' + ADDRESS + ':' + PORT);
+                HandleUserInputs(targetString);
+            });
+        }
     });
+}
 
-    inputReader.once("close", () => {
-        
-    });
+function  ConnectToServer() {
 
-    do {
-        if (userInput === Utils.CLIENT_DISCONNECT) {
-            inputReader.close();
-            client.close();
-        }        
+}
 
-        const answer = inputReader.question('What is your favorite food? ');
-    } while (userInput !== Utils.CLIENT_DISCONNECT);
+function RunMainLoop() {
+    ConnectToServer();
+
+    HandleUserInputs(Utils.CLIENT_DISCONNECT);
 }
 
 function Run() {
@@ -123,10 +124,10 @@ function Run() {
     }
 
     console.log(Utils.BIENVENIDA_CHAT.replace("__NAME__", COMMAND_LINE_ARGS[2]));
-    
-    const result = Init();
 
-    RunMainLoop(result[0], result[1]);
+    Init();
+
+    RunMainLoop();
 }
 
 Run();

@@ -39,8 +39,25 @@ function DecryptSimetric() {
 
 }
 
+class ChatClient {
+    constructor(name, password, address, port) {
+        this.name = name;
+        this.password = password;
+        this.address = address;
+        this.port = port;
+    }
+
+    displayClientInfo() {
+        console.log(`Nombre: ${this.name}`);
+        console.log(`Password: ${this.password}`);
+        console.log(`Address: ${this.address}`);
+        console.log(`Port: ${this.port}`);
+    }
+}
+
 /** Exports */
 exports.HELP_COMMAND = HELP_COMMAND;
 exports.NEW_CONNECTION = NEW_CONNECTION;
 exports.BIENVENIDA_CHAT = BIENVENIDA_CHAT;
 exports.CLIENT_DISCONNECT = CLIENT_DISCONNECT;
+exports.ChatClient = ChatClient;
