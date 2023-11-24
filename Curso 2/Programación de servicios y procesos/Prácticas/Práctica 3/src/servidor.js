@@ -10,6 +10,7 @@
 
 /** Imports */
 
+const Fs = require("fs");
 const Dgram = require('dgram');
 const Utils = require("./utils.js");
 
@@ -23,6 +24,9 @@ const BIND_PORT = 8000;
 
 let server;
 let clients = []
+
+let serverPublicKey;
+let serverPrivateKey;
 
 
 function IsAlreadyConnected(clientName) {
@@ -39,7 +43,20 @@ function GeneratePassword() {
 
 }
 
+function LoadKeys() {
+    try {
+        serverPublicKey = Fs.readFileSync("server-public.cert", { encoding: "utf8" }); 
+        serverPrivateKey = Fs.readFileSync("server-private.key", { encoding: "utf8" });
+    } catch(err) {
+        console.log(`Excepción. Mensaje [ ${err.message} ]`);
+    }
+}
+
 function Run() {
+    Utils.TextoColoreado("Iniciando servidor", Utils.COLOR_VERDE);
+
+    LoadKeys();
+
     server = Dgram.createSocket('udp4');
 
     server.on('error', (err) => {
@@ -47,7 +64,17 @@ function Run() {
         server.close();
     });
     
-    server.on('message', (msg, rinfo) => {
+    server.on("message", (msg, rinfo) => {
+        const parsedData = Utils.ParseJSON(msg);
+
+        // depuración
+        console.log(parsedData);
+
+        if (parsedData == null) {
+            // JSON inválido
+            return;
+        }
+
         const clientMsg = msg;
         const clientName = null;
         const clientPort = rinfo.port;
@@ -55,7 +82,7 @@ function Run() {
         
         const result = IsAlreadyConnected(clientName);
 
-        if (result == -1) {
+        if (result == -1 && false) {
             // Nueva conexión
             const password = GeneratePassword();
             clients.push(new ChatClient(clientName, password, clientAddress, clientPort));

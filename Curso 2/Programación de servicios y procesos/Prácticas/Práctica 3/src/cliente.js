@@ -9,6 +9,7 @@
 
 /** Imports */
 
+const Fs = require("fs");
 const Dgram = require('dgram');
 const Utils = require("./utils.js");
 const Readline = require("readline");
@@ -26,6 +27,10 @@ const COMMAND_LINE_ARGS = process.argv;
 /** Globales */
 let client;
 let readliner;
+
+let clientPublicKey;
+let clientPrivateKey;
+let serverPrivateKey;
 
 /**
  * Muestra los comandos de este programa.
@@ -83,32 +88,47 @@ function Init() {
         output: process.stdout
     });
 
-    readliner.on('close', () => {
+    readliner.on("close", () => {
         client.close();
-        console.log('Desconectado.');
+        Utils.TextoColoreado("Desconectado.", Utils.COLOR_VERDE);
     });
 }
 
-function HandleUserInputs(targetString) {
-    readliner.question(`[Channel: Main] (escribe '${targetString}' para desconetar): `, (userInput) => {
-        if (userInput === targetString) {
-            readliner.close();
-        } else {
-            const message = new Buffer.from(userInput);
-            
-            client.send(message, 0, message.length, PORT, ADDRESS, (err, bytes) => {
-                if (err) {
-                    throw err;
-                }
-            
-                console.log('UDP message sent to ' + ADDRESS + ':' + PORT);
-                HandleUserInputs(targetString);
-            });
+function SenMessage(message) {
+    client.send(message, 0, message.length, PORT, ADDRESS, (err, bytes) => {
+        if (err) {
+            throw err;
+        }
+
+        Utils.TextoColoreado('UDP message sent to ' + ADDRESS + ':' + PORT, Utils.COLOR_VERDE);
+        HandleUserInputs(targetString);
+    });
+}
+
+function HandleUserInputs(targetString) {`\x1b[0;${1}m${1}\x1b[0m`
+    readliner.question(
+        `[Client: ${COMMAND_LINE_ARGS[2]}] (escribe '${targetString}' para desconetar): `, 
+        function(userInput) {
+            if (userInput === targetString) {
+                readliner.close();
+            } else {
+                const message = new Buffer.from(JSON.stringify({ "nombre": COMMAND_LINE_ARGS[2], "mensaje": userInput }));
+                
+                SenMessage(message);
         }
     });
 }
 
-function  ConnectToServer() {
+function ConnectToServer() {
+    // cargar claves
+    try {
+        clientPublicKey = Fs.readFileSync("client-public.cert", { encoding: "utf8" }); 
+        clientPrivateKey = Fs.readFileSync("client-private.key", { encoding: "utf8" });
+    
+        serverPrivateKey = Fs.readFileSync("server-public.cert", { encoding: "utf8" });
+    } catch(err) {
+        console.log(`Excepción. Mensaje [ ${err.message} ]`);
+    }
 
 }
 
