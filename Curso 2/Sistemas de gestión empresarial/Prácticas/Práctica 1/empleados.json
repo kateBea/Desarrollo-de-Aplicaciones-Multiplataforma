@@ -1,0 +1,109 @@
+{
+    "empleados": [
+        {
+            "nombre": "Juan Perez",
+            "edad": 28,
+            "puesto": "Desarrollador",
+            "departamento": "Tecnología",
+            "salario": 50000
+        },
+        {
+            "nombre": "Maria Rodriguez",
+            "edad": 35,
+            "puesto": "Gerente de Proyectos",
+            "departamento": "Gestión de Proyectos",
+            "salario": 60000
+        },
+        {
+            "nombre": "Pedro Gomez",
+            "edad": 30,
+            "puesto": "Analista de Datos",
+            "departamento": "Análisis de Datos",
+            "salario": 55000
+        },
+        {
+            "nombre": "Ana Martinez",
+            "edad": 32,
+            "puesto": "Diseñador UX/UI",
+            "departamento": "Diseño",
+            "salario": 70000
+        },
+        {
+            "nombre": "Luis Fernandez",
+            "edad": 40,
+            "puesto": "Director de Tecnología",
+            "departamento": "Alta Dirección",
+            "salario": 75000
+        },
+        {
+            "nombre": "Laura Diaz",
+            "edad": 28,
+            "puesto": "Ingeniero de Software",
+            "departamento": "Tecnología",
+            "salario": 65000
+        },
+        {
+            "nombre": "Carlos Lopez",
+            "edad": 35,
+            "puesto": "Especialista en Marketing",
+            "departamento": "Marketing",
+            "salario": 80000
+        },
+        {
+            "nombre": "Sofia Ramirez",
+            "edad": 33,
+            "puesto": "Coordinador de Recursos Humanos",
+            "departamento": "Recursos Humanos",
+            "salario": 72000
+        },
+        {
+            "nombre": "Javier Torres",
+            "edad": 29,
+            "puesto": "Analista de Seguridad",
+            "departamento": "Seguridad Informática",
+            "salario": 58000
+        },
+        {
+            "nombre": "Elena Herrera",
+            "edad": 31,
+            "puesto": "Especialista en Finanzas",
+            "departamento": "Finanzas",
+            "salario": 67000
+        },
+        {
+            "nombre": "Miguel Castro",
+            "edad": 34,
+            "puesto": "Ingeniero de Sistemas",
+            "departamento": "Tecnología",
+            "salario": 71000
+        },
+        {
+            "nombre": "Carmen Jimenez",
+            "edad": 36,
+            "puesto": "Analista de Recursos Humanos",
+            "departamento": "Recursos Humanos",
+            "salario": 59000
+        },
+        {
+            "nombre": "Roberto Sanchez",
+            "edad": 37,
+            "puesto": "Arquitecto de Soluciones",
+            "departamento": "Tecnología",
+            "salario": 68000
+        },
+        {
+            "nombre": "Isabel Vargas",
+            "edad": 29,
+            "puesto": "Especialista en Comunicaciones",
+            "departamento": "Comunicaciones",
+            "salario": 63000
+        },
+        {
+            "nombre": "Antonio Vega",
+            "edad": 38,
+            "puesto": "Director de Operaciones",
+            "departamento": "Alta Dirección",
+            "salario": 77000
+        }
+    ]
+}
