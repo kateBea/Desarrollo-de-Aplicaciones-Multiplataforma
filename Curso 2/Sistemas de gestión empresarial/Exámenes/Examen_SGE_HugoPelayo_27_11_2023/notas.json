@@ -1,0 +1,51 @@
+{
+    "notas":[
+        {
+            "nombre": "Juan Pablo",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 5,
+                    "nota2": 6
+                }
+            ]
+        },{
+            "nombre": "Luis Miguel",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 7,
+                    "nota2": 8
+                }
+            ]
+        },{
+            "nombre": "Sofia",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 5,
+                    "nota2": 6
+                }
+            ]
+        },{
+            "nombre": "Lucas",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 5,
+                    "nota2": 7
+                }
+            ]
+        },{
+            "nombre": "Aaron",
+            "modulos": [
+                {
+                    "nombreModulo": "Desarrollo Interfaces",
+                    "nota1": 8,
+                    "nota2": 8
+                }
+            ]
+        }
+        
+    ]
+}

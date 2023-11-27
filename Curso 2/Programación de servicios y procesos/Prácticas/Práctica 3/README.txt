@@ -16,7 +16,7 @@ Si queremos desabilitar esta información usamos --degub-disabled.
 Con node servidor.js --help nos saldrá una pequeña ayuda de estos dos comandos básicos del servidor.
 Con node cliente.js --help nos saldrá una pequeña ayuda de estos dos comandos básicos del cliente.
 
-El servidor se cierra automáticamente después de 5 segundos de inactividad.
+El servidor se cierra automáticamente después de 1 minuto de inactividad.
 
 ===========================================================================
 

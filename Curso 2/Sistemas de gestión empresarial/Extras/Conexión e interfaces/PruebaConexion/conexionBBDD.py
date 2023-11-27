@@ -1,10 +1,15 @@
-import mysql.connector;  '''Importamos la librería connector, para poder conectarnos a nuestra base de datos Mysql que recordar que debe de estar arrancada desde Docker'''
+'''Importamos la librería connector, para poder conectarnos a nuestra 
+base de datos Mysql que recordar que debe de estar arrancada desde Docker'''
+import mysql.connector;
 
 '''Para arrancar la imagen de Mysql de docker utilizo el siguiente comando desde un terminal'''
 
 '''$docker run -d -p 3306:3306 --name same-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql'''
 
-'''Recordar que en este comando el parámetro que le pasamos a --name es el nombre del contenedor de Docker de nuestra base de datos y que vosotros podéis poner el nombre que queráis. Lo mismo pasa con la contraseña que le paso al Root, le ponéis la que vosotros queráis, recordando que estamos con Docker y que no son datos persistentes.'''
+'''Recordar que en este comando el parámetro que le pasamos a --name es el nombre del contenedor
+de Docker de nuestra base de datos y que vosotros podéis poner el nombre que queráis. 
+Lo mismo pasa con la contraseña que le paso al Root, le ponéis la que vosotros queráis, 
+recordando que estamos con Docker y que no son datos persistentes.'''
 
 '''Si os dice que ese contenedor ya existe, lo podéis borrar con la siguiente instrucción'''
 
@@ -14,7 +19,8 @@ import mysql.connector;  '''Importamos la librería connector, para poder conect
 
 '''$docker exec -it some-mysql mysql -u root -p'''
 
-'''El nombre que le estoy pasando al parámetro -it es el nombre del contenedor que hemos creado al lanzar la primera orden que os he puesto en estos comentarios, en este caso es some-mysql'''
+'''El nombre que le estoy pasando al parámetro -it es el nombre del contenedor que hemos creado al 
+lanzar la primera orden que os he puesto en estos comentarios, en este caso es some-mysql'''
 
 '''En este documento vamos a crear una clase que trabaje sobre la base de datos, haciendo conexiones y consultas'''
 
@@ -22,21 +28,28 @@ import mysql.connector;  '''Importamos la librería connector, para poder conect
 '''Creo la clase con class. En python, si heredamos de otra clase, se pasa entre los parénteis.'''
 
 class baseDatosDAM():
-    '''Como toda clase dispone de sus constructor, en el que vamos a definir todas las variables y todo lo que nos haga falta para poder trabajar con esta clase.'''
+    '''Como toda clase dispone de sus constructor, en el que vamos a definir todas las variables 
+    y todo lo que nos haga falta para poder trabajar con esta clase.''' 
+    
     '''este constructor viene definido por la siguiente función'''
     def __init__(self, huesped, usuario, contrasena):
-        '''Muy importante el self, es lo que va a hacer referencia a todos los elementos situados en nuestra clase. Así mismo, todos los valores que le pasamos como entrada a esta clase, los recibimos en el init, por ejemplo 
+        '''Muy importante el self, es lo que va a hacer referencia a todos los elementos
+        situados en nuestra clase. Así mismo, todos los valores que le pasamos como entrada 
+        a esta clase, los recibimos en el init, por ejemplo 
         def __init__(self, nombre, edad)'''
-        '''Importante, si heredamos de otra clase, debéis de definir, dentro de este constructor, el constructor de la super clase. por ejemplo '''
+        '''Importante, si heredamos de otra clase, debéis de definir, dentro de este constructor, 
+        el constructor de la super clase. por ejemplo '''
         ''' class baseDatosDAM(tkinter):
                 def __init__(self):
                     super().__init__()
                     
         Si no hacemos esto, python entra en recursividad y la aplicación nos reportaría un herror.'''
-        '''En este caso, dentro del constructor, voy a recibir los tres datos necesarios para hacer la conexión host, user, passord'''
+        '''En este caso, dentro del constructor, voy a recibir los tres datos necesarios
+        para hacer la conexión host, user, passord'''
         self.huesped = huesped
         self.usuario = usuario
         self.contrasena = contrasena
+        
         '''de esta manera, ya tengo inicializadas mis variables para poder trabajar en la clase.'''
         self.conexionBBDD()
         
@@ -92,7 +105,10 @@ class baseDatosDAM():
             print("No se ha borrado la tabla")
 
 
-    '''Actualización de registros. En este caso el funcionamiento es similar a lo que hemos ido viendo a lo largo de los métodos.Os tenéis que acordar de pasar el self.conector.commit(). Esto es necesario para que se actualice el cambio que has realizado.COMO EJEMPO, vamos a suponer que queremos actualizar en la tipica tabla "clientes" una dirección. El método quedaría como sigue:'''
+    '''Actualización de registros. En este caso el funcionamiento es similar a lo que 
+    hemos ido viendo a lo largo de los métodos.Os tenéis que acordar de pasar el self.conector.commit(). 
+    Esto es necesario para que se actualice el cambio que has realizado.COMO EJEMPO, vamos a suponer 
+    que queremos actualizar en la tipica tabla "clientes" una dirección. El método quedaría como sigue:'''
     def actualizarDatos(self, valorNuevo, valorViejo):
         try:
             self.cursor.execute("Update clientes set Address = 'Villablanca' where address = 'Madrid'")

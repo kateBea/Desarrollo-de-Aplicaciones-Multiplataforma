@@ -55,7 +55,7 @@ let serverPrivateKey;
 
 // pasado este tiempo el servidor se cierra
 // representa tiempo en milisegundos (10 segundos por defecto)
-let timeOut = 10000;
+let timeOut = 60000;
 let timeOutObj = undefined;
 
 
