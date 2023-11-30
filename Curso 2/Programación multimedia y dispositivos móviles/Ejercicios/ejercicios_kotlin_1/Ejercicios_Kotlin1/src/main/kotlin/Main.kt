@@ -246,6 +246,7 @@ fun<T> mostrarConMedia(lista: Array<T>) {
     println("Lista ${ toListString(lista) }")
     println("Media ${ mediaIntOrDouble(*lista) }")
 }
+
 /**
  * Crear una función basada en el ejercicio anterior que esté parametrizada para
  * funcionar solamente con enteros y double.
