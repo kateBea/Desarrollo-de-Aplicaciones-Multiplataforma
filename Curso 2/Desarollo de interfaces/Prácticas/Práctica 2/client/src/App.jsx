@@ -8,6 +8,7 @@ import TaskFormPage from "./pages/TaskFormPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
 
 import { AuthProvider } from "./context/AuthContext.jsx";
+import ProtectedRoute from "./ProtectedRoutes.jsx";
 
 export default function App() {
     return (
@@ -18,6 +19,9 @@ export default function App() {
                     <Route path="/login" element={ <LoginPage/> } />
                     <Route path="/register" element={ <RegisterPage/> } />
 
+                </Routes>
+
+                <Routes element={<ProtectedRoute/>}>
                     <Route path="/tasks" element={ <TaskPage/> } />
                     <Route path="/add-task" element={ <TaskFormPage/> } />
                     <Route path="/tasks/:id" element={ <TaskFormPage/> } />

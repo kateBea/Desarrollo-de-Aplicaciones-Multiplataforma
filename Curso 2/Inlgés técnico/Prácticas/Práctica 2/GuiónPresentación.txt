@@ -1,0 +1,27 @@
+The second part of our application is our frontend, which is the part that is going to be seen
+by our end user. To build the front end we use three technologies Vite, React and JS. These are well suited tools
+for the kind of application we are trying to build because we want something up and running quickly.
+Vite is a framework that comes with predefined code templates to build modern websites, react is the a fast and easy to use framwork for 
+building websites which is used in conjuction with vite and tailwindcss is css library to define our website look and feel.
+The alternative is boostrap, which is pretty similar but we choose this one for learning purposes, since it expands the number
+of tools available in our toolset.
+
+The following step is to setup the routes, this essentially means that we want to map addresses the user of our front end accesses to
+specific webpages. For this task we use the module react-router-dom. Since this module is not part of the bundled set of modules from nodejs
+we need to install it too using the npm command. With that out of the way we can specify the routes for each of the addresses the 
+user can request.
+
+At this point we simply have a fancy graphics user interface where the user can input data in some sort of form. To send the data
+to our backend we need to connect to it somehow. Keep in mind the server could be anywhere and not necesarily in the pc we are
+building this app. For this we use a third party module called axios. There is a built in way in the browser of doing this via fetch,
+but that interface is meant for other tasks besides what we are trying to do here. With axios setup we simply need to make the request to
+send the data to our backend.
+
+The way we build this is app is: we have a context (all the information that is part of our frontend) which is the whole frontend project, 
+which is made of various components. These are just just blocks of code to manipulate data. We pass data across these components using the 
+providers which are just utility functions to share information.
+
+The last part of our frontend is basically to secure our routes. For this we basically want a way to make a list of routes accessible 
+to the user that is currently logged in. The way we would do this without react-router-dom is by passing around an isAuthenticated flag and check 
+it before granting access to the user to a specific route, but with react-router-dom we have a more comfortable way of working with protected routes
+by just grouping them into a ProtectedRoute element.
