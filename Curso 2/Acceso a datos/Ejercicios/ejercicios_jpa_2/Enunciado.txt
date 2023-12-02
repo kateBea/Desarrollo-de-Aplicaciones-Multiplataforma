@@ -1,0 +1,27 @@
+Teniendo presente las siguientes premisas:
+
+    En un grupo hay varios alumnos
+    Un alumno cursa varios módulos
+    Un módulo es cursado por varios alumnos.
+    Un alumno tiene una nota en un módulo. (valor entero entre 1 y 10)
+    Del grupo se guarda su nombre, su ubicación y su tutor.
+    Del alumno se guarda su dni, fecha nacimiento, nombre y dirección.
+    Del módulo se guarda su id, nombre y el profesor que lo imparte.
+    Un profesor puede impartir varios módulos.
+    Del profesor se guarda su dni, nombre y especialidad.
+    Un alumno sólo tiene una dirección.
+    En una dirección sólo vive un alumno.
+    De la dirección se guarda calle, portal y población.
+
+Realizar una aplicación que inserte 2 profesores, 2 grupos, 5 alumnos, 4 módulos. A continuación realizar las siguientes operaciones:
+
+    Adjudicar los módulos a los profesores.
+    Asociar los alumnos a los grupos.
+    Poner una nota a un alumno en un módulo.
+    Listar los alumnos de un grupo.
+    Listar los distintos módulos que cursan los alumnos de un grupo.
+    Eliminar un alumno.
+    Eliminar todos los alumnos de un grupo.
+    Subir un punto a todos los alumnos en un módulo.
+    Mostrar los alumnos aprobados de un módulo.
+

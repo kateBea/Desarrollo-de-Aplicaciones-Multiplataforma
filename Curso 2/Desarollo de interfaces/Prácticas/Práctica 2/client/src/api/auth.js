@@ -4,7 +4,6 @@ import axios from "axios";
 const PORT = 4000;
 const API = `http://localhost:${PORT}`;
 
-const RegisterRequest = (user) => axios.post(`${API}/register`, user);
-
-
-export default RegisterRequest;
+export const RegisterRequest = (user) => axios.post(`${API}/register`, user);
+export const LoginRequest = (user) => axios.post(`${API}/login`, user);
+export const VerifyTokenRequest = (user) => axios.get(`${API}/verify`, user);

@@ -1,0 +1,33 @@
+<%- include('cabecera', {titulo: 'Inicio'}) -%>
+<div class="section">
+  <div class="container">
+    <br><br>
+    <div class="row">
+    <form class="col s12" method='post' action='login'>
+      <div class="row">
+        <div class="z-depth-5 col s12 red" style='display: <%= login_error %>'>
+          <p class="">Error: Usuario o contraseña incorrectos.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="usuario" name='usuario' type="text" class="validate">
+          <label for="usuario">Usuario</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" name='password' type="password" class="validate">
+          <label for="password">Contraseña</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class='input-field col s10'></div>
+        <div class="input-field col s2">
+          <input type="submit" value='Enviar' class="waves-effect waves-light blue lighten-1 btn">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('pie') -%>

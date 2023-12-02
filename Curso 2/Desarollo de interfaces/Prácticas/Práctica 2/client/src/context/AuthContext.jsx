@@ -1,5 +1,5 @@
 import { creareContext, useState, useContext, createContext } from "react";
-import RegisterRequest from "../api/auth.js";
+import { RegisterRequest }  from "../api/auth.js";
 
 export const AuthContext = createContext();
 

@@ -1,0 +1,218 @@
+[
+    {
+        "dia": "13-12-2022",
+        "hora": "10:00",
+        "motivo": "Envío de boletines de 2º de ciclos",
+        "color": "red"
+    },
+    {
+        "dia": "24-06-2023",
+        "hora": "10:00",
+        "motivo": "Envío de boletines extraordinaria de 2º de ciclos",
+        "color": "orange"
+    },
+    {
+        "dia": "19-12-2022",
+        "hora": "10:00",
+        "motivo": "Envío de boletines extraordinaria de 2º de ciclos. Alumnos con pendientes",
+        "color": "yellow"
+    },
+    {
+        "dia": "14-10-2022",
+        "hora": "10:00",
+        "motivo": "Comedor escolar: Plazo límite para firmar el anexo 8 (Firma del contrato)",
+        "color": "green"
+    },
+    {
+        "dia": "21-12-2022",
+        "hora": "12:44",
+        "motivo": "Clases particulares de diseño artístico con el nuevo profesor de artes plásticas",
+        "color": "blue"
+    },
+    {
+        "dia": "21-12-2022",
+        "hora": "17:37",
+        "motivo": "Reunión con los nuevos becarios de la empresa",
+        "color": "orange"
+    },
+    {
+        "dia": "21-05-2020",
+        "hora": "10:44",
+        "motivo": "Desayuno familiar",
+        "color": "orange"
+    },
+    {
+        "dia": "21-05-2020",
+        "hora": "15:55",
+        "motivo": "Entrevista con los miembros del nuevo plan de empresa",
+        "color": "red"
+    },
+    {
+        "dia": "15-10-2023",
+        "hora": "09:30",
+        "motivo": "Reunión de trabajo",
+        "color": "green"
+    },
+    {
+        "dia": "30-07-2024",
+        "hora": "14:15",
+        "motivo": "Entrega de premios anuales",
+        "color": "blue"
+    },
+    {
+        "dia": "02-04-2023",
+        "hora": "16:45",
+        "motivo": "Conferencia académica",
+        "color": "orange"
+    },
+    {
+        "dia": "15-09-2023",
+        "hora": "11:30",
+        "motivo": "Jornada de puertas abiertas",
+        "color": "yellow"
+    },
+    {
+        "dia": "07-05-2024",
+        "hora": "13:00",
+        "motivo": "Celebración del Día de la Madre",
+        "color": "red"
+    },
+    {
+        "dia": "19-11-2025",
+        "hora": "10:30",
+        "motivo": "Seminario de tecnología",
+        "color": "green"
+    },
+    {
+        "dia": "24-12-2025",
+        "hora": "20:00",
+        "motivo": "Cena de Nochebuena",
+        "color": "yellow"
+    },
+    {
+        "dia": "31-12-2025",
+        "hora": "23:59",
+        "motivo": "Celebración de Año Nuevo",
+        "color": "blue"
+    },
+    {
+        "dia": "14-02-2026",
+        "hora": "18:00",
+        "motivo": "Cena de San Valentín",
+        "color": "red"
+    },
+    {
+        "dia": "05-09-2026",
+        "hora": "14:30",
+        "motivo": "Reunión de planificación estratégica",
+        "color": "green"
+    },
+    {
+        "dia": "03-11-2027",
+        "hora": "09:00",
+        "motivo": "Conferencia de liderazgo",
+        "color": "orange"
+    },
+    {
+        "dia": "01-05-2028",
+        "hora": "12:00",
+        "motivo": "Día del Trabajo",
+        "color": "red"
+    },
+    {
+        "dia": "08-12-2028",
+        "hora": "15:30",
+        "motivo": "Celebración del Día de la Inmaculada",
+        "color": "blue"
+    },
+    {
+        "dia": "18-03-2029",
+        "hora": "17:30",
+        "motivo": "Seminario de desarrollo personal",
+        "color": "orange"
+    },
+    {
+        "dia": "25-12-2029",
+        "hora": "12:00",
+        "motivo": "Celebración de Navidad",
+        "color": "red"
+    },
+    {
+        "dia": "21-04-2030",
+        "hora": "10:15",
+        "motivo": "Conferencia de ciencia y tecnología",
+        "color": "green"
+    },
+    {
+        "dia": "02-08-2030",
+        "hora": "09:00",
+        "motivo": "Reunión de negocios",
+        "color": "yellow"
+    },
+    {
+        "dia": "09-01-2031",
+        "hora": "14:00",
+        "motivo": "Reunión de inicio de año",
+        "color": "blue"
+    },
+    {
+        "dia": "06-05-2031",
+        "hora": "16:30",
+        "motivo": "Día de la Madre",
+        "color": "orange"
+    },
+    {
+        "dia": "14-02-2032",
+        "hora": "19:30",
+        "motivo": "Cena de San Valentín",
+        "color": "red"
+    },
+    {
+        "dia": "18-10-2033",
+        "hora": "10:00",
+        "motivo": "Seminario de marketing",
+        "color": "green"
+    },
+    {
+        "dia": "25-12-2033",
+        "hora": "08:00",
+        "motivo": "Celebración de Navidad",
+        "color": "yellow"
+    },
+    {
+        "dia": "03-03-2034",
+        "hora": "15:45",
+        "motivo": "Conferencia de arte y cultura",
+        "color": "blue"
+    },
+    {
+        "dia": "10-09-2035",
+        "hora": "13:15",
+        "motivo": "Reunión de desarrollo de productos",
+        "color": "orange"
+    },
+    {
+        "dia": "18-05-2036",
+        "hora": "11:00",
+        "motivo": "Día de la Madre",
+        "color": "red"
+    },
+    {
+        "dia": "27-02-2037",
+        "hora": "17:00",
+        "motivo": "Seminario de salud y bienestar",
+        "color": "green"
+    },
+    {
+        "dia": "01-01-2038",
+        "hora": "00:01",
+        "motivo": "Celebración de Año Nuevo",
+        "color": "yellow"
+    },
+    {
+        "dia": "14-11-2039",
+        "hora": "08:30",
+        "motivo": "Reunión anual de la empresa",
+        "color": "blue"
+    }
+]

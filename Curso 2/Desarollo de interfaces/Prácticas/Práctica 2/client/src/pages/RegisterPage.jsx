@@ -20,7 +20,7 @@ function RegisterPage() {
     });
 
     return (
-        <div className="bg-zinc-800 max-w-md p-10 rounded-md">
+        <div className="bg-zinc-800 p-10 rounded-md flex justify-center items-center">
             {
                 registerErros.map((error, i) => {
                     <div className="bg-red-500 p-2 text-white" key={i}>
