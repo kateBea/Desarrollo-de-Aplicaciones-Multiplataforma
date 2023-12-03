@@ -13,9 +13,10 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<h1 className="text-4xl font-bold">Hola 2DAM</h1>} />
+          <Route path='/' element={<h1 className="text-4xl font-bold">Hola 2 DAM</h1>} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
+
           <Route element={<ProtectedRoute />}>
             <Route path='/tasks' element={<TasksPage />} />
             <Route path='/add-task' element={<TaskFormPage />} />

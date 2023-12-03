@@ -31,10 +31,14 @@ function RegisterPage() {
 
             <form onSubmit={ onSubmit }>
 
-                <input type="text" {...register("username", { required: true})}  className="w-full bg-zinc-700 text-white px-4 py-2 rounded-m my-2" placeholder="Usuario"/>
+                <input 
+                    type="text" 
+                    {...register("username", { required: true})}  
+                    className="w-full bg-zinc-700 text-white px-4 py-2 rounded-m my-2" 
+                    placeholder="Usuario"
+                />
 
-                {
-                    errors.username && (
+                {errors.username && (
                         <p className="text-red-500">
                             El usuario es requerido
                         </p>
@@ -42,25 +46,34 @@ function RegisterPage() {
                 }
 
 
-                <input type="email" {...register("email", { required: true})}  className="w-full bg-zinc-700 text-white px-4 py-2 rounded-m my-2" placeholder="Correo electrónico"/>
+                <input 
+                    type="email" 
+                    {...register("email", { required: true})}  
+                    className="w-full bg-zinc-700 text-white px-4 py-2 rounded-m my-2" 
+                    placeholder="Correo electrónico"
+                />
                 
-                {
-                    errors.email && (
+                { errors.email && (
                         <p className="text-red-500">
                             El e-mail es requerido
                         </p>
                     )
                 }
 
-                <input type="password" {...register("password", { required: true })} className="w-full bg-zinc-700 text-white px-4 py-2 rounded-m my-2" placeholder="Contraeña"/>
+                <input 
+                    type="password" 
+                    {...register("password", { required: true })} 
+                    className="w-full bg-zinc-700 text-white px-4 py-2 rounded-m my-2" 
+                    placeholder="Contraeña"
+                />
 
-                {
-                    errors.password && (
+                { errors.password && (
                         <p className="text-red-500">
                             La contraseña es requerida
                         </p>
                     )
                 }
+
                 <button type="submit" className="bg-slate-600 text-white rounded-md py-2 px-4 my-2">
                     Registrar
                 </button>
