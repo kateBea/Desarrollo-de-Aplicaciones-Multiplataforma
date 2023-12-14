@@ -1,0 +1,1 @@
+export const TOKEN_SECRET_KEY = "serverKey6996+";
