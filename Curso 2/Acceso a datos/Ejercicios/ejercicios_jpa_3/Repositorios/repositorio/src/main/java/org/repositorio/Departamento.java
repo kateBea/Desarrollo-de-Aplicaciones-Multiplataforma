@@ -19,5 +19,4 @@ public class Departamento {
 	private Integer codigo;
 	private String nombre;
 	private String ciudad;
-	
 }
