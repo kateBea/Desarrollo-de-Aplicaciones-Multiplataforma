@@ -4,6 +4,8 @@
 
 	<persistence-unit name="org.repositorio" transaction-type="RESOURCE_LOCAL">
 	 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	 	<class>org.repositorio.Departamento</class>
+	 	<class>org.repositorio.Empleado</class>
 	
 		<!-- Coge sólo las clases que aparecen -->
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
@@ -16,6 +18,7 @@
 	      	<property name="javax.persistence.jdbc.password" value=""/>
 	        
 	        <!-- TODO Línea AQUÍ. Para cargar datos del desde del META-INF del data.sql  -->
+	        <property name="hibernate.hbm2ddl.import_files" value="/META-INF/data.sql"/>
 	        
 	        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
 	        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
