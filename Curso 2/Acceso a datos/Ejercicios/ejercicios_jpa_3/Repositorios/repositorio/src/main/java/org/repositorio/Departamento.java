@@ -14,6 +14,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.ToString;
 
 @Data
@@ -27,6 +28,7 @@ import lombok.ToString;
 public class Departamento {
 	@Id
 	@Column(name = "coddepto")
+	@NonNull
 	@EqualsAndHashCode.Include
 	private Integer codigo;
 	

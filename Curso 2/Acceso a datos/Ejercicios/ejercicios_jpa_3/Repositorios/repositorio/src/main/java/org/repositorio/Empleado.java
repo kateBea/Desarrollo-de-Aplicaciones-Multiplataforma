@@ -18,6 +18,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Data
 @Builder
@@ -25,17 +26,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
-
 @Entity
 @Table(name = "Emple")
 public class Empleado {
 	@Id
 	@Column(name = "nidemp")
+	@NonNull
 	@EqualsAndHashCode.Include
 	private Integer id;
 	
 	@Column(name = "nomemp", nullable = false)
-	private String nomnbre;
+	private String nombre;
 	
 	@Column(name = "sexemp", nullable = false)
 	@Enumerated(EnumType.STRING)
@@ -48,7 +49,7 @@ public class Empleado {
 	private LocalDate fechaIncorporacion;
 	
 	@Column(name = "salemp", nullable = false)
-	private float saldo;
+	private float salario;
 	
 	@Column(name = "comisione", nullable = false)
 	private float comision;
@@ -65,6 +66,6 @@ public class Empleado {
 	// Uno a uno obligatoria
 	// No existen empleados sin departamento
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "coddepto")
+	@JoinColumn(name = "coddepto", nullable = false)
 	private Departamento departamento;
 }

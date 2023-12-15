@@ -32,7 +32,7 @@ public class App
     		System.out.println(empl);
     	}
     	
-    	Queries queries = new Queries(DAO_EMPLEADO, DAO_DEPARTAMENTO);
+    	Queries queries = new Queries(DAO_EMPLEADO, DAO_DEPARTAMENTO, true);
     	queries.run();
     }
 }
