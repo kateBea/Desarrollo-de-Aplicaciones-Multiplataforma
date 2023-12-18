@@ -39,4 +39,14 @@ public class Input {
 		
 		return Integer.parseInt(input);
 	}
+	
+	public static Double leerReal(String prompt) {
+		String input = leerCadena(prompt);
+		
+		if (input == null) {
+			return null;
+		}
+		
+		return Double.parseDouble(input);
+	}
 }

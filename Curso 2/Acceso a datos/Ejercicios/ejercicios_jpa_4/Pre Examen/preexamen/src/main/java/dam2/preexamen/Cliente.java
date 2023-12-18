@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.h2.expression.function.SetFunction;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -56,4 +58,23 @@ public class Cliente implements Serializable {
 		 inverseJoinColumns = { @JoinColumn(name = "Cuenta", nullable = false) }
 	)
 	private Set<Cuenta> cuentas;
+	
+	public static Cliente leer() {		
+		final String nif = Input.leerCadena("Introduce el nif: ");
+		final String nombre = Input.leerCadena("Introduce el nombre: ");
+		final double maxAvales = Input.leerReal("Introduce el valor de avales máximo: ");
+		
+		final Integer limitTelefonos = Input.leerEntero("Introduce el total de teléfonos: ");
+		Set<Telefono> telefonos = Set.of();
+		
+		if (limitTelefonos != null) {
+			for (int count = 0; count < limitTelefonos; ++count) {
+				String telf = Input.leerCadena("Número de teléfono: ");
+				String comp = Input.leerCadena("Nombre de compaía: ");
+				telefonos.add(Telefono.builder().numero(telf).compania(comp).build());
+			}
+		}
+		
+		return Cliente.builder().nif(nif).nombre(nombre).maxAvales(maxAvales).telefonos(telefonos).build();
+	}
 }
