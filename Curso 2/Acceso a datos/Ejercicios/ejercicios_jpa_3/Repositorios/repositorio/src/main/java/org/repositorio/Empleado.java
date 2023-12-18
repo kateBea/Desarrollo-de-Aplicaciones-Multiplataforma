@@ -10,7 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -57,15 +57,13 @@ public class Empleado {
 	@Column(name = "cargoe", nullable = false)
 	private String cargo;
 	
-	// Uno a uno (reflexiva) opcional
-	// Un empleado puede o no tener jefe
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	// Un empleado puede ser jefe de varios empleados
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "jefeid")
 	private Empleado jefe;
 	
-	// Uno a uno obligatoria
-	// No existen empleados sin departamento
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	// Varios empleados pueden estar en el mismo departamento
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "coddepto", nullable = false)
 	private Departamento departamento;
 }

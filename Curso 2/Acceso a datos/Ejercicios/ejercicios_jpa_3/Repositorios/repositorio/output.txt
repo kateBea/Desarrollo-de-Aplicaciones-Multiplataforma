@@ -6531,10 +6531,30 @@ Hibernate:
     group by
         departamen1_.nombredepto 
     having
-        count(empleado0_.nidemp)>3
+        count(empleado0_.nidemp)>=3
 4 | INVESTIGACIÓN
 5 | MANTENIMIENTO
+3 | MERCADEO
+3 | PRODUCCIÓN
 9 | VENTAS
+Hibernate: 
+    select
+        count(empleado0_.nidemp) as col_0_0_,
+        departamen1_.nombredepto as col_1_0_ 
+    from
+        Emple empleado0_ cross 
+    join
+        Depart departamen1_ 
+    where
+        empleado0_.coddepto=departamen1_.coddepto 
+    group by
+        empleado0_.coddepto 
+    having
+        count(*)>=3
+3 | PRODUCCIÓN
+3 | VENTAS
+4 | INVESTIGACIÓN
+3 | MERCADEO
 Query 49
 Hibernate: 
     select

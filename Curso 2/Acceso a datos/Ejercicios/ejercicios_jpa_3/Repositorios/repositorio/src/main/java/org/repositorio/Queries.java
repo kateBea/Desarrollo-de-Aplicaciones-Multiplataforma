@@ -373,7 +373,10 @@ public class Queries implements Runnable {
 		daoEmpleados.executeQuery("SELECT COUNT(e.id), d.nombre\n"
 				+ "FROM Empleado e INNER JOIN Departamento d ON e.departamento.codigo = d.codigo\n"
 				+ "GROUP BY d.nombre\n"
-				+ "HAVING COUNT(e.id) > 3").forEach(LIST_PRINTER);
+				+ "HAVING COUNT(e.id) >= 3").forEach(LIST_PRINTER);
+		
+		// alternativa
+		daoEmpleados.executeQuery("SELECT COUNT(e.id), e.departamento.nombre FROM Empleado e GROUP BY e.departamento HAVING COUNT(*) >= 3").forEach(LIST_PRINTER);
 
 		// 49. Obtener la lista de empleados jefes, que tienen al menos un empleado a su cargo. Ordene el informe inversamente por el nombre.
 		System.out.println("Query 49");
