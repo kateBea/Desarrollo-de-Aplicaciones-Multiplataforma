@@ -1,25 +1,29 @@
 package dam2.preexamen;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 
 @Entity
+@Table(name = "CuentasParticulares")
 public class CuentaParticular extends Cuenta {
 	private boolean tieneTarjetaCredito;
 	
 	// 2% de la cantidad a transferir
-	private static final double COMISION_TRANSFERENCIA = 0.02;
+	private static final double COMISION_TRANSFERENCIA = 0.002;
 	private static final double MAXIMO_COMISION_TRANSFERENCIA = 4.0;
 		
 	@Override
@@ -27,7 +31,7 @@ public class CuentaParticular extends Cuenta {
 		double result = -1;
 		final double totalAvalesTitulares = clientes.stream().mapToDouble(Cliente::getMaxAvales).sum();
 		
-		if (Math.abs(cantidad - getSaldo()) > totalAvalesTitulares / 2) {
+		if (Math.abs(getSaldo() - cantidad) > totalAvalesTitulares / 2) {
 			setSaldo(getSaldo() - cantidad);
 		}
 		

@@ -1,6 +1,12 @@
 package dam2.preexamen;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.function.Predicate;
 
 import dam2.utilidades_hibernate.GenericJPADAO;
 
@@ -20,6 +26,7 @@ public class App
 {
 	private static GenericJPADAO<Cliente, String> clienteDao;
 	private static GenericJPADAO<Telefono, String> telefonoDao;
+	private static GenericJPADAO<Cuenta, String> cuentaDao;
 	private static GenericJPADAO<CuentaEmpresa, String> cuentaEmpresaDao;
 	private static GenericJPADAO<CuentaParticular, String> cuentaParticularDao;
 	
@@ -36,7 +43,7 @@ public class App
     	
     	System.out.println("\n=================================");
     	System.out.println("  APLICACIÓN ENTIDAD FINANCIERA  ");
-    	System.out.println("=================================");
+    	System.out.println("=================================\n");
     	
     	do {
     		mostrarMenu();
@@ -69,36 +76,136 @@ public class App
 
     public static void opcion1() {
 		// Leer clientes de la cuenta
-    	Set<Cliente> clientes = Set.of();
-    	final Integer limitClientes = Input.leerEntero("Introduce total de clientes: ");
+    	List<Cliente> clientes = new ArrayList<>();
+    	Integer limitClientes = Input.leerEntero("Introduce total de clientes: ");
     	
     	if (limitClientes != null) {
     		for (int count = 0; count < limitClientes; ++count) {
     			Cliente resultado = Cliente.leer();
     			clientes.add(resultado);
-    			
-    			// guardamos el cliente si no está
-    			clienteDao.save(resultado);
     		}
     	}
     	
     	// Leer la cuenta
+    	Cuenta cuenta = Cuenta.leer(clientes);
+    	
+    	// Serializar datos
+    	for (Cliente cliente : clientes) {
+    		clienteDao.save(cliente);
+    	}
+    	
+    	cuentaDao.save(cuenta);
 	}
     
     public static void opcion2() {
+		final String numeroCuenta = Input.leerCadena("Introduce el número de cuenta: ");
+		final String nifCliente = Input.leerCadena("Introduce el NIF del cliente: ");
 		
+		Optional<Cuenta> cuenta = cuentaDao.findById(numeroCuenta);
+		Optional<Cliente> cliente = clienteDao.findById(nifCliente);
+		
+		if (cuenta.isEmpty()) {
+			System.err.println("La cuenta no existe");
+			return;
+		}
+		
+		if (cliente.isEmpty()) {
+			System.err.println("El cliente no existe");
+			return;
+		}
+		
+		if (!cuenta.get().esPropietario(nifCliente)) {
+			System.err.println("El cliente no es propietario de la cuenta.");
+			return;
+		}
+		
+		final Double ingreso = Input.leerReal("Introduzca la cantidad a ingresar: ");
+		if (cuenta.get().ingresar(ingreso) == -1) {
+			System.err.println("Error al hacer el ingreso.");
+			return;
+		}
+		
+		// serializar cambios sobre la cuenta
+		// si se ha podido hacer el ingreso correctamente
+		cuentaDao.save(cuenta.get());
 	}
     
     public static void opcion3() {
+    	final String numeroCuenta = Input.leerCadena("Introduce el número de cuenta: ");
+		final String nifCliente = Input.leerCadena("Introduce el NIF del cliente: ");
 		
+		Optional<Cuenta> cuenta = cuentaDao.findById(numeroCuenta);
+		Optional<Cliente> cliente = clienteDao.findById(nifCliente);
+		
+		if (cuenta.isEmpty()) {
+			System.err.println("La cuenta no existe");
+			return;
+		}
+		
+		if (cliente.isEmpty()) {
+			System.err.println("El cliente no existe");
+			return;
+		}
+		
+		if (!cuenta.get().esPropietario(nifCliente)) {
+			System.err.println("El cliente no es propietario de la cuenta.");
+			return;
+		}
+		
+		final Double retirada = Input.leerReal("Introduzca la cantidad a retirar: ");
+		if (cuenta.get().retirar(retirada) == -1) {
+			System.err.println("Error al hacer la retirada.");
+			return;
+		}
+		
+		// serializar cambios sobre la cuenta
+		// se se ha podido hacer la retirada
+		cuentaDao.save(cuenta.get());
 	}
     
     public static void opcion4() {
+    	final String numeroCuentaOrigen = Input.leerCadena("Introduce el número de cuenta origen: ");
+    	final String numeroCuentaDestino = Input.leerCadena("Introduce el número de cuenta destino: ");
+		final String nifCliente = Input.leerCadena("Introduce el NIF del cliente que transfiere: ");
 		
+		Optional<Cuenta> cuentaOrigen = cuentaDao.findById(numeroCuentaOrigen);
+		Optional<Cuenta> cuentaDestino = cuentaDao.findById(numeroCuentaDestino);
+		Optional<Cliente> cliente = clienteDao.findById(nifCliente);
+		
+		if (cuentaOrigen.isEmpty()) {
+			System.err.println("La cuenta origen no existe");
+			return;
+		}
+		
+		if (cuentaDestino.isEmpty()) {
+			System.err.println("La cuenta destino no existe");
+			return;
+		}
+		
+		if (cliente.isEmpty()) {
+			System.err.println("El cliente no existe");
+			return;
+		}
+		
+		if (!cuentaOrigen.get().esPropietario(nifCliente)) {
+			System.err.println("El cliente no es propietario de la cuenta origen.");
+			return;
+		}
+		
+		final Double ingreso = Input.leerReal("Introduzca la cantidad a transferir: ");
+		if (!cuentaOrigen.get().transferir(cuentaDestino.get(), ingreso)) {
+			System.err.println("No se pudo realizar la transferencia.");
+			return;
+		}
+		
+		// serializar cambios sobre la cuenta
+		// si se ha podido hacer la transferencia
+		cuentaDao.save(cuentaOrigen.get());
+		cuentaDao.save(cuentaDestino.get());
 	}
     
 	public static void opcion5() {
-			
+		
 	}
 	
 	public static void opcion6() {
@@ -114,7 +221,13 @@ public class App
 	}
 	
 	public static void opcion9() {
-		
+		final Predicate<Cuenta> SALDO_NEGATIVO =
+			cuenta -> cuenta.getSaldo() < 0.0;
+			
+		cuentaDao.findAll().stream()
+			.filter(SALDO_NEGATIVO)
+			.sorted((lhs, rhs) -> Double.compare(lhs.getSaldo(), rhs.getSaldo()))
+			.forEach(System.out::println);
 	}
 
 	public static void mostrarMenu() {
@@ -140,6 +253,7 @@ public class App
     	try {
     		final String PERSISTENCE = "dam2.preexamen";
     		
+    		cuentaDao = new GenericJPADAO<Cuenta, String>(Cuenta.class, PERSISTENCE);
 			clienteDao = new GenericJPADAO<>(Cliente.class, PERSISTENCE);
 			telefonoDao = new GenericJPADAO<>(Telefono.class, PERSISTENCE);
 			cuentaEmpresaDao = new GenericJPADAO<>(CuentaEmpresa.class, PERSISTENCE);

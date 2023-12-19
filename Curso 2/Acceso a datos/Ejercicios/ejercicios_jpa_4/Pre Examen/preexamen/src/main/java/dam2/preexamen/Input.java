@@ -33,7 +33,7 @@ public class Input {
 	public static Integer leerEntero(String prompt) {
 		String input = leerCadena(prompt);
 		
-		if (input == null) {
+		if (input == null || input.isEmpty()) {
 			return null;
 		}
 		
@@ -43,7 +43,7 @@ public class Input {
 	public static Double leerReal(String prompt) {
 		String input = leerCadena(prompt);
 		
-		if (input == null) {
+		if (input == null || input.isEmpty()) {
 			return null;
 		}
 		

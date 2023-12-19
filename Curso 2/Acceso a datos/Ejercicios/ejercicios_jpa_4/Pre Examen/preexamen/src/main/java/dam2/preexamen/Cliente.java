@@ -1,6 +1,7 @@
 package dam2.preexamen;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,7 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.h2.expression.function.SetFunction;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,7 +37,7 @@ public class Cliente implements Serializable {
 	@NonNull
 	@EqualsAndHashCode.Include
 	@Id
-	@Column(nullable = false)
+	@Column(nullable = false, length = 10)
 	private String nif;
 	
 	@Column(nullable = false)
@@ -48,7 +49,7 @@ public class Cliente implements Serializable {
 	@ToString.Exclude
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "telefono")
-	private Set<Telefono> telefonos;
+	private List<Telefono> telefonos;
 	
 	@ToString.Exclude
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -59,13 +60,15 @@ public class Cliente implements Serializable {
 	)
 	private Set<Cuenta> cuentas;
 	
+	
+	// Adecuado no estar aquí
 	public static Cliente leer() {		
 		final String nif = Input.leerCadena("Introduce el nif: ");
 		final String nombre = Input.leerCadena("Introduce el nombre: ");
 		final double maxAvales = Input.leerReal("Introduce el valor de avales máximo: ");
 		
 		final Integer limitTelefonos = Input.leerEntero("Introduce el total de teléfonos: ");
-		Set<Telefono> telefonos = Set.of();
+		List<Telefono> telefonos = new ArrayList<>();
 		
 		if (limitTelefonos != null) {
 			for (int count = 0; count < limitTelefonos; ++count) {
