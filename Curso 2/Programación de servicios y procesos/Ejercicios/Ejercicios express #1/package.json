@@ -1,0 +1,16 @@
+{
+  "name": "ejer-express-1",
+  "version": "1.0.0",
+  "description": "Práctica servidor express",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Hugo Pelayo",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}

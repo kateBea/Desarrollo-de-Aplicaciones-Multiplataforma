@@ -1,6 +1,4 @@
 package dam2.preexamen;
-
-import dam2.aplicacion.Main;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
