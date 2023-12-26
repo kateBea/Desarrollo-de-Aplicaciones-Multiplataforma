@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+
+  <persistence-unit name="thePersistenceUnit" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+	
+	<!-- Coge todas las clases del proyecto -->
+
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+ <persistence-unit name="hibernate" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.hibernate.Alumno</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+ <persistence-unit name="unoauno" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.unoauno.Alumno</class>
+	<class>org.dam2.unoauno.Direccion</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="unoamuchos" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.unoamuchos.Depart</class>
+	<class>org.dam2.unoamuchos.Empleado</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="muchosauno" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.muchosauno.Factura</class>
+	<class>org.dam2.muchosauno.Cliente</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="taller" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.taller.Taller</class>
+	<class>org.dam2.taller.Coche</class>
+	<class>org.dam2.taller.Conductor</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="taller2" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.taller2.Taller</class>
+	<class>org.dam2.taller2.Coche</class>
+	<class>org.dam2.taller2.Conductor</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="muchosamuchos" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.muchosamuchos.Autor</class>
+	<class>org.dam2.muchosamuchos.Libro</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="herencia" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<class>org.dam2.herencia.Persona</class>
+	<class>org.dam2.herencia.Tecnologo</class>
+	<class>org.dam2.herencia.Normal</class>
+	<class>org.dam2.herencia.Programador</class>
+	<class>org.dam2.herencia.Tester</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	    	
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="herenciaporclasehija" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<class>org.dam2.herenciatablaporclasehija.Persona</class>
+	<class>org.dam2.herenciatablaporclasehija.Tecnologo</class>
+	<class>org.dam2.herenciatablaporclasehija.Normal</class>
+	<class>org.dam2.herenciatablaporclasehija.Programador</class>
+	<class>org.dam2.herenciatablaporclasehija.Tester</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	    	
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="herenciaporsubclase" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<class>org.dam2.herenciaporsubclase.Persona</class>
+	<class>org.dam2.herenciaporsubclase.Normal</class>
+	<class>org.dam2.herenciaporsubclase.Tecnologo</class>
+	<class>org.dam2.herenciaporsubclase.Programador</class>
+	<class>org.dam2.herenciaporsubclase.Tester</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	    	
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+
+<persistence-unit name="clavecompuesta" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<class>org.dam2.clavecompuesta.Curso</class>
+	<class>org.dam2.clavecompuesta.CursoPK</class>
+	<class>org.dam2.clavecompuesta.Alumno</class>
+	<class>org.dam2.clavecompuesta.Modulo</class>
+	<class>org.dam2.clavecompuesta.Calificacion</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	    	
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="consultas" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<class>org.dam2.consultas.Profe</class>
+	<class>org.dam2.consultas.CorreoElectronico</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	    	
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+		<property name="hibernate.hbm2ddl.import_files" value="/META-INF/load.sql"/>
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="seguros" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<class>org.dam2.seguros.AsistenciaMedica</class>
+	<class>org.dam2.seguros.Seguro</class>
+	<class>org.dam2.seguros.Coberturas</class>
+	<class>org.dam2.seguros.Enfermedades</class>
+	<class>org.dam2.seguros.Sexo</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	    	
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="banco" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<class>org.dam2.banco.modelo.Cliente</class>
+	<class>org.dam2.banco.modelo.Contacto</class>
+	<class>org.dam2.banco.modelo.Cuenta</class>
+	<class>org.dam2.banco.modelo.CuentaEmpresa</class>
+	<class>org.dam2.banco.modelo.CuentaPersonal</class>
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	    	
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+    <!--  
+  		<property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+  	-->
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="gruposalumnosmodulos" transaction-type="RESOURCE_LOCAL">
+     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	<!-- Coge sólo las clases que aparecen -->
+	<class>org.dam2.gruposalumnosmodulos.Alumno</class>
+	<class>org.dam2.gruposalumnosmodulos.Grupo</class>
+	<class>org.dam2.gruposalumnosmodulos.Modulo</class>
+	<class>org.dam2.gruposalumnosmodulos.Profesor</class>
+	<class>org.dam2.gruposalumnosmodulos.Calificacion</class>
+	<class>org.dam2.gruposalumnosmodulos.Direccion</class>
+	
+	<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+	<!--  propiedades de la conexión a la BBDD -->
+    <properties>
+        <property name="connection.driver_class" value="org.h2.Driver"/>
+        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+      	<property name="javax.persistence.jdbc.user" value="sa" />
+      	<property name="javax.persistence.jdbc.password" value="" />
+        
+        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.format_sql" value="true"/>
+
+    </properties>
+</persistence-unit>
+
+<persistence-unit name="consultasjpa" transaction-type="RESOURCE_LOCAL">
+<provider>org.hibernate.ejb.HibernatePersistence</provider>
+<class>org.dam2.consultasjpa.Depart</class>
+<class>org.dam2.consultasjpa.Emple</class>
+<exclude-unlisted-classes>true</exclude-unlisted-classes>
+<!--   propiedades de la conexión a la BBDD  -->
+<properties>
+<property name="connection.driver_class" value="org.h2.Driver"/>
+<property name="hibernate.connection.url" value="jdbc:h2:~/test"/>
+<property name="javax.persistence.jdbc.user" value="sa"/>
+<property name="javax.persistence.jdbc.password" value=""/>
+<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+<!--  Cargar datos  -->
+<property name="hibernate.hbm2ddl.import_files" value="/META-INF/data.sql"/>
+<property name="hibernate.show_sql" value="true"/>
+<property name="hibernate.format_sql" value="true"/>
+</properties>
+</persistence-unit>
+
+</persistence>

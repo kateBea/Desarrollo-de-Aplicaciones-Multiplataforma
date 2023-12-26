@@ -1,0 +1,5 @@
+Serializar datos.json, notas.json y la combinación (similar a la tabla SQL) a PDF.
+
+Añadir un botón para serializar a PDF.
+
+El contexto le pasamos todas las plantillas, pero al presionar el botón indicamos que plantilla queremos serializar a PDF (revisa el script de serializar el PDF).

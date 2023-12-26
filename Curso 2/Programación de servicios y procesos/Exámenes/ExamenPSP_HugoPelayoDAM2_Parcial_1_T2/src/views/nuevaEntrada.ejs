@@ -1,0 +1,10 @@
+<%- include('cabecera') -%>
+<h1>Nueva entrada</h1>
+
+<form method="get" action="/nueva">
+    Título<br><input type="text" name="titulo" required="required"><br>
+    Contenido<br><input type="text" name="contenido"  required="required"><br>
+    <br><input type="submit" value="Publicar">
+</form>
+
+<%- include('pie') -%>

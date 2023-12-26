@@ -1,0 +1,12 @@
+Vamos a realizar las actividades (ejercicios de clase) subiendolo a Github:
+
+Cread un proyecto nuevo o usar uno existente  "actividades_XXYY"  con XXYY vuestro id
+Crear un nuevo repositorio  
+Todas las actividades
+
+
+crear una actividad "LoginApp" con el  siguiente diseño en "firgma.com"
+
+Login en figma (Las ventanas se llaman así. No quiere decir que entréis en figma si no hace falta)
+
+ Comezar con  los componentes más sencillos e id completando el diseño

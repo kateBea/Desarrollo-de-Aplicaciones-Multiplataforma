@@ -1,0 +1,8 @@
+h1 {
+    color:blueviolet;
+    font: Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+    text-align: center;
+}

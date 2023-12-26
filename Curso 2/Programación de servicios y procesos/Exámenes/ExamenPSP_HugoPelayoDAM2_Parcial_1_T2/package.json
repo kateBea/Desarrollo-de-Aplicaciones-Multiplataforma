@@ -1,0 +1,22 @@
+{
+  "name": "examenpsp_hugopelayodam2",
+  "version": "1.0.0",
+  "description": "Examen",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node src/app.js"
+  },
+  "author": "Hugo Pelayo",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0"
+  }
+}

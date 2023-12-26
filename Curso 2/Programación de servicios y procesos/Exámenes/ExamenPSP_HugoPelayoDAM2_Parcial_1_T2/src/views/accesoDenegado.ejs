@@ -1,0 +1,29 @@
+<%- include('cabecera') -%>
+<h1>Acceso usuarios</h1>
+<h1 style="color: red">Acceso denegado</h1>
+<form method="post" action="/gestion">
+    <div>
+        <div>
+            <label for="username">Usario</label>
+        </div>
+        <div>
+            <input type="text" id="username" name="username" placeholder="usario ...">
+        </div>
+    </div>
+    <div>
+        <div>
+            <label for="password" name="password">Contraseña</label>
+        </div>
+        <div>
+            <input type="password" id="password" name="password" placeholder="contraseña ...">
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <input type="submit" value="Iniciar sesión">
+        </div>
+    </div>
+</form>
+
+<%- include('pie') -%>
