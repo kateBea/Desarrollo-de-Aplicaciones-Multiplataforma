@@ -1,8 +1,8 @@
 package org.instituto;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -17,24 +17,15 @@ import lombok.NonNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode
 
-//Hibernate
 @Entity
-@Table(name = "INSTITUTO")
-
-public class Instituto {
-	@Column(nullable = false)
-	private String nombre;
-	
+@Table(name = "EMAIL")
+public class Email {
 	@NonNull
-	@EqualsAndHashCode.Include
-	@Column()
-	private String codigo;
+	@Id
+	private String email;
 	
 	@Column(nullable = false)
-	private String telfefono;
-	
-	@Embedded
-	private Direccion direccion;
+	private String tipo;
 }
