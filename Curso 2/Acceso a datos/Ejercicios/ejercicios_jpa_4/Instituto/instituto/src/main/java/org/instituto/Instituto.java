@@ -1,8 +1,15 @@
 package org.instituto;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -24,17 +31,23 @@ import lombok.NonNull;
 @Table(name = "INSTITUTO")
 
 public class Instituto {
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String nombre;
 	
 	@NonNull
 	@EqualsAndHashCode.Include
-	@Column()
+	@Column(nullable = false)
+	@Id
 	private String codigo;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String telfefono;
 	
-	@Embedded
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "direccion")
 	private Direccion direccion;
+	
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "nif")
+	private Set<Persona> integrantes;
 }

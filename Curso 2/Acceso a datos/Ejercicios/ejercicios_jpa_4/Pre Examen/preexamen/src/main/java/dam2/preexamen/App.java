@@ -253,7 +253,7 @@ public class App
     	try {
     		final String PERSISTENCE = "dam2.preexamen";
     		
-    		cuentaDao = new GenericJPADAO<Cuenta, String>(Cuenta.class, PERSISTENCE);
+    		cuentaDao = new GenericJPADAO<>(Cuenta.class, PERSISTENCE);
 			clienteDao = new GenericJPADAO<>(Cliente.class, PERSISTENCE);
 			telefonoDao = new GenericJPADAO<>(Telefono.class, PERSISTENCE);
 			cuentaEmpresaDao = new GenericJPADAO<>(CuentaEmpresa.class, PERSISTENCE);

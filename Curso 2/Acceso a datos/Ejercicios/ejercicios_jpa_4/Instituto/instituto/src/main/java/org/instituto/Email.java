@@ -12,20 +12,25 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-// Lombok
+//Lombok
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
+//Hibernate
 @Entity
 @Table(name = "EMAIL")
+
 public class Email {
-	@NonNull
-	@Id
-	private String email;
+	// MIEMBROS PRIVADOS ----------------------------------------
 	
 	@Column(nullable = false)
 	private String tipo;
+	
+	@NonNull
+	@EqualsAndHashCode.Include
+	@Id
+	private String direccion;
 }

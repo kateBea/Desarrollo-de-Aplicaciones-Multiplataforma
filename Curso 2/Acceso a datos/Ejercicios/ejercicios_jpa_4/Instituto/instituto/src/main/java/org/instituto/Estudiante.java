@@ -1,12 +1,11 @@
 package org.instituto;
 
-import java.time.LocalDate;
-import java.util.Set;
-
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.ManyToMany;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,11 +13,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 //Lombok
 @Data
+@ToString(callSuper = true)
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,11 +29,21 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "ESTUDIANTE")
 
 public class Estudiante extends Persona {
+	// MIEMBROS PRIVADOS ----------------------------------------
+	
+	@Column(nullable = false)
 	private String curso;
+	
+	@Column(nullable = false)
 	private String grupo;
+	
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
 	private TipoEstudio tipoEstudios;
+	
+	@Column(nullable = false)
 	private boolean delegado;
 	
-	@ManyToOne
-	private Profesor tutor;
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Profesor tutor;	
 }

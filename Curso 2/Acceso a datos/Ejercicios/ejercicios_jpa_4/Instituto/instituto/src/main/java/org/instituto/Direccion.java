@@ -6,34 +6,38 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.experimental.SuperBuilder;
 
 // Lombok
 @Data
-@Builder
-@NoArgsConstructor
+@SuperBuilder
 @AllArgsConstructor
-@EqualsAndHashCode
+@NoArgsConstructor
+@EqualsAndHashCode()
 
 // Hibernate
 @Entity
 @Table(name = "DIRECCION")
 
 public class Direccion {
-	// Las calles vienen identificadas por su nombre, poblacion y CP.
-	// Podríamos tener calles con mismo nombre en poblaciones diferentes.
+	// En cada población, una dirección concreto 
+	// le corresponde un CP único
 	
+	// MIEMBROS PRIVADOS ----------------------------------------
+	
+	@NonNull
 	@Id
 	@Column
-	private String calle;
+	private String cp;
 	
-	@Id
-	@Column
+	@NonNull
+	@Column(nullable = false, unique = true)
 	private String poblacion;
 	
 	@Column(nullable = false)
-	private String cp;
+	private String calle;
 }

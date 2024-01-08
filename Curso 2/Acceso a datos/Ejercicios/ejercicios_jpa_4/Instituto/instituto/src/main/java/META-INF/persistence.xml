@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence  http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+
+
+	<persistence-unit name="org.instituto" transaction-type="RESOURCE_LOCAL">
+	 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	 	<class>org.instituto.Persona</class>
+	 	<class>org.instituto.Estudiante</class>
+	 	<class>org.instituto.Profesor</class>
+	 	<class>org.instituto.Instituto</class>
+	 	<class>org.instituto.Direccion</class>
+	 	<class>org.instituto.Email</class>
+	
+		<!-- Coge sólo las clases que aparecen -->
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+	
+		<!--  propiedades de la conexión a la BBDD -->
+	    <properties>
+	        <property name="connection.driver_class" value="org.h2.Driver"/>
+	        <property name="hibernate.connection.url" value="jdbc:h2:~/test"/>      
+	      	<property name="javax.persistence.jdbc.user" value="sa"/>
+	      	<property name="javax.persistence.jdbc.password" value=""/>
+	        
+	        <!-- Para cargar datos del desde del META-INF del data.sql  -->
+	        <!--  <property name="hibernate.hbm2ddl.import_files" value="/META-INF/file_data.sql"/> -->
+	        
+	        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+	        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+	        
+	        <property name="hibernate.show_sql" value="true"/>
+	        <property name="hibernate.format_sql" value="true"/>
+	
+	    </properties>
+	</persistence-unit>
+</persistence>

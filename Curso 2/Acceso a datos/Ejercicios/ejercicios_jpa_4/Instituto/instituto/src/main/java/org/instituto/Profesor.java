@@ -1,22 +1,20 @@
 package org.instituto;
 
-import java.util.Set;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 //Lombok
 @Data
+@ToString(callSuper = true)
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,19 +22,26 @@ import lombok.experimental.SuperBuilder;
 
 //Hibernate
 @Entity
-@Table(name = "PERSONA")
+@Table(name = "PROFESOR")
 
 public class Profesor extends Persona {
+	// MIEMBROS PRIVADOS ----------------------------------------
+	@Column(nullable = false)
 	private String nombreDept;
-	private String despacho;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "estudiantes")
-	private Set<Estudiante> estudiantes;
+	@Column(nullable = false)
+	private String despacho;
+
+	
+	
+	// MIEMBROS ESTÁTICOS ----------------------------------------
 	
 	// Máximo de estudiantes por profesor
 	private static final int MAX_ESTUDIANTES = 10;
 	
+	
+	
+	// MÉTODOD PÚBLICOS ----------------------------------------
 	
 	/**
 	 * Retorna el máximo de estudiantes permitido por profesor.

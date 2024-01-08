@@ -1,7 +1,8 @@
 package org.instituto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -19,6 +20,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 // Lombok
@@ -33,7 +35,7 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "PERSONA")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 
-public abstract class Persona {
+public abstract class Persona implements Serializable {
 	@NonNull
 	@EqualsAndHashCode.Include
 	@Id
@@ -49,7 +51,8 @@ public abstract class Persona {
 	@Column(nullable = false)
 	private String poblacion;
 	
+	@ToString.Exclude
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "emails")
-	private Set<Email> emails;
+	@JoinColumn(name = "direccion")
+	private List<Email> emails;
 }
