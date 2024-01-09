@@ -1,8 +1,15 @@
 package org.instituto;
 
 
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -32,6 +39,11 @@ public class Profesor extends Persona {
 	@Column(nullable = false)
 	private String despacho;
 
+	// Error multiple bags con FetchType.EAGER
+	@ToString.Exclude
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "nif")
+	private Set<Estudiante> estudiantes;
 	
 	
 	// MIEMBROS ESTÁTICOS ----------------------------------------
@@ -49,5 +61,21 @@ public class Profesor extends Persona {
 	 * */
 	public int getMaxEstudiantes() {
 		return MAX_ESTUDIANTES;
+	}
+	
+	
+	/**
+	 * Añade el estudiante a la lista de estudiantes de este
+	 * profesor. Si la operación se completa con éxito retorna cierto,
+	 * falso en caso contrario o si el profesor a alcanzado su máximo de estudiantes.
+	 * @param estudiante Estudiante a ser añadido
+	 * @returns Cierto en caso de éxito.
+	 * */
+	public boolean addEstudiante(Estudiante estudiante) {
+		if (estudiantes.contains(estudiante) || estudiantes.size() > MAX_ESTUDIANTES) {
+			return false;
+		}
+		
+		return estudiantes.add(estudiante);
 	}
 }

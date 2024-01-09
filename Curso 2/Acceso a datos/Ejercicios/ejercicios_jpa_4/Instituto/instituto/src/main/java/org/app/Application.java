@@ -22,8 +22,9 @@ public class Application implements Runnable {
 		opciones.add(Opcion1.builder().descripcion("Leer instituto").build());
 		opciones.add(Opcion2.builder().descripcion("Eliminar profesor").build());
 		opciones.add(Opcion3.builder().descripcion("Localizar persona").build());
-		opciones.add(Opcion4.builder().descripcion("Convocar sesión de tutoría conjunta").build());
+		opciones.add(Opcion4.builder().descripcion("Convocar sesión de tutoría").build());
 		opciones.add(Opcion5.builder().descripcion("Ejecutar queries").build());
+		opciones.add(Opcion6.builder().descripcion("Profesores de departamento").build());
 		
 		// Opción de salida
 		opciones.add(OpcionSalir.builder().descripcion("Salir del programa").build());

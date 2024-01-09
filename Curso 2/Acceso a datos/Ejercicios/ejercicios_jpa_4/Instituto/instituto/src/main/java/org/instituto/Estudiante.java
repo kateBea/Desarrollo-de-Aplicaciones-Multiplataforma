@@ -1,12 +1,9 @@
 package org.instituto;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -43,7 +40,4 @@ public class Estudiante extends Persona {
 	
 	@Column(nullable = false)
 	private boolean delegado;
-	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private Profesor tutor;	
 }

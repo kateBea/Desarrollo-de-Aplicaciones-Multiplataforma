@@ -18,6 +18,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.ToString;
 
 // Lombok
 @Data
@@ -41,12 +42,14 @@ public class Instituto {
 	private String codigo;
 	
 	@Column(nullable = false, unique = true)
-	private String telfefono;
+	private String telefono;
 	
+	@ToString.Exclude
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "direccion")
 	private Direccion direccion;
 	
+	@ToString.Exclude
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "nif")
 	private Set<Persona> integrantes;
