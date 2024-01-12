@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<p>hola</p>
+
+
+<form action="registrar" method="post" th:object="${customer}">
+
+	<div>
+        <label>Nombre</label>
+          <input type="text" th:field="*{firstName}" placeholder="string" /> 
+    </div>
+    
+    <div>
+  		<p th:each="error : ${#fields.errors('firstName')}" th:text="${error}"></p>
+	</div>
+  
+	<div>
+        <label>Apellido</label>
+        <input type="text" th:field="*{lastName}" placeholder="string" />
+    </div>
+    
+    <div>
+  		<p th:each="error : ${#fields.errors('lastName')}" th:text="${error}"></p>
+	</div>
+    
+	
+	<div>
+        <label>Fecha nacimiento</label>
+        <input type="text" th:field="*{fechaNacimiento}" placeholder="yyyy-MM-dd" />
+    </div>
+
+	<div>
+  		<p th:each="error : ${#fields.errors('fechaNacimiento')}" th:text="${error}"></p>
+	</div>
+	
+
+	<input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>

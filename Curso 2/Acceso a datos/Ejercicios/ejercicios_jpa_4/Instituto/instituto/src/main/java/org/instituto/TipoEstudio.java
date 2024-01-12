@@ -12,6 +12,7 @@ public enum TipoEstudio {
 	/**
 	 * Tipo de estudios. ESO ("ESO"), BACHILLERATO ("BACH"),
 	 * FP_GRADO_MEDIO ("FPM"), FP_GRADO_SUPERIOR ("FPS").
+	 * Devuelve ESO en cualquier otro caso.
 	 * */
 	public static TipoEstudio fromStr(String str) {
 		return switch (str) {

@@ -15,7 +15,6 @@ public class Opcion3 extends OpcionMenu {
 
 	@Override
 	public void accion() {
-		// TODO Auto-generated method stub
 		final String nif = Input.leerCadena("Introduce el nif de la persona");
 		
 		Optional<Persona> fetchedPersona = Contexto.getDaoPersona().findById(nif);

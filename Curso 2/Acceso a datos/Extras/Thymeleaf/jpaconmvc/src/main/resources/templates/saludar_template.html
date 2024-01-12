@@ -1,0 +1,7 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<p th:text="#{welcome}">Default greetings</p>
+<p>Hello <span th:text="${name}">Friend</span>!</p>
+<p>Fecha <span th:text="${#temporals.format(fecha, 'dd-MM-yyyy')}">Fecha</span></p>
+</body>
+</html>
