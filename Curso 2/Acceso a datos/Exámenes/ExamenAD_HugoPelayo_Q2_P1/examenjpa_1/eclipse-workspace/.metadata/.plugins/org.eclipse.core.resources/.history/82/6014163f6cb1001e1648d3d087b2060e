@@ -1,0 +1,22 @@
+package org.dam2.menu;
+
+import org.dam2.examenjpa.Contexto;
+
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
+public class Opcion4 extends OpcionMenu {
+	@Override
+	public void accion() {
+		// TODO Auto-generated method stub
+		
+		// b)
+		final String nombrePorv =
+			Contexto.getDaoProveedor()
+			.executeQuery("SELECT p.proveedor\n"
+					+ "FROM Porducto\n"
+					+ "GROUP BY p.proveedor");
+		
+	}
+
+}

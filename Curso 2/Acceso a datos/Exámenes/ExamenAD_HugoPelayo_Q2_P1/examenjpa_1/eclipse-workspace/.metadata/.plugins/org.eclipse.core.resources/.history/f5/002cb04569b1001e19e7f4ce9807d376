@@ -1,0 +1,11 @@
+package org.dam2.menu;
+
+public class Opcion3 extends OpcionMenu {
+
+	@Override
+	public void accion() {
+		System.out.println("Subiendo precio de productos en un 10 %");
+		
+	}
+
+}

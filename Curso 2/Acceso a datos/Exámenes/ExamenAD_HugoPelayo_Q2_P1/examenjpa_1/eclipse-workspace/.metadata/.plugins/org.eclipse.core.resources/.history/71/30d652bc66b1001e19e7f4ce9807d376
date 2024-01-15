@@ -1,0 +1,21 @@
+package org.dam2.examenjpa;
+
+import org.dam2.modelo.Producto;
+import org.dam2.modelo.Proveedor;
+import org.dam2.utilidadeshibernate.GenericJPADAO;
+
+public class Contexto {
+	private static final String PERSISTANCE_UNIT_NAME = "examen";
+	
+	private static GenericJPADAO<Producto, String> daoProducto = null;
+	private static GenericJPADAO<Proveedor, String> daoProveedor = null;
+	
+	public static GenericJPADAO<Producto, String> getDaoProducto() {
+		if (daoProducto == null) {
+			daoProducto = 
+				new GenericJPADAO<>(Producto.class, PERSISTANCE_UNIT_NAME);
+		}
+		
+		return daoProducto;
+	}
+}

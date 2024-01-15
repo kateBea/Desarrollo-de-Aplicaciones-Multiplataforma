@@ -1,0 +1,9 @@
+package org.dam2.menu;
+
+import org.dam2.modelo.Producto;
+
+public class Lectura {
+	public static Producto leerProducto() {
+		
+	}
+}

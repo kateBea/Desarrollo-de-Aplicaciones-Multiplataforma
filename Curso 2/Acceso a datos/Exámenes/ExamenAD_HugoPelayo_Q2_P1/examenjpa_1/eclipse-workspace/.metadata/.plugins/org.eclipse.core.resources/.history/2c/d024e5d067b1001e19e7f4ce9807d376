@@ -1,0 +1,82 @@
+package org.dam2.menu;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import org.dam2.examenjpa.Contexto;
+import org.dam2.modelo.FormatoProducto;
+import org.dam2.modelo.NoPerecedero;
+import org.dam2.modelo.Perecedero;
+import org.dam2.modelo.Producto;
+import org.dam2.modelo.Proveedor;
+
+public class Lectura {
+	public static Producto leerProducto() {
+		final String tipo = daw.com.Teclado.leerString("Tipo (perec/noperec):");
+		
+		if (tipo.equalsIgnoreCase("perec")) {
+			return leerPerecedero();
+		}
+		
+		if (tipo.equalsIgnoreCase("noperec")) {
+			return leerNoPerecedero();
+		}
+		
+		return null;
+	}
+	
+	public static Perecedero leerPerecedero() {
+		final String numRef = daw.com.Teclado.leerString("Número referencia:");
+		
+		if (Contexto.getDaoProducto().findById(numRef).isPresent()) {
+			System.err.println("El producto con referencia " + numRef + " ya existe");
+			return null;
+		}
+		
+		final String nombre = daw.com.Teclado.leerString("Nombre:");
+		final int stock = daw.com.Teclado.leerInt("Stock:");
+		final int stockMin = daw.com.Teclado.leerInt("Stock mínimo:");
+		final float pvp = daw.com.Teclado.leerFloat("PVP:");
+		final float pvd = daw.com.Teclado.leerFloat("PVD:");
+		final int unidades = daw.com.Teclado.leerInt("Unidades por pedido:");
+		final String[] caducidad = daw.com.Teclado.leerString("Caducidad (DD-MM-YYYY):").split("-");
+		final float peso = daw.com.Teclado.leerFloat("Peso:");
+		
+		List<Proveedor> proveedores = Contexto.getDaoProveedor().findAll();
+		
+		int indice = 0;
+		for (Proveedor proveedor : proveedores) {
+			System.out.printf("%d. Nombre: %s, NIF: %s\n", indice++, proveedor.getNombre(), proveedor.getNif());
+		}
+		final int prov = daw.com.Teclado.leerInt("Proveedor. Teclee índice:");
+		
+		return Perecedero.builder()
+			.numReferencia(numRef)
+			.nombre(nombre)
+			.stock(stock)
+			.stockMinimo(stockMin)
+			.pvp(pvp)
+			.pvd(pvd)
+			.unidadesPorPedido(unidades)
+			.caducidad(LocalDate.of(caducidad[2], caducidad[1], caducidad[0]))
+			.peso(0.25f)
+			.proveedor(proveedores.get(prov))
+			.build();
+	}
+	
+	public static Perecedero leerNoPerecedero() {
+		return productos.add(NoPerecedero.builder()
+			.numReferencia("0002")
+			.nombre("sardinas")
+			.stock(20)
+			.stockMinimo(5)
+			.pvp(0.35f)
+			.pvd(0.2f)
+			.unidadesPorPedido(10)
+			.formato(FormatoProducto.LATA)
+			.conservarFrio(false)
+			.proveedor(proveedores.get(0))
+			.build();
+	}
+}

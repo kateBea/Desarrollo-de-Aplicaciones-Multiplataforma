@@ -1,0 +1,7 @@
+package org.dam2.modelo;
+
+import java.time.LocalDate;
+
+public class Perecedero extends Producto {
+	private LocalDate caducidad;
+}

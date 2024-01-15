@@ -1,0 +1,7 @@
+package org.dam2.modelo;
+
+public class ProductoListener {
+	public void solicitar(Producto producto) {
+		
+	}
+}

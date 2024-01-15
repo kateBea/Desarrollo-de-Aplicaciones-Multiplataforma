@@ -1,0 +1,14 @@
+package org.dam2.menu;
+
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
+public class Opcion2 extends OpcionMenu {
+
+	@Override
+	public void accion() {
+		
+		
+	}
+
+}

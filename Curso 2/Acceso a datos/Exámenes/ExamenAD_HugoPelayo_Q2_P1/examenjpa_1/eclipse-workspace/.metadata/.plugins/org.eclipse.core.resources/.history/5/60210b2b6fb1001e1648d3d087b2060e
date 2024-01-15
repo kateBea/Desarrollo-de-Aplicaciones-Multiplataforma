@@ -1,0 +1,40 @@
+package org.dam2.menu;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.dam2.examenjpa.Contexto;
+import org.dam2.modelo.Cliente;
+import org.dam2.modelo.Producto;
+
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
+public class Opcion2 extends OpcionMenu {
+
+	@Override
+	public void accion() {
+		final String nifCliente = daw.com.Teclado.leerString("NIF cliente: ");
+		
+		Optional<Cliente> cliente = Contexto.getDaoCliente().findById(nifCliente);
+		
+		if (cliente.isEmpty()) {
+			System.err.println("El cliente no existe");
+			return;
+		}
+		
+		List<Producto> productos = Contexto.getDaoProducto().findAll();
+		
+		System.out.println("Productos:");
+		productos.stream().
+			filter(prod -> prod.getStock() > prod.getUnidadesPorPedido()).
+			forEach(System.out::println);
+		
+		final String ref = daw.com.Teclado.leerString("Referencia:");
+		
+		Optional<Producto> productOptional = productos.stream().filter(prod -> prod.getNumReferencia().equals(ref)).findFirst();
+	
+		
+	}
+
+}

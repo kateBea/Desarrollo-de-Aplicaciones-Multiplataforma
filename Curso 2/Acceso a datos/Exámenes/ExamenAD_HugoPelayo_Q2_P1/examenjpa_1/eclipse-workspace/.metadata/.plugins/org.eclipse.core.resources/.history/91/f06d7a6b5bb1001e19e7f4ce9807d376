@@ -1,0 +1,8 @@
+package org.dam2.modelo;
+
+import lombok.Data;
+
+@Data
+public abstract class Producto {
+
+}

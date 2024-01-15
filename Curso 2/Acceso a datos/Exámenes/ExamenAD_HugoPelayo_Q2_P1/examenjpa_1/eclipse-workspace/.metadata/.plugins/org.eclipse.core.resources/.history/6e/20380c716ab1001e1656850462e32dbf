@@ -1,0 +1,98 @@
+package org.dam2.examenjpa;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dam2.menu.Opcion1;
+import org.dam2.menu.Opcion2;
+import org.dam2.menu.OpcionMenu;
+import org.dam2.menu.OpcionSalir;
+import org.dam2.modelo.Cliente;
+import org.dam2.modelo.FormatoProducto;
+import org.dam2.modelo.NoPerecedero;
+import org.dam2.modelo.Perecedero;
+import org.dam2.modelo.Producto;
+import org.dam2.modelo.Proveedor;
+import org.dam2.modelo.Venta;
+
+/**
+ * Examen
+ */
+public class App 
+{
+	private List<Producto> productos;
+	private List<Proveedor> proveedores;
+	private List<Cliente> clientes;
+	private List<Venta> ventas;
+	
+	List<OpcionMenu> opciones;
+	
+	public App() {
+		// Iniciar estructuras
+		productos = new ArrayList<>();		
+		proveedores = new ArrayList<>();		
+		clientes = new ArrayList<>();		
+		ventas = new ArrayList<>();		
+		
+		opciones = new ArrayList<>();		
+		
+		// Cargar datos
+		proveedores.add(Proveedor.builder().nombre("Cutre Inglés").nif("01").email("cutre@gg.com").build());
+		proveedores.add(Proveedor.builder().nombre("Agricultores").nif("02").email("agri@nn.com").build());
+	
+		clientes.add(Cliente.builder().nombre("Miguel").nif("00001A").build());
+		clientes.add(Cliente.builder().nombre("Dacorsa").nif("00030B").build());
+		
+		productos.add(Perecedero.builder().numReferencia("0001").nombre("tomates").stock(100).stockMinimo(30).pvp(2.1f).pvd(1.9f).unidadesPorPedido(40).caducidad(LocalDate.of(2021, 2, 2)).peso(0.25f).proveedor(proveedores.get(1)).build());
+		productos.add(Perecedero.builder().numReferencia("0003").nombre("naranjas").stock(50).stockMinimo(10).pvp(0.2f).pvd(0.1f).unidadesPorPedido(30).caducidad(LocalDate.of(2021, 2, 2)).peso(0.25f).proveedor(proveedores.get(0)).build());
+		productos.add(NoPerecedero.builder().numReferencia("0002").nombre("sardinas").stock(20).stockMinimo(5).pvp(0.35f).pvd(0.2f).unidadesPorPedido(10).formato(FormatoProducto.LATA).conservarFrio(false).proveedor(proveedores.get(0)).build());
+		productos.add(NoPerecedero.builder().numReferencia("0004").nombre("avena").stock(220).stockMinimo(40).pvp(1.2f).pvd(0.8f).unidadesPorPedido(25).formato(FormatoProducto.BOLSA).conservarFrio(false).proveedor(proveedores.get(1)).build());
+	
+		ventas.add(Venta.builder().producto(productos.get(0)).cliente(clientes.get(0)).fecha(LocalDate.of(2023, 2, 1)).build());
+		ventas.add(Venta.builder().producto(productos.get(0)).cliente(clientes.get(1)).fecha(LocalDate.of(2023, 9, 11)).build());
+		ventas.add(Venta.builder().producto(productos.get(2)).cliente(clientes.get(0)).fecha(LocalDate.of(2023, 2, 1)).build());
+		ventas.add(Venta.builder().producto(productos.get(1)).cliente(clientes.get(0)).fecha(LocalDate.of(2023, 12, 21)).build());
+	
+		// guardamos los datos en la BD
+		for (Venta venta : ventas) {
+			Contexto.getDaoVenta().save(venta);
+		}
+		
+		// cargar opciones
+		opciones.add(Opcion1.builder().descripcion("Nuevo producto").build());
+		opciones.add(Opcion2.builder().descripcion("Realizar Venta").build());
+		opciones.add(OpcionSalir.builder().descripcion("Salir de programa").build());
+	}
+	
+	public void run() {
+		int opcion = 0;
+		
+		do {
+			mostrarOpciones();
+			
+			opcion = daw.com.Teclado.leerInt("\nIntroduce una opción:");
+			
+			if (opcion >= 0 && opcion <= opciones.size()) {
+				opciones.get(opcion).accion();
+			}
+			
+		} while (opcion != opciones.size() - 1);
+	}
+	
+    private void mostrarOpciones() {
+    	int indice = 0;
+		for (OpcionMenu opcion : opciones) {
+			System.out.println(indice + ". " + opcion.getDescripcion());
+			
+			++indice;
+		}
+		
+	}
+
+	public static void main( String[] args ) {
+    	App app = new App();
+    	
+    	app.run();
+    }
+}

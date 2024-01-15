@@ -1,0 +1,5 @@
+package org.dam2.examenjpa;
+
+public class Contexto {
+
+}

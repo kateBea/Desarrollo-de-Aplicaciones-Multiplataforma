@@ -1,0 +1,26 @@
+package org.dam2.menu;
+
+import org.dam2.modelo.Perecedero;
+import org.dam2.modelo.Producto;
+
+public class Lectura {
+	public static Producto leerProducto() {
+		final String tipo = daw.com.Teclado.leerString("Tipo (perec/noperec):");
+		
+		if (tipo.equalsIgnoreCase("perec")) {
+			
+		}
+		
+		if (tipo.equalsIgnoreCase("noperec")) {
+			
+		}
+	}
+	
+	public static Perecedero leerPerecedero() {
+		
+	}
+	
+	public static Perecedero leerNoPerecedero() {
+		
+	}
+}

@@ -1,0 +1,16 @@
+package org.dam2.modelo;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+import lombok.NonNull;
+
+public class Cliente {
+	@NonNull
+	@Id
+	@Column(length = 10)
+	private String nif;
+	
+	@Column(nullable = false, length = 30)
+	private String nombre;
+}

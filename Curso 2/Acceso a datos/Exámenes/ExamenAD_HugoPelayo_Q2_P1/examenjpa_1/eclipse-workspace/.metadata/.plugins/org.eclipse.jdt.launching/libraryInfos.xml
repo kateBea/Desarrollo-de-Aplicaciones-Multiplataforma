@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="/usr/share/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.8.v20230831-1047" version="17.0.8.1"/>
+    <libraryInfo home="/usr/share/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.8.v20230831-1047/jre" version="17.0.8.1"/>
+    <libraryInfo home="/usr/lib/jvm/java-19-openjdk-amd64" version="19.0.2"/>
+</libraryInfos>

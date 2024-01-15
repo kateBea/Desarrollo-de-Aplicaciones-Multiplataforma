@@ -1,0 +1,7 @@
+package org.dam2.modelo;
+
+public enum FormatoProducto {
+	LATA,
+	BRICK,
+	BOLSA,
+}

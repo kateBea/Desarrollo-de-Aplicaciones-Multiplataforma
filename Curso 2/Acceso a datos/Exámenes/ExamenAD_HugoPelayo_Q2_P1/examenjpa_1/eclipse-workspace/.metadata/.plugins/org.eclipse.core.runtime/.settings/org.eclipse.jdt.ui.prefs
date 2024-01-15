@@ -1,0 +1,18 @@
+content_assist_autoactivation_triggers_java=._qwertyuiopasdfghjklzxcvbnm
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.InheritanceType"/><rhs name\="javax.persistence.FetchType"/><rhs name\="javax.persistence.CascadeType"/><rhs name\="org.dam2.modelo.FormatoProducto"/><rhs name\="javax.persistence.GenerationType"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="javax.persistence.InheritanceType"/><rhs name\="javax.persistence.FetchType"/><rhs name\="javax.persistence.CascadeType"/><rhs name\="org.dam2.modelo.FormatoProducto"/><rhs name\="javax.persistence.GenerationType"/></lhs><lhs name\="org.dam2.utilidadeshibernate.DAOInterface"><rhs name\="org.dam2.utilidadeshibernate.GenericJPADAO"/></lhs><lhs name\="org.dam2.utilidadeshibernate.GenericJPADAO"><rhs name\="org.dam2.utilidadeshibernate.GenericJPADAO"/></lhs><lhs name\="org.dam2.modelo.Proveedor"><rhs name\="org.dam2.modelo.Proveedor"/></lhs><lhs name\="org.dam2.modelo.Cliente"><rhs name\="org.dam2.modelo.Cliente"/></lhs><lhs name\="org.dam2.modelo.Producto"><rhs name\="org.dam2.modelo.Perecedero"/></lhs><lhs name\="java.time.temporal.Temporal"><rhs name\="java.time.LocalDate"/></lhs><lhs name\="java.time.temporal.TemporalAccessor"><rhs name\="java.time.LocalDate"/></lhs><lhs name\="java.time.temporal.TemporalAdjuster"><rhs name\="java.time.LocalDate"/></lhs><lhs name\="java.time.chrono.ChronoLocalDate"><rhs name\="java.time.LocalDate"/></lhs><lhs name\="org.dam2.modelo.FormatoProducto"><rhs name\="org.dam2.modelo.FormatoProducto"/></lhs><lhs name\="org.dam2.modelo.Venta"><rhs name\="org.dam2.modelo.Venta"/></lhs><lhs name\="org.dam2.examenjpa.App"><rhs name\="org.dam2.examenjpa.App"/></lhs><lhs name\="org.dam2.menu.OpcionMenu"><rhs name\="org.dam2.menu.OpcionSalir"/><rhs name\="org.dam2.menu.Opcion1"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs></history>
+content_assist_number_of_computers=20
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=35,38,41
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.exception.name=e
+org.eclipse.jdt.ui.formatterprofiles.version=23
+org.eclipse.jdt.ui.gettersetter.use.is=true
+org.eclipse.jdt.ui.overrideannotation=true
+sourceHoverBackgroundColor=247,247,247
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
