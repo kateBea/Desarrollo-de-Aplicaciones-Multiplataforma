@@ -35,7 +35,9 @@ public class Opcion2 extends OpcionMenu {
 		final String ref = daw.com.Teclado.leerString("Referencia:");
 		final int cantidad = daw.com.Teclado.leerInt("Cantidad:");
 		
-		Optional<Producto> producto = productos.stream().filter(prod -> prod.getNumReferencia().equals(ref)).findFirst();
+		Optional<Producto> producto = productos.stream().
+			filter(prod -> prod.getNumReferencia().equals(ref)).
+			findFirst();
 	
 		if (producto.isPresent() && cantidad <= producto.get().getStock()) {
 			producto.get().setStock(producto.get().getStock() - cantidad);
@@ -45,7 +47,8 @@ public class Opcion2 extends OpcionMenu {
 				Venta.builder().
 					cliente(cliente.get()).
 					fecha(LocalDate.now()).
-					producto(producto.get()).build()
+					producto(producto.get()).
+					build()
 			);			
 		} else {
 			System.err.println("Error al realizar la venta");

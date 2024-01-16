@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Ejercicio1 extends Runner {
     public static class Work implements Runnable {
-        private int low;
-        private int up;
+        private final int low;
+        private final int up;
 
         public Work(int low, int up) {
             this.low = low;
