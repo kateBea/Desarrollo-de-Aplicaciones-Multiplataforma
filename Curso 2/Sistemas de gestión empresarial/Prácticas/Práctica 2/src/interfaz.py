@@ -12,14 +12,12 @@ import json
 
 from tkinter import PhotoImage
 from utilidades import *
-from my_info_popup import *
+from popupinfo import *
 
-"""
+class GUI(customtkinter.CTk):
+    """ 
     Aplicación principal de ala interfaz de gráficos.
-    Se inicializa con un objecto DBManager que se utiliza
-    para manejar la base de datos.
-"""
-class Application(customtkinter.CTk):
+    """
     
     def __init__(self, dbobj):
         super().__init__(fg_color=COLOR_PRINCIPAL)
@@ -40,7 +38,7 @@ class Application(customtkinter.CTk):
         self._create_fonts()
         
         # crear la ventana principal
-        self.title("Examen 2-DAM")
+        self.title("E.R.P Villablanca")
         self.geometry("850x600")
         
         # Cajas
@@ -53,8 +51,7 @@ class Application(customtkinter.CTk):
         self._setup_boxes()
         self._setup_labels()
         self._setup_buttons()
-        
-        # Lienzo migración de datos
+
     
     
     def _create_widgets(self):
@@ -229,6 +226,9 @@ class Application(customtkinter.CTk):
         self.top_box.configure(fg_color="#A5049E", height=self.height_header_footer, corner_radius=0)
         self.bottom_box.configure(fg_color="#A5049E", height=self.height_header_footer, corner_radius=0)
         self.left_box.configure(fg_color="#B805AF", corner_radius=0, width=self.weight_left_block)
+        
+    def procesar_dato(self, dato):
+        pass
         
         
     def run(self):

@@ -1,43 +1,28 @@
-##########################################
-# Examen de SGE                          #
-#                                        #
-# Hugo Pelayo                            #
-# 27 nov 2023                            #
-##########################################
+import multiprocessing
 
-from interfaz import *
-from db_manager import *
+from interfaz import GUI
+from servidor import Server
+from threading import current_thread
+from reactivex.scheduler import ThreadPoolScheduler
 
 def run():
-    # conexión a la base de datos
-    db_obj = DBManager("root", "123456")
+    # Thread pool init
+    optimal_thread_count = multiprocessing.cpu_count() + 1
+    pool_scheduler = ThreadPoolScheduler(optimal_thread_count)
+
+    # Creamos el servidor (observable)
+    server = Server(pool_scheduler)    
+    #server.subscribe(lambda dato: print(dato))
     
-    # creamos la base de datos
-    if db_obj.create_db("examenDAM"):
-        print("Base de datos funcionando correctamente")
-    else:
-        print("Error al incializar la base de datos")
+    # Creamos la interfaz
+    gui = GUI()
     
-    # creamos la tabla
-    if db_obj.execute(
-        """
-            CREATE TABLE IF NOT EXISTS migrarDatos(
-                Nombre          VARCHAR(255),
-                Email           VARCHAR(255),
-                Password        VARCHAR(255),
-                Nombre_Modulo   VARCHAR(255),
-                Nota1           FLOAT,
-                Nota2           FLOAT
-            )
-        """
-    ):
-        print("Tabla migrarDatos creada correctamente")
-    else:
-        print("Error crear la tabla migrarDatos")
+    # Nos suscribimos al obervable para recibir datos de forma periódica
+    server.subscribe(gui.procesar_dato)
     
-    # inicializamos GUI
-    app = Application(db_obj)
-    app.run()
+    
+    
+
 
 if __name__ == "__main__":
     run()
