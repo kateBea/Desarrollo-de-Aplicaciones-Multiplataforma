@@ -1,9 +1,11 @@
+import os
 import tkinter
 import customtkinter
 
 from tkinter import PhotoImage
 from utilidades import *
 from popupinfo import *
+from pathlib import Path
 
 class GUI(customtkinter.CTk):
     """ 
@@ -14,7 +16,7 @@ class GUI(customtkinter.CTk):
         super().__init__(fg_color=COLOR_PRINCIPAL)
         
         # constantes internas
-        self.height_header_footer = 100
+        self.height_header_footer = 50
         self.weight_left_block = 150
         
         # fuentes
@@ -28,7 +30,11 @@ class GUI(customtkinter.CTk):
         self._create_boxes()
         
         # pre setup
-        self.logo = PhotoImage(file="assets/Logo.png")       
+        parent = Path(os.path.dirname(__file__))
+        ruta_assets = Path(parent.parent)
+        print(ruta_assets.parent.absolute())
+        self.logo = PhotoImage(file=f"{ruta_assets}/assets/Logo.png") 
+              
         self._create_widgets()
              
         self._setup_boxes()
@@ -44,10 +50,12 @@ class GUI(customtkinter.CTk):
         
         self.left_button1 = customtkinter.CTkButton(self.left_box, text="Recibir temperaturas", fg_color="transparent", border_color="white", border_width=1, font=self.font_default, text_color="white", hover_color=COLOR_HEAD_FOOT)
         self.left_button2 = customtkinter.CTkButton(self.left_box, text="Ver gráfica de temperaturas", fg_color="transparent", border_color="white", border_width=1, font=self.font_default, text_color="white", hover_color=COLOR_HEAD_FOOT)
-        self.left_button3 = customtkinter.CTkButton(self.left_box, text="Acerca de...", fg_color="transparent",  border_color="white", border_width=1, font=self.font_default, text_color="white", hover_color=COLOR_HEAD_FOOT)
+        self.left_button3 = customtkinter.CTkButton(self.left_box, text="Acerca de...", fg_color="transparent",  border_color="white", border_width=1, font=self.font_default, text_color="white", hover_color=COLOR_HEAD_FOOT, anchor="e")
         
-        self.label_right1 = customtkinter.CTkLabel(self.right_box, text="Villablanca\n  E.R.P", font=self.font_welcome_text, text_color="white")
-        
+        # se usa para centrar label_right1 (que es un grid)
+        self.label_right1_container = customtkinter.CTkLabel(self.right_box, fg_color="transparent", text="")
+        self.label_right1 = customtkinter.CTkLabel(self.label_right1_container, text="Villablanca\n  E.R.P", font=self.font_welcome_text, text_color="white")
+        self.label_right2 = customtkinter.CTkLabel(self.label_right1_container, text="", font=self.font_welcome_text, text_color="white")
         
     def _create_boxes(self):
         self.top_box = customtkinter.CTkFrame(self)
@@ -62,9 +70,9 @@ class GUI(customtkinter.CTk):
         
         
     def _create_fonts(self):
-        self.font_default = customtkinter.CTkFont("Roboto", 20)
-        self.font_header = customtkinter.CTkFont("Roboto", 25)
-        self.font_welcome_text = customtkinter.CTkFont("Roboto", 50)
+        self.font_default = customtkinter.CTkFont("Dyuthi", 20)
+        self.font_header = customtkinter.CTkFont("Dyuthi", 25)
+        self.font_welcome_text = customtkinter.CTkFont("Dyuthi", 50)
          
          
     def _setup_buttons(self):
@@ -74,12 +82,13 @@ class GUI(customtkinter.CTk):
         
         rounder_border = 5
         
-        self.left_button1.configure(corner_radius=rounder_border, command=self._left_button_bottom2)
+        self.left_button1.configure(corner_radius=rounder_border, command=self._left_button_bottom1)
         self.left_button2.configure(corner_radius=rounder_border, command=self._left_button_bottom2)
         self.left_button3.configure(corner_radius=rounder_border, command=self._left_button_bottom3)
     
     def _left_button_bottom1(self):
-        pass
+        print("Activo recibir temperaturas")
+        self.mostrar_temperaturas = True
     
     def _left_button_bottom2(self):
         pass
@@ -95,7 +104,9 @@ class GUI(customtkinter.CTk):
         self.label_left.pack(anchor="n")
         self.label_bottom.pack(anchor="w", ipadx=10)
         
-        self.label_right1.pack(anchor="center", pady=200)
+        self.label_right1_container.pack(anchor="center", pady=200)
+        
+        self.label_right1.grid(column=0, row=0)
         
         
     def _setup_boxes(self):
@@ -109,7 +120,12 @@ class GUI(customtkinter.CTk):
         self.left_box.configure(fg_color="#B805AF", corner_radius=0, width=self.weight_left_block)
         
     def procesar_dato(self, dato):
-        pass
+        print(f"Recibido dato {dato}")
+        
+        if (self.mostrar_temperaturas):
+            print(f"Mostrando dato {dato}")
+            self.label_right2.configure(text=f"{dato}º")
+            self.label_right2.grid(column=0, row=1)
         
         
     def run(self):

@@ -11,7 +11,7 @@ class Server:
                 .pipe(operators.subscribe_on(pool_scheduler))
         
         self.temp_max = 50.0
-        self.temp_min = 25.0
+        self.temp_min = 20.0
         
         self.is_running = True
     

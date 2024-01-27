@@ -10,13 +10,14 @@ import tkinter
 from tkinter import Toplevel
 from utilidades import *
 
-"""
+class InfoForm(Toplevel):
+    """
     Formulario que muestra la información del
     autor de esta aplicación, se le indica el título de la ventana,
     nombre de alumno, nombre de centro y nombre de módulo con que se
     va a crear.
-"""
-class InfoForm(Toplevel):
+    """
+
     def __init__(self, master, titulo, nombre_alumno, nombre_centro, nombre_modulo):
         super().__init__(master)
         
