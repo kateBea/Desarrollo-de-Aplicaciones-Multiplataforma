@@ -12,13 +12,14 @@ def run():
 
     # Creamos el servidor (observable)
     server = Server(pool_scheduler)    
-    #server.subscribe(lambda dato: print(dato))
+    server.subscribe(lambda dato: print(dato))
     
     # Creamos la interfaz
     gui = GUI()
     
     # Nos suscribimos al obervable para recibir datos de forma periódica
     server.subscribe(gui.procesar_dato)
+    gui.run()
     
     
     
