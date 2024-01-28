@@ -1,14 +1,12 @@
-package dam2.queries.app.modelo;
+package dam2.repoqueries.app.modelo;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,10 +24,10 @@ import lombok.ToString;
 @Entity
 @Table(name = "Depart")
 public class Departamento {
-	@Id
-	@Column(name = "coddepto")
 	@NonNull
 	@EqualsAndHashCode.Include
+	@Id
+	@Column(name = "coddepto")
 	private Integer codigo;
 	
 	@Column(name = "nombredepto", nullable = false)
@@ -38,9 +36,10 @@ public class Departamento {
 	@Column(name = "ciudad")
 	private String ciudad;
 	
+	
 	// Un departamento solo puede tener un director o ninguno
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "coddirector")
 	@ToString.Exclude
 	private Empleado director;

@@ -1,18 +1,16 @@
-package dam2.queries.app.modelo;
+package dam2.repoqueries.app.modelo;
 
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,10 +27,10 @@ import lombok.NonNull;
 @Entity
 @Table(name = "Emple")
 public class Empleado {
-	@Id
-	@Column(name = "nidemp")
 	@NonNull
 	@EqualsAndHashCode.Include
+	@Id
+	@Column(name = "nidemp")
 	private Integer id;
 	
 	@Column(name = "nomemp", nullable = false)
@@ -57,16 +55,17 @@ public class Empleado {
 	@Column(name = "cargoe", nullable = false)
 	private String cargo;
 	
+	
 	// Un empleado puede ser jefe de varios empleados
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "jefeid")
 	private Empleado jefe;
 	
 	// Varios empleados pueden estar en el mismo departamento
 	// No puede existir empleado sin un departamento asignado
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "coddepto", nullable = false)
 	private Departamento departamento;
 }
