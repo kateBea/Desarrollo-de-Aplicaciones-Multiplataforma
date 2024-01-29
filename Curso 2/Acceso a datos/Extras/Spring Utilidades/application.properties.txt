@@ -1,24 +1,26 @@
+# Formato UTF-8
+
 #no queremos el banner
 spring.main.banner-mode=off
-# a peteci髇 de Luis, no queremos logs
-logging.level.org.springframework=OFF
-logging.level.root=OFF
+# a peteci贸n de Luis, no queremos logs
+# logging.level.org.springframework=OFF
+# logging.level.root=OFF
 
-# Configuraci髇 acceso bbdd
+# Configuraci贸n acceso bbdd
 spring.datasource.url=jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE
 spring.datasource.username=sa
 spring.datasource.password=
 
-# Configuraci髇 jpa
+# Configuraci贸n jpa
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
 spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop
 
 #permitir acceder a la consola de h2
 spring.h2.console.enabled=true
 
-# Configuraci髇 SQL
+# Configuraci贸n SQL
 # mostrar sentencias sql
 #logging.level.org.hibernate.SQL=DEBUG
-# mostrar par醡etros sql prepared
+# mostrar par谩metros sql prepared
 #logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
 #spring.jpa.properties.hibernate.format_sql=true

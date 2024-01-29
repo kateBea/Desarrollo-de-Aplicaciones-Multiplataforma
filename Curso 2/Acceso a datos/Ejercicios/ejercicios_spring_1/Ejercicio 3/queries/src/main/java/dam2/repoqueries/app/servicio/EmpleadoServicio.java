@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import dam2.repoqueries.app.modelo.Empleado;
 
+@Service
 public interface EmpleadoServicio {
 	Set<Empleado>		findAll();
 	Optional<Empleado>	buscarPorClave(Integer id);
