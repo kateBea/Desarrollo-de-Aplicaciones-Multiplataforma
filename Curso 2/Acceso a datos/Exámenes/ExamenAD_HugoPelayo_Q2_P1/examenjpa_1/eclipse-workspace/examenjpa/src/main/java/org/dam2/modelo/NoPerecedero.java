@@ -1,6 +1,5 @@
 package org.dam2.modelo;
 
-import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

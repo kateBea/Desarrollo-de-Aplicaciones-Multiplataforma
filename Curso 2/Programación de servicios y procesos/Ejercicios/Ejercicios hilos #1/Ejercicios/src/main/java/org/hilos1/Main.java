@@ -14,7 +14,9 @@ public class Main {
         //ejercicios.add(new Ejercicio4());
         //ejercicios.add(new Ejercicio5());
         //ejercicios.add(new Ejercicio6());
-        ejercicios.add(new Ejercicio7());
+        //ejercicios.add(new Ejercicio7());
+        //ejercicios.add(new Ejercicio8());
+        ejercicios.add(new Ejercicio9());
 
         for (Runner ejercicio : ejercicios) {
             ejercicio.run();

@@ -3,6 +3,7 @@
 Usuario : nickname, password, puntos
 Noticia: título, cuerpo, categoría(deportes, política, economía), fecha
 Comentario: autor, noticia, fecha, contenido, valoración (valor de 1 a 5)
+
 Un Usuario puede redactar noticias obteniendo 1,2 ó 3 puntos según la categoría de noticia ( 1 deportes, ..)
 Varios Usuarios pueden hacer Comentarios sobre una Noticia a lo largo del tiempo.
 
@@ -13,6 +14,7 @@ Varios Usuarios pueden hacer Comentarios sobre una Noticia a lo largo del tiempo
 Obtener el título de la noticia más veces comentada
 Obtener la lista de noticias redactadas por el usuario que más puntos tiene
 Obtener el título y el cuerpo de las noticias del mes actual
+
 4. Realizar una aplicación cliente que realice las siguientes operaciones
 
 Un usuario Redacta noticia
