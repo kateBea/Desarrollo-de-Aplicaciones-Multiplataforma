@@ -18,7 +18,7 @@ public class ComentarioServicioImpl implements ComentarioServicio {
 	
 	@Override
 	public Set<Comentario> buscarPorUsuario(String nick) {
-		return repositorio.comentariosUsuario(nick);
+		return repositorio.findUserCommentsById(nick);
 	}
 
 	@Override
