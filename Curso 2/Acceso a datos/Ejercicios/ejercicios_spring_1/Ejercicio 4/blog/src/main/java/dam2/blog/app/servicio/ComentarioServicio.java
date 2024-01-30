@@ -12,4 +12,7 @@ public interface ComentarioServicio {
 	Set<Comentario> buscarPorUsuario(String nick);
 	Optional<Comentario> insertar(Comentario comentario);
 	Optional<Comentario> actualizar(Comentario comentario);
+	
+	boolean existePorId(Integer id);
+	boolean borrarPorId(Integer id);
 }

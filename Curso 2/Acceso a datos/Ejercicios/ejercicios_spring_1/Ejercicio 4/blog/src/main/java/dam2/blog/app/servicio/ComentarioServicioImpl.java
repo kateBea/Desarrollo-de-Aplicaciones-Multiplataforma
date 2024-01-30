@@ -15,22 +15,36 @@ public class ComentarioServicioImpl implements ComentarioServicio {
 	@Autowired
 	ComentarioRepositorio repositorio;
 	
+	
 	@Override
 	public Set<Comentario> buscarPorUsuario(String nick) {
-		
-		return null;
+		return repositorio.comentariosUsuario(nick);
 	}
 
 	@Override
 	public Optional<Comentario> insertar(Comentario comentario) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return Optional.of(repositorio.save(comentario));
 	}
 
 	@Override
 	public Optional<Comentario> actualizar(Comentario comentario) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return Optional.of(repositorio.save(comentario));
+	}
+
+	@Override
+	public boolean existePorId(Integer id) {
+		// TODO Auto-generated method stub
+		return repositorio.existsById(id);
+	}
+
+	@Override
+	public boolean borrarPorId(Integer id) {
+		// TODO Auto-generated method stub
+		repositorio.deleteById(id);
+		
+		return existePorId(id);
 	}
 
 }
