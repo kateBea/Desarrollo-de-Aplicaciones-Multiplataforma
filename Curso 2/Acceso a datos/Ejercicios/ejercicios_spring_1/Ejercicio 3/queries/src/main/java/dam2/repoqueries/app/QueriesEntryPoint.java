@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import dam2.repoqueries.app.modelo.Departamento;
 import dam2.repoqueries.app.servicio.DepartamentoServicio;
 import dam2.repoqueries.app.servicio.EmpleadoServicio;
 
@@ -36,15 +37,25 @@ public class QueriesEntryPoint implements CommandLineRunner {
 		
 		// 3. Obtener los datos de los empleados con cargo 'Secretaria'.
 		System.err.println("Query 3");
+		servicioEmpleado.buscarPorCargo("Secretaria").forEach(System.out::println);
+		
+		// Para depuración
+		//servicioEmpleado.buscarPorCargo("Vendedor").forEach(System.out::println);
 		
 		// 4. Obtener el nombre y salario de los empleados.
 		System.err.println("Query 4");
 		
+		
 		// 5. Obtener los datos de los empleados vendedores, ordenado por nombre.
 		System.err.println("Query 5");
 		
+		
 		// 6. Listar el nombre de los departamentos
 		System.err.println("Query 6");
+		servicioDepartamento.findAll().stream().
+			map(Departamento::getNombre).
+			distinct().
+			forEach(System.out::println);
 		
 		// 7. Listar el nombre de los departamentos, ordenado por nombre
 		System.err.println("Query 7");

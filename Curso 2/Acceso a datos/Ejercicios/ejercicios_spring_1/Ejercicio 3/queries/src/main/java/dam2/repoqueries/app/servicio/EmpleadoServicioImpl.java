@@ -1,11 +1,13 @@
 package dam2.repoqueries.app.servicio;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import dam2.repoqueries.app.modelo.Empleado;
@@ -57,4 +59,9 @@ public class EmpleadoServicioImpl implements EmpleadoServicio {
 				collect(Collectors.toSet());
 	}
 
+	@Override
+	public Set<Empleado> buscarPorCargo(String cargo) {
+		// TODO Auto-generated method stub
+		return repositorio.findByCargo(cargo);
+	}
 }
