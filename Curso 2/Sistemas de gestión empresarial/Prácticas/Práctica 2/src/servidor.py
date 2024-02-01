@@ -17,7 +17,7 @@ class Server:
     
     def _generar_datos(self, observer, scheduler):
         while self.is_running:
-            dato = random.random() * self.temp_max + self.temp_min
+            dato = random.random() * (self.temp_max - self.temp_min) + self.temp_min
             
             observer.on_next(dato)
             

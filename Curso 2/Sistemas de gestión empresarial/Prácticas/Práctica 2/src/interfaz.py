@@ -1,6 +1,10 @@
 import os
 import tkinter
 import customtkinter
+import threading
+
+from matplotlib.figure import Figure 
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk) 
 
 from tkinter import PhotoImage
 from utilidades import *
@@ -15,9 +19,14 @@ class GUI(customtkinter.CTk):
     def __init__(self):
         super().__init__(fg_color=COLOR_PRINCIPAL)
         
+        # Variables necesarias. TODO: explicar mejor
+        self.want_tempts = False
+        self.dato_temperatura = 0.0
+        self.canvas = None
+        
         # constantes internas
         self.height_header_footer = 50
-        self.weight_left_block = 150
+        self.width_left_block = 150
         
         # fuentes
         self._create_fonts()
@@ -63,11 +72,6 @@ class GUI(customtkinter.CTk):
         self.left_box = customtkinter.CTkFrame(self)
         self.right_box = customtkinter.CTkFrame(self, fg_color=COLOR_PRINCIPAL)
         
-        self.top_box.configure(height=self.height_header_footer)
-        self.bottom_box.configure(height=self.height_header_footer)
-        
-        self.data_migration_frame = customtkinter.CTkFrame(self.right_box, fg_color=COLOR_HEAD_FOOT)
-        
         
     def _create_fonts(self):
         self.font_default = customtkinter.CTkFont("Dyuthi", 20)
@@ -88,10 +92,56 @@ class GUI(customtkinter.CTk):
     
     def _left_button_bottom1(self):
         print("Activo recibir temperaturas")
-        self.mostrar_temperaturas = True
+        
+        # TODO: cambier arquitectura. Este buleano servirá
+        # para indicar que queremos las temperaturas en pantalla
+        # Sería ideal poner un frame y cambiar el frame activo del
+        # panel central al que corresponde a un botón en concreto.
+        # Es una alternative más escalable que la actual. 
+        self.want_tempts = True
+        
+        # Para inmediatamente actualizar la interfaz de temperaturas.
+        PRECISION = 2
+        self.label_right2.configure(text=f"{round(self.dato_temperatura, PRECISION)} ºC")
+        self.label_right1.grid(column=0, row=0)
+        self.label_right2.grid(column=0, row=1)
+        
+        if self.canvas != None:
+            self.canvas.get_tk_widget().pack_forget()
     
     def _left_button_bottom2(self):
-        pass
+        print("Activo mostrar temperaturas")
+        
+        self.want_tempts = False
+        self.label_right1.grid_forget()
+        self.label_right2.grid_forget()
+        
+        # the figure that will contain the plot 
+        fig = Figure(figsize = (5, 5), dpi = 100) 
+    
+        # list of squares 
+        y = [i**2 for i in range(101)] 
+    
+        # adding the subplot 
+        plot1 = fig.add_subplot(111) 
+    
+        # plotting the graph 
+        plot1.plot(y) 
+    
+        # creating the Tkinter canvas 
+        # containing the Matplotlib figure 
+        self.canvas = FigureCanvasTkAgg(fig, master = self)   
+        self.canvas.draw() 
+    
+        # placing the canvas on the Tkinter window 
+        self.canvas.get_tk_widget().pack() 
+    
+        # creating the Matplotlib toolbar 
+        #toolbar = NavigationToolbar2Tk(self.canvas, self) 
+        #toolbar.update() 
+    
+        # placing the toolbar on the Tkinter window 
+        self.canvas.get_tk_widget().pack() 
     
     def _left_button_bottom3(self):
         print("Mostrando información de la aplicación")
@@ -101,8 +151,8 @@ class GUI(customtkinter.CTk):
     
     def _setup_labels(self):
         self.label_top.pack(anchor="center")
-        self.label_left.pack(anchor="n")
         self.label_bottom.pack(anchor="w", ipadx=10)
+        self.label_left.pack(anchor="n")
         
         self.label_right1_container.pack(anchor="center", pady=200)
         
@@ -110,23 +160,27 @@ class GUI(customtkinter.CTk):
         
         
     def _setup_boxes(self):
+        self.top_box.configure(fg_color="#A5049E", height=self.height_header_footer, corner_radius=0)
+        self.bottom_box.configure(fg_color="#A5049E", height=self.height_header_footer, corner_radius=0)
+        self.left_box.configure(fg_color="#B805AF", corner_radius=0, width=self.width_left_block)
+        
         self.top_box.pack(side=tkinter.TOP, fill=tkinter.X)
         self.bottom_box.pack(side=tkinter.BOTTOM, fill=tkinter.X)
         self.left_box.pack(side=tkinter.LEFT, fill=tkinter.Y, ipadx=20)
         self.right_box.pack(side=tkinter.RIGHT, expand = True, fill=tkinter.BOTH)
         
-        self.top_box.configure(fg_color="#A5049E", height=self.height_header_footer, corner_radius=0)
-        self.bottom_box.configure(fg_color="#A5049E", height=self.height_header_footer, corner_radius=0)
-        self.left_box.configure(fg_color="#B805AF", corner_radius=0, width=self.weight_left_block)
         
     def procesar_dato(self, dato):
-        print(f"Recibido dato {dato}")
+        print(f"Recibido {dato}") 
+        self.dato_temperatura = float(dato)
         
-        if (self.mostrar_temperaturas):
-            print(f"Mostrando dato {dato}")
-            self.label_right2.configure(text=f"{dato}º")
+        if self.want_tempts:
+            PRECISION = 2
+            self.label_right2.configure(text=f"{round(self.dato_temperatura, PRECISION)} ºC")
             self.label_right2.grid(column=0, row=1)
         
+    def _mostrar_dato(self, dato):
+        print(f"Recibido {dato}")  
         
     def run(self):
         self.mainloop()

@@ -12,7 +12,6 @@ def run():
 
     # Creamos el servidor (observable)
     server = Server(pool_scheduler)    
-    #server.subscribe(lambda dato: print(dato))
     
     # Creamos la interfaz
     gui = GUI()
