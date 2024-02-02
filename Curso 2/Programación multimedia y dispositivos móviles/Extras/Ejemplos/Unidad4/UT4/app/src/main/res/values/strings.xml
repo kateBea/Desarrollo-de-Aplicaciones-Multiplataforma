@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UT4</string>
+    <string name="title_activity_demo_scaffold">DemoScaffoldActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_vmactivity">VMActivity</string>
+    <string name="title_activity_calculadora">CalculadoraActivity</string>
+    <string name="title_activity_calculadora_vmactivity">CalculadoraVMActivity</string>
+    <string name="title_activity_navegacion">NavegacionActivity</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UT3</string>
+    <string name="title_activity_actividad_b">Actividad_B</string>
+    <string name="title_activity_actividad_c">Actividad_C</string>
+    <string name="title_activity_ciclo_vida">CicloVidaActivity</string>
+    <string name="title_activity_pregunta">PreguntaActivity</string>
+</resources>

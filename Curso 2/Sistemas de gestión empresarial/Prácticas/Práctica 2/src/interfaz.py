@@ -124,9 +124,12 @@ class GUI(customtkinter.CTk):
     
         # adding the subplot 
         plot1 = fig.add_subplot(111) 
+        
+        x_values = [1, 2, 3, 4]
+        y_values = [10, 20, 30, 40]
     
         # plotting the graph 
-        plot1.plot(y) 
+        plot1.plot(x_values, y_values) 
     
         # creating the Tkinter canvas 
         # containing the Matplotlib figure 
@@ -141,7 +144,7 @@ class GUI(customtkinter.CTk):
         #toolbar.update() 
     
         # placing the toolbar on the Tkinter window 
-        self.canvas.get_tk_widget().pack() 
+        #self.canvas.get_tk_widget().pack() 
     
     def _left_button_bottom3(self):
         print("Mostrando información de la aplicación")

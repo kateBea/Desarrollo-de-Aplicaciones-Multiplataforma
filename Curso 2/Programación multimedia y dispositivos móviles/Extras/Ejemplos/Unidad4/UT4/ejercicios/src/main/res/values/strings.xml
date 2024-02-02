@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Ejercicios</string>
+    <string name="alta_usuario">Alta usuario</string>
+    <string name="fina">fina</string>
+    <string name="normal">normal</string>
+    <string name="gruesa">gruesa</string>
+
+    <string name="uno">uno</string>
+    <string name="dos">dos</string>
+    <string name="tres">tres</string>
+    <string name="cuatro">cuatro</string>
+
+    <string name="mozarella">mozarella</string>
+    <string name="salami">salami</string>
+    <string name="atun">atún</string>
+    <string name="pepperoni">pepperoni</string>
+    <string name="champiñones">champiñones</string>
+    <string name="title_activity_piza">PizaActivity</string>
+    <string name="elige_ingredientes">Elige ingredientes</string>
+    <string name="resumen_compra">Resumen compra</string>
+    <string name="back_button">Botón retroceso</string>
+
+
+</resources>

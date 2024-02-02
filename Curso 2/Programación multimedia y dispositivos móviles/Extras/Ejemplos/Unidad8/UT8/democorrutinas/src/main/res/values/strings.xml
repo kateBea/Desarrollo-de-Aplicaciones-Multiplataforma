@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DemoCorrutinas</string>
+    <string name="ejemplos_de_corrutinas">Ejemplos de corrutinas</string>
+    <string name="corrutina_n_primos">Corrutina N. Primos</string>
+</resources>

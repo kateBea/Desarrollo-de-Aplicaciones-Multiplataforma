@@ -1,0 +1,35 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_gravity="center_vertical"
+android:orientation="vertical"
+tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivDado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/dice_1" />
+
+    <Button
+        android:id="@+id/btLanzar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="lanzar"
+        android:text="@string/strBtLanzaar"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txtTirar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Dado"
+        android:textSize="30sp" />
+
+</LinearLayout>

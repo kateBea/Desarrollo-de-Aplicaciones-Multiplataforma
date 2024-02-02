@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">crud_room</string>
+    <string name="inicio">Inicio</string>
+    <string name="agregar">Agregar</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">borrar</string>
+    <string name="desconocido">Desconocido</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="guardar">Guardar</string>
+    <string name="nuevo_usuario">Nuevo Usuario</string>
+    <string name="confirmacion">Confirmación</string>
+</resources>
