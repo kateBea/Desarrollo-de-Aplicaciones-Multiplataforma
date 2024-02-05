@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import dam2.carreras.model.PuntoControl;
 
 @Service
-public interface PuntoDeControlService {
+public interface IPuntoControlService {
 	// Consultar
 	boolean existePorId(Long id);
 	Set<PuntoControl> buscarTodos();

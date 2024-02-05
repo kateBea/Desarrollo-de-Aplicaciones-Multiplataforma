@@ -18,6 +18,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * Representa un corredor.
+ * 
+ * NOTA: Ver cabecera de clase Carrera para detalles sobre la relación
+ * entre esta entidad y las carreras.
+ * */
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -42,7 +49,4 @@ public class Corredor {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
-	
-	@ManyToMany(mappedBy = "corredores", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-	private Set<Carrera> carreras;
 }

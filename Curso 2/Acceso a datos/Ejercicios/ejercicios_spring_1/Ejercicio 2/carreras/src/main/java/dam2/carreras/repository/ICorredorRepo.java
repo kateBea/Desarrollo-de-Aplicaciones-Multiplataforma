@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import dam2.carreras.model.Corredor;
 
-public interface CorredorRepo extends CrudRepository<Corredor, String>{
+public interface ICorredorRepo extends CrudRepository<Corredor, String>{
 
 }

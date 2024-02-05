@@ -2,35 +2,38 @@ package dam2.carreras.service;
 
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dam2.carreras.model.Corredor;
-import dam2.carreras.repository.CorredorRepo;
+import dam2.carreras.repository.ICorredorRepo;
 
 @Service
-public class CorredorServImpl implements CorredorService {
+public class CorredorServImpl implements ICorredorService {
 
 	@Autowired
-	CorredorRepo repositorio;
+	ICorredorRepo repositorio;
 	
 	@Override
 	public boolean existePorId(String nombre) {
 		// TODO Auto-generated method stub
-		return false;
+		return repositorio.existsById(nombre);
 	}
 
 	@Override
 	public Set<Corredor> buscarTodos() {
 		// TODO Auto-generated method stub
-		return null;
+		return StreamSupport.stream(repositorio.findAll().spliterator(), false).
+				collect(Collectors.toSet());
 	}
 
 	@Override
 	public Optional<Corredor> buscardPorId(String nombre) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return repositorio.findById(nombre);
 	}
 
 	@Override
@@ -42,13 +45,15 @@ public class CorredorServImpl implements CorredorService {
 	@Override
 	public Optional<Corredor> actualizar(Corredor nuevo) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return Optional.of(repositorio.save(nuevo));
 	}
 
 	@Override
 	public boolean borrarPorId(String nombre) {
 		// TODO Auto-generated method stub
-		return false;
+		repositorio.deleteById(nombre);
+		
+		return existePorId(nombre);
 	}
 
 }

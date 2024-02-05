@@ -13,10 +13,10 @@ import dam2.carreras.model.Corredor;
 import dam2.carreras.model.PuntoControl;
 import dam2.carreras.model.Sexo;
 import dam2.carreras.model.Tiempo;
-import dam2.carreras.service.CarreraService;
-import dam2.carreras.service.CorredorService;
-import dam2.carreras.service.PuntoDeControlService;
-import dam2.carreras.service.TiempoService;
+import dam2.carreras.service.ICarreraService;
+import dam2.carreras.service.ICorredorService;
+import dam2.carreras.service.IPuntoControlService;
+import dam2.carreras.service.ITiempoService;
 
 @Component
 
@@ -25,10 +25,10 @@ import dam2.carreras.service.TiempoService;
  * 
  * */
 public class CargarDatos implements CommandLineRunner {
-	@Autowired TiempoService servicioTiempo;
-	@Autowired CarreraService servicioCarrera;
-	@Autowired CorredorService servicioCorredor;
-	@Autowired PuntoDeControlService servicioPuntoDeControlService;
+	@Autowired ITiempoService servicioTiempo;
+	@Autowired ICarreraService servicioCarrera;
+	@Autowired ICorredorService servicioCorredor;
+	@Autowired IPuntoControlService servicioPuntoDeControlService;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -99,14 +99,13 @@ public class CargarDatos implements CommandLineRunner {
                                 .build();
         
         // Asignar corredores a las carreras
-        Set<Carrera> carrerasCorredor1 = new HashSet<>();
-        carrerasCorredor1.add(carrera1);
-        carrerasCorredor1.add(carrera2);
-        corredor1.setCarreras(carrerasCorredor1);
+        Set<Corredor> corredores = new HashSet<>();
+        corredores.add(corredor1);
+        corredores.add(corredor2);
         
-        Set<Carrera> carrerasCorredor2 = new HashSet<>();
-        carrerasCorredor2.add(carrera1);
-        corredor2.setCarreras(carrerasCorredor2);
+        carrera1.setCorredores(corredores);
+        carrera2.setCorredores(corredores);
+        
         
         // Crear tiempos
         Tiempo tiempoCorredor1Carrera1 = Tiempo.builder()
@@ -152,6 +151,9 @@ public class CargarDatos implements CommandLineRunner {
         servicioTiempo.insertar(tiempoCorredor1Carrera1);
         servicioTiempo.insertar(tiempoCorredor1Carrera2);
         servicioTiempo.insertar(tiempoCorredor2Carrera1);
+        
+  
+
 		
 	}
 

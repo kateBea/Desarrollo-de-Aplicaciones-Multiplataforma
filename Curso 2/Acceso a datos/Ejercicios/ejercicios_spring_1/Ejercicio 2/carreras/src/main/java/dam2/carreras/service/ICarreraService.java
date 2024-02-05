@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import dam2.carreras.model.Carrera;
 
 @Service
-public interface CarreraService {
+public interface ICarreraService {
 	// Consultar
 	boolean existePorId(String nombre);
-	Set<Carrera> buscarTodos();
+	Set<Carrera> buscarTodas();
 	Optional<Carrera> buscardPorId(String nombre);
 	
 	// Insertar

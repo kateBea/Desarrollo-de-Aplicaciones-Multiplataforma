@@ -10,19 +10,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dam2.carreras.model.Carrera;
-import dam2.carreras.service.ICarreraService;
+import dam2.carreras.model.Tiempo;
+import dam2.carreras.service.ITiempoService;
 
 @RestController
-@RequestMapping("carreras")
-public class CarrerasController {
-	
+@RequestMapping("carreras/tiempos")
+public class TiempoController {
 	@Autowired
-	ICarreraService service;
+	ITiempoService service;
 	
 	@GetMapping("/consultar")
-	public ResponseEntity<List<Carrera>> consultarTodas() {
-		List<Carrera> todas = service.buscarTodas().stream()
+	public ResponseEntity<List<Tiempo>> consultarTodos() {
+		List<Tiempo> todas = service.buscarTodos().stream()
 			.collect(Collectors.toList());
 		
 		return new ResponseEntity<>(todas, HttpStatus.OK);

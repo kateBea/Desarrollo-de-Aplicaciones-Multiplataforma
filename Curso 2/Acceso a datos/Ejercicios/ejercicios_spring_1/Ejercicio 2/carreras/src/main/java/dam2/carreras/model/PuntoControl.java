@@ -15,23 +15,25 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * Por simplicidad los puntos de control son únicos por carrera.
+ * Todos gaurdan quien es el corredor que ha llegado por primera vez
+ * y sólo habrá uno por carrera. El jugador debe existir.
+ * 
+ * NOTA: Probablemente no sea necesario serializar
+ * a la base de datos y marcar este objeto como un 
+ * Embeddable para carrera.
+ * */
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 
-/**
- * Por simplicidad los puntos de control son únicos por carrera.
- * Todos gaurdan quien es el corredor que ha llegado por primera vez
- * y sólo habrá uno por carrera. El jugador debe existir.
- * 
- * NOTA: Probablemente no es necesario serializar
- * a la base de datos y marcar este objeto como un Embeddable para
- * carrera.
- * */
 @Entity
 @Table(name = "PUNTO_DE_CONTROL")
+
 public class PuntoControl {
 	@EqualsAndHashCode.Include
 	@Id

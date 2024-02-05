@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import dam2.carreras.model.Tiempo;
 
-public interface TiempoRepo extends CrudRepository<Tiempo, Long> {
+public interface ITiempoRepo extends CrudRepository<Tiempo, Long> {
 
 }

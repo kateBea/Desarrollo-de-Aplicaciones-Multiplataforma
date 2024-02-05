@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import dam2.carreras.model.Tiempo;
 
 @Service
-public interface TiempoService {
+public interface ITiempoService {
 	// Consultar
 	boolean existePorId(Long id);
 	Set<Tiempo> buscarTodos();

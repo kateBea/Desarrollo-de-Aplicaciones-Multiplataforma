@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import dam2.carreras.model.PuntoControl;
 
-public interface PuntoControlRepo extends CrudRepository<PuntoControl, Long>{
+public interface IPuntoControlRepo extends CrudRepository<PuntoControl, Long>{
 
 }

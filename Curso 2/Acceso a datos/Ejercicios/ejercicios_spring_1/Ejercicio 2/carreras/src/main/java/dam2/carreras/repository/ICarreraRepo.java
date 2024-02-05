@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import dam2.carreras.model.Carrera;
 
-public interface CarreraRepo extends CrudRepository<Carrera, String>{
+public interface ICarreraRepo extends CrudRepository<Carrera, String>{
 
 }

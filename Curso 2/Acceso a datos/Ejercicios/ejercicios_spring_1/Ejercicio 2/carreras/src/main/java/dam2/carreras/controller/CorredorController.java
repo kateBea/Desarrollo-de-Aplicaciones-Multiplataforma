@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dam2.carreras.model.Carrera;
-import dam2.carreras.service.ICarreraService;
+import dam2.carreras.model.Corredor;
+import dam2.carreras.service.ICorredorService;
 
 @RestController
-@RequestMapping("carreras")
-public class CarrerasController {
-	
+@RequestMapping("carreras/corredores")
+public class CorredorController {
+
 	@Autowired
-	ICarreraService service;
+	ICorredorService service;
 	
 	@GetMapping("/consultar")
-	public ResponseEntity<List<Carrera>> consultarTodas() {
-		List<Carrera> todas = service.buscarTodas().stream()
+	public ResponseEntity<List<Corredor>> consultarTodos() {
+		List<Corredor> todas = service.buscarTodos().stream()
 			.collect(Collectors.toList());
 		
 		return new ResponseEntity<>(todas, HttpStatus.OK);

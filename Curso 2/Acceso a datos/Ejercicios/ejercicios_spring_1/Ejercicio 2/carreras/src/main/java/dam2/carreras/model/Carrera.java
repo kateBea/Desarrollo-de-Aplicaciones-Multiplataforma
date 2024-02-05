@@ -20,6 +20,16 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * Representa una carrera con todos sus corredores.
+ * En este modelo se ha considerado la relación entre carreras 
+ * y corredores donde corredor es la entidad débil y carrera
+ * es una entidad fuerte. La relación se establece como muchos a
+ * muchos ya que un corredor puede estar en varias carreras a la vez
+ * y lo mismo para una carrera.
+ * 
+ * */
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -29,10 +39,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "CARRERA")
 
-/**
- * 
- * 
- * */
 public class Carrera {
 	@NonNull
 	@EqualsAndHashCode.Include
@@ -56,9 +62,9 @@ public class Carrera {
 	// el jugador como la entidad débil y carrera como entidad fuerte.
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinTable(
-		name = "CORREDORE_ADSCRITO",
+		name = "CORREDOR_ADSCRITO",
 		joinColumns = { @JoinColumn(name = "nombre_carrera", nullable = false) },
-		inverseJoinColumns = { @JoinColumn(name = "nombre_corredor", nullable = false) }
+		inverseJoinColumns = { @JoinColumn(name = "dni_corredor", nullable = false) }
 	)
 	private Set<Corredor> corredores;
 }

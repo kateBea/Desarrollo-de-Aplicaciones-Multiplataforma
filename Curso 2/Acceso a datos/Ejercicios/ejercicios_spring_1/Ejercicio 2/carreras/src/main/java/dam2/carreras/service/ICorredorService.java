@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import dam2.carreras.model.Corredor;
 
 @Service
-public interface CorredorService {
+public interface ICorredorService {
 	// Consultar
 	boolean existePorId(String nombre);
 	Set<Corredor> buscarTodos();
