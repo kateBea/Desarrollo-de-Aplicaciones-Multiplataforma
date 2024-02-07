@@ -1,6 +1,6 @@
 import multiprocessing
 
-from interfaz import GUI
+from interfaz import GUI    
 from servidor import Server
 from threading import current_thread
 from reactivex.scheduler import ThreadPoolScheduler
@@ -13,13 +13,10 @@ def run():
     # Creamos el servidor (observable)
     server = Server(pool_scheduler)    
     
+    
     # Creamos la interfaz
-    gui = GUI()
-    
-    # Nos suscribimos al obervable para recibir datos de forma periódica
-    server.subscribe(gui.procesar_dato)
+    gui = GUI(server)
     gui.run()
-    
 
 
 if __name__ == "__main__":

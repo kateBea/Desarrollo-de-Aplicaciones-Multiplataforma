@@ -1,1 +1,0 @@
-# Definición general para las herramientas que se pueden añadir a nuestra app
