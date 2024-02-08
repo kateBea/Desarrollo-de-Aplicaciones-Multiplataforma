@@ -10,6 +10,8 @@ class SaveToDB(Modulo):
     def __init__(self, master, temp_src, on_frame_active):
         super(SaveToDB, self).__init__(master, "Guardar temperaturas", on_frame_active)
         
+        self.configure(fg_color=COLOR_PRINCIPAL)
+        
         self.temp_src = temp_src
         
         self.guardar_todo_frame = customtkinter.CTkFrame(self, fg_color=self._fg_color)

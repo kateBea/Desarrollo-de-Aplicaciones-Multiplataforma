@@ -5,13 +5,10 @@ import tkinter
 from modules.extension import Modulo
 from utilidades import *
 
-LIMIT_DATA = 20
-
 class LoadTemps(Modulo):
     
     def __init__(self, master, on_frame_active):
         super(LoadTemps, self).__init__(master, "Mostrar temperaturas", on_frame_active)
-        self._create_fonts()
         
         self.configure(fg_color=COLOR_PRINCIPAL)
         

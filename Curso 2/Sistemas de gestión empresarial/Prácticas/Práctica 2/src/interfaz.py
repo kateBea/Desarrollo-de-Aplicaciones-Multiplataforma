@@ -8,6 +8,7 @@ from modules.modloadtemps import LoadTemps
 from modules.modshowtemps import ShowTemps
 from modules.modpdfprinter import PDFGenerate
 from modules.moddbserialize import SaveToDB
+from modules.modjsonloader import JSONLoader
 
 MAX_TEMPERATURA = 50.0
 MIN_TEMPERATURA = 20
@@ -39,10 +40,11 @@ class GUI(customtkinter.CTk):
         self.grafica_temps = ShowTemps(self.right_box, self.mostrar_temperaturas, self._on_active_module_change)
         self.guardar_db = SaveToDB(self.right_box, self.mostrar_temperaturas, self._on_active_module_change)
         self.generar_pdf = PDFGenerate(self.right_box, self.mostrar_temperaturas, self._on_active_module_change)
+        self.generar_json = JSONLoader(self.right_box, self.mostrar_temperaturas, self._on_active_module_change)
         
         server.subscribe(self.mostrar_temperaturas.procesar_dato)
         
-        self.modulos = [ self.mostrar_temperaturas, self.grafica_temps, self.guardar_db, self.generar_pdf ]
+        self.modulos = [ self.mostrar_temperaturas, self.grafica_temps, self.guardar_db, self.generar_pdf, self.generar_json ]
         self.active_module_frame = None
         
         self._create_widgets()

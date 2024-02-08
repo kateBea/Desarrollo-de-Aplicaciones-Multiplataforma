@@ -2,7 +2,6 @@ import multiprocessing
 
 from interfaz import GUI    
 from servidor import Server
-from threading import current_thread
 from reactivex.scheduler import ThreadPoolScheduler
 
 def run():
