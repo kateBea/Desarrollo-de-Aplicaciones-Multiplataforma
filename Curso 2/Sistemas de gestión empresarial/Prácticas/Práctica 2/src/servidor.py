@@ -26,3 +26,6 @@ class Server:
             
     def subscribe(self, func):
         _ = self.source.subscribe(on_next=func)
+        
+    def shutdown(self):
+        self.is_running = False

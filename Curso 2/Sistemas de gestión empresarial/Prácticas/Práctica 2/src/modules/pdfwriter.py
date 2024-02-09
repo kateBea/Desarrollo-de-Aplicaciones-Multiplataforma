@@ -1,25 +1,21 @@
 import pdfkit
 import jinja2
-import os
 
-from utilidades import *
-
-this_file_path = current_file_path(__file__)
-dato1 = "Segundo"
-dato2 = "Desarrollo de Aplicaciones Multiplataforma"
-
-misDatos = {'dato1': dato1, 'dato2': dato2}
-ubicacion_plantillas = jinja2.FileSystemLoader(this_file_path)
-
-miPlantilla = jinja2.Environment(loader=ubicacion_plantillas) 
-
-ruta = os.path.dirname(__file__)
-creacion_html = this_file_path + "/miPlantilla.html"
-
-miHTML = miPlantilla.get_template(creacion_html)
-
-formatoWeb = miHTML.render(misDatos)
-config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf")
-
-salida = "output.pdf"
-pdfkit.from_string(formatoWeb, salida, configuration=config)
+class PDFTool:
+    def __init__(self, templates_path):
+        self.templates_path = templates_path
+        
+        self.template_loader = jinja2.FileSystemLoader(searchpath=self.templates_path)
+        self.template_env = jinja2.Environment(loader=self.template_loader)
+        
+        print(f"Ubicación platillas {self.templates_path}")
+    
+    def render(self, data, template_name):
+        EXEC_PATH = "/usr/bin/wkhtmltopdf"
+        self.template = self.template_env.get_template( template_name )
+        self.formatoWeb = self.template.render(data)
+        self.config = pdfkit.configuration(wkhtmltopdf=EXEC_PATH)
+    
+    def generate_output(self, file_name):
+        options = { "enable-local-file-access": "" }
+        pdfkit.from_string(self.formatoWeb, file_name, configuration=self.config, options=options)

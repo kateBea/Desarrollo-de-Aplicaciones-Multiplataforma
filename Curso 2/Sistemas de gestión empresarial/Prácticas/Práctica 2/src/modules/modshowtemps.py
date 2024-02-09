@@ -25,10 +25,10 @@ class ShowTemps(Modulo):
         
         self.temp_src = temp_source
         
-        # Módulo visualizar temperaturas
+        # Parámetros de visualización (opcional)
         plt.rcParams["figure.autolayout"] = True
-        plt.rcParams['lines.linewidth'] = 2
-        plt.rcParams['lines.linestyle'] = ':'
+        plt.rcParams['lines.linewidth'] = 1
+        #plt.rcParams['lines.linestyle'] = ':'
 
         plt.axes(xlim=(0, LIMIT_DATA), ylim=(MIN_TEMPERATURA, MAX_TEMPERATURA))
         self.fig = plt.Figure()
@@ -50,7 +50,7 @@ class ShowTemps(Modulo):
         
         print("Activo mostrar temperaturas")
         
-        #self.canvas.draw()
+        self.canvas.draw()
         self.canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=True)
         
     def _init(self):

@@ -4,6 +4,7 @@ import customtkinter
 from utilidades import *
 from popupinfo import *
 
+from tkinter import messagebox
 from modules.modloadtemps import LoadTemps
 from modules.modshowtemps import ShowTemps
 from modules.modpdfprinter import PDFGenerate
@@ -25,6 +26,8 @@ class GUI(customtkinter.CTk):
     def __init__(self, server):
         super().__init__(fg_color=COLOR_PRINCIPAL)
     
+        self.server = server
+        self.info_form = None
         
         # Fuentes
         self._create_fonts()
@@ -48,6 +51,15 @@ class GUI(customtkinter.CTk):
         self.active_module_frame = None
         
         self._create_widgets()
+        
+        # Definimos protocol de cierre
+        self.wm_protocol("WM_DELETE_WINDOW", self.on_closing)
+        
+    def on_closing(self):
+        if messagebox.askokcancel("Salir", "¿Quieres salir?"):
+            self.destroy()
+            
+        self.server.shutdown()
         
 
     def _iniciar_ventana(self):
@@ -127,8 +139,10 @@ class GUI(customtkinter.CTk):
     
     def _acerca_de(self):
         print("Mostrando información de la aplicación")
-        InfoForm(self, "E.R.P Villablanca", "Hugo Pelayo", "I.E.S Villablanca", "Sistemas de Gestión Empresarial")
-        # use protocol, avoid this window poping up once everytime we click the button
+        if self.info_form != None:
+            self.info_form.destroy()
+        
+        self.info_form = InfoForm(self, "E.R.P Villablanca", "Hugo Pelayo", "I.E.S Villablanca", "Sistemas de Gestión Empresarial")
         
         
     def run(self):

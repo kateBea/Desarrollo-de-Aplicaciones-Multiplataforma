@@ -12,11 +12,9 @@ def run():
     # Creamos el servidor (observable)
     server = Server(pool_scheduler)    
     
-    
     # Creamos la interfaz
     gui = GUI(server)
     gui.run()
-
 
 if __name__ == "__main__":
     run()
