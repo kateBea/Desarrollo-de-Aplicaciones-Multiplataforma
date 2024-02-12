@@ -10,8 +10,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -52,19 +50,7 @@ public class Carrera {
 	@Column(name = "fecha_celebracion",nullable = false)
 	private LocalDateTime fechaCelebracion;
 	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "punto_control")
 	private Set<PuntoControl> puntosControl;
-	
-	// Un corredor puede estar en una o varias carreras a la vez
-	// Si la hacemos OneToMany quiere decir de todas nuestras carreras,
-	// un corredor sólo puede estar en una. En esta relación se considera 
-	// el jugador como la entidad débil y carrera como entidad fuerte.
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-	@JoinTable(
-		name = "CORREDOR_ADSCRITO",
-		joinColumns = { @JoinColumn(name = "nombre_carrera", nullable = false) },
-		inverseJoinColumns = { @JoinColumn(name = "dni_corredor", nullable = false) }
-	)
-	private Set<Corredor> corredores;
 }

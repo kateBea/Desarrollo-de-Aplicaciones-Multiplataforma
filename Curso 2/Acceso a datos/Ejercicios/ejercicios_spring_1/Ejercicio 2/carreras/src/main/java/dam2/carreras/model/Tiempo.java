@@ -1,6 +1,5 @@
 package dam2.carreras.model;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -9,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -40,15 +40,23 @@ public class Tiempo {
 	private Long id;
 	
 	// Tiempo empleado para completar la carrera en segundos
+	// Si el corredor no ha participado este valor
+	// será igual a NO_PARTICIPADO, en caso contrario será un valor mayor de 0
 	@Column(nullable = false)
 	private float tiempo;
 	
 	// Un corredor puede tener varios tiempos.
 	// Lo mismo aplica para las carreras ya que estos tiempos
 	// se asigna al corredor por cada carrera.
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Corredor corredor;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Carrera carrera;
+	
+	
+	// Para corredores que estén en una carrera pero
+	// no han acabado participando
+	@Transient
+	private static int NO_PRTICIPADO = -1;
 }

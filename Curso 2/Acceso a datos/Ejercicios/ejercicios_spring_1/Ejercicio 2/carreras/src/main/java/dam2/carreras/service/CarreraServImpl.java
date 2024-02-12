@@ -12,7 +12,6 @@ import dam2.carreras.model.Carrera;
 import dam2.carreras.repository.ICarreraRepo;
 import dam2.carreras.repository.ICorredorRepo;
 import dam2.carreras.repository.IPuntoControlRepo;
-import jakarta.transaction.Transactional;
 
 @Service
 public class CarreraServImpl implements ICarreraService {
@@ -46,28 +45,8 @@ public class CarreraServImpl implements ICarreraService {
 	}
 
 	@Override
-	@Transactional
 	public Optional<Carrera> insertar(Carrera nueva) {
 		// TODO Auto-generated method stub
-		
-		// Comprobamos si existen los puntos de control, sino los añadimos
-		// A lo mejor lo hace el cliente, eso no lo sabemos.
-		if (nueva.getPuntosControl() != null) {
-			nueva.getPuntosControl().stream().forEach(punto -> {
-				if (!repoPuntoControl.existsById(punto.getId()) ) {
-					repoPuntoControl.save(punto);
-				}
-			});
-		}
-		
-		if (nueva.getCorredores() != null) {
-			// Comprobamos si existen los corredores
-			nueva.getCorredores().stream().forEach(corredor -> {
-				if (!repoCorredor.existsById(corredor.getDni()) ) {
-					repoCorredor.save(corredor);
-				}
-			});
-		}
 		
 		return Optional.of(repositorio.save(nueva));
 	}
@@ -75,7 +54,7 @@ public class CarreraServImpl implements ICarreraService {
 	@Override
 	public Optional<Carrera> actualizar(Carrera nueva) {
 		// TODO Auto-generated method stub
-		return insertar(nueva);
+		return Optional.of(repositorio.save(nueva));
 	}
 
 	@Override

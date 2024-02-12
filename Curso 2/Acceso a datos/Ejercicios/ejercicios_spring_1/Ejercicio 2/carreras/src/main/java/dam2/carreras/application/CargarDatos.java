@@ -98,14 +98,6 @@ public class CargarDatos implements CommandLineRunner {
                                 .puntosControl(puntosControlCarrera2)
                                 .build();
         
-        // Asignar corredores a las carreras
-        Set<Corredor> corredores = new HashSet<>();
-        corredores.add(corredor1);
-        corredores.add(corredor2);
-        
-        carrera1.setCorredores(corredores);
-        carrera2.setCorredores(corredores);
-        
         
         // Crear tiempos
         Tiempo tiempoCorredor1Carrera1 = Tiempo.builder()
@@ -152,9 +144,6 @@ public class CargarDatos implements CommandLineRunner {
         servicioTiempo.insertar(tiempoCorredor1Carrera2);
         servicioTiempo.insertar(tiempoCorredor2Carrera1);
         
-  
-
-		
 	}
 
 }

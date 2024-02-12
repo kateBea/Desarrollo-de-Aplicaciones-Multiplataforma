@@ -9,13 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dam2.carreras.model.Tiempo;
+import dam2.carreras.repository.ICarreraRepo;
+import dam2.carreras.repository.ICorredorRepo;
 import dam2.carreras.repository.ITiempoRepo;
+import jakarta.transaction.Transactional;
 
 @Service
 public class TiempoServImpl implements ITiempoService {
 
 	@Autowired
 	ITiempoRepo repositorio;
+	
+	@Autowired
+	ICorredorRepo repositorioCorredor;
+	
+	@Autowired
+	ICarreraRepo repositorioCarrera;
 	
 	@Override
 	public boolean existePorId(Long id) {
@@ -37,8 +46,22 @@ public class TiempoServImpl implements ITiempoService {
 	}
 
 	@Override
+	@Transactional
 	public Optional<Tiempo> insertar(Tiempo nuevo) {
 		// TODO Auto-generated method stub
+		
+		// Comprobamos la existencia del corredor, si no lo insrtamos
+		// porque no hemos usado el cascade en el modelo
+		if (nuevo.getCorredor() != null && !repositorioCorredor.existsById(nuevo.getCorredor().getDni())) {
+			repositorioCorredor.save(nuevo.getCorredor());
+		}
+		
+		// Comprobamos la existencia del carrera, si no la insrtamos
+		// porque no hemos usado el cascade en el modelo
+		if (nuevo.getCarrera() != null && !repositorioCorredor.existsById(nuevo.getCarrera().getNombre())) {
+			repositorioCarrera.save(nuevo.getCarrera());
+		}
+		
 		return Optional.of(repositorio.save(nuevo));
 	}
 
