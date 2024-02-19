@@ -18,7 +18,7 @@ PizzaApp es una aplicación móvil desarrollada en Kotlin que permite a los usua
 
 <p>
 <img src="/Curso 2/Programación multimedia y dispositivos móviles/Prácticas/Práctica 2/img/img1.png" alt="Pantalla 1" width="200"/>
-<img src="/Programación multimedia y dispositivos móviles/Prácticas/Práctica 2/img/img2.png" alt="Pantalla 1" width="200"/>
+<img src="/Curso 2/Programación multimedia y dispositivos móviles/Prácticas/Práctica 2/img/img2.png" alt="Pantalla 1" width="200"/>
 <img src="/Curso 2/Programación multimedia y dispositivos móviles/Prácticas/Práctica 2/img/img3.png" alt="Pantalla 1" width="200"/>
 </p>
 
