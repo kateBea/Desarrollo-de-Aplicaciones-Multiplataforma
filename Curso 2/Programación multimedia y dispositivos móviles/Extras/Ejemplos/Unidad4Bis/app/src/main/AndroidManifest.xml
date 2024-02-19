@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UT4"
+        tools:targetApi="31">
+        <activity
+            android:name=".vm.NavegacionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_navegacion"
+            android:theme="@style/Theme.UT4" />
+        <activity
+            android:name=".vm.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.UT4">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".vm.CalculadoraVMActivity"
+            android:exported="true"
+            android:label="Callculadora ViewModel"
+            android:theme="@style/Theme.UT4">
+
+        </activity>
+        <activity
+            android:name=".vm.VMActivity"
+            android:exported="true"
+            android:label="@string/title_activity_vmactivity"
+            android:theme="@style/Theme.UT4">
+
+        </activity>
+        <activity
+            android:name=".vm.CalculadoraActivity"
+            android:exported="true"
+            android:label="@string/title_activity_calculadora"
+            android:theme="@style/Theme.UT4">
+        </activity>
+        <activity
+            android:name=".vm.DemoScaffoldActivity"
+            android:exported="true"
+            android:label="@string/title_activity_demo_scaffold"
+            android:theme="@style/Theme.UT4">
+
+        </activity>
+    </application>
+
+</manifest>

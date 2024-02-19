@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Desordenadas</string>
+    <string name="instructions">Ordena usando todas las letras</string>
+    <string name="skip">Saltar</string>
+    <string name="submit">Enviar</string>
+    <string name="score">Marcador %d</string>
+    <string name="enter_your_word">Escribe tu palabra</string>
+    <string name="congratulations">Enhorabuena</string>
+    <string name="you_scored">Tu marcador %d</string>
+    <string name="exit">Salir</string>
+    <string name="play_again">Jugar otra vez</string>
+    <string name="wrong_guess">Fallaste</string>
+</resources>
