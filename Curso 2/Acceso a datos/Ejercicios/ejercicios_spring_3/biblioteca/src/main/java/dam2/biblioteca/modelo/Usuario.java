@@ -3,6 +3,7 @@ package dam2.biblioteca.modelo;
 import java.util.Set;
 
 import io.micrometer.common.lang.NonNull;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -34,13 +35,13 @@ public class Usuario {
 	@Column(nullable = false)
 	private String nombre;
 	
-	@Column(nullable = false, length = 9)
+	@Column(nullable = false, length = 16)
 	private String telefono;
 	
 	@Column(nullable = false)
 	private String password;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "sancion")
 	private Set<Sancion> sanciones;
 }

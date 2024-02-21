@@ -1,6 +1,7 @@
 package dam2.biblioteca.servicio;
 
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,8 @@ import dam2.biblioteca.modelo.Sancion;
 public interface ISancionServ {
 	// Consultar
 	Optional<Sancion> buscarPorId(String id);
+	Set<Sancion> consultarTodas();
+	Set<Sancion> consultarTodasDeUsuario(String dni);
 	boolean existePorId(String id);
 	
 	// Añadir

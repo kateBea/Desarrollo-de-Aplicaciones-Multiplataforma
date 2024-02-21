@@ -55,6 +55,18 @@ public class EjemplarServImpl implements IEjemplarServ {
 		return StreamSupport.stream(ejemplarRepo.findAll().spliterator(), false).
 				collect(Collectors.toSet());
 	}
+
+	@Override
+	public Set<Ejemplar> ejemplaresDisponibles() {
+		// TODO Auto-generated method stub
+		return ejemplarRepo.ejemplaresLibres();
+	}
+	
+	@Override
+	public Set<Ejemplar> ejemplaresDisponiblesDe(String isbn) {
+		// TODO Auto-generated method stub
+		return ejemplarRepo.ejemplaresLibresLibro(isbn);
+	}
 	
 	
 }

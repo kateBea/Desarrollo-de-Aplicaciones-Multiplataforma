@@ -32,6 +32,7 @@ import lombok.NoArgsConstructor;
 public class Prestamo {
 	@EqualsAndHashCode.Include
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
 	
@@ -41,8 +42,8 @@ public class Prestamo {
 	@Column(nullable = false)
 	private boolean devuelto;
 	
-	// Un usuario sólo puede tener un ejemplo en préstamo
-	// Sin embargo, puede hacer varios préstamos
+	// Un usuario sólo puede tener un ejemplar en préstamo
+	// Sin embargo, puede tener registrados varios préstamos
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Usuario usuario;

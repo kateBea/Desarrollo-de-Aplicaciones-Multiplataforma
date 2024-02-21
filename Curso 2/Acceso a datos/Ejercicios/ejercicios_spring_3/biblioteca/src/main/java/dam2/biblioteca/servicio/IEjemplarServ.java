@@ -12,6 +12,8 @@ public interface IEjemplarServ {
 	// Consultar
 	Optional<Ejemplar> buscarPorId(String id);
 	Set<Ejemplar> consultarTodos();
+	Set<Ejemplar> ejemplaresDisponibles();
+	Set<Ejemplar> ejemplaresDisponiblesDe(String isbn);
  	boolean existePorId(String id);
 	
 	// Añadir

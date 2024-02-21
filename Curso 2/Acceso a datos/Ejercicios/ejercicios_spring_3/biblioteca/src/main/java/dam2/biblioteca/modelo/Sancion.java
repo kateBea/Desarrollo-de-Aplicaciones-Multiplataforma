@@ -29,12 +29,15 @@ public class Sancion {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
 	
-	@Column(nullable = false)
+	@Column(name = "fecha_alta", nullable = false)
 	private LocalDate fechaAlta;
 	
 	@Column(nullable = false)
 	private int dias;
 	
+	/**
+	 * Días de sanción que corresponden.
+	 * */
 	public static int diasPorSancionesAnuales(long sancionesAnuales, int diasSancion) {
 		return switch ((int) sancionesAnuales) {
 			case 1 -> diasSancion;

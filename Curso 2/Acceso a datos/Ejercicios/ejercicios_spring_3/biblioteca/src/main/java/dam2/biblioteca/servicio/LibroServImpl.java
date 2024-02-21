@@ -1,6 +1,9 @@
 package dam2.biblioteca.servicio;
 
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,6 +56,13 @@ public class LibroServImpl implements ILibroServ {
 		ejemplarRepo.borrarEjemplares(id);
 		
 		return existePorId(id);
+	}
+
+	@Override
+	public Set<Libro> consultarTodos() {
+		// TODO Auto-generated method stub
+		return StreamSupport.stream(libroRepo.findAll().spliterator(), false).
+			collect(Collectors.toSet());
 	}
 	
 }

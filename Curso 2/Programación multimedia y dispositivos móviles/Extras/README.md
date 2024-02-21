@@ -9,3 +9,6 @@ Este archivo contiene algunos enlaces de interés relacionados con el desarrollo
 
 - [Navigation](https://developer.android.com/jetpack/compose/navigation?hl=es-419):
     Aquí encontrarás información sobre la navegación en aplicaciones Android utilizando Jetpack Compose. Este enlace te proporciona una guía sobre cómo implementar la navegación de manera efectiva en tus apps.
+
+- [Jetpack Compose PlayGround](https://foso.github.io/Jetpack-Compose-Playground/):
+    Documentación simplificada de elementos de Jetpack Compose con ejemplos sencillos.

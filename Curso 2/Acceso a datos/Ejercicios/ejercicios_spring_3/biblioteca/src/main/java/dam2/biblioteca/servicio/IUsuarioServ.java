@@ -1,6 +1,7 @@
 package dam2.biblioteca.servicio;
 
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import dam2.biblioteca.modelo.Usuario;
 public interface IUsuarioServ {
 	// Consultar
 	Optional<Usuario> buscarPorId(String id);
+	Set<Usuario> consultarTodos();
 	boolean existePorId(String id);
 	
 	// Añadir
