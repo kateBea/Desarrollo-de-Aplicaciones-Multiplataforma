@@ -22,3 +22,4 @@ algunos apuntes del ciclo de DAM junto con ejercicios resueltos de programación
   - [[ PMDM ] &nbsp;Programación multimedia y dispositivos móviles](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Programaci%C3%B3n%20multimedia%20y%20dispositivos%20m%C3%B3viles)
   - [[ SGE ]   &nbsp;Sistemas de gestión empresarial](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Sistemas%20de%20gesti%C3%B3n%20empresarial)
   - [[ IT ]    &nbsp;Inlgés técnico](https://github.com/kateBea/Desarollo-de-Aplicaciones-Multiplataforma/tree/main/Curso%202/Inlg%C3%A9s%20t%C3%A9cnico)
+  - [[ EIE ]    &nbsp;Emepresa e Iniciativa emprendedora](Curso%202/Empresa%20e%20Iniciativa%20Emprendedora/)
