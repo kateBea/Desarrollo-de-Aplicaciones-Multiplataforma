@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempos recogidos</title>
+</head>
+<body>
+    <h1>I.E.S Villablanca E.R.P</h1>
+    
+    <div>
+        <h3>Informe de carreras</h3>
+
+        <table border="1">
+            <tr>
+                <th>Número de corredores</th>
+                <td>{{numCorredores}}</th>
+            </tr>
+            <tr>
+                <th>Distancia en kilómetros</th>
+                <td>{{distanciaKmCarrera}}</th>
+            </tr>
+        </table>
+
+        <br>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Punto de medición (km)</th>
+                    <th>Media corredores (minutos)</th>
+                </tr>
+            </thead>
+            <tr>
+                <th>10 km</th>
+                <th> {{media10km}} </th>
+            </tr>
+
+            <tr>
+                <th>21 km</th>
+                <th> {{media21km}} </th>
+            </tr>
+
+            <tr>
+                <th>32 km</th>
+                <th> {{media32km}}</th>
+            </tr>
+
+            <tr>
+                <th>42 km</th>
+                <th> {{media42km}} </th>
+            </tr>
+            
+        </table>
+    </div>
+</body>
+</html>

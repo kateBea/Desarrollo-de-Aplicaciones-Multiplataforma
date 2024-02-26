@@ -1,0 +1,15 @@
+==========================
+Examen Hugo Pelayo SGE
+21 de febrero 2024
+==========================
+
+1. Prejecución:
+
+Necesario tener la base de datos en ejecución. Comando:
+docker run -d -p 3306:3306 --name carreras -e MYSQL_ROOT_PASSWORD=1234 -d mysql:latest
+
+2. Ejecución:
+
+Abrir terminal en la carpetya raíz y 
+ejecutar comando code. Abrir fichero main y
+ejecutar desde Visual Studio Code.
