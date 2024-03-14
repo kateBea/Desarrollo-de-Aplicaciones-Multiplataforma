@@ -1,0 +1,178 @@
+1º Crear una base de datos llamada wollapap.
+use wollapap
+
+2º Insertar en la colección usuarios los 2 documentos siguientes
+
+db.createCollection ("usuarios",
+
+db.usuarios.insertOne({usuario:"usuario1@email.com", clave:"claveUsuario1"})
+db.usuarios.insertOne({usuario:"usuario2@email.com", clave:"claveUsuario2"})
+
+3º  Poner a la venta los siguientes bienes en la colección productos
+ db.productos.insertOne({nombre:"Mesa de cocina",
+                        descripcion:"Mesa plegable de 110x70",
+                        etiquetas:["mobiliario","usado"],
+                        ubicacion:
+                            {"type": "Point","coordinates": [-3.816375732421875, 40.345497469392406]},
+                        fecha_publicacion:new Date(new Date().setDate(1)),
+                        precio:50,
+                        estado:"disponible",
+                        vendedor_id:db.usuarios.findOne({usuario:"usuario1@email.com"})._id})
+
+ db.productos.insertOne({nombre:"Renault fuego",
+                        descripcion:"Impecable, de coleccionista",
+                        etiquetas:["vehiculos", "gasolina", "coleccionista"],
+                        ubicacion:
+                            {"type": "Point","coordinates": [ -3.6399078369140625, 40.54511315470123]},
+                        fecha_publicacion:new Date(new Date().setDate(5)),
+                        precio:10000,
+                        estado:"disponible",
+                        vendedor_id:db.usuarios.findOne({usuario:"usuario2@email.com"})._id})
+
+
+4º Buscar todos los productos con precio inferior a 100€
+db.productos.find({precio:{$lt:100}})
+
+
+5º Buscar todos los productos usados
+db.productos.find({etiquetas:{$in:["usado"]}})
+
+
+6º Reemplazar la etiqueta coleccionista del Renault fuego por usado
+db.productos.update({nombre:"Renault fuego"},
+                    {$set:{"etiquetas.$[ele]":"usado"}},
+                    {
+                        multi:true,
+                        arrayFilters:[{"ele":{$in:["coleccionista"]}}]
+
+                    }
+                    )
+
+7º Mostrar el nombre y todas las contraseña de todos los usuarios que tienen productos a la venta
+(estado=disponible)
+
+var productosDisponibles = db.productos.find ({estado:"disponible"})
+var vendedores = productosDisponibles.map(function(producto) { return producto.vendedor_id; } )
+db.usuarios.find({_id:{$in:vendedores}},{usuario:1, clave:1, _id:0})
+
+db.productos.aggregate([
+    {$match: {estado:"disponible"}},
+    {
+        $lookup: {
+               from: "usuarios",
+               localField: "vendedor_id",
+               foreignField: "_id",
+               as: "vendedor"
+             }
+    },
+    {$unwind: "$vendedor"},
+    {
+     $project: {"vendedor.usuario":1, "vendedor.clave":1,_id:0}
+    }
+])
+
+
+8º Actualizar la "Mesa de cocina" como "vendido" (estado) ahora mismo (fecha_venta) por el usuario 2
+var comprador = db.usuarios.findOne({usuario:{$regex:"usuario2@*" }})._id
+db.productos.updateOne({nombre:"Mesa de cocina"},
+                        {$set:{estado:"vendido",comprador_id:comprador},
+                        $currentDate: {fecha_venta:true}})
+
+
+9º Crear un índice geoespacial de tipo 2dsphere sobre el campo "ubicación" de la colección productos
+db.productos.createIndex({ubicacion: "2dsphere"})
+
+10º Mostrar todos los productos ordenados por su proximidad al instituto, indicando la distancia
+var posicionInstituto = {
+        type: "Point",
+        coordinates: [-3.600050210952759,40.40588231465045]
+        }
+db.productos.find( {ubicacion : {$nearSphere: {$geometry: posicionInstituto}}})
+
+db.runCommand(
+   {
+     geoNear: "productos",
+     near: posicionInstituto,
+     spherical: true,
+
+   }
+)
+
+db.productos.aggregate([
+    {
+        $geoNear: {
+          near: posicionInstituto,
+          distanceField: "distancia",
+          spherical: true
+        }
+    }
+])
+
+
+
+
+// esquemas
+
+db.createCollection("productos",
+    {
+        validator:{
+            $jsonSchema:{
+                    bsonType: "object",
+                    required: [ "nombre", "descripcion", "etiquetas", "ubicacion", "fecha_publicacion", "estado", "vendedor_id" ],
+                    properties: {
+                            nombre: {
+                                bsonType: "string",
+                                description: "must be a string and is required"
+                                },
+                            descripcion: {
+                                bsonType: "string",
+                                description: "must be a string and is required"
+                                 },
+                            etiquetas: {
+                                bsonType: "array",
+                                minItems: 1,
+                                uniqueItems: true,
+                                    items: {
+                                        bsonType: "string",
+                                        description: "must be a string and is required"
+                                    }
+                                },
+                            ubicacion: {
+                                bsonType:  "object",
+                                required: ["type","coordinates"],
+                                properties: {
+                                    type :{
+                                        bsonType :"string",
+                                        pattern: "^Point$"
+                                    },
+                                    coordinates:{
+                                        bsonType: "array",
+                                        minItems: 2,
+                                        maxItems: 2,
+                                        items: {
+                                            bsonType: "double"
+                                        }
+                                    }
+                                }
+                            },
+                            fecha_publicacion: {
+                               bsonType: "date"
+                                },
+                            precio:{
+                                bsonType: "double",
+                                minimum: 1
+                            },
+                            estado: {
+                                enum:["disponible", "vendido", "retirado"]
+                            },
+                            vendedor_id:{
+                                bsonType: "objectId"
+                            }
+                        }
+                    }
+                }
+            }
+)
+
+
+

@@ -1,0 +1,12 @@
+{Tipo: "Profesor", Nombre: "Juan Félix"},
+{Tipo: "Profesor", Nombre: "Ana", Apellidos: "Palma", Asignaturas:
+["Matemáticas","Física","Química"]},
+{Tipo: "Alumno", Nombre: "Felipe", Apellidos: "Martín", Calificaciones: {"Matemáticas": 8, "Física":
+5.5}},
+{Tipo: "Profesor", Nombre: "Irene", Apellidos: "Pérez", Asignaturas: ["Inglés","Física","Dibujo"]},
+{Tipo: "Alumno", Nombre: "Raquel", Apellidos: "López", Calificaciones: {"Matemáticas": 9, "Física":
+7.5, "Inglés": 6}},
+{Tipo: "Administrativo", Nombre: "Luis", Nominas:[{Mes: "Octubre", "Cantidad": 1850.90},{Mes:
+"Noviembre", "Cantidad": 1600.50}]},
+{Tipo: "Administrativo", Nombre: "Marisa", Nominas:[{Mes: "Octubre", "Cantidad": 1420.30},{Mes:
+"Noviembre", "Cantidad": 1850.90}]}

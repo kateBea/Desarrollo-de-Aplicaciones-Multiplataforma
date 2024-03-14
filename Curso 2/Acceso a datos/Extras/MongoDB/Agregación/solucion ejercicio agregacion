@@ -1,0 +1,187 @@
+1. El número de sesiones que ha realizado cada persona.
+
+db.sesiones.aggregate([
+    {
+    $group: { _id: "$nombre", numerodesesiones: {$sum:1}}
+    }
+])
+    
+
+2. Número de sesiones que ha hecho cada persona al mes.
+
+db.sesiones.aggregate([
+    {
+    $group: { _id: {nombre:"$nombre", mes:"$mes"},
+                numerodesesiones: {$sum:1}
+        
+        }
+    }
+])
+
+3. Kilómetros recorridos por cada persona.
+
+db.sesiones.aggregate([
+    {
+    $group: { _id:"$nombre",
+                kmrecorridos: {$sum:"$distKm"}
+        }
+    }
+])
+
+4. Media recorrida por mes por cada persona.
+
+db.sesiones.aggregate([
+    {
+    $group: { _id: {nombre:"$nombre", mes:"$mes"},
+                distanciamedia: {$avg:"$distKm"}
+        
+        }
+    }
+])
+
+5. Distancias recorridas por cada persona.
+
+db.sesiones.aggregate([
+    {
+    $group: { _id:"$nombre",
+                kmrecorridos: {$sum:"$distKm"}
+        }
+    }
+])
+
+6. En cada mes qué distancias se han hecho en alguna sesión. Si una distancia se ha corrido
+varias veces en ese mes debe aparecer varias veces.
+
+db.sesiones.aggregate([
+    {
+    $group: { _id: "$mes",
+                distancias: {$addToSet: "$distKm"}
+        
+        }
+    }
+])
+
+7. El número de personas con el que cuenta cada afición.
+db.gustos.aggregate([
+    {$project: {_id:0, "gustos":"$aficiones"}},
+    {$unwind: "$gustos"},
+    {
+    $group: { _id: "$gustos",
+                personas: {$sum: 1}
+        
+        }
+    }
+])
+
+8. La mayor y menor distancia recorrida por cada persona.
+
+db.sesiones.aggregate([
+    {$group: { 
+        _id: "$nombre",
+        max:{$max: "$distKm"},
+        min:{$min: "$distKm"}}
+    }
+])
+
+9. Los datos de distancias recorridas en millas, sabiendo que una milla = 1,60934 km.
+
+db.sesiones.aggregate([
+    {$project: {
+            nombre:1,
+            "distanciaenmillas":{$multiply: ["$distKm",0.62]}
+            }
+    }
+])
+
+10. Obtener la media en kilómetros mensuales de cada corredor, pero solo para aquellos valores
+medios superiores a 5km.
+
+db.sesiones.aggregate([
+    {
+        $group: { 
+            _id: {"nombre":"$nombre", "mes":"$mes"},
+            media:{$avg:"$distKm"}
+        }
+    },
+    {
+        $match: {media:{$gt:5}}
+    }
+    
+])
+
+11. Media de kilómetros por corredor y mes, ordenar por mes.
+
+db.sesiones.aggregate([
+    {
+        $group: { 
+            _id: {"nombre":"$nombre", "mes":"$mes"},
+            media:{$avg:"$distKm"}
+        }
+    },
+    {
+        $sort: {"_id.mes":-1}
+    }
+    
+])
+
+12. Corredor que tiene mayor media absoluta de distancia recorrida.
+
+db.sesiones.aggregate([
+    {
+        $group: { 
+            _id: "$nombre",
+            media:{$avg:"$distKm"}
+        }
+    },
+    {
+        $sort: {"media":-1}
+    },
+    {
+        $limit: 1
+    }
+    
+])
+
+13. Calcular el número medio de sesiones por persona al mes, es decir, se cuenta el número de
+sesiones por persona y mes y a continuación se hace la media de este dato
+
+db.sesiones.aggregate([
+    {
+        $group: { 
+            _id: {"nombre":"$nombre","mes":"$mes"},
+            sesiones:{$sum:1}
+        }
+    },
+    {
+        $group: {
+            _id:"$_id.nombre",
+            mediasesiones:{$avg:"$sesiones"}
+        }
+    }
+
+    
+])
+
+14. Conocer, para la persona que mayor distancia total ha recorrido su nombre, la distancia total
+recorrida y sus aficiones.
+
+db.sesiones.aggregate([
+    {
+        $group: { 
+            _id: "$nombre",
+            distancia:{$max: "$distKm"}
+        }
+    },
+    {
+        $lookup: {
+               from: "gustos",
+               localField: "_id",
+               foreignField: "nombre",
+               as: "aficiones"
+             }
+    },
+    {
+        $project: {distancia:1, "aficiones.aficiones":1}
+    },
+    { $unset: [ "aficiones" ] }
+])
