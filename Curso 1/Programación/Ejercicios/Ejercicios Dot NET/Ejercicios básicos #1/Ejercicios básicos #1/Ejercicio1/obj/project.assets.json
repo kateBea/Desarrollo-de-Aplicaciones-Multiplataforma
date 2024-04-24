@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net8.0": []
+  },
+  "packageFolders": {
+    "/home/kate/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/kate/Documents/DAM/Desarrollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios Dot NET/Ejercicios básicos #1/Ejercicios básicos #1/Ejercicio1/Ejercicio1.csproj",
+      "projectName": "Ejercicio1",
+      "projectPath": "/home/kate/Documents/DAM/Desarrollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios Dot NET/Ejercicios básicos #1/Ejercicios básicos #1/Ejercicio1/Ejercicio1.csproj",
+      "packagesPath": "/home/kate/.nuget/packages/",
+      "outputPath": "/home/kate/Documents/DAM/Desarrollo-de-Aplicaciones-Multiplataforma/Curso 1/Programación/Ejercicios/Ejercicios Dot NET/Ejercicios básicos #1/Ejercicios básicos #1/Ejercicio1/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/kate/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
