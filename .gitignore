@@ -1,4 +1,35 @@
+# Folders
 node_modules/
+__pychache__/
+build/
+.vscode/
+.vs
+
+# JS
 package-lock.json
 
+# JAVA ----------------------------
+# Compiled class file
 *.class
+
+# C++ ----------------------------
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+
+# Common ----------------------------
+
+# Log file
+*.log

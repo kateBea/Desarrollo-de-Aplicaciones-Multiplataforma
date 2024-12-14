@@ -1,6 +1,5 @@
 /**
- * Simula el algoritmo de suma con acarreo
- * adivinar uno de ellos
+ * Simula el algoritmo de suma con acarreo.
  * Hugo Pelayo
  * 1 de mayo de 2023
 */

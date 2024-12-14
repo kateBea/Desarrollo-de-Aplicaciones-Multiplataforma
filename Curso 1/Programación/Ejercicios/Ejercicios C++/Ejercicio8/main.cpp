@@ -40,13 +40,20 @@ void generar_lista_aleatoria() {
 
     auto& lista{ get_lista_numeros() };
     
-    std::cout << std::endl << "Lista de Números Generada:" << std::endl;
     for (std::vector<double>::size_type count{}; count < static_cast<std::vector<double>::size_type>(cantidad); ++count) {
         lista.emplace_back(static_cast<int>(dist(mt)));
     }
 
+    std::cout << std::endl << "Lista de Números Generada:" << std::endl;
     std::for_each(lista.begin(), lista.end(), 
-        [first = true] (double num) mutable -> void { first ? (std::cout << num) : (std::cout << ' ' << num); first = false; } );
+        [first = true] 
+        (double num) mutable -> void { 
+            first ? 
+            (std::cout << num) : 
+            (std::cout << ' ' << num); 
+            
+            first = false; 
+        } );
 }
 
 void ordenar_lista(Orden orden) {

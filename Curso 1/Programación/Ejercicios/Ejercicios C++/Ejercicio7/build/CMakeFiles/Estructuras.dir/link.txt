@@ -1,1 +1,0 @@
-/usr/bin/c++ -fsanitize=address CMakeFiles/Estructuras.dir/main.cpp.o -o Estructuras 
